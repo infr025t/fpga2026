@@ -1,0 +1,2 @@
+PASS output transport six frames: packed LSB/tail, target/no target, features priority, fallbacks, reset, latching, RAM sequence, UART and CRC
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\sim\tb_output_transport.sv:156: $finish called at 179970000 (1ps)

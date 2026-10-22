@@ -1,0 +1,64 @@
+{
+  "verified_frames": {
+    "json": 2,
+    "pgm": 2,
+    "ids": [
+      7,
+      8
+    ]
+  },
+  "verified_output_transport": {
+    "json": 6,
+    "pgm": 4,
+    "ids": [
+      100,
+      101,
+      102,
+      103,
+      104,
+      105
+    ]
+  },
+  "verified_target_transport": {
+    "json": 6,
+    "pgm": 6,
+    "ids": [
+      270544960,
+      270544961,
+      270544962,
+      270544963,
+      270544964,
+      270544965
+    ]
+  },
+  "verified_top_output": {
+    "json": 5,
+    "pgm": 4,
+    "ids": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "verified_top_recovery": {
+    "json": 3,
+    "pgm": 3,
+    "ids": [
+      1,
+      4,
+      5
+    ]
+  },
+  "verified_top_target": {
+    "json": 4,
+    "pgm": 4,
+    "ids": [
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

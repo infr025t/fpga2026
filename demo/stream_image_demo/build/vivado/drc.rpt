@@ -1,0 +1,46 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
+| Date         : Mon Oct  5 18:44:57 2026
+| Host         : StrawberryBear running 64-bit major release  (build 9200)
+| Command      : report_drc -file E:/UESTC/FPGA/stream_image_demo/build/vivado/drc.rpt
+| Design       : stream_top
+| Device       : xc7a35tcpg236-1
+| Speed File   : -1
+| Design State : Fully Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: stream_top
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max checks: <unlimited>
+             Checks found: 2
++--------+----------+---------------------------------+--------+
+| Rule   | Severity | Description                     | Checks |
++--------+----------+---------------------------------+--------+
+| RPBF-3 | Warning  | IO port buffering is incomplete | 2      |
++--------+----------+---------------------------------+--------+
+
+2. REPORT DETAILS
+-----------------
+RPBF-3#1 Warning
+IO port buffering is incomplete  
+Device port cam_rst_n expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+RPBF-3#2 Warning
+IO port buffering is incomplete  
+Device port cam_sioc expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+

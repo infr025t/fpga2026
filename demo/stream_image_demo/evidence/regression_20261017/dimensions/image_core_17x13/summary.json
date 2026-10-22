@@ -1,0 +1,25 @@
+{
+  "W": 17,
+  "H": 13,
+  "status": "passed",
+  "compile_command": [
+    "C:\\Users\\37855\\AppData\\Local\\Temp\\fpga20261017_iverilog_mtv_cmpc\\ucrt64\\bin\\iverilog.exe",
+    "-g2012",
+    "-s",
+    "tb_image_core",
+    "-Ptb_image_core.W=17",
+    "-Ptb_image_core.H=13",
+    "-o",
+    "D:\\desktop\\coding\\fpga2026 - demo\\demo\\stream_image_demo\\build\\regression\\iteration_dimensions_20261017\\image_core_17x13\\test.vvp",
+    "D:\\desktop\\coding\\fpga2026 - demo\\demo\\stream_image_demo\\rtl\\camera_config.sv",
+    "D:\\desktop\\coding\\fpga2026 - demo\\demo\\stream_image_demo\\rtl\\fifo_capture.sv",
+    "D:\\desktop\\coding\\fpga2026 - demo\\demo\\stream_image_demo\\rtl\\frame_sender.sv",
+    "D:\\desktop\\coding\\fpga2026 - demo\\demo\\stream_image_demo\\rtl\\image_core.sv",
+    "D:\\desktop\\coding\\fpga2026 - demo\\demo\\stream_image_demo\\rtl\\stream_top.sv",
+    "D:\\desktop\\coding\\fpga2026 - demo\\demo\\stream_image_demo\\rtl\\uart_tx.sv",
+    "D:\\desktop\\coding\\fpga2026 - demo\\demo\\stream_image_demo\\sim\\tb_image_core.sv"
+  ],
+  "compile_exit_code": 0,
+  "simulate_exit_code": 0,
+  "pass_marker": "PASS_IMAGE_CORE W=17 H=13 frames=12"
+}

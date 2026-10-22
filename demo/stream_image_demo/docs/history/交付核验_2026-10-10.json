@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-10",
+  "authority": "docs/开发与联调日志.pdf",
+  "protected_RTL_XDC_scripts_sim_bit_unchanged": true,
+  "python_receiver_tests": "PASS (6 tests, rerun during packaging)",
+  "rtl_and_implementation": "Historical passing logs retained; not rerun; source and bit unchanged",
+  "hardware": "Prior user-confirmed demo results; not reprogrammed during packaging",
+  "original_plan_included": false,
+  "old_bundle_replaced": true,
+  "zip_layout": "stream_image_demo/",
+  "scope": "Manifest and extracted archive hashes verified by packaging script; no Vivado installation bundled",
+  "documentation_alignment": "README and log references updated; old package and historical files archived outside delivery"
+}

@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "output": "D:\\desktop\\coding\\fpga2026 - demo\\demo\\stream_image_demo\\build\\regression\\iteration_full_20261019",
+  "python": {
+    "status": "passed"
+  },
+  "rtl": {
+    "status": "passed",
+    "simulator": "iverilog",
+    "tools": {
+      "iverilog": "C:\\Users\\37855\\AppData\\Local\\Temp\\fpga20261017_iverilog_mtv_cmpc\\ucrt64\\bin\\iverilog.exe",
+      "vvp": "C:\\Users\\37855\\AppData\\Local\\Temp\\fpga20261017_iverilog_mtv_cmpc\\ucrt64\\bin\\vvp.exe"
+    },
+    "tests": [
+      "fifo_capture",
+      "camera_config",
+      "camera_readback",
+      "camera_monitor",
+      "image_core",
+      "target_stats",
+      "transport",
+      "target_transport",
+      "top",
+      "top_target"
+    ]
+  },
+  "wire": {
+    "status": "passed",
+    "input": "D:\\desktop\\coding\\fpga2026 - demo\\demo\\stream_image_demo\\build\\regression\\iteration_full_20261019\\verify_transport\\wire.bin",
+    "required_frames": 2
+  },
+  "feature_wires": [
+    {
+      "status": "passed",
+      "name": "target_transport",
+      "input": "D:\\desktop\\coding\\fpga2026 - demo\\demo\\stream_image_demo\\build\\regression\\iteration_full_20261019\\verify_target_transport\\target_wire.bin",
+      "required_frames": 6
+    },
+    {
+      "status": "passed",
+      "name": "top_target",
+      "input": "D:\\desktop\\coding\\fpga2026 - demo\\demo\\stream_image_demo\\build\\regression\\iteration_full_20261019\\verify_top_target\\top_target_wire.bin",
+      "required_frames": 4
+    }
+  ]
+}

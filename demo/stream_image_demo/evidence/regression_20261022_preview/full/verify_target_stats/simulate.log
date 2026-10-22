@@ -1,0 +1,25 @@
+PASS target_stats no_target area=0 valid=0
+PASS target_stats dark_rectangle area=12 valid=1
+PASS target_stats bright_rectangle area=30 valid=1
+PASS target_stats roi_excludes_distractors area=1 valid=1
+PASS target_stats inclusive_roi_corners_exclude_border area=4 valid=1
+PASS target_stats last_roi_pixel area=1 valid=1
+PASS target_stats bright_threshold_equality area=1 valid=1
+PASS target_stats exact_area_limits area=4 valid=1
+PASS target_stats below_min_keeps_raw_statistics area=4 valid=0
+PASS target_stats above_max_keeps_raw_statistics area=4 valid=0
+PASS target_stats threshold_zero area=1 valid=1
+PASS target_stats threshold_255 area=1 valid=1
+PASS target_stats invalid_roi_zero area=0 valid=0
+PASS target_stats invalid_roi_border area=0 valid=0
+PASS target_stats invalid_roi_reversed_x area=0 valid=0
+PASS target_stats invalid_roi_reversed_y area=0 valid=0
+PASS target_stats invalid_area_zero area=0 valid=0
+PASS target_stats invalid_area_reversed area=0 valid=0
+PASS target_stats invalid_area_too_large area=0 valid=0
+PASS target_stats latched_configuration area=12 valid=1
+PASS target_stats frame_start_aborts_partial area=1 valid=1
+PASS target_stats frame_after_reset area=1 valid=1
+PASS target_stats new_start_cancels_pending_done area=0 valid=0
+PASS_TARGET_STATS frames=23 ROI polarity/threshold/configuration/area/bbox/latching/abort/reset/done
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\sim\tb_target_stats.sv:194: $finish called at 26650000 (1ps)

@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "mode": 1,
+  "width": 4,
+  "height": 2,
+  "threshold": 180,
+  "frame_id": 7,
+  "payload_length": 8,
+  "bright_count": 2,
+  "sum_x": 7,
+  "sum_y": 5,
+  "pixel_format": "gray8",
+  "centroid_x": 3,
+  "centroid_y": 2,
+  "image_file": "frame_0000000007.pgm"
+}

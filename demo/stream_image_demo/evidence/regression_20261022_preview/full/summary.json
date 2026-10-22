@@ -1,0 +1,76 @@
+{
+  "status": "passed",
+  "output": "D:\\desktop\\coding\\fpga2026 - demo\\demo\\stream_image_demo\\build\\regression\\upload_final_20261022",
+  "python": {
+    "status": "passed"
+  },
+  "rtl": {
+    "status": "passed",
+    "simulator": "iverilog",
+    "tools": {
+      "iverilog": "C:\\Users\\37855\\AppData\\Local\\Temp\\fpga20261020_iverilog_91s5ypxn\\ucrt64\\bin\\iverilog.exe",
+      "vvp": "C:\\Users\\37855\\AppData\\Local\\Temp\\fpga20261020_iverilog_91s5ypxn\\ucrt64\\bin\\vvp.exe"
+    },
+    "tests": [
+      "fifo_capture",
+      "camera_config",
+      "camera_readback",
+      "camera_monitor",
+      "image_core",
+      "target_stats",
+      "transport",
+      "target_transport",
+      "output_transport",
+      "output_budget",
+      "top",
+      "top_target",
+      "top_output",
+      "camera_retry",
+      "top_recovery",
+      "top_preview"
+    ]
+  },
+  "wire": {
+    "status": "passed",
+    "input": "D:\\desktop\\coding\\fpga2026 - demo\\demo\\stream_image_demo\\build\\regression\\upload_final_20261022\\verify_transport\\wire.bin",
+    "required_frames": 2
+  },
+  "feature_wires": [
+    {
+      "status": "passed",
+      "name": "target_transport",
+      "input": "D:\\desktop\\coding\\fpga2026 - demo\\demo\\stream_image_demo\\build\\regression\\upload_final_20261022\\verify_target_transport\\target_wire.bin",
+      "required_frames": 6
+    },
+    {
+      "status": "passed",
+      "name": "output_transport",
+      "input": "D:\\desktop\\coding\\fpga2026 - demo\\demo\\stream_image_demo\\build\\regression\\upload_final_20261022\\verify_output_transport\\output_wire.bin",
+      "required_frames": 6
+    },
+    {
+      "status": "passed",
+      "name": "top_target",
+      "input": "D:\\desktop\\coding\\fpga2026 - demo\\demo\\stream_image_demo\\build\\regression\\upload_final_20261022\\verify_top_target\\top_target_wire.bin",
+      "required_frames": 4
+    },
+    {
+      "status": "passed",
+      "name": "top_output",
+      "input": "D:\\desktop\\coding\\fpga2026 - demo\\demo\\stream_image_demo\\build\\regression\\upload_final_20261022\\verify_top_output\\top_output_wire.bin",
+      "required_frames": 5
+    },
+    {
+      "status": "passed",
+      "name": "top_recovery",
+      "input": "D:\\desktop\\coding\\fpga2026 - demo\\demo\\stream_image_demo\\build\\regression\\upload_final_20261022\\verify_top_recovery\\top_recovery_wire.bin",
+      "required_frames": 3
+    },
+    {
+      "status": "passed",
+      "name": "top_preview",
+      "input": "D:\\desktop\\coding\\fpga2026 - demo\\demo\\stream_image_demo\\build\\regression\\upload_final_20261022\\verify_top_preview\\top_preview_wire.bin",
+      "required_frames": 13
+    }
+  ]
+}

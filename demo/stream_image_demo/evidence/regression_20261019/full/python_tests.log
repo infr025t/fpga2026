@@ -1,0 +1,24 @@
+test_bad_dimensions_statistics_and_threshold_recover (test_receiver.ReceiverTests.test_bad_dimensions_statistics_and_threshold_recover) ... ok
+test_csv_flattens_mixed_versions_and_json_retains_target (test_receiver.ReceiverTests.test_csv_flattens_mixed_versions_and_json_retains_target) ... ok
+test_csv_preserves_old_header_and_uses_versioned_schema (test_receiver.ReceiverTests.test_csv_preserves_old_header_and_uses_versioned_schema) ... ok
+test_display_maps_sensor_coordinates_and_draws_on_a_copy (test_receiver.ReceiverTests.test_display_maps_sensor_coordinates_and_draws_on_a_copy) ... ok
+test_empty_centroid_and_file_outputs (test_receiver.ReceiverTests.test_empty_centroid_and_file_outputs) ... ok
+test_finish_reports_only_unfinished_packets_and_resets (test_receiver.ReceiverTests.test_finish_reports_only_unfinished_packets_and_resets) ... ok
+test_fragmented_payload_magic_and_centroid (test_receiver.ReceiverTests.test_fragmented_payload_magic_and_centroid) ... ok
+test_invalid_baud_fails_before_importing_serial (test_receiver.ReceiverTests.test_invalid_baud_fails_before_importing_serial) ... ok
+test_noise_bad_crc_and_invalid_headers_recover (test_receiver.ReceiverTests.test_noise_bad_crc_and_invalid_headers_recover) ... ok
+test_noise_is_bounded_and_complete_frames_take_precedence (test_receiver.ReceiverTests.test_noise_is_bounded_and_complete_frames_take_precedence) ... ok
+test_qvga_payload_streamed_in_irregular_chunks (test_receiver.ReceiverTests.test_qvga_payload_streamed_in_irregular_chunks) ... ok
+test_recorded_input_reports_truncation_without_losing_valid_frames (test_receiver.ReceiverTests.test_recorded_input_reports_truncation_without_losing_valid_frames) ... ok
+test_saving_preserves_orphaned_images_and_metadata (test_receiver.ReceiverTests.test_saving_preserves_orphaned_images_and_metadata) ... ok
+test_truncated_frame_resync_only_to_verified_packet (test_receiver.ReceiverTests.test_truncated_frame_resync_only_to_verified_packet) ... ok
+test_v2_crc_covers_extension_and_recovers_after_header_or_payload_truncation (test_receiver.ReceiverTests.test_v2_crc_covers_extension_and_recovers_after_header_or_payload_truncation) ... ok
+test_v2_empty_filtered_and_invalid_config_have_no_target_geometry (test_receiver.ReceiverTests.test_v2_empty_filtered_and_invalid_config_have_no_target_geometry) ... ok
+test_v2_fragmentation_preserves_legacy_statistics_and_payload (test_receiver.ReceiverTests.test_v2_fragmentation_preserves_legacy_statistics_and_payload) ... ok
+test_v2_qvga_and_mixed_frames_in_irregular_chunks (test_receiver.ReceiverTests.test_v2_qvga_and_mixed_frames_in_irregular_chunks) ... ok
+test_v2_rejects_inconsistent_flags_configuration_and_statistics (test_receiver.ReceiverTests.test_v2_rejects_inconsistent_flags_configuration_and_statistics) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.420s
+
+OK

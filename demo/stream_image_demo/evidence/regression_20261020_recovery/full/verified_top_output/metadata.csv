@@ -1,0 +1,6 @@
+version,mode,width,height,threshold,frame_id,payload_length,bright_count,sum_x,sum_y,centroid_x,centroid_y,image_file,target_config_valid,target_valid,target_dark,target_threshold,target_roi_x_min,target_roi_y_min,target_roi_x_max,target_roi_y_max,target_area,target_sum_x,target_sum_y,target_min_area,target_max_area,target_bbox_x_min,target_bbox_y_min,target_bbox_x_max,target_bbox_y_max,target_centroid_x,target_centroid_y,pixel_format
+1,0,7,4,160,1,28,6,15,12,2,2,frame_0000000001.pgm,,,,,,,,,,,,,,,,,,,,gray8
+3,1,7,4,160,2,4,22,97,58,4,2,frame_0000000002.pgm,True,True,True,96,1,1,7,4,6,15,12,4,14,2,1,3,3,2,2,mono1
+3,1,7,4,960,3,0,6,15,12,2,2,,True,True,False,96,1,1,7,4,6,15,12,4,14,2,1,3,3,2,2,none
+2,0,7,4,160,4,28,6,15,12,2,2,frame_0000000004.pgm,True,True,False,96,1,1,7,4,6,15,12,4,14,2,1,3,3,2,2,gray8
+2,1,7,4,160,5,28,22,97,58,4,2,frame_0000000005.pgm,True,True,True,96,1,1,7,4,6,15,12,4,14,2,1,3,3,2,2,gray8

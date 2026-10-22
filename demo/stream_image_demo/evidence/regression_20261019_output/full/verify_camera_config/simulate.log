@@ -1,0 +1,3 @@
+PASS camera_config 39 transactions
+PASS camera_config NACK handling
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\sim\tb_camera_config.sv:39: $finish called at 95110000 (1ps)

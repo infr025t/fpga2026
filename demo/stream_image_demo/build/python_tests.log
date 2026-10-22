@@ -1,0 +1,11 @@
+test_bad_dimensions_statistics_and_threshold_recover (test_receiver.ReceiverTests.test_bad_dimensions_statistics_and_threshold_recover) ... ok
+test_empty_centroid_and_file_outputs (test_receiver.ReceiverTests.test_empty_centroid_and_file_outputs) ... ok
+test_fragmented_payload_magic_and_centroid (test_receiver.ReceiverTests.test_fragmented_payload_magic_and_centroid) ... ok
+test_noise_bad_crc_and_invalid_headers_recover (test_receiver.ReceiverTests.test_noise_bad_crc_and_invalid_headers_recover) ... ok
+test_noise_is_bounded_and_complete_frames_take_precedence (test_receiver.ReceiverTests.test_noise_is_bounded_and_complete_frames_take_precedence) ... ok
+test_truncated_frame_resync_only_to_verified_packet (test_receiver.ReceiverTests.test_truncated_frame_resync_only_to_verified_packet) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.006s
+
+OK

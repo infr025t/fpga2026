@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-17",
+  "baseline_date": "2026-10-10",
+  "authority": "docs/迭代记录_2026-10-17.md",
+  "python_tests": {
+    "status": "PASS",
+    "receiver_tests": 11,
+    "runner_tests": 12,
+    "total": 23
+  },
+  "rtl_simulation": {
+    "status": "PASS",
+    "simulator": "Icarus Verilog 13.0",
+    "testbenches": [
+      "fifo_capture",
+      "camera_config",
+      "camera_readback",
+      "camera_monitor",
+      "image_core",
+      "transport",
+      "top"
+    ],
+    "qvga_image_frames": 12,
+    "extra_image_dimensions": [
+      "3x3 (12 frames)",
+      "17x13 (12 frames)"
+    ]
+  },
+  "wire_crosscheck": {
+    "status": "PASS",
+    "frames": 2,
+    "input_origin": "Current tb_transport UART simulation"
+  },
+  "monitor_negative_control": "PASS: new regression fails on original RTL with the expected lost-first-line message",
+  "rtl_implementation": "NOT RERUN: Vivado synthesis, place/route, timing and bitstream generation are still required for current RTL",
+  "hardware": "NOT RERUN: original hardware evidence retained; no programming, live capture, or long-run test this iteration",
+  "prebuilt_bitstream": {
+    "path": "build/vivado/stream_top.bit",
+    "sha256": "6fb95d5008b30584fbb1acb6682eb56fad1c931c1e847ac95f25cdf6fe7ba65f",
+    "unchanged_from_baseline": true,
+    "matches_current_rtl": false,
+    "requires_rebuild_for_new_diagnostic_fix": true
+  },
+  "baseline_records": [
+    "docs/history/SHA256_2026-10-10.json",
+    "docs/history/交付核验_2026-10-10.json"
+  ],
+  "evidence": "evidence/regression_20261017/",
+  "simulator_provenance": "evidence/regression_20261017/iverilog-provenance.json",
+  "zip_layout": "stream_image_demo/",
+  "original_archive_retained": true,
+  "scope": "Current source, documented regression evidence, generated source listing and release hashes; runtime tools and build/regression scratch files are excluded"
+}

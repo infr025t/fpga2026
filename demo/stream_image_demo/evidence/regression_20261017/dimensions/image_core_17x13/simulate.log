@@ -1,0 +1,14 @@
+PASS frame=0 mode=0 threshold=180 pixels=165 bright=0
+PASS frame=1 mode=1 threshold=0 pixels=165 bright=0
+PASS frame=2 mode=0 threshold=180 pixels=165 bright=165
+PASS frame=3 mode=1 threshold=2047 pixels=165 bright=165
+PASS frame=4 mode=0 threshold=180 pixels=165 bright=77
+PASS frame=5 mode=1 threshold=1020 pixels=165 bright=77
+PASS frame=6 mode=0 threshold=180 pixels=165 bright=83
+PASS frame=7 mode=1 threshold=180 pixels=165 bright=83
+PASS frame=8 mode=0 threshold=180 pixels=165 bright=99
+PASS frame=9 mode=1 threshold=180 pixels=165 bright=99
+PASS frame=10 mode=0 threshold=180 pixels=165 bright=82
+PASS frame=11 mode=1 threshold=180 pixels=165 bright=92
+PASS_IMAGE_CORE W=17 H=13 frames=12
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\sim\tb_image_core.sv:72: $finish called at 160360000 (1ps)

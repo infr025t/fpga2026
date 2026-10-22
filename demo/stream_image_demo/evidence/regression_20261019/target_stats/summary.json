@@ -1,0 +1,50 @@
+{
+  "status": "passed",
+  "results": [
+    {
+      "name": "small",
+      "parameters": {},
+      "status": "passed",
+      "compile_command": [
+        "C:\\Users\\37855\\AppData\\Local\\Temp\\fpga20261017_iverilog_mtv_cmpc\\ucrt64\\bin\\iverilog.exe",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_target_stats",
+        "-o",
+        "D:\\desktop\\coding\\fpga2026 - demo\\demo\\stream_image_demo\\build\\regression\\iteration_target_stats_20261019\\small\\test.vvp",
+        "D:\\desktop\\coding\\fpga2026 - demo\\demo\\stream_image_demo\\rtl\\target_stats.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\demo\\stream_image_demo\\sim\\tb_target_stats.sv"
+      ],
+      "compile_exit_code": 0,
+      "simulate_exit_code": 0,
+      "pass_marker": "PASS_TARGET_STATS frames="
+    },
+    {
+      "name": "qvga",
+      "parameters": {
+        "W": 320,
+        "H": 240,
+        "LARGE_ONLY": 1
+      },
+      "status": "passed",
+      "compile_command": [
+        "C:\\Users\\37855\\AppData\\Local\\Temp\\fpga20261017_iverilog_mtv_cmpc\\ucrt64\\bin\\iverilog.exe",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_target_stats",
+        "-Ptb_target_stats.W=320",
+        "-Ptb_target_stats.H=240",
+        "-Ptb_target_stats.LARGE_ONLY=1",
+        "-o",
+        "D:\\desktop\\coding\\fpga2026 - demo\\demo\\stream_image_demo\\build\\regression\\iteration_target_stats_20261019\\qvga\\test.vvp",
+        "D:\\desktop\\coding\\fpga2026 - demo\\demo\\stream_image_demo\\rtl\\target_stats.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\demo\\stream_image_demo\\sim\\tb_target_stats.sv"
+      ],
+      "compile_exit_code": 0,
+      "simulate_exit_code": 0,
+      "pass_marker": "PASS_TARGET_STATS_QVGA"
+    }
+  ]
+}

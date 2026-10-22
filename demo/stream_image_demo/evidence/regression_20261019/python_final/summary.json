@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "output": "D:\\desktop\\coding\\fpga2026 - demo\\demo\\stream_image_demo\\build\\regression\\iteration_python_final_20261019",
+  "python": {
+    "status": "passed"
+  },
+  "rtl": {
+    "status": "skipped",
+    "reason": "--python-only"
+  },
+  "wire": {
+    "status": "passed",
+    "input": "D:\\desktop\\coding\\fpga2026 - demo\\demo\\stream_image_demo\\build\\regression\\iteration_full_20261019\\verify_top_target\\top_target_wire.bin",
+    "required_frames": 4
+  },
+  "feature_wires": []
+}

@@ -1,0 +1,4 @@
+PASS target_stats large_last_roi_pixel area=1 valid=1
+PASS target_stats large_all_roi_above_max area=75684 valid=0
+PASS_TARGET_STATS_QVGA frames=2 W=320 H=240 area=75684 sums=12071598,9044238
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\sim\tb_target_stats.sv:139: $finish called at 1536210000 (1ps)

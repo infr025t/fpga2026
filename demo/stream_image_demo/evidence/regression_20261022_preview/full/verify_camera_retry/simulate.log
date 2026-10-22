@@ -1,0 +1,2 @@
+PASS camera_retry disabled/one-cycle retry, released bus, sticky LEDs and manual reset
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\sim\tb_camera_retry.sv:73: $finish called at 15530000 (1ps)

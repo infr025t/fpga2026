@@ -1,0 +1,2 @@
+PASS fifo_capture two frames, Y-byte alignment and timeout
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\sim\tb_fifo_capture.sv:40: $finish called at 134735000 (1ps)

@@ -1,0 +1,4 @@
+PASS fifo_capture phase 1 timeout, pin release and next-frame recovery
+PASS fifo_capture phase 2 timeout, pin release and next-frame recovery
+FATAL: D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\sim\tb_fifo_capture.sv:70: phase 3 timeout must release capture without output
+       Time: 102740000  Scope: tb_fifo_capture.timeout_in_phase

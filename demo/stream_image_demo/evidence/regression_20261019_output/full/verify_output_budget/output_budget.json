@@ -1,0 +1,6 @@
+{
+  "width": 318, "height": 238, "pixels": 75684, "clks_per_bit": 4,
+  "raw": {"payload_bytes": 75684, "wire_bytes": 75758, "cycles": 3106079},
+  "packed": {"payload_bytes": 9461, "wire_bytes": 9535, "cycles": 390936},
+  "features": {"payload_bytes": 0, "wire_bytes": 74, "cycles": 3035}
+}

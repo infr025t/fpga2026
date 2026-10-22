@@ -1,0 +1,23 @@
+# Local tools, document scratch and historical packages
+/.tools/
+/.doc_work/
+/*.zip
+/*.docx
+# Generated runtime and build scratch
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+**/build/regression/
+**/vivado_project/
+.Xil/
+xsim.dir/
+*.jou
+*.wdb
+*.vcd
+*.dcp
+received_frames/
+frames/
+.env
+.env.*
+!.env.example

@@ -1,0 +1,2 @@
+FATAL: D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\sim\tb_camera_monitor.sv:33: first line lost when WEN and HREF rise together: 0
+       Time: 39860000  Scope: tb_camera_monitor

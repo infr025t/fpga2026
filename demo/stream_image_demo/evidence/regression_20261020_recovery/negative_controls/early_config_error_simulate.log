@@ -1,0 +1,3 @@
+PASS camera_config 39 transactions
+FATAL: D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\sim\tb_camera_config.sv:47: NACK error must be published only after complete STOP and bus release
+       Time: 92616000  Scope: tb_camera_config

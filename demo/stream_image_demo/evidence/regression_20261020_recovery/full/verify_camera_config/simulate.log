@@ -1,0 +1,4 @@
+PASS camera_config 39 transactions
+PASS camera_config NACK completes STOP before error and leaves bus idle
+PASS camera_config reset after NACK restores complete 39-register configuration
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\sim\tb_camera_config.sv:59: $finish called at 188396000 (1ps)

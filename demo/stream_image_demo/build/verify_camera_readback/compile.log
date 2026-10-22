@@ -1,0 +1,16 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/UESTC/FPGA/stream_image_demo/rtl/camera_config.sv" into library work
+INFO: [VRFC 10-311] analyzing module camera_config
+INFO: [VRFC 10-311] analyzing module camera_readback
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/UESTC/FPGA/stream_image_demo/rtl/fifo_capture.sv" into library work
+INFO: [VRFC 10-311] analyzing module fifo_capture
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/UESTC/FPGA/stream_image_demo/rtl/frame_sender.sv" into library work
+INFO: [VRFC 10-311] analyzing module frame_sender
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/UESTC/FPGA/stream_image_demo/rtl/image_core.sv" into library work
+INFO: [VRFC 10-311] analyzing module image_core
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/UESTC/FPGA/stream_image_demo/rtl/stream_top.sv" into library work
+INFO: [VRFC 10-311] analyzing module stream_top
+INFO: [VRFC 10-311] analyzing module camera_monitor
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/UESTC/FPGA/stream_image_demo/rtl/uart_tx.sv" into library work
+INFO: [VRFC 10-311] analyzing module uart_tx
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/UESTC/FPGA/stream_image_demo/sim/tb_camera_readback.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_camera_readback

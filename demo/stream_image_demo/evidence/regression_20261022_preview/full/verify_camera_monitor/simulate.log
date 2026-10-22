@@ -1,0 +1,2 @@
+PASS camera monitor sensor activity, 240-line capture, zero-line capture, coincident first line, VSYNC phase counts and reset
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\sim\tb_camera_monitor.sv:50: $finish called at 117770000 (1ps)

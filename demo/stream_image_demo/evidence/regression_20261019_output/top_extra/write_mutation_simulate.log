@@ -1,0 +1,2 @@
+FATAL: D:/desktop/coding/fpga2026 - demo/demo/stream_image_demo/sim/tb_top_output.sv:164: results-only mode changed framebuffer address 0
+       Time: 187470000  Scope: tb_top_output

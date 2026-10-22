@@ -1,0 +1,2 @@
+PASS SCCB four-register readback, STOP-separated addressing, final NACK and error status
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\sim\tb_camera_readback.sv:49: $finish called at 52240000 (1ps)

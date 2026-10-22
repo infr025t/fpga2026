@@ -1,0 +1,2 @@
+# Preserve exact release bytes so SHA256.json checks survive clone on Windows or Linux.
+* -text

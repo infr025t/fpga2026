@@ -1,0 +1,78 @@
+{
+  "date": "2026-10-19",
+  "baseline_date": "2026-10-17",
+  "authority": "docs/迭代记录_2026-10-19.md",
+  "features": [
+    "Streaming inclusive ROI threshold statistics",
+    "Dark/bright target polarity and area filtering",
+    "Target bounding box and coordinate sums; centroid computed on PC",
+    "FPG1 v1/v2 compatibility, display overlays and flat CSV schema"
+  ],
+  "configuration": {
+    "default_target_enabled": false,
+    "enable": "SW2",
+    "polarity": "SW3 (0 dark, 1 bright)",
+    "threshold": "SW9:8 = 00/01/10/11 -> 96/64/128/160",
+    "roi_and_area": "Top-level parameters; rebuild required"
+  },
+  "python_tests": {
+    "status": "PASS",
+    "receiver_tests": 21,
+    "runner_tests": 12,
+    "total": 33,
+    "evidence": "evidence/regression_20261019/python_final/"
+  },
+  "rtl_simulation": {
+    "status": "PASS",
+    "simulator": "Icarus Verilog 13.0",
+    "testbenches": [
+      "fifo_capture",
+      "camera_config",
+      "camera_readback",
+      "camera_monitor",
+      "image_core",
+      "target_stats",
+      "transport",
+      "target_transport",
+      "top",
+      "top_target"
+    ],
+    "qvga_image_frames": 12,
+    "small_target_frames": 23
+  },
+  "target_stats_qvga": {
+    "status": "PASS",
+    "frames": 2,
+    "full_roi_area": 75684,
+    "full_roi_sum_x": 12071598,
+    "full_roi_sum_y": 9044238
+  },
+  "wire_crosschecks": {
+    "status": "PASS",
+    "legacy_frames": 2,
+    "target_sender_frames": 6,
+    "top_target_frames": 4,
+    "rejected_candidates": 0
+  },
+  "rtl_implementation": "NOT RERUN: Vivado not found; synthesis, place/route, timing and bitstream generation remain required for current RTL",
+  "hardware": "NOT RERUN: original hardware evidence retained; no programming, live ROI accuracy test or long-run test this iteration",
+  "prebuilt_bitstream": {
+    "path": "build/vivado/stream_top.bit",
+    "sha256": "6fb95d5008b30584fbb1acb6682eb56fad1c931c1e847ac95f25cdf6fe7ba65f",
+    "unchanged_from_original_baseline": true,
+    "matches_current_rtl": false,
+    "includes_roi_target_feature": false
+  },
+  "baseline_records": [
+    "docs/history/SHA256_2026-10-10.json",
+    "docs/history/交付核验_2026-10-10.json",
+    "docs/history/SHA256_2026-10-17.json",
+    "docs/history/交付核验_2026-10-17.json"
+  ],
+  "evidence": "evidence/regression_20261019/",
+  "protocol": "docs/定位协议_FPG1v2.md",
+  "simulator_provenance": "evidence/regression_20261019/iverilog-provenance.json",
+  "zip_layout": "stream_image_demo/",
+  "previous_archives_retained": true,
+  "scope": "Current source, documented regression evidence, generated source listing and release hashes. Temporary simulator tools, local replay output and build/regression scratch files are excluded."
+}

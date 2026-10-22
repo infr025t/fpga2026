@@ -1,0 +1,121 @@
+{
+  "date": "2026-10-19",
+  "revision": "output-speedup",
+  "baseline": "2026-10-19 ROI iteration",
+  "authority": "docs/迭代记录_2026-10-19_输出提速.md",
+  "features": [
+    "LSB-first 1-bit Sobel wire format with lossless PC expansion",
+    "74-byte target-only packets, JSON/CSV without PGM",
+    "Runtime output framebuffer read/write gating for target-only mode",
+    "Optional fast interframe delay with startup delay preserved",
+    "FPG1 v1/v2/v3 compatibility"
+  ],
+  "controls": {
+    "normal_page": "SW14=0",
+    "packed_sobel": "SW10=1 and SW1=1",
+    "target_only": "SW11=1 and SW2=1; takes priority",
+    "fast_frames": "SW12=1",
+    "diagnostic_page": "SW14=1 ignores new output/fast requests"
+  },
+  "delay_defaults_cycles": {
+    "startup": 50000000,
+    "normal_frame": 50000000,
+    "fast_frame": 0
+  },
+  "python_tests": {
+    "status": "PASS",
+    "receiver_tests": 34,
+    "runner_tests": 12,
+    "total": 46
+  },
+  "rtl_simulation": {
+    "status": "PASS",
+    "simulator": "Icarus Verilog 13.0",
+    "testbenches": [
+      "fifo_capture",
+      "camera_config",
+      "camera_readback",
+      "camera_monitor",
+      "image_core",
+      "target_stats",
+      "transport",
+      "target_transport",
+      "output_transport",
+      "output_budget",
+      "top",
+      "top_target",
+      "top_output"
+    ],
+    "qvga_image_frames": 12
+  },
+  "wire_crosschecks": {
+    "status": "PASS",
+    "streams": 5,
+    "legacy_frames": 2,
+    "target_sender_frames": 6,
+    "top_target_frames": 4,
+    "output_sender_frames": 6,
+    "top_output_frames": 5,
+    "total_packets": 23,
+    "saved_json": 23,
+    "saved_pgm": 20,
+    "rejected_candidates": 0
+  },
+  "sender_budget": {
+    "width": 318,
+    "height": 238,
+    "pixels": 75684,
+    "clks_per_bit": 4,
+    "raw": {
+      "payload_bytes": 75684,
+      "wire_bytes": 75758,
+      "cycles": 3106079
+    },
+    "packed": {
+      "payload_bytes": 9461,
+      "wire_bytes": 9535,
+      "cycles": 390936
+    },
+    "features": {
+      "payload_bytes": 0,
+      "wire_bytes": 74,
+      "cycles": 3035
+    }
+  },
+  "budget_scope": "start-to-done RTL sender cycles at CLKS_PER_BIT=4; byte counts independent of baud; not a measured hardware fps",
+  "top_extra_checks": {
+    "startup_normal_fast_delays_cycles": [
+      17,
+      29,
+      3,
+      0
+    ],
+    "target_only_cache_contents_and_read_data_unchanged": true,
+    "return_to_images_fully_rewrites_buffer": true,
+    "ungated_read_and_write_negative_controls": "Both expected failures observed"
+  },
+  "rtl_implementation": "NOT RERUN: synthesis, place/route, timing and bitstream generation remain required for current RTL",
+  "hardware": "NOT RERUN: no programming, live throughput, ROI accuracy or long-run stability test this iteration",
+  "prebuilt_bitstream": {
+    "path": "build/vivado/stream_top.bit",
+    "sha256": "6fb95d5008b30584fbb1acb6682eb56fad1c931c1e847ac95f25cdf6fe7ba65f",
+    "unchanged_from_original_baseline": true,
+    "matches_current_rtl": false,
+    "includes_new_output_modes": false
+  },
+  "baseline_records": [
+    "docs/history/SHA256_2026-10-10.json",
+    "docs/history/交付核验_2026-10-10.json",
+    "docs/history/SHA256_2026-10-17.json",
+    "docs/history/交付核验_2026-10-17.json",
+    "docs/history/SHA256_2026-10-19_ROI.json",
+    "docs/history/交付核验_2026-10-19_ROI.json"
+  ],
+  "evidence": "evidence/regression_20261019_output/",
+  "protocol": "docs/输出协议_FPG1v3.md",
+  "simulator_provenance": "evidence/regression_20261019_output/iverilog-provenance.json",
+  "zip_layout": "stream_image_demo/",
+  "archive": "demo_iterated_2026-10-19_output.zip",
+  "previous_archives_retained": true,
+  "scope": "Current source, documented regression evidence, generated source listing and release hashes; local tools and build/regression scratch files excluded"
+}

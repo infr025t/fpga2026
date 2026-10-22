@@ -1,0 +1,2 @@
+PASS top preview intervals 0/1/3, cadence, pause, re-entry, diagnostics, mode/threshold/polarity changes, pixels, target statistics, RAM gating and UART CRC
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\sim\tb_top_preview.sv:11: $finish called at 1190680000 (1ps)

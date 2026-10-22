@@ -1,0 +1,5 @@
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\build\regression\iteration_full_recovery_20261020_final\verified_top_target\frame_0000000001.pgm: mode=0 pixel_format=gray8 bright_centroid=(5, 5)
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\build\regression\iteration_full_recovery_20261020_final\verified_top_target\frame_0000000002.pgm: mode=0 pixel_format=gray8 bright_centroid=(7, 5) target_valid=True area=24 target_centroid=(5, 5)
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\build\regression\iteration_full_recovery_20261020_final\verified_top_target\frame_0000000003.pgm: mode=1 pixel_format=gray8 bright_centroid=(5, 5) target_valid=True area=24 target_centroid=(5, 5)
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\build\regression\iteration_full_recovery_20261020_final\verified_top_target\frame_0000000004.pgm: mode=0 pixel_format=gray8 bright_centroid=(5, 5)
+Received 4 valid frames; rejected/resynchronized 0 candidates.

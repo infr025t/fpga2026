@@ -1,0 +1,2 @@
+PASS top target four UART frames: legacy, dark, bright/Sobel, legacy; switch latching and pixels
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\sim\tb_top_target.sv:101: $finish called at 1087700000 (1ps)

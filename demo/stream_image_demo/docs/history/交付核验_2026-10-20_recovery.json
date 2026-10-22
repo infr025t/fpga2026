@@ -1,0 +1,209 @@
+{
+  "date": "2026-10-20",
+  "revision": "recovery",
+  "baseline": "2026-10-19 output-speedup iteration",
+  "authority": "docs/迭代记录_2026-10-20_异常恢复.md",
+  "features": [
+    "Camera configuration failure published after clean SCCB STOP",
+    "Timed physical camera reset and reconfiguration after NACK; 0 disables retries",
+    "Sticky initialization fault LEDs visible before first successful camera frame",
+    "Capture timeout, mid-read reset, fresh-frame recovery and pause/resume regressions",
+    "Fragmentation-invariant parsing of valid outer packets with embedded valid packets",
+    "Explicit EOF and configurable continuous-idle recovery of truncated transfers",
+    "Foreign CSV encodings preserved; alternate metadata file selected",
+    "Preview quit handling during serial silence",
+    "Unicode tool failures retain UTF-8 logs and failed regression summaries"
+  ],
+  "recovery_defaults": {
+    "cam_retry_cycles": 100000000,
+    "capture_timeout_cycles": 100000000,
+    "clock_hz": 100000000,
+    "serial_idle_resync_seconds": 1.0,
+    "cam_retry_zero": "disable automatic initialization retry",
+    "capture_timeout_requirement": "at least 1 cycle",
+    "idle_resync_zero": "disable idle recovery; length/CRC or EOF still apply"
+  },
+  "python_tests": {
+    "status": "PASS",
+    "receiver_tests": 43,
+    "runner_tests": 13,
+    "total": 56
+  },
+  "rtl_simulation": {
+    "status": "PASS",
+    "simulator": "Icarus Verilog 13.0",
+    "testbenches": [
+      "fifo_capture",
+      "camera_config",
+      "camera_readback",
+      "camera_monitor",
+      "image_core",
+      "target_stats",
+      "transport",
+      "target_transport",
+      "output_transport",
+      "output_budget",
+      "top",
+      "top_target",
+      "top_output",
+      "camera_retry",
+      "top_recovery"
+    ],
+    "qvga_image_frames": 12
+  },
+  "wire_crosschecks": {
+    "status": "PASS",
+    "streams": 6,
+    "total_packets": 26,
+    "saved_json": 26,
+    "saved_pgm": 23,
+    "rejected_candidates": 0,
+    "artifact_counts": {
+      "verified_frames": {
+        "json": 2,
+        "pgm": 2,
+        "ids": [
+          7,
+          8
+        ]
+      },
+      "verified_output_transport": {
+        "json": 6,
+        "pgm": 4,
+        "ids": [
+          100,
+          101,
+          102,
+          103,
+          104,
+          105
+        ]
+      },
+      "verified_target_transport": {
+        "json": 6,
+        "pgm": 6,
+        "ids": [
+          270544960,
+          270544961,
+          270544962,
+          270544963,
+          270544964,
+          270544965
+        ]
+      },
+      "verified_top_output": {
+        "json": 5,
+        "pgm": 4,
+        "ids": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "verified_top_recovery": {
+        "json": 3,
+        "pgm": 3,
+        "ids": [
+          1,
+          4,
+          5
+        ]
+      },
+      "verified_top_target": {
+        "json": 4,
+        "pgm": 4,
+        "ids": [
+          1,
+          2,
+          3,
+          4
+        ]
+      }
+    }
+  },
+  "recovery_checks": {
+    "camera_retry_cycles_tested": [
+      0,
+      1,
+      31
+    ],
+    "top_nack_physical_retries": 27,
+    "ack_configuration_transactions": 39,
+    "fifo_timeout_stages": [
+      "WAIT_BLANK",
+      "WAIT_FRAME",
+      "CAPTURE"
+    ],
+    "fifo_completed_frames": 6,
+    "fifo_reset_discarded_partial_frames": 1,
+    "top_packets": [
+      1,
+      4,
+      5
+    ],
+    "top_discarded_timeout_attempts": [
+      2,
+      3
+    ],
+    "fresh_pixels_statistics_crc": "PASS",
+    "pause_resume": "PASS",
+    "synthetic_during_camera_retry": "PASS",
+    "negative_controls": [
+      "early ACK error before STOP rejected",
+      "WEN left active on timeout rejected",
+      "old receiver splits outer frame 21 into embedded 22; new parser preserves 21"
+    ]
+  },
+  "protocols": [
+    "FPG1 v1",
+    "FPG1 v2",
+    "FPG1 v3"
+  ],
+  "retained_sender_budget": {
+    "width": 318,
+    "height": 238,
+    "pixels": 75684,
+    "clks_per_bit": 4,
+    "raw": {
+      "payload_bytes": 75684,
+      "wire_bytes": 75758,
+      "cycles": 3106079
+    },
+    "packed": {
+      "payload_bytes": 9461,
+      "wire_bytes": 9535,
+      "cycles": 390936
+    },
+    "features": {
+      "payload_bytes": 0,
+      "wire_bytes": 74,
+      "cycles": 3035
+    }
+  },
+  "rtl_implementation": "NOT RERUN: synthesis, place/route, timing and new bitstream still required",
+  "hardware": "NOT RERUN: no board programming, live serial, GUI window or long-run hardware validation",
+  "prebuilt_bitstream": {
+    "path": "build/vivado/stream_top.bit",
+    "sha256": "6fb95d5008b30584fbb1acb6682eb56fad1c931c1e847ac95f25cdf6fe7ba65f",
+    "unchanged_from_original_baseline": true,
+    "matches_current_rtl": false
+  },
+  "baseline_records": [
+    "docs/history/SHA256_2026-10-10.json",
+    "docs/history/交付核验_2026-10-10.json",
+    "docs/history/SHA256_2026-10-17.json",
+    "docs/history/交付核验_2026-10-17.json",
+    "docs/history/SHA256_2026-10-19_ROI.json",
+    "docs/history/交付核验_2026-10-19_ROI.json",
+    "docs/history/SHA256_2026-10-19_output.json",
+    "docs/history/交付核验_2026-10-19_output.json"
+  ],
+  "evidence": "evidence/regression_20261020_recovery/",
+  "simulator_provenance": "evidence/regression_20261020_recovery/iverilog-provenance.json",
+  "zip_layout": "stream_image_demo/",
+  "archive": "demo_iterated_2026-10-20_recovery.zip",
+  "previous_archives_retained": true,
+  "scope": "Current sources, selected regression evidence, source listing and release hashes; local tools and scratch excluded"
+}

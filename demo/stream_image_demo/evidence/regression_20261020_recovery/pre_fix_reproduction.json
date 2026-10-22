@@ -1,0 +1,36 @@
+{
+  "baseline_archive": "demo_iterated_2026-10-19_output.zip",
+  "baseline_archive_sha256": "bde238ba3c01968db3493a06dc76855a214c96fa3befeee630e937de677728f7",
+  "baseline_entry": "stream_image_demo/pc/receiver.py",
+  "baseline_receiver_sha256": "520ad3969583f8191ca00549719d2626815a400a79d87b3f4d4bf316ac6bb2f2",
+  "outer_id": 21,
+  "inner_id": 22,
+  "total_bytes": 134,
+  "split_offset": 74,
+  "before_whole": {
+    "frame_ids": [
+      21
+    ],
+    "rejected": 0
+  },
+  "before_split": {
+    "frame_ids": [
+      22
+    ],
+    "rejected": 1
+  },
+  "after_whole": {
+    "frame_ids": [
+      21
+    ],
+    "rejected": 0
+  },
+  "after_split": {
+    "frame_ids": [
+      21
+    ],
+    "rejected": 0
+  },
+  "after_all_two_chunk_splits": 133,
+  "after_byte_by_byte": "passed"
+}

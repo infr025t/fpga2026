@@ -1,0 +1,6 @@
+{
+  "status": "passed",
+  "purpose": "New regression must fail against baseline RTL",
+  "baseline_simulator_exit": 1,
+  "failure_observed": "first line lost when WEN and HREF rise together: 0"
+}

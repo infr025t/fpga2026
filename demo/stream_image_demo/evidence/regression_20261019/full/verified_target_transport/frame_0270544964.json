@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "mode": 0,
+  "width": 4,
+  "height": 2,
+  "threshold": 1455,
+  "frame_id": 270544964,
+  "payload_length": 8,
+  "bright_count": 4,
+  "sum_x": 10,
+  "sum_y": 8,
+  "centroid_x": 2,
+  "centroid_y": 2,
+  "image_file": "frame_0270544964.pgm"
+}

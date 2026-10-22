@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "output": "D:\\desktop\\coding\\fpga2026 - demo\\demo\\stream_image_demo\\build\\regression\\iteration_python_20261017",
+  "python": {
+    "status": "passed"
+  },
+  "rtl": {
+    "status": "skipped",
+    "reason": "--python-only"
+  },
+  "wire": {
+    "status": "skipped",
+    "reason": "No recorded wire.bin is available"
+  }
+}

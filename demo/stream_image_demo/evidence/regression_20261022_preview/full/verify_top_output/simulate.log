@@ -1,0 +1,2 @@
+PASS top output five UART frames: legacy, packed, results, v2 raw, diagnostic; latching, delays, framebuffer gating and rewrite
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\sim\tb_top_output.sv:240: $finish called at 442800000 (1ps)

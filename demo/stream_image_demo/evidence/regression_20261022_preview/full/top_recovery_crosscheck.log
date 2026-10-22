@@ -1,0 +1,4 @@
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\build\regression\upload_final_20261022\verified_top_recovery\frame_0000000001.pgm: mode=0 pixel_format=gray8 bright_centroid=(2, 2)
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\build\regression\upload_final_20261022\verified_top_recovery\frame_0000000004.pgm: mode=0 pixel_format=gray8 bright_centroid=(3, 2)
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\build\regression\upload_final_20261022\verified_top_recovery\frame_0000000005.pgm: mode=0 pixel_format=gray8 bright_centroid=(3, 3)
+Received 3 valid frames; rejected/resynchronized 0 candidates.

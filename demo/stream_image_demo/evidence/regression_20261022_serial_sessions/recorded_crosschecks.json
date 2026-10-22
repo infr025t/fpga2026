@@ -1,0 +1,45 @@
+[
+  {
+    "name": "transport",
+    "frames": 2,
+    "status": "passed",
+    "input": "evidence\\regression_20261022_preview\\full\\verify_transport\\wire.bin"
+  },
+  {
+    "name": "target_transport",
+    "frames": 6,
+    "status": "passed",
+    "input": "evidence\\regression_20261022_preview\\full\\verify_target_transport\\target_wire.bin"
+  },
+  {
+    "name": "output_transport",
+    "frames": 6,
+    "status": "passed",
+    "input": "evidence\\regression_20261022_preview\\full\\verify_output_transport\\output_wire.bin"
+  },
+  {
+    "name": "top_target",
+    "frames": 4,
+    "status": "passed",
+    "input": "evidence\\regression_20261022_preview\\full\\verify_top_target\\top_target_wire.bin"
+  },
+  {
+    "name": "top_output",
+    "frames": 5,
+    "status": "passed",
+    "input": "evidence\\regression_20261022_preview\\full\\verify_top_output\\top_output_wire.bin"
+  },
+  {
+    "name": "top_recovery",
+    "frames": 3,
+    "status": "passed",
+    "input": "evidence\\regression_20261022_preview\\full\\verify_top_recovery\\top_recovery_wire.bin"
+  },
+  {
+    "name": "top_preview",
+    "frames": 13,
+    "status": "passed",
+    "input": "evidence/regression_20261022_preview/full/verify_top_preview/top_preview_wire.bin",
+    "log": "wire_crosscheck.log"
+  }
+]

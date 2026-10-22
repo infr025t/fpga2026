@@ -16,8 +16,10 @@ xsim.dir/
 *.wdb
 *.vcd
 *.dcp
-received_frames/
-frames/
+/demo/stream_image_demo/received_frames/
+/demo/stream_image_demo/frames/
+/demo/stream_image_demo/recordings/
+/demo/stream_image_demo/replay_session*/
 .env
 .env.*
 !.env.example

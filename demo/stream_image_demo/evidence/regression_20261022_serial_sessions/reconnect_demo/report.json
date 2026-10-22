@@ -1,0 +1,25 @@
+{
+  "mode": "simulated serial connection removal using actual RTL UART recording",
+  "source": "evidence/regression_20261022_preview/full/verify_top_preview/top_preview_wire.bin",
+  "connections": 2,
+  "discarded_partial_frame": 4,
+  "received_frames": [
+    1,
+    2,
+    3,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+  ],
+  "saved_json": 12,
+  "saved_pgm": 7,
+  "ports_closed": true,
+  "recordings_preserve_exact_input": true,
+  "hardware_tested": false
+}

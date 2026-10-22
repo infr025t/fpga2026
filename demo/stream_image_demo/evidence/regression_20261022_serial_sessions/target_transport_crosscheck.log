@@ -1,0 +1,7 @@
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\build\regression\serial_sessions_20261022\replayed_target_transport\frame_0270544960.pgm: mode=0 pixel_format=gray8 bright_centroid=(2, 2) target_valid=True area=2 target_centroid=(1, 1)
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\build\regression\serial_sessions_20261022\replayed_target_transport\frame_0270544961.pgm: mode=1 pixel_format=gray8 bright_centroid=(2, 2) target_valid=False area=0 target_centroid=(None, None)
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\build\regression\serial_sessions_20261022\replayed_target_transport\frame_0270544962.pgm: mode=0 pixel_format=gray8 bright_centroid=(2, 2) target_valid=False area=0 target_centroid=(None, None)
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\build\regression\serial_sessions_20261022\replayed_target_transport\frame_0270544963.pgm: mode=1 pixel_format=gray8 bright_centroid=(2, 2) target_valid=False area=1 target_centroid=(None, None)
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\build\regression\serial_sessions_20261022\replayed_target_transport\frame_0270544964.pgm: mode=0 pixel_format=gray8 bright_centroid=(2, 2)
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\build\regression\serial_sessions_20261022\replayed_target_transport\frame_0270544965.pgm: mode=1 pixel_format=gray8 bright_centroid=(2, 2) target_valid=False area=8 target_centroid=(None, None)
+Received 6 valid frames; rejected/resynchronized 0 candidates.

@@ -10,10 +10,12 @@ bright-pixel centroid remains separate from the version 2 target centroid.
 import argparse
 import binascii
 import csv
+from contextlib import ExitStack, suppress
 import json
 import math
 from pathlib import Path
 import struct
+import sys
 import time
 
 MAGIC = b'FPG1'
@@ -297,7 +299,7 @@ class PreviewCache:
         return display
 
 
-def read_serial_chunk(stream):
+def read_serial_chunk(stream, on_bytes=None):
     """Wait for one byte, then drain only bytes already available (at most 4096).
 
     Reading 4096 directly with a timeout batches short features-only packets
@@ -306,8 +308,112 @@ def read_serial_chunk(stream):
     first = stream.read(1)
     if not first:
         return first
+    if on_bytes is not None:
+        on_bytes(first)
     available = min(stream.in_waiting, 4095)
-    return first + stream.read(available) if available else first
+    rest = stream.read(available) if available else b''
+    if rest and on_bytes is not None:
+        on_bytes(rest)
+    return first + rest
+
+
+class RecordingError(RuntimeError):
+    """A recording failure must stop capture, not trigger serial reconnection."""
+
+
+class WireRecorder:
+    """Exclusive raw files, one per connection, preserving stream boundaries."""
+    def __init__(self, path):
+        self.path = Path(path)
+        self.handle = None
+        self.segment = 0
+
+    def __enter__(self):
+        self.path.parent.mkdir(parents=True, exist_ok=True)
+        self.handle = self.path.open('xb')
+        return self
+
+    def __exit__(self, *args):
+        if self.handle is not None:
+            self.handle.close()
+
+    def rotate(self):
+        self.handle.close()
+        while True:
+            self.segment += 1
+            path = self.path.with_name(
+                f'{self.path.stem}_{self.segment:03d}{self.path.suffix}')
+            try:
+                self.handle = path.open('xb')
+                break
+            except FileExistsError:
+                continue
+        print(f'Recording new connection: {path}', file=sys.stderr)
+
+    def write(self, chunk):
+        try:
+            self.handle.write(chunk)
+            self.handle.flush()
+        except OSError as exc:
+            raise RecordingError(f'Could not record serial bytes: {exc}') from exc
+
+
+class SerialInput:
+    """Read live bytes; None marks a disconnected stream, b'' an idle poll.
+
+    Retry waits are split into short polls so the preview can still handle q.
+    Only port operations are retried; recording and frame-save errors escape.
+    """
+    def __init__(self, serial_module, port, baud, retry_seconds=0, recorder=None):
+        self.serial = serial_module
+        self.port = port
+        self.baud = baud
+        self.retry_seconds = retry_seconds
+        self.recorder = recorder
+        self.connection = ExitStack()
+        self.stream = None
+        self.connection_id = 0
+        self.retry_at = 0.0
+        self.errors = (getattr(serial_module, 'SerialException', OSError), OSError)
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *args):
+        self.connection.close()
+
+    def _failed(self, exc):
+        with suppress(*self.errors):
+            self.connection.close()
+        self.stream = None
+        if not self.retry_seconds:
+            raise OSError(f'Serial connection failed ({self.port}): {exc}') from exc
+        self.retry_at = time.monotonic() + self.retry_seconds
+        print(f'Serial connection lost/unavailable ({self.port}): {exc}; '
+              f'retrying in {self.retry_seconds:g}s', file=sys.stderr)
+        return None
+
+    def read(self):
+        if self.stream is None:
+            remaining = self.retry_at - time.monotonic()
+            if remaining > 0:
+                time.sleep(min(0.25, remaining))
+                return b''
+            try:
+                self.stream = self.connection.enter_context(
+                    self.serial.Serial(self.port, self.baud, timeout=0.25))
+            except self.errors as exc:
+                return self._failed(exc)
+            self.connection_id += 1
+            if self.recorder is not None and self.connection_id > 1:
+                self.recorder.rotate()
+            if self.connection_id > 1:
+                print(f'Serial reconnected ({self.port})', file=sys.stderr)
+        try:
+            return read_serial_chunk(
+                self.stream, self.recorder.write if self.recorder is not None else None)
+        except self.errors as exc:
+            return self._failed(exc)
 
 
 def _csv_path(out):
@@ -405,6 +511,12 @@ def main():
     parser.add_argument('--idle-resync', type=float, default=1.0, metavar='SECONDS',
                         help='recover truncated serial frames after this long without bytes '
                              '(default: 1; 0 disables); later old bytes are discarded')
+    parser.add_argument('--reconnect', type=float, default=0.0, metavar='SECONDS',
+                        help='retry unavailable/disconnected serial port after this interval; '
+                             '0 disables (default); only with --port')
+    parser.add_argument('--record-wire', type=Path, metavar='PATH',
+                        help='record raw serial bytes without overwriting files; reconnects '
+                             'start numbered files; only with --port')
     args = parser.parse_args()
     if args.count is not None and args.count < 1:
         parser.error('--count must be positive')
@@ -414,25 +526,42 @@ def main():
         parser.error('--idle-resync must be a finite nonnegative number')
     if args.hold_preview and not args.display:
         parser.error('--hold-preview requires --display')
+    if not math.isfinite(args.reconnect) or args.reconnect < 0:
+        parser.error('--reconnect must be a finite nonnegative number')
+    if args.input and (args.reconnect or args.record_wire is not None):
+        parser.error('--reconnect and --record-wire require --port')
+    if args.record_wire is not None and args.record_wire.exists():
+        parser.error('recording file already exists; choose a new --record-wire path')
     if args.display:
         import cv2
         import numpy as np
-    if args.input:
-        stream = args.input.open('rb')
-    else:
+    if not args.input:
         import serial
-        stream = serial.Serial(args.port, args.baud, timeout=0.25)
     decoder = FrameParser()
     preview = PreviewCache() if args.hold_preview else None
     count = 0
     incomplete_input = False
+    failure = None
+    display_shape = (238, 318)
     try:
-        with stream:
+        with ExitStack() as resources:
+            recorder = (resources.enter_context(WireRecorder(args.record_wire))
+                        if args.record_wire is not None else None)
+            stream = resources.enter_context(
+                args.input.open('rb') if args.input else
+                SerialInput(serial, args.port, args.baud, args.reconnect, recorder))
             last_data_at = None
             while args.count is None or count < args.count:
-                chunk = stream.read(4096) if args.input else read_serial_chunk(stream)
+                chunk = stream.read(4096) if args.input else stream.read()
                 end_of_input = not chunk and args.input is not None
-                if chunk:
+                disconnected = chunk is None
+                if disconnected:
+                    # A dead connection is an explicit boundary. Recover any
+                    # complete buffered packets, then discard its partial tail.
+                    frames = decoder.feed(b'', boundary=True)
+                    decoder.finish()
+                    last_data_at = None
+                elif chunk:
                     last_data_at = time.monotonic()
                     frames = decoder.feed(chunk)
                 elif end_of_input:
@@ -455,6 +584,7 @@ def main():
                                     f"target_centroid=({target['centroid_x']}, {target['centroid_y']})")
                     print(message)
                     if args.display:
+                        display_shape = (frame['height'], frame['width'])
                         picture = (preview.render(frame, cv2, np) if preview is not None
                                    else display_frame(frame, cv2, np))
                         cv2.imshow('FPGA camera', picture)
@@ -462,6 +592,15 @@ def main():
                             return
                     if args.count is not None and count >= args.count:
                         break
+                if disconnected:
+                    if preview is not None:
+                        preview = PreviewCache()
+                    if args.display:
+                        picture = cv2.cvtColor(np.zeros(display_shape, dtype=np.uint8),
+                                               cv2.COLOR_GRAY2BGR)
+                        cv2.putText(picture, 'Disconnected - retrying', (4, 16),
+                                    cv2.FONT_HERSHEY_SIMPLEX, 0.4, (0, 0, 255), 1)
+                        cv2.imshow('FPGA camera', picture)
                 if args.display and not frames:
                     if cv2.waitKey(1) & 0xff == ord('q'):
                         return
@@ -471,10 +610,14 @@ def main():
                     break
     except KeyboardInterrupt:
         pass
+    except (OSError, RecordingError) as exc:
+        failure = str(exc)
     finally:
         if args.display:
             cv2.destroyAllWindows()
     print(f"Received {count} valid frames; rejected/resynchronized {decoder.rejected} candidates.")
+    if failure:
+        parser.exit(1, f'Receiver I/O error: {failure}\n')
     if args.input and args.count is not None and count < args.count:
         parser.exit(1, 'Input ended before requested frame count.\n')
     if incomplete_input:

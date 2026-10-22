@@ -2,7 +2,7 @@
 
 基于 **Basys 3（XC7A35T）+ GYF-198 OV7670_FIFO（AL422B）**：采集320×240图像，输出318×238灰度图或Sobel边缘图，通过1 Mbps UART传到PC；支持ROI阈值定位、1 bit边缘图和仅定位结果输出。
 
-**使用当前功能前，需从当前RTL重新生成bit。** 随项目提供的 `build/vivado/stream_top.bit` 是历史Demo，不包含后续诊断、ROI定位、提速、异常恢复与周期预览改动。历史实板已跑通基础图像链路；当前源码截至2026-10-22通过63项Python测试、16组RTL仿真和7组协议交叉校验，尚未重新综合实现或上板。验证范围见 [交付核验](交付核验.json)。
+**使用当前功能前，需从当前RTL重新生成bit。** 随项目提供的 `build/vivado/stream_top.bit` 是历史Demo，不包含后续诊断、ROI定位、提速、异常恢复与周期预览改动。历史实板已跑通基础图像链路；截至2026-10-22，PC端通过77项Python测试和7组录制流交叉校验；RTL沿用上一版通过16组仿真的逻辑，尚未重新综合实现或上板。验证范围见 [交付核验](交付核验.json)。
 
 [快速开始](#快速开始) · [下一步](#下一步) · [文件与文档索引](#文件与文档索引)
 
@@ -50,6 +50,7 @@ python pc/receiver.py --input evidence/regression_20261020_recovery/full/verify_
 |---|---|
 | 切换灰度、边缘图或定位输出 | [常用开关组合](docs/使用手册.md#常用组合) |
 | 高速定位时定期确认画面 | [周期预览](docs/使用手册.md#高速定位与周期预览)，配合`--display --hold-preview` |
+| 长时间接收、断线重连或保留原始字节 | [持续接收](docs/使用手册.md#持续接收断线重连与原始录制) |
 | 实时显示或读取定位结果 | [PC输出](docs/使用手册.md#pc输出) |
 | 调整阈值、ROI或帧间等待 | [开关与模式](docs/使用手册.md#开关与模式) · [ROI与运行参数](docs/使用手册.md#roi与运行参数) |
 | 接线、调焦或排查接收问题 | [接线与成像](docs/使用手册.md#接线与成像) · [诊断与异常恢复](docs/使用手册.md#诊断与异常恢复) |
@@ -65,12 +66,13 @@ python pc/receiver.py --input evidence/regression_20261020_recovery/full/verify_
 | [sim/](sim/) · [scripts/](scripts/) | RTL测试、构建、回归与交付校验脚本 |
 | [完整代码.md](完整代码.md) | 自动生成的当前源码汇总 |
 | [交付核验.json](交付核验.json) · [SHA256.json](SHA256.json) | 验证范围与当前文件哈希 |
-| [最新回归证据](evidence/regression_20261022_preview/) | 周期预览回归日志、UART流和解码结果 |
+| [最新回归证据](evidence/regression_20261022_serial_sessions/) | 持续接收测试、UART回放和模拟重连结果 |
 | [docs/history/](docs/history/) | 旧核验清单和历史诊断记录 |
 
 协议与迭代记录：
 
 - [ROI定位协议FPG1 v2](docs/定位协议_FPG1v2.md) · [输出协议FPG1 v3](docs/输出协议_FPG1v3.md)
+- [2026-10-22持续接收](docs/迭代记录_2026-10-22_持续接收.md)
 - [2026-10-22周期预览](docs/迭代记录_2026-10-22_周期预览.md)
 - [2026-10-20异常恢复](docs/迭代记录_2026-10-20_异常恢复.md)
 - [2026-10-19输出提速](docs/迭代记录_2026-10-19_输出提速.md) · [2026-10-19 ROI定位](docs/迭代记录_2026-10-19.md)

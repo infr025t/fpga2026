@@ -1,0 +1,17 @@
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\build\regression\serial_sessions_20261022\reconnect_demo\frames\frame_0000000001.pgm: mode=0 pixel_format=gray8 bright_centroid=(4, 2) target_valid=True area=6 target_centroid=(2, 2)
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\build\regression\serial_sessions_20261022\reconnect_demo\frames\frame_0000000002.json: mode=0 pixel_format=none bright_centroid=(4, 2) target_valid=True area=6 target_centroid=(2, 2)
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\build\regression\serial_sessions_20261022\reconnect_demo\frames\frame_0000000003.json: mode=0 pixel_format=none bright_centroid=(4, 2) target_valid=True area=6 target_centroid=(2, 2)
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\build\regression\serial_sessions_20261022\reconnect_demo\frames\frame_0000000005.json: mode=0 pixel_format=none bright_centroid=(4, 2) target_valid=True area=6 target_centroid=(2, 2)
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\build\regression\serial_sessions_20261022\reconnect_demo\frames\frame_0000000006.pgm: mode=0 pixel_format=gray8 bright_centroid=(4, 2) target_valid=True area=6 target_centroid=(2, 2)
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\build\regression\serial_sessions_20261022\reconnect_demo\frames\frame_0000000007.pgm: mode=0 pixel_format=gray8 bright_centroid=(4, 2) target_valid=True area=6 target_centroid=(2, 2)
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\build\regression\serial_sessions_20261022\reconnect_demo\frames\frame_0000000008.pgm: mode=0 pixel_format=gray8 bright_centroid=(4, 2) target_valid=True area=6 target_centroid=(2, 2)
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\build\regression\serial_sessions_20261022\reconnect_demo\frames\frame_0000000009.pgm: mode=1 pixel_format=mono1 bright_centroid=(4, 2) target_valid=True area=6 target_centroid=(2, 2)
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\build\regression\serial_sessions_20261022\reconnect_demo\frames\frame_0000000010.json: mode=1 pixel_format=none bright_centroid=(4, 2) target_valid=True area=6 target_centroid=(2, 2)
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\build\regression\serial_sessions_20261022\reconnect_demo\frames\frame_0000000011.pgm: mode=1 pixel_format=mono1 bright_centroid=(4, 2) target_valid=True area=6 target_centroid=(2, 2)
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\build\regression\serial_sessions_20261022\reconnect_demo\frames\frame_0000000012.json: mode=1 pixel_format=none bright_centroid=(4, 2) target_valid=True area=6 target_centroid=(2, 2)
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\build\regression\serial_sessions_20261022\reconnect_demo\frames\frame_0000000013.pgm: mode=1 pixel_format=mono1 bright_centroid=(2, 2) target_valid=True area=6 target_centroid=(2, 2)
+Received 12 valid frames; rejected/resynchronized 1 candidates.
+
+Serial connection lost/unavailable (mock): simulated USB removal; retrying in 0.1s
+Recording new connection: D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\build\regression\serial_sessions_20261022\reconnect_demo\wire_001.bin
+Serial reconnected (mock)

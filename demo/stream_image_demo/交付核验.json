@@ -1,23 +1,27 @@
 {
   "date": "2026-10-22",
-  "revision": "periodic-preview",
-  "baseline": "2026-10-20 recovery plus 2026-10-21 documentation restructuring",
-  "authority": "docs/迭代记录_2026-10-22_周期预览.md",
+  "revision": "serial-sessions",
+  "baseline_commit": "b262f8d730a1e9e831d2ba23c67438d6c960a931",
+  "authority": "docs/迭代记录_2026-10-22_持续接收.md",
   "features": [
-    "SW13 periodic previews during features-only target output",
-    "Successful-send cadence; preview restart on source/mode/Sobel threshold/synthetic polarity changes",
-    "Optional display-only preview cache with explicit old-image and current-target frame labels",
-    "Serial first-byte plus available-data reads avoid waiting to fill 4096 bytes"
+    "Optional serial reconnection with bounded GUI-friendly retry polling",
+    "Explicit disconnected-stream boundary; incomplete parser state and preview cache cleared before next connection",
+    "Exclusive raw serial recording, rotated to separate numbered files per connection",
+    "Raw first byte recorded even if a subsequent availability query fails",
+    "Serial, recording and frame-save failures distinguished; disk errors do not cause reconnect loops",
+    "Actionable nonzero I/O failure exits preserve already saved frames"
   ],
   "python_tests": {
     "status": "PASS",
-    "receiver_tests": 50,
+    "receiver_tests": 64,
     "runner_tests": 13,
-    "total": 63
+    "total": 77,
+    "serial_session_tests": 14
   },
   "rtl_simulation": {
-    "status": "PASS",
-    "simulator": "Icarus Verilog 13.0",
+    "status": "NOT RERUN: PC-only changes",
+    "baseline_status": "PASS",
+    "same_rtl_as_commit": "b262f8d730a1e9e831d2ba23c67438d6c960a931",
     "testbenches": [
       "fifo_capture",
       "camera_config",
@@ -36,121 +40,106 @@
       "top_recovery",
       "top_preview"
     ],
-    "preview_intervals_tested": [
-      0,
-      1,
-      3
-    ]
+    "baseline_record": "docs/history/交付核验_2026-10-22_preview.json"
   },
   "wire_crosschecks": {
     "status": "PASS",
     "streams": 7,
     "total_packets": 39,
     "saved_pgm": 31,
-    "artifact_counts": {
-      "verified_frames": {
-        "json": 2,
-        "pgm": 2,
-        "ids": [
-          7,
-          8
-        ]
+    "checks": [
+      {
+        "name": "transport",
+        "frames": 2,
+        "status": "passed",
+        "input": "evidence\\regression_20261022_preview\\full\\verify_transport\\wire.bin"
       },
-      "verified_output_transport": {
-        "json": 6,
-        "pgm": 4,
-        "ids": [
-          100,
-          101,
-          102,
-          103,
-          104,
-          105
-        ]
+      {
+        "name": "target_transport",
+        "frames": 6,
+        "status": "passed",
+        "input": "evidence\\regression_20261022_preview\\full\\verify_target_transport\\target_wire.bin"
       },
-      "verified_target_transport": {
-        "json": 6,
-        "pgm": 6,
-        "ids": [
-          270544960,
-          270544961,
-          270544962,
-          270544963,
-          270544964,
-          270544965
-        ]
+      {
+        "name": "output_transport",
+        "frames": 6,
+        "status": "passed",
+        "input": "evidence\\regression_20261022_preview\\full\\verify_output_transport\\output_wire.bin"
       },
-      "verified_top_output": {
-        "json": 5,
-        "pgm": 4,
-        "ids": [
-          1,
-          2,
-          3,
-          4,
-          5
-        ]
+      {
+        "name": "top_target",
+        "frames": 4,
+        "status": "passed",
+        "input": "evidence\\regression_20261022_preview\\full\\verify_top_target\\top_target_wire.bin"
       },
-      "verified_top_preview": {
-        "json": 13,
-        "pgm": 8,
-        "ids": [
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9,
-          10,
-          11,
-          12,
-          13
-        ]
+      {
+        "name": "top_output",
+        "frames": 5,
+        "status": "passed",
+        "input": "evidence\\regression_20261022_preview\\full\\verify_top_output\\top_output_wire.bin"
       },
-      "verified_top_recovery": {
-        "json": 3,
-        "pgm": 3,
-        "ids": [
-          1,
-          4,
-          5
-        ]
+      {
+        "name": "top_recovery",
+        "frames": 3,
+        "status": "passed",
+        "input": "evidence\\regression_20261022_preview\\full\\verify_top_recovery\\top_recovery_wire.bin"
       },
-      "verified_top_target": {
-        "json": 4,
-        "pgm": 4,
-        "ids": [
-          1,
-          2,
-          3,
-          4
-        ]
+      {
+        "name": "top_preview",
+        "frames": 13,
+        "status": "passed",
+        "input": "evidence/regression_20261022_preview/full/verify_top_preview/top_preview_wire.bin",
+        "log": "wire_crosscheck.log"
       }
-    }
-  },
-  "preview_defaults": {
-    "preview_interval": 16,
-    "enable_switches": [
-      "SW2",
-      "SW11",
-      "SW13"
     ],
-    "zero": "disable periodic previews",
-    "one": "image on every successful output",
-    "normal_page_only": true
+    "source": "evidence/regression_20261022_preview/full/"
   },
-  "preview_validation_scope": "Real UART bytes, independent synthetic pixels and target statistics, CRC, intervals 0/1/3, pause/re-entry/diagnostics/mode/threshold/polarity and RAM gating. Existing top_recovery separately covers external FIFO and capture timeouts. No combined periodic-preview camera-disconnect hardware test.",
+  "serial_session_demo": {
+    "mode": "simulated serial connection removal using actual RTL UART recording",
+    "source": "evidence/regression_20261022_preview/full/verify_top_preview/top_preview_wire.bin",
+    "connections": 2,
+    "discarded_partial_frame": 4,
+    "received_frames": [
+      1,
+      2,
+      3,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "saved_json": 12,
+    "saved_pgm": 7,
+    "ports_closed": true,
+    "recordings_preserve_exact_input": true,
+    "hardware_tested": false
+  },
+  "reconnect_defaults": {
+    "seconds": 0,
+    "zero": "disable automatic reconnection",
+    "retry_poll_max_seconds": 0.25,
+    "port": "retry the same --port name; no automatic port scanning",
+    "disconnect": "confirmed serial I/O failure, separate from idle-resync"
+  },
+  "recording_defaults": {
+    "enabled": false,
+    "existing_base_file": "rejected, never overwritten",
+    "new_connection": "new numbered segment; existing numbered files skipped",
+    "bytes": "all successful read results, including noise and partial packets"
+  },
   "rtl_implementation": "NOT RERUN: synthesis, place/route, timing and new bitstream required",
-  "hardware": "NOT RERUN: no physical board, real serial timing or GUI window validation; display tests use mocks",
+  "hardware": "NOT RUN: serial disconnect/reconnect and GUI are simulated; no physical USB removal or driver timing validation",
   "prebuilt_bitstream": {
     "path": "build/vivado/stream_top.bit",
     "sha256": "6fb95d5008b30584fbb1acb6682eb56fad1c931c1e847ac95f25cdf6fe7ba65f",
     "matches_current_rtl": false
   },
-  "evidence": "evidence/regression_20261022_preview/",
-  "previous_release": "docs/history/交付核验_2026-10-20_recovery.json",
-  "distribution": "Current source tree for GitHub; existing ZIP archives remain historical snapshots"
+  "evidence": "evidence/regression_20261022_serial_sessions/",
+  "previous_release": "docs/history/交付核验_2026-10-22_preview.json",
+  "distribution": "GitHub source tree; historical ZIP snapshots remain unchanged"
 }

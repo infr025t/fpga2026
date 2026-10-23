@@ -196,16 +196,19 @@ def _visuals(report_dir, reg, arrays, result):
     for direction in ('vertical','horizontal','diagonal'):
         key = 'holdout_step_'+direction+'_clean'
         outputs = _outputs(arrays[key], config)
-        # Middle horizontal slice. Diagonal graph axis is horizontal pixels,
-        # not perpendicular distance (halo numeric metric states that separately).
-        profiles[direction] = {m:o[o.shape[0]//2].tolist() for m,o in outputs.items()}
+        # A horizontal edge varies with y: cross it along the middle column.
+        # Vertical and diagonal edges use the middle row; the diagonal plot's
+        # axis is x pixels, not perpendicular distance (halo metric is separate).
+        profiles[direction] = {m:(o[:, o.shape[1]//2] if direction == 'horizontal'
+                                  else o[o.shape[0]//2]).tolist() for m,o in outputs.items()}
         chart = Image.new('RGB', (800,360), 'white'); draw = ImageDraw.Draw(chart)
         colors = dict(RAW='black',BASE='blue',DENOISE='green',ENHANCE='red')
         for j,(mode,values) in enumerate(profiles[direction].items()):
             points = [(40+i*720/(len(values)-1),320-v) for i,v in enumerate(values)]
             draw.line(points, fill=colors[mode], width=2)
             draw.text((40+j*160,10), mode, fill=colors[mode])
-        draw.text((40,335), direction+' middle-row slice, gray 0..255; x=output pixel', fill='black')
+        sampling = 'middle-column slice, axis=output y' if direction == 'horizontal' else 'middle-row slice, axis=output x'
+        draw.text((40,335), direction+' '+sampling+'; gray 0..255', fill='black')
         chart.save(report_dir/('edge_profile_'+direction+'.png'))
     (report_dir/'edge_profiles.json').write_text(json.dumps(profiles,indent=2)+'\n', encoding='utf-8', newline='\n')
 
@@ -300,6 +303,7 @@ def run(report_dir=ds.DEFAULT_REPORT):
               '主纹理残差在选定ε下接近死区；单独提高增益不能保证恢复被软阈值消去的细节。具体是否调整参数范围或算法，仍须用户决定。']
     lines += ['', '## 四模式与代价', '', '每个输入RAW/BASE/DENOISE/ENHANCE的对比度、相对RAW比例、空间噪声、均值、PSNR（仅合成干净参考）、均值偏移和新增截断见metrics.json的holdout.cases。',
               '零MSE的PSNR用null和psnr_infinite=true表示。全部σ16和5种子均保留。阶跃包含越界幅值、受影响像素数和宽度；edge_profiles.json/PNG保存三个方向剖面。',
+              '剖面采样轴：水平边取输出图像中间列，沿y跨过边缘；垂直边与斜边取中间行，沿x跨过边缘。斜边剖面横轴并非垂直距离。',
               '序列先按固定像素跨64帧取总体标准差，再对固定平坦掩膜取均值；移动与模拟曝光变化另外报告帧差和移动阶跃光晕。它们不冒称真实曝光采集。', '',
               '## 真实证据边界', '',
               'focus_latest第一RAW面板有仓库日志支持：真实OV7670石墨十字。frame545为MODE1 Sobel，phase_contact含帧时序故障，回归合成帧均未冒充真实RAW。',

@@ -1,6 +1,7 @@
 """Independent, literal fixtures for model-gate metrics and publication rules."""
 import tempfile
 import unittest
+import json
 from pathlib import Path
 import numpy as np
 try:
@@ -50,6 +51,29 @@ class EvaluationTests(unittest.TestCase):
         self.assertEqual(ev.aggregate_status({'a': {'status': 'DEFERRED'}}), 'MISSING')
         self.assertEqual(ev.aggregate_status({'a': {'status': 'PASS'},
                                             'rtl': {'status': 'DEFERRED', 'required': False}}), 'PASS')
+
+    def test_saved_step_profiles_cross_each_edge_in_all_four_modes(self):
+        # Independent literal plateaus: horizontal image intensity changes only
+        # between rows. A middle-row trace cannot contain both endpoints.
+        vertical = np.array([[32]*16 + [224]*16]*24, dtype=np.uint8)
+        horizontal = np.array([[32]*32]*12 + [[224]*32]*12, dtype=np.uint8)
+        diagonal = np.array([[32 if x < y+4 else 224 for x in range(32)]
+                             for y in range(24)], dtype=np.uint8)
+        arrays = {'holdout_step_'+direction+'_clean': image for direction, image in
+                  [('vertical', vertical), ('horizontal', horizontal), ('diagonal', diagonal)]}
+        registration = {'primary_enhancement': {'holdout': []}, 'cases': []}
+        result = {'selected_candidate': {'config': {'epsilon': 64, 'T_D': 2, 'T_E': 2, 'G_E': 384}},
+                  'holdout': {'cases': [dict(id='absent', category=category,
+                                            modes={'ENHANCE': {'contrast_vs_raw': 1}})
+                                        for category in ('line', 'text', 'texture')]}}
+        with tempfile.TemporaryDirectory() as folder:
+            ev._visuals(Path(folder), registration, arrays, result)
+            profiles = json.loads((Path(folder)/'edge_profiles.json').read_text())
+            for direction in ('vertical', 'horizontal', 'diagonal'):
+                for mode in ('RAW', 'BASE', 'DENOISE', 'ENHANCE'):
+                    with self.subTest(direction=direction, mode=mode):
+                        self.assertEqual(profiles[direction][mode][0], 32)
+                        self.assertEqual(profiles[direction][mode][-1], 224)
 
     def test_registration_required_and_tampered_archive_rejected(self):
         with tempfile.TemporaryDirectory() as p:

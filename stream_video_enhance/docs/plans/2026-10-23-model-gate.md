@@ -14,6 +14,7 @@
 
 - Work in `E:/Vivado_FPGA_Programs/fpga2026`, branch `feat/stream-video-v0`, as explicitly requested by the user. Existing clean cloned checkout and a feature branch provide the requested working location; do not create a different checkout.
 - User authorized latest design and implementation on 2026-10-23: “确认最新设计，开始实现”. This supersedes the stale waiting-for-authorization text in the design documents.
+- User subsequently requested VGA-only delivery: no QVGA build/output is required. Formal input is 640x480, valid output 632x472. Small images remain numerical/simulation tests; other image sizes are useful evidence, not a QVGA hardware product.
 - Do not modify `demo/` or `docs/reference/`; do not push or access hardware.
 - Single-scale self guided filter r=2, two 5x5 valid windows; input U8; final crop 4 on each side; W/H from 16 through 640/480.
 - Float model follows section 4.1; fixed model follows all rounding steps in section 5.1, with integer intermediates and range assertions. No hidden clipping of arithmetic defects.
@@ -34,7 +35,7 @@
 - [ ] Write focused failing unittest cases catching wrong crop, coefficient centering, ties, signed rounding, gain signedness, constant behavior, illegal input/config, div25 correction and pattern frame wrap. Use lazy imports if needed so missing behavior is an assertion failure, not discovery crash.
 - [ ] Run `python -m unittest discover -s stream_video_enhance/tests -p test_reference.py -v`; record expected RED.
 - [ ] Implement independent float/integer paths, inclusive range guards, 5x5 sums using int64/float64 integral sums. Do not introduce a streaming cycle model at this step.
-- [ ] Test small 16x16/17x19 arbitrary images against independent brute-force 25-point loops at selected locations; test all 256 constants at each epsilon/mode and gain/threshold extrema; structured/random QVGA and VGA final max error <=1; compare 96x96 local raw run central 88x88 against full-image result.
+- [ ] Test small 16x16/17x19 arbitrary images against independent brute-force 25-point loops at selected locations; test all 256 constants at each epsilon/mode and gain/threshold extrema; structured/random VGA final max error <=1; compare 96x96 local raw run central 88x88 against full-image result.
 - [ ] Exhaust n=0..1,632,012 comparing div25_exact to floor(n/25); its public contract is unrounded division (callers add 12); ratio checks compare to exact RN(4096V,V+625epsilon) at bounds and randomized valid windows. Check intermediate maxima.
 - [ ] Run the full new test suite once, report exact command/output and time; commit scoped Task 1 files only. Return status and report with any mathematical mismatch rather than changing spec.
 
@@ -63,4 +64,4 @@
 
 ## After the model gate
 
-On PASS, create and execute the RTL implementation plan for the section16 modules, key-module simulation/local synthesis and L_CORE freeze, QVGA/VGA full regressions, protocol integration and route. On FAIL/MISSING, preserve executable evidence and ask the user about the specific required adjustment under spec section17; continue independent verification without writing algorithm RTL.
+On PASS, create and execute the RTL implementation plan for the section16 modules, key-module simulation/local synthesis and L_CORE freeze, VGA full regressions, protocol integration and route. On FAIL/MISSING, preserve executable evidence and ask the user about the specific required adjustment under spec section17; continue independent verification without writing algorithm RTL.

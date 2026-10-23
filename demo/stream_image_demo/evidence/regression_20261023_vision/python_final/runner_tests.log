@@ -1,0 +1,21 @@
+test_default_output_goes_under_regression_without_touching_old_logs (test_run_tests.RunnerTests.test_default_output_goes_under_regression_without_touching_old_logs) ... ok
+test_error_handling_pass_text_is_not_a_failure (test_run_tests.RunnerTests.test_error_handling_pass_text_is_not_a_failure) ... ok
+test_explicit_install_root_and_environment_discovery (test_run_tests.RunnerTests.test_explicit_install_root_and_environment_discovery) ... ok
+test_explicit_missing_wire_fails_before_running_tests (test_run_tests.RunnerTests.test_explicit_missing_wire_fails_before_running_tests) ... ok
+test_explicit_wire_is_really_decoded (test_run_tests.RunnerTests.test_explicit_wire_is_really_decoded) ... ok
+test_icarus_path_discovery_requires_both_tools (test_run_tests.RunnerTests.test_icarus_path_discovery_requires_both_tools) ... ok
+test_incomplete_explicit_install_fails_without_fallback (test_run_tests.RunnerTests.test_incomplete_explicit_install_fails_without_fallback) ... ok
+test_output_must_be_new_to_preserve_existing_evidence (test_run_tests.RunnerTests.test_output_must_be_new_to_preserve_existing_evidence) ... ok
+test_python_only_without_wire_passes_and_reports_skips (test_run_tests.RunnerTests.test_python_only_without_wire_passes_and_reports_skips) ... ok
+test_timeout_retains_partial_output (test_run_tests.RunnerTests.test_timeout_retains_partial_output) ... ok
+test_unicode_tool_failure_keeps_log_and_failed_summary_on_legacy_console (test_run_tests.RunnerTests.test_unicode_tool_failure_keeps_log_and_failed_summary_on_legacy_console) ... ok
+test_valid_explicit_wire_writes_two_decoded_frames (test_run_tests.RunnerTests.test_valid_explicit_wire_writes_two_decoded_frames) ... ok
+test_zero_exit_fatal_and_error_are_failures (test_run_tests.RunnerTests.test_zero_exit_fatal_and_error_are_failures) ... ok
+test_budget_cannot_exceed_board_capacity (test_vision_build.VisionBuildTests.test_budget_cannot_exceed_board_capacity) ... ok
+test_half_block_resource_overflow_stops_before_checkpoint (test_vision_build.VisionBuildTests.test_half_block_resource_overflow_stops_before_checkpoint) ... ok
+test_ooc_synthesis_and_clock_constraints_pass_under_budget (test_vision_build.VisionBuildTests.test_ooc_synthesis_and_clock_constraints_pass_under_budget) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.275s
+
+OK

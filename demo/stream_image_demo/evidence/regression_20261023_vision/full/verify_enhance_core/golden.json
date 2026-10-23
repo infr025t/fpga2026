@@ -1,0 +1,24 @@
+[
+  {
+    "input": "enhance_small.txt",
+    "width": 9,
+    "height": 8,
+    "frames": 5,
+    "checked_pixels": 100,
+    "minimum": 0,
+    "maximum": 255,
+    "sha256": "657cacff3cae0cd793d46bf495ee2e21b20e3b341cc185915d7f9c7138fb340c",
+    "status": "passed"
+  },
+  {
+    "input": "enhance_qvga.txt",
+    "width": 320,
+    "height": 240,
+    "frames": 3,
+    "checked_pixels": 223728,
+    "minimum": 0,
+    "maximum": 255,
+    "sha256": "d02ab6168511264f6a5c28eec1bfff596e087ff440e2822865b2d2713a4b1417",
+    "status": "passed"
+  }
+]

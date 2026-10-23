@@ -1,0 +1,2 @@
+PASS VST1 two status snapshots, UART, CRC and input latching
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\sim\tb_vision_status.sv:42: $finish called at 47655000 (1ps)

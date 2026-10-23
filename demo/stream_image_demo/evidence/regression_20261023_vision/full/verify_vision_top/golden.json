@@ -1,0 +1,42 @@
+[
+  {
+    "input": "vision_camera.txt",
+    "width": 8,
+    "height": 8,
+    "scale": 2,
+    "frames": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "checked_pixels": 16,
+    "status": "passed"
+  },
+  {
+    "input": "vision_scale1.txt",
+    "width": 8,
+    "height": 8,
+    "scale": 1,
+    "frames": [
+      1,
+      2,
+      3
+    ],
+    "checked_pixels": 48,
+    "status": "passed"
+  },
+  {
+    "input": "vision_scale4.txt",
+    "width": 8,
+    "height": 8,
+    "scale": 4,
+    "frames": [
+      1,
+      2,
+      3
+    ],
+    "checked_pixels": 3,
+    "status": "passed"
+  }
+]

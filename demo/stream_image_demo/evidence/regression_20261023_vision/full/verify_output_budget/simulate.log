@@ -1,0 +1,2 @@
+PASS output budget QVGA N=75684: raw 75758 bytes/3106079 cycles, packed 9535 bytes/390936 cycles, features 74 bytes/3035 cycles; N=1/N=8 payload, padding, CRC and no-RAM checks
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\sim\tb_output_budget.sv:133: $finish called at 35000610000 (1ps)

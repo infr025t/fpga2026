@@ -1,0 +1,41 @@
+{
+  "version": 2,
+  "mode": 0,
+  "width": 7,
+  "height": 4,
+  "threshold": 160,
+  "frame_id": 4,
+  "payload_length": 28,
+  "bright_count": 22,
+  "sum_x": 97,
+  "sum_y": 58,
+  "target": {
+    "config_valid": true,
+    "valid": true,
+    "dark": true,
+    "threshold": 96,
+    "roi": {
+      "x_min": 1,
+      "y_min": 1,
+      "x_max": 7,
+      "y_max": 4
+    },
+    "area": 6,
+    "sum_x": 15,
+    "sum_y": 12,
+    "min_area": 2,
+    "max_area": 14,
+    "bbox": {
+      "x_min": 2,
+      "y_min": 1,
+      "x_max": 3,
+      "y_max": 3
+    },
+    "centroid_x": 2,
+    "centroid_y": 2
+  },
+  "pixel_format": "gray8",
+  "centroid_x": 4,
+  "centroid_y": 2,
+  "image_file": "frame_0000000004.pgm"
+}

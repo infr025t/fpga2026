@@ -17,7 +17,8 @@ ROOT = Path(__file__).resolve().parents[1]
 RTL_TESTS = ('fifo_capture', 'camera_config', 'camera_readback', 'camera_monitor',
              'image_core', 'target_stats', 'transport', 'target_transport',
              'output_transport', 'output_budget', 'top', 'top_target', 'top_output',
-             'camera_retry', 'top_recovery', 'top_preview')
+             'camera_retry', 'top_recovery', 'top_preview', 'enhance_core',
+             'stream_buffers', 'vision_status', 'vision_top')
 WIRE_STREAMS = {
     'target_transport': ('target_wire.bin', 6),
     'top_target': ('top_target_wire.bin', 4),
@@ -25,6 +26,7 @@ WIRE_STREAMS = {
     'top_output': ('top_output_wire.bin', 5),
     'top_recovery': ('top_recovery_wire.bin', 3),
     'top_preview': ('top_preview_wire.bin', 13),
+    'vision_status': ('vision_status_wire.bin', 2),
 }
 ERROR_LINE = re.compile(r'^\s*(?:fatal|error)\s*(?::|\[)', re.I | re.M)
 PASS_LINE = re.compile(r'^PASS(?:\b|_)', re.M)
@@ -259,6 +261,14 @@ def main(argv=None):
             for name in dict.fromkeys(args.tests):
                 dest = run_rtl(name, simulator, tools, output, args.timeout)
                 summary['rtl']['tests'].append(name)
+                if name in ('enhance_core', 'vision_top'):
+                    script = 'verify_enhance.py' if name == 'enhance_core' else 'verify_vision_display.py'
+                    inputs = (('enhance_small.txt', 'enhance_qvga.txt') if name == 'enhance_core'
+                              else ('vision_camera.txt', 'vision_scale1.txt', 'vision_scale4.txt'))
+                    run([sys.executable, '-B', ROOT / 'scripts' / script, '--input',
+                         *(dest / filename for filename in inputs),
+                         '--out', dest / 'golden.json'], ROOT, dest / 'golden.log', args.timeout)
+                    print((dest / 'golden.log').read_text(encoding='utf-8').strip(), flush=True)
                 if name == 'transport' and wire is None:
                     wire = dest / 'wire.bin'
                     if not wire.is_file():
@@ -270,7 +280,8 @@ def main(argv=None):
                         raise RegressionError(f'tb_{name} did not create {feature_wire}')
                     summary['feature_wires'].append({
                         'status': 'pending', 'name': name, 'input': str(feature_wire),
-                        'required_frames': count})
+                        'required_frames': count,
+                        'decoder': 'vision_status.py' if name == 'vision_status' else 'receiver.py'})
             summary['rtl']['status'] = 'passed'
         wire = wire or existing_wire()
         if wire is None:
@@ -288,7 +299,7 @@ def main(argv=None):
                   flush=True)
         for feature in summary['feature_wires']:
             feature['status'] = 'running'
-            run([sys.executable, '-B', ROOT / 'pc' / 'receiver.py', '--input', feature['input'],
+            run([sys.executable, '-B', ROOT / 'pc' / feature['decoder'], '--input', feature['input'],
                  '--out', output / ('verified_' + feature['name']),
                  '--count', feature['required_frames']],
                 ROOT, output / (feature['name'] + '_crosscheck.log'), args.timeout)

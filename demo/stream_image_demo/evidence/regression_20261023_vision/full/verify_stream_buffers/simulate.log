@@ -1,0 +1,2 @@
+PASS bounded FIFO depth 1/3; full replacement/overflow; display whole-frame drop, stalls, abort, malformed frame, reset and order
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\sim\tb_stream_buffers.sv:8: $finish called at 1250000 (1ps)

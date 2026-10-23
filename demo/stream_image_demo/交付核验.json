@@ -1,27 +1,38 @@
 {
-  "date": "2026-10-22",
-  "revision": "serial-sessions",
-  "baseline_commit": "b262f8d730a1e9e831d2ba23c67438d6c960a931",
-  "authority": "docs/迭代记录_2026-10-22_持续接收.md",
+  "date": "2026-10-23",
+  "revision": "standalone-vision-core",
+  "baseline_commit": "fbe63e730805980389d39102b9e7d6253258d922",
+  "authority": "docs/独立视觉架构.md",
+  "hardware_choices": {
+    "board": "Basys 3 XC7A35T",
+    "camera": "existing OV7670/AL422B",
+    "display": "undecided; generic synchronous stream only"
+  },
   "features": [
-    "Optional serial reconnection with bounded GUI-friendly retry polling",
-    "Explicit disconnected-stream boundary; incomplete parser state and preview cache cleared before next connection",
-    "Exclusive raw serial recording, rotated to separate numbered files per connection",
-    "Raw first byte recorded even if a subsequent availability query fails",
-    "Serial, recording and frame-save failures distinguished; disk errors do not cause reconnect loops",
-    "Actionable nonzero I/O failure exits preserve already saved frames"
+    "Local frame scheduling and latched switch controls without PC dependency",
+    "External AL422 camera clock crossing, HREF row validation and bounded ingress FIFO",
+    "Two-scale variance-adaptive edge-preserving smoothing and Q4 detail enhancement",
+    "Aligned raw bypass, display frame decimation and spatial point sampling",
+    "Two-slot committed-frame display queue; drop new frames under display backpressure",
+    "Separate processing/display/error counters, processing FPS, latency and watchdog",
+    "Optional VST1 CRC-protected UART diagnostics and independent PC parser",
+    "OOC synthesis script with explicit BRAM/DSP/LUT budget guards"
   ],
   "python_tests": {
     "status": "PASS",
-    "receiver_tests": 64,
-    "runner_tests": 13,
-    "total": 77,
-    "serial_session_tests": 14
+    "pc_tests": 70,
+    "script_tests": 16,
+    "total": 86,
+    "evidence": "evidence/regression_20261023_vision/python_final/",
+    "tcl_guard_tests": {
+      "count": 3,
+      "status": "PASS",
+      "method": "Tcl interpreter with mocked Vivado commands; NOT synthesis"
+    }
   },
   "rtl_simulation": {
-    "status": "NOT RERUN: PC-only changes",
-    "baseline_status": "PASS",
-    "same_rtl_as_commit": "b262f8d730a1e9e831d2ba23c67438d6c960a931",
+    "status": "PASS",
+    "simulator": "Icarus Verilog 13.0",
     "testbenches": [
       "fifo_capture",
       "camera_config",
@@ -38,108 +49,178 @@
       "top_output",
       "camera_retry",
       "top_recovery",
-      "top_preview"
+      "top_preview",
+      "enhance_core",
+      "stream_buffers",
+      "vision_status",
+      "vision_top"
     ],
-    "baseline_record": "docs/history/交付核验_2026-10-22_preview.json"
+    "evidence": "evidence/regression_20261023_vision/full/",
+    "python_at_full_run": 83,
+    "note": "After the full RTL run, only synthesis-script/XDC guard tests and documentation were added. Final Python rerun totals 86; runtime RTL unchanged."
+  },
+  "independent_pixel_oracles": {
+    "status": "PASS",
+    "enhancement_pixels": 223828,
+    "top_display_pixels": 67,
+    "enhancement_reports": [
+      {
+        "input": "enhance_small.txt",
+        "width": 9,
+        "height": 8,
+        "frames": 5,
+        "checked_pixels": 100,
+        "minimum": 0,
+        "maximum": 255,
+        "sha256": "657cacff3cae0cd793d46bf495ee2e21b20e3b341cc185915d7f9c7138fb340c",
+        "status": "passed"
+      },
+      {
+        "input": "enhance_qvga.txt",
+        "width": 320,
+        "height": 240,
+        "frames": 3,
+        "checked_pixels": 223728,
+        "minimum": 0,
+        "maximum": 255,
+        "sha256": "d02ab6168511264f6a5c28eec1bfff596e087ff440e2822865b2d2713a4b1417",
+        "status": "passed"
+      }
+    ],
+    "top_display_reports": [
+      {
+        "input": "vision_camera.txt",
+        "width": 8,
+        "height": 8,
+        "scale": 2,
+        "frames": [
+          1,
+          2,
+          4,
+          6
+        ],
+        "checked_pixels": 16,
+        "status": "passed"
+      },
+      {
+        "input": "vision_scale1.txt",
+        "width": 8,
+        "height": 8,
+        "scale": 1,
+        "frames": [
+          1,
+          2,
+          3
+        ],
+        "checked_pixels": 48,
+        "status": "passed"
+      },
+      {
+        "input": "vision_scale4.txt",
+        "width": 8,
+        "height": 8,
+        "scale": 4,
+        "frames": [
+          1,
+          2,
+          3
+        ],
+        "checked_pixels": 3,
+        "status": "passed"
+      }
+    ]
   },
   "wire_crosschecks": {
     "status": "PASS",
-    "streams": 7,
-    "total_packets": 39,
+    "streams": 8,
+    "total_packets": 41,
     "saved_pgm": 31,
+    "fpg1_packets": 39,
+    "vst1_packets": 2,
     "checks": [
       {
         "name": "transport",
-        "frames": 2,
+        "packets": 2,
+        "protocol": "FPG1",
         "status": "passed",
-        "input": "evidence\\regression_20261022_preview\\full\\verify_transport\\wire.bin"
+        "input": "full/verify_transport/wire.bin"
       },
       {
         "name": "target_transport",
-        "frames": 6,
+        "packets": 6,
+        "protocol": "FPG1",
         "status": "passed",
-        "input": "evidence\\regression_20261022_preview\\full\\verify_target_transport\\target_wire.bin"
+        "input": "full/verify_target_transport/target_wire.bin"
       },
       {
         "name": "output_transport",
-        "frames": 6,
+        "packets": 6,
+        "protocol": "FPG1",
         "status": "passed",
-        "input": "evidence\\regression_20261022_preview\\full\\verify_output_transport\\output_wire.bin"
+        "input": "full/verify_output_transport/output_wire.bin"
       },
       {
         "name": "top_target",
-        "frames": 4,
+        "packets": 4,
+        "protocol": "FPG1",
         "status": "passed",
-        "input": "evidence\\regression_20261022_preview\\full\\verify_top_target\\top_target_wire.bin"
+        "input": "full/verify_top_target/top_target_wire.bin"
       },
       {
         "name": "top_output",
-        "frames": 5,
+        "packets": 5,
+        "protocol": "FPG1",
         "status": "passed",
-        "input": "evidence\\regression_20261022_preview\\full\\verify_top_output\\top_output_wire.bin"
+        "input": "full/verify_top_output/top_output_wire.bin"
       },
       {
         "name": "top_recovery",
-        "frames": 3,
+        "packets": 3,
+        "protocol": "FPG1",
         "status": "passed",
-        "input": "evidence\\regression_20261022_preview\\full\\verify_top_recovery\\top_recovery_wire.bin"
+        "input": "full/verify_top_recovery/top_recovery_wire.bin"
       },
       {
         "name": "top_preview",
-        "frames": 13,
+        "packets": 13,
+        "protocol": "FPG1",
         "status": "passed",
-        "input": "evidence/regression_20261022_preview/full/verify_top_preview/top_preview_wire.bin",
-        "log": "wire_crosscheck.log"
+        "input": "full/verify_top_preview/top_preview_wire.bin"
+      },
+      {
+        "name": "vision_status",
+        "packets": 2,
+        "protocol": "VST1",
+        "status": "passed",
+        "input": "full/verify_vision_status/vision_status_wire.bin"
       }
     ],
-    "source": "evidence/regression_20261022_preview/full/"
+    "path_base": "evidence/regression_20261023_vision/"
   },
-  "serial_session_demo": {
-    "mode": "simulated serial connection removal using actual RTL UART recording",
-    "source": "evidence/regression_20261022_preview/full/verify_top_preview/top_preview_wire.bin",
-    "connections": 2,
-    "discarded_partial_frame": 4,
-    "received_frames": [
-      1,
-      2,
-      3,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13
-    ],
-    "saved_json": 12,
-    "saved_pgm": 7,
-    "ports_closed": true,
-    "recordings_preserve_exact_input": true,
-    "hardware_tested": false
+  "resource_budget": {
+    "bram36_equivalent": 45,
+    "dsp": 72,
+    "lut": 18000,
+    "logical_frame_and_window_ram_bytes": 152020,
+    "actual_utilization": "NOT MEASURED; synthesis required"
   },
-  "reconnect_defaults": {
-    "seconds": 0,
-    "zero": "disable automatic reconnection",
-    "retry_poll_max_seconds": 0.25,
-    "port": "retry the same --port name; no automatic port scanning",
-    "disconnect": "confirmed serial I/O failure, separate from idle-resync"
+  "rtl_implementation": "NOT RUN: Vivado unavailable; no new synthesis, place/route, timing or bitstream",
+  "hardware": "NOT RUN: physical camera/display, power distribution and Flash cold boot remain unvalidated",
+  "display_interface": {
+    "clock_hz": 100000000,
+    "format": "ready/valid, 8-bit grayscale with SOF/EOL/EOF and frame metadata",
+    "default_width": 316,
+    "default_height": 236,
+    "clock_crossing": "must be supplied by future physical display adapter"
   },
-  "recording_defaults": {
-    "enabled": false,
-    "existing_base_file": "rejected, never overwritten",
-    "new_connection": "new numbered segment; existing numbered files skipped",
-    "bytes": "all successful read results, including noise and partial packets"
-  },
-  "rtl_implementation": "NOT RERUN: synthesis, place/route, timing and new bitstream required",
-  "hardware": "NOT RUN: serial disconnect/reconnect and GUI are simulated; no physical USB removal or driver timing validation",
   "prebuilt_bitstream": {
     "path": "build/vivado/stream_top.bit",
     "sha256": "6fb95d5008b30584fbb1acb6682eb56fad1c931c1e847ac95f25cdf6fe7ba65f",
-    "matches_current_rtl": false
+    "matches_current_rtl": false,
+    "top": "historical stream_top; not vision_top"
   },
-  "evidence": "evidence/regression_20261022_serial_sessions/",
-  "previous_release": "docs/history/交付核验_2026-10-22_preview.json",
+  "source_snapshot": "evidence/regression_20261023_vision/source_sha256.json",
+  "evidence": "evidence/regression_20261023_vision/",
+  "previous_release": "docs/history/交付核验_2026-10-22_serial_sessions.json",
   "distribution": "GitHub source tree; historical ZIP snapshots remain unchanged"
 }

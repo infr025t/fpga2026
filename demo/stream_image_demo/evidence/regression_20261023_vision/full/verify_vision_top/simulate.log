@@ -1,0 +1,2 @@
+PASS standalone vision: absent PC/display, whole-frame drop, raw/enhanced, scales 1/2/4, real SCCB/FIFO, line rejection, VSYNC recovery, watchdog, pause/reset and counters
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\sim\tb_vision_top.sv:12: $finish called at 148970000 (1ps)

@@ -1,27 +1,42 @@
-# FPGA 图像处理与单目标定位 Demo
+# FPGA 独立视觉处理项目
 
-基于 **Basys 3（XC7A35T）+ GYF-198 OV7670_FIFO（AL422B）**：采集320×240图像，输出318×238灰度图或Sobel边缘图，通过1 Mbps UART传到PC；支持ROI阈值定位、1 bit边缘图和仅定位结果输出。
+基于 **Basys 3（XC7A35T）+ GYF-198 OV7670_FIFO（AL422B）**，按独立视觉系统流程推进。新核心 `vision_top` 不依赖 PC，完成本机启停、摄像头采集校验、双尺度保边增强、原图切换、抽帧/缩小、双槽整帧显示队列和状态监测。
 
-**使用当前功能前，需从当前RTL重新生成bit。** 随项目提供的 `build/vivado/stream_top.bit` 是历史Demo，不包含后续诊断、ROI定位、提速、异常恢复与周期预览改动。历史实板已跑通基础图像链路；截至2026-10-22，PC端通过77项Python测试和7组录制流交叉校验；RTL沿用上一版通过16组仿真的逻辑，尚未重新综合实现或上板。验证范围见 [交付核验](交付核验.json)。
+摄像头沿用现有模组，**显示硬件待定**：目前提供 100 MHz 同步像素握手接口，物理显示驱动、引脚、电源分配和最终 Flash 启动需在硬件确定后完成。当前没有新核心的 bit；随项目提供的 `build/vivado/stream_top.bit` 是历史串口 Demo。
 
-[快速开始](#快速开始) · [下一步](#下一步) · [文件与文档索引](#文件与文档索引)
+[独立视觉架构](docs/独立视觉架构.md) · [运行验证](#运行验证) · [原串口-demo](#原串口-demo) · [文件与文档索引](#文件与文档索引)
 
-## 快速开始
+<a id="快速开始"></a>
+<a id="先离线确认接收端"></a>
 
-下列终端命令均在本文件所在的 `stream_image_demo` 目录执行。Python用于接收与测试；硬件构建需安装包含 `xc7a35tcpg236-1` 器件支持的Vivado，历史工程使用Vivado 2025.1。
+## 运行验证
 
-### 先离线确认接收端
-
-不接开发板也可运行，以下两条命令只需要Python标准库：
+下列终端命令均在本文件所在的 `stream_image_demo` 目录执行。离线测试使用 Python；RTL 仿真还需 Icarus 或 Vivado。
 
 ```powershell
 python scripts/run_tests.py --python-only
-python pc/receiver.py --input evidence/regression_20261020_recovery/full/verify_top_recovery/top_recovery_wire.bin --out build/regression/readme_replay --count 3
+python scripts/run_tests.py --simulator iverilog --iverilog-bin "你的Icarus安装目录/bin"
 ```
 
-回放应保存3张PGM及对应JSON、CSV，帧序号为1、4、5；空号2、3是仿真中被丢弃的超时采集。输出位于 `build/regression/readme_replay/`。
+截至 2026-10-23，通过 **86 项 Python 测试、20 组 RTL 仿真、8 组协议流交叉校验**。独立整数模型核对了 223,828 个增强像素，以及顶层摄像头/原图/缩小路径的 67 个显示像素；还覆盖显示阻塞、整帧丢弃、SCCB 恢复、行数异常、采集超时与处理看门狗。详见[本轮证据](evidence/regression_20261023_vision/README.md)与[交付核验](交付核验.json)。
 
-### 生成当前bit并上板
+新核心可选输出 VST1 状态包，离线回放无需串口依赖：
+
+```powershell
+python pc/vision_status.py --input evidence/regression_20261023_vision/full/verify_vision_status/vision_status_wire.bin --out build/regression/status_replay --count 2
+```
+
+新核心的综合入口为 `scripts/synth_vision.tcl`：只做独立综合与资源预算检查，不生成板级 bit。目前未执行 Vivado 综合；流程、资源预算、接口和独立运行开关表见[独立视觉架构](docs/独立视觉架构.md)。
+
+## 原串口 Demo
+
+原 `stream_top` 保留灰度/Sobel、ROI 定位、1 bit 打包、周期预览及 PC 接收/重连功能，输出 318×238 图像，协议为 FPG1。其构建脚本和开关定义与新 `vision_top` 分开。
+
+<a id="生成当前bit并上板"></a>
+
+### 生成串口 Demo 的 bit 并上板
+
+以下步骤仅构建 `stream_top`。需安装包含 `xc7a35tcpg236-1` 器件支持的 Vivado；历史工程使用 Vivado 2025.1。随包历史 bit 不包含当前 RTL 的后续功能，使用前需重新构建。
 
 1. 按[接线表](docs/使用手册.md#接线与成像)连接模组，确认SIOC、SIOD、RST的开漏上拉网络。
 2. 在新开的Vivado会话中，使用Tcl Console执行以下构建命令。将路径替换为实际解压目录；大括号可保留路径中的空格。
@@ -44,7 +59,7 @@ python pc/receiver.py --input evidence/regression_20261020_recovery/full/verify_
 
 5. 内部图接收正常后，将 **SW0=0** 切到摄像头，再次运行接收命令。固定镜头与目标，调焦至图像清晰后再开启定位。
 
-## 下一步
+### 串口 Demo 操作入口
 
 | 现在想做什么 | 阅读入口 |
 |---|---|
@@ -60,13 +75,14 @@ python pc/receiver.py --input evidence/regression_20261020_recovery/full/verify_
 
 | 入口 | 用途 |
 |---|---|
-| [使用手册](docs/使用手册.md) · [开发与验证](docs/开发与验证.md) | 操作参考、构建与验证流程 |
-| [rtl/](rtl/) · [constraints/](constraints/) | RTL与Basys 3约束；顶层为stream_top.sv |
-| [pc/](pc/) | 接收器、依赖与协议测试 |
+| [独立视觉架构](docs/独立视觉架构.md) | 流程图映射、算法、开关、显示与诊断接口、硬件边界 |
+| [使用手册](docs/使用手册.md) · [开发与验证](docs/开发与验证.md) | 原串口 Demo 操作参考、两条构建路径与回归流程 |
+| [rtl/](rtl/) · [constraints/](constraints/) | 新核心 vision_top 与原串口顶层 stream_top；板级显示约束待定 |
+| [pc/](pc/) | FPG1 图像接收、VST1 状态解析、整数参考模型与测试 |
 | [sim/](sim/) · [scripts/](scripts/) | RTL测试、构建、回归与交付校验脚本 |
 | [完整代码.md](完整代码.md) | 自动生成的当前源码汇总 |
 | [交付核验.json](交付核验.json) · [SHA256.json](SHA256.json) | 验证范围与当前文件哈希 |
-| [最新回归证据](evidence/regression_20261022_serial_sessions/) | 持续接收测试、UART回放和模拟重连结果 |
+| [最新回归证据](evidence/regression_20261023_vision/README.md) | 独立视觉系统仿真、像素模型核对与协议回放 |
 | [docs/history/](docs/history/) | 旧核验清单和历史诊断记录 |
 
 协议与迭代记录：
@@ -79,4 +95,4 @@ python pc/receiver.py --input evidence/regression_20261020_recovery/full/verify_
 - [2026-10-17可靠性修复](docs/迭代记录_2026-10-17.md)
 - [历史开发与联调日志PDF](docs/开发与联调日志.pdf) · [可检索文本](docs/开发与联调日志.txt)
 
-后续方向：当前RTL上板验收、采集与发送重叠，再评估VGA与更高串口速率。颜色识别、12 Mbaud和VGA连续处理尚未实现。
+下一步按最终显示模组接入物理接口和时钟转换，再进行完整综合、布局布线、供电与上板验收，最后验证 Flash 掉电重启。颜色识别、12 Mbaud 和物理显示输出尚未实现。

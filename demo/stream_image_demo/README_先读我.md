@@ -1,8 +1,8 @@
 # 先读我：文档入口
 
-项目首页已整理到 **[README.md](README.md)**。首次使用从[快速开始](README.md#快速开始)进入；完整操作见[使用手册](docs/使用手册.md)，构建与测试见[开发与验证](docs/开发与验证.md)。
+项目首页见 **[README.md](README.md)**。新独立视觉核心见[架构与接口](docs/独立视觉架构.md)，原串口 Demo 操作见[使用手册](docs/使用手册.md)，构建与测试见[开发与验证](docs/开发与验证.md)。
 
-随包的 `build/vivado/stream_top.bit` 为历史Demo；使用当前功能需重新构建。验证范围以[项目首页](README.md)和[交付核验](交付核验.json)为准。
+随包的 `build/vivado/stream_top.bit` 为历史串口 Demo；原 Demo 使用当前功能需重新构建。新 `vision_top` 尚无板级 bit，显示硬件待定。验证范围以[项目首页](README.md)和[交付核验](交付核验.json)为准。
 
 下列标题保留旧版章节入口，链接指向相应的新位置。
 

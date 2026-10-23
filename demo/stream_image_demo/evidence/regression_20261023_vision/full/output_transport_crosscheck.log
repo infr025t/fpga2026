@@ -1,0 +1,7 @@
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\build\regression\vision_full_20261022\verified_output_transport\frame_0000000100.pgm: mode=1 pixel_format=mono1 bright_centroid=(2, 2)
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\build\regression\vision_full_20261022\verified_output_transport\frame_0000000101.pgm: mode=1 pixel_format=mono1 bright_centroid=(2, 2) target_valid=True area=4 target_centroid=(2, 1)
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\build\regression\vision_full_20261022\verified_output_transport\frame_0000000102.json: mode=1 pixel_format=none bright_centroid=(2, 2) target_valid=True area=4 target_centroid=(2, 1)
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\build\regression\vision_full_20261022\verified_output_transport\frame_0000000103.json: mode=0 pixel_format=none bright_centroid=(2, 2) target_valid=False area=0 target_centroid=(None, None)
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\build\regression\vision_full_20261022\verified_output_transport\frame_0000000104.pgm: mode=0 pixel_format=gray8 bright_centroid=(2, 2)
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\build\regression\vision_full_20261022\verified_output_transport\frame_0000000105.pgm: mode=1 pixel_format=gray8 bright_centroid=(2, 2) target_valid=True area=4 target_centroid=(2, 1)
+Received 6 valid frames; rejected/resynchronized 0 candidates.

@@ -1,0 +1,3 @@
+PASS top recovery three UART frames: synthetic during NACK, two fresh FIFO frames; timed reset retry, sticky fault, two discarded VSYNC timeouts, pause/resume, pixels/statistics/CRC
+INFO recovery physical retries=27 NACK transactions=27 ACK configuration writes=39 capture attempts=4
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\sim\tb_top_recovery.sv:300: $finish called at 328100000 (1ps)

@@ -1,0 +1,2 @@
+PASS enhancement continuous/bubbled pixels, controls latched, aborted startup, small/QVGA raster exports
+D:\desktop\coding\fpga2026 - demo\demo\stream_image_demo\sim\tb_enhance_core.sv:7: $finish called at 2643330000 (1ps)

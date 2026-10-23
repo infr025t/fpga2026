@@ -1,0 +1,19 @@
+{
+  "frame_id": 100,
+  "processed_frames": 117,
+  "displayed_frames": 134,
+  "display_dropped": 151,
+  "display_skipped": 168,
+  "capture_errors": 185,
+  "line_errors": 202,
+  "input_overflows": 219,
+  "processing_errors": 236,
+  "display_errors": 253,
+  "processing_fps": 270,
+  "last_latency_cycles": 287,
+  "version": 1,
+  "configured": true,
+  "camera_fault": false,
+  "paused": false,
+  "pattern": true
+}

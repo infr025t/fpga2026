@@ -47,16 +47,46 @@ def temporal_noise(frames, mask):
     return float(_mask_values(frames.std(axis=0, ddof=0), mask).mean())
 
 
-def aggregate_status(checks):
-    statuses = [v['status'] for v in checks.values() if v.get('required', True)]
+def aggregate_status(checks, required_checks=None):
+    if required_checks:
+        checks = {**checks, **{key: dict(checks.get(key, {'status':'MISSING'}), required=True)
+                               for key in required_checks}}
+    statuses = [v.get('status', 'MISSING') for v in checks.values() if v.get('required', True)]
     return 'FAIL' if 'FAIL' in statuses else ('PASS' if statuses and all(s=='PASS' for s in statuses) else 'MISSING')
 
 
-def publish_profile(model_dir, checks, config):
-    if aggregate_status(checks) != 'PASS':
+def publish_profile(model_dir, checks, config, required_checks=None):
+    if aggregate_status(checks, required_checks) != 'PASS':
         return False
     (Path(model_dir)/'profile.json').write_text(json.dumps(dict(profile_id=1, **config), indent=2)+'\n', encoding='utf-8')
     return True
+
+
+def registered_candidates(reg):
+    grid = reg['candidates']
+    for epsilon, td, te, ge in itertools.product(grid['epsilon'], grid['denoise_threshold'],
+                                               grid['enhance_threshold'], grid['enhance_gain']):
+        if epsilon not in (16,64,256,1024) or td not in (2,4,8) or te not in (2,4) or ge not in (384,448,512) or grid['limit'] != 16:
+            raise ValueError('Registration contains an unsupported candidate')
+        yield dict(epsilon=epsilon, T_D=td, T_E=te, G_E=ge, L=grid['limit'])
+
+
+def real_image_class_check(reg, arrays):
+    present, regions = set(), []
+    for case in reg['cases']:
+        region_class = case.get('region_class')
+        if case['category'] != 'real' or region_class not in ('flat','text','texture'):
+            continue
+        image = arrays.get(case['id'])
+        masks = [arrays.get(case[k]) for k in ('foreground','background')]
+        valid = image is not None and all(m is not None and m.shape==image.shape and crop(m).any() for m in masks)
+        if valid:
+            present.add(region_class)
+            regions.append(dict(id=case['id'], region_class=region_class,
+                                foreground_pixels=int(crop(masks[0]).sum()), background_pixels=int(crop(masks[1]).sum())))
+    return dict(status='PASS' if present=={'flat','text','texture'} else 'MISSING',
+                classes_present=sorted(present), classes_required=['flat','text','texture'], regions=regions,
+                explanation='Explicit registered photographic regions and nonempty fixed masks; public photos are not OV7670 captures. No clean photographic reference or PSNR.')
 
 
 def crop(a):
@@ -90,12 +120,16 @@ def assess(reg, arrays, split, config, cache=None, full=False):
         fg, bg = crop(arrays[case['foreground']]), crop(arrays[case['background']])
         clean = crop(arrays[case['clean']]) if case['clean'] else None
         raw = outputs['RAW']
+        metric_mask = crop(arrays[case['region_mask']]) if 'region_mask' in case else np.ones_like(raw, bool)
         row = dict(id=case['id'], category=case['category'], sigma=case['sigma'], seed=case['seed'], modes={})
+        if case['category'] == 'real':
+            row.update({k:case[k] for k in ('source_id','region_class','region_box') if k in case})
+            row['region_pixels'] = int(metric_mask.sum())
         for mode, out in outputs.items():
             c = contrast(out, fg, bg)
             metric = dict(contrast=c, contrast_vs_raw=c/contrast(raw, fg, bg) if contrast(raw, fg, bg) else None,
-                          spatial_std=float(out.std()), new_clipping=new_clipping(raw, out, np.ones_like(raw, bool)),
-                          mean=float(out.mean()))
+                          spatial_std=float(out[metric_mask].std()), new_clipping=new_clipping(raw, out, metric_mask),
+                          mean=float(out[metric_mask].mean()))
             if clean is not None:
                 p = psnr(clean, out)
                 metric.update(psnr_db=p if math.isfinite(p) else None, psnr_infinite=math.isinf(p), bias=float(out.astype(float).mean()-clean.mean()))
@@ -213,6 +247,68 @@ def _visuals(report_dir, reg, arrays, result):
     (report_dir/'edge_profiles.json').write_text(json.dumps(profiles,indent=2)+'\n', encoding='utf-8', newline='\n')
 
 
+def _expanded_report(report_dir, reg, result):
+    selected, holdout = result['selected_candidate'], result['holdout']
+    allowed = result['status']=='PASS' and result['profile_published']
+    lines = ['# 第15.A节扩大搜索：第二轮独立保留集报告', '',
+             f"受控模型门槛：**{result['status']}**；发布profile：{'已发布' if result['profile_published'] else '无'}；算法RTL：{'允许进入后续实施' if allowed else '禁止进入'}。", '',
+             f"登记提交：`{result['registration_commit']}`；登记SHA256：`{result['registration_sha256']}`。",
+             f"输入归档SHA256：`{result['archive_sha256']}`；执行模型提交：`{result['source_model_commit']}`；登记生成模型提交：`{reg['source_model_commit']}`。", '',
+             '用户于2026-10-23授权保持公式、位宽及RAW+5%阈值，扩至4种ε和G512。首轮reports/model_gate的24项FAIL及归档原样保留；本轮不改写首轮结论。',
+             '真实不同曝光和真实固定曝光64帧验证按授权移至相机集成里程碑，当前均DEFERRED、非本轮必选；不称为PASS。受控PASS只允许开展算法RTL。', '',
+             '## 搜索前固定的证据与选择规则', '',
+             '正式候选恰72项：ε16/64/256/1024，T_D2/4/8，T_E2/4，G_E384/448/512，L16；按这些字段升序选择第一个调参可行项。没有可行项才用首项诊断。',
+             '调参干净图案保留原定义。新保留集文字为Core VGA/Gain 512/Pixel 2026，起点(7,11)；纹理为(x+2y+1)%period<period/2的斜向条纹，周期4/8、振幅16/32；两项主例固定为文字和周期4振幅32。',
+             '两个新主输入逐字节不同于首轮全部二维U8数组与调参主图。所有噪声/时间噪声使用SeedSequence entropy2026102302，按split/pattern/sigma/seed分流；不只移动旧保留图的相位。',
+             '平场、细线、阶跃、渐变、棋盘、脉冲、高光及移动阶跃是复用的规范压力图案（REUSED_NOT_NOVEL_HOLDOUT_EVIDENCE），不冒称新增独立保留证据。统一每边裁4像素，输入与掩膜哈希全在registration.json。',
+             f"72项中调参可行数：{sum(c['status']=='PASS' for c in result['candidates'])}；固定选择：`{selected['config']}`；角色：{selected['role']}。",
+             '选择完全基于调参集；新保留集仅评所选一项一次，不另跑旧参数或探索参数，不按保留集排名。', '',
+             '## 必选门槛与延期项', '', '| 检查 | 必选 | 状态 | 值或证据 |', '|---|---|---|---|']
+    for key, check in result['checks'].items():
+        lines.append(f"| {key} | {'是' if check.get('required',True) else '否'} | {check['status']} | {check.get('value',check.get('explanation','见JSON'))} |")
+    lines += ['', '## 全部72项调参结果', '', '| ε | T_D | T_E | G_E | 文字/RAW | 纹理/RAW | 结果 | 失败项 |', '|---|---|---|---|---|---|---|---|']
+    for candidate in result['candidates']:
+        cfg, cc = candidate['config'], candidate['checks']
+        values = [cc['primary_'+key]['value'] for key in reg['primary_enhancement']['tuning']]
+        failed = ', '.join(k for k,v in cc.items() if v['status']!='PASS') or '无'
+        lines.append(f"| {cfg['epsilon']} | {cfg['T_D']} | {cfg['T_E']} | {cfg['G_E']} | {values[0]:.6f} | {values[1]:.6f} | {candidate['status']} | {failed} |")
+    lines += ['', '## 新保留集四模式与代价', '', '| 主案例 | RAW对比度 | BASE | DENOISE | ENHANCE | ENHANCE/RAW |', '|---|---|---|---|---|---|']
+    for key in reg['primary_enhancement']['holdout']:
+        row = next(r for r in holdout['cases'] if r['id']==key)
+        ms = row['modes']
+        lines.append('| '+key+' | '+' | '.join(f"{ms[m]['contrast']:.6f}" for m in ('RAW','BASE','DENOISE','ENHANCE'))+f" | {ms['ENHANCE']['contrast_vs_raw']:.6f} |")
+    lines += ['', '| σ | RAW平均PSNR | BASE | DENOISE | ENHANCE |', '|---|---|---|---|---|']
+    for sigma in (2,4,8,16):
+        rows = [r for r in holdout['cases'] if r['category']=='flat' and r['sigma']==sigma]
+        lines.append(f'| {sigma} | '+' | '.join(f"{np.mean([r['modes'][m]['psnr_db'] for r in rows]):.6f}" for m in ('RAW','BASE','DENOISE','ENHANCE'))+' |')
+    lines += ['', '最差案例覆盖全部登记干净/加噪细节，不用于换参数。', '', '| 类别 | 最差输入 | ENHANCE/RAW | 新截断比例 |', '|---|---|---|---|']
+    for category in ('line','text','texture'):
+        rows = [r for r in holdout['cases'] if r['category']==category]
+        worst = min(rows,key=lambda r:r['modes']['ENHANCE']['contrast_vs_raw'])
+        lines.append(f"| {category} | {worst['id']} | {worst['modes']['ENHANCE']['contrast_vs_raw']:.6f} | {worst['modes']['ENHANCE']['new_clipping']:.6f} |")
+    lines += ['', '各模式完整对比度/噪声/偏移/截断在metrics.json。PSNR只用于已知合成干净参考；零MSE用null和psnr_infinite表示。σ16作为压力测试保留全部5种子。',
+              '阶跃JSON含越界幅值、像素数、垂直宽度；PNG和edge_profiles.json含三方向剖面。水平边沿中间列沿y采样；垂直/斜边沿中间行沿x采样；斜边图横轴不是垂直距离。',
+              '64帧的噪声指标先逐像素沿时间取总体标准差、再在固定平场掩膜平均；移动/模拟曝光序列另报帧差与移动光晕，未冒充真实曝光。', '',
+              '## 真实照片固定区域', '',
+              '公开camera.png登记裁剪(0,16,512,496)，sky原坐标(0,0,130,65)对应登记(0,0,130,49)；grass原坐标(350,300,500,480)对应登记(350,284,500,464)。前者为flat、后者texture；text.png为printed text；实际OV7670石墨图为纸面/石墨笔画text补充。',
+              'flat区域按横向两半定义固定掩膜，其余区域以原始灰度的0.3/0.7分位定义背景/前景；全部mask搜索前固定并登记，gate比较flat/text/texture类别集合和有效非空mask，不按照片文件数。',
+              '真实图不假设干净参考、不计算PSNR；下面只报告固定区域的观测统计。来源/授权/源字节哈希在sources/provenance.json及registration.json；公开照片不是本板摄像头采集。', '',
+              '| 区域/类 | 模式 | 对比度 | 空间标准差 | 均值 | 新截断 |', '|---|---|---|---|---|---|']
+    for row in holdout['cases']:
+        if row['category']=='real':
+            for mode, m in row['modes'].items():
+                lines.append(f"| {row['id']} / {row.get('region_class')} | {mode} | {m['contrast']:.6f} | {m['spatial_std']:.6f} | {m['mean']:.6f} | {m['new_clipping']:.6f} |")
+    lines += ['', '## 证据边界与后续', '', *['- '+gap for gap in reg['evidence_gaps']], '',
+              '本轮无算法RTL、综合、布局布线或实板证据。受控门槛通过后执行第16节关键模块/延迟冻结与仿真计划；实际曝光、固定曝光视频及相机细文字/自然纹理仍需相机集成补验。若本轮FAIL，保留全部证据并停止算法RTL，按第17节讨论必要调整。', '',
+              '## 复现', '', '```powershell',
+              'python -m stream_video_enhance.model.evaluate --experiment expanded-v2 --register --report-dir stream_video_enhance/reports/model_gate_round2',
+              '# 仅用于新空目录；登记文件、输入归档、模型代码先提交，再执行搜索。现有登记不可覆盖。',
+              'python -m stream_video_enhance.model.evaluate --run --report-dir stream_video_enhance/reports/model_gate_round2',
+              'python -m unittest discover -s stream_video_enhance/tests -v', '```', '',
+              '受控必选项全部PASS才返回0和发布可追溯profile；FAIL/MISSING返回1，输入/登记无效返回2。完整执行输出见logs，数值回归见numerical_tests.txt。']
+    (report_dir/'report.md').write_text('\n'.join(lines)+'\n',encoding='utf-8',newline='\n')
+
+
 def run(report_dir=ds.DEFAULT_REPORT):
     report_dir=Path(report_dir)
     reg, arrays = ds.load_registration(report_dir)
@@ -228,8 +324,7 @@ def run(report_dir=ds.DEFAULT_REPORT):
                                cwd=ds.ROOT,capture_output=True,text=True)
     (report_dir/'numerical_tests.txt').write_text(numerical.stdout+numerical.stderr,encoding='utf-8',newline='\n')
     candidates, cache = [], {}
-    for epsilon,td,te,ge in itertools.product((64,256),(2,4,8),(2,4),(384,448)):
-        config=dict(epsilon=epsilon,T_D=td,T_E=te,G_E=ge,L=16)
+    for config in registered_candidates(reg):
         candidates.append(assess(reg,arrays,'tuning',config,cache))
     feasible=[i for i,c in enumerate(candidates) if c['status']=='PASS']
     index=feasible[0] if feasible else 0
@@ -241,11 +336,40 @@ def run(report_dir=ds.DEFAULT_REPORT):
     checks['tuning_feasible']=_check(len(feasible), bool(feasible), candidate_count=len(candidates))
     checks['numerical_model']=dict(status='PASS' if numerical.returncode==0 else 'FAIL', command='python -m unittest discover -s stream_video_enhance/tests -p test_reference.py -v',
                                    log='numerical_tests.txt', scope='all constants/modes/epsilon/bounds, variance/division, 288 VGA cases max error<=1, histogram/MAE/RMSE')
-    checks['real_image_classes']=dict(status='PASS' if len([c for c in reg['cases'] if c['category']=='real'])>=3 else 'MISSING',
-                                      explanation='Public photographs supplement text/texture, and are not OV7670 captures; registered masks are contrast diagnostics without clean truth.')
+    checks['real_image_classes']=real_image_class_check(reg, arrays) if reg.get('experiment')=='expanded-v2' else dict(
+        status='PASS' if len([c for c in reg['cases'] if c['category']=='real'])>=3 else 'MISSING',
+        explanation='Legacy original-v1 replay only: historical file-count criterion. Expanded-v2 requires explicit registered flat/text/texture regions and nonempty masks.')
     checks['real_exposure_classes']=dict(status='MISSING', explanation=reg['evidence_gaps'][0])
     checks['camera_video_evidence']=dict(status='MISSING', explanation=reg['evidence_gaps'][1], required=False)
     checks['future_rtl_bit_exact']=dict(status='DEFERRED', required=False, explanation='Only applicable after model gate PASS; no algorithm RTL exists.')
+    expanded = reg.get('experiment') == 'expanded-v2'
+    for key, policy in reg.get('evidence_policy', {}).items():
+        checks[key] = dict(checks.get(key, {}), **policy)
+    required_checks = reg.get('required_checks')
+    if expanded:
+        source_model_commit = subprocess.run(['git','rev-parse','HEAD'],cwd=ds.ROOT,capture_output=True,text=True,check=True).stdout.strip()
+        result = dict(schema=2, experiment='expanded-v2', registration_commit=tracked,
+                      registration_sha256=ds.sha((report_dir/'registration.json').read_bytes()),
+                      archive_sha256=reg['archive_sha256'], source_model_commit=source_model_commit,
+                      registered_generator_commit=reg['source_model_commit'], status=aggregate_status(checks,required_checks),
+                      checks=checks, required_checks=required_checks, selected_candidate=selected,
+                      candidates=candidates, holdout=holdout, holdout_configurations_evaluated=1,
+                      profile_published=False, evidence_gaps=reg['evidence_gaps'])
+        if result['status'] == 'PASS':
+            profile = dict(**selected['config'], experiment='expanded-v2',
+                           registration_commit=tracked, registration_sha256=result['registration_sha256'],
+                           input_archive_sha256=reg['archive_sha256'], source_model_commit=source_model_commit,
+                           registered_generator_commit=reg['source_model_commit'],
+                           required_checks={key:checks[key]['status'] for key in required_checks},
+                           evidence_policy=reg['evidence_policy'], applicable_scope='Controlled registered model gate; camera exposure/real video validation DEFERRED')
+            result['profile_published'] = publish_profile(Path(__file__).parent,checks,profile,required_checks)
+        (report_dir/'metrics.json').write_text(json.dumps(result,ensure_ascii=False,indent=2,allow_nan=False)+'\n',encoding='utf-8',newline='\n')
+        _visuals(report_dir,reg,arrays,result)
+        _expanded_report(report_dir,reg,result)
+        print(json.dumps(dict(status=result['status'],tuning_feasible=len(feasible),candidate_count=len(candidates),
+                              holdout_configurations_evaluated=1,selected=selected,profile_published=result['profile_published'],
+                              failures=[k for k,v in checks.items() if v.get('required',True) and v['status']!='PASS']),ensure_ascii=False))
+        return 0 if result['status']=='PASS' else 1
     exploratory_config = dict(selected['config'], G_E=512)
     exploratory = assess(reg, arrays, 'holdout', exploratory_config, {}, full=True)
     result=dict(schema=1, registration_commit=tracked, registration_sha256=ds.sha((report_dir/'registration.json').read_bytes()),
@@ -265,7 +389,7 @@ def run(report_dir=ds.DEFAULT_REPORT):
            f"登记提交：`{tracked}`；登记SHA256：`{result['registration_sha256']}`。", f"输入归档SHA256：`{reg['archive_sha256']}`。", '',
            '调参前固定两个独立主增强图案：细文字和周期4/振幅32纹理；保留集改变文字内容、位置和纹理几何。输入96×128；照片保留登记裁剪尺寸；统一裁边4像素。',
            '噪声每类σ=2/4/8/16、种子0…4；调参/保留使用独立PCG64 seed stream。全部输入、掩膜、64帧序列均已归档并逐数组SHA256校验。', '',
-           f"搜索24组共享ε候选，可行候选数：{len(feasible)}。固定选择：`{selected['config']}`，角色：{selected['role']}。",
+           f"搜索{len(candidates)}组共享ε候选，可行候选数：{len(feasible)}。固定选择：`{selected['config']}`，角色：{selected['role']}。",
            '若无调参可行项，使用预登记排序第一项作失败诊断；未根据保留集挑选胜者。旧g=1.25/T=4另存非发布对照。', '',
            '| 检查 | 状态 | 值 |', '|---|---|---|']
     for key,check in checks.items():
@@ -328,10 +452,11 @@ def main():
     group=parser.add_mutually_exclusive_group(required=True)
     group.add_argument('--register',action='store_true'); group.add_argument('--run',action='store_true')
     parser.add_argument('--report-dir',type=Path,default=ds.DEFAULT_REPORT)
+    parser.add_argument('--experiment', choices=['original-v1','expanded-v2'], default='original-v1', help='Registration only; --run consumes the committed registration')
     args=parser.parse_args()
     try:
         if args.register:
-            reg=ds.register(args.report_dir)
+            reg=ds.register(args.report_dir, experiment=args.experiment)
             print(json.dumps(dict(registered=len(reg['cases']),arrays=len(reg['arrays']),sha256=reg['archive_sha256'])))
             return 0
         return run(args.report_dir)

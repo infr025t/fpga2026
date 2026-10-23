@@ -102,6 +102,81 @@ class EvaluationTests(unittest.TestCase):
             a, b = registration['primary_enhancement'].values()
             self.assertFalse(np.array_equal(arrays[a[0]], arrays[b[0]]))
 
+    def test_expanded_registration_has_72_registered_candidates_and_policy(self):
+        with tempfile.TemporaryDirectory() as p:
+            reg = ds.register(Path(p), include_sources=False, experiment='expanded-v2')
+            configs = list(ev.registered_candidates(reg))
+            self.assertEqual(len(configs), 72)
+            self.assertEqual({c['epsilon'] for c in configs}, {16, 64, 256, 1024})
+            self.assertEqual({c['G_E'] for c in configs}, {384, 448, 512})
+            self.assertEqual(configs[0], dict(epsilon=16, T_D=2, T_E=2, G_E=384, L=16))
+            self.assertEqual(configs[-1], dict(epsilon=1024, T_D=8, T_E=4, G_E=512, L=16))
+            self.assertFalse(reg['evidence_policy']['real_exposure_classes']['required'])
+            self.assertEqual(reg['evidence_policy']['real_exposure_classes']['status'], 'DEFERRED')
+            self.assertIn('real_image_classes', reg['required_checks'])
+
+    def test_expanded_primaries_and_random_streams_are_independent_of_round1(self):
+        original, old = ds.load_registration(ds.DEFAULT_REPORT)
+        with tempfile.TemporaryDirectory() as p:
+            ds.register(Path(p), include_sources=False, experiment='expanded-v2')
+            reg, arrays = ds.load_registration(Path(p))
+            self.assertIn('2026102302', reg['split_seed_entropy'])
+            for key in reg['primary_enhancement']['holdout']:
+                for old_key, value in old.items():
+                    if value.ndim == 2 and value.dtype == np.uint8:
+                        self.assertFalse(np.array_equal(arrays[key], value), (key, old_key))
+                for tuning_key, value in arrays.items():
+                    if tuning_key.startswith('tuning_') and value.ndim==2 and value.dtype==np.uint8:
+                        self.assertFalse(np.array_equal(arrays[key], value), (key, tuning_key))
+                for suffix in ('_fg', '_bg'):
+                    self.assertTrue(arrays[key.removesuffix('_clean')+suffix][4:-4,4:-4].any())
+            for split in ('tuning', 'holdout'):
+                for key in (split+'_flat_s8_n0', split+'_temporal_noise'):
+                    self.assertFalse(np.array_equal(arrays[key], old[key]))
+            self.assertFalse(np.array_equal(arrays['tuning_temporal_noise'], arrays['holdout_temporal_noise']))
+            self.assertEqual(reg['fixture_policy']['canonical_stress'], 'REUSED_NOT_NOVEL_HOLDOUT_EVIDENCE')
+
+    def test_candidate_iterator_consumes_registration_not_builtin_grid(self):
+        reg = {'candidates': dict(epsilon=[1024], denoise_threshold=[8],
+                                 enhance_threshold=[4], enhance_gain=[512], limit=16)}
+        self.assertEqual(list(ev.registered_candidates(reg)),
+                         [dict(epsilon=1024, T_D=8, T_E=4, G_E=512, L=16)])
+
+    def test_required_inventory_cannot_be_omitted_or_unknown_at_publication(self):
+        for status in ('FAIL', 'MISSING', 'DEFERRED', 'unknown'):
+            with tempfile.TemporaryDirectory() as p:
+                self.assertFalse(ev.publish_profile(p, {'a': {'status': status}}, {}, required_checks=['a']))
+        with tempfile.TemporaryDirectory() as p:
+            self.assertFalse(ev.publish_profile(p, {'a': {'status': 'PASS'}}, {}, required_checks=['a','b']))
+            self.assertFalse((Path(p)/'profile.json').exists())
+
+    def test_three_same_class_photos_do_not_cover_real_image_classes(self):
+        arrays = {f'image{i}': np.full((16,16), 128, np.uint8) for i in range(3)}
+        arrays['fg'] = np.indices((16,16))[1] < 8
+        arrays['bg'] = ~arrays['fg']
+        cases = [dict(id=f'image{i}', category='real', region_class='text',
+                      foreground='fg', background='bg') for i in range(3)]
+        check = ev.real_image_class_check({'cases':cases}, arrays)
+        self.assertEqual(check['status'], 'MISSING')
+        self.assertEqual(check['classes_present'], ['text'])
+        cases[0]['region_class'], cases[1]['region_class'] = 'flat', 'texture'
+        self.assertEqual(ev.real_image_class_check({'cases':cases}, arrays)['status'], 'PASS')
+        arrays['fg'][:] = False
+        self.assertEqual(ev.real_image_class_check({'cases':cases}, arrays)['status'], 'MISSING')
+
+    def test_missing_status_cannot_publish_a_profile(self):
+        with tempfile.TemporaryDirectory() as p:
+            self.assertFalse(ev.publish_profile(p, {'a': {}}, {}, required_checks=['a']))
+
+    def test_expanded_policy_cannot_silently_drop_required_checks(self):
+        with tempfile.TemporaryDirectory() as p:
+            root = Path(p)
+            reg = ds.register(root, include_sources=False, experiment='expanded-v2')
+            reg['required_checks'].remove('real_image_classes')
+            (root/'registration.json').write_text(json.dumps(reg))
+            with self.assertRaisesRegex(ValueError, 'required'):
+                ds.load_registration(root)
+
 
 if __name__ == '__main__':
     unittest.main()

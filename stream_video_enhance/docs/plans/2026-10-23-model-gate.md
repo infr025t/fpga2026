@@ -79,6 +79,23 @@
 
 Preflight addition: Task2 supplies stable numerical metrics/registration/CLI toTask3; Task3 must replace hardcoded grid and attach policy without changing round1 registered bytes. Task3 profile supplies the future RTL constants; only controlled PASS permits dependent work. Both tasks share dataset/evaluate/tests: execute sequentially after Task2review, not concurrently.
 
+## Task 4: Fine gain search within the already authorized legal range
+
+**Basis:** Round2 has zero feasible tuning candidates. The recorded tuning frontier epsilon1024/T_E4/G448 passes both primary enhancement and noise checks, failing only integerstepovershoot3 againstlimit2; G384 passeshalo but missesprimarytext. Finer legal G values do not change formula, bitwidth, hardware interfaces or any acceptance threshold. The controller interprets the user's explicit permission to expand software search within the already-defined range as covering this reversible numerical refinement; this is not permission to weaken quality criteria. Preserve round1/round2 FAIL and every input/report byte.
+
+**Files:** Modify model/dataset.py,evaluate.py,tests/test_evaluation.py; create reports/model_gate_round3/ registration/archive/metrics/report/figures/logs and model/profile.json only onPASS; update spec/status/README. No RTL or reference arithmetic changes.
+
+**Interface:** registration experiment `finegain-v3`; existing `--report-dir` CLI; registered grid epsilon[1024],T_D[2,4,8],T_E[4],G_E=list(range(384,449,4)),L16 =>51 candidates. Candidate legality is experiment-specific and validated; no general unbounded search is introduced. Required inventory identical to expanded-v2; actual exposure/camera video remainDEFERRED/nonrequired. FormalW/H and allrounding unchanged.
+
+- [ ] Write failing tests for51grid/fullGsequence, new primary andindependentnoise streams, and exact registeredselectionrule. Keep the previous experiment replays unchanged. Refactor shared logic only where needed toavoidcopiedfull evaluator/registration code.
+- [ ] Preregister unseenholdouttext `BRAM 2026 / Smooth Gain / Video Core` at(17,9) andtexturegeometry `(2*x+y+3)%period < period/2` (different from round1 stripes/checker andround2x+2y); entropy2026102303 fornoise/temporal. Preserve primaryclass/period4/amplitude32 andsamefixedmasksdefinition. Compare newprimarybytes toall oldround1/round2 imageinputs and tuningbeforecommit. Canonicalstressfixtures andpublicrealregions may be reused with explicitlabels.
+- [ ] Registerdeterministicselection BEFORE search: amongcandidates passingALL tuningchecks, maximize minimumof thetwo primaryENHANCE/RAW contrast ratios; ties choose lowestT_D thenlowestG_E. This selectsqualitymargin onTUNING only, never onholdout; ifnonefeasible usefirst onlydiagnostically. Savecomplete51 outcomesandfailurefrontier.
+- [ ] Commitcode/tests and thennewregistration BEFORE anyfinegainsearch. Verifyboth previous experimentdirectories andoldbaselinebytesunchanged. Evaluategridonlyontuning; evaluateonechosenconfigonceonnewholdout, nobackdoorsearch or extraexploratoryholdouts. Do notpublish untilallrequiredcontrolledchecksPASS.
+- [ ] OnPASS publishtraceableprofile andclearapplicableconditions/qualitycosts; onFAILpreserveresults and stopalgorithmRTL for a concrete userdecision about goals/formula. Inneithercase relaxovershoot2,enhancement1.05,noiseratio1.1 or otherchecks. Recordfreshfocused/fulltests, modelruncommand/exitresult, loghashes, profile/config/registration/modelcommits and unchangedpreviousartifacts.
+- [ ] UpdateREADME/status/spec withactualoutcome andtestedvalidity, commitownedfiles, supplyfullreport. Nohardwareclaim. A controlledPASS permitsdependentRTLplanafterreview; aFAILmeansnumericalrefinementhasnotsettledthedesign.
+
+Preflight addition: Task3 providesregisteredgrid/policy/realregionvalidation toTask4; Task4 extendsanexperiment-specificgrid andprimaryseed/content while retaining the same metric functions and scientificthresholds. Sharedfiles execute sequentially afterTask3review. Runtimeprofile selection consumes registeredordering/ranking, not hardcodedregistrationlocationor magicbestG.
+
 ## After the model gate
 
 On PASS, create and execute the RTL implementation plan for the section16 modules, key-module simulation/local synthesis and L_CORE freeze, VGA full regressions, protocol integration and route. On FAIL/MISSING, preserve executable evidence and ask the user about the specific required adjustment under spec section17; continue independent verification without writing algorithm RTL.

@@ -3,11 +3,18 @@ import tempfile
 import unittest
 from pathlib import Path
 import numpy as np
-from stream_video_enhance.model import evaluate as ev
-from stream_video_enhance.model import dataset as ds
+try:
+    from stream_video_enhance.model import evaluate as ev
+    from stream_video_enhance.model import dataset as ds
+except ImportError:
+    ev = ds = None
 
 
 class EvaluationTests(unittest.TestCase):
+    def setUp(self):
+        self.assertIsNotNone(ev, 'Quality evaluation API has not been implemented')
+        self.assertIsNotNone(ds, 'Registered dataset API has not been implemented')
+
     def test_psnr_uses_float_mse(self):
         self.assertAlmostEqual(ev.psnr(np.array([[0, 4]], np.uint8),
                                        np.array([[2, 2]], np.uint8)),
@@ -37,6 +44,12 @@ class EvaluationTests(unittest.TestCase):
             with tempfile.TemporaryDirectory() as p:
                 self.assertFalse(ev.publish_profile(Path(p), checks, {'epsilon': 64}))
                 self.assertFalse((Path(p) / 'profile.json').exists())
+
+    def test_unrecognized_or_empty_required_checks_cannot_pass(self):
+        self.assertEqual(ev.aggregate_status({}), 'MISSING')
+        self.assertEqual(ev.aggregate_status({'a': {'status': 'DEFERRED'}}), 'MISSING')
+        self.assertEqual(ev.aggregate_status({'a': {'status': 'PASS'},
+                                            'rtl': {'status': 'DEFERRED', 'required': False}}), 'PASS')
 
     def test_registration_required_and_tampered_archive_rejected(self):
         with tempfile.TemporaryDirectory() as p:

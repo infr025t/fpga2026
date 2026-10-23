@@ -216,7 +216,22 @@ def load_registration(report_dir=DEFAULT_REPORT):
     report_dir = Path(report_dir)
     registration = json.loads((report_dir/'registration.json').read_text(encoding='utf-8'))
     if registration.get('experiment') == 'expanded-v2':
-        expected = _required_checks(registration['primary_enhancement'])
+        # This known experiment has two frozen targets in each split. Do not
+        # derive the binding contract from editable registration metadata: an
+        # omitted primary and an equally shortened inventory must still fail.
+        frozen_primary = {split:[split+'_text_low_clean',split+'_texture_p4_a32_clean']
+                          for split in ('tuning','holdout')}
+        if registration.get('primary_enhancement') != frozen_primary:
+            raise ValueError('Expanded primary targets must exactly match the frozen two-class contract')
+        for split, targets in frozen_primary.items():
+            for key, category in zip(targets, ('text','texture')):
+                cases = [c for c in registration['cases'] if c.get('id')==key]
+                if len(cases)!=1 or any(cases[0].get(k)!=v for k,v in
+                        dict(split=split,category=category,clean=key,sigma=0,seed=None,
+                             foreground=key.removesuffix('_clean')+'_fg',
+                             background=key.removesuffix('_clean')+'_bg').items()):
+                    raise ValueError('Expanded primary case does not match its frozen split/class/clean target: '+key)
+        expected = _required_checks(frozen_primary)
         required = registration.get('required_checks', [])
         if set(required) != set(expected) or len(required) != len(expected):
             raise ValueError('Expanded required check inventory is incomplete or unknown')

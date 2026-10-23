@@ -2,6 +2,8 @@
 import tempfile
 import unittest
 import json
+import subprocess
+from unittest.mock import patch
 from pathlib import Path
 import numpy as np
 try:
@@ -176,6 +178,92 @@ class EvaluationTests(unittest.TestCase):
             (root/'registration.json').write_text(json.dumps(reg))
             with self.assertRaisesRegex(ValueError, 'required'):
                 ds.load_registration(root)
+
+    def test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory(self):
+        root = ds.DEFAULT_REPORT.parent/'model_gate_round2'
+        original = json.loads((root/'registration.json').read_text(encoding='utf-8'))
+        for split in ('tuning','holdout'):
+            targets = original['primary_enhancement'][split]
+            for replacement in ([], targets[:1], [targets[0],targets[0]], list(reversed(targets)),
+                                [split+'_line_vertical_1_clean',targets[1]]):
+                reg = json.loads(json.dumps(original))
+                reg['primary_enhancement'][split] = replacement
+                reg['required_checks'] = [k for k in reg['required_checks'] if not k.startswith('primary_holdout_')]
+                reg['required_checks'] += ['primary_'+k for k in reg['primary_enhancement']['holdout']]
+                with self.subTest(split=split, replacement=replacement):
+                    with patch.object(Path,'read_text',return_value=json.dumps(reg)):
+                        with self.assertRaisesRegex(ValueError, 'primary'):
+                            ds.load_registration(root)
+
+    def test_expanded_primary_case_must_match_frozen_split_class_and_clean_id(self):
+        root = ds.DEFAULT_REPORT.parent/'model_gate_round2'
+        original = json.loads((root/'registration.json').read_text(encoding='utf-8'))
+        for mutation in ('absent','duplicate','split','category','clean','sigma'):
+            reg = json.loads(json.dumps(original))
+            case = next(c for c in reg['cases'] if c['id']=='holdout_text_low_clean')
+            if mutation=='absent': reg['cases'].remove(case)
+            elif mutation=='duplicate': reg['cases'].append(dict(case))
+            else: case[mutation] = dict(split='tuning',category='line',clean='holdout_flat_clean',sigma=8)[mutation]
+            with self.subTest(mutation=mutation):
+                with patch.object(Path,'read_text',return_value=json.dumps(reg)):
+                    with self.assertRaisesRegex(ValueError, 'primary'):
+                        ds.load_registration(root)
+
+    def _execution_repo(self, root):
+        # Real local Git fixture; source contents and mutations are independent
+        # of the production evaluator, and no official corpus is modified.
+        paths = ['model/__init__.py','model/dataset.py','model/evaluate.py','model/reference.py',
+                 'tests/test_reference.py','tests/test_evaluation.py']
+        for suffix in paths:
+            p = root/'stream_video_enhance'/suffix
+            p.parent.mkdir(parents=True,exist_ok=True)
+            p.write_text('# committed fixture '+suffix+'\n')
+        for command in (['init','--quiet'], ['config','user.name','Gate Test'],
+                        ['config','user.email','gate-test@example.invalid'], ['config','core.autocrlf','false'], ['add','.'],
+                        ['commit','--quiet','-m','committed execution fixture']):
+            subprocess.run(['git',*command],cwd=root,capture_output=True,check=True)
+
+    def test_execution_sources_must_be_committed_and_match_before_search(self):
+        for mutation in ('dirty','staged','untracked','missing'):
+            with self.subTest(mutation=mutation), tempfile.TemporaryDirectory() as p:
+                root = Path(p); self._execution_repo(root)
+                source = root/'stream_video_enhance/model/reference.py'
+                if mutation=='untracked': (source.parent/'extra.py').write_text('# untracked execution source\n')
+                elif mutation=='missing': source.unlink()
+                else:
+                    source.write_text('# uncommitted arithmetic\n')
+                    if mutation=='staged': subprocess.run(['git','add','.'],cwd=root,check=True,capture_output=True)
+                with self.assertRaisesRegex(ValueError,'execution source'):
+                    ev.capture_execution_sources(root)
+
+    def test_execution_provenance_keeps_entry_commit_across_documentation_head_change(self):
+        with tempfile.TemporaryDirectory() as p:
+            root=Path(p); self._execution_repo(root)
+            bundle=ev.capture_execution_sources(root)
+            entry=bundle['commit']
+            self.assertEqual(len(bundle['source_sha256']),6)
+            for name, digest in bundle['source_sha256'].items():
+                committed=subprocess.check_output(['git','show',entry+':'+name],cwd=root)
+                self.assertEqual(digest,ds.sha(committed))
+            (root/'README.md').write_text('documentation only\n')
+            subprocess.run(['git','add','README.md'],cwd=root,check=True,capture_output=True)
+            subprocess.run(['git','commit','--quiet','-m','docs only'],cwd=root,check=True,capture_output=True)
+            self.assertNotEqual(subprocess.check_output(['git','rev-parse','HEAD'],cwd=root,text=True).strip(),entry)
+            ev.verify_execution_sources(bundle,root)
+            self.assertEqual(bundle['commit'],entry)
+
+    def test_execution_source_changes_during_run_prevent_publication(self):
+        for mutation in ('modified','untracked','committed'):
+            with self.subTest(mutation=mutation), tempfile.TemporaryDirectory() as p:
+                root=Path(p); self._execution_repo(root)
+                bundle=ev.capture_execution_sources(root)
+                name='extra.py' if mutation=='untracked' else 'reference.py'
+                (root/'stream_video_enhance/model'/name).write_text('# changed during evaluation\n')
+                if mutation=='committed':
+                    subprocess.run(['git','add','.'],cwd=root,check=True,capture_output=True)
+                    subprocess.run(['git','commit','--quiet','-m','changed source'],cwd=root,check=True,capture_output=True)
+                with self.assertRaisesRegex(ValueError,'execution source'):
+                    ev.verify_execution_sources(bundle,root)
 
 
 if __name__ == '__main__':

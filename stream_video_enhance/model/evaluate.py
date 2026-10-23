@@ -13,6 +13,52 @@ from . import dataset as ds
 from .reference import fixed_layers, enhance_fixed, filter_fixed
 
 
+_EXECUTION_REQUIRED = ('model/__init__.py','model/dataset.py','model/evaluate.py','model/reference.py',
+                       'tests/test_reference.py','tests/test_evaluation.py')
+
+
+def _execution_source_hashes(root):
+    project = Path(root)/'stream_video_enhance'
+    paths = {project/name for name in _EXECUTION_REQUIRED}
+    for directory in ('model','tests'):
+        paths.update((project/directory).rglob('*.py'))
+    try:
+        return {p.relative_to(root).as_posix():ds.sha(p.read_bytes()) for p in sorted(paths)}
+    except FileNotFoundError as exc:
+        raise ValueError('Missing execution source: '+str(exc.filename)) from exc
+
+
+def _reject_dirty_execution_sources(root, paths):
+    status = subprocess.run(['git','status','--porcelain','-z','--untracked-files=all','--',*paths],
+                            cwd=root,capture_output=True,check=True)
+    if status.stdout:
+        raise ValueError('Dirty or untracked execution source; commit all execution Python sources before evaluation')
+
+
+def capture_execution_sources(root=ds.ROOT):
+    """Bind entry bytes to a committed revision before any model filtering."""
+    root = Path(root)
+    commit = subprocess.run(['git','rev-parse','HEAD'],cwd=root,capture_output=True,text=True,check=True).stdout.strip()
+    hashes = _execution_source_hashes(root)
+    _reject_dirty_execution_sources(root, list(hashes))
+    for name, digest in hashes.items():
+        committed = subprocess.run(['git','show',commit+':'+name],cwd=root,capture_output=True)
+        if committed.returncode or ds.sha(committed.stdout)!=digest:
+            raise ValueError('Uncommitted or mismatched execution source: '+name)
+    bundle = dict(commit=commit,source_sha256=hashes)
+    verify_execution_sources(bundle,root)
+    return bundle
+
+
+def verify_execution_sources(bundle, root=ds.ROOT):
+    """Keep entry identity stable; unrelated documentation commits may advance HEAD."""
+    root = Path(root)
+    current = _execution_source_hashes(root)
+    if current != bundle['source_sha256']:
+        raise ValueError('Changed execution source bytes or inventory during evaluation; publication forbidden')
+    _reject_dirty_execution_sources(root, list(current))
+
+
 def _mask_values(image, mask):
     image, mask = np.asarray(image, dtype=float), np.asarray(mask, dtype=bool)
     if image.shape != mask.shape or not mask.any():
@@ -311,6 +357,7 @@ def _expanded_report(report_dir, reg, result):
 
 def run(report_dir=ds.DEFAULT_REPORT):
     report_dir=Path(report_dir)
+    execution_sources = capture_execution_sources()
     reg, arrays = ds.load_registration(report_dir)
     # Require an actual committed registration, not merely a generated timestamp.
     relative = (report_dir/'registration.json').resolve().relative_to(ds.ROOT).as_posix()
@@ -346,11 +393,13 @@ def run(report_dir=ds.DEFAULT_REPORT):
     for key, policy in reg.get('evidence_policy', {}).items():
         checks[key] = dict(checks.get(key, {}), **policy)
     required_checks = reg.get('required_checks')
+    verify_execution_sources(execution_sources)
     if expanded:
-        source_model_commit = subprocess.run(['git','rev-parse','HEAD'],cwd=ds.ROOT,capture_output=True,text=True,check=True).stdout.strip()
+        source_model_commit = execution_sources['commit']
         result = dict(schema=2, experiment='expanded-v2', registration_commit=tracked,
                       registration_sha256=ds.sha((report_dir/'registration.json').read_bytes()),
                       archive_sha256=reg['archive_sha256'], source_model_commit=source_model_commit,
+                      execution_sources=execution_sources,
                       registered_generator_commit=reg['source_model_commit'], status=aggregate_status(checks,required_checks),
                       checks=checks, required_checks=required_checks, selected_candidate=selected,
                       candidates=candidates, holdout=holdout, holdout_configurations_evaluated=1,
@@ -359,6 +408,7 @@ def run(report_dir=ds.DEFAULT_REPORT):
             profile = dict(**selected['config'], experiment='expanded-v2',
                            registration_commit=tracked, registration_sha256=result['registration_sha256'],
                            input_archive_sha256=reg['archive_sha256'], source_model_commit=source_model_commit,
+                           execution_sources=execution_sources,
                            registered_generator_commit=reg['source_model_commit'],
                            required_checks={key:checks[key]['status'] for key in required_checks},
                            evidence_policy=reg['evidence_policy'], applicable_scope='Controlled registered model gate; camera exposure/real video validation DEFERRED')
@@ -441,6 +491,7 @@ def run(report_dir=ds.DEFAULT_REPORT):
               '', '质量FAIL/MISSING时--run返回1并保留报告；输入校验/缺登记异常返回2。数值测试日志在numerical_tests.txt。']
     (report_dir/'report.md').write_text('\n'.join(lines)+'\n',encoding='utf-8',newline='\n')
     if result['status']=='PASS':
+        verify_execution_sources(execution_sources)
         result['profile_published']=publish_profile(Path(__file__).parent,checks,selected['config'])
         (report_dir/'metrics.json').write_text(json.dumps(result,ensure_ascii=False,indent=2,allow_nan=False)+'\n',encoding='utf-8',newline='\n')
     print(json.dumps(dict(status=result['status'],tuning_feasible=len(feasible),selected=selected,failures=list(failures)),ensure_ascii=False))

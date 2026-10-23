@@ -110,11 +110,37 @@ def publish_profile(model_dir, checks, config, required_checks=None):
 
 def registered_candidates(reg):
     grid = reg['candidates']
+    finegain = reg.get('experiment') == 'finegain-v3'
+    if finegain:
+        ds.validate_finegain_registration(reg)
     for epsilon, td, te, ge in itertools.product(grid['epsilon'], grid['denoise_threshold'],
                                                grid['enhance_threshold'], grid['enhance_gain']):
-        if epsilon not in (16,64,256,1024) or td not in (2,4,8) or te not in (2,4) or ge not in (384,448,512) or grid['limit'] != 16:
+        legal_gains = grid['enhance_gain'] if finegain else (384,448,512)
+        if epsilon not in (16,64,256,1024) or td not in (2,4,8) or te not in (2,4) or ge not in legal_gains or grid['limit'] != 16:
             raise ValueError('Registration contains an unsupported candidate')
         yield dict(epsilon=epsilon, T_D=td, T_E=te, G_E=ge, L=grid['limit'])
+
+
+def select_candidate(reg, candidates):
+    """Rank only the registered tuning outcomes; old replays stay first-feasible."""
+    finegain = reg.get('experiment') == 'finegain-v3'
+    if finegain:
+        ds.validate_finegain_registration(reg)
+    feasible = [i for i,c in enumerate(candidates) if c['status']=='PASS' and
+                (not finegain or aggregate_status(c['checks'])=='PASS')]
+    index = feasible[0] if feasible else 0
+    margins = {}
+    if finegain and feasible:
+        for i in feasible:
+            margins[i] = min(candidates[i]['checks']['primary_'+key]['value']
+                             for key in reg['primary_enhancement'][reg['selection_policy']['split']])
+        index = min(feasible, key=lambda i:(-margins[i],*[candidates[i]['config'][k]
+                                                         for k in reg['selection_policy']['tie_break']]))
+    selected = dict(index=index,config=candidates[index]['config'],tuning_feasible=bool(feasible),
+                    role='selected_on_tuning' if feasible else 'diagnostic_only_no_feasible_tuning_candidate')
+    if finegain:
+        selected['selection_margin'] = margins.get(index)
+    return selected
 
 
 def real_image_class_check(reg, arrays):
@@ -296,23 +322,29 @@ def _visuals(report_dir, reg, arrays, result):
 def _expanded_report(report_dir, reg, result):
     selected, holdout = result['selected_candidate'], result['holdout']
     allowed = result['status']=='PASS' and result['profile_published']
-    lines = ['# 第15.A节扩大搜索：第二轮独立保留集报告', '',
+    finegain = reg.get('experiment')=='finegain-v3'
+    count = len(result['candidates'])
+    lines = ['# 第15.A节'+('细增益搜索：第三轮独立保留集报告' if finegain else '扩大搜索：第二轮独立保留集报告'), '',
              f"受控模型门槛：**{result['status']}**；发布profile：{'已发布' if result['profile_published'] else '无'}；算法RTL：{'允许进入后续实施' if allowed else '禁止进入'}。", '',
              f"登记提交：`{result['registration_commit']}`；登记SHA256：`{result['registration_sha256']}`。",
              f"输入归档SHA256：`{result['archive_sha256']}`；执行模型提交：`{result['source_model_commit']}`；登记生成模型提交：`{reg['source_model_commit']}`。", '',
-             '用户于2026-10-23授权保持公式、位宽及RAW+5%阈值，扩至4种ε和G512。首轮reports/model_gate的24项FAIL及归档原样保留；本轮不改写首轮结论。',
+             ('用户于2026-10-23授权既有合法范围的软件搜索；本轮仅细化G384…448步长4。公式、位宽、舍入及所有验收阈值保持不变；第一轮24项与第二轮72项FAIL和全部输入/报告字节原样保留。' if finegain else
+              '用户于2026-10-23授权保持公式、位宽及RAW+5%阈值，扩至4种ε和G512。首轮reports/model_gate的24项FAIL及归档原样保留；本轮不改写首轮结论。'),
              '真实不同曝光和真实固定曝光64帧验证按授权移至相机集成里程碑，当前均DEFERRED、非本轮必选；不称为PASS。受控PASS只允许开展算法RTL。', '',
              '## 搜索前固定的证据与选择规则', '',
-             '正式候选恰72项：ε16/64/256/1024，T_D2/4/8，T_E2/4，G_E384/448/512，L16；按这些字段升序选择第一个调参可行项。没有可行项才用首项诊断。',
-             '调参干净图案保留原定义。新保留集文字为Core VGA/Gain 512/Pixel 2026，起点(7,11)；纹理为(x+2y+1)%period<period/2的斜向条纹，周期4/8、振幅16/32；两项主例固定为文字和周期4振幅32。',
-             '两个新主输入逐字节不同于首轮全部二维U8数组与调参主图。所有噪声/时间噪声使用SeedSequence entropy2026102302，按split/pattern/sigma/seed分流；不只移动旧保留图的相位。',
+             ('正式候选恰51项：ε1024，T_D2/4/8，T_E4，G_E=list(range(384,449,4))，L16。在全部调参检查PASS的候选中，最大化两项主ENHANCE/RAW对比度比值的最小值；并列时先最低T_D、再最低G_E。没有可行项才用首项诊断。' if finegain else
+              '正式候选恰72项：ε16/64/256/1024，T_D2/4/8，T_E2/4，G_E384/448/512，L16；按这些字段升序选择第一个调参可行项。没有可行项才用首项诊断。'),
+             ('调参干净图案保留原定义。新保留文字BRAM 2026/Smooth Gain/Video Core，起点(17,9)；纹理(2*x+y+3)%period<period/2，周期4/8、振幅16/32；两项主例固定为文字和周期4振幅32。' if finegain else
+              '调参干净图案保留原定义。新保留集文字为Core VGA/Gain 512/Pixel 2026，起点(7,11)；纹理为(x+2y+1)%period<period/2的斜向条纹，周期4/8、振幅16/32；两项主例固定为文字和周期4振幅32。'),
+             ('两个新主输入逐字节不同于前两轮全部二维U8数组与本轮全部调参图，比较在登记提交前完成。所有噪声/时间噪声使用SeedSequence entropy2026102303，按split/pattern/sigma/seed分流。' if finegain else
+              '两个新主输入逐字节不同于首轮全部二维U8数组与调参主图。所有噪声/时间噪声使用SeedSequence entropy2026102302，按split/pattern/sigma/seed分流；不只移动旧保留图的相位。'),
              '平场、细线、阶跃、渐变、棋盘、脉冲、高光及移动阶跃是复用的规范压力图案（REUSED_NOT_NOVEL_HOLDOUT_EVIDENCE），不冒称新增独立保留证据。统一每边裁4像素，输入与掩膜哈希全在registration.json。',
-             f"72项中调参可行数：{sum(c['status']=='PASS' for c in result['candidates'])}；固定选择：`{selected['config']}`；角色：{selected['role']}。",
+             f"{count}项中调参可行数：{sum(c['status']=='PASS' for c in result['candidates'])}；固定选择：`{selected['config']}`；角色：{selected['role']}。",
              '选择完全基于调参集；新保留集仅评所选一项一次，不另跑旧参数或探索参数，不按保留集排名。', '',
              '## 必选门槛与延期项', '', '| 检查 | 必选 | 状态 | 值或证据 |', '|---|---|---|---|']
     for key, check in result['checks'].items():
         lines.append(f"| {key} | {'是' if check.get('required',True) else '否'} | {check['status']} | {check.get('value',check.get('explanation','见JSON'))} |")
-    lines += ['', '## 全部72项调参结果', '', '| ε | T_D | T_E | G_E | 文字/RAW | 纹理/RAW | 结果 | 失败项 |', '|---|---|---|---|---|---|---|---|']
+    lines += ['', f'## 全部{count}项调参结果', '', '| ε | T_D | T_E | G_E | 文字/RAW | 纹理/RAW | 结果 | 失败项 |', '|---|---|---|---|---|---|---|---|']
     for candidate in result['candidates']:
         cfg, cc = candidate['config'], candidate['checks']
         values = [cc['primary_'+key]['value'] for key in reg['primary_enhancement']['tuning']]
@@ -347,9 +379,9 @@ def _expanded_report(report_dir, reg, result):
     lines += ['', '## 证据边界与后续', '', *['- '+gap for gap in reg['evidence_gaps']], '',
               '本轮无算法RTL、综合、布局布线或实板证据。受控门槛通过后执行第16节关键模块/延迟冻结与仿真计划；实际曝光、固定曝光视频及相机细文字/自然纹理仍需相机集成补验。若本轮FAIL，保留全部证据并停止算法RTL，按第17节讨论必要调整。', '',
               '## 复现', '', '```powershell',
-              'python -m stream_video_enhance.model.evaluate --experiment expanded-v2 --register --report-dir stream_video_enhance/reports/model_gate_round2',
+              'python -m stream_video_enhance.model.evaluate --experiment '+reg['experiment']+' --register --report-dir stream_video_enhance/reports/'+report_dir.name,
               '# 仅用于新空目录；登记文件、输入归档、模型代码先提交，再执行搜索。现有登记不可覆盖。',
-              'python -m stream_video_enhance.model.evaluate --run --report-dir stream_video_enhance/reports/model_gate_round2',
+              'python -m stream_video_enhance.model.evaluate --run --report-dir stream_video_enhance/reports/'+report_dir.name,
               'python -m unittest discover -s stream_video_enhance/tests -v', '```', '',
               '受控必选项全部PASS才返回0和发布可追溯profile；FAIL/MISSING返回1，输入/登记无效返回2。完整执行输出见logs，数值回归见numerical_tests.txt。']
     (report_dir/'report.md').write_text('\n'.join(lines)+'\n',encoding='utf-8',newline='\n')
@@ -374,29 +406,27 @@ def run(report_dir=ds.DEFAULT_REPORT):
     for config in registered_candidates(reg):
         candidates.append(assess(reg,arrays,'tuning',config,cache))
     feasible=[i for i,c in enumerate(candidates) if c['status']=='PASS']
-    index=feasible[0] if feasible else 0
-    selected=dict(index=index, config=candidates[index]['config'], tuning_feasible=bool(feasible),
-                  role='selected_on_tuning' if feasible else 'diagnostic_only_no_feasible_tuning_candidate')
+    selected=select_candidate(reg,candidates)
     # The holdout is assessed once, after the deterministic tuning choice.
     holdout=assess(reg,arrays,'holdout',selected['config'],{},full=True)
     checks=dict(holdout['checks'])
     checks['tuning_feasible']=_check(len(feasible), bool(feasible), candidate_count=len(candidates))
     checks['numerical_model']=dict(status='PASS' if numerical.returncode==0 else 'FAIL', command='python -m unittest discover -s stream_video_enhance/tests -p test_reference.py -v',
                                    log='numerical_tests.txt', scope='all constants/modes/epsilon/bounds, variance/division, 288 VGA cases max error<=1, histogram/MAE/RMSE')
-    checks['real_image_classes']=real_image_class_check(reg, arrays) if reg.get('experiment')=='expanded-v2' else dict(
+    checks['real_image_classes']=real_image_class_check(reg, arrays) if reg.get('experiment') in ('expanded-v2','finegain-v3') else dict(
         status='PASS' if len([c for c in reg['cases'] if c['category']=='real'])>=3 else 'MISSING',
         explanation='Legacy original-v1 replay only: historical file-count criterion. Expanded-v2 requires explicit registered flat/text/texture regions and nonempty masks.')
     checks['real_exposure_classes']=dict(status='MISSING', explanation=reg['evidence_gaps'][0])
     checks['camera_video_evidence']=dict(status='MISSING', explanation=reg['evidence_gaps'][1], required=False)
     checks['future_rtl_bit_exact']=dict(status='DEFERRED', required=False, explanation='Only applicable after model gate PASS; no algorithm RTL exists.')
-    expanded = reg.get('experiment') == 'expanded-v2'
+    expanded = reg.get('experiment') in ('expanded-v2','finegain-v3')
     for key, policy in reg.get('evidence_policy', {}).items():
         checks[key] = dict(checks.get(key, {}), **policy)
     required_checks = reg.get('required_checks')
     verify_execution_sources(execution_sources)
     if expanded:
         source_model_commit = execution_sources['commit']
-        result = dict(schema=2, experiment='expanded-v2', registration_commit=tracked,
+        result = dict(schema=2, experiment=reg['experiment'], registration_commit=tracked,
                       registration_sha256=ds.sha((report_dir/'registration.json').read_bytes()),
                       archive_sha256=reg['archive_sha256'], source_model_commit=source_model_commit,
                       execution_sources=execution_sources,
@@ -404,8 +434,14 @@ def run(report_dir=ds.DEFAULT_REPORT):
                       checks=checks, required_checks=required_checks, selected_candidate=selected,
                       candidates=candidates, holdout=holdout, holdout_configurations_evaluated=1,
                       profile_published=False, evidence_gaps=reg['evidence_gaps'])
+        if reg['experiment']=='finegain-v3':
+            result['selection_policy']=reg['selection_policy']
+            result['failure_frontier']=[dict(config=c['config'],
+                failed_checks=[k for k,v in c['checks'].items() if v['status']!='PASS'],
+                minimum_primary_ratio=min(c['checks']['primary_'+key]['value'] for key in reg['primary_enhancement']['tuning']))
+                for c in candidates if c['status']!='PASS']
         if result['status'] == 'PASS':
-            profile = dict(**selected['config'], experiment='expanded-v2',
+            profile = dict(**selected['config'], experiment=reg['experiment'],
                            registration_commit=tracked, registration_sha256=result['registration_sha256'],
                            input_archive_sha256=reg['archive_sha256'], source_model_commit=source_model_commit,
                            execution_sources=execution_sources,
@@ -503,7 +539,7 @@ def main():
     group=parser.add_mutually_exclusive_group(required=True)
     group.add_argument('--register',action='store_true'); group.add_argument('--run',action='store_true')
     parser.add_argument('--report-dir',type=Path,default=ds.DEFAULT_REPORT)
-    parser.add_argument('--experiment', choices=['original-v1','expanded-v2'], default='original-v1', help='Registration only; --run consumes the committed registration')
+    parser.add_argument('--experiment', choices=['original-v1','expanded-v2','finegain-v3'], default='original-v1', help='Registration only; --run consumes the committed registration')
     args=parser.parse_args()
     try:
         if args.register:

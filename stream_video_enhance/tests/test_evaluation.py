@@ -18,6 +18,12 @@ class EvaluationTests(unittest.TestCase):
         self.assertIsNotNone(ev, 'Quality evaluation API has not been implemented')
         self.assertIsNotNone(ds, 'Registered dataset API has not been implemented')
 
+    def _finegain_registration(self, path):
+        try:
+            return ds.register(Path(path), include_sources=False, experiment='finegain-v3')
+        except ValueError as exc:
+            self.fail('Finegain registration must accept the authorized experiment: '+str(exc))
+
     def test_psnr_uses_float_mse(self):
         self.assertAlmostEqual(ev.psnr(np.array([[0, 4]], np.uint8),
                                        np.array([[2, 2]], np.uint8)),
@@ -143,6 +149,122 @@ class EvaluationTests(unittest.TestCase):
                                  enhance_threshold=[4], enhance_gain=[512], limit=16)}
         self.assertEqual(list(ev.registered_candidates(reg)),
                          [dict(epsilon=1024, T_D=8, T_E=4, G_E=512, L=16)])
+
+    def test_finegain_grid_is_exactly_51_legal_candidates(self):
+        with tempfile.TemporaryDirectory() as p:
+            reg = self._finegain_registration(p)
+            configs = list(ev.registered_candidates(reg))
+            gains = [384,388,392,396,400,404,408,412,416,420,424,428,432,436,440,444,448]
+            self.assertEqual(len(configs), 51)
+            for td, group in zip((2,4,8), (configs[:17], configs[17:34], configs[34:])):
+                self.assertEqual(group, [dict(epsilon=1024,T_D=td,T_E=4,G_E=g,L=16) for g in gains])
+            for field, value in [('epsilon',[16]),('enhance_gain',[385]),('enhance_threshold',[2]),
+                                 ('denoise_threshold',[2]),('limit',15)]:
+                changed = json.loads(json.dumps(reg)); changed['candidates'][field] = value
+                with self.subTest(field=field), self.assertRaisesRegex(ValueError,'candidate'):
+                    list(ev.registered_candidates(changed))
+            # Fine gains do not silently enlarge the historical grids.
+            reg['experiment'] = 'expanded-v2'
+            with self.assertRaisesRegex(ValueError,'candidate'):
+                list(ev.registered_candidates(reg))
+
+    def test_finegain_primary_and_random_streams_are_new_against_both_rounds(self):
+        old_rounds = [ds.load_registration(p)[1] for p in
+                      (ds.DEFAULT_REPORT,ds.DEFAULT_REPORT.parent/'model_gate_round2')]
+        with tempfile.TemporaryDirectory() as p:
+            self._finegain_registration(p)
+            reg, arrays = ds.load_registration(Path(p))
+            self.assertIn('2026102303',reg['split_seed_entropy'])
+            yy,xx=np.indices((96,128))
+            expected = np.where((2*xx+yy+3)%4<2,160,96).astype(np.uint8)
+            np.testing.assert_array_equal(arrays['holdout_texture_p4_a32_clean'],expected)
+            from PIL import Image,ImageDraw,ImageFilter
+            literal=Image.new('L',(128,96),0)
+            ImageDraw.Draw(literal).multiline_text((17,9),'BRAM 2026\nSmooth Gain\nVideo Core',fill=255,spacing=7)
+            fg=np.asarray(literal)>127
+            np.testing.assert_array_equal(arrays['holdout_text_low_clean'],np.where(fg,144,112))
+            np.testing.assert_array_equal(arrays['holdout_text_low_fg'],fg)
+            np.testing.assert_array_equal(arrays['holdout_text_low_bg'],(np.asarray(literal.filter(ImageFilter.MaxFilter(5)))>0)&~fg)
+            for key in reg['primary_enhancement']['holdout']:
+                for old in [*old_rounds,arrays]:
+                    for old_key,value in old.items():
+                        if value.ndim==2 and value.dtype==np.uint8 and (old is not arrays or old_key.startswith('tuning_')):
+                            self.assertFalse(np.array_equal(arrays[key],value),(key,old_key))
+            for split in ('tuning','holdout'):
+                for key in [k for k in arrays if k.startswith(split+'_') and
+                            ('_s' in k and '_n' in k or k==split+'_temporal_noise')]:
+                    for old in old_rounds:
+                        self.assertFalse(np.array_equal(arrays[key],old[key]))
+            self.assertFalse(np.array_equal(arrays['tuning_temporal_noise'],arrays['holdout_temporal_noise']))
+            self.assertEqual(reg['fixture_policy']['canonical_stress'],'REUSED_NOT_NOVEL_HOLDOUT_EVIDENCE')
+
+    def test_finegain_selection_maximizes_worst_primary_then_lowest_td_gain(self):
+        with tempfile.TemporaryDirectory() as p:
+            reg=self._finegain_registration(p)
+        def result(td,ge,a,b,status='PASS'):
+            return dict(status=status,config=dict(epsilon=1024,T_D=td,T_E=4,G_E=ge,L=16),
+                        checks={'primary_tuning_text_low_clean':dict(value=a,status='PASS'),
+                                'primary_tuning_texture_p4_a32_clean':dict(value=b,status='PASS')})
+        # Highest average loses to highest minimum. Equal minima prefer T_D
+        # before gain even when the candidate order is deliberately reversed.
+        candidates=[result(2,388,1.06,1.4),result(8,400,1.1,1.1),
+                    result(2,404,1.2,1.1),result(2,400,1.1,1.3),result(2,448,2,2,'FAIL')]
+        self.assertEqual(ev.select_candidate(reg,candidates)['index'],3)
+        self.assertEqual(ev.select_candidate(reg,candidates)['selection_margin'],1.1)
+        candidates[3]['checks']['new_clipping']=dict(status='FAIL')
+        self.assertEqual(ev.select_candidate(reg,candidates)['index'],2)
+        for experiment in ('original-v1','expanded-v2'):
+            self.assertEqual(ev.select_candidate(dict(reg,experiment=experiment),candidates)['index'],0)
+        for c in candidates: c['status']='FAIL'
+        selected=ev.select_candidate(reg,candidates)
+        self.assertEqual(selected['index'],0)
+        self.assertFalse(selected['tuning_feasible'])
+        self.assertEqual(selected['role'],'diagnostic_only_no_feasible_tuning_candidate')
+        reg['selection_policy']['tie_break']=['G_E','T_D']
+        with self.assertRaisesRegex(ValueError,'selection'):
+            ev.select_candidate(reg,candidates)
+
+    def test_finegain_loader_preserves_17_checks_primary_binding_and_selection(self):
+        with tempfile.TemporaryDirectory() as p:
+            root=Path(p); original=self._finegain_registration(p)
+            self.assertEqual(len(original['required_checks']),17)
+            self.assertEqual(ds.load_registration(root)[0],original)
+            for mutation in ('primary','case','inventory','selection','policy','grid'):
+                reg=json.loads(json.dumps(original))
+                if mutation=='primary':
+                    reg['primary_enhancement']['holdout']=reg['primary_enhancement']['holdout'][:1]
+                    reg['required_checks'].remove('primary_holdout_texture_p4_a32_clean')
+                elif mutation=='case':
+                    next(c for c in reg['cases'] if c['id']=='tuning_text_low_clean')['category']='line'
+                elif mutation=='inventory': reg['required_checks'].remove('real_image_classes')
+                elif mutation=='selection': reg['selection_policy']['objective']='mean_primary'
+                elif mutation=='policy': reg['evidence_policy']['real_exposure_classes']['required']=True
+                else: reg['candidates']['enhance_gain']=[448]
+                (root/'registration.json').write_text(json.dumps(reg))
+                with self.subTest(mutation=mutation),self.assertRaises(ValueError):
+                    ds.load_registration(root)
+            for split in ('tuning','holdout'):
+                targets=original['primary_enhancement'][split]
+                for replacement in ([],targets[:1],[targets[0],targets[0]],list(reversed(targets)),
+                                    [split+'_line_vertical_1_clean',targets[1]]):
+                    reg=json.loads(json.dumps(original))
+                    reg['primary_enhancement'][split]=replacement
+                    reg['required_checks']=[k for k in reg['required_checks'] if not k.startswith('primary_holdout_')]
+                    reg['required_checks']+=['primary_'+k for k in reg['primary_enhancement']['holdout']]
+                    (root/'registration.json').write_text(json.dumps(reg))
+                    with self.subTest(split=split,replacement=replacement),self.assertRaisesRegex(ValueError,'primary'):
+                        ds.load_registration(root)
+                for mutation in ('absent','duplicate','split','category','clean','sigma','seed','foreground','background'):
+                    reg=json.loads(json.dumps(original))
+                    case=next(c for c in reg['cases'] if c['id']==split+'_text_low_clean')
+                    if mutation=='absent': reg['cases'].remove(case)
+                    elif mutation=='duplicate': reg['cases'].append(dict(case))
+                    else:
+                        case[mutation]=dict(split='other',category='line',clean=split+'_flat_clean',sigma=8,
+                                            seed=0,foreground=split+'_flat_fg',background=split+'_flat_bg')[mutation]
+                    (root/'registration.json').write_text(json.dumps(reg))
+                    with self.subTest(split=split,mutation=mutation),self.assertRaisesRegex(ValueError,'primary'):
+                        ds.load_registration(root)
 
     def test_required_inventory_cannot_be_omitted_or_unknown_at_publication(self):
         for status in ('FAIL', 'MISSING', 'DEFERRED', 'unknown'):

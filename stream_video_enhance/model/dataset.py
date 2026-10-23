@@ -12,6 +12,17 @@ ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_REPORT = ROOT / 'stream_video_enhance/reports/model_gate'
 
 
+def validate_finegain_registration(registration):
+    """Fine refinement is a bounded registered experiment, never an open grid."""
+    if registration['candidates'] != dict(epsilon=[1024], denoise_threshold=[2,4,8],
+            enhance_threshold=[4], enhance_gain=list(range(384,449,4)), limit=16):
+        raise ValueError('Finegain candidate grid must contain exactly the 51 registered configurations')
+    if registration.get('selection_policy') != dict(objective='maximize_minimum_primary_contrast_vs_raw',
+            split='tuning', feasibility='all_tuning_checks_PASS', tie_break=['T_D','G_E'],
+            no_feasible='first_diagnostic_only'):
+        raise ValueError('Finegain selection policy must preserve tuning maximin and T_D/G_E ties')
+
+
 def sha(data):
     return hashlib.sha256(data).hexdigest()
 
@@ -56,6 +67,8 @@ def _patterns(split, experiment='original-v1'):
                 # New geometry: diagonal alternating bands, never round1's
                 # vertical stripes or checkerboard translated to a new phase.
                 fg = (x+2*y+1) % period < period//2
+            elif experiment == 'finegain-v3' and split == 'holdout':
+                fg = (2*x+y+3) % period < period//2
             add(f'texture_p{period}_a{amplitude}', np.where(fg, 128+amplitude, 128-amplitude), fg, ~fg, 'texture')
     canvas = Image.new('L', (w, h), 0)
     draw = ImageDraw.Draw(canvas)
@@ -63,6 +76,8 @@ def _patterns(split, experiment='original-v1'):
     position = (12+offset, 16+offset)
     if experiment == 'expanded-v2' and split == 'holdout':
         text, position = 'Core VGA\nGain 512\nPixel 2026', (7, 11)
+    elif experiment == 'finegain-v3' and split == 'holdout':
+        text, position = 'BRAM 2026\nSmooth Gain\nVideo Core', (17, 9)
     draw.multiline_text(position, text, fill=255, spacing=7)
     fg = np.asarray(canvas) > 127
     # Adjacent background: 5x5 dilation, excluding actual strokes.
@@ -80,9 +95,10 @@ def _patterns(split, experiment='original-v1'):
 
 
 def register(report_dir=DEFAULT_REPORT, include_sources=True, experiment='original-v1'):
-    if experiment not in ('original-v1', 'expanded-v2'):
+    if experiment not in ('original-v1', 'expanded-v2', 'finegain-v3'):
         raise ValueError('Unknown registered experiment: '+experiment)
-    expanded = experiment == 'expanded-v2'
+    expanded = experiment in ('expanded-v2', 'finegain-v3')
+    entropy_base = 2026102303 if experiment=='finegain-v3' else 2026102302
     report_dir = Path(report_dir)
     if (report_dir/'registration.json').exists() or (report_dir/'inputs.npz').exists():
         raise FileExistsError('Registration is immutable; use a new experiment directory')
@@ -101,14 +117,14 @@ def register(report_dir=DEFAULT_REPORT, include_sources=True, experiment='origin
                     key = prefix+'_clean' if sigma == 0 else prefix+f'_s{sigma}_n{seed}'
                     # Same enumerated seed IDs, disjoint split seed streams.
                     if sigma:
-                        entropy = [2026102302, int(split=='holdout'), pattern_index, sigma, seed] if expanded else [20261023, int(split=='holdout'), sigma, seed]
+                        entropy = [entropy_base, int(split=='holdout'), pattern_index, sigma, seed] if expanded else [20261023, int(split=='holdout'), sigma, seed]
                         rng = np.random.Generator(np.random.PCG64(np.random.SeedSequence(entropy)))
                         arrays[key] = gray_round(clean.astype(float)+rng.normal(0, sigma, clean.shape))
                     cases.append(dict(id=key, split=split, category=category, clean=prefix+'_clean',
                                       foreground=prefix+'_fg', background=prefix+'_bg', sigma=sigma, seed=seed,
                                       provenance='synthetic', dimensions=list(clean.shape)))
         flat = patterns['flat'][0]
-        rng = np.random.Generator(np.random.PCG64(np.random.SeedSequence([2026102302 if expanded else 20261023, int(split=='holdout'), 64])))
+        rng = np.random.Generator(np.random.PCG64(np.random.SeedSequence([entropy_base if expanded else 20261023, int(split=='holdout'), 64])))
         arrays[split+'_repeated'] = np.repeat(patterns['text_low'][0][None], 64, axis=0)
         arrays[split+'_temporal_noise'] = gray_round(flat.astype(float)[None]+rng.normal(0, 8, (64, *flat.shape)))
         yy, xx = np.indices(flat.shape)
@@ -208,6 +224,15 @@ def register(report_dir=DEFAULT_REPORT, include_sources=True, experiment='origin
                                              camera_video_evidence=dict(status='DEFERRED', required=False, milestone='camera_integration'),
                                              future_rtl_bit_exact=dict(status='DEFERRED', required=False, milestone='algorithm_RTL')))
         manifest['required_checks'] = _required_checks(primary)
+        if experiment == 'finegain-v3':
+            manifest.update(
+                split_seed_entropy='PCG64 SeedSequence [2026102303, split(0=tuning,1=holdout), pattern_index, sigma, seed0..4]; temporal=[2026102303,split,64]',
+                candidates=dict(epsilon=[1024],denoise_threshold=[2,4,8],enhance_threshold=[4],enhance_gain=list(range(384,449,4)),limit=16),
+                tuning_selection='Among all tuning-feasible candidates maximize the minimum of the two primary ENHANCE/RAW contrast ratios; ties lowest T_D then lowest G_E. If none feasible, first is diagnostic only. Never rank holdout.',
+                selection_policy=dict(objective='maximize_minimum_primary_contrast_vs_raw',split='tuning',
+                                      feasibility='all_tuning_checks_PASS',tie_break=['T_D','G_E'],no_feasible='first_diagnostic_only'))
+            manifest['fixture_policy']['novel_holdout']='New text BRAM 2026/Smooth Gain/Video Core at (17,9); diagonal bands (2*x+y+3)%period < period/2, period4/8 amplitude16/32.'
+            manifest['fixture_policy']['public_real_regions']='REUSED_REGISTERED_REGIONS_NOT_NEW_CAMERA_EVIDENCE'
     (report_dir/'registration.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
     return manifest
 
@@ -215,7 +240,7 @@ def register(report_dir=DEFAULT_REPORT, include_sources=True, experiment='origin
 def load_registration(report_dir=DEFAULT_REPORT):
     report_dir = Path(report_dir)
     registration = json.loads((report_dir/'registration.json').read_text(encoding='utf-8'))
-    if registration.get('experiment') == 'expanded-v2':
+    if registration.get('experiment') in ('expanded-v2','finegain-v3'):
         # This known experiment has two frozen targets in each split. Do not
         # derive the binding contract from editable registration metadata: an
         # omitted primary and an equally shortened inventory must still fail.
@@ -239,6 +264,8 @@ def load_registration(report_dir=DEFAULT_REPORT):
         expected_policy = {'real_exposure_classes','camera_video_evidence','future_rtl_bit_exact'}
         if set(policy) != expected_policy or any(p.get('required') is not False or p.get('status')!='DEFERRED' for p in policy.values()):
             raise ValueError('Expanded evidence policy must preserve required controlled checks and DEFERRED camera/RTL evidence')
+        if registration['experiment']=='finegain-v3':
+            validate_finegain_registration(registration)
     archive = report_dir/registration['archive']
     if sha(archive.read_bytes()) != registration['archive_sha256']:
         raise ValueError('Registered archive hash mismatch')

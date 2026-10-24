@@ -46,7 +46,8 @@ typedef struct packed {
  logic [31:0] frame_id;
  frame_config_t config;
  logic [31:0] pixel_count, raw_crc, selected_crc;
- logic [31:0] diagnostic_seq;
+ logic [31:0] diagnostic_seq, report_overwrite_count;
+ logic [31:0] completed_frames, invalid_frames, accepted_frames;
 } core_report_t;
 ```
 
@@ -73,13 +74,13 @@ ingress_guard #(W,H,L_CORE,CLK_HZ=100000000) consumes source token+end event, sh
 
 **Files:** Create rtl/crc32_byte.sv, core_crc_monitor.sv, sim/tb_core_crc.sv; extend runtime vector/harness selection and reports/rtl/runtime/crc.md.
 
-**Interfaces:** crc32_byte is a combinational fixed byte XOR network next_state=f(state,data). core_crc_monitor #(W,H) consumes aligned out_pixel/out_raw/out_valid/x/y/sof/eol/eof/frame_id, frame_start_valid/id/config, frame_success_valid/id, frame_invalid_valid/id/reason, rst/abort. It emits core_done event with id/ok, latest_valid/core_report_t latest, claim, claimed_valid/claimed_report and overwrite_count. claim copies the complete latest report atomically; a later publication must never mutate claimed_report. Pending/output-success reports must likewise remain independent.
+**Interfaces:** crc32_byte is a combinational fixed byte XOR network next_state=f(state,data). core_crc_monitor #(W,H) consumes aligned out_pixel/out_raw/out_valid/x/y/sof/eol/eof/frame_id, frame_start_valid/id/config, frame_success_valid/id, frame_invalid_valid/id/reason, running completed/invalid/accepted counter buses, rst/abort. It emits core_done event with id/ok, latest_valid/core_report_t latest, claim, claimed_valid/claimed_report and overwrite_count. claim copies the complete latest report atomically; a later publication must never mutate claimed_report. Pending/output-success reports must likewise remain independent. Publication samples the three registered counter buses at that edge (normal pre-edge sampling); the successful-frame count update has already occurred at the preceding frame_success edge. Store publication diagnostic_seq and post-increment overwrite_count in the report. Future image descriptors retain these commit-time counter copies; STATUS instead takes its running counter snapshot when claimed, as required by spec10.3.
 
 - [ ] Write RED benches for the standard CRC vector and literal singlebyte/empty cases, then image vectors from zlib.crc32. Require RAW-mode equality of both complete CRCs and outcount(W-8)*(H-8), not inputWH.
 - [ ] Implement unfolded8bit CRC updates. Onout_sof process its byte frominitialstate; onout_eof include finalbyte beforefinalXOR. Flag malformed coordinates/count/frame as core_done_ok0. No preview sampling/enable enters this logic.
 - [ ] Retain pendingEOF record untilmatchingframe_success. Source/guard confirmation may arrive before or afterEOF; publish no later than one controlcycle after both are present. An invalid/abort dropspending without clearinglast_good. Initialreset yields no valid report.
 - [ ] Test first/lastbyte mutations, ROI-externalpixel mutation, randomvalid gaps, wrongcount, early/lateendOK, abort/reset atEOF, and framewrap. Latest reports overwritten while unclaimed increment saturated overwrite_count; claims acknowledge the current report but do not stall later publications. On claim/publication samecycle define claim of the pre-edge latest, preserving new report as unclaimed, and test that ordering explicitly.
-- [ ] Verify sourcecfg/id fields remain from the same frame during later shadowupdates; claimed copy remains identical while100 new reports publish. Save command/log/CRC table, commit scoped files.
+- [ ] Verify sourcecfg/id fields remain from the same frame during later shadowupdates; claimed copy remains identical while100 new reports publish. Check publication counter copies, including publication concurrent with next-frame acceptance, and ensure later counter changes do not mutate the committed image descriptor. Save command/log/CRC table, commit scoped files.
 
 ## Task 3: Actual-core runtime integration and stream evidence
 

@@ -4,15 +4,20 @@
 
 本目录是新版设计入口，基于 Basys 3 / XC7A35T。原工程 `../demo/stream_image_demo/` 保持原样。
 
-**先读[设计规格1.3-expanded](docs/spec.md)和[实施计划](docs/plans/2026-10-23-model-gate.md)。** 用户已明确确认最新设计并开始实现。第15.A节第二轮受控模型结果仍为**FAIL**：扩大后的72组候选无一同时通过。未发布参数profile，算法RTL继续停止；实际曝光与真实固定曝光视频仍按授权DEFERRED至相机集成。
+**先读[设计规格1.4-finegain](docs/spec.md)和[实施计划](docs/plans/2026-10-23-model-gate.md)。** 第15.A节第三轮finegain-v3受控模型**PASS**：51组调参候选中15组可行，按预登记质量余量规则选出ε1024/T_D2/T_E4/G428/L16，仅对此配置评估一次新保留集，17项必选全部通过，已发布[profile_id=1](model/profile.json)。审阅后可进入后续RTL计划；实际曝光与真实固定曝光视频仍按授权DEFERRED至相机集成。
+
+[第三轮完整报告](reports/model_gate_round3/report.md)保存全部候选、失败前沿、独立输入、四模式图和来源哈希。代码`f1adeba`及独立登记`747c5da`均先于搜索；新文字/纹理和entropy2026102303噪声独立登记。保留主文字/纹理相对RAW为1.087972/1.125，ENHANCE阶跃越界2灰度、σ8空间/64帧时间噪声比1.018571/1.012451、新截断0.018939%。适用结论限已登记的受控主图，最差细线比0.978669，σ16文字未达到+5%；不保证任意输入都增强。10月24日最终37项测试PASS，614个旧归档/数值报告/demo/reference文件字节保持。尚无算法RTL或硬件验证结果。
 
 [首轮模型质量报告](reports/model_gate/report.md)保存预登记输入/掩膜/哈希、全部候选、独立保留集四模式指标和图像。登记提交`cfe857b`先于参数搜索；首轮ε64/T_D2/T_E2/G_E384仅是预登记首项失败诊断，不是发布参数。数值参考VGA测试288组最大误差1 LSB；质量门槛失败不改变数值测试结果。
 
 [第二轮独立保留集报告](reports/model_gate_round2/report.md)的登记提交`6b6ccc7`先于72项搜索；新主文字/斜纹图案及entropy2026102302噪声均独立登记。没有调参可行项，因此仅按预登记首项ε16/T_D2/T_E2/G_E384作一次保留集失败诊断，文字/RAW=0.929826、纹理/RAW=1.000000。已登记真实flat/text/texture区域及非空掩膜，公开照片与OV7670来源分开，未计算真实图clean PSNR。最终28项测试通过，原24组FAIL全部归档字节保持不变。
 
 ```powershell
-python -m stream_video_enhance.model.evaluate --run --report-dir stream_video_enhance/reports/model_gate_round2
 python -m unittest discover -s stream_video_enhance/tests -v
+# 已有正式结果直接查阅，不为探索参数重跑保留集。
+# 在新空目录复现实验时，先登记并提交代码和输入，再运行：
+python -m stream_video_enhance.model.evaluate --experiment finegain-v3 --register --report-dir <新目录>
+python -m stream_video_enhance.model.evaluate --run --report-dir <新目录>
 ```
 
 质量未通过时第一条命令返回1并保留报告。默认不指定目录的`--run`仍重放原始original-v1轮次。新实验先在新目录执行`--experiment expanded-v2 --register --report-dir <目录>`并提交登记，再执行搜索；不得覆盖现有登记或根据保留集重选参数。
@@ -23,7 +28,7 @@ python -m unittest discover -s stream_video_enhance/tests -v
 
 预期效果是形成真正可连续工作的计算核心，并具备保边平滑和受控增强能力；实际画质、资源、时序和摄像头帧率尚未验证。现有 OV7670_FIFO 用于过渡联调，不据此宣称连续高速摄像头输入已经实现。屏幕先维护逻辑接口，采购和物理驱动留到后续阶段。
 
-规格包含算法与定点规则、像素接口、逐级延迟、RAM端口、资源预算、错误恢复、外设边界及验收条件。模型数值验收已通过。用户授权的全部已定义ε及G512扩大搜索已执行，公式、位宽与相对RAW的+5%门槛保持不变。第一、二轮均保留FAIL；进一步调整须按第17节基于实测权衡讨论。VGA在这里表示分辨率，屏幕接口仍独立待定。
+规格包含算法与定点规则、像素接口、逐级延迟、RAM端口、资源预算、错误恢复、外设边界及验收条件。模型数值与第三轮受控质量验收已通过；第一、二轮FAIL原样保留。公式、位宽与相对RAW的+5%门槛保持不变，后续变更仍按第17节处理。VGA在这里表示分辨率，屏幕接口仍独立待定。
 
 - [本轮状态与交接](docs/status.md)
 - [六项审阅意见的处理记录](docs/review_revision_2026-10-22.md)

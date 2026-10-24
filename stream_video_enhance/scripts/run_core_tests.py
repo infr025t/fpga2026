@@ -150,7 +150,33 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--quick", action="store_true")
     parser.add_argument("--timeout", type=float, default=240)
+    parser.add_argument("--suite", choices=("arithmetic", "windows"), default="arithmetic")
+    parser.add_argument("--windows-size", choices=("all", "16", "17", "vga", "ranges"), default="all")
     args = parser.parse_args()
+    if args.suite == "windows":
+        from window_vectors import generate_window_vectors
+        results = []
+        for size, width, height in [("16",16,16),("17",17,19),("vga",640,480)]:
+            if args.windows_size not in ("all",size):
+                continue
+            path = ROOT / "build/regression" / ("windows-"+size+"-"+uuid.uuid4().hex[:10])
+            path.mkdir(parents=True)
+            counts = generate_window_vectors(path,width,height,args.quick)
+            result = run_bench([*(ROOT / "rtl" / s for s in
+                ("token_pipe.sv","div25_pipe.sv","row_window5.sv","moments5.sv","coefficient_box5.sv")),
+                ROOT / "sim/tb_windows.sv"], "tb_windows_"+size,path,timeout=args.timeout,
+                pass_marker="PASS tb_windows",plusargs=["VECTORS="+path.as_posix()])
+            result["vectors"] = counts
+            (path / "result.json").write_text(json.dumps(result,indent=2))
+            results.append(result)
+        if args.windows_size in ("all","ranges"):
+            path = ROOT / "build/regression" / ("windows-ranges-"+uuid.uuid4().hex[:10])
+            result = run_bench([*(ROOT / "rtl" / s for s in
+                ("token_pipe.sv","div25_pipe.sv","row_window5.sv","moments5.sv","coefficient_box5.sv")),
+                ROOT / "sim/tb_windows.sv"], "tb_window_ranges",path,timeout=args.timeout)
+            results.append(result)
+        print(json.dumps(results,indent=2))
+        return 0 if all(r["passed"] for r in results) else 1
     path = ROOT / "build/regression" / ("arithmetic-" + uuid.uuid4().hex[:10])
     path.mkdir(parents=True)
     counts = generate_vectors(path,args.quick)

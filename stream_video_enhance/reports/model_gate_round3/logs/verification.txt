@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "candidate_count": 51,
+  "feasible": 15,
+  "required_checks": 17,
+  "holdout_configurations_evaluated": 1,
+  "preserved_files": 614,
+  "preservation_base": "5c474edbbdbabd0d6e242527ac656fd1a3ab4bfb",
+  "execution_commit": "747c5da2ef8054748e8ac01ebb1fb9d64d9c3d47",
+  "profile_sha256": "0817488e0e5de12c1b863caa20295bb2633a973f21869e536ae23fabe461701f",
+  "metrics_sha256": "18181b0d6144fbf17a36132de0721f3c077f5f8ac090a14312f651743d7b74af",
+  "registration_sha256": "4313e070de338caa2abf3e21c3370814dcbd45420c6752af92628e226cb52c34",
+  "archive_sha256": "270f74a61befab69eb8a373154d442b4e0592137c8bf93987b472e1ac829cae8"
+}
+flat_sigma8_psnr PASS 1.9056098408504318
+flat_mean_bias PASS 0.19640151515150706
+clean_line_retention PASS 0.9507639244711875
+clean_step_far PASS 1.0
+default_step_overshoot PASS 0.0
+enhance_step_overshoot PASS 2.0
+primary_holdout_text_low_clean PASS 1.0879719748601553
+primary_holdout_texture_p4_a32_clean PASS 1.125
+flat_noise_sigma2 PASS 0.23120994673173179
+flat_noise_sigma4 PASS 0.6474112762156886
+flat_noise_sigma8 PASS 1.018570952149521
+new_clipping PASS 0.0001893939393939394
+repeated64_exact PASS {'RAW': True, 'BASE': True, 'DENOISE': True, 'ENHANCE': True}
+temporal64_noise PASS 1.0124511359950088
+tuning_feasible PASS 15
+numerical_model PASS None
+real_image_classes PASS None
+real_exposure_classes DEFERRED None
+camera_video_evidence DEFERRED None
+future_rtl_bit_exact DEFERRED None
+WORST CASES
+line holdout_line_vertical_1_s2_n2 0.9786685511227947
+text holdout_text_low_s16_n4 1.0363643800961615
+texture holdout_texture_p4_a16_s16_n3 1.0555030223232995

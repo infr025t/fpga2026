@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "candidate_count": 51,
+  "feasible": 15,
+  "required_checks": 17,
+  "holdout_configurations_evaluated": 1,
+  "preserved_files": 614,
+  "preservation_base": "5c474edbbdbabd0d6e242527ac656fd1a3ab4bfb",
+  "execution_commit": "747c5da2ef8054748e8ac01ebb1fb9d64d9c3d47",
+  "profile_sha256": "0817488e0e5de12c1b863caa20295bb2633a973f21869e536ae23fabe461701f",
+  "metrics_sha256": "18181b0d6144fbf17a36132de0721f3c077f5f8ac090a14312f651743d7b74af",
+  "registration_sha256": "4313e070de338caa2abf3e21c3370814dcbd45420c6752af92628e226cb52c34",
+  "archive_sha256": "270f74a61befab69eb8a373154d442b4e0592137c8bf93987b472e1ac829cae8"
+}

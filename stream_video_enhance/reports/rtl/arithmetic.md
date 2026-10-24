@@ -143,3 +143,40 @@ an upstream NBA-updated output at the next rising edge; later integration must
 derive and measure module boundary scheduling and total latency accordingly.
 Do not infer end-to-end latency by counting array elements or blindly summing
 standalone latencies without the boundary schedule.
+
+## Review fix round 1 — fresh-checkout fixture bootstrap
+
+Scoped review `.superpowers/sdd/2026-10-23-rtl-core/task-1-review.md` found one
+P2: the documented unittest-first command could not allocate a fixture when
+build/regression did not exist. `RunnerTests.fixture` now creates that parent
+with `mkdir(parents=True, exist_ok=True)` before calling mkdtemp. The behavioral
+regression redirects the actual fixture ROOT to a separate temporary checkout
+whose build parent is initially absent, runs real xvlog/xelab/xsim, and requires
+PASS plus all three stages and outputs under that temporary root. ROOT is
+restored in finally. No existing build directory was moved or deleted.
+
+RED command, before the bootstrap correction:
+
+```text
+E:/Python/python.exe -m unittest discover -s stream_video_enhance/tests -p test_core_runner.py -k bootstraps -v
+Ran 1 test in 0.002s; FAILED (errors=1)
+FileNotFoundError [WinError 3] at actual fixture mkdtemp, before any tool stage.
+```
+
+GREEN command ran once after the correction, covering the new test and all six
+existing real-runner fixture methods (including three parameter subtests):
+
+```text
+E:/Python/python.exe -m unittest discover -s stream_video_enhance/tests -p test_core_runner.py -v
+Ran 7 tests in 37.519s; OK; 0 skips.
+```
+
+Raw unittest RED/GREEN stdout+stderr are retained in
+`build/regression/task-1-fixround1-{red,green}.txt`. Nine real fixture invocations
+ran in GREEN; the fresh-checkout fixture's successful temporary tree was cleaned
+by its own context, and the eight original fixture invocations retain their
+usual ignored build evidence. This fix changes only fixture setup and its
+regression test. Arithmetic RTL, vector generation, saved full arithmetic run,
+existing model files and parent specifications/plans remain unchanged; numerical
+and model regressions were not rerun. The prior arithmetic results still refer
+to their original recorded run.

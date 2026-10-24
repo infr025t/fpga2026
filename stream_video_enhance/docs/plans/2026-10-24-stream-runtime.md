@@ -36,6 +36,7 @@ typedef struct packed {
  logic [1:0] source_kind;
  logic [7:0] pattern_id;
  logic legacy_validation;
+ logic preview_enable, roi_pair;
 } frame_config_t;
 typedef struct packed {
  logic [31:0] frame_id;
@@ -51,7 +52,7 @@ typedef struct packed {
 } core_report_t;
 ```
 
-`frame_config_t.threshold/gain` are the actual selected-mode parameters: RAW/BASE gain0, DENOISE gain256/T_D, ENHANCE gainG_E/T_E. Existing `guided_core` port/API remains unchanged. A source-end event has separate valid plus source_end_t payload; it is not inserted into a potentially full pixel FIFO. `core_done_valid/core_done_frame_id/core_done_ok` is an observation event after the last core output, before successful commit; it must not depend on frame_success, which prevents a circular wait.
+`frame_config_t.threshold/gain` are the actual selected-mode parameters: RAW/BASE gain0, DENOISE gain256/T_D, ENHANCE gainG_E/T_E. Preview enable/layout travel with the frame configuration and cfg_id; the later snapshot decides at outputSOF from that frame's configuration, never an independently changing switch bus. Existing `guided_core` port/API remains unchanged. A source-end event has separate valid plus source_end_t payload; it is not inserted into a potentially full pixel FIFO. `core_done_valid/core_done_frame_id/core_done_ok` is an observation event after the last core output, before successful commit; it must not depend on frame_success, which prevents a circular wait.
 
 Completion timing is part of the interface: core_done is a combinational preview of the currently presented valid outputEOF and final count/coordinate checks. The guard can qualify frame_success from current or saved core_done and current or saved source-end events, without registering two successive completion pulses. The accepting edge increments completed and schedules CRC publication; the monitor publishes at the next edge using its stored final CRC/config and the updated registered counters. Thus publication occurs at most one control cycle after EOF or a later sourceOK, as spec10.3 requires. Guard abort is registered; no combinational core-output→abort→core-output loop is allowed. Explicitly test simultaneous EOF/OK and both arrival orders with edge-index assertions, not only eventual report contents.
 

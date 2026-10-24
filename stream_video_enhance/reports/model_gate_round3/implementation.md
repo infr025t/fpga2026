@@ -100,3 +100,10 @@ Log hashes (also log_hashes.json):
 - stream_video_enhance/reports/model_gate_round3/numerical_tests.txt: 0d1220a44cb757dde137f06c494e3bb3548390a0dd76a485b84a4c5260bd8ac3
 
 Plain git diff --cached --check flags generated CRLF evidence lines as trailing whitespace; original profile/log/snapshot bytes were retained for stable hashes and stdout. Validation uses core.whitespace=cr-at-eol to distinguish Windows line endings. No rerun, evidence normalization, threshold relaxation, RTL edit, remote push or memory update on recovery.
+
+
+## 2026-10-24 final documentation review fix
+
+Whole-branch review found no P0–P2 issues and one P3 README ambiguity. README now explicitly distinguishes evaluate --run exit0(PASS), exit1(FAIL/MISSING), exit2(invalid input/registration) from the independent unittest result. The current example and prose both identify finegain-v3 and require committed execution code, a new empty registration directory, committed registration/archive/sources, then --run. Default original-v1 replay remains documented.
+
+This fix changes prose only. No tests, model search or holdout evaluations were rerun; the previously recorded 37-test PASS remains the validation evidence. Git diff/check and byte verification confirm all tracked model sources, profile, dataset inputs and existing results/evidence retain their committed bytes. No thresholds, formulas or RTL changed.

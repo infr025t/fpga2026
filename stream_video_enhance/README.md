@@ -20,7 +20,7 @@ python -m stream_video_enhance.model.evaluate --experiment finegain-v3 --registe
 python -m stream_video_enhance.model.evaluate --run --report-dir <新目录>
 ```
 
-质量未通过时第一条命令返回1并保留报告。默认不指定目录的`--run`仍重放原始original-v1轮次。新实验先在新目录执行`--experiment expanded-v2 --register --report-dir <目录>`并提交登记，再执行搜索；不得覆盖现有登记或根据保留集重选参数。
+`evaluate --run`在受控质量PASS时返回0，FAIL/MISSING时返回1并保留报告；输入或登记无效时返回2。`unittest`命令独立检查测试是否通过，其退出码不代表受控质量结论。默认不指定目录的`--run`仍重放原始original-v1轮次。当前实验为`finegain-v3`：先提交执行代码，再在新空目录执行上面的`--experiment finegain-v3 --register --report-dir <新目录>`，提交生成的`registration.json`、`inputs.npz`与来源文件后，才执行该目录的`--run`。不得覆盖现有登记或根据保留集重选参数。
 
 设计方向：固定 5×5 单尺度自引导滤波、两轮局部统计、软阈值细节增强；100 MHz 单核心时钟，帧内 II=1；两轮独立行缓存携带中心原像素，减少复杂的存储复用和对齐控制。每边裁掉 4 像素。显示/串口只读取独立的小预览快照，忙时跳过整帧预览，不能阻塞主处理链。
 

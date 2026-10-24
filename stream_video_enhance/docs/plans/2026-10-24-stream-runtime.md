@@ -53,6 +53,8 @@ typedef struct packed {
 
 `frame_config_t.threshold/gain` are the actual selected-mode parameters: RAW/BASE gain0, DENOISE gain256/T_D, ENHANCE gainG_E/T_E. Existing `guided_core` port/API remains unchanged. A source-end event has separate valid plus source_end_t payload; it is not inserted into a potentially full pixel FIFO. `core_done_valid/core_done_frame_id/core_done_ok` is an observation event after the last core output, before successful commit; it must not depend on frame_success, which prevents a circular wait.
 
+Completion timing is part of the interface: core_done is a combinational preview of the currently presented valid outputEOF and final count/coordinate checks. The guard can qualify frame_success from current or saved core_done and current or saved source-end events, without registering two successive completion pulses. The accepting edge increments completed and schedules CRC publication; the monitor publishes at the next edge using its stored final CRC/config and the updated registered counters. Thus publication occurs at most one control cycle after EOF or a later sourceOK, as spec10.3 requires. Guard abort is registered; no combinational core-output→abort→core-output loop is allowed. Explicitly test simultaneous EOF/OK and both arrival orders with edge-index assertions, not only eventual report contents.
+
 ## Task 1: Internal source, synchronous queue and frame guard
 
 **Files:** Create rtl/video_runtime_pkg.sv, source_pattern.sv, ingress_fifo.sv, ingress_guard.sv, sim/tb_runtime_ingress.sv and scripts/runtime_vectors.py. Extend scripts/run_core_tests.py to select runtime benches; add reports/rtl/runtime/ingress.md. Do not modify numerical core interfaces.

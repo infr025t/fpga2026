@@ -4,6 +4,8 @@
 
 **Goal:** Export bounded overview or same-frame RAW/result ROI diagnostics while the verified core continues independently.
 
+2026-10-26 scope clarification: this plan implements optional development diagnostics only. It does not satisfy the required full-VGA main display in spec1.6. Final screen delivery must retain all632x472 processed pixels in a640x480 logical canvas; do not upsample the overview and call it full-VGA output. Physical display needs a separate bandwidth/buffering implementation after module selection.
+
 **Architecture:** One 9600x16 logical snapshot, physically five2048x18 block RAM banks, with exclusive capture/scan/read ownership. A single UART consumer sends VEF0v2 image packets or immutable latest STATUS reports. It never feeds the calculation or stalls its input.
 
 **Tech Stack:** SystemVerilog/Vivado2025.1 xsim, Python unittest/zlib/struct/Pillow. Physical serial access and board programming are excluded from these tasks.

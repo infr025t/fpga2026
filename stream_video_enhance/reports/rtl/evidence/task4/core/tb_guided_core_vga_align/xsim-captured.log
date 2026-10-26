@@ -1,0 +1,19 @@
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Mon Oct 26 19:17:16 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/snapshot/xsim_script.tcl
+# xsim {snapshot} -testplusarg VECTORS=E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/build/regression/core-vga-align1-98df89176c -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+PASS tb_guided_core W=640 H=480 align=1 L=56 frames=12 configs=12 pixels=3579648 flushes=1 max_run=632
+$finish called at time : 36870746 ns : File "E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/sim/tb_guided_core.sv" Line 97
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:00:58 . Memory (MB): peak = 166.277 ; gain = 0.059
+exit
+INFO: xsimkernel Simulation Memory Usage: 15448 KB (Peak: 15448 KB), Simulation CPU Usage: 56812 ms
+INFO: [Common 17-206] Exiting xsim at Mon Oct 26 19:18:16 2026...

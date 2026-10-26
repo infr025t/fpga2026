@@ -1,0 +1,49 @@
+{
+  "top": "guided_core",
+  "command": [
+    "E:\\Vivado\\2025.1\\Vivado\\bin\\vivado.bat",
+    "-mode",
+    "batch",
+    "-nojournal",
+    "-source",
+    "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\scripts\\synth_core.tcl",
+    "-tclargs",
+    "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance",
+    "guided_core",
+    "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\synthesis\\20261026-191226\\guided_core"
+  ],
+  "exit": 0,
+  "timeout": false,
+  "seconds": 42.615,
+  "passed": false,
+  "failures": [
+    "registered timing",
+    "boundary timing"
+  ],
+  "metrics": {
+    "tool": "2025.1",
+    "RAMB18": 5,
+    "RAMB36": 5,
+    "DSP": 18,
+    "LUT": 2339,
+    "FF": 2586,
+    "latches": 0,
+    "multidrivers": 0,
+    "registered_setup_slack_ns": -0.098,
+    "overall_setup_slack_ns": -0.098
+  },
+  "warnings": 32,
+  "critical_warnings": 0,
+  "reports": {
+    "build\\regression\\synthesis\\20261026-191226\\guided_core\\captured.log": "e1d02c48a3ca23fa329e42a8f986562b3ba720c047252a6af19652da21edc5f4",
+    "build\\regression\\synthesis\\20261026-191226\\guided_core\\check_timing.rpt": "39212b2720bdd330db89b070d8efaef4b0201e9f6a516676b99c3001aff4c94a",
+    "build\\regression\\synthesis\\20261026-191226\\guided_core\\constraints.xdc": "89ee302a8026374e5b97a27e0716444c5b9de746407346e9e8540014877fd053",
+    "build\\regression\\synthesis\\20261026-191226\\guided_core\\drc.rpt": "946f8c6eb5ae4018f1cc09f65f8ddd0ca28cdcf5a14215d731e86a7dc840cb06",
+    "build\\regression\\synthesis\\20261026-191226\\guided_core\\input_constraints.xdc": "badc3c353b2f722ae0460b90a97a800da403e1c883c07c5d10015a0862e9aa3d",
+    "build\\regression\\synthesis\\20261026-191226\\guided_core\\metrics.json": "03e1112457f14ecd93ef0b34788bb883b03419a0460d6b4182b0194140464f37",
+    "build\\regression\\synthesis\\20261026-191226\\guided_core\\registered_paths.rpt": "b15230a2f117162c084e19f4b0cb2cafc917afff4f5af04b52657adc487121b5",
+    "build\\regression\\synthesis\\20261026-191226\\guided_core\\timing_summary.rpt": "4f2f5fb9e388b3ab70f14ffc46a1151909ecab94dfada5c31de9718287aa91f9",
+    "build\\regression\\synthesis\\20261026-191226\\guided_core\\utilization.rpt": "7210b43d06afc0cfd2e73acbcefc60a982eb791fd69e586c617e6ec3dff94717",
+    "build\\regression\\synthesis\\20261026-191226\\guided_core\\vivado.log": "7ee9885d23717f2cb6c4e2c42d3bdf1369f596baa392e5ce8b24356c51cdda93"
+  }
+}

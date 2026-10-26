@@ -1,0 +1,728 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Mon Oct 26 18:44:36 2026
+# Process ID         : 41680
+# Current directory  : E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/build/synthesis/20261026-184436/guided_core
+# Command line       : vivado.exe -mode batch -nojournal -source E:\Vivado_FPGA_Programs\fpga2026\stream_video_enhance\scripts\synth_core.tcl -tclargs E:\Vivado_FPGA_Programs\fpga2026\stream_video_enhance guided_core E:\Vivado_FPGA_Programs\fpga2026\stream_video_enhance\build\synthesis\20261026-184436\guided_core
+# Log file           : E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/build/synthesis/20261026-184436/guided_core/vivado.log
+# Journal file       : 
+# Running On         : StrawberryBear
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : Intel(R) Core(TM) i9-14900HX
+# CPU Frequency      : 2419 MHz
+# CPU Physical cores : 24
+# CPU Logical cores  : 32
+# Host memory        : 33953 MB
+# Swap memory        : 2147 MB
+# Total Virtual      : 36100 MB
+# Available Virtual  : 18979 MB
+#-----------------------------------------------------------
+source {E:\Vivado_FPGA_Programs\fpga2026\stream_video_enhance\scripts\synth_core.tcl}
+# set root [file normalize [lindex $argv 0]]
+# set top [lindex $argv 1]
+# set out [file normalize [lindex $argv 2]]
+# file mkdir $out
+# create_project -in_memory -part xc7a35tcpg236-1
+create_project: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 493.500 ; gain = 212.723
+# read_verilog -sv [file join $root rtl core_latency_pkg.sv]
+# foreach src [glob [file join $root rtl *.sv]] {
+#     if {[file tail $src] ne "core_latency_pkg.sv"} {read_verilog -sv $src}
+# }
+# foreach src [glob -nocomplain [file join $root rtl experiments *.sv]] {read_verilog -sv $src}
+# synth_design -top $top -mode out_of_context -part xc7a35tcpg236-1 -generic W=640 -generic H=480
+Command: synth_design -top guided_core -mode out_of_context -part xc7a35tcpg236-1 -generic W=640 -generic H=480
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 23228
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 998.340 ; gain = 500.871
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'guided_core' [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/guided_core.sv:2]
+	Parameter W bound to: 640 - type: integer 
+	Parameter H bound to: 480 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'moments5' [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/moments5.sv:2]
+	Parameter W bound to: 640 - type: integer 
+	Parameter H bound to: 480 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'row_window5' [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/row_window5.sv:2]
+	Parameter W bound to: 640 - type: integer 
+	Parameter H bound to: 480 - type: integer 
+	Parameter DATA_W bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'row_window5' (0#1) [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/row_window5.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'moments5' (0#1) [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/moments5.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'coefficient5' [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/coefficient5.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'ratio_q12_pipe' [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/ratio_q12_pipe.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'ratio_q12_pipe' (0#1) [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/ratio_q12_pipe.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'div25_pipe' [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/div25_pipe.sv:2]
+	Parameter IN_W bound to: 21 - type: integer 
+	Parameter OUT_W bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'div25_pipe' (0#1) [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/div25_pipe.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'token_pipe' [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/token_pipe.sv:3]
+	Parameter WIDTH bound to: 17 - type: integer 
+	Parameter LATENCY bound to: 12 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'token_pipe' (0#1) [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/token_pipe.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'token_pipe__parameterized0' [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/token_pipe.sv:3]
+	Parameter WIDTH bound to: 1 - type: integer 
+	Parameter LATENCY bound to: 13 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'token_pipe__parameterized0' (0#1) [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/token_pipe.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'token_pipe__parameterized1' [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/token_pipe.sv:3]
+	Parameter WIDTH bound to: 59 - type: integer 
+	Parameter LATENCY bound to: 17 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'token_pipe__parameterized1' (0#1) [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/token_pipe.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'token_pipe__parameterized2' [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/token_pipe.sv:3]
+	Parameter WIDTH bound to: 72 - type: integer 
+	Parameter LATENCY bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'token_pipe__parameterized2' (0#1) [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/token_pipe.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'coefficient5' (0#1) [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/coefficient5.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'coefficient_box5' [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/coefficient_box5.sv:2]
+	Parameter W bound to: 640 - type: integer 
+	Parameter H bound to: 480 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'row_window5__parameterized0' [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/row_window5.sv:2]
+	Parameter W bound to: 636 - type: integer 
+	Parameter H bound to: 476 - type: integer 
+	Parameter DATA_W bound to: 36 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'row_window5__parameterized0' (0#1) [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/row_window5.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'div25_pipe__parameterized0' [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/div25_pipe.sv:2]
+	Parameter IN_W bound to: 17 - type: integer 
+	Parameter OUT_W bound to: 12 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'div25_pipe__parameterized0' (0#1) [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/div25_pipe.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'token_pipe__parameterized3' [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/token_pipe.sv:3]
+	Parameter WIDTH bound to: 60 - type: integer 
+	Parameter LATENCY bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'token_pipe__parameterized3' (0#1) [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/token_pipe.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'coefficient_box5' (0#1) [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/coefficient_box5.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'reconstruct' [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/reconstruct.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'token_pipe__parameterized4' [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/token_pipe.sv:3]
+	Parameter WIDTH bound to: 60 - type: integer 
+	Parameter LATENCY bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'token_pipe__parameterized4' (0#1) [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/token_pipe.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'reconstruct' (0#1) [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/reconstruct.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'detail_enhance' [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/detail_enhance.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'token_pipe__parameterized5' [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/token_pipe.sv:3]
+	Parameter WIDTH bound to: 78 - type: integer 
+	Parameter LATENCY bound to: 6 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'token_pipe__parameterized5' (0#1) [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/token_pipe.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'detail_enhance' (0#1) [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/detail_enhance.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'guided_core' (0#1) [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/guided_core.sv:2]
+WARNING: [Synth 8-6014] Unused sequential element source_bank_reg was removed.  [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/row_window5.sv:49]
+WARNING: [Synth 8-3936] Found unconnected internal register 'g_bit[11].quotient_reg[11]' and it is trimmed from '12' to '11' bits. [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/ratio_q12_pipe.sv:32]
+WARNING: [Synth 8-3936] Found unconnected internal register 'g_bit[10].quotient_reg[10]' and it is trimmed from '12' to '11' bits. [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/ratio_q12_pipe.sv:32]
+WARNING: [Synth 8-3936] Found unconnected internal register 'g_bit[9].quotient_reg[9]' and it is trimmed from '12' to '11' bits. [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/ratio_q12_pipe.sv:32]
+WARNING: [Synth 8-3936] Found unconnected internal register 'g_bit[8].quotient_reg[8]' and it is trimmed from '12' to '11' bits. [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/ratio_q12_pipe.sv:32]
+WARNING: [Synth 8-3936] Found unconnected internal register 'g_bit[7].quotient_reg[7]' and it is trimmed from '12' to '11' bits. [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/ratio_q12_pipe.sv:32]
+WARNING: [Synth 8-3936] Found unconnected internal register 'g_bit[6].quotient_reg[6]' and it is trimmed from '12' to '11' bits. [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/ratio_q12_pipe.sv:32]
+WARNING: [Synth 8-3936] Found unconnected internal register 'g_bit[5].quotient_reg[5]' and it is trimmed from '12' to '11' bits. [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/ratio_q12_pipe.sv:32]
+WARNING: [Synth 8-3936] Found unconnected internal register 'g_bit[4].quotient_reg[4]' and it is trimmed from '12' to '11' bits. [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/ratio_q12_pipe.sv:32]
+WARNING: [Synth 8-3936] Found unconnected internal register 'g_bit[3].quotient_reg[3]' and it is trimmed from '12' to '11' bits. [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/ratio_q12_pipe.sv:32]
+WARNING: [Synth 8-3936] Found unconnected internal register 'g_bit[2].quotient_reg[2]' and it is trimmed from '12' to '11' bits. [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/ratio_q12_pipe.sv:32]
+WARNING: [Synth 8-3936] Found unconnected internal register 'g_bit[1].quotient_reg[1]' and it is trimmed from '12' to '11' bits. [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/ratio_q12_pipe.sv:32]
+WARNING: [Synth 8-6014] Unused sequential element source_bank_reg was removed.  [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/row_window5.sv:49]
+WARNING: [Synth 8-7129] Port in_eol in module guided_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_eof in module guided_core is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1124.582 ; gain = 627.113
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1124.582 ; gain = 627.113
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1124.582 ; gain = 627.113
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-6014] Unused sequential element square0_reg[4] was removed.  [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/moments5.sv:60]
+WARNING: [Synth 8-6014] Unused sequential element square1_reg[4] was removed.  [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/moments5.sv:60]
+WARNING: [Synth 8-3936] Found unconnected internal register 'g_bit[10].quotient_reg[10]' and it is trimmed from '11' to '10' bits. [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/ratio_q12_pipe.sv:32]
+WARNING: [Synth 8-3936] Found unconnected internal register 'g_bit[9].quotient_reg[9]' and it is trimmed from '11' to '9' bits. [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/ratio_q12_pipe.sv:32]
+WARNING: [Synth 8-3936] Found unconnected internal register 'g_bit[8].quotient_reg[8]' and it is trimmed from '11' to '8' bits. [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/ratio_q12_pipe.sv:32]
+WARNING: [Synth 8-3936] Found unconnected internal register 'g_bit[7].quotient_reg[7]' and it is trimmed from '11' to '7' bits. [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/ratio_q12_pipe.sv:32]
+WARNING: [Synth 8-3936] Found unconnected internal register 'g_bit[6].quotient_reg[6]' and it is trimmed from '11' to '6' bits. [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/ratio_q12_pipe.sv:32]
+WARNING: [Synth 8-3936] Found unconnected internal register 'g_bit[5].quotient_reg[5]' and it is trimmed from '11' to '5' bits. [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/ratio_q12_pipe.sv:32]
+WARNING: [Synth 8-3936] Found unconnected internal register 'g_bit[4].quotient_reg[4]' and it is trimmed from '11' to '4' bits. [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/ratio_q12_pipe.sv:32]
+WARNING: [Synth 8-3936] Found unconnected internal register 'g_bit[3].quotient_reg[3]' and it is trimmed from '11' to '3' bits. [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/ratio_q12_pipe.sv:32]
+WARNING: [Synth 8-3936] Found unconnected internal register 'g_bit[2].quotient_reg[2]' and it is trimmed from '11' to '2' bits. [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/ratio_q12_pipe.sv:32]
+WARNING: [Synth 8-3936] Found unconnected internal register 'g_bit[1].quotient_reg[1]' and it is trimmed from '11' to '1' bits. [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/ratio_q12_pipe.sv:32]
+WARNING: [Synth 8-6014] Unused sequential element square0_reg was removed.  [E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/coefficient5.sv:20]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1141.641 ; gain = 644.172
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   26 Bit       Adders := 1     
+	   2 Input   25 Bit       Adders := 1     
+	   2 Input   24 Bit       Adders := 1     
+	   2 Input   23 Bit       Adders := 4     
+	   3 Input   23 Bit       Adders := 3     
+	   3 Input   22 Bit       Adders := 3     
+	   2 Input   21 Bit       Adders := 2     
+	   3 Input   20 Bit       Adders := 2     
+	   2 Input   19 Bit       Adders := 2     
+	   2 Input   18 Bit       Adders := 4     
+	   2 Input   17 Bit       Adders := 8     
+	   3 Input   17 Bit       Adders := 5     
+	   3 Input   16 Bit       Adders := 1     
+	   2 Input   16 Bit       Adders := 1     
+	   2 Input   15 Bit       Adders := 1     
+	   2 Input   14 Bit       Adders := 2     
+	   2 Input   13 Bit       Adders := 4     
+	   3 Input   12 Bit       Adders := 1     
+	   2 Input   11 Bit       Adders := 1     
+	   2 Input   10 Bit       Adders := 3     
+	   2 Input    9 Bit       Adders := 4     
+	   2 Input    5 Bit       Adders := 2     
+	   2 Input    4 Bit       Adders := 6     
+	   2 Input    3 Bit       Adders := 10    
++---Registers : 
+	              180 Bit    Registers := 2     
+	               78 Bit    Registers := 7     
+	               72 Bit    Registers := 3     
+	               60 Bit    Registers := 9     
+	               59 Bit    Registers := 18    
+	               40 Bit    Registers := 2     
+	               36 Bit    Registers := 6     
+	               32 Bit    Registers := 18    
+	               26 Bit    Registers := 1     
+	               24 Bit    Registers := 29    
+	               23 Bit    Registers := 4     
+	               21 Bit    Registers := 12    
+	               20 Bit    Registers := 5     
+	               19 Bit    Registers := 12    
+	               18 Bit    Registers := 5     
+	               17 Bit    Registers := 29    
+	               16 Bit    Registers := 17    
+	               15 Bit    Registers := 6     
+	               14 Bit    Registers := 4     
+	               13 Bit    Registers := 5     
+	               12 Bit    Registers := 6     
+	               11 Bit    Registers := 9     
+	               10 Bit    Registers := 22    
+	                9 Bit    Registers := 21    
+	                8 Bit    Registers := 38    
+	                7 Bit    Registers := 3     
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 11    
+	                4 Bit    Registers := 3     
+	                3 Bit    Registers := 8     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 25    
++---RAMs : 
+	              22K Bit	(636 X 36 bit)          RAMs := 5     
+	               5K Bit	(640 X 8 bit)          RAMs := 5     
++---Muxes : 
+	   2 Input   36 Bit        Muxes := 4     
+	   2 Input   25 Bit        Muxes := 1     
+	   2 Input   21 Bit        Muxes := 3     
+	   2 Input   19 Bit        Muxes := 2     
+	   2 Input   18 Bit        Muxes := 1     
+	   2 Input   17 Bit        Muxes := 4     
+	   2 Input   16 Bit        Muxes := 2     
+	   2 Input   15 Bit        Muxes := 1     
+	   2 Input   14 Bit        Muxes := 2     
+	   2 Input   13 Bit        Muxes := 1     
+	   2 Input   12 Bit        Muxes := 1     
+	   2 Input   11 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 7     
+	   2 Input    3 Bit        Muxes := 10    
+	   2 Input    1 Bit        Muxes := 19    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+DSP Report: Generating DSP tail2b_reg, operation Mode is: (A''*B'')'.
+DSP Report: register square0_reg[4] is absorbed into DSP tail2b_reg.
+DSP Report: register square1_reg[4] is absorbed into DSP tail2b_reg.
+DSP Report: register square0_reg[4] is absorbed into DSP tail2b_reg.
+DSP Report: register square1_reg[4] is absorbed into DSP tail2b_reg.
+DSP Report: register tail2b_reg is absorbed into DSP tail2b_reg.
+DSP Report: register tail2_reg is absorbed into DSP tail2b_reg.
+DSP Report: operator p_0_out is absorbed into DSP tail2b_reg.
+DSP Report: Generating DSP square1_reg[3], operation Mode is: (A2*B2)'.
+DSP Report: register square1_reg[3] is absorbed into DSP square1_reg[3].
+DSP Report: register square1_reg[3] is absorbed into DSP square1_reg[3].
+DSP Report: register square1_reg[3] is absorbed into DSP square1_reg[3].
+DSP Report: register square0_reg[3] is absorbed into DSP square1_reg[3].
+DSP Report: operator p_0_out is absorbed into DSP square1_reg[3].
+DSP Report: Generating DSP square1_reg[2], operation Mode is: (A2*B2)'.
+DSP Report: register square1_reg[2] is absorbed into DSP square1_reg[2].
+DSP Report: register square1_reg[2] is absorbed into DSP square1_reg[2].
+DSP Report: register square1_reg[2] is absorbed into DSP square1_reg[2].
+DSP Report: register square0_reg[2] is absorbed into DSP square1_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP square1_reg[2].
+DSP Report: Generating DSP square1_reg[1], operation Mode is: (A2*B2)'.
+DSP Report: register square1_reg[1] is absorbed into DSP square1_reg[1].
+DSP Report: register square1_reg[1] is absorbed into DSP square1_reg[1].
+DSP Report: register square1_reg[1] is absorbed into DSP square1_reg[1].
+DSP Report: register square0_reg[1] is absorbed into DSP square1_reg[1].
+DSP Report: operator p_0_out is absorbed into DSP square1_reg[1].
+DSP Report: Generating DSP square1_reg[0], operation Mode is: (A2*B2)'.
+DSP Report: register rows/rows2_reg is absorbed into DSP square1_reg[0].
+DSP Report: register rows/rows2_reg is absorbed into DSP square1_reg[0].
+DSP Report: register square1_reg[0] is absorbed into DSP square1_reg[0].
+DSP Report: register square0_reg[0] is absorbed into DSP square1_reg[0].
+DSP Report: operator p_0_out is absorbed into DSP square1_reg[0].
+DSP Report: Generating DSP mean_div/hi1_reg, operation Mode is: (A2*(B:0x14))'.
+DSP Report: register mean_div/n0_reg is absorbed into DSP mean_div/hi1_reg.
+DSP Report: register mean_div/hi1_reg is absorbed into DSP mean_div/hi1_reg.
+DSP Report: operator mean_div/hi10 is absorbed into DSP mean_div/hi1_reg.
+DSP Report: Generating DSP mean_div/product2_reg, operation Mode is: (C+(A2*(B:0x3d71))')'.
+DSP Report: register mean_div/n0_reg is absorbed into DSP mean_div/product2_reg.
+DSP Report: register mean_div/product2_reg is absorbed into DSP mean_div/product2_reg.
+DSP Report: register mean_div/lo1_reg is absorbed into DSP mean_div/product2_reg.
+DSP Report: operator mean_div/product20 is absorbed into DSP mean_div/product2_reg.
+DSP Report: operator mean_div/lo10 is absorbed into DSP mean_div/product2_reg.
+DSP Report: Generating DSP rounded_b1, operation Mode is: (C:0x800)+(A''*B2)'.
+DSP Report: register product0_reg is absorbed into DSP rounded_b1.
+DSP Report: register delay_mean/g_pipe.data_pipe_reg[12] is absorbed into DSP rounded_b1.
+DSP Report: register product0_reg is absorbed into DSP rounded_b1.
+DSP Report: register product1_reg is absorbed into DSP rounded_b1.
+DSP Report: operator product00 is absorbed into DSP rounded_b1.
+DSP Report: operator rounded_b1 is absorbed into DSP rounded_b1.
+DSP Report: Generating DSP times25_1_reg, operation Mode is: (A*(B:0x19))'.
+DSP Report: register times25_1_reg is absorbed into DSP times25_1_reg.
+DSP Report: register times25_0_reg is absorbed into DSP times25_1_reg.
+DSP Report: operator times25_00 is absorbed into DSP times25_1_reg.
+DSP Report: Generating DSP square1_reg, operation Mode is: (A2*B2)'.
+DSP Report: register square0_reg is absorbed into DSP square1_reg.
+DSP Report: register square0_reg is absorbed into DSP square1_reg.
+DSP Report: register square1_reg is absorbed into DSP square1_reg.
+DSP Report: operator square00 is absorbed into DSP square1_reg.
+DSP Report: Generating DSP variance_full, operation Mode is: C-A:B.
+DSP Report: operator variance_full is absorbed into DSP variance_full.
+DSP Report: Generating DSP eps00, operation Mode is: A*(B:0x271).
+DSP Report: operator eps00 is absorbed into DSP eps00.
+DSP Report: Generating DSP hi1_reg, operation Mode is: (A2*(B:0x14))'.
+DSP Report: register n0_reg is absorbed into DSP hi1_reg.
+DSP Report: register hi1_reg is absorbed into DSP hi1_reg.
+DSP Report: operator hi10 is absorbed into DSP hi1_reg.
+DSP Report: Generating DSP product2_reg, operation Mode is: (C+(A2*(B:0x3d71))')'.
+DSP Report: register n0_reg is absorbed into DSP product2_reg.
+DSP Report: register product2_reg is absorbed into DSP product2_reg.
+DSP Report: register lo1_reg is absorbed into DSP product2_reg.
+DSP Report: operator product20 is absorbed into DSP product2_reg.
+DSP Report: operator lo10 is absorbed into DSP product2_reg.
+DSP Report: Generating DSP hi1_reg, operation Mode is: (A2*(B:0x14))'.
+DSP Report: register n0_reg is absorbed into DSP hi1_reg.
+DSP Report: register hi1_reg is absorbed into DSP hi1_reg.
+DSP Report: operator hi10 is absorbed into DSP hi1_reg.
+DSP Report: Generating DSP product2_reg, operation Mode is: (C+(A2*(B:0x3d71))')'.
+DSP Report: register n0_reg is absorbed into DSP product2_reg.
+DSP Report: register product2_reg is absorbed into DSP product2_reg.
+DSP Report: register lo1_reg is absorbed into DSP product2_reg.
+DSP Report: operator product20 is absorbed into DSP product2_reg.
+DSP Report: operator lo10 is absorbed into DSP product2_reg.
+DSP Report: Generating DSP rounded_product0, operation Mode is: (C:0x8)+(A2*B2)'.
+DSP Report: register product0_reg is absorbed into DSP rounded_product0.
+DSP Report: register product0_reg is absorbed into DSP rounded_product0.
+DSP Report: register product1_reg is absorbed into DSP rounded_product0.
+DSP Report: operator product00 is absorbed into DSP rounded_product0.
+DSP Report: operator rounded_product0 is absorbed into DSP rounded_product0.
+DSP Report: Generating DSP product3_reg, operation Mode is: (A2*B2)'.
+DSP Report: register product3_reg is absorbed into DSP product3_reg.
+DSP Report: register residual1_reg is absorbed into DSP product3_reg.
+DSP Report: register product3_reg is absorbed into DSP product3_reg.
+DSP Report: register product2_reg is absorbed into DSP product3_reg.
+DSP Report: operator product20 is absorbed into DSP product3_reg.
+WARNING: [Synth 8-7129] Port in_eol in module guided_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_eof in module guided_core is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:37 . Memory (MB): peak = 1387.414 ; gain = 889.945
+---------------------------------------------------------------------------------
+ Sort Area is  rounded_b1_b : 0 0 : 1633 1633 : Used 1 time 100
+ Sort Area is  square1_reg_d : 0 0 : 1290 1290 : Used 1 time 100
+ Sort Area is  product3_reg_1d : 0 0 : 1182 1182 : Used 1 time 100
+ Sort Area is  rounded_product0_1b : 0 0 : 768 768 : Used 1 time 100
+ Sort Area is  square1_reg[0]_0 : 0 0 : 566 566 : Used 1 time 100
+ Sort Area is  square1_reg[1]_2 : 0 0 : 566 566 : Used 1 time 100
+ Sort Area is  square1_reg[2]_3 : 0 0 : 566 566 : Used 1 time 100
+ Sort Area is  square1_reg[3]_4 : 0 0 : 566 566 : Used 1 time 100
+ Sort Area is  tail2b_reg_5 : 0 0 : 518 518 : Used 1 time 100
+ Sort Area is  times25_1_reg_f : 0 0 : 408 408 : Used 1 time 100
+ Sort Area is  variance_full_11 : 0 0 : 187 187 : Used 1 time 100
+ Sort Area is  mean_div/product2_reg_9 : 0 0 : 1402 1402 : Used 1 time 0
+ Sort Area is  product2_reg_1a : 0 0 : 1402 1402 : Used 1 time 0
+ Sort Area is  product2_reg_17 : 0 0 : 1226 1226 : Used 1 time 0
+ Sort Area is  eps00_13 : 0 0 : 215 215 : Used 1 time 0
+ Sort Area is  hi1_reg_19 : 0 0 : 201 201 : Used 1 time 0
+ Sort Area is  mean_div/hi1_reg_7 : 0 0 : 201 201 : Used 1 time 0
+ Sort Area is  hi1_reg_15 : 0 0 : 169 169 : Used 1 time 0
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping Report (see note below)
++------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object              | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|mom         | rows/bank[0].memory_reg | 640 x 8(READ_FIRST)    | W |   | 640 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|mom         | rows/bank[1].memory_reg | 640 x 8(READ_FIRST)    | W |   | 640 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|mom         | rows/bank[2].memory_reg | 640 x 8(READ_FIRST)    | W |   | 640 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|mom         | rows/bank[3].memory_reg | 640 x 8(READ_FIRST)    | W |   | 640 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|mom         | rows/bank[4].memory_reg | 640 x 8(READ_FIRST)    | W |   | 640 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|box         | rows/bank[0].memory_reg | 636 x 36(READ_FIRST)   | W |   | 636 x 36(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
+|box         | rows/bank[1].memory_reg | 636 x 36(READ_FIRST)   | W |   | 636 x 36(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
+|box         | rows/bank[2].memory_reg | 636 x 36(READ_FIRST)   | W |   | 636 x 36(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
+|box         | rows/bank[3].memory_reg | 636 x 36(READ_FIRST)   | W |   | 636 x 36(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
+|box         | rows/bank[4].memory_reg | 636 x 36(READ_FIRST)   | W |   | 636 x 36(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
++------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++---------------+-----------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name    | DSP Mapping           | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++---------------+-----------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|moments5       | (A''*B'')'            | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|moments5       | (A2*B2)'              | 8      | 8      | -      | -      | 16     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|moments5       | (A2*B2)'              | 8      | 8      | -      | -      | 16     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|moments5       | (A2*B2)'              | 8      | 8      | -      | -      | 16     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|moments5       | (A2*B2)'              | 8      | 8      | -      | -      | 16     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|div25_pipe     | (A2*(B:0x14))'        | 21     | 5      | -      | -      | 26     | 1    | 0    | -    | -    | -     | 1    | 0    | 
+|div25_pipe     | (C+(A2*(B:0x3d71))')' | 21     | 14     | 41     | -      | 41     | 1    | 0    | 0    | -    | -     | 1    | 1    | 
+|coefficient5   | (C:0x800)+(A''*B2)'   | 16     | 13     | 12     | -      | 29     | 2    | 1    | 0    | -    | -     | 1    | 0    | 
+|coefficient5   | (A*(B:0x19))'         | 21     | 5      | -      | -      | 26     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|coefficient5   | (A2*B2)'              | 13     | 13     | -      | -      | 26     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|coefficient5   | C-A:B                 | 9      | 18     | 27     | -      | 27     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|coefficient5   | A*(B:0x271)           | 11     | 10     | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|div25_pipe     | (A2*(B:0x14))'        | 17     | 5      | -      | -      | 22     | 1    | 0    | -    | -    | -     | 1    | 0    | 
+|div25_pipe     | (C+(A2*(B:0x3d71))')' | 17     | 14     | 37     | -      | 38     | 1    | 0    | 0    | -    | -     | 1    | 1    | 
+|div25_pipe     | (A2*(B:0x14))'        | 21     | 5      | -      | -      | 26     | 1    | 0    | -    | -    | -     | 1    | 0    | 
+|div25_pipe     | (C+(A2*(B:0x3d71))')' | 21     | 14     | 41     | -      | 41     | 1    | 0    | 0    | -    | -     | 1    | 1    | 
+|reconstruct    | (C:0x8)+(A2*B2)'      | 12     | 8      | 4      | -      | 21     | 1    | 1    | 0    | -    | -     | 1    | 0    | 
+|detail_enhance | (A2*B2)'              | 14     | 11     | -      | -      | 25     | 1    | 1    | -    | -    | -     | 1    | 1    | 
++---------------+-----------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:37 . Memory (MB): peak = 1387.414 ; gain = 889.945
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping Report
++------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object              | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|mom         | rows/bank[0].memory_reg | 640 x 8(READ_FIRST)    | W |   | 640 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|mom         | rows/bank[1].memory_reg | 640 x 8(READ_FIRST)    | W |   | 640 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|mom         | rows/bank[2].memory_reg | 640 x 8(READ_FIRST)    | W |   | 640 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|mom         | rows/bank[3].memory_reg | 640 x 8(READ_FIRST)    | W |   | 640 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|mom         | rows/bank[4].memory_reg | 640 x 8(READ_FIRST)    | W |   | 640 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|box         | rows/bank[0].memory_reg | 636 x 36(READ_FIRST)   | W |   | 636 x 36(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
+|box         | rows/bank[1].memory_reg | 636 x 36(READ_FIRST)   | W |   | 636 x 36(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
+|box         | rows/bank[2].memory_reg | 636 x 36(READ_FIRST)   | W |   | 636 x 36(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
+|box         | rows/bank[3].memory_reg | 636 x 36(READ_FIRST)   | W |   | 636 x 36(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
+|box         | rows/bank[4].memory_reg | 636 x 36(READ_FIRST)   | W |   | 636 x 36(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
++------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance mom/rows/bank[0].memory_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mom/rows/bank[1].memory_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mom/rows/bank[2].memory_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mom/rows/bank[3].memory_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance mom/rows/bank[4].memory_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance box/rows/bank[0].memory_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance box/rows/bank[1].memory_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance box/rows/bank[2].memory_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance box/rows/bank[3].memory_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance box/rows/bank[4].memory_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:13 ; elapsed = 00:00:38 . Memory (MB): peak = 1387.414 ; gain = 889.945
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:15 ; elapsed = 00:00:40 . Memory (MB): peak = 1545.711 ; gain = 1048.242
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:15 ; elapsed = 00:00:40 . Memory (MB): peak = 1545.711 ; gain = 1048.242
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:16 ; elapsed = 00:00:40 . Memory (MB): peak = 1545.711 ; gain = 1048.242
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:16 ; elapsed = 00:00:40 . Memory (MB): peak = 1545.711 ; gain = 1048.242
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:40 . Memory (MB): peak = 1546.664 ; gain = 1049.195
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:16 ; elapsed = 00:00:40 . Memory (MB): peak = 1546.664 ; gain = 1049.195
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+--------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                                         | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+--------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|guided_core | mom/rows/xp_reg[2][9]                            | 3      | 10    | NO           | NO                 | YES               | 10     | 0       | 
+|guided_core | mom/xp_reg[4][9]                                 | 5      | 10    | NO           | NO                 | YES               | 10     | 0       | 
+|guided_core | mom/yp_reg[6][8]                                 | 9      | 8     | NO           | NO                 | YES               | 8      | 0       | 
+|guided_core | mom/rows/rows2_reg[39]                           | 3      | 8     | NO           | NO                 | YES               | 8      | 0       | 
+|guided_core | mom/tail1b_reg[7]                                | 4      | 8     | NO           | NO                 | YES               | 8      | 0       | 
+|guided_core | mom/pixel1_reg[3][7]                             | 3      | 24    | NO           | NO                 | YES               | 24     | 0       | 
+|guided_core | coef/ratio/g_bit[12].quotient_reg[12][11]        | 12     | 1     | NO           | YES                | YES               | 1      | 0       | 
+|guided_core | coef/ratio/g_bit[12].quotient_reg[12][10]        | 11     | 1     | NO           | YES                | YES               | 1      | 0       | 
+|guided_core | coef/ratio/g_bit[12].quotient_reg[12][9]         | 10     | 1     | NO           | YES                | YES               | 1      | 0       | 
+|guided_core | coef/ratio/g_bit[12].quotient_reg[12][8]         | 9      | 1     | NO           | YES                | YES               | 1      | 0       | 
+|guided_core | coef/ratio/g_bit[12].quotient_reg[12][7]         | 8      | 1     | NO           | YES                | YES               | 1      | 0       | 
+|guided_core | coef/ratio/g_bit[12].quotient_reg[12][6]         | 7      | 1     | NO           | YES                | YES               | 1      | 0       | 
+|guided_core | coef/ratio/g_bit[12].quotient_reg[12][5]         | 6      | 1     | NO           | YES                | YES               | 1      | 0       | 
+|guided_core | coef/ratio/g_bit[12].quotient_reg[12][4]         | 5      | 1     | NO           | YES                | YES               | 1      | 0       | 
+|guided_core | coef/ratio/g_bit[12].quotient_reg[12][3]         | 4      | 1     | NO           | YES                | YES               | 1      | 0       | 
+|guided_core | coef/mean_div/n3_reg[20]                         | 3      | 12    | NO           | NO                 | YES               | 12     | 0       | 
+|guided_core | coef/mean_div/n3_reg[19]                         | 4      | 2     | NO           | NO                 | YES               | 2      | 0       | 
+|guided_core | coef/delay_mean/g_pipe.data_pipe_reg[11][15]     | 12     | 16    | NO           | NO                 | YES               | 16     | 0       | 
+|guided_core | coef/delay_mean/g_pipe.data_pipe_reg[12][16]     | 13     | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|guided_core | coef/delay_error/g_pipe.data_pipe_reg[13][0]     | 16     | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|guided_core | coef/finish_metadata/g_pipe.data_pipe_reg[2][71] | 3      | 13    | NO           | NO                 | YES               | 13     | 0       | 
+|guided_core | coef/finish_metadata/g_pipe.data_pipe_reg[2][26] | 21     | 17    | NO           | NO                 | YES               | 0      | 17      | 
+|guided_core | coef/finish_metadata/g_pipe.data_pipe_reg[2][18] | 30     | 1     | NO           | NO                 | YES               | 0      | 1       | 
+|guided_core | coef/finish_metadata/g_pipe.data_pipe_reg[2][8]  | 22     | 1     | NO           | NO                 | YES               | 0      | 1       | 
+|guided_core | coef/finish_metadata/g_pipe.data_pipe_reg[2][7]  | 27     | 8     | NO           | NO                 | YES               | 0      | 8       | 
+|guided_core | box/rows/xp_reg[2][9]                            | 3      | 10    | NO           | NO                 | YES               | 10     | 0       | 
+|guided_core | box/divide_a/n3_reg[16]                          | 3      | 17    | NO           | NO                 | YES               | 17     | 0       | 
+|guided_core | box/divide_b/n3_reg[20]                          | 3      | 20    | NO           | NO                 | YES               | 20     | 0       | 
+|guided_core | box/divide_b/n3_reg[19]                          | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|guided_core | box/xp_reg[2][9]                                 | 3      | 10    | NO           | NO                 | YES               | 10     | 0       | 
+|guided_core | box/yp_reg[4][8]                                 | 7      | 7     | NO           | NO                 | YES               | 7      | 0       | 
+|guided_core | box/align_metadata/g_pipe.data_pipe_reg[4][59]   | 5      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|guided_core | box/align_metadata/g_pipe.data_pipe_reg[4][7]    | 9      | 8     | NO           | NO                 | YES               | 8      | 0       | 
+|guided_core | box/tail_a2_reg[11]                              | 4      | 12    | NO           | NO                 | YES               | 12     | 0       | 
+|guided_core | box/tail_b2_reg[15]                              | 4      | 16    | NO           | NO                 | YES               | 16     | 0       | 
+|guided_core | rec/delay_metadata/g_pipe.data_pipe_reg[3][59]   | 4      | 9     | NO           | NO                 | YES               | 9      | 0       | 
+|guided_core | enh/delay_metadata/g_pipe.data_pipe_reg[6][77]   | 7      | 11    | NO           | NO                 | YES               | 11     | 0       | 
+|guided_core | enh/delay_metadata/g_pipe.data_pipe_reg[6][58]   | 55     | 32    | NO           | YES                | YES               | 0      | 64      | 
+|guided_core | enh/delay_metadata/g_pipe.data_pipe_reg[6][26]   | 16     | 15    | NO           | NO                 | YES               | 15     | 0       | 
+|guided_core | enh/delay_metadata/g_pipe.data_pipe_reg[6][19]   | 23     | 2     | NO           | NO                 | YES               | 0      | 2       | 
+|guided_core | enh/delay_metadata/g_pipe.data_pipe_reg[6][9]    | 17     | 2     | NO           | NO                 | YES               | 2      | 0       | 
+|guided_core | enh/delay_metadata/g_pipe.data_pipe_reg[4][59]   | 4      | 16    | NO           | NO                 | YES               | 16     | 0       | 
+|guided_core | mom/vp_reg[4]                                    | 5      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|guided_core | coef/ratio/ep_reg[12]                            | 13     | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|guided_core | coef/vp_reg[3]                                   | 4      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|guided_core | coef/delay_mean/g_pipe.valid_pipe_reg[11]        | 12     | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|guided_core | box/divide_b/ep_reg[3]                           | 4      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|guided_core | box/divide_a/vp_reg[3]                           | 4      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|guided_core | rec/delay_metadata/g_pipe.valid_pipe_reg[3]      | 4      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|guided_core | enh/delay_metadata/g_pipe.valid_pipe_reg[6]      | 7      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|guided_core | mom/history1_reg[4][10]                          | 4      | 11    | YES          | NO                 | YES               | 11     | 0       | 
+|guided_core | mom/history2_reg[4][18]                          | 4      | 19    | YES          | NO                 | YES               | 19     | 0       | 
+|guided_core | box/history_a_reg[4][14]                         | 4      | 15    | YES          | NO                 | YES               | 15     | 0       | 
+|guided_core | box/history_b_reg[4][18]                         | 4      | 19    | YES          | NO                 | YES               | 19     | 0       | 
++------------+--------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++---------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name    | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++---------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|div25_pipe     | (A'*B)'        | 17     | 5      | -      | -      | 22     | 1    | 0    | -    | -    | -     | 0    | 1    | 
+|div25_pipe     | (C+(A'*B)')'   | 17     | 14     | 37     | -      | 38     | 1    | 0    | 0    | -    | -     | 1    | 1    | 
+|div25_pipe     | (A'*B)'        | 21     | 5      | -      | -      | 26     | 1    | 0    | -    | -    | -     | 0    | 1    | 
+|div25_pipe     | (C+(A'*B)')'   | 21     | 14     | 41     | -      | 41     | 1    | 0    | 0    | -    | -     | 1    | 1    | 
+|coefficient5   | (C+(A''*B')')' | 16     | 13     | 12     | -      | 29     | 2    | 1    | 0    | -    | -     | 1    | 1    | 
+|coefficient5   | ((A*B)')'      | 21     | 5      | -      | -      | 26     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|coefficient5   | (A'*B')'       | 13     | 13     | -      | -      | 26     | 1    | 1    | -    | -    | -     | 0    | 1    | 
+|coefficient5   | C-(A:B)        | 8      | 18     | 26     | -      | 27     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|coefficient5   | A*B            | 11     | 10     | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|div25_pipe     | (A'*B)'        | 21     | 5      | -      | -      | 26     | 1    | 0    | -    | -    | -     | 0    | 1    | 
+|div25_pipe     | (C+(A'*B)')'   | 21     | 14     | 41     | -      | 41     | 1    | 0    | 0    | -    | -     | 1    | 1    | 
+|detail_enhance | ((A'*B')')'    | 30     | 10     | -      | -      | 25     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|moments5       | ((A''*B'')')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|moments5       | ((A'*B')')'    | 8      | 8      | -      | -      | 16     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|moments5       | ((A'*B')')'    | 8      | 8      | -      | -      | 16     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|moments5       | ((A'*B')')'    | 8      | 8      | -      | -      | 16     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|moments5       | ((A'*B')')'    | 8      | 8      | -      | -      | 16     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|reconstruct    | (C+A'*B'')'    | 12     | 8      | 4      | -      | 21     | 1    | 2    | 0    | -    | -     | 0    | 1    | 
++---------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |CARRY4   |   373|
+|2     |DSP48E1  |    18|
+|3     |LUT1     |   156|
+|4     |LUT2     |   722|
+|5     |LUT3     |   489|
+|6     |LUT4     |   385|
+|7     |LUT5     |    79|
+|8     |LUT6     |   508|
+|9     |RAMB18E1 |     5|
+|10    |RAMB36E1 |     5|
+|11    |SRL16E   |   349|
+|12    |SRLC32E  |    93|
+|13    |FDRE     |  2568|
+|14    |FDSE     |    18|
++------+---------+------+
+
+Report Instance Areas: 
++------+--------------------+----------------------------+------+
+|      |Instance            |Module                      |Cells |
++------+--------------------+----------------------------+------+
+|1     |top                 |                            |  5768|
+|2     |  box               |coefficient_box5            |  1881|
+|3     |    align_metadata  |token_pipe__parameterized3  |    18|
+|4     |    divide_a        |div25_pipe__parameterized0  |   195|
+|5     |    divide_b        |div25_pipe_0                |   231|
+|6     |    rows            |row_window5__parameterized0 |   607|
+|7     |  coef              |coefficient5                |  2075|
+|8     |    delay_error     |token_pipe__parameterized0  |    30|
+|9     |    delay_mean      |token_pipe                  |    41|
+|10    |    finish_metadata |token_pipe__parameterized2  |   142|
+|11    |    mean_div        |div25_pipe                  |   168|
+|12    |    ratio           |ratio_q12_pipe              |  1517|
+|13    |  enh               |detail_enhance              |   526|
+|14    |    delay_metadata  |token_pipe__parameterized5  |   221|
+|15    |  mom               |moments5                    |  1104|
+|16    |    rows            |row_window5                 |   223|
+|17    |  rec               |reconstruct                 |   145|
+|18    |    delay_metadata  |token_pipe__parameterized4  |    48|
++------+--------------------+----------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:16 ; elapsed = 00:00:40 . Memory (MB): peak = 1546.664 ; gain = 1049.195
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 31 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:40 . Memory (MB): peak = 1546.664 ; gain = 1049.195
+Synthesis Optimization Complete : Time (s): cpu = 00:00:16 ; elapsed = 00:00:40 . Memory (MB): peak = 1546.664 ; gain = 1049.195
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.035 . Memory (MB): peak = 1562.719 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 401 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1676.992 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 96b11050
+INFO: [Common 17-83] Releasing license: Synthesis
+58 Infos, 31 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:43 . Memory (MB): peak = 1676.992 ; gain = 1183.492
+# create_clock -name core_clk -period 10.000 [get_ports clk]
+# set_input_delay -clock core_clk -max 2.000 [get_ports -filter {DIRECTION == IN && NAME != clk}]
+# set_input_delay -clock core_clk -min 0.000 [get_ports -filter {DIRECTION == IN && NAME != clk}]
+# set_output_delay -clock core_clk -max 2.000 [get_ports -filter {DIRECTION == OUT}]
+# set_output_delay -clock core_clk -min 0.000 [get_ports -filter {DIRECTION == OUT}]
+# report_utilization -file [file join $out utilization.rpt]
+# report_timing_summary -delay_type min_max -report_unconstrained -file [file join $out timing_summary.rpt]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+WARNING: [Timing 38-242] The property HD.CLK_SRC of clock port "clk" is not set. In out-of-context mode, this prevents timing estimation for clock delay/skew
+Resolution: Set the HD.CLK_SRC property of the out-of-context port to the location of the clock buffer instance in the top-level design
+# report_timing -from [all_registers -clock core_clk] -to [all_registers -clock core_clk] -max_paths 10 -file [file join $out registered_paths.rpt]
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+INFO: [Timing 38-78] ReportTimingParams: -from_pins  -to_pins  -max_paths 10 -nworst 1 -delay_type max -sort_by slack.
+# report_drc -checks {MDRV-1 LUTLP-1} -file [file join $out drc.rpt]
+Command: report_drc -checks {MDRV-1 LUTLP-1} -file E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/build/synthesis/20261026-184436/guided_core/drc.rpt
+INFO: [DRC 23-27] Running DRC with 2 threads
+WARNING: [DRC 23-814] Not all possible (connectivity based) DRCs may have been run because this design is seen as Out of Context.
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/build/synthesis/20261026-184436/guided_core/drc.rpt.
+report_drc completed successfully
+# check_timing -verbose -file [file join $out check_timing.rpt]
+# write_checkpoint -force [file join $out synthesized.dcp]
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 1935.441 ; gain = 0.430
+INFO: [Common 17-1381] The checkpoint 'E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/build/synthesis/20261026-184436/guided_core/synthesized.dcp' has been generated.
+# write_xdc -force [file join $out constraints.xdc]
+# set f [open [file join $out metrics.json] w]
+# puts $f "\{"
+# puts $f "  \"tool\": \"[version -short]\","
+# foreach {key filter} {RAMB18 {REF_NAME =~ RAMB18*} RAMB36 {REF_NAME =~ RAMB36*} DSP {REF_NAME =~ DSP48*} LUT {REF_NAME =~ LUT*} FF {REF_NAME =~ FD*} latches {REF_NAME =~ LD*}} {
+#   puts $f "  \"$key\": [llength [get_cells -hier -filter $filter]],"
+# }
+WARNING: [Vivado 12-180] No cells matched 'get_cells -hier -filter {REF_NAME =~ LD*}'.
+# puts $f "  \"multidrivers\": [llength [get_drc_violations -quiet -filter {NAME =~ MDRV-1*}]],"
+# set regpath [get_timing_paths -from [all_registers -clock core_clk] -to [all_registers -clock core_clk] -max_paths 1]
+# set anypath [get_timing_paths -max_paths 1]
+# puts $f "  \"registered_setup_slack_ns\": [get_property SLACK $regpath],"
+# puts $f "  \"overall_setup_slack_ns\": [get_property SLACK $anypath]"
+# puts $f "\}"
+# close $f
+# puts "PASS SYNTH"
+PASS SYNTH
+INFO: [Common 17-206] Exiting Vivado at Mon Oct 26 18:45:39 2026...

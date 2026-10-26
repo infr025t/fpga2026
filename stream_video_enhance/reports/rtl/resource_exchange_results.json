@@ -1,0 +1,213 @@
+{
+  "source_hashes": {
+    "rtl\\core_latency_pkg.sv": "f7c06089c012a23eaf91214aafa8ac5ada9bad4b87d59047f23acb5bde0efbce",
+    "rtl\\coefficient5.sv": "5e04cf0dd5df18abc1e75c75a791ec1ca5f1d111428b1f4a1194ff0d1e2b58bd",
+    "rtl\\coefficient_box5.sv": "bbef1e2be89214633e2e084e17653bfb709e912b71a1555f3aea8b2ee3a8fa20",
+    "rtl\\detail_enhance.sv": "674a309d8849ba585eedb8585b73bc275ff320121390bb62eb2ae9ab9c217ed8",
+    "rtl\\div25_pipe.sv": "49c1878973a76ff4e7c3a06a440fccfc36002bd433790bc33b5a08cfc098fc56",
+    "rtl\\guided_core.sv": "9b23c2f3700fc20433d84ccf634e3507ebaaacf93a57fa1f27ecad174a835d0a",
+    "rtl\\moments5.sv": "2a2956b582c5a855e61a5aea3ff3c904b0e9ab1acac37d648a32bba33dcdf4ff",
+    "rtl\\ratio_q12_pipe.sv": "78a6790422eea59e989c1973c2a952e7060d18bed445be61e826c4ac65e4e4f9",
+    "rtl\\reconstruct.sv": "e8b0c487ae44cd72f2c41902a7eb3918945b4634a2d0baab5a44cd8ee117e3b8",
+    "rtl\\row_window5.sv": "f3ffb434b2a96bbf1e1dc5ba338ddac3226f80e13f2276d7088bcd61b923252c",
+    "rtl\\token_pipe.sv": "f84c2c309f19abadf6d96ed5b597e0dd5b4b2bae910f917115830d32b6ffa71d",
+    "rtl\\experiments\\center_delay.sv": "ad55b8eeb76e1cc500dfe27fc0e502ed4b21b10065f15b72fa556a48feab8fc5",
+    "rtl\\experiments\\coefficient_box_queue.sv": "a8ddbf26208b8a238fc4e437e1c58b638b6c1b9c053dbb6e9e6284f908a67227",
+    "rtl\\experiments\\moments_store_square.sv": "ec12d9053e39e4a01b529b0dfc5e76aa18b2657e1f45e8135dc6265a4cb63b4c",
+    "sim\\tb_resource_exchange.sv": "839f7485cfe2083babcb8a2e902e2bcbd0436024e67bbd5ede28b84787176e72"
+  },
+  "results": [
+    {
+      "top": "tb_resource_exchange",
+      "passed": true,
+      "stages": [
+        {
+          "tool": "xvlog",
+          "command": [
+            "E:\\Vivado\\2025.1\\Vivado\\bin\\xvlog.bat",
+            "-sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\core_latency_pkg.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\coefficient5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\coefficient_box5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\detail_enhance.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\div25_pipe.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\guided_core.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\moments5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\ratio_q12_pipe.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\reconstruct.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\row_window5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\token_pipe.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\experiments\\center_delay.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\experiments\\coefficient_box_queue.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\experiments\\moments_store_square.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\sim\\tb_resource_exchange.sv"
+          ],
+          "exit": 0,
+          "seconds": 0.705,
+          "log": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\exchange\\20261026-191440\\16\\xvlog-captured.log",
+          "private_job_active_processes": 0
+        },
+        {
+          "tool": "xelab",
+          "command": [
+            "E:\\Vivado\\2025.1\\Vivado\\bin\\xelab.bat",
+            "tb_resource_exchange",
+            "-s",
+            "snapshot"
+          ],
+          "exit": 0,
+          "seconds": 2.431,
+          "log": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\exchange\\20261026-191440\\16\\xelab-captured.log",
+          "private_job_active_processes": 0
+        },
+        {
+          "tool": "xsim",
+          "command": [
+            "E:\\Vivado\\2025.1\\Vivado\\bin\\xsim.bat",
+            "snapshot",
+            "-runall",
+            "-f",
+            "xsim-options.txt"
+          ],
+          "exit": 0,
+          "seconds": 2.516,
+          "log": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\exchange\\20261026-191440\\16\\xsim-captured.log",
+          "private_job_active_processes": 0
+        }
+      ],
+      "work_dir": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\exchange\\20261026-191440\\16",
+      "reason": "PASS",
+      "simulation_summary": [
+        "PASS tb_resource_exchange W=16 H=16 moments=600 box=272 latency=9/12 II=1 bubbles linegaps abort reset"
+      ]
+    },
+    {
+      "top": "tb_resource_exchange17",
+      "passed": true,
+      "stages": [
+        {
+          "tool": "xvlog",
+          "command": [
+            "E:\\Vivado\\2025.1\\Vivado\\bin\\xvlog.bat",
+            "-sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\core_latency_pkg.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\coefficient5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\coefficient_box5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\detail_enhance.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\div25_pipe.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\guided_core.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\moments5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\ratio_q12_pipe.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\reconstruct.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\row_window5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\token_pipe.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\experiments\\center_delay.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\experiments\\coefficient_box_queue.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\experiments\\moments_store_square.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\sim\\tb_resource_exchange.sv"
+          ],
+          "exit": 0,
+          "seconds": 0.672,
+          "log": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\exchange\\20261026-191440\\17\\xvlog-captured.log",
+          "private_job_active_processes": 0
+        },
+        {
+          "tool": "xelab",
+          "command": [
+            "E:\\Vivado\\2025.1\\Vivado\\bin\\xelab.bat",
+            "tb_resource_exchange17",
+            "-s",
+            "snapshot"
+          ],
+          "exit": 0,
+          "seconds": 2.466,
+          "log": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\exchange\\20261026-191440\\17\\xelab-captured.log",
+          "private_job_active_processes": 0
+        },
+        {
+          "tool": "xsim",
+          "command": [
+            "E:\\Vivado\\2025.1\\Vivado\\bin\\xsim.bat",
+            "snapshot",
+            "-runall",
+            "-f",
+            "xsim-options.txt"
+          ],
+          "exit": 0,
+          "seconds": 2.505,
+          "log": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\exchange\\20261026-191440\\17\\xsim-captured.log",
+          "private_job_active_processes": 0
+        }
+      ],
+      "work_dir": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\exchange\\20261026-191440\\17",
+      "reason": "PASS",
+      "simulation_summary": [
+        "PASS tb_resource_exchange W=17 H=19 moments=806 box=414 latency=9/12 II=1 bubbles linegaps abort reset"
+      ]
+    },
+    {
+      "top": "tb_resource_exchange_vga",
+      "passed": true,
+      "stages": [
+        {
+          "tool": "xvlog",
+          "command": [
+            "E:\\Vivado\\2025.1\\Vivado\\bin\\xvlog.bat",
+            "-sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\core_latency_pkg.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\coefficient5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\coefficient_box5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\detail_enhance.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\div25_pipe.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\guided_core.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\moments5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\ratio_q12_pipe.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\reconstruct.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\row_window5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\token_pipe.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\experiments\\center_delay.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\experiments\\coefficient_box_queue.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\experiments\\moments_store_square.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\sim\\tb_resource_exchange.sv"
+          ],
+          "exit": 0,
+          "seconds": 0.683,
+          "log": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\exchange\\20261026-191440\\vga\\xvlog-captured.log",
+          "private_job_active_processes": 0
+        },
+        {
+          "tool": "xelab",
+          "command": [
+            "E:\\Vivado\\2025.1\\Vivado\\bin\\xelab.bat",
+            "tb_resource_exchange_vga",
+            "-s",
+            "snapshot"
+          ],
+          "exit": 0,
+          "seconds": 2.42,
+          "log": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\exchange\\20261026-191440\\vga\\xelab-captured.log",
+          "private_job_active_processes": 0
+        },
+        {
+          "tool": "xsim",
+          "command": [
+            "E:\\Vivado\\2025.1\\Vivado\\bin\\xsim.bat",
+            "snapshot",
+            "-runall",
+            "-f",
+            "xsim-options.txt"
+          ],
+          "exit": 0,
+          "seconds": 31.656,
+          "log": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\exchange\\20261026-191440\\vga\\xsim-captured.log",
+          "private_job_active_processes": 0
+        }
+      ],
+      "work_dir": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\exchange\\20261026-191440\\vga",
+      "reason": "PASS",
+      "simulation_summary": [
+        "PASS tb_resource_exchange W=640 H=480 moments=1212216 box=1194480 latency=9/12 II=1 bubbles linegaps abort reset"
+      ]
+    }
+  ]
+}

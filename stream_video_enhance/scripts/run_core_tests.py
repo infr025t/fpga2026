@@ -150,9 +150,14 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--quick", action="store_true")
     parser.add_argument("--timeout", type=float, default=240)
-    parser.add_argument("--suite", choices=("arithmetic", "windows"), default="arithmetic")
+    parser.add_argument("--suite", choices=("arithmetic", "windows", "core"), default="arithmetic")
     parser.add_argument("--windows-size", choices=("all", "16", "17", "vga", "ranges"), default="all")
+    parser.add_argument("--core-size", choices=("all", "stages", "16", "17", "vga", "faults"), default="all")
+    parser.add_argument("--extra-align", choices=("both", "0", "1"), default="both")
     args = parser.parse_args()
+    if args.suite == "core":
+        from core_vectors import run_core_suite
+        return run_core_suite(args)
     if args.suite == "windows":
         from window_vectors import generate_window_vectors
         results = []

@@ -1,0 +1,181 @@
+{
+  "status": "passed",
+  "sources": {
+    "scripts/run_core_synth.py": "452806af97445566716b6a2b854239bf0ed4db1d4b54254dc85742c9ceceeb47",
+    "scripts/run_exchange_tests.py": "0902d7fe42d9d2c7a740710e35d2cea201d812ef62e016660268f9782daec753",
+    "scripts/synth_core.tcl": "72228cf70b1b8b1d83bcb80fca53e8730d9cbe4052d0745bfcc39f0381614a62",
+    "tests/test_tool_contracts.py": "dcc7bb204b308822990b0aacacc2e76b6abe516f82cd77e4f3a4ce9cb9446f4d",
+    "tests/test_package_order.py": "27b25fa091516cdb1466e085f6e16fc9ccfa3cdb9d21b4edce76e51e31a438a8"
+  },
+  "checks": [
+    {
+      "name": "reviewer_tool_contracts",
+      "command": [
+        "C:\\Users\\37855\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\tests",
+        "-p",
+        "test_tool_contracts.py",
+        "-v"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "passed": true,
+      "seconds": 0.485,
+      "log": "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\final-tool-review-20261027\\reviewer_tool_contracts.log",
+      "sha256": "9114252a99aff143086cc330d0058a916fc86f2aeee7e683e79e9e4d0395a855"
+    },
+    {
+      "name": "reviewer_package_order",
+      "command": [
+        "C:\\Users\\37855\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\tests",
+        "-p",
+        "test_package_order.py",
+        "-v"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "passed": true,
+      "seconds": 0.172,
+      "log": "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\final-tool-review-20261027\\reviewer_package_order.log",
+      "sha256": "7775aa1937d78fe85687eb6452addd57ca63209061c0ff81dc1713f1c85fa95a"
+    },
+    {
+      "name": "reviewer_exchange_red",
+      "command": [
+        "C:\\Users\\37855\\AppData\\Local\\Temp\\fpga20261020_iverilog_91s5ypxn\\ucrt64\\bin\\iverilog.exe",
+        "-g2012",
+        "-s",
+        "tb_resource_exchange",
+        "-o",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\final-tool-review-20261027\\exchange_red.vvp",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\core_latency_pkg.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\coefficient5.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\coefficient_box5.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\core_crc_monitor.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\crc32_byte.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\detail_enhance.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\div25_pipe.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\guided_core.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\ingress_fifo.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\ingress_guard.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\moments5.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\ratio_q12_pipe.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\reconstruct.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\row_window5.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\source_pattern.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\token_pipe.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\video_runtime.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\video_runtime_pkg.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\experiments\\center_delay.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\experiments\\coefficient_box_queue.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\experiments\\moments_store_square.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\sim\\tb_resource_exchange.sv"
+      ],
+      "exit": 24,
+      "expected_exit": null,
+      "passed": true,
+      "seconds": 0.203,
+      "log": "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\final-tool-review-20261027\\reviewer_exchange_red.log",
+      "sha256": "f94e83225ddb6657ebfc41887f6978778333d7f9f8658c40399570c8477a6c03"
+    },
+    {
+      "name": "reviewer_exchange_compile",
+      "command": [
+        "C:\\Users\\37855\\AppData\\Local\\Temp\\fpga20261020_iverilog_91s5ypxn\\ucrt64\\bin\\iverilog.exe",
+        "-g2012",
+        "-s",
+        "tb_resource_exchange",
+        "-o",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\final-tool-review-20261027\\exchange_green.vvp",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\core_latency_pkg.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\video_runtime_pkg.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\coefficient5.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\coefficient_box5.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\core_crc_monitor.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\crc32_byte.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\detail_enhance.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\div25_pipe.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\guided_core.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\ingress_fifo.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\ingress_guard.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\moments5.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\ratio_q12_pipe.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\reconstruct.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\row_window5.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\source_pattern.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\token_pipe.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\video_runtime.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\experiments\\center_delay.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\experiments\\coefficient_box_queue.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\experiments\\moments_store_square.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\sim\\tb_resource_exchange.sv"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "passed": true,
+      "seconds": 0.125,
+      "log": "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\final-tool-review-20261027\\reviewer_exchange_compile.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "reviewer_exchange_simulate",
+      "command": [
+        "C:\\Users\\37855\\AppData\\Local\\Temp\\fpga20261020_iverilog_91s5ypxn\\ucrt64\\bin\\vvp.exe",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\final-tool-review-20261027\\exchange_green.vvp"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "passed": true,
+      "seconds": 0.39,
+      "log": "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\final-tool-review-20261027\\reviewer_exchange_simulate.log",
+      "sha256": "c0e2a138350496730312b156cede1f0afc809864371228ef88cc02755d53e72e"
+    },
+    {
+      "name": "reviewer_synthesis_package_order_attempt1",
+      "command": [
+        "C:/Python314/python.exe",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\final-tool-review-20261027\\reviewer_tcl_order.py",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\final-tool-review-20261027"
+      ],
+      "exit": 1,
+      "expected_exit": 0,
+      "passed": false,
+      "seconds": 0.188,
+      "log": "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\final-tool-review-20261027\\reviewer_synthesis_package_order_attempt1.log",
+      "sha256": "7e7d08096b321ebb30569ca2fb495269c6688a34d7e3daea20bc92bd7255e116",
+      "superseded_by": "reviewer_synthesis_package_order",
+      "reason": "Temporary check harness needed str() for Tcl_Obj path values; source Tcl unchanged."
+    },
+    {
+      "name": "reviewer_synthesis_package_order",
+      "command": [
+        "C:/Python314/python.exe",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\final-tool-review-20261027\\reviewer_tcl_order.py",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\final-tool-review-20261027"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "passed": true,
+      "seconds": 0.125,
+      "log": "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\final-tool-review-20261027\\reviewer_synthesis_package_order.log",
+      "sha256": "52abc673dec60d9045c95fffb180e086aa2041d1cec7ab3a928506ec3636ef2b"
+    }
+  ],
+  "units": {
+    "test_tool_contracts": 15,
+    "test_package_order": 2,
+    "added_tests": 6
+  },
+  "scope": "Mocked tool contracts, actual Tcl read order and actual Icarus 16x16 legacy resource A/B compilation and simulation; no VGA, synthesis or board operations."
+}

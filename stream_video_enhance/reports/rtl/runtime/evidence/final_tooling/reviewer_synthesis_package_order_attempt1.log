@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "D:\desktop\coding\fpga2026 - demo\stream_video_enhance\build\regression\final-tool-review-20261027\reviewer_tcl_order.py", line 7, in <module>
+    files=[Path(name) for name in tcl.splitlist(tcl.getvar('observed'))]
+           ~~~~^^^^^^
+  File "C:\Python314\Lib\pathlib\__init__.py", line 150, in __init__
+    raise TypeError(
+    ...<2 lines>...
+        f"not {type(path).__name__!r}")
+TypeError: argument should be a str or an os.PathLike object where __fspath__ returns a str, not 'Tcl_Obj'

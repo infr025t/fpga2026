@@ -1,0 +1,7 @@
+stream_video_enhance/sim/tb_core_crc.sv:17: error: Unknown module type: core_crc_monitor
+stream_video_enhance/sim/tb_core_crc.sv:19: error: Unknown module type: crc32_byte
+3 error(s) during elaboration.
+*** These modules were missing:
+        core_crc_monitor referenced 1 times.
+        crc32_byte referenced 1 times.
+***

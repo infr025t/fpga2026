@@ -1,0 +1,2 @@
+PASS tb_resource_exchange W=16 H=16 moments=600 box=272 latency=9/12 II=1 bubbles linegaps abort reset
+D:\desktop\coding\fpga2026 - demo\stream_video_enhance\sim\tb_resource_exchange.sv:82: $finish called at 21420000 (1ps)

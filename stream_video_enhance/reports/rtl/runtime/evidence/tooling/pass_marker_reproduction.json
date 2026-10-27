@@ -1,0 +1,6 @@
+{
+  "input": "NOT PASS fixture",
+  "legacy_passed": true,
+  "fixed_passed": false,
+  "method": "mocked tool output, not actual Vivado execution"
+}

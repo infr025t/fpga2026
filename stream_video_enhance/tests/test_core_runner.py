@@ -10,6 +10,8 @@ runner = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(runner)
 
 
+@unittest.skipIf(bool(runner.missing_simulator_tools()),
+                 'Vivado simulator unavailable; set VIVADO_BIN to run real-tool fixtures')
 class RunnerTests(unittest.TestCase):
     def fixture(self, body, timeout=60, declarations="", sources=()):
         # Keep real-tool evidence under ignored build/; Windows can retain mapped

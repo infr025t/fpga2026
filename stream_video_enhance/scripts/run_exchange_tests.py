@@ -3,11 +3,16 @@ import argparse,json,time
 from pathlib import Path
 from run_core_tests import ROOT,run_bench
 from run_core_synth import digest
+
+def exchange_sources(root=ROOT):
+    packages=[root/'rtl'/name for name in ('core_latency_pkg.sv','video_runtime_pkg.sv')]
+    return [*packages,*[src for src in sorted((root/'rtl').glob('*.sv')) if src not in packages],
+            *sorted((root/'rtl/experiments').glob('*.sv')),root/'sim/tb_resource_exchange.sv']
+
 def main():
     p=argparse.ArgumentParser();p.add_argument('--size',choices=['16','17','vga','all'],default='all');a=p.parse_args()
     work=ROOT/'build/regression/exchange'/time.strftime('%Y%m%d-%H%M%S')
-    sources=[*sorted((ROOT/'rtl').glob('*.sv')),*sorted((ROOT/'rtl/experiments').glob('*.sv')),ROOT/'sim/tb_resource_exchange.sv']
-    sources.sort(key=lambda s:0 if s.name=='core_latency_pkg.sv' else 1)
+    sources=exchange_sources()
     hashes={str(s.relative_to(ROOT)):digest(s) for s in sources}
     results=[]
     for size,top in [('16','tb_resource_exchange'),('17','tb_resource_exchange17'),('vga','tb_resource_exchange_vga')]:

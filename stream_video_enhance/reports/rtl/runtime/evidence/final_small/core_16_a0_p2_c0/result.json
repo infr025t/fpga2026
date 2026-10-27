@@ -1,0 +1,78 @@
+{
+  "top": "tb_selected",
+  "passed": true,
+  "stages": [
+    {
+      "name": "compile",
+      "command": [
+        "C:\\Users\\37855\\AppData\\Local\\Temp\\fpga20261020_iverilog_91s5ypxn\\ucrt64\\bin\\iverilog.exe",
+        "-g2012",
+        "-s",
+        "tb_selected",
+        "-o",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\runtime-final-small-20261027\\core_16_a0_p2_c0\\simulation.vvp",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\core_latency_pkg.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\video_runtime_pkg.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\coefficient5.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\coefficient_box5.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\core_crc_monitor.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\crc32_byte.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\detail_enhance.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\div25_pipe.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\guided_core.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\ingress_fifo.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\ingress_guard.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\moments5.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\ratio_q12_pipe.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\reconstruct.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\row_window5.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\source_pattern.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\token_pipe.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\video_runtime.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\sim\\tb_runtime_core.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\runtime-final-small-20261027\\core_16_a0_p2_c0.sv"
+      ],
+      "exit": 0,
+      "log": "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\runtime-final-small-20261027\\core_16_a0_p2_c0\\compile.log",
+      "seconds": 0.125
+    },
+    {
+      "name": "simulate",
+      "command": [
+        "C:\\Users\\37855\\AppData\\Local\\Temp\\fpga20261020_iverilog_91s5ypxn\\ucrt64\\bin\\vvp.exe",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\runtime-final-small-20261027\\core_16_a0_p2_c0\\simulation.vvp",
+        "+VECTORS=D:/desktop/coding/fpga2026 - demo/stream_video_enhance/build/regression/runtime-final-small-20261027/vectors_16"
+      ],
+      "exit": 0,
+      "log": "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\runtime-final-small-20261027\\core_16_a0_p2_c0\\simulate.log",
+      "seconds": 0.265
+    }
+  ],
+  "work_dir": "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\runtime-final-small-20261027\\core_16_a0_p2_c0",
+  "reason": "PASS",
+  "simulation_summary": [
+    "PASS tb_runtime_core W=16 H=16 pattern=2 align=0 claim=0 frames=4 pixels=256 highwater=1"
+  ],
+  "source_hashes": {
+    "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\core_latency_pkg.sv": "f7c06089c012a23eaf91214aafa8ac5ada9bad4b87d59047f23acb5bde0efbce",
+    "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\video_runtime_pkg.sv": "aff9588fd77704108ff1588ca69ca57fe6620e36b4afc67f1b3581fa69ef9aa6",
+    "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\coefficient5.sv": "5e04cf0dd5df18abc1e75c75a791ec1ca5f1d111428b1f4a1194ff0d1e2b58bd",
+    "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\coefficient_box5.sv": "bbef1e2be89214633e2e084e17653bfb709e912b71a1555f3aea8b2ee3a8fa20",
+    "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\core_crc_monitor.sv": "f5a2d3871d26898f0a425adb955d173cca9fb85e78b749520ad2aeeb8782b7b7",
+    "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\crc32_byte.sv": "2273ae9a9d2907f64c569487747421ea29c656ee614113a1a1541147372ae4bf",
+    "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\detail_enhance.sv": "674a309d8849ba585eedb8585b73bc275ff320121390bb62eb2ae9ab9c217ed8",
+    "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\div25_pipe.sv": "49c1878973a76ff4e7c3a06a440fccfc36002bd433790bc33b5a08cfc098fc56",
+    "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\guided_core.sv": "9b23c2f3700fc20433d84ccf634e3507ebaaacf93a57fa1f27ecad174a835d0a",
+    "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\ingress_fifo.sv": "3a265235d4409dc24f77dfbb81838fd2a8b465203ad355504a592ca1fd78eca7",
+    "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\ingress_guard.sv": "7fe0ffc80e0c2b16f98e24f0d723397f66a83a60109d9a56c420904cc83a4b14",
+    "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\moments5.sv": "2a2956b582c5a855e61a5aea3ff3c904b0e9ab1acac37d648a32bba33dcdf4ff",
+    "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\ratio_q12_pipe.sv": "78a6790422eea59e989c1973c2a952e7060d18bed445be61e826c4ac65e4e4f9",
+    "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\reconstruct.sv": "e8b0c487ae44cd72f2c41902a7eb3918945b4634a2d0baab5a44cd8ee117e3b8",
+    "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\row_window5.sv": "f3ffb434b2a96bbf1e1dc5ba338ddac3226f80e13f2276d7088bcd61b923252c",
+    "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\source_pattern.sv": "35c4b4ffb58a0604f3b1bf475fc1ad1fe8f577bdab2e2ce477341d3aff46dd98",
+    "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\token_pipe.sv": "f84c2c309f19abadf6d96ed5b597e0dd5b4b2bae910f917115830d32b6ffa71d",
+    "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\video_runtime.sv": "f2989c100808121f219e7ee78357fee63de8e1f79e7414ba49dfcc3b3e3d64fe",
+    "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\sim\\tb_runtime_core.sv": "2cfa9d39363ec5d7ce77a9794d95cdbe51b2b373b9079623be55566ca15017ac",
+    "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\runtime-final-small-20261027\\core_16_a0_p2_c0.sv": "c56427870bcbd87c9cced83e8d4bdc74feb75a8be380fb4e520c31e4e5e8bb5f"
+  }
+}

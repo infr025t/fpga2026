@@ -8,6 +8,68 @@ import subprocess
 import time
 from run_core_tests import ROOT, BIN, _run_tool
 
+REQUIRED_SIMULATION_SOURCES = {
+    'rtl/' + name for name in (
+        'core_latency_pkg.sv', 'token_pipe.sv', 'div25_pipe.sv', 'ratio_q12_pipe.sv',
+        'row_window5.sv', 'moments5.sv', 'coefficient_box5.sv', 'coefficient5.sv',
+        'reconstruct.sv', 'detail_enhance.sv', 'guided_core.sv')
+} | {'sim/tb_core_stages.sv', 'sim/tb_guided_core.sv', 'scripts/core_vectors.py'}
+
+REQUIRED_SIMULATION_TOPS = {
+    'tb_core_stages', 'tb_guided_core_16', 'tb_guided_core_16_align',
+    'tb_guided_core_17', 'tb_guided_core_17_align',
+    'tb_guided_core_vga', 'tb_guided_core_vga_align',
+    'tb_core_faults_0', 'tb_core_faults_1',
+}
+
+
+def verify_simulation_sources(manifest, root=ROOT):
+    """Bind numerical simulation to RTL/oracle inputs, not the tool wrapper.
+
+    Runner diagnostics may change without changing the simulated computation.
+    Every recorded rtl/sim/model input and the numerical vector generator is
+    checked. All nine complete-core regression cases must have passed. Older
+    manifests without model hashes bind only their recorded numerical inputs.
+    """
+    if not isinstance(manifest, dict):
+        raise ValueError('simulation manifest must be a JSON object')
+    results = manifest.get('results')
+    if not isinstance(results, list) or not results or any(
+            not isinstance(result, dict) or result.get('passed') is not True
+            for result in results):
+        raise ValueError('simulation manifest must contain only passing results')
+    recorded_tops = {result.get('top') for result in results
+                     if isinstance(result.get('top'), str)}
+    missing_tops = REQUIRED_SIMULATION_TOPS - recorded_tops
+    if missing_tops:
+        raise ValueError('simulation manifest is missing core regression cases: '
+                         + ', '.join(sorted(missing_tops)))
+    sources = manifest.get('source_hashes')
+    if not isinstance(sources, dict):
+        raise ValueError('simulation manifest is missing source_hashes')
+    missing = REQUIRED_SIMULATION_SOURCES - sources.keys()
+    if missing:
+        raise ValueError('simulation manifest is missing core sources: ' + ', '.join(sorted(missing)))
+    root = Path(root).resolve()
+    checked = []
+    for name, expected in sources.items():
+        relative = Path(name)
+        path = (root / relative).resolve()
+        if relative.is_absolute() or not path.is_relative_to(root):
+            raise ValueError('invalid simulation source path: ' + name)
+        if (not relative.parts or relative.parts[0] not in ('rtl', 'sim', 'model')) \
+                and name != 'scripts/core_vectors.py':
+            continue
+        if not isinstance(expected, str) or re.fullmatch('[0-9a-f]{64}', expected) is None:
+            raise ValueError('invalid simulation source hash: ' + name)
+        if not path.is_file():
+            raise ValueError('simulation source is missing: ' + name)
+        if digest(path) != expected:
+            raise ValueError('simulation source changed since the recorded run: ' + name)
+        checked.append(name)
+    return sorted(checked)
+
+
 def check_diagnostics(output, code):
     failures = []
     if code != 0: failures.append('timeout' if code is None else f'exit {code}')
@@ -89,9 +151,15 @@ def main():
     parser.add_argument('--simulation-manifest',type=Path,default=ROOT/'reports/rtl/core_timing_fix_results.json')
     args=parser.parse_args()
     latencies=package_latencies()
-    manifest=json.loads(args.simulation_manifest.read_text())
-    if manifest['latencies'] != latencies:
+    try:
+        manifest=json.loads(args.simulation_manifest.read_text())
+        checked_simulation_sources=verify_simulation_sources(manifest)
+    except (OSError, ValueError) as exc:
+        parser.error(str(exc))
+    if manifest.get('latencies') != latencies:
         parser.error('source latency package does not match the supplied simulation manifest')
+    if not (BIN/'vivado.bat').is_file():
+        parser.error(f'Vivado synthesis executable is unavailable: {BIN / "vivado.bat"}. Set VIVADO_BIN to the Vivado bin directory.')
     stamp=time.strftime('%Y%m%d-%H%M%S')
     work=ROOT/'build/regression/synthesis'/stamp
     sources=[*sorted((ROOT/'rtl').rglob('*.sv')),ROOT/'scripts/synth_core.tcl',Path(__file__),args.simulation_manifest]
@@ -104,6 +172,7 @@ def main():
                  commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
                  parameters=dict(W=640,H=480,EXTRA_ALIGN=0,period_ns=10,input_max_ns=2,output_max_ns=2),
                  simulation_manifest=str(args.simulation_manifest),simulation_latencies=latencies,
+                 checked_simulation_sources=checked_simulation_sources,
                  source_hashes=hashes, results=results)
     (work/'summary.json').write_text(json.dumps(summary,indent=2))
     print('SUMMARY',work/'summary.json',flush=True)

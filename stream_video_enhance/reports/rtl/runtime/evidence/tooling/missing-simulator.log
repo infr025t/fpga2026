@@ -1,0 +1,6 @@
+usage: run_core_tests.py [-h] [--quick] [--timeout TIMEOUT]
+                         [--suite {arithmetic,windows,core}]
+                         [--windows-size {all,16,17,vga,ranges}]
+                         [--core-size {all,stages,16,17,vga,faults}]
+                         [--extra-align {both,0,1}]
+run_core_tests.py: error: Vivado simulator tools are unavailable: E:\Vivado\2025.1\Vivado\bin\xvlog.bat, E:\Vivado\2025.1\Vivado\bin\xelab.bat, E:\Vivado\2025.1\Vivado\bin\xsim.bat. Set VIVADO_BIN to a Vivado bin directory containing xvlog, xelab and xsim.

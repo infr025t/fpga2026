@@ -1,0 +1,12 @@
+test_fixture_bootstraps_missing_regression_parent (test_core_runner.RunnerTests.test_fixture_bootstraps_missing_regression_parent) ... skipped 'Vivado simulator unavailable; set VIVADO_BIN to run real-tool fixtures'
+test_illegal_parameters_rejected (test_core_runner.RunnerTests.test_illegal_parameters_rejected) ... skipped 'Vivado simulator unavailable; set VIVADO_BIN to run real-tool fixtures'
+test_real_compile_error_rejected (test_core_runner.RunnerTests.test_real_compile_error_rejected) ... skipped 'Vivado simulator unavailable; set VIVADO_BIN to run real-tool fixtures'
+test_real_fatal_rejected_even_if_pass_printed (test_core_runner.RunnerTests.test_real_fatal_rejected_even_if_pass_printed) ... skipped 'Vivado simulator unavailable; set VIVADO_BIN to run real-tool fixtures'
+test_real_missing_pass_rejected (test_core_runner.RunnerTests.test_real_missing_pass_rejected) ... skipped 'Vivado simulator unavailable; set VIVADO_BIN to run real-tool fixtures'
+test_real_pass (test_core_runner.RunnerTests.test_real_pass) ... skipped 'Vivado simulator unavailable; set VIVADO_BIN to run real-tool fixtures'
+test_real_timeout_rejected (test_core_runner.RunnerTests.test_real_timeout_rejected) ... skipped 'Vivado simulator unavailable; set VIVADO_BIN to run real-tool fixtures'
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.000s
+
+OK (skipped=7)

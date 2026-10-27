@@ -1,0 +1,13 @@
+test_absent_marker (test_synth_runner.DiagnosticsTests.test_absent_marker) ... ok
+test_actual_timing_failure_rejected (test_synth_runner.DiagnosticsTests.test_actual_timing_failure_rejected) ... ok
+test_clean (test_synth_runner.DiagnosticsTests.test_clean) ... ok
+test_critical_warning (test_synth_runner.DiagnosticsTests.test_critical_warning) ... ok
+test_error_after_pass (test_synth_runner.DiagnosticsTests.test_error_after_pass) ... ok
+test_exit (test_synth_runner.DiagnosticsTests.test_exit) ... ok
+test_tcl_echo_is_not_completion (test_synth_runner.DiagnosticsTests.test_tcl_echo_is_not_completion) ... ok
+test_timeout (test_synth_runner.DiagnosticsTests.test_timeout) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.001s
+
+OK

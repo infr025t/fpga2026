@@ -1,0 +1,4 @@
+PASS tb_runtime_pattern W=640 H=480 L=55 pattern=0 frames=10 tokens=3072000 peak=1 steady_peak=1 same_edge_handoffs=9
+PASS tb_runtime_pattern W=640 H=480 L=56 pattern=2 frames=10 tokens=3072000 peak=1 steady_peak=1 same_edge_handoffs=9
+PASS tb_runtime_ingress_vga complete
+stream_video_enhance/sim/tb_runtime_ingress.sv:292: $finish called at 30726390000 (1ps)

@@ -1,0 +1,24 @@
+D:\desktop\coding\fpga2026 - demo\stream_video_enhance\rtl\core_crc_monitor.sv:11: syntax error
+D:\desktop\coding\fpga2026 - demo\stream_video_enhance\rtl\core_crc_monitor.sv:1: Errors in port declarations.
+D:\desktop\coding\fpga2026 - demo\stream_video_enhance\rtl\core_crc_monitor.sv:23: syntax error
+D:\desktop\coding\fpga2026 - demo\stream_video_enhance\rtl\core_crc_monitor.sv:23: error: Invalid module item.
+D:\desktop\coding\fpga2026 - demo\stream_video_enhance\rtl\core_crc_monitor.sv:28: syntax error
+D:\desktop\coding\fpga2026 - demo\stream_video_enhance\rtl\core_crc_monitor.sv:28: error: Invalid module instantiation
+D:\desktop\coding\fpga2026 - demo\stream_video_enhance\rtl\core_crc_monitor.sv:31: syntax error
+D:\desktop\coding\fpga2026 - demo\stream_video_enhance\rtl\core_crc_monitor.sv:31: error: Invalid module instantiation
+D:\desktop\coding\fpga2026 - demo\stream_video_enhance\rtl\core_crc_monitor.sv:55: syntax error
+D:\desktop\coding\fpga2026 - demo\stream_video_enhance\rtl\core_crc_monitor.sv:55: error: Invalid module instantiation
+D:\desktop\coding\fpga2026 - demo\stream_video_enhance\rtl\ingress_guard.sv:9: syntax error
+D:\desktop\coding\fpga2026 - demo\stream_video_enhance\rtl\ingress_guard.sv:1: Errors in port declarations.
+D:\desktop\coding\fpga2026 - demo\stream_video_enhance\rtl\ingress_guard.sv:26: syntax error
+D:\desktop\coding\fpga2026 - demo\stream_video_enhance\rtl\ingress_guard.sv:26: error: Invalid module item.
+D:\desktop\coding\fpga2026 - demo\stream_video_enhance\rtl\ingress_guard.sv:35: syntax error
+D:\desktop\coding\fpga2026 - demo\stream_video_enhance\rtl\ingress_guard.sv:35: error: Invalid module instantiation
+D:\desktop\coding\fpga2026 - demo\stream_video_enhance\rtl\source_pattern.sv:4: syntax error
+D:\desktop\coding\fpga2026 - demo\stream_video_enhance\rtl\source_pattern.sv:1: Errors in port declarations.
+D:\desktop\coding\fpga2026 - demo\stream_video_enhance\rtl\source_pattern.sv:17: syntax error
+D:\desktop\coding\fpga2026 - demo\stream_video_enhance\rtl\source_pattern.sv:17: error: Syntax error in continuous assignment
+D:\desktop\coding\fpga2026 - demo\stream_video_enhance\rtl\video_runtime.sv:7: syntax error
+D:\desktop\coding\fpga2026 - demo\stream_video_enhance\rtl\video_runtime.sv:1: Errors in port declarations.
+D:\desktop\coding\fpga2026 - demo\stream_video_enhance\rtl\video_runtime.sv:25: syntax error
+D:\desktop\coding\fpga2026 - demo\stream_video_enhance\rtl\video_runtime.sv:25: error: Invalid module instantiation

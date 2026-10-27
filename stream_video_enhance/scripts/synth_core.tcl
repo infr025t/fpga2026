@@ -4,9 +4,10 @@ set top [lindex $argv 1]
 set out [file normalize [lindex $argv 2]]
 file mkdir $out
 create_project -in_memory -part xc7a35tcpg236-1
-read_verilog -sv [file join $root rtl core_latency_pkg.sv]
+set packages {core_latency_pkg.sv video_runtime_pkg.sv}
+foreach package $packages {read_verilog -sv [file join $root rtl $package]}
 foreach src [glob [file join $root rtl *.sv]] {
-    if {[file tail $src] ne "core_latency_pkg.sv"} {read_verilog -sv $src}
+    if {[file tail $src] ni $packages} {read_verilog -sv $src}
 }
 foreach src [glob -nocomplain [file join $root rtl experiments *.sv]] {read_verilog -sv $src}
 set constraints [open [file join $out input_constraints.xdc] w]

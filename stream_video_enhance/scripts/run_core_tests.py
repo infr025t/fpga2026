@@ -16,6 +16,22 @@ BIN = Path(os.environ.get("VIVADO_BIN", "E:/Vivado/2025.1/Vivado/bin"))
 ERROR = re.compile(r"(?im)^\s*(?:ERROR:|FATAL:|Fatal:|Error:)")
 
 
+def missing_simulator_tools(directory=None):
+    directory = BIN if directory is None else Path(directory)
+    return [str(directory / (tool + ".bat")) for tool in ("xvlog", "xelab", "xsim")
+            if not (directory / (tool + ".bat")).is_file()]
+
+
+def simulator_unavailable_message(missing):
+    return ("Vivado simulator tools are unavailable: " + ", ".join(missing)
+            + ". Set VIVADO_BIN to a Vivado bin directory containing xvlog, xelab and xsim.")
+
+
+def has_pass_marker(output, marker):
+    """Accept a complete PASS line, optionally followed by measured values."""
+    return re.search(r"(?m)^" + re.escape(marker) + r"(?:[ \t].*)?$", output) is not None
+
+
 def _run_tool(command, cwd, log, timeout):
     """A suspended wrapper joins a private Windows job before spawning children.
 
@@ -79,6 +95,11 @@ def run_bench(sources, top, work_dir, timeout=180, pass_marker=None, plusargs=()
     work_dir = Path(work_dir).resolve()
     work_dir.mkdir(parents=True, exist_ok=True)
     result = {"top": top, "passed": False, "stages": [], "work_dir": str(work_dir)}
+    missing = missing_simulator_tools()
+    if missing:
+        result["reason"] = simulator_unavailable_message(missing)
+        (work_dir / "result.json").write_text(json.dumps(result, indent=2), encoding="utf-8")
+        return result
     # Options file avoids cmd.exe treating '=' in a plusarg as an argument separator.
     (work_dir / "xsim-options.txt").write_text("\n".join('-testplusarg "'+str(a)+'"' for a in plusargs))
     stages = [("xvlog", ["-sv", *map(lambda p: str(Path(p).resolve()), sources)]),
@@ -100,7 +121,7 @@ def run_bench(sources, top, work_dir, timeout=180, pass_marker=None, plusargs=()
             result.setdefault("reason", tool + " exit/diagnostic failure")
             break
     else:
-        if (pass_marker or "PASS " + top) not in output:
+        if not has_pass_marker(output, pass_marker or "PASS " + top):
             result["reason"] = "missing PASS marker"
         else:
             result["passed"] = True
@@ -155,6 +176,9 @@ def main():
     parser.add_argument("--core-size", choices=("all", "stages", "16", "17", "vga", "faults"), default="all")
     parser.add_argument("--extra-align", choices=("both", "0", "1"), default="both")
     args = parser.parse_args()
+    missing = missing_simulator_tools()
+    if missing:
+        parser.error(simulator_unavailable_message(missing))
     if args.suite == "core":
         from core_vectors import run_core_suite
         return run_core_suite(args)

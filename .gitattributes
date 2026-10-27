@@ -4,3 +4,5 @@
 *.bit binary
 *.pgm binary
 *.pdf binary
+# Preserve raw diagnostic bytes, including spaces emitted by native Tcl errors.
+stream_video_enhance/reports/rtl/runtime/evidence/**/*.log -whitespace

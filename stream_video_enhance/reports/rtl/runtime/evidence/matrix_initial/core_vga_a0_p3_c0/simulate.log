@@ -1,0 +1,2 @@
+PASS tb_runtime_core W=640 H=480 pattern=3 align=0 claim=0 frames=4 pixels=1193216 highwater=1
+D:\desktop\coding\fpga2026 - demo\stream_video_enhance\sim\tb_runtime_core.sv:80: $finish called at 12290350000 (1ps)

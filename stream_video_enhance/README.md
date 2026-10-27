@@ -1,5 +1,19 @@
 # 流式灰度视频保边降噪与细节增强
 
+2026-10-27：已与仓库原主线正式融合，双方历史及旧 Demo 保留。本轮新增有界输入、逐帧校验/参数锁存、异常恢复、完整 RAW/selected CRC 与独立报告邮箱；数值算法及已发布 profile 保持原样。入口见[融合差异](docs/merge_2026-10-27.md)和[运行时报告](reports/rtl/runtime/README.md)。下文 10 月 26 日内容保留核心阶段来源，当前外围实现与验证范围以运行时报告为准。
+
+在仓库根目录运行软件测试及运行时仿真：
+
+```powershell
+python -m pip install -r stream_video_enhance/model/requirements.txt
+python -m unittest discover -s stream_video_enhance/tests -v
+python stream_video_enhance/scripts/run_runtime_tests.py --simulator iverilog --iverilog-bin "你的Icarus目录/bin" --output-dir stream_video_enhance/build/regression/my_runtime
+```
+
+输出目录必须不存在；默认先跑小图、CRC 和入口测试。完整 VGA 矩阵加 `--suite core --size all`；`--claims 1 2` 用于比较持续/慢速读取报告，`--suite recovery --size 17` 验证真实核心坏帧恢复。运行器保留命令、工具日志、来源与向量哈希，不覆盖正式质量归档。此入口支持 Icarus 和 Vivado，原 `run_core_tests.py` 仍专门服务 Vivado 数值核心回归；没有安装 Vivado 时不会把相关跳过标作通过。
+
+当前发布字节可用 `python stream_video_enhance/scripts/check_delivery.py` 校验；修改源码、文档或归档证据后审阅改动，再加 `--refresh` 更新本工程清单。旧 Demo 的清单独立维护，本轮没有刷新旧清单。
+
 2026-10-26，第二阶段：模型验收和完整数值核心仿真已通过，已完成局部综合与资源交换对比。正式硬件仅维护VGA 640×480输入、632×472有效输出；最终主显示保留完整结果，缩小快照仅作诊断。
 
 本目录是新版设计入口，基于 Basys 3 / XC7A35T。原工程 `../demo/stream_image_demo/` 保持原样。
@@ -26,7 +40,7 @@ python -m stream_video_enhance.model.evaluate --run --report-dir <新目录>
 
 本次修订撤销未经画质验证的增强默认值：先用同输入RAW/BASE/DENOISE/ENHANCE对照选定发布参数，再进入算法RTL。固定延迟由L_CORE统一推导，不要求凑成64拍。19,200 B快照增加同帧同坐标96×96 RAW/处理双ROI布局，采用16位成对写入，保持5个快照BRAM36；完整核心RAW/处理CRC通过图像包或独立STATUS可读取。新增诊断会增加少量逻辑与寄存器，未宣称资源成本为零。
 
-预期效果是形成真正可连续工作的计算核心，并具备保边平滑和受控增强能力；真实曝光画质、完整系统资源/时序和摄像头帧率尚未验证。现有OV7670_FIFO的VGA并发适配仍需验证，旧QVGA路径不能只改尺寸后直接使用。最终主显示采用完整VGA逻辑画布；屏幕尚未购买，物理接口驱动尚未实现。推荐有显示存储的800×480完整模块，见[屏幕选型及带宽边界](docs/display_selection_2026-10-26.md)。
+预期效果是形成真正可连续工作的计算核心，并具备保边平滑和受控增强能力；真实曝光画质、完整系统资源/时序和摄像头帧率尚未验证。现有OV7670_FIFO的VGA并发适配仍需验证，旧QVGA路径不能只改尺寸后直接使用。最终主显示采用完整VGA逻辑画布；后续交接已记载购买带转接板的8位NT35510模组，准确板级资料与接入验证仍缺失，物理驱动尚未实现。[早期屏幕选型及带宽分析](docs/display_selection_2026-10-26.md)保留为历史，当前硬件状态见[融合记录](docs/merge_2026-10-27.md)。
 
 规格包含算法与定点规则、像素接口、逐级延迟、RAM端口、资源预算、错误恢复、外设边界及验收条件。模型数值与第三轮受控质量验收已通过；第一、二轮FAIL原样保留。公式、位宽与相对RAW的+5%门槛保持不变，后续变更仍按第17节处理。VGA在这里表示分辨率，屏幕接口仍独立待定。
 

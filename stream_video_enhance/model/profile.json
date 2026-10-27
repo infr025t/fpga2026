@@ -1,0 +1,63 @@
+{
+  "profile_id": 1,
+  "epsilon": 1024,
+  "T_D": 2,
+  "T_E": 4,
+  "G_E": 428,
+  "L": 16,
+  "experiment": "finegain-v3",
+  "registration_commit": "747c5da2ef8054748e8ac01ebb1fb9d64d9c3d47",
+  "registration_sha256": "4313e070de338caa2abf3e21c3370814dcbd45420c6752af92628e226cb52c34",
+  "input_archive_sha256": "270f74a61befab69eb8a373154d442b4e0592137c8bf93987b472e1ac829cae8",
+  "source_model_commit": "747c5da2ef8054748e8ac01ebb1fb9d64d9c3d47",
+  "execution_sources": {
+    "commit": "747c5da2ef8054748e8ac01ebb1fb9d64d9c3d47",
+    "source_sha256": {
+      "stream_video_enhance/model/__init__.py": "e5350052deba5eeadf6db512180a81103214e31b734e92ca51eee25716ad7798",
+      "stream_video_enhance/model/dataset.py": "e10f68548f4f86357b5f970394c98452d4aa0046cdfd1ae521e01c2fb11616b9",
+      "stream_video_enhance/model/evaluate.py": "978aaec4bf1ec208657ccc42c8ba9e7703365880e64bc29a7aa6e75325f94b1a",
+      "stream_video_enhance/model/reference.py": "71d90bd1ce2889f36f3b750e469a4d48bdc46f318533c7c2132ff8f7176bef33",
+      "stream_video_enhance/tests/test_evaluation.py": "cf899659ddd14e1bfe7d88cf59669e37b5d8c86800b91291995bd2a8887b8e5e",
+      "stream_video_enhance/tests/test_reference.py": "e5b57453383ad2c5eea33e9615a18f50383a1c0f6035323c22e56642bed10feb"
+    }
+  },
+  "registered_generator_commit": "f1adeba54c925ccf453141dbec8b2807ec6ee81c",
+  "required_checks": {
+    "flat_sigma8_psnr": "PASS",
+    "flat_mean_bias": "PASS",
+    "clean_line_retention": "PASS",
+    "clean_step_far": "PASS",
+    "default_step_overshoot": "PASS",
+    "enhance_step_overshoot": "PASS",
+    "primary_holdout_text_low_clean": "PASS",
+    "primary_holdout_texture_p4_a32_clean": "PASS",
+    "flat_noise_sigma2": "PASS",
+    "flat_noise_sigma4": "PASS",
+    "flat_noise_sigma8": "PASS",
+    "new_clipping": "PASS",
+    "repeated64_exact": "PASS",
+    "temporal64_noise": "PASS",
+    "tuning_feasible": "PASS",
+    "numerical_model": "PASS",
+    "real_image_classes": "PASS"
+  },
+  "evidence_policy": {
+    "real_exposure_classes": {
+      "status": "DEFERRED",
+      "required": false,
+      "milestone": "camera_integration",
+      "authorization": "User 2026-10-23 explicitly deferred actual exposure quality; never PASS from synthetic data."
+    },
+    "camera_video_evidence": {
+      "status": "DEFERRED",
+      "required": false,
+      "milestone": "camera_integration"
+    },
+    "future_rtl_bit_exact": {
+      "status": "DEFERRED",
+      "required": false,
+      "milestone": "algorithm_RTL"
+    }
+  },
+  "applicable_scope": "Controlled registered model gate; camera exposure/real video validation DEFERRED"
+}

@@ -1,0 +1,25 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/core_latency_pkg.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/coefficient5.sv" into library work
+INFO: [VRFC 10-311] analyzing module coefficient5
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/coefficient_box5.sv" into library work
+INFO: [VRFC 10-311] analyzing module coefficient_box5
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/detail_enhance.sv" into library work
+INFO: [VRFC 10-311] analyzing module detail_enhance
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/div25_pipe.sv" into library work
+INFO: [VRFC 10-311] analyzing module div25_pipe
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/guided_core.sv" into library work
+INFO: [VRFC 10-311] analyzing module guided_core
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/moments5.sv" into library work
+INFO: [VRFC 10-311] analyzing module moments5
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/ratio_q12_pipe.sv" into library work
+INFO: [VRFC 10-311] analyzing module ratio_q12_pipe
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/reconstruct.sv" into library work
+INFO: [VRFC 10-311] analyzing module reconstruct
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/row_window5.sv" into library work
+INFO: [VRFC 10-311] analyzing module row_window5
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/rtl/token_pipe.sv" into library work
+INFO: [VRFC 10-311] analyzing module token_pipe
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/sim/tb_resource_exchange.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_resource_exchange
+INFO: [VRFC 10-311] analyzing module tb_resource_exchange17
+INFO: [VRFC 10-311] analyzing module tb_resource_exchange_vga

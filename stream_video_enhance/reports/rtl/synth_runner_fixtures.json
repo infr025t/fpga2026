@@ -1,0 +1,57 @@
+[
+  {
+    "name": "error",
+    "command": [
+      "E:\\Vivado\\2025.1\\Vivado\\bin\\vivado.bat",
+      "-mode",
+      "batch",
+      "-nojournal",
+      "-source",
+      "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\task4-runner-fixtures\\error.tcl"
+    ],
+    "exit": 0,
+    "timed_out": false,
+    "rejected": true,
+    "reasons": [
+      "error or critical warning"
+    ],
+    "log_sha256": "6466f1b02e3e46dc8c3834950334b625582ddba433c27e05df99f2f22369e766"
+  },
+  {
+    "name": "missing",
+    "command": [
+      "E:\\Vivado\\2025.1\\Vivado\\bin\\vivado.bat",
+      "-mode",
+      "batch",
+      "-nojournal",
+      "-source",
+      "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\task4-runner-fixtures\\missing.tcl"
+    ],
+    "exit": 0,
+    "timed_out": false,
+    "rejected": true,
+    "reasons": [
+      "missing PASS SYNTH"
+    ],
+    "log_sha256": "b465eeb097853d63bb422229383f4b8dba691d771e6070d39a94b5948aec4c0a"
+  },
+  {
+    "name": "timeout",
+    "command": [
+      "E:\\Vivado\\2025.1\\Vivado\\bin\\vivado.bat",
+      "-mode",
+      "batch",
+      "-nojournal",
+      "-source",
+      "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\task4-runner-fixtures\\timeout.tcl"
+    ],
+    "exit": null,
+    "timed_out": true,
+    "rejected": true,
+    "reasons": [
+      "timeout",
+      "missing PASS SYNTH"
+    ],
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

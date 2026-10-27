@@ -1,0 +1,19 @@
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Mon Oct 26 19:14:55 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/snapshot/xsim_script.tcl
+# xsim {snapshot} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+PASS tb_resource_exchange W=640 H=480 moments=1212216 box=1194480 latency=9/12 II=1 bubbles linegaps abort reset
+$finish called at time : 13938240 ns : File "E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/sim/tb_resource_exchange.sv" Line 82
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:00:29 . Memory (MB): peak = 166.457 ; gain = 0.000
+exit
+INFO: xsimkernel Simulation Memory Usage: 11788 KB (Peak: 11788 KB), Simulation CPU Usage: 28999 ms
+INFO: [Common 17-206] Exiting xsim at Mon Oct 26 19:15:26 2026...

@@ -1,0 +1,17 @@
+VGA numerical gate: 288 cases; error histogram 0/1 LSB=[85812329, 99223]; MAE=0.001154944; RMSE=0.033984462
+test_all_constants_eps_modes_and_parameter_extrema (test_reference.ReferenceTests.test_all_constants_eps_modes_and_parameter_extrema) ... ok
+test_crop_and_original_center_not_window_corner (test_reference.ReferenceTests.test_crop_and_original_center_not_window_corner) ... ok
+test_div25_exhaustive_unrounded_and_correction (test_reference.ReferenceTests.test_div25_exhaustive_unrounded_and_correction) ... ok
+test_inclusive_configuration_guards (test_reference.ReferenceTests.test_inclusive_configuration_guards) ... ok
+test_independent_brute_force_small_images_and_checkpoints (test_reference.ReferenceTests.test_independent_brute_force_small_images_and_checkpoints) ... ok
+test_intermediate_ledger_extrema_and_exact_coefficient_center (test_reference.ReferenceTests.test_intermediate_ledger_extrema_and_exact_coefficient_center) ... ok
+test_local_raw_96_produces_same_central_88 (test_reference.ReferenceTests.test_local_raw_96_produces_same_central_88) ... ok
+test_patterns_frame_wrap_and_block_edges (test_reference.ReferenceTests.test_patterns_frame_wrap_and_block_edges) ... ok
+test_ratio_bounds_random_windows_and_rounding (test_reference.ReferenceTests.test_ratio_bounds_random_windows_and_rounding) ... ok
+test_signed_ties_unsigned_gain_and_clamp (test_reference.ReferenceTests.test_signed_ties_unsigned_gain_and_clamp) ... ok
+test_vga_structured_random_final_error_one_lsb (test_reference.ReferenceTests.test_vga_structured_random_final_error_one_lsb) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 92.434s
+
+OK

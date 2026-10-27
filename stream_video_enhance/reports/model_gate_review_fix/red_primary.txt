@@ -1,0 +1,167 @@
+test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory (stream_video_enhance.tests.test_evaluation.EvaluationTests.test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory) ... 
+  test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory (stream_video_enhance.tests.test_evaluation.EvaluationTests.test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory) (split='tuning', replacement=[]) ... FAIL
+  test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory (stream_video_enhance.tests.test_evaluation.EvaluationTests.test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory) (split='tuning', replacement=['tuning_text_low_clean']) ... FAIL
+  test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory (stream_video_enhance.tests.test_evaluation.EvaluationTests.test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory) (split='tuning', replacement=['tuning_text_low_clean', 'tuning_text_low_clean']) ... FAIL
+  test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory (stream_video_enhance.tests.test_evaluation.EvaluationTests.test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory) (split='tuning', replacement=['tuning_texture_p4_a32_clean', 'tuning_text_low_clean']) ... FAIL
+  test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory (stream_video_enhance.tests.test_evaluation.EvaluationTests.test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory) (split='tuning', replacement=['tuning_line_vertical_1_clean', 'tuning_texture_p4_a32_clean']) ... FAIL
+  test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory (stream_video_enhance.tests.test_evaluation.EvaluationTests.test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory) (split='holdout', replacement=[]) ... FAIL
+  test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory (stream_video_enhance.tests.test_evaluation.EvaluationTests.test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory) (split='holdout', replacement=['holdout_text_low_clean']) ... FAIL
+  test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory (stream_video_enhance.tests.test_evaluation.EvaluationTests.test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory) (split='holdout', replacement=['holdout_text_low_clean', 'holdout_text_low_clean']) ... FAIL
+  test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory (stream_video_enhance.tests.test_evaluation.EvaluationTests.test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory) (split='holdout', replacement=['holdout_texture_p4_a32_clean', 'holdout_text_low_clean']) ... FAIL
+  test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory (stream_video_enhance.tests.test_evaluation.EvaluationTests.test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory) (split='holdout', replacement=['holdout_line_vertical_1_clean', 'holdout_texture_p4_a32_clean']) ... FAIL
+test_expanded_primary_case_must_match_frozen_split_class_and_clean_id (stream_video_enhance.tests.test_evaluation.EvaluationTests.test_expanded_primary_case_must_match_frozen_split_class_and_clean_id) ... 
+  test_expanded_primary_case_must_match_frozen_split_class_and_clean_id (stream_video_enhance.tests.test_evaluation.EvaluationTests.test_expanded_primary_case_must_match_frozen_split_class_and_clean_id) (mutation='absent') ... FAIL
+  test_expanded_primary_case_must_match_frozen_split_class_and_clean_id (stream_video_enhance.tests.test_evaluation.EvaluationTests.test_expanded_primary_case_must_match_frozen_split_class_and_clean_id) (mutation='duplicate') ... FAIL
+  test_expanded_primary_case_must_match_frozen_split_class_and_clean_id (stream_video_enhance.tests.test_evaluation.EvaluationTests.test_expanded_primary_case_must_match_frozen_split_class_and_clean_id) (mutation='split') ... FAIL
+  test_expanded_primary_case_must_match_frozen_split_class_and_clean_id (stream_video_enhance.tests.test_evaluation.EvaluationTests.test_expanded_primary_case_must_match_frozen_split_class_and_clean_id) (mutation='category') ... FAIL
+  test_expanded_primary_case_must_match_frozen_split_class_and_clean_id (stream_video_enhance.tests.test_evaluation.EvaluationTests.test_expanded_primary_case_must_match_frozen_split_class_and_clean_id) (mutation='clean') ... FAIL
+  test_expanded_primary_case_must_match_frozen_split_class_and_clean_id (stream_video_enhance.tests.test_evaluation.EvaluationTests.test_expanded_primary_case_must_match_frozen_split_class_and_clean_id) (mutation='sigma') ... FAIL
+
+======================================================================
+FAIL: test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory (stream_video_enhance.tests.test_evaluation.EvaluationTests.test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory) (split='tuning', replacement=[])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\Vivado_FPGA_Programs\fpga2026\stream_video_enhance\tests\test_evaluation.py", line 195, in test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory
+    with self.assertRaisesRegex(ValueError, 'primary'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory (stream_video_enhance.tests.test_evaluation.EvaluationTests.test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory) (split='tuning', replacement=['tuning_text_low_clean'])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\Vivado_FPGA_Programs\fpga2026\stream_video_enhance\tests\test_evaluation.py", line 195, in test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory
+    with self.assertRaisesRegex(ValueError, 'primary'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory (stream_video_enhance.tests.test_evaluation.EvaluationTests.test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory) (split='tuning', replacement=['tuning_text_low_clean', 'tuning_text_low_clean'])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\Vivado_FPGA_Programs\fpga2026\stream_video_enhance\tests\test_evaluation.py", line 195, in test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory
+    with self.assertRaisesRegex(ValueError, 'primary'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory (stream_video_enhance.tests.test_evaluation.EvaluationTests.test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory) (split='tuning', replacement=['tuning_texture_p4_a32_clean', 'tuning_text_low_clean'])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\Vivado_FPGA_Programs\fpga2026\stream_video_enhance\tests\test_evaluation.py", line 195, in test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory
+    with self.assertRaisesRegex(ValueError, 'primary'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory (stream_video_enhance.tests.test_evaluation.EvaluationTests.test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory) (split='tuning', replacement=['tuning_line_vertical_1_clean', 'tuning_texture_p4_a32_clean'])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\Vivado_FPGA_Programs\fpga2026\stream_video_enhance\tests\test_evaluation.py", line 195, in test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory
+    with self.assertRaisesRegex(ValueError, 'primary'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory (stream_video_enhance.tests.test_evaluation.EvaluationTests.test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory) (split='holdout', replacement=[])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\Vivado_FPGA_Programs\fpga2026\stream_video_enhance\tests\test_evaluation.py", line 195, in test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory
+    with self.assertRaisesRegex(ValueError, 'primary'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory (stream_video_enhance.tests.test_evaluation.EvaluationTests.test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory) (split='holdout', replacement=['holdout_text_low_clean'])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\Vivado_FPGA_Programs\fpga2026\stream_video_enhance\tests\test_evaluation.py", line 195, in test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory
+    with self.assertRaisesRegex(ValueError, 'primary'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory (stream_video_enhance.tests.test_evaluation.EvaluationTests.test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory) (split='holdout', replacement=['holdout_text_low_clean', 'holdout_text_low_clean'])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\Vivado_FPGA_Programs\fpga2026\stream_video_enhance\tests\test_evaluation.py", line 195, in test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory
+    with self.assertRaisesRegex(ValueError, 'primary'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory (stream_video_enhance.tests.test_evaluation.EvaluationTests.test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory) (split='holdout', replacement=['holdout_texture_p4_a32_clean', 'holdout_text_low_clean'])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\Vivado_FPGA_Programs\fpga2026\stream_video_enhance\tests\test_evaluation.py", line 195, in test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory
+    with self.assertRaisesRegex(ValueError, 'primary'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory (stream_video_enhance.tests.test_evaluation.EvaluationTests.test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory) (split='holdout', replacement=['holdout_line_vertical_1_clean', 'holdout_texture_p4_a32_clean'])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\Vivado_FPGA_Programs\fpga2026\stream_video_enhance\tests\test_evaluation.py", line 195, in test_expanded_primary_contract_cannot_be_weakened_with_matching_inventory
+    with self.assertRaisesRegex(ValueError, 'primary'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_expanded_primary_case_must_match_frozen_split_class_and_clean_id (stream_video_enhance.tests.test_evaluation.EvaluationTests.test_expanded_primary_case_must_match_frozen_split_class_and_clean_id) (mutation='absent')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\Vivado_FPGA_Programs\fpga2026\stream_video_enhance\tests\test_evaluation.py", line 209, in test_expanded_primary_case_must_match_frozen_split_class_and_clean_id
+    with self.assertRaisesRegex(ValueError, 'primary'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_expanded_primary_case_must_match_frozen_split_class_and_clean_id (stream_video_enhance.tests.test_evaluation.EvaluationTests.test_expanded_primary_case_must_match_frozen_split_class_and_clean_id) (mutation='duplicate')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\Vivado_FPGA_Programs\fpga2026\stream_video_enhance\tests\test_evaluation.py", line 209, in test_expanded_primary_case_must_match_frozen_split_class_and_clean_id
+    with self.assertRaisesRegex(ValueError, 'primary'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_expanded_primary_case_must_match_frozen_split_class_and_clean_id (stream_video_enhance.tests.test_evaluation.EvaluationTests.test_expanded_primary_case_must_match_frozen_split_class_and_clean_id) (mutation='split')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\Vivado_FPGA_Programs\fpga2026\stream_video_enhance\tests\test_evaluation.py", line 209, in test_expanded_primary_case_must_match_frozen_split_class_and_clean_id
+    with self.assertRaisesRegex(ValueError, 'primary'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_expanded_primary_case_must_match_frozen_split_class_and_clean_id (stream_video_enhance.tests.test_evaluation.EvaluationTests.test_expanded_primary_case_must_match_frozen_split_class_and_clean_id) (mutation='category')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\Vivado_FPGA_Programs\fpga2026\stream_video_enhance\tests\test_evaluation.py", line 209, in test_expanded_primary_case_must_match_frozen_split_class_and_clean_id
+    with self.assertRaisesRegex(ValueError, 'primary'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_expanded_primary_case_must_match_frozen_split_class_and_clean_id (stream_video_enhance.tests.test_evaluation.EvaluationTests.test_expanded_primary_case_must_match_frozen_split_class_and_clean_id) (mutation='clean')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\Vivado_FPGA_Programs\fpga2026\stream_video_enhance\tests\test_evaluation.py", line 209, in test_expanded_primary_case_must_match_frozen_split_class_and_clean_id
+    with self.assertRaisesRegex(ValueError, 'primary'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_expanded_primary_case_must_match_frozen_split_class_and_clean_id (stream_video_enhance.tests.test_evaluation.EvaluationTests.test_expanded_primary_case_must_match_frozen_split_class_and_clean_id) (mutation='sigma')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\Vivado_FPGA_Programs\fpga2026\stream_video_enhance\tests\test_evaluation.py", line 209, in test_expanded_primary_case_must_match_frozen_split_class_and_clean_id
+    with self.assertRaisesRegex(ValueError, 'primary'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 2 tests in 2.444s
+
+FAILED (failures=16)

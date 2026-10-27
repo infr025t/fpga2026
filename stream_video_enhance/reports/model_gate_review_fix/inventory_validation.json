@@ -1,0 +1,9 @@
+{
+  "missing": "Expanded required check inventory is incomplete or unknown",
+  "duplicate": "Expanded required check inventory is incomplete or unknown",
+  "replaced": "Expanded required check inventory is incomplete or unknown",
+  "official_registration_valid": true,
+  "required_count": 17,
+  "array_count": 907,
+  "registration_sha256": "7ed05a28f3aa5a3aaeb3b5a30e179cffb28662c1f23748b40ed7c73eae41545b"
+}

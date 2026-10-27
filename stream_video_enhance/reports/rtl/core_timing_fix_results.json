@@ -1,0 +1,671 @@
+{
+  "date": "2026-10-26",
+  "base_commit": "a5d1b61",
+  "evidence_level": "RTL behavioral simulation after enhancement timing register",
+  "latencies": {
+    "L_MOM": 9,
+    "L_COEF": 20,
+    "L_BOX": 12,
+    "L_REC": 3,
+    "L_ENH": 7,
+    "L_LINK": 4,
+    "L_ALIGN": 0,
+    "L_CORE": 55,
+    "EXTRA_ALIGN_1_L_CORE": 56
+  },
+  "command": "E:/Python/python.exe scripts/run_core_tests.py --suite core --core-size all --extra-align both",
+  "source_hashes": {
+    "rtl/coefficient5.sv": "5e04cf0dd5df18abc1e75c75a791ec1ca5f1d111428b1f4a1194ff0d1e2b58bd",
+    "rtl/coefficient_box5.sv": "bbef1e2be89214633e2e084e17653bfb709e912b71a1555f3aea8b2ee3a8fa20",
+    "rtl/core_latency_pkg.sv": "f7c06089c012a23eaf91214aafa8ac5ada9bad4b87d59047f23acb5bde0efbce",
+    "rtl/detail_enhance.sv": "674a309d8849ba585eedb8585b73bc275ff320121390bb62eb2ae9ab9c217ed8",
+    "rtl/div25_pipe.sv": "49c1878973a76ff4e7c3a06a440fccfc36002bd433790bc33b5a08cfc098fc56",
+    "rtl/guided_core.sv": "9b23c2f3700fc20433d84ccf634e3507ebaaacf93a57fa1f27ecad174a835d0a",
+    "rtl/moments5.sv": "2a2956b582c5a855e61a5aea3ff3c904b0e9ab1acac37d648a32bba33dcdf4ff",
+    "rtl/ratio_q12_pipe.sv": "78a6790422eea59e989c1973c2a952e7060d18bed445be61e826c4ac65e4e4f9",
+    "rtl/reconstruct.sv": "e8b0c487ae44cd72f2c41902a7eb3918945b4634a2d0baab5a44cd8ee117e3b8",
+    "rtl/row_window5.sv": "f3ffb434b2a96bbf1e1dc5ba338ddac3226f80e13f2276d7088bcd61b923252c",
+    "rtl/token_pipe.sv": "f84c2c309f19abadf6d96ed5b597e0dd5b4b2bae910f917115830d32b6ffa71d",
+    "scripts/run_core_tests.py": "4a7ba52a6efb6e33e266e419d1bc14359e783bfd8fda96ac86af182756cdbb23",
+    "scripts/core_vectors.py": "26cb45a875776b5d045d4629a893cb41baef2dd73f7f5022eb157eec57e23c92",
+    "sim/tb_core_stages.sv": "e48b0848d989b168bfaefdc24c3755deac18dbc2b878f683de94e3ec5a640981",
+    "sim/tb_guided_core.sv": "cb7087e81cde5cd1a47b25be2cd532db9303e4e496070ac9a9802346153a1044"
+  },
+  "log_hashes": {
+    "reports/rtl/evidence/task4/core/tb_core_stages/xvlog-captured.log": "22f8b2570a14acf40e4b6bbc3d405c6096831206bc9bca3c08dbf980e5ba7e3c",
+    "reports/rtl/evidence/task4/core/tb_core_stages/xelab-captured.log": "e589733f9bbb21472c99e4623be8fa4977fb59f1a855b7cfbe4b7cb03cce1858",
+    "reports/rtl/evidence/task4/core/tb_core_stages/xsim-captured.log": "ab4bb208e09930924667fc3cc0937a181e63d89627d7d5adda35053fa07906cc",
+    "reports/rtl/evidence/task4/core/tb_guided_core_16/xvlog-captured.log": "1725fc0b15db00a82b11adc7851b9ee639e86d582b93feb7c057c91124e8f499",
+    "reports/rtl/evidence/task4/core/tb_guided_core_16/xelab-captured.log": "95c469c35584d2703d9efc11c1aa994ab94451d94d273739d31ab7d89f60fce0",
+    "reports/rtl/evidence/task4/core/tb_guided_core_16/xsim-captured.log": "6faa4364334b77b4029347d22f2733671469f9fffd4788f4e3d24c24188d7315",
+    "reports/rtl/evidence/task4/core/tb_guided_core_16_align/xvlog-captured.log": "1725fc0b15db00a82b11adc7851b9ee639e86d582b93feb7c057c91124e8f499",
+    "reports/rtl/evidence/task4/core/tb_guided_core_16_align/xelab-captured.log": "dcc3b6f3117ad827e8f9ad380c64a78bee0737c0972531347db3e48413c9781b",
+    "reports/rtl/evidence/task4/core/tb_guided_core_16_align/xsim-captured.log": "2fa8456273d004468ae27afad818d5a823ccdd98f62f279d365f6883d83bada2",
+    "reports/rtl/evidence/task4/core/tb_guided_core_17/xvlog-captured.log": "1725fc0b15db00a82b11adc7851b9ee639e86d582b93feb7c057c91124e8f499",
+    "reports/rtl/evidence/task4/core/tb_guided_core_17/xelab-captured.log": "26fd45c5b69d381df9e6d4214d8437ce7d186eda576bbc274bfd7d3495bb211e",
+    "reports/rtl/evidence/task4/core/tb_guided_core_17/xsim-captured.log": "96a49ad7c1270e4cb328e64faac22dbd1851ee2e54b20e1609ffafe34e9b208e",
+    "reports/rtl/evidence/task4/core/tb_guided_core_17_align/xvlog-captured.log": "1725fc0b15db00a82b11adc7851b9ee639e86d582b93feb7c057c91124e8f499",
+    "reports/rtl/evidence/task4/core/tb_guided_core_17_align/xelab-captured.log": "4f7e9595e173cbb0dfc615b4afe4f47ef0d40bd7ac75ce8089a6092557df205f",
+    "reports/rtl/evidence/task4/core/tb_guided_core_17_align/xsim-captured.log": "52455ea8c9457041477f74f09c5a898387ea91dd2328b8b3463b342aaf4d626f",
+    "reports/rtl/evidence/task4/core/tb_guided_core_vga/xvlog-captured.log": "1725fc0b15db00a82b11adc7851b9ee639e86d582b93feb7c057c91124e8f499",
+    "reports/rtl/evidence/task4/core/tb_guided_core_vga/xelab-captured.log": "2d53f543f891b584cceb8746da4426dd7407775d378c0a49c5c28a70e2f6a409",
+    "reports/rtl/evidence/task4/core/tb_guided_core_vga/xsim-captured.log": "40d7e3bca25de7e69e7a69c4ecd7e2018aabdc1258b4304a803184451052f0a1",
+    "reports/rtl/evidence/task4/core/tb_guided_core_vga_align/xvlog-captured.log": "1725fc0b15db00a82b11adc7851b9ee639e86d582b93feb7c057c91124e8f499",
+    "reports/rtl/evidence/task4/core/tb_guided_core_vga_align/xelab-captured.log": "797cb1676d3f834f8cf621a5b53d65be22574e0c5148602242d6af073e7a393e",
+    "reports/rtl/evidence/task4/core/tb_guided_core_vga_align/xsim-captured.log": "69465487459079959a4fa4988095d53ab73c2a08ce1a7e8c4626600277b7a0c8",
+    "reports/rtl/evidence/task4/core/tb_core_faults_0/xvlog-captured.log": "1725fc0b15db00a82b11adc7851b9ee639e86d582b93feb7c057c91124e8f499",
+    "reports/rtl/evidence/task4/core/tb_core_faults_0/xelab-captured.log": "c04d1d82a92374d6d00f74d4cb3e5f3ee0aa8877d67388725281df5120125ed9",
+    "reports/rtl/evidence/task4/core/tb_core_faults_0/xsim-captured.log": "0f696c91587df6803bae92b5108e435f5ff97f89cccb780b04808d0259ca1775",
+    "reports/rtl/evidence/task4/core/tb_core_faults_1/xvlog-captured.log": "1725fc0b15db00a82b11adc7851b9ee639e86d582b93feb7c057c91124e8f499",
+    "reports/rtl/evidence/task4/core/tb_core_faults_1/xelab-captured.log": "78b7809e05d7e59249c815068ec3b735d9665bd2ace702db9ab36b5358f19319",
+    "reports/rtl/evidence/task4/core/tb_core_faults_1/xsim-captured.log": "55476f78a52d7c40a8485ee1cc0c0e5c53531814185dec0ab3da8a50a10adfe8"
+  },
+  "results": [
+    {
+      "top": "tb_core_stages",
+      "passed": true,
+      "stages": [
+        {
+          "tool": "xvlog",
+          "command": [
+            "E:\\Vivado\\2025.1\\Vivado\\bin\\xvlog.bat",
+            "-sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\core_latency_pkg.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\token_pipe.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\div25_pipe.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\ratio_q12_pipe.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\row_window5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\moments5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\coefficient_box5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\coefficient5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\reconstruct.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\detail_enhance.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\guided_core.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\sim\\tb_core_stages.sv"
+          ],
+          "exit": 0,
+          "seconds": 0.684,
+          "log": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\core-stages-baa01c11b6\\xvlog-captured.log",
+          "private_job_active_processes": 0
+        },
+        {
+          "tool": "xelab",
+          "command": [
+            "E:\\Vivado\\2025.1\\Vivado\\bin\\xelab.bat",
+            "tb_core_stages",
+            "-s",
+            "snapshot"
+          ],
+          "exit": 0,
+          "seconds": 1.815,
+          "log": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\core-stages-baa01c11b6\\xelab-captured.log",
+          "private_job_active_processes": 0
+        },
+        {
+          "tool": "xsim",
+          "command": [
+            "E:\\Vivado\\2025.1\\Vivado\\bin\\xsim.bat",
+            "snapshot",
+            "-runall",
+            "-f",
+            "xsim-options.txt"
+          ],
+          "exit": 0,
+          "seconds": 2.593,
+          "log": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\core-stages-baa01c11b6\\xsim-captured.log",
+          "private_job_active_processes": 0
+        }
+      ],
+      "work_dir": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\core-stages-baa01c11b6",
+      "reason": "PASS",
+      "simulation_summary": [
+        "PASS tb_core_stages coefficient=4891 reconstruct=4944 enhance=4932 flushes=5 latency=20/3/7"
+      ],
+      "warnings": [],
+      "vectors": {
+        "rows": 2477,
+        "coefficient_fixtures": 1032,
+        "reconstruction_fixtures": 1006,
+        "enhancement_fixtures": 2477
+      }
+    },
+    {
+      "top": "tb_guided_core_16",
+      "passed": true,
+      "stages": [
+        {
+          "tool": "xvlog",
+          "command": [
+            "E:\\Vivado\\2025.1\\Vivado\\bin\\xvlog.bat",
+            "-sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\core_latency_pkg.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\token_pipe.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\div25_pipe.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\ratio_q12_pipe.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\row_window5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\moments5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\coefficient_box5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\coefficient5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\reconstruct.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\detail_enhance.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\guided_core.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\sim\\tb_guided_core.sv"
+          ],
+          "exit": 0,
+          "seconds": 0.723,
+          "log": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\core-16-align0-e43252e65c\\xvlog-captured.log",
+          "private_job_active_processes": 0
+        },
+        {
+          "tool": "xelab",
+          "command": [
+            "E:\\Vivado\\2025.1\\Vivado\\bin\\xelab.bat",
+            "tb_guided_core_16",
+            "-s",
+            "snapshot"
+          ],
+          "exit": 0,
+          "seconds": 2.55,
+          "log": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\core-16-align0-e43252e65c\\xelab-captured.log",
+          "private_job_active_processes": 0
+        },
+        {
+          "tool": "xsim",
+          "command": [
+            "E:\\Vivado\\2025.1\\Vivado\\bin\\xsim.bat",
+            "snapshot",
+            "-runall",
+            "-f",
+            "xsim-options.txt"
+          ],
+          "exit": 0,
+          "seconds": 7.326,
+          "log": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\core-16-align0-e43252e65c\\xsim-captured.log",
+          "private_job_active_processes": 0
+        }
+      ],
+      "work_dir": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\core-16-align0-e43252e65c",
+      "reason": "PASS",
+      "simulation_summary": [
+        "PASS tb_guided_core W=16 H=16 align=0 L=55 frames=202 configs=196 pixels=12994 flushes=7 max_run=8"
+      ],
+      "warnings": [],
+      "vectors": {
+        "width": 16,
+        "height": 16,
+        "frames": 196,
+        "pixels_per_frame": 64,
+        "seed": 2026102616
+      }
+    },
+    {
+      "top": "tb_guided_core_16_align",
+      "passed": true,
+      "stages": [
+        {
+          "tool": "xvlog",
+          "command": [
+            "E:\\Vivado\\2025.1\\Vivado\\bin\\xvlog.bat",
+            "-sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\core_latency_pkg.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\token_pipe.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\div25_pipe.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\ratio_q12_pipe.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\row_window5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\moments5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\coefficient_box5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\coefficient5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\reconstruct.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\detail_enhance.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\guided_core.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\sim\\tb_guided_core.sv"
+          ],
+          "exit": 0,
+          "seconds": 0.699,
+          "log": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\core-16-align1-bb4d0b0de6\\xvlog-captured.log",
+          "private_job_active_processes": 0
+        },
+        {
+          "tool": "xelab",
+          "command": [
+            "E:\\Vivado\\2025.1\\Vivado\\bin\\xelab.bat",
+            "tb_guided_core_16_align",
+            "-s",
+            "snapshot"
+          ],
+          "exit": 0,
+          "seconds": 2.52,
+          "log": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\core-16-align1-bb4d0b0de6\\xelab-captured.log",
+          "private_job_active_processes": 0
+        },
+        {
+          "tool": "xsim",
+          "command": [
+            "E:\\Vivado\\2025.1\\Vivado\\bin\\xsim.bat",
+            "snapshot",
+            "-runall",
+            "-f",
+            "xsim-options.txt"
+          ],
+          "exit": 0,
+          "seconds": 6.044,
+          "log": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\core-16-align1-bb4d0b0de6\\xsim-captured.log",
+          "private_job_active_processes": 0
+        }
+      ],
+      "work_dir": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\core-16-align1-bb4d0b0de6",
+      "reason": "PASS",
+      "simulation_summary": [
+        "PASS tb_guided_core W=16 H=16 align=1 L=56 frames=202 configs=196 pixels=12992 flushes=7 max_run=8"
+      ],
+      "warnings": [],
+      "vectors": {
+        "width": 16,
+        "height": 16,
+        "frames": 196,
+        "pixels_per_frame": 64,
+        "seed": 2026102616
+      }
+    },
+    {
+      "top": "tb_guided_core_17",
+      "passed": true,
+      "stages": [
+        {
+          "tool": "xvlog",
+          "command": [
+            "E:\\Vivado\\2025.1\\Vivado\\bin\\xvlog.bat",
+            "-sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\core_latency_pkg.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\token_pipe.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\div25_pipe.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\ratio_q12_pipe.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\row_window5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\moments5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\coefficient_box5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\coefficient5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\reconstruct.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\detail_enhance.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\guided_core.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\sim\\tb_guided_core.sv"
+          ],
+          "exit": 0,
+          "seconds": 0.72,
+          "log": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\core-17-align0-33d2166605\\xvlog-captured.log",
+          "private_job_active_processes": 0
+        },
+        {
+          "tool": "xelab",
+          "command": [
+            "E:\\Vivado\\2025.1\\Vivado\\bin\\xelab.bat",
+            "tb_guided_core_17",
+            "-s",
+            "snapshot"
+          ],
+          "exit": 0,
+          "seconds": 2.527,
+          "log": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\core-17-align0-33d2166605\\xelab-captured.log",
+          "private_job_active_processes": 0
+        },
+        {
+          "tool": "xsim",
+          "command": [
+            "E:\\Vivado\\2025.1\\Vivado\\bin\\xsim.bat",
+            "snapshot",
+            "-runall",
+            "-f",
+            "xsim-options.txt"
+          ],
+          "exit": 0,
+          "seconds": 7.374,
+          "log": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\core-17-align0-33d2166605\\xsim-captured.log",
+          "private_job_active_processes": 0
+        }
+      ],
+      "work_dir": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\core-17-align0-33d2166605",
+      "reason": "PASS",
+      "simulation_summary": [
+        "PASS tb_guided_core W=17 H=19 align=0 L=55 frames=202 configs=196 pixels=20134 flushes=7 max_run=9"
+      ],
+      "warnings": [],
+      "vectors": {
+        "width": 17,
+        "height": 19,
+        "frames": 196,
+        "pixels_per_frame": 99,
+        "seed": 2026102617
+      }
+    },
+    {
+      "top": "tb_guided_core_17_align",
+      "passed": true,
+      "stages": [
+        {
+          "tool": "xvlog",
+          "command": [
+            "E:\\Vivado\\2025.1\\Vivado\\bin\\xvlog.bat",
+            "-sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\core_latency_pkg.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\token_pipe.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\div25_pipe.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\ratio_q12_pipe.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\row_window5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\moments5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\coefficient_box5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\coefficient5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\reconstruct.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\detail_enhance.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\guided_core.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\sim\\tb_guided_core.sv"
+          ],
+          "exit": 0,
+          "seconds": 0.731,
+          "log": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\core-17-align1-82164895c0\\xvlog-captured.log",
+          "private_job_active_processes": 0
+        },
+        {
+          "tool": "xelab",
+          "command": [
+            "E:\\Vivado\\2025.1\\Vivado\\bin\\xelab.bat",
+            "tb_guided_core_17_align",
+            "-s",
+            "snapshot"
+          ],
+          "exit": 0,
+          "seconds": 2.481,
+          "log": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\core-17-align1-82164895c0\\xelab-captured.log",
+          "private_job_active_processes": 0
+        },
+        {
+          "tool": "xsim",
+          "command": [
+            "E:\\Vivado\\2025.1\\Vivado\\bin\\xsim.bat",
+            "snapshot",
+            "-runall",
+            "-f",
+            "xsim-options.txt"
+          ],
+          "exit": 0,
+          "seconds": 6.362,
+          "log": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\core-17-align1-82164895c0\\xsim-captured.log",
+          "private_job_active_processes": 0
+        }
+      ],
+      "work_dir": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\core-17-align1-82164895c0",
+      "reason": "PASS",
+      "simulation_summary": [
+        "PASS tb_guided_core W=17 H=19 align=1 L=56 frames=202 configs=196 pixels=20132 flushes=7 max_run=9"
+      ],
+      "warnings": [],
+      "vectors": {
+        "width": 17,
+        "height": 19,
+        "frames": 196,
+        "pixels_per_frame": 99,
+        "seed": 2026102617
+      }
+    },
+    {
+      "top": "tb_guided_core_vga",
+      "passed": true,
+      "stages": [
+        {
+          "tool": "xvlog",
+          "command": [
+            "E:\\Vivado\\2025.1\\Vivado\\bin\\xvlog.bat",
+            "-sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\core_latency_pkg.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\token_pipe.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\div25_pipe.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\ratio_q12_pipe.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\row_window5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\moments5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\coefficient_box5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\coefficient5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\reconstruct.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\detail_enhance.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\guided_core.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\sim\\tb_guided_core.sv"
+          ],
+          "exit": 0,
+          "seconds": 0.672,
+          "log": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\core-vga-align0-11f1910b8b\\xvlog-captured.log",
+          "private_job_active_processes": 0
+        },
+        {
+          "tool": "xelab",
+          "command": [
+            "E:\\Vivado\\2025.1\\Vivado\\bin\\xelab.bat",
+            "tb_guided_core_vga",
+            "-s",
+            "snapshot"
+          ],
+          "exit": 0,
+          "seconds": 2.499,
+          "log": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\core-vga-align0-11f1910b8b\\xelab-captured.log",
+          "private_job_active_processes": 0
+        },
+        {
+          "tool": "xsim",
+          "command": [
+            "E:\\Vivado\\2025.1\\Vivado\\bin\\xsim.bat",
+            "snapshot",
+            "-runall",
+            "-f",
+            "xsim-options.txt"
+          ],
+          "exit": 0,
+          "seconds": 60.096,
+          "log": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\core-vga-align0-11f1910b8b\\xsim-captured.log",
+          "private_job_active_processes": 0
+        }
+      ],
+      "work_dir": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\core-vga-align0-11f1910b8b",
+      "reason": "PASS",
+      "simulation_summary": [
+        "PASS tb_guided_core W=640 H=480 align=0 L=55 frames=12 configs=12 pixels=3579648 flushes=1 max_run=632"
+      ],
+      "warnings": [],
+      "vectors": {
+        "width": 640,
+        "height": 480,
+        "frames": 12,
+        "pixels_per_frame": 298304,
+        "seed": 2026103240
+      }
+    },
+    {
+      "top": "tb_guided_core_vga_align",
+      "passed": true,
+      "stages": [
+        {
+          "tool": "xvlog",
+          "command": [
+            "E:\\Vivado\\2025.1\\Vivado\\bin\\xvlog.bat",
+            "-sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\core_latency_pkg.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\token_pipe.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\div25_pipe.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\ratio_q12_pipe.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\row_window5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\moments5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\coefficient_box5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\coefficient5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\reconstruct.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\detail_enhance.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\guided_core.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\sim\\tb_guided_core.sv"
+          ],
+          "exit": 0,
+          "seconds": 0.645,
+          "log": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\core-vga-align1-98df89176c\\xvlog-captured.log",
+          "private_job_active_processes": 0
+        },
+        {
+          "tool": "xelab",
+          "command": [
+            "E:\\Vivado\\2025.1\\Vivado\\bin\\xelab.bat",
+            "tb_guided_core_vga_align",
+            "-s",
+            "snapshot"
+          ],
+          "exit": 0,
+          "seconds": 2.462,
+          "log": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\core-vga-align1-98df89176c\\xelab-captured.log",
+          "private_job_active_processes": 0
+        },
+        {
+          "tool": "xsim",
+          "command": [
+            "E:\\Vivado\\2025.1\\Vivado\\bin\\xsim.bat",
+            "snapshot",
+            "-runall",
+            "-f",
+            "xsim-options.txt"
+          ],
+          "exit": 0,
+          "seconds": 60.527,
+          "log": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\core-vga-align1-98df89176c\\xsim-captured.log",
+          "private_job_active_processes": 0
+        }
+      ],
+      "work_dir": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\core-vga-align1-98df89176c",
+      "reason": "PASS",
+      "simulation_summary": [
+        "PASS tb_guided_core W=640 H=480 align=1 L=56 frames=12 configs=12 pixels=3579648 flushes=1 max_run=632"
+      ],
+      "warnings": [],
+      "vectors": {
+        "width": 640,
+        "height": 480,
+        "frames": 12,
+        "pixels_per_frame": 298304,
+        "seed": 2026103240
+      }
+    },
+    {
+      "top": "tb_core_faults_0",
+      "passed": true,
+      "stages": [
+        {
+          "tool": "xvlog",
+          "command": [
+            "E:\\Vivado\\2025.1\\Vivado\\bin\\xvlog.bat",
+            "-sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\core_latency_pkg.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\token_pipe.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\div25_pipe.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\ratio_q12_pipe.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\row_window5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\moments5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\coefficient_box5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\coefficient5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\reconstruct.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\detail_enhance.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\guided_core.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\sim\\tb_guided_core.sv"
+          ],
+          "exit": 0,
+          "seconds": 0.62,
+          "log": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\core-faults-align0-e04ecf4eed\\xvlog-captured.log",
+          "private_job_active_processes": 0
+        },
+        {
+          "tool": "xelab",
+          "command": [
+            "E:\\Vivado\\2025.1\\Vivado\\bin\\xelab.bat",
+            "tb_core_faults_0",
+            "-s",
+            "snapshot"
+          ],
+          "exit": 0,
+          "seconds": 2.328,
+          "log": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\core-faults-align0-e04ecf4eed\\xelab-captured.log",
+          "private_job_active_processes": 0
+        },
+        {
+          "tool": "xsim",
+          "command": [
+            "E:\\Vivado\\2025.1\\Vivado\\bin\\xsim.bat",
+            "snapshot",
+            "-runall",
+            "-f",
+            "xsim-options.txt"
+          ],
+          "exit": 0,
+          "seconds": 2.717,
+          "log": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\core-faults-align0-e04ecf4eed\\xsim-captured.log",
+          "private_job_active_processes": 0
+        }
+      ],
+      "work_dir": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\core-faults-align0-e04ecf4eed",
+      "reason": "PASS",
+      "simulation_summary": [
+        "PASS tb_core_faults align=0 early_faults=2"
+      ],
+      "warnings": []
+    },
+    {
+      "top": "tb_core_faults_1",
+      "passed": true,
+      "stages": [
+        {
+          "tool": "xvlog",
+          "command": [
+            "E:\\Vivado\\2025.1\\Vivado\\bin\\xvlog.bat",
+            "-sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\core_latency_pkg.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\token_pipe.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\div25_pipe.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\ratio_q12_pipe.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\row_window5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\moments5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\coefficient_box5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\coefficient5.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\reconstruct.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\detail_enhance.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\rtl\\guided_core.sv",
+            "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\sim\\tb_guided_core.sv"
+          ],
+          "exit": 0,
+          "seconds": 0.629,
+          "log": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\core-faults-align1-95465a14d8\\xvlog-captured.log",
+          "private_job_active_processes": 0
+        },
+        {
+          "tool": "xelab",
+          "command": [
+            "E:\\Vivado\\2025.1\\Vivado\\bin\\xelab.bat",
+            "tb_core_faults_1",
+            "-s",
+            "snapshot"
+          ],
+          "exit": 0,
+          "seconds": 2.376,
+          "log": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\core-faults-align1-95465a14d8\\xelab-captured.log",
+          "private_job_active_processes": 0
+        },
+        {
+          "tool": "xsim",
+          "command": [
+            "E:\\Vivado\\2025.1\\Vivado\\bin\\xsim.bat",
+            "snapshot",
+            "-runall",
+            "-f",
+            "xsim-options.txt"
+          ],
+          "exit": 0,
+          "seconds": 2.515,
+          "log": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\core-faults-align1-95465a14d8\\xsim-captured.log",
+          "private_job_active_processes": 0
+        }
+      ],
+      "work_dir": "E:\\Vivado_FPGA_Programs\\fpga2026\\stream_video_enhance\\build\\regression\\core-faults-align1-95465a14d8",
+      "reason": "PASS",
+      "simulation_summary": [
+        "PASS tb_core_faults align=1 early_faults=2"
+      ],
+      "warnings": []
+    }
+  ]
+}

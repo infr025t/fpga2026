@@ -1,0 +1,31 @@
+test_missing_status_cannot_publish_a_profile (stream_video_enhance.tests.test_evaluation.EvaluationTests.test_missing_status_cannot_publish_a_profile) ... ERROR
+test_expanded_policy_cannot_silently_drop_required_checks (stream_video_enhance.tests.test_evaluation.EvaluationTests.test_expanded_policy_cannot_silently_drop_required_checks) ... FAIL
+
+======================================================================
+ERROR: test_missing_status_cannot_publish_a_profile (stream_video_enhance.tests.test_evaluation.EvaluationTests.test_missing_status_cannot_publish_a_profile)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\Vivado_FPGA_Programs\fpga2026\stream_video_enhance\tests\test_evaluation.py", line 169, in test_missing_status_cannot_publish_a_profile
+    self.assertFalse(ev.publish_profile(p, {'a': {}}, {}, required_checks=['a']))
+                     ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Vivado_FPGA_Programs\fpga2026\stream_video_enhance\model\evaluate.py", line 59, in publish_profile
+    if aggregate_status(checks, required_checks) != 'PASS':
+       ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Vivado_FPGA_Programs\fpga2026\stream_video_enhance\model\evaluate.py", line 54, in aggregate_status
+    statuses = [v['status'] for v in checks.values() if v.get('required', True)]
+                ~^^^^^^^^^^
+KeyError: 'status'
+
+======================================================================
+FAIL: test_expanded_policy_cannot_silently_drop_required_checks (stream_video_enhance.tests.test_evaluation.EvaluationTests.test_expanded_policy_cannot_silently_drop_required_checks)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\Vivado_FPGA_Programs\fpga2026\stream_video_enhance\tests\test_evaluation.py", line 177, in test_expanded_policy_cannot_silently_drop_required_checks
+    with self.assertRaisesRegex(ValueError, 'required'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 2 tests in 1.904s
+
+FAILED (failures=1, errors=1)

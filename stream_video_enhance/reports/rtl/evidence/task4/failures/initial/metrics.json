@@ -1,0 +1,12 @@
+{
+  "tool": "2025.1",
+  "RAMB18": 5,
+  "RAMB36": 5,
+  "DSP": 18,
+  "LUT": 2339,
+  "FF": 2586,
+  "latches": 0,
+  "multidrivers": 0,
+  "registered_setup_slack_ns": -0.391,
+  "overall_setup_slack_ns": -0.391
+}

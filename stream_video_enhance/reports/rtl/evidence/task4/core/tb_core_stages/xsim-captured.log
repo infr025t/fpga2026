@@ -1,0 +1,17 @@
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Mon Oct 26 19:15:14 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/snapshot/xsim_script.tcl
+# xsim {snapshot} -testplusarg VECTORS=E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/build/regression/core-stages-baa01c11b6 -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+PASS tb_core_stages coefficient=4891 reconstruct=4944 enhance=4932 flushes=5 latency=20/3/7
+$finish called at time : 57696 ns : File "E:/Vivado_FPGA_Programs/fpga2026/stream_video_enhance/sim/tb_core_stages.sv" Line 68
+exit
+INFO: [Common 17-206] Exiting xsim at Mon Oct 26 19:15:15 2026...

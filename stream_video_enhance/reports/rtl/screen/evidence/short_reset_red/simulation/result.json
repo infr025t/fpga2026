@@ -1,0 +1,50 @@
+{
+  "top": "tb_nt35510_display",
+  "passed": false,
+  "stages": [
+    {
+      "name": "compile",
+      "command": [
+        "C:\\Users\\37855\\AppData\\Local\\Temp\\fpga20261020_iverilog_91s5ypxn\\ucrt64\\bin\\iverilog.exe",
+        "-g2012",
+        "-s",
+        "tb_nt35510_display",
+        "-o",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\screen-reset-red-20261028\\simulation\\simulation.vvp",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_bringup_top.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_bus8.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\screen-reset-red-20261028\\fixtures\\nt35510_init.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_init_rom.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\screen-reset-red-20261028\\fixtures\\nt35510_test_display.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\screen-reset-red-20261028\\fixtures\\nt35510_window_writer.sv",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\sim\\tb_nt35510_display.sv"
+      ],
+      "exit": 0,
+      "log": "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\screen-reset-red-20261028\\simulation\\compile.log",
+      "seconds": 0.578
+    },
+    {
+      "name": "simulate",
+      "command": [
+        "C:\\Users\\37855\\AppData\\Local\\Temp\\fpga20261020_iverilog_91s5ypxn\\ucrt64\\bin\\vvp.exe",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\screen-reset-red-20261028\\simulation\\simulation.vvp",
+        "+VECTORS=D:/desktop/coding/fpga2026 - demo/stream_video_enhance/build/regression/screen-final-20261028/vectors"
+      ],
+      "exit": 1,
+      "log": "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\screen-reset-red-20261028\\simulation\\simulate.log",
+      "seconds": 0.719
+    }
+  ],
+  "work_dir": "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\screen-reset-red-20261028\\simulation",
+  "reason": "simulate failed",
+  "simulation_summary": [],
+  "source_hashes": {
+    "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_bringup_top.sv": "f7c11b5c65f81ce28d622502d519ba62d5942fa18db010a7b9a2046470e93e8b",
+    "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_bus8.sv": "b982f911614e5c8de015662a7122e46c9c8ac0b5815a0e9f0682f62333a557de",
+    "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\screen-reset-red-20261028\\fixtures\\nt35510_init.sv": "b8ba23f3de6d78f2cb60dae8e7a0c98daa8785a4c059ec02e11a20cbdf0582d1",
+    "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_init_rom.sv": "73468ba367793569102ae4f65f339aa710e6f488f1ee225c3e29fe7112de573d",
+    "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\screen-reset-red-20261028\\fixtures\\nt35510_test_display.sv": "ec5813162fdf9903c57685d2e13299e43019fb1adc4430b98420f9c2f2b3d10e",
+    "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\screen-reset-red-20261028\\fixtures\\nt35510_window_writer.sv": "cb55d17c6adda3568344cfcdad312a8eabb7c2201a78c6a30a39cfb359b2a3be",
+    "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\sim\\tb_nt35510_display.sv": "b69b6d473ca4356a59d0e0a088ccdd248cb2937bd4147ff77330db536ce3eca4"
+  }
+}

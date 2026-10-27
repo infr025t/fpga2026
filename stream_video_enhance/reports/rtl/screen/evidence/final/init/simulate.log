@@ -1,0 +1,2 @@
+PASS tb_nt35510_init entries=367 words=732 complete_sessions=2 total_words=2200 cycles=15396 stalls=810 forced_stalls=24 reset/release/sleep/default64bit/rounding/restart
+D:\desktop\coding\fpga2026 - demo\stream_video_enhance\sim\tb_nt35510_init.sv:122: $finish called at 153960000 (1ps)

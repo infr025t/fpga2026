@@ -1,0 +1,2 @@
+PASS tb_nt35510_bringup cycles=55 startup_pins=safe pause_switch=synchronized
+D:\desktop\coding\fpga2026 - demo\stream_video_enhance\sim\tb_nt35510_display.sv:218: $finish called at 550000 (1ps)

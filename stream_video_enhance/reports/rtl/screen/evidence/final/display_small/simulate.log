@@ -1,0 +1,2 @@
+PASS tb_nt35510_display full=0 panel=48x40 active=32x32 viewport=8..39/4..35 clear=2 physical_frames=5 total_bytes=21130 cycles=169842
+D:\desktop\coding\fpga2026 - demo\stream_video_enhance\sim\tb_nt35510_display.sv:186: $finish called at 1698420000 (1ps)

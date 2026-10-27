@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-10-28",
+  "scope": "Factual values extracted from user-supplied documents and examples; not a physical-board validation. Full vendor materials remain local and are not redistributed.",
+  "archive": {
+    "name": "4.0寸_TK040F1510_整理资料.zip",
+    "sha256": "8702c3d9530f01eb264423371c8b1c04697b468f0044fee70c543b2047450bf2"
+  },
+  "documents": {
+    "controller": {
+      "archive_entry": "4.0寸_TK040F1510_整理资料/NT35510_芯片手册.pdf",
+      "sha256": "73b5517a2773eb7fad1cf3387d90a2a27027218a5dfd7239d2c98a1f033c9316",
+      "bytes": 11200115,
+      "pages": 378,
+      "verified_uses": {
+        "8bit_interface_rgb565": [
+          27,
+          31,
+          32
+        ],
+        "sleep_out": [
+          272
+        ],
+        "window": [
+          285,
+          287
+        ],
+        "madctl": [
+          296
+        ],
+        "colmod": [
+          302
+        ],
+        "write_timing": [
+          363
+        ],
+        "reset": [
+          372
+        ]
+      }
+    },
+    "module": {
+      "archive_entry": "4.0寸_TK040F1510_整理资料/TK040F1510_规格书.pdf",
+      "sha256": "6a6d34b2c5cf3ce4191e10c42b070deb7a21c469562735e8a5b66aa883964a5c",
+      "bytes": 1410698,
+      "pages": 22,
+      "verified_uses": {
+        "identity": [
+          4
+        ],
+        "mechanical_pins": [
+          5
+        ],
+        "conflicting_electrical_tables": [
+          6,
+          9,
+          10
+        ]
+      }
+    },
+    "adapter": {
+      "archive_entry": "TK040F1510转接板原理图及PCB.zip/TK040F1510_转接板.pdf",
+      "sha256": "6057412222bc588830e01af2bc4021b13ebe2f9cfd7501fd2111437195350e4f",
+      "bytes": 611254,
+      "pages": 2,
+      "verified_uses": {
+        "p1_signals_supply_straps_te": [
+          1
+        ]
+      },
+      "nested_archive_sha256": "614a6e3a8f84bcb456550dded5b97acb4a6ee1969c0af0989579eff787a2834c"
+    }
+  },
+  "initialization_source": {
+    "archive": "4.0寸_TK040F1510_整理资料.zip",
+    "archive_sha256": "8702c3d9530f01eb264423371c8b1c04697b468f0044fee70c543b2047450bf2",
+    "nested_archive": "1、TK499_LCD_TK040F1510_模拟IO_简单图文例子_8位接口_16位色模式.zip",
+    "entry": "1、TK499_LCD_TK040F1510_模拟IO_简单图文例子_8位接口_16位色模式/project/bsp/LCD/LCD.c",
+    "entry_sha256": "56656bfe4c7d893b932cecce9ed49d4c352e262e3077ec6a1b291f82ef733fdd",
+    "encoding": "gb18030",
+    "command_lines": [
+      46,
+      57
+    ],
+    "parameter_lines": [
+      59,
+      70
+    ],
+    "initialization_lines": [
+      83,
+      490
+    ],
+    "nested_archive_sha256": "125341eee0f102ba14322292fcd8cd683329ecf750d4a00d1998bc6b470f0462"
+  },
+  "verified_controller_values": {
+    "version": "NT35510 Preliminary v0.8 2011-10-28",
+    "write_limits_ns": {
+      "cycle_min": 33,
+      "wr_low_min": 15,
+      "wr_high_min": 15,
+      "dc_setup_write_min": 0,
+      "dc_hold_min": 2,
+      "data_setup_min": 15,
+      "data_hold_min": 10,
+      "input_rise_fall_max": 15
+    },
+    "reset_limits_and_selected_policy": {
+      "reset_low_min_us": 10,
+      "release_to_command_min_ms": 5,
+      "release_to_sleepout_min_ms": 120,
+      "sleepout_to_next_command_min_ms": 5,
+      "sleepin_to_sleepout_min_ms": 120,
+      "proposal_reset_low_ms": 20,
+      "proposal_release_wait_ms": 120,
+      "proposal_post_sleepout_wait_ms": 120,
+      "post_sleepout_120_note": "conservative/vendor choice; chip minimum is 5ms"
+    },
+    "bus": {
+      "chip_8bit_data_pins": "D[7:0]",
+      "chip_8bit_im3_im2_im1_im0": "0000",
+      "command_width_bits": 16,
+      "command_byte_order": "MSB then LSB, DC=0",
+      "register_parameter_width_bits": 16,
+      "register_parameter_byte_order": "MSB then LSB, DC=1",
+      "register_upper_byte_table_value": "00h for CASET/RASET/MADCTL/COLMOD",
+      "pixel_format": "RGB565, high byte then low byte",
+      "register_3a00": "0055"
+    },
+    "landscape": {
+      "madctl_vendor_value": "00A3",
+      "bits": {
+        "MY": 1,
+        "MX": 0,
+        "MV": 1,
+        "ML": 0,
+        "RGB": 0,
+        "MH": 0,
+        "RSMX": 1,
+        "RSMY": 1
+      },
+      "logical_width": 800,
+      "logical_height": 480,
+      "window_example": {
+        "2A00": "0000",
+        "2A01": "0000",
+        "2A02": "0003",
+        "2A03": "001F",
+        "2B00": "0000",
+        "2B01": "0000",
+        "2B02": "0001",
+        "2B03": "00DF"
+      },
+      "parameter_normalization_note": "Vendor sample may pass unmasked entire coordinate to low-byte register, e.g.031F to2A03. Datasheet parameter upper byte is00h; use001F for conformity rather than assume upper03 ignored."
+    }
+  },
+  "module_document_conflicts": [
+    "p5 pin drawing identifies MCU pins while p9/p10 generic text calls WR/RDX NC and49/50 IM0/IM1; do not use the latter for MCU wiring.",
+    "p5 drawing notes VCI/IOVCC3.3V and p9 allowsIOVCC up to3.3V, butp6 DCtable limitsVCI to2.7..2.9V andIO to1.8/2.8typ; prefer actual adapter schematic and verify electrical rails.",
+    "p5 notes saySerial backlight, but actual diode diagram shows8parallel branches andp6 table saysParallel. Raw panel/current drive must not be inferred from contradictory generic notes."
+  ],
+  "adapter_p1": {
+    "data_pins": {
+      "16": "D00",
+      "17": "D01",
+      "18": "D02",
+      "19": "D03",
+      "20": "D04",
+      "21": "D05",
+      "22": "D06",
+      "23": "D07"
+    },
+    "controls": {
+      "11": "CS",
+      "12": "RS",
+      "13": "WR",
+      "14": "RD",
+      "15": "RST",
+      "38": "BL_CTR"
+    },
+    "supply": {
+      "40": "3V3",
+      "2": "GND",
+      "39": "GND"
+    },
+    "pin1_note": "Labeled 5V, but supplied schematic does not establish a required LCD 5V power path or 5V-compatible logic.",
+    "mode_straps": "IM1 IM0=00 selects 8-bit mode in adapter options. Actual population must be checked.",
+    "backlight": "BL_CTR controls the low-side LEDK switch; it does not supply LED power. Current/limiting budget is not verified.",
+    "te": "FPC TE location is marked NC and is not exposed on P1."
+  },
+  "display_geometry_and_payload": {
+    "full_panel_rgb565_bytes": 768000,
+    "cropped_rgb565_bytes": 596608,
+    "payload_reduction_fraction": 0.22316666666666662,
+    "crop_panel_window": [
+      84,
+      4,
+      715,
+      475
+    ],
+    "black_border_strategy": "clear800x480 once at init/recovery; thereafter write complete632x472 valid area only; preserve640x480 canvas crop borders and80px outside horizontal margin"
+  },
+  "not_validated": [
+    "electrical voltage of actual adapter",
+    "exact FPGA pin assignment",
+    "board timing closure",
+    "physical display orientation/byte order",
+    "tearing-free real panel behavior",
+    "actual adapter revision and mode-strap population",
+    "backlight electrical/current budget",
+    "runtime-to-display source admission and buffering",
+    "no-te physical refresh/tearing behavior"
+  ]
+}

@@ -162,7 +162,7 @@ def main():
         summary['results'].append(result)
         summary.pop('active_case', None)
         checkpoint()
-        print('\n'.join(result['simulation_summary']) or result['reason'], flush=True)
+        print('\n'.join(result.get('simulation_summary', [])) or result['reason'], flush=True)
         if not result['passed']:
             raise RuntimeError(f'{top}: {result["reason"]}; inspect {result["work_dir"]}')
 
@@ -171,6 +171,7 @@ def main():
             run('tb_core_crc', 'crc', [ROOT / 'sim/tb_core_crc.sv'])
         if args.suite in ('all', 'ingress'):
             run('tb_runtime_ingress', 'ingress', [ROOT / 'sim/tb_runtime_ingress.sv'])
+            run('tb_runtime_early_error', 'early_error', [ROOT / 'sim/tb_runtime_early_error.sv'])
         if args.suite in ('all', 'core', 'recovery'):
             from runtime_vectors import generate
             for name, width, height in [('16', 16, 16), ('17', 17, 19), ('vga', 640, 480)]:
@@ -204,6 +205,17 @@ def main():
                             summary['wrapper_hashes'][wrapper.relative_to(output).as_posix()] = hashlib.sha256(wrapper.read_bytes()).hexdigest()
                             run('tb_selected', case, [ROOT / 'sim/tb_runtime_core.sv', wrapper],
                                 ['VECTORS=' + vectors.as_posix()], 'PASS tb_runtime_core')
+                    if args.suite == 'all' and width<640:
+                        # Prebuffered cameras may publish successful capture at
+                        # physical SOF, before RAM/prefetch accepts that SOF.
+                        case = f'early_ok_{name}_a{align}'
+                        wrapper = output / (case + '.sv')
+                        wrapper.write_text('module tb_selected; tb_runtime_core #('
+                            f'.W({width}),.H({height}),.PATTERN_ID(0),.EXTRA_ALIGN({align}),'
+                            '.CLAIM_MODE(0),.EARLY_END(1)) test(); endmodule\n', encoding='ascii')
+                        summary['wrapper_hashes'][wrapper.relative_to(output).as_posix()] = hashlib.sha256(wrapper.read_bytes()).hexdigest()
+                        run('tb_selected', case, [ROOT / 'sim/tb_runtime_core.sv', wrapper],
+                            ['VECTORS=' + vectors.as_posix()], 'PASS tb_runtime_core')
         summary['status'] = 'passed'
         print('PASS requested runtime checks', flush=True)
         return 0

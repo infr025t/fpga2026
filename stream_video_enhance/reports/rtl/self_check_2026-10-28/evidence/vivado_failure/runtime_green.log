@@ -1,0 +1,25 @@
+test_conflicting_explicit_tools_are_rejected (test_runtime_runner.ArgumentTests.test_conflicting_explicit_tools_are_rejected) ... ok
+test_duplicate_matrix_values_are_rejected (test_runtime_runner.ArgumentTests.test_duplicate_matrix_values_are_rejected) ... ok
+test_explicit_tool_cannot_contradict_the_selected_backend (test_runtime_runner.ArgumentTests.test_explicit_tool_cannot_contradict_the_selected_backend) ... ok
+test_nonfinite_or_nonpositive_timeouts_are_rejected (test_runtime_runner.ArgumentTests.test_nonfinite_or_nonpositive_timeouts_are_rejected) ... ok
+test_interrupt_retains_completed_cases_and_input_hashes (test_runtime_runner.InterruptionEvidenceTests.test_interrupt_retains_completed_cases_and_input_hashes) ... ok
+test_vectors_are_reused_and_all_actual_inputs_are_bound (test_runtime_runner.MatrixEvidenceTests.test_vectors_are_reused_and_all_actual_inputs_are_bound) ... ok
+test_actual_compilation_inputs_have_recorded_byte_hashes (test_runtime_runner.SimulatorFailureTests.test_actual_compilation_inputs_have_recorded_byte_hashes) ... ok
+test_existing_directory_is_preserved (test_runtime_runner.SimulatorFailureTests.test_existing_directory_is_preserved) ... ok
+test_missing_or_misleading_pass_is_rejected (test_runtime_runner.SimulatorFailureTests.test_missing_or_misleading_pass_is_rejected) ... ok
+test_named_marker_with_measured_fields_passes (test_runtime_runner.SimulatorFailureTests.test_named_marker_with_measured_fields_passes) ... ok
+test_nonzero_compile_exit_stops_before_simulation (test_runtime_runner.SimulatorFailureTests.test_nonzero_compile_exit_stops_before_simulation) ... ok
+test_timeout_is_not_a_pass_even_after_pass_text (test_runtime_runner.SimulatorFailureTests.test_timeout_is_not_a_pass_even_after_pass_text) ... ok
+test_zero_exit_error_after_success_text_still_fails (test_runtime_runner.SimulatorFailureTests.test_zero_exit_error_after_success_text_still_fails) ... ok
+test_bad_explicit_icarus_cannot_fall_back_to_environment (test_runtime_runner.ToolSelectionTests.test_bad_explicit_icarus_cannot_fall_back_to_environment) ... ok
+test_bad_explicit_vivado_cannot_fall_back_to_icarus (test_runtime_runner.ToolSelectionTests.test_bad_explicit_vivado_cannot_fall_back_to_icarus) ... ok
+test_explicit_icarus_wins_over_available_default_vivado (test_runtime_runner.ToolSelectionTests.test_explicit_icarus_wins_over_available_default_vivado) ... ok
+test_explicit_vivado_selects_its_requested_directory (test_runtime_runner.ToolSelectionTests.test_explicit_vivado_selects_its_requested_directory) ... ok
+test_duplicate_patterns_cannot_inflate_the_vector_report (test_runtime_runner.VectorContractTests.test_duplicate_patterns_cannot_inflate_the_vector_report) ... ok
+test_serialized_pixels_crc_and_dimensions_match_the_manifest (test_runtime_runner.VectorContractTests.test_serialized_pixels_crc_and_dimensions_match_the_manifest) ... ok
+test_native_failure_without_summary_does_not_leave_run_marked_running (test_runtime_runner.VivadoFailureEvidenceTests.test_native_failure_without_summary_does_not_leave_run_marked_running) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.332s
+
+OK

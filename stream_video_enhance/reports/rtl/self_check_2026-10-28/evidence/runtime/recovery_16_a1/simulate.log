@@ -1,0 +1,2 @@
+PASS tb_runtime_recovery W=16 H=16 align=1 good_frames=4 invalid_frames=3 pixels=256 bad_prefix=4 bad_full=64 abort_edges=3 cycles=2713
+D:\desktop\coding\fpga2026 - demo\stream_video_enhance\sim\tb_runtime_recovery.sv:206: $finish called at 27126000 (1ps)

@@ -1,13 +1,19 @@
 `timescale 1ns/1ps
-module tb_runtime_core #(parameter integer W=16,H=16,PATTERN_ID=0,EXTRA_ALIGN=0,CLAIM_MODE=0);
+module tb_runtime_core #(parameter integer W=16,H=16,PATTERN_ID=0,EXTRA_ALIGN=0,CLAIM_MODE=0,EARLY_END=0);
   import video_runtime_pkg::*;
   reg clk=0;always #5 clk=~clk;
   reg rst=1;
-  wire source_valid,end_valid;wire [63:0] token;source_end_t source_end;
+  wire source_valid,end_valid,pattern_end_valid;wire [63:0] token;source_end_t source_end;
   wire [31:0] source_id=token[61:30];
+  wire [31:0] id,seen,accepted,completed,invalid,dropped,overflows,cfg_errors,overwrites;
+  // A prebuffered capture already knows its status when physical SOF is sent.
+  // Keep one status in flight; source_pattern still finishes an active raster
+  // even when enable goes low while waiting for the preceding completion.
+  wire source_enable=source_id<4 && (!EARLY_END || completed==source_id);
+  assign end_valid=EARLY_END?(source_valid && token[27]):pattern_end_valid;
   source_pattern #(W,H,PATTERN_ID,core_latency_pkg::L_CORE+EXTRA_ALIGN) source(
-    .clk(clk),.rst(rst),.enable(source_id<4),.token_valid(source_valid),.token(token),
-    .end_valid(end_valid),.end_status(source_end));
+    .clk(clk),.rst(rst),.enable(source_enable),.token_valid(source_valid),.token(token),
+    .end_valid(pattern_end_valid),.end_status(source_end));
   frame_config_t shadow;
   always @*begin
     shadow='0;shadow.epsilon=1024;shadow.view_mode=source_id[1:0];
@@ -17,7 +23,7 @@ module tb_runtime_core #(parameter integer W=16,H=16,PATTERN_ID=0,EXTRA_ALIGN=0,
     shadow.source_kind=1;shadow.pattern_id=PATTERN_ID;
   end
   wire [7:0] pixel,raw,base;wire valid,sof,eol,eof,latest_valid,claimed_valid;
-  wire [9:0] x;wire [8:0] y;wire [31:0] id,seen,accepted,completed,invalid,dropped,overflows,cfg_errors,overwrites;
+  wire [9:0] x;wire [8:0] y;
   wire [10:0] highwater;core_report_t latest,claimed;
   integer cycle=0;
   wire claim=CLAIM_MODE==1 || (CLAIM_MODE==2 && cycle%37==0);
@@ -32,10 +38,17 @@ module tb_runtime_core #(parameter integer W=16,H=16,PATTERN_ID=0,EXTRA_ALIGN=0,
     .fifo_highwater(highwater));
   localparam integer N=(W-8)*(H-8),L=core_latency_pkg::L_CORE+EXTRA_ALIGN;
   reg [23:0] expected[0:N-1];reg [31:0] raw_crc[0:3],selected_crc[0:3];
-  integer pixels=0,index=0,frames=0,reports=0,input_eof_cycle=0;
+  integer pixels=0,index=0,frames=0,reports=0,input_eof_cycle=0,end_events=0;
   integer last_seq=0;string vectors,filename;
   always @(posedge clk)begin
     cycle=cycle+1;
+    if(!rst && end_valid)begin
+      if(source_end.frame_id!=end_events || !source_end.ok || source_end.reason!=0)
+        $fatal(1,"runtime source status order/payload");
+      if(EARLY_END && (!source_valid || !token[27] || pattern_end_valid))
+        $fatal(1,"early status must occur once at physical SOF, never EOF");
+      end_events=end_events+1;
+    end
     if(!rst && dut.iv && dut.eof)input_eof_cycle=cycle;
     #1;
     if(!rst)begin
@@ -73,11 +86,11 @@ module tb_runtime_core #(parameter integer W=16,H=16,PATTERN_ID=0,EXTRA_ALIGN=0,
     filename=$sformatf("%s/selected_crc_p%0d.hex",vectors,PATTERN_ID);$readmemh(filename,selected_crc);
     repeat(3)@(negedge clk);rst=0;
     wait(reports==4);repeat(8)@(negedge clk);
-    if(frames!=4 || pixels!=4*N || seen!=4 || accepted!=4 || completed!=4 || highwater>8)
+    if(frames!=4 || pixels!=4*N || seen!=4 || accepted!=4 || completed!=4 || end_events!=4 || highwater>8)
       $fatal(1,"runtime final counts %0d/%0d/%0d highwater=%0d",seen,accepted,completed,highwater);
     if(CLAIM_MODE==0 && overwrites!=3)$fatal(1,"unclaimed mailbox overwrite count");
     if(CLAIM_MODE==1 && overwrites!=0)$fatal(1,"always-claim mailbox overwrite count");
-    $display("PASS tb_runtime_core W=%0d H=%0d pattern=%0d align=%0d claim=%0d frames=%0d pixels=%0d highwater=%0d",W,H,PATTERN_ID,EXTRA_ALIGN,CLAIM_MODE,frames,pixels,highwater);$finish;
+    $display("PASS tb_runtime_core W=%0d H=%0d pattern=%0d align=%0d claim=%0d early_end=%0d frames=%0d pixels=%0d highwater=%0d",W,H,PATTERN_ID,EXTRA_ALIGN,CLAIM_MODE,EARLY_END,frames,pixels,highwater);$finish;
   end
   initial begin repeat(4*W*H+4*L+10000)@(posedge clk);$fatal(1,"runtime integration timeout");end
 endmodule

@@ -32,6 +32,7 @@ module ingress_guard #(
   reg [31:0] active_id,pending_starts,idle_count,handoff_count,drain_count;
   reg [9:0] expected_x;reg [8:0] expected_y;
   reg end_seen,done_seen;
+  reg early_ok_seen;reg [31:0] early_ok_id;
   frame_config_t saved_config;
   reg [63:0] head,second;reg [1:0] prefetched;
   wire rd_valid,empty,full;wire [63:0] rd_data;
@@ -41,6 +42,16 @@ module ingress_guard #(
   wire [31:0] head_id=head[61:30];
   wire physical_sof=source_valid && source_token[27];
   wire recovery_start=state==RECOVER && !core_abort && !stop_request && physical_sof;
+  wire waiting_source=(state==WAIT_SOF && (pending_starts!=0 || physical_sof)) || recovery_start;
+  // A failed source can end before the FIFO/prefetch accepts its SOF. Drop it
+  // immediately while it is still unaccepted; otherwise its status is lost and
+  // the queued SOF is incorrectly accepted, then reported as a 100 ms timeout.
+  wire early_source_failure=source_end_valid && (!source_end.ok || source_end.reason!=0) &&
+    waiting_source;
+  // A prebuffered camera can already know capture succeeded when it emits SOF.
+  // Retain that one status through RAM/prefetch; bind it to the accepted ID.
+  wire early_ok_now=waiting_source && !stop_request && source_end_valid &&
+    source_end.ok && source_end.reason==0;
   wire write_base=!rst && !core_abort && source_valid &&
     ((state!=RECOVER && !(state==WAIT_SOF && stop_request)) || recovery_start);
   wire overflow_event=write_base && full;
@@ -60,12 +71,17 @@ module ingress_guard #(
   reg fault;reg [3:0] reason;
   always @*begin
     fault=0;reason=0;
-    if(!rst && !core_abort && state!=RECOVER)begin
+    if(!rst && !core_abort && (state!=RECOVER || early_source_failure))begin
       if(overflow_event)begin fault=1;reason=2;end
       else if(busy && arithmetic_error)begin fault=1;reason=6;end
-      else if(busy && source_end_valid &&
-        (source_end.frame_id!=active_id || !source_end.ok || source_end.reason!=0 || end_seen))begin
+      else if(early_source_failure || (busy && source_end_valid &&
+        (source_end.frame_id!=active_id || !source_end.ok || source_end.reason!=0 || end_seen)))begin
         fault=1;reason=(!source_end.ok && source_end.reason>=1 && source_end.reason<=8)?source_end.reason:4'd3;
+      end else if((early_ok_seen && early_ok_now) ||
+        (state==WAIT_SOF && !stop_request && first_legal &&
+          ((early_ok_seen && early_ok_id!=head_id) ||
+           (early_ok_now && source_end.frame_id!=head_id))))begin
+        fault=1;reason=3;
       end else if(busy && core_done_valid &&
         (core_done_frame_id!=active_id || !core_done_ok || state!=DRAIN || done_seen))begin
         fault=1;reason=3;
@@ -121,13 +137,16 @@ module ingress_guard #(
   always @(posedge clk)begin
     if(rst)begin
       state<=WAIT_SOF;core_abort<=0;active_id<=0;expected_x<=0;expected_y<=0;
-      end_seen<=0;done_seen<=0;pending_starts<=0;idle_count<=0;handoff_count<=0;drain_count<=0;
+      end_seen<=0;done_seen<=0;early_ok_seen<=0;early_ok_id<=0;
+      pending_starts<=0;idle_count<=0;handoff_count<=0;drain_count<=0;
       seen_frames<=0;accepted_frames<=0;completed_frames<=0;invalid_frames<=0;dropped_source<=0;
       overflow_count<=0;cfg_error<=0;fifo_highwater<=0;almost_full_seen<=0;sticky_errors<=0;last_reason<=0;
       saved_config<='0;saved_config.epsilon<=1024;saved_config.threshold<=2;
       saved_config.gain<=256;saved_config.view_mode<=2;saved_config.profile_id<=1;
     end else begin
       core_abort<=flush;
+      if(early_ok_now && !core_abort && !fault)begin early_ok_seen<=1;early_ok_id<=source_end.frame_id;end
+      if(core_abort)early_ok_seen<=0;
       if(physical_sof)seen_frames<=sat_add(seen_frames,33'd1);
       if(frame_start_valid)accepted_frames<=sat_add(accepted_frames,33'd1);
       if(frame_success_valid)completed_frames<=sat_add(completed_frames,33'd1);
@@ -157,12 +176,15 @@ module ingress_guard #(
       end
       if(frame_start_valid)begin
         state<=RUN;active_id<=head_id;expected_x<=1;expected_y<=0;
-        end_seen<=source_end_valid && source_end.frame_id==head_id && source_end.ok && source_end.reason==0;
+        end_seen<=(early_ok_seen && early_ok_id==head_id) ||
+          (source_end_valid && source_end.frame_id==head_id && source_end.ok && source_end.reason==0);
+        early_ok_seen<=0;
         done_seen<=0;drain_count<=0;idle_count<=0;handoff_count<=0;
         if(legal_config)saved_config<=shadow_config;else cfg_error<=sat_add(cfg_error,33'd1);
       end
       if(flush)begin
-        state<=RECOVER;end_seen<=0;done_seen<=0;idle_count<=0;handoff_count<=0;drain_count<=0;
+        state<=RECOVER;end_seen<=0;done_seen<=0;early_ok_seen<=0;
+        idle_count<=0;handoff_count<=0;drain_count<=0;
         if(fault)begin last_reason<=reason;sticky_errors[reason]<=1'b1;end
       end
     end

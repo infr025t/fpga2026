@@ -1,0 +1,2 @@
+PASS tb_nt35510_display full=0 panel=48x40 active=32x32 viewport=8..39/4..35 clear=1 physical_frames=4 total_bytes=13666 cycles=109672
+D:\desktop\coding\fpga2026 - demo\stream_video_enhance\build\regression\audit_screen_20261028\continuous.sv:180: $finish called at 1096720000 (1ps)

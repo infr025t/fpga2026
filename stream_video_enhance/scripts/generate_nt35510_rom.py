@@ -14,18 +14,51 @@ ROOT = Path(__file__).resolve().parents[1]
 PROFILE = ROOT / 'docs/hardware/tk040f1510_profile.json'
 ROM = ROOT / 'rtl/nt35510_init_rom.sv'
 CANONICAL_SHA256 = 'baf2de274f52d2be53a7d936088736ecbb17d2159b3b6edf9ffcb4043fdc4aca'
+SUPPORTED_CONTRACT = {
+    'bus': dict(data_bits=8, command_word_bits=16, parameter_word_bits=16,
+                word_byte_order='most-significant byte first', pixel_format='RGB565',
+                pixel_write_bytes=2),
+    'orientation': dict(width=800, height=480, madctl='0x00A3',
+                        pixel_format_register='0x0055'),
+    'wait_policy': dict(clock_hz=100000000, reset_low_ms=20, reset_release_wait_ms=120,
+                        sleep_out_wait_ms=120, sleep_out_wait_after_command='0x1100',
+                        source_loop_delay_is_milliseconds=False),
+    'source': dict(archive_sha256='8702c3d9530f01eb264423371c8b1c04697b468f0044fee70c543b2047450bf2',
+                   entry_sha256='56656bfe4c7d893b932cecce9ed49d4c352e262e3077ec6a1b291f82ef733fdd'),
+}
+
+
+def validate_contract(profile):
+    """This audited profile describes fixed RTL, not configurable bus hardware.
+
+    Checking register pairs alone would accept a profile claiming a 16-bit bus,
+    reversed byte order or different waits while generating the same 8-bit ROM.
+    Reject such metadata drift, including JSON booleans used as numeric values.
+    """
+    if not isinstance(profile, dict) or type(profile.get('schema_version')) is not int \
+            or profile['schema_version'] != 1:
+        raise ValueError('unsupported screen profile schema')
+    for section, fields in SUPPORTED_CONTRACT.items():
+        actual = profile.get(section)
+        if not isinstance(actual, dict):
+            raise ValueError('missing screen profile contract: ' + section)
+        for name, expected in fields.items():
+            value = actual.get(name)
+            if type(value) is not type(expected) or value != expected:
+                raise ValueError(f'unsupported screen profile contract: {section}.{name}')
 
 
 def load_profile(path=PROFILE):
     profile = json.loads(Path(path).read_text(encoding='utf-8'))
-    if profile.get('schema_version') != 1:
-        raise ValueError('unsupported screen profile schema')
+    validate_contract(profile)
     entries = profile.get('entries')
     if not isinstance(entries, list) or len(entries) != 367:
         raise ValueError('canonical profile requires exactly 367 entries')
     rows = []
     previous_line = 0
     for index, entry in enumerate(entries):
+        if not isinstance(entry, dict):
+            raise ValueError(f'entry {index} must be a JSON object')
         if entry.get('index') != index:
             raise ValueError('initialization indices must be contiguous')
         values = []
@@ -51,9 +84,6 @@ def load_profile(path=PROFILE):
     actual['bus_write_bytes'] = actual['word_transfers'] * 2
     if profile.get('counts') != actual:
         raise ValueError('profile transfer counts do not match its entries')
-    for key in ('archive_sha256', 'entry_sha256'):
-        if re.fullmatch('[0-9a-f]{64}', profile.get('source', {}).get(key, '')) is None:
-            raise ValueError('missing source SHA256: ' + key)
     return profile, rows
 
 

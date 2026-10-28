@@ -279,5 +279,46 @@ class InterruptionEvidenceTests(unittest.TestCase):
             self.assertTrue(summary['source_hashes'])
 
 
+class VivadoFailureEvidenceTests(unittest.TestCase):
+    def test_native_failure_without_summary_does_not_leave_run_marked_running(self):
+        cases = {
+            'compile': [(1, False, 'ERROR: controlled compilation failure\n')],
+            'elaborate': [(0, False, ''), (1, False, 'ERROR: controlled elaboration failure\n')],
+            'simulate': [(0, False, ''), (0, False, ''), (1, False, 'FATAL: controlled simulation failure\n')],
+            'timeout': [(0, False, ''), (0, False, ''), (None, True, '')],
+            'missing pass': [(0, False, ''), (0, False, ''), (0, False, 'ordinary completion\n')],
+        }
+        for name, replies in cases.items():
+            with self.subTest(stage=name), tempfile.TemporaryDirectory() as folder:
+                output = Path(folder) / 'run'
+                pending = list(replies)
+
+                def fake_tool(command, cwd, log, timeout):
+                    code, timed_out, text = pending.pop(0)
+                    log.write(text)
+                    return code, timed_out
+
+                arguments = ['runtime', '--suite', 'crc', '--output-dir', str(output)]
+                # Use the actual shared Vivado path, whose failed results have
+                # no simulation_summary field. Only native outputs are mocked.
+                with patch.object(sys, 'argv', arguments), \
+                     patch.object(runner, 'discover', return_value=('vivado', Path(folder))), \
+                     patch.object(runner.vivado_runner, 'BIN', Path(folder)), \
+                     patch.object(runner.vivado_runner, 'missing_simulator_tools', return_value=[]), \
+                     patch.object(runner.vivado_runner, '_run_tool', fake_tool), \
+                     redirect_stdout(io.StringIO()), redirect_stderr(io.StringIO()):
+                    self.assertEqual(runner.main(), 1)
+                summary = json.loads((output / 'summary.json').read_text(encoding='utf-8'))
+                self.assertEqual(summary['status'], 'failed')
+                self.assertEqual(len(summary['results']), 1)
+                result = summary['results'][0]
+                self.assertFalse(result['passed'])
+                self.assertNotIn('simulation_summary', result)
+                self.assertIn(result['reason'], summary['error'])
+                self.assertTrue(result['stages'])
+                self.assertTrue(result['source_hashes'])
+                self.assertFalse(pending)
+
+
 if __name__ == '__main__':
     unittest.main()

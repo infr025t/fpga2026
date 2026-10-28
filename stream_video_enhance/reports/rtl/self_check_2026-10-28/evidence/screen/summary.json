@@ -1,0 +1,517 @@
+{
+  "status": "passed",
+  "simulator": "iverilog",
+  "tools": "C:\\Users\\37855\\AppData\\Local\\Temp\\fpga20261020_iverilog_91s5ypxn\\ucrt64\\bin",
+  "results": [
+    {
+      "top": "tb_nt35510_bus8",
+      "passed": true,
+      "stages": [
+        {
+          "name": "compile",
+          "command": [
+            "C:\\Users\\37855\\AppData\\Local\\Temp\\fpga20261020_iverilog_91s5ypxn\\ucrt64\\bin\\iverilog.exe",
+            "-g2012",
+            "-s",
+            "tb_nt35510_bus8",
+            "-o",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\audit-release-screen-20261028\\bus\\simulation.vvp",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_bringup_top.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_bus8.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_init.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_init_rom.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_test_display.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_window_writer.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\sim\\tb_nt35510_bus8.sv"
+          ],
+          "exit": 0,
+          "log": "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\audit-release-screen-20261028\\bus\\compile.log",
+          "seconds": 0.078
+        },
+        {
+          "name": "simulate",
+          "command": [
+            "C:\\Users\\37855\\AppData\\Local\\Temp\\fpga20261020_iverilog_91s5ypxn\\ucrt64\\bin\\vvp.exe",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\audit-release-screen-20261028\\bus\\simulation.vvp",
+            "+VECTORS=D:/desktop/coding/fpga2026 - demo/stream_video_enhance/build/regression/audit-release-screen-20261028/vectors",
+            "+OUTPUT=D:/desktop/coding/fpga2026 - demo/stream_video_enhance/build/regression/audit-release-screen-20261028/bus"
+          ],
+          "exit": 0,
+          "log": "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\audit-release-screen-20261028\\bus\\simulate.log",
+          "seconds": 0.016
+        }
+      ],
+      "work_dir": "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\audit-release-screen-20261028\\bus",
+      "reason": "PASS",
+      "simulation_summary": [
+        "PASS nt35510_bus8 setup=2 low=2 hold=1 gap=0 accepted=56 completed=52 cancelled=4 physical_bytes=107",
+        "PASS nt35510_bus8 setup=2 low=3 hold=2 gap=1 accepted=56 completed=52 cancelled=4 physical_bytes=107",
+        "PASS tb_nt35510_bus8 physical timing and reset"
+      ],
+      "source_hashes": {
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_bringup_top.sv": "f7c11b5c65f81ce28d622502d519ba62d5942fa18db010a7b9a2046470e93e8b",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_bus8.sv": "b982f911614e5c8de015662a7122e46c9c8ac0b5815a0e9f0682f62333a557de",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_init.sv": "ed0490c5dc9cd40200d57e3557addf06dcf63622bce2bde99a6dcc3fc590146d",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_init_rom.sv": "73468ba367793569102ae4f65f339aa710e6f488f1ee225c3e29fe7112de573d",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_test_display.sv": "6f7a652287d9e2f5274a59466aaa15b86a5d5a7364691127d69380e981b8afcd",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_window_writer.sv": "1f9c2513f94e895676fbbeb96bb928c29e1e418dda6b4c4b9bec3e43deea32e6",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\sim\\tb_nt35510_bus8.sv": "327a75701b24bbbdb4542dca5ab28df67247a76d88478325b754ca324e9f3874"
+      },
+      "case_passed": true
+    },
+    {
+      "top": "tb_nt35510_bus8_bad_setup",
+      "passed": false,
+      "stages": [
+        {
+          "name": "compile",
+          "command": [
+            "C:\\Users\\37855\\AppData\\Local\\Temp\\fpga20261020_iverilog_91s5ypxn\\ucrt64\\bin\\iverilog.exe",
+            "-g2012",
+            "-s",
+            "tb_nt35510_bus8_bad_setup",
+            "-o",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\audit-release-screen-20261028\\reject_setup\\simulation.vvp",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_bringup_top.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_bus8.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_init.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_init_rom.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_test_display.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_window_writer.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\sim\\tb_nt35510_bus8.sv"
+          ],
+          "exit": 0,
+          "log": "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\audit-release-screen-20261028\\reject_setup\\compile.log",
+          "seconds": 0.109
+        },
+        {
+          "name": "simulate",
+          "command": [
+            "C:\\Users\\37855\\AppData\\Local\\Temp\\fpga20261020_iverilog_91s5ypxn\\ucrt64\\bin\\vvp.exe",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\audit-release-screen-20261028\\reject_setup\\simulation.vvp",
+            "+VECTORS=D:/desktop/coding/fpga2026 - demo/stream_video_enhance/build/regression/audit-release-screen-20261028/vectors",
+            "+OUTPUT=D:/desktop/coding/fpga2026 - demo/stream_video_enhance/build/regression/audit-release-screen-20261028/reject_setup"
+          ],
+          "exit": 1,
+          "log": "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\audit-release-screen-20261028\\reject_setup\\simulate.log",
+          "seconds": 0.031
+        }
+      ],
+      "work_dir": "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\audit-release-screen-20261028\\reject_setup",
+      "reason": "simulate failed",
+      "simulation_summary": [],
+      "source_hashes": {
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_bringup_top.sv": "f7c11b5c65f81ce28d622502d519ba62d5942fa18db010a7b9a2046470e93e8b",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_bus8.sv": "b982f911614e5c8de015662a7122e46c9c8ac0b5815a0e9f0682f62333a557de",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_init.sv": "ed0490c5dc9cd40200d57e3557addf06dcf63622bce2bde99a6dcc3fc590146d",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_init_rom.sv": "73468ba367793569102ae4f65f339aa710e6f488f1ee225c3e29fe7112de573d",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_test_display.sv": "6f7a652287d9e2f5274a59466aaa15b86a5d5a7364691127d69380e981b8afcd",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_window_writer.sv": "1f9c2513f94e895676fbbeb96bb928c29e1e418dda6b4c4b9bec3e43deea32e6",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\sim\\tb_nt35510_bus8.sv": "327a75701b24bbbdb4542dca5ab28df67247a76d88478325b754ca324e9f3874"
+      },
+      "expected_rejection": "unsafe NT35510 timing parameters for 100 MHz",
+      "accepted_expected_rejection": true,
+      "case_passed": true
+    },
+    {
+      "top": "tb_nt35510_bus8_bad_low",
+      "passed": false,
+      "stages": [
+        {
+          "name": "compile",
+          "command": [
+            "C:\\Users\\37855\\AppData\\Local\\Temp\\fpga20261020_iverilog_91s5ypxn\\ucrt64\\bin\\iverilog.exe",
+            "-g2012",
+            "-s",
+            "tb_nt35510_bus8_bad_low",
+            "-o",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\audit-release-screen-20261028\\reject_low\\simulation.vvp",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_bringup_top.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_bus8.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_init.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_init_rom.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_test_display.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_window_writer.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\sim\\tb_nt35510_bus8.sv"
+          ],
+          "exit": 0,
+          "log": "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\audit-release-screen-20261028\\reject_low\\compile.log",
+          "seconds": 0.063
+        },
+        {
+          "name": "simulate",
+          "command": [
+            "C:\\Users\\37855\\AppData\\Local\\Temp\\fpga20261020_iverilog_91s5ypxn\\ucrt64\\bin\\vvp.exe",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\audit-release-screen-20261028\\reject_low\\simulation.vvp",
+            "+VECTORS=D:/desktop/coding/fpga2026 - demo/stream_video_enhance/build/regression/audit-release-screen-20261028/vectors",
+            "+OUTPUT=D:/desktop/coding/fpga2026 - demo/stream_video_enhance/build/regression/audit-release-screen-20261028/reject_low"
+          ],
+          "exit": 1,
+          "log": "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\audit-release-screen-20261028\\reject_low\\simulate.log",
+          "seconds": 0.031
+        }
+      ],
+      "work_dir": "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\audit-release-screen-20261028\\reject_low",
+      "reason": "simulate failed",
+      "simulation_summary": [],
+      "source_hashes": {
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_bringup_top.sv": "f7c11b5c65f81ce28d622502d519ba62d5942fa18db010a7b9a2046470e93e8b",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_bus8.sv": "b982f911614e5c8de015662a7122e46c9c8ac0b5815a0e9f0682f62333a557de",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_init.sv": "ed0490c5dc9cd40200d57e3557addf06dcf63622bce2bde99a6dcc3fc590146d",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_init_rom.sv": "73468ba367793569102ae4f65f339aa710e6f488f1ee225c3e29fe7112de573d",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_test_display.sv": "6f7a652287d9e2f5274a59466aaa15b86a5d5a7364691127d69380e981b8afcd",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_window_writer.sv": "1f9c2513f94e895676fbbeb96bb928c29e1e418dda6b4c4b9bec3e43deea32e6",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\sim\\tb_nt35510_bus8.sv": "327a75701b24bbbdb4542dca5ab28df67247a76d88478325b754ca324e9f3874"
+      },
+      "expected_rejection": "unsafe NT35510 timing parameters for 100 MHz",
+      "accepted_expected_rejection": true,
+      "case_passed": true
+    },
+    {
+      "top": "tb_nt35510_bus8_bad_hold",
+      "passed": false,
+      "stages": [
+        {
+          "name": "compile",
+          "command": [
+            "C:\\Users\\37855\\AppData\\Local\\Temp\\fpga20261020_iverilog_91s5ypxn\\ucrt64\\bin\\iverilog.exe",
+            "-g2012",
+            "-s",
+            "tb_nt35510_bus8_bad_hold",
+            "-o",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\audit-release-screen-20261028\\reject_hold\\simulation.vvp",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_bringup_top.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_bus8.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_init.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_init_rom.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_test_display.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_window_writer.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\sim\\tb_nt35510_bus8.sv"
+          ],
+          "exit": 0,
+          "log": "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\audit-release-screen-20261028\\reject_hold\\compile.log",
+          "seconds": 0.063
+        },
+        {
+          "name": "simulate",
+          "command": [
+            "C:\\Users\\37855\\AppData\\Local\\Temp\\fpga20261020_iverilog_91s5ypxn\\ucrt64\\bin\\vvp.exe",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\audit-release-screen-20261028\\reject_hold\\simulation.vvp",
+            "+VECTORS=D:/desktop/coding/fpga2026 - demo/stream_video_enhance/build/regression/audit-release-screen-20261028/vectors",
+            "+OUTPUT=D:/desktop/coding/fpga2026 - demo/stream_video_enhance/build/regression/audit-release-screen-20261028/reject_hold"
+          ],
+          "exit": 1,
+          "log": "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\audit-release-screen-20261028\\reject_hold\\simulate.log",
+          "seconds": 0.015
+        }
+      ],
+      "work_dir": "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\audit-release-screen-20261028\\reject_hold",
+      "reason": "simulate failed",
+      "simulation_summary": [],
+      "source_hashes": {
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_bringup_top.sv": "f7c11b5c65f81ce28d622502d519ba62d5942fa18db010a7b9a2046470e93e8b",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_bus8.sv": "b982f911614e5c8de015662a7122e46c9c8ac0b5815a0e9f0682f62333a557de",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_init.sv": "ed0490c5dc9cd40200d57e3557addf06dcf63622bce2bde99a6dcc3fc590146d",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_init_rom.sv": "73468ba367793569102ae4f65f339aa710e6f488f1ee225c3e29fe7112de573d",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_test_display.sv": "6f7a652287d9e2f5274a59466aaa15b86a5d5a7364691127d69380e981b8afcd",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_window_writer.sv": "1f9c2513f94e895676fbbeb96bb928c29e1e418dda6b4c4b9bec3e43deea32e6",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\sim\\tb_nt35510_bus8.sv": "327a75701b24bbbdb4542dca5ab28df67247a76d88478325b754ca324e9f3874"
+      },
+      "expected_rejection": "unsafe NT35510 timing parameters for 100 MHz",
+      "accepted_expected_rejection": true,
+      "case_passed": true
+    },
+    {
+      "top": "tb_nt35510_bus8_bad_gap",
+      "passed": false,
+      "stages": [
+        {
+          "name": "compile",
+          "command": [
+            "C:\\Users\\37855\\AppData\\Local\\Temp\\fpga20261020_iverilog_91s5ypxn\\ucrt64\\bin\\iverilog.exe",
+            "-g2012",
+            "-s",
+            "tb_nt35510_bus8_bad_gap",
+            "-o",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\audit-release-screen-20261028\\reject_gap\\simulation.vvp",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_bringup_top.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_bus8.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_init.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_init_rom.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_test_display.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_window_writer.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\sim\\tb_nt35510_bus8.sv"
+          ],
+          "exit": 0,
+          "log": "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\audit-release-screen-20261028\\reject_gap\\compile.log",
+          "seconds": 0.094
+        },
+        {
+          "name": "simulate",
+          "command": [
+            "C:\\Users\\37855\\AppData\\Local\\Temp\\fpga20261020_iverilog_91s5ypxn\\ucrt64\\bin\\vvp.exe",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\audit-release-screen-20261028\\reject_gap\\simulation.vvp",
+            "+VECTORS=D:/desktop/coding/fpga2026 - demo/stream_video_enhance/build/regression/audit-release-screen-20261028/vectors",
+            "+OUTPUT=D:/desktop/coding/fpga2026 - demo/stream_video_enhance/build/regression/audit-release-screen-20261028/reject_gap"
+          ],
+          "exit": 1,
+          "log": "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\audit-release-screen-20261028\\reject_gap\\simulate.log",
+          "seconds": 0.016
+        }
+      ],
+      "work_dir": "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\audit-release-screen-20261028\\reject_gap",
+      "reason": "simulate failed",
+      "simulation_summary": [],
+      "source_hashes": {
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_bringup_top.sv": "f7c11b5c65f81ce28d622502d519ba62d5942fa18db010a7b9a2046470e93e8b",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_bus8.sv": "b982f911614e5c8de015662a7122e46c9c8ac0b5815a0e9f0682f62333a557de",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_init.sv": "ed0490c5dc9cd40200d57e3557addf06dcf63622bce2bde99a6dcc3fc590146d",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_init_rom.sv": "73468ba367793569102ae4f65f339aa710e6f488f1ee225c3e29fe7112de573d",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_test_display.sv": "6f7a652287d9e2f5274a59466aaa15b86a5d5a7364691127d69380e981b8afcd",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_window_writer.sv": "1f9c2513f94e895676fbbeb96bb928c29e1e418dda6b4c4b9bec3e43deea32e6",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\sim\\tb_nt35510_bus8.sv": "327a75701b24bbbdb4542dca5ab28df67247a76d88478325b754ca324e9f3874"
+      },
+      "expected_rejection": "unsafe NT35510 timing parameters for 100 MHz",
+      "accepted_expected_rejection": true,
+      "case_passed": true
+    },
+    {
+      "top": "tb_nt35510_init",
+      "passed": true,
+      "stages": [
+        {
+          "name": "compile",
+          "command": [
+            "C:\\Users\\37855\\AppData\\Local\\Temp\\fpga20261020_iverilog_91s5ypxn\\ucrt64\\bin\\iverilog.exe",
+            "-g2012",
+            "-s",
+            "tb_nt35510_init",
+            "-o",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\audit-release-screen-20261028\\init\\simulation.vvp",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_bringup_top.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_bus8.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_init.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_init_rom.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_test_display.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_window_writer.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\sim\\tb_nt35510_init.sv"
+          ],
+          "exit": 0,
+          "log": "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\audit-release-screen-20261028\\init\\compile.log",
+          "seconds": 0.078
+        },
+        {
+          "name": "simulate",
+          "command": [
+            "C:\\Users\\37855\\AppData\\Local\\Temp\\fpga20261020_iverilog_91s5ypxn\\ucrt64\\bin\\vvp.exe",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\audit-release-screen-20261028\\init\\simulation.vvp",
+            "+VECTORS=D:/desktop/coding/fpga2026 - demo/stream_video_enhance/build/regression/audit-release-screen-20261028/vectors",
+            "+OUTPUT=D:/desktop/coding/fpga2026 - demo/stream_video_enhance/build/regression/audit-release-screen-20261028/init"
+          ],
+          "exit": 0,
+          "log": "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\audit-release-screen-20261028\\init\\simulate.log",
+          "seconds": 0.093
+        }
+      ],
+      "work_dir": "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\audit-release-screen-20261028\\init",
+      "reason": "PASS",
+      "simulation_summary": [
+        "PASS tb_nt35510_init entries=367 words=732 complete_sessions=2 total_words=2200 cycles=15396 stalls=810 forced_stalls=24 reset/release/sleep/default64bit/rounding/restart"
+      ],
+      "source_hashes": {
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_bringup_top.sv": "f7c11b5c65f81ce28d622502d519ba62d5942fa18db010a7b9a2046470e93e8b",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_bus8.sv": "b982f911614e5c8de015662a7122e46c9c8ac0b5815a0e9f0682f62333a557de",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_init.sv": "ed0490c5dc9cd40200d57e3557addf06dcf63622bce2bde99a6dcc3fc590146d",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_init_rom.sv": "73468ba367793569102ae4f65f339aa710e6f488f1ee225c3e29fe7112de573d",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_test_display.sv": "6f7a652287d9e2f5274a59466aaa15b86a5d5a7364691127d69380e981b8afcd",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_window_writer.sv": "1f9c2513f94e895676fbbeb96bb928c29e1e418dda6b4c4b9bec3e43deea32e6",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\sim\\tb_nt35510_init.sv": "59bef2e48b46649638874e38066cf0622b9ea818c49d7625688bf37278fc9416"
+      },
+      "case_passed": true
+    },
+    {
+      "top": "tb_nt35510_window",
+      "passed": true,
+      "stages": [
+        {
+          "name": "compile",
+          "command": [
+            "C:\\Users\\37855\\AppData\\Local\\Temp\\fpga20261020_iverilog_91s5ypxn\\ucrt64\\bin\\iverilog.exe",
+            "-g2012",
+            "-s",
+            "tb_nt35510_window",
+            "-o",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\audit-release-screen-20261028\\window\\simulation.vvp",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_bringup_top.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_bus8.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_init.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_init_rom.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_test_display.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_window_writer.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\sim\\tb_nt35510_window.sv"
+          ],
+          "exit": 0,
+          "log": "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\audit-release-screen-20261028\\window\\compile.log",
+          "seconds": 0.094
+        },
+        {
+          "name": "simulate",
+          "command": [
+            "C:\\Users\\37855\\AppData\\Local\\Temp\\fpga20261020_iverilog_91s5ypxn\\ucrt64\\bin\\vvp.exe",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\audit-release-screen-20261028\\window\\simulation.vvp",
+            "+VECTORS=D:/desktop/coding/fpga2026 - demo/stream_video_enhance/build/regression/audit-release-screen-20261028/vectors",
+            "+OUTPUT=D:/desktop/coding/fpga2026 - demo/stream_video_enhance/build/regression/audit-release-screen-20261028/window"
+          ],
+          "exit": 0,
+          "log": "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\audit-release-screen-20261028\\window\\simulate.log",
+          "seconds": 0.016
+        }
+      ],
+      "work_dir": "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\audit-release-screen-20261028\\window",
+      "reason": "PASS",
+      "simulation_summary": [
+        "PASS tb_nt35510_window rectangles=2 invalid=3 cancelled=1 high_coordinates=700..702/260..261 physical_bytes=92"
+      ],
+      "source_hashes": {
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_bringup_top.sv": "f7c11b5c65f81ce28d622502d519ba62d5942fa18db010a7b9a2046470e93e8b",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_bus8.sv": "b982f911614e5c8de015662a7122e46c9c8ac0b5815a0e9f0682f62333a557de",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_init.sv": "ed0490c5dc9cd40200d57e3557addf06dcf63622bce2bde99a6dcc3fc590146d",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_init_rom.sv": "73468ba367793569102ae4f65f339aa710e6f488f1ee225c3e29fe7112de573d",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_test_display.sv": "6f7a652287d9e2f5274a59466aaa15b86a5d5a7364691127d69380e981b8afcd",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_window_writer.sv": "1f9c2513f94e895676fbbeb96bb928c29e1e418dda6b4c4b9bec3e43deea32e6",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\sim\\tb_nt35510_window.sv": "b3abdc236aa6bbb0515d2fb77a897de2c1b0a2f72b57dc65ee9859c54d966fa6"
+      },
+      "case_passed": true
+    },
+    {
+      "top": "tb_nt35510_bringup",
+      "passed": true,
+      "stages": [
+        {
+          "name": "compile",
+          "command": [
+            "C:\\Users\\37855\\AppData\\Local\\Temp\\fpga20261020_iverilog_91s5ypxn\\ucrt64\\bin\\iverilog.exe",
+            "-g2012",
+            "-s",
+            "tb_nt35510_bringup",
+            "-o",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\audit-release-screen-20261028\\bringup\\simulation.vvp",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_bringup_top.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_bus8.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_init.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_init_rom.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_test_display.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_window_writer.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\sim\\tb_nt35510_display.sv"
+          ],
+          "exit": 0,
+          "log": "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\audit-release-screen-20261028\\bringup\\compile.log",
+          "seconds": 0.079
+        },
+        {
+          "name": "simulate",
+          "command": [
+            "C:\\Users\\37855\\AppData\\Local\\Temp\\fpga20261020_iverilog_91s5ypxn\\ucrt64\\bin\\vvp.exe",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\audit-release-screen-20261028\\bringup\\simulation.vvp",
+            "+VECTORS=D:/desktop/coding/fpga2026 - demo/stream_video_enhance/build/regression/audit-release-screen-20261028/vectors",
+            "+OUTPUT=D:/desktop/coding/fpga2026 - demo/stream_video_enhance/build/regression/audit-release-screen-20261028/bringup"
+          ],
+          "exit": 0,
+          "log": "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\audit-release-screen-20261028\\bringup\\simulate.log",
+          "seconds": 0.015
+        }
+      ],
+      "work_dir": "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\audit-release-screen-20261028\\bringup",
+      "reason": "PASS",
+      "simulation_summary": [
+        "PASS tb_nt35510_bringup cycles=55 startup_pins=safe pause_switch=synchronized"
+      ],
+      "source_hashes": {
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_bringup_top.sv": "f7c11b5c65f81ce28d622502d519ba62d5942fa18db010a7b9a2046470e93e8b",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_bus8.sv": "b982f911614e5c8de015662a7122e46c9c8ac0b5815a0e9f0682f62333a557de",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_init.sv": "ed0490c5dc9cd40200d57e3557addf06dcf63622bce2bde99a6dcc3fc590146d",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_init_rom.sv": "73468ba367793569102ae4f65f339aa710e6f488f1ee225c3e29fe7112de573d",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_test_display.sv": "6f7a652287d9e2f5274a59466aaa15b86a5d5a7364691127d69380e981b8afcd",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_window_writer.sv": "1f9c2513f94e895676fbbeb96bb928c29e1e418dda6b4c4b9bec3e43deea32e6",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\sim\\tb_nt35510_display.sv": "b69b6d473ca4356a59d0e0a088ccdd248cb2937bd4147ff77330db536ce3eca4"
+      },
+      "case_passed": true
+    },
+    {
+      "top": "tb_nt35510_display",
+      "passed": true,
+      "stages": [
+        {
+          "name": "compile",
+          "command": [
+            "C:\\Users\\37855\\AppData\\Local\\Temp\\fpga20261020_iverilog_91s5ypxn\\ucrt64\\bin\\iverilog.exe",
+            "-g2012",
+            "-s",
+            "tb_nt35510_display",
+            "-o",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\audit-release-screen-20261028\\display_small\\simulation.vvp",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_bringup_top.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_bus8.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_init.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_init_rom.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_test_display.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_window_writer.sv",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\sim\\tb_nt35510_display.sv"
+          ],
+          "exit": 0,
+          "log": "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\audit-release-screen-20261028\\display_small\\compile.log",
+          "seconds": 0.094
+        },
+        {
+          "name": "simulate",
+          "command": [
+            "C:\\Users\\37855\\AppData\\Local\\Temp\\fpga20261020_iverilog_91s5ypxn\\ucrt64\\bin\\vvp.exe",
+            "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\audit-release-screen-20261028\\display_small\\simulation.vvp",
+            "+VECTORS=D:/desktop/coding/fpga2026 - demo/stream_video_enhance/build/regression/audit-release-screen-20261028/vectors",
+            "+OUTPUT=D:/desktop/coding/fpga2026 - demo/stream_video_enhance/build/regression/audit-release-screen-20261028/display_small"
+          ],
+          "exit": 0,
+          "log": "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\audit-release-screen-20261028\\display_small\\simulate.log",
+          "seconds": 0.734
+        }
+      ],
+      "work_dir": "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\build\\regression\\audit-release-screen-20261028\\display_small",
+      "reason": "PASS",
+      "simulation_summary": [
+        "PASS tb_nt35510_display full=0 panel=48x40 active=32x32 viewport=8..39/4..35 clear=2 physical_frames=5 total_bytes=21130 cycles=169842"
+      ],
+      "source_hashes": {
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_bringup_top.sv": "f7c11b5c65f81ce28d622502d519ba62d5942fa18db010a7b9a2046470e93e8b",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_bus8.sv": "b982f911614e5c8de015662a7122e46c9c8ac0b5815a0e9f0682f62333a557de",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_init.sv": "ed0490c5dc9cd40200d57e3557addf06dcf63622bce2bde99a6dcc3fc590146d",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_init_rom.sv": "73468ba367793569102ae4f65f339aa710e6f488f1ee225c3e29fe7112de573d",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_test_display.sv": "6f7a652287d9e2f5274a59466aaa15b86a5d5a7364691127d69380e981b8afcd",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\nt35510_window_writer.sv": "1f9c2513f94e895676fbbeb96bb928c29e1e418dda6b4c4b9bec3e43deea32e6",
+        "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\sim\\tb_nt35510_display.sv": "b69b6d473ca4356a59d0e0a088ccdd248cb2937bd4147ff77330db536ce3eca4"
+      },
+      "case_passed": true
+    }
+  ],
+  "scope": "standalone write-only panel bring-up; no physical hardware validation",
+  "source_hashes": {
+    "rtl/nt35510_bringup_top.sv": "f7c11b5c65f81ce28d622502d519ba62d5942fa18db010a7b9a2046470e93e8b",
+    "rtl/nt35510_bus8.sv": "b982f911614e5c8de015662a7122e46c9c8ac0b5815a0e9f0682f62333a557de",
+    "rtl/nt35510_init.sv": "ed0490c5dc9cd40200d57e3557addf06dcf63622bce2bde99a6dcc3fc590146d",
+    "rtl/nt35510_init_rom.sv": "73468ba367793569102ae4f65f339aa710e6f488f1ee225c3e29fe7112de573d",
+    "rtl/nt35510_test_display.sv": "6f7a652287d9e2f5274a59466aaa15b86a5d5a7364691127d69380e981b8afcd",
+    "rtl/nt35510_window_writer.sv": "1f9c2513f94e895676fbbeb96bb928c29e1e418dda6b4c4b9bec3e43deea32e6",
+    "sim/tb_nt35510_bus8.sv": "327a75701b24bbbdb4542dca5ab28df67247a76d88478325b754ca324e9f3874",
+    "sim/tb_nt35510_display.sv": "b69b6d473ca4356a59d0e0a088ccdd248cb2937bd4147ff77330db536ce3eca4",
+    "sim/tb_nt35510_init.sv": "59bef2e48b46649638874e38066cf0622b9ea818c49d7625688bf37278fc9416",
+    "sim/tb_nt35510_window.sv": "b3abdc236aa6bbb0515d2fb77a897de2c1b0a2f72b57dc65ee9859c54d966fa6",
+    "docs/hardware/tk040f1510_profile.json": "9eb024264b31bbd68c6ec5975c07f3d6dc0fdb5a4e42465fd089d2b9e38c1366",
+    "scripts/run_screen_tests.py": "dccb00dcdc16347021b4b701467f1b55e04ad2b231ef3d826972160d2b6e03ce",
+    "scripts/generate_nt35510_rom.py": "73b86e6417b3b0c1b81a3b9346c3552172dc513c474c91126424a88e1609e938",
+    "scripts/run_runtime_tests.py": "7958f666ee08c4fd0251ed096e04d2d2768d85fdf7eb4d5c96122aa1e86d8c23",
+    "scripts/run_core_tests.py": "e1b87f8ce6896eefcf97f22c9e369b090307cf44b963345164f7d9f423fe8d65"
+  },
+  "vector_hashes": {
+    "vectors/expected_init.hex": "4a86cdfe0fc4359972ae65ee308acad7a739a934abc8414bc82444784228934d",
+    "vectors/expected_init.json": "f3e6130217574c06a0306fdb8308acb0bbee708cfce95dbdbd45d8bb3add6571"
+  }
+}

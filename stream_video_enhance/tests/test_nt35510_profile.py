@@ -55,6 +55,73 @@ class NT35510ProfileTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'canonical'):
                 generator.load_profile(path)
 
+    def test_hardware_metadata_cannot_disagree_with_the_fixed_rtl(self):
+        profile, _ = generator.load_profile()
+        mutations = (
+            ('bus', 'data_bits', 16),
+            ('bus', 'command_word_bits', 8),
+            ('bus', 'parameter_word_bits', 8),
+            ('bus', 'word_byte_order', 'least-significant byte first'),
+            ('bus', 'pixel_format', 'RGB666'),
+            ('bus', 'pixel_write_bytes', 3),
+            ('orientation', 'width', 480),
+            ('orientation', 'height', 800),
+            ('orientation', 'madctl', '0x0000'),
+            ('orientation', 'pixel_format_register', '0x0066'),
+            ('wait_policy', 'clock_hz', 1000),
+            ('wait_policy', 'reset_low_ms', 1),
+            ('wait_policy', 'reset_release_wait_ms', 1),
+            ('wait_policy', 'sleep_out_wait_ms', 5),
+            ('wait_policy', 'sleep_out_wait_after_command', '0x2900'),
+            ('wait_policy', 'source_loop_delay_is_milliseconds', True),
+        )
+        for section, name, value in mutations:
+            with self.subTest(section=section, name=name), tempfile.TemporaryDirectory() as folder:
+                changed = copy.deepcopy(profile)
+                changed[section][name] = value
+                path = Path(folder) / 'changed.json'
+                path.write_text(json.dumps(changed), encoding='utf-8')
+                # Both CLI checking and the shared loader used by the screen
+                # runner must reject metadata drift before any tool is launched.
+                with self.assertRaisesRegex(ValueError, section + r'\.' + name):
+                    generator.load_profile(path)
+                with redirect_stderr(io.StringIO()):
+                    self.assertEqual(generator.main(['--check', '--profile', str(path)]), 1)
+
+    def test_canonical_source_identity_cannot_be_replaced_by_another_valid_hash(self):
+        profile, _ = generator.load_profile()
+        for name in ('archive_sha256', 'entry_sha256'):
+            with self.subTest(name=name), tempfile.TemporaryDirectory() as folder:
+                changed = copy.deepcopy(profile)
+                changed['source'][name] = '0' * 64
+                path = Path(folder) / 'changed.json'
+                path.write_text(json.dumps(changed), encoding='utf-8')
+                with self.assertRaisesRegex(ValueError, r'source\.' + name):
+                    generator.load_profile(path)
+
+    def test_missing_contract_sections_and_wrong_json_types_fail_cleanly(self):
+        profile, _ = generator.load_profile()
+        changed = copy.deepcopy(profile)
+        changed['wait_policy']['source_loop_delay_is_milliseconds'] = 0
+        boolean_schema = copy.deepcopy(profile)
+        boolean_schema['schema_version'] = True
+        bad_entry = copy.deepcopy(profile)
+        bad_entry['entries'][0] = None
+        variants = [None, [], changed, boolean_schema, bad_entry]
+        for section in ('bus', 'orientation', 'wait_policy', 'source'):
+            changed = copy.deepcopy(profile)
+            del changed[section]
+            variants.append(changed)
+        for changed in variants:
+            with self.subTest(value=changed if not isinstance(changed, dict) else list(changed)), \
+                    tempfile.TemporaryDirectory() as folder:
+                path = Path(folder) / 'changed.json'
+                path.write_text(json.dumps(changed), encoding='utf-8')
+                with self.assertRaises(ValueError):
+                    generator.load_profile(path)
+                with redirect_stderr(io.StringIO()):
+                    self.assertEqual(generator.main(['--check', '--profile', str(path)]), 1)
+
     def test_wrong_counts_indices_and_width_are_rejected(self):
         profile, _ = generator.load_profile()
         for mutation in ('count', 'index', 'width'):

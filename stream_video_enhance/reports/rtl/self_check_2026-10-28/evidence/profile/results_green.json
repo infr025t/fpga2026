@@ -1,0 +1,22 @@
+[
+  {
+    "mutation": "bus_width",
+    "exit": 1,
+    "output": "FAIL NT35510 ROM: unsupported screen profile contract: bus.data_bits\n"
+  },
+  {
+    "mutation": "byte_order",
+    "exit": 1,
+    "output": "FAIL NT35510 ROM: unsupported screen profile contract: bus.word_byte_order\n"
+  },
+  {
+    "mutation": "orientation",
+    "exit": 1,
+    "output": "FAIL NT35510 ROM: unsupported screen profile contract: orientation.width\n"
+  },
+  {
+    "mutation": "reset_wait",
+    "exit": 1,
+    "output": "FAIL NT35510 ROM: unsupported screen profile contract: wait_policy.reset_release_wait_ms\n"
+  }
+]

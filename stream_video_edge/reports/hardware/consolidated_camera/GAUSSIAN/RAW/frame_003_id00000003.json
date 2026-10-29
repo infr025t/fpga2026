@@ -1,0 +1,16 @@
+{
+  "number": 3,
+  "frame_id": 3,
+  "filter": "GAUSSIAN",
+  "view": "RAW",
+  "width": 630,
+  "height": 470,
+  "epsilon": 64,
+  "threshold": 128,
+  "payload_crc32": "356ec1f4",
+  "source_crc32": "a31e6db9",
+  "source": "CAMERA",
+  "bit_exact_reference_verified": false,
+  "real_camera_image_quality_verified": false,
+  "image": "E:\\FPGA_Test_Work\\edge_v03_work\\consolidation_2026-10-29\\hardware_camera\\GAUSSIAN\\RAW\\frame_003_id00000003.png"
+}

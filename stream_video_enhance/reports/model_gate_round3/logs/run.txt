@@ -1,1 +1,0 @@
-{"status": "PASS", "tuning_feasible": 15, "candidate_count": 51, "holdout_configurations_evaluated": 1, "selected": {"index": 11, "config": {"epsilon": 1024, "T_D": 2, "T_E": 4, "G_E": 428, "L": 16}, "tuning_feasible": true, "role": "selected_on_tuning", "selection_margin": 1.0821705143191118}, "profile_published": true, "failures": []}

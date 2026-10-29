@@ -1,0 +1,14 @@
+{
+  "version": "edge-v0.3",
+  "registered_before_search": true,
+  "tuning_seeds": [2026102901, 2026102902, 2026102903],
+  "holdout_seeds": [2026102991, 2026102992, 2026102993],
+  "noise_sigma": 12,
+  "epsilon_candidates": [16,64,256,1024],
+  "threshold_candidates": [32,48,64,80,96,112,128,144,160,192,224,256],
+  "clean_edge_reference_threshold": 160,
+  "matching_tolerance_pixels": 1,
+  "gates": {"flat_noise_ratio_max": 0.8,"edge_recall_min": 0.9,"flat_false_edge_rate_max": 0.01},
+  "selection": "minimum gate violation count, then maximum mean F1, then minimum false edge rate; holdout evaluated once without retuning",
+  "scope": "controlled grayscale source only; real camera results remain separate"
+}

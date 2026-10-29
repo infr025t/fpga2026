@@ -1,4 +1,0 @@
-SOURCE_END reason7 cycle=6 state=0
-FRAME_START cycle=8
-FATAL: D:\desktop\coding\fpga2026 - demo\stream_video_enhance\build\regression\audit_runtime_early_end_20261028\tb_audit_early_end.sv:23: early source error7 lost: reason=5 latency=102 accepted=1
-       Time: 1075000  Scope: tb_audit_early_end

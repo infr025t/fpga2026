@@ -1,5 +1,0 @@
-{
-  "source": "D:\\desktop\\coding\\fpga2026 - demo\\stream_video_enhance\\rtl\\ingress_guard.sv",
-  "sha256": "0cb818e6dfcf6c3b5fb3cf43438b17abaa95c831db8b8635cc347ca172c1a70b",
-  "purpose": "Freeze negative-only early-event fix before adding early OK latch for RED regression."
-}

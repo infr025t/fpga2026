@@ -1,2 +1,0 @@
-FATAL: D:\desktop\coding\fpga2026 - demo\stream_video_enhance\sim\tb_runtime_early_error.sv:93: L55 recovery/count identity seen=1 acc=1 done=0 bad=0 drop=0
-       Time: 63946000  Scope: tb_runtime_early_error.first.finish_good

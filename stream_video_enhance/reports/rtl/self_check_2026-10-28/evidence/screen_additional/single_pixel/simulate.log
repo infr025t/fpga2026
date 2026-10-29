@@ -1,2 +1,0 @@
-PASS tb_nt35510_display full=0 panel=9x9 active=1x1 viewport=4..4/4..4 clear=1 physical_frames=4 total_bytes=1804 cycles=14776
-D:\desktop\coding\fpga2026 - demo\stream_video_enhance\build\regression\audit_screen_20261028\single_pixel.sv:180: $finish called at 147760000 (1ps)

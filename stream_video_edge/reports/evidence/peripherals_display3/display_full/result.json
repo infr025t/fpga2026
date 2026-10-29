@@ -1,0 +1,54 @@
+{
+  "top": "tb_nt35510_display_full",
+  "passed": false,
+  "stages": [
+    {
+      "tool": "xvlog",
+      "command": [
+        "E:\\Vivado\\2025.1\\Vivado\\bin\\xvlog.bat",
+        "-sv",
+        "E:\\Vivado_FPGA_Programs\\fpga2026-v0.3-edge\\stream_video_edge\\rtl\\display\\edge_display_stream_if.sv",
+        "E:\\Vivado_FPGA_Programs\\fpga2026-v0.3-edge\\stream_video_edge\\rtl\\display\\nt35510_bringup_top.sv",
+        "E:\\Vivado_FPGA_Programs\\fpga2026-v0.3-edge\\stream_video_edge\\rtl\\display\\nt35510_bus8.sv",
+        "E:\\Vivado_FPGA_Programs\\fpga2026-v0.3-edge\\stream_video_edge\\rtl\\display\\nt35510_init.sv",
+        "E:\\Vivado_FPGA_Programs\\fpga2026-v0.3-edge\\stream_video_edge\\rtl\\display\\nt35510_init_rom.sv",
+        "E:\\Vivado_FPGA_Programs\\fpga2026-v0.3-edge\\stream_video_edge\\rtl\\display\\nt35510_test_display.sv",
+        "E:\\Vivado_FPGA_Programs\\fpga2026-v0.3-edge\\stream_video_edge\\rtl\\display\\nt35510_window_writer.sv",
+        "E:\\Vivado_FPGA_Programs\\fpga2026-v0.3-edge\\stream_video_edge\\sim\\tb_nt35510_display.sv"
+      ],
+      "exit": 0,
+      "seconds": 0.679,
+      "log": "E:\\FPGA_Test_Work\\edge_v03_work\\peripherals_display3\\display_full\\xvlog-captured.log",
+      "private_job_active_processes": 0
+    },
+    {
+      "tool": "xelab",
+      "command": [
+        "E:\\Vivado\\2025.1\\Vivado\\bin\\xelab.bat",
+        "tb_nt35510_display_full",
+        "-s",
+        "snapshot"
+      ],
+      "exit": 0,
+      "seconds": 1.248,
+      "log": "E:\\FPGA_Test_Work\\edge_v03_work\\peripherals_display3\\display_full\\xelab-captured.log",
+      "private_job_active_processes": 0
+    },
+    {
+      "tool": "xsim",
+      "command": [
+        "E:\\Vivado\\2025.1\\Vivado\\bin\\xsim.bat",
+        "snapshot",
+        "-runall",
+        "-f",
+        "xsim-options.txt"
+      ],
+      "exit": 0,
+      "seconds": 8.308,
+      "log": "E:\\FPGA_Test_Work\\edge_v03_work\\peripherals_display3\\display_full\\xsim-captured.log",
+      "private_job_active_processes": 0
+    }
+  ],
+  "work_dir": "E:\\FPGA_Test_Work\\edge_v03_work\\peripherals_display3\\display_full",
+  "reason": "missing PASS marker"
+}

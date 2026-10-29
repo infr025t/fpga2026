@@ -1,2 +1,0 @@
-PASS tb_nt35510_window rectangles=2 invalid=3 cancelled=1 high_coordinates=700..702/260..261 physical_bytes=92
-D:\desktop\coding\fpga2026 - demo\stream_video_enhance\sim\tb_nt35510_window.sv:101: $finish called at 8010000 (1ps)

@@ -1,0 +1,678 @@
+{
+  "registration_sha256": "cf23130036640043eb0743108ffd4202a39020d57da596eebe6d675dce0f842b",
+  "results": [
+    {
+      "filter_id": 0,
+      "chosen": {
+        "filter_id": 0,
+        "epsilon": 1024,
+        "threshold": 96,
+        "violations": 0,
+        "f1": 1.0,
+        "recall": 1.0,
+        "flat_false": 0.0,
+        "noise_ratio": 0.2071755317563185
+      },
+      "holdout": [
+        {
+          "f1": 1.0,
+          "recall": 1.0,
+          "flat_false": 0.0,
+          "noise_ratio": 0.19624289270424436
+        },
+        {
+          "f1": 1.0,
+          "recall": 1.0,
+          "flat_false": 0.0,
+          "noise_ratio": 0.20407579519594998
+        },
+        {
+          "f1": 0.9990592662276576,
+          "recall": 0.995,
+          "flat_false": 0.0,
+          "noise_ratio": 0.18201714770743643
+        }
+      ],
+      "passed": true,
+      "candidates": [
+        {
+          "filter_id": 0,
+          "epsilon": 16,
+          "threshold": 32,
+          "violations": 2,
+          "f1": 0.20835235333328805,
+          "recall": 1.0,
+          "flat_false": 0.811111111111111,
+          "noise_ratio": 0.902094539830469
+        },
+        {
+          "filter_id": 0,
+          "epsilon": 16,
+          "threshold": 48,
+          "violations": 2,
+          "f1": 0.23887664995620606,
+          "recall": 1.0,
+          "flat_false": 0.6227777777777778,
+          "noise_ratio": 0.902094539830469
+        },
+        {
+          "filter_id": 0,
+          "epsilon": 16,
+          "threshold": 64,
+          "violations": 2,
+          "f1": 0.29226231349832554,
+          "recall": 1.0,
+          "flat_false": 0.42111111111111105,
+          "noise_ratio": 0.902094539830469
+        },
+        {
+          "filter_id": 0,
+          "epsilon": 16,
+          "threshold": 80,
+          "violations": 2,
+          "f1": 0.380101741959644,
+          "recall": 1.0,
+          "flat_false": 0.25166666666666665,
+          "noise_ratio": 0.902094539830469
+        },
+        {
+          "filter_id": 0,
+          "epsilon": 16,
+          "threshold": 96,
+          "violations": 2,
+          "f1": 0.4977280308858938,
+          "recall": 1.0,
+          "flat_false": 0.14055555555555554,
+          "noise_ratio": 0.902094539830469
+        },
+        {
+          "filter_id": 0,
+          "epsilon": 16,
+          "threshold": 112,
+          "violations": 2,
+          "f1": 0.6454794422804973,
+          "recall": 1.0,
+          "flat_false": 0.08,
+          "noise_ratio": 0.902094539830469
+        },
+        {
+          "filter_id": 0,
+          "epsilon": 16,
+          "threshold": 128,
+          "violations": 2,
+          "f1": 0.7857574040401439,
+          "recall": 1.0,
+          "flat_false": 0.03777777777777778,
+          "noise_ratio": 0.902094539830469
+        },
+        {
+          "filter_id": 0,
+          "epsilon": 16,
+          "threshold": 144,
+          "violations": 2,
+          "f1": 0.8947727565864505,
+          "recall": 1.0,
+          "flat_false": 0.01888888888888889,
+          "noise_ratio": 0.902094539830469
+        },
+        {
+          "filter_id": 0,
+          "epsilon": 16,
+          "threshold": 160,
+          "violations": 1,
+          "f1": 0.9554950023574961,
+          "recall": 1.0,
+          "flat_false": 0.006666666666666667,
+          "noise_ratio": 0.902094539830469
+        },
+        {
+          "filter_id": 0,
+          "epsilon": 16,
+          "threshold": 192,
+          "violations": 1,
+          "f1": 0.9935024738686469,
+          "recall": 1.0,
+          "flat_false": 0.0011111111111111111,
+          "noise_ratio": 0.902094539830469
+        },
+        {
+          "filter_id": 0,
+          "epsilon": 16,
+          "threshold": 224,
+          "violations": 1,
+          "f1": 0.9986315128688009,
+          "recall": 0.9979919678714859,
+          "flat_false": 0.0,
+          "noise_ratio": 0.902094539830469
+        },
+        {
+          "filter_id": 0,
+          "epsilon": 16,
+          "threshold": 256,
+          "violations": 1,
+          "f1": 0.9832947982057322,
+          "recall": 0.9487951807228915,
+          "flat_false": 0.0,
+          "noise_ratio": 0.902094539830469
+        },
+        {
+          "filter_id": 0,
+          "epsilon": 64,
+          "threshold": 32,
+          "violations": 1,
+          "f1": 0.230008512201389,
+          "recall": 1.0,
+          "flat_false": 0.6983333333333333,
+          "noise_ratio": 0.7058326304912631
+        },
+        {
+          "filter_id": 0,
+          "epsilon": 64,
+          "threshold": 48,
+          "violations": 1,
+          "f1": 0.29323001737378457,
+          "recall": 1.0,
+          "flat_false": 0.4416666666666667,
+          "noise_ratio": 0.7058326304912631
+        },
+        {
+          "filter_id": 0,
+          "epsilon": 64,
+          "threshold": 64,
+          "violations": 1,
+          "f1": 0.407573513310234,
+          "recall": 1.0,
+          "flat_false": 0.2338888888888889,
+          "noise_ratio": 0.7058326304912631
+        },
+        {
+          "filter_id": 0,
+          "epsilon": 64,
+          "threshold": 80,
+          "violations": 1,
+          "f1": 0.5602035121185464,
+          "recall": 1.0,
+          "flat_false": 0.11388888888888889,
+          "noise_ratio": 0.7058326304912631
+        },
+        {
+          "filter_id": 0,
+          "epsilon": 64,
+          "threshold": 96,
+          "violations": 1,
+          "f1": 0.7338345632574396,
+          "recall": 1.0,
+          "flat_false": 0.051666666666666666,
+          "noise_ratio": 0.7058326304912631
+        },
+        {
+          "filter_id": 0,
+          "epsilon": 64,
+          "threshold": 112,
+          "violations": 1,
+          "f1": 0.8704898379341944,
+          "recall": 1.0,
+          "flat_false": 0.020555555555555556,
+          "noise_ratio": 0.7058326304912631
+        },
+        {
+          "filter_id": 0,
+          "epsilon": 64,
+          "threshold": 128,
+          "violations": 0,
+          "f1": 0.9516262424306902,
+          "recall": 1.0,
+          "flat_false": 0.007222222222222223,
+          "noise_ratio": 0.7058326304912631
+        },
+        {
+          "filter_id": 0,
+          "epsilon": 64,
+          "threshold": 144,
+          "violations": 0,
+          "f1": 0.9860684804679624,
+          "recall": 1.0,
+          "flat_false": 0.0022222222222222222,
+          "noise_ratio": 0.7058326304912631
+        },
+        {
+          "filter_id": 0,
+          "epsilon": 64,
+          "threshold": 160,
+          "violations": 0,
+          "f1": 0.9943602163304978,
+          "recall": 1.0,
+          "flat_false": 0.0011111111111111111,
+          "noise_ratio": 0.7058326304912631
+        },
+        {
+          "filter_id": 0,
+          "epsilon": 64,
+          "threshold": 192,
+          "violations": 0,
+          "f1": 0.999330655957162,
+          "recall": 1.0,
+          "flat_false": 0.0,
+          "noise_ratio": 0.7058326304912631
+        },
+        {
+          "filter_id": 0,
+          "epsilon": 64,
+          "threshold": 224,
+          "violations": 0,
+          "f1": 0.997717022064581,
+          "recall": 0.9939759036144578,
+          "flat_false": 0.0,
+          "noise_ratio": 0.7058326304912631
+        },
+        {
+          "filter_id": 0,
+          "epsilon": 64,
+          "threshold": 256,
+          "violations": 1,
+          "f1": 0.9581036337070258,
+          "recall": 0.8734939759036143,
+          "flat_false": 0.0,
+          "noise_ratio": 0.7058326304912631
+        },
+        {
+          "filter_id": 0,
+          "epsilon": 256,
+          "threshold": 32,
+          "violations": 1,
+          "f1": 0.37148379714871593,
+          "recall": 1.0,
+          "flat_false": 0.30611111111111106,
+          "noise_ratio": 0.40314169698859076
+        },
+        {
+          "filter_id": 0,
+          "epsilon": 256,
+          "threshold": 48,
+          "violations": 1,
+          "f1": 0.6228999519683321,
+          "recall": 1.0,
+          "flat_false": 0.09555555555555556,
+          "noise_ratio": 0.40314169698859076
+        },
+        {
+          "filter_id": 0,
+          "epsilon": 256,
+          "threshold": 64,
+          "violations": 1,
+          "f1": 0.8529112738304852,
+          "recall": 1.0,
+          "flat_false": 0.022222222222222223,
+          "noise_ratio": 0.40314169698859076
+        },
+        {
+          "filter_id": 0,
+          "epsilon": 256,
+          "threshold": 80,
+          "violations": 0,
+          "f1": 0.9609450209042117,
+          "recall": 1.0,
+          "flat_false": 0.0033333333333333335,
+          "noise_ratio": 0.40314169698859076
+        },
+        {
+          "filter_id": 0,
+          "epsilon": 256,
+          "threshold": 96,
+          "violations": 0,
+          "f1": 0.9888284083371435,
+          "recall": 1.0,
+          "flat_false": 0.0011111111111111111,
+          "noise_ratio": 0.40314169698859076
+        },
+        {
+          "filter_id": 0,
+          "epsilon": 256,
+          "threshold": 112,
+          "violations": 0,
+          "f1": 0.9978607055371215,
+          "recall": 1.0,
+          "flat_false": 0.0,
+          "noise_ratio": 0.40314169698859076
+        },
+        {
+          "filter_id": 0,
+          "epsilon": 256,
+          "threshold": 128,
+          "violations": 0,
+          "f1": 0.9993804213135068,
+          "recall": 1.0,
+          "flat_false": 0.0,
+          "noise_ratio": 0.40314169698859076
+        },
+        {
+          "filter_id": 0,
+          "epsilon": 256,
+          "threshold": 144,
+          "violations": 0,
+          "f1": 0.9996828417380272,
+          "recall": 1.0,
+          "flat_false": 0.0,
+          "noise_ratio": 0.40314169698859076
+        },
+        {
+          "filter_id": 0,
+          "epsilon": 256,
+          "threshold": 160,
+          "violations": 0,
+          "f1": 1.0,
+          "recall": 1.0,
+          "flat_false": 0.0,
+          "noise_ratio": 0.40314169698859076
+        },
+        {
+          "filter_id": 0,
+          "epsilon": 256,
+          "threshold": 192,
+          "violations": 0,
+          "f1": 0.9981096408317581,
+          "recall": 0.9939759036144578,
+          "flat_false": 0.0,
+          "noise_ratio": 0.40314169698859076
+        },
+        {
+          "filter_id": 0,
+          "epsilon": 256,
+          "threshold": 224,
+          "violations": 1,
+          "f1": 0.9555707983815834,
+          "recall": 0.8674698795180723,
+          "flat_false": 0.0,
+          "noise_ratio": 0.40314169698859076
+        },
+        {
+          "filter_id": 0,
+          "epsilon": 256,
+          "threshold": 256,
+          "violations": 1,
+          "f1": 0.7900047887049123,
+          "recall": 0.49698795180722893,
+          "flat_false": 0.0,
+          "noise_ratio": 0.40314169698859076
+        },
+        {
+          "filter_id": 0,
+          "epsilon": 1024,
+          "threshold": 32,
+          "violations": 1,
+          "f1": 0.8126744070814141,
+          "recall": 1.0,
+          "flat_false": 0.013333333333333334,
+          "noise_ratio": 0.2071755317563185
+        },
+        {
+          "filter_id": 0,
+          "epsilon": 1024,
+          "threshold": 48,
+          "violations": 0,
+          "f1": 0.9426008376103376,
+          "recall": 1.0,
+          "flat_false": 0.0005555555555555556,
+          "noise_ratio": 0.2071755317563185
+        },
+        {
+          "filter_id": 0,
+          "epsilon": 1024,
+          "threshold": 64,
+          "violations": 0,
+          "f1": 0.9891950515226721,
+          "recall": 1.0,
+          "flat_false": 0.0,
+          "noise_ratio": 0.2071755317563185
+        },
+        {
+          "filter_id": 0,
+          "epsilon": 1024,
+          "threshold": 80,
+          "violations": 0,
+          "f1": 0.9991084119019793,
+          "recall": 1.0,
+          "flat_false": 0.0,
+          "noise_ratio": 0.2071755317563185
+        },
+        {
+          "filter_id": 0,
+          "epsilon": 1024,
+          "threshold": 96,
+          "violations": 0,
+          "f1": 1.0,
+          "recall": 1.0,
+          "flat_false": 0.0,
+          "noise_ratio": 0.2071755317563185
+        },
+        {
+          "filter_id": 0,
+          "epsilon": 1024,
+          "threshold": 112,
+          "violations": 0,
+          "f1": 1.0,
+          "recall": 1.0,
+          "flat_false": 0.0,
+          "noise_ratio": 0.2071755317563185
+        },
+        {
+          "filter_id": 0,
+          "epsilon": 1024,
+          "threshold": 128,
+          "violations": 0,
+          "f1": 1.0,
+          "recall": 1.0,
+          "flat_false": 0.0,
+          "noise_ratio": 0.2071755317563185
+        },
+        {
+          "filter_id": 0,
+          "epsilon": 1024,
+          "threshold": 144,
+          "violations": 0,
+          "f1": 0.9917354568470378,
+          "recall": 0.9762449799196787,
+          "flat_false": 0.0,
+          "noise_ratio": 0.2071755317563185
+        },
+        {
+          "filter_id": 0,
+          "epsilon": 1024,
+          "threshold": 160,
+          "violations": 1,
+          "f1": 0.9419434901775551,
+          "recall": 0.8704819277108434,
+          "flat_false": 0.0,
+          "noise_ratio": 0.2071755317563185
+        },
+        {
+          "filter_id": 0,
+          "epsilon": 1024,
+          "threshold": 192,
+          "violations": 1,
+          "f1": 0.6828919503289574,
+          "recall": 0.36244979919678716,
+          "flat_false": 0.0,
+          "noise_ratio": 0.2071755317563185
+        },
+        {
+          "filter_id": 0,
+          "epsilon": 1024,
+          "threshold": 224,
+          "violations": 1,
+          "f1": 0.44512871950601857,
+          "recall": 0.04618473895582329,
+          "flat_false": 0.0,
+          "noise_ratio": 0.2071755317563185
+        },
+        {
+          "filter_id": 0,
+          "epsilon": 1024,
+          "threshold": 256,
+          "violations": 1,
+          "f1": 0.4126916537295779,
+          "recall": 0.007028112449799197,
+          "flat_false": 0.0,
+          "noise_ratio": 0.2071755317563185
+        }
+      ]
+    },
+    {
+      "filter_id": 1,
+      "chosen": {
+        "filter_id": 1,
+        "epsilon": 64,
+        "threshold": 128,
+        "violations": 0,
+        "f1": 0.9994416527079842,
+        "recall": 1.0,
+        "flat_false": 0.0,
+        "noise_ratio": 0.3911878783387552
+      },
+      "holdout": [
+        {
+          "f1": 1.0,
+          "recall": 1.0,
+          "flat_false": 0.0,
+          "noise_ratio": 0.36893104526749193
+        },
+        {
+          "f1": 0.9981167608286252,
+          "recall": 0.99,
+          "flat_false": 0.0,
+          "noise_ratio": 0.3973511132012083
+        },
+        {
+          "f1": 0.9981167608286252,
+          "recall": 0.99,
+          "flat_false": 0.0,
+          "noise_ratio": 0.3677110891600264
+        }
+      ],
+      "passed": true,
+      "candidates": [
+        {
+          "filter_id": 1,
+          "epsilon": 64,
+          "threshold": 32,
+          "violations": 1,
+          "f1": 0.32490360544274066,
+          "recall": 1.0,
+          "flat_false": 0.5011111111111112,
+          "noise_ratio": 0.3911878783387552
+        },
+        {
+          "filter_id": 1,
+          "epsilon": 64,
+          "threshold": 48,
+          "violations": 1,
+          "f1": 0.545504664191287,
+          "recall": 1.0,
+          "flat_false": 0.19999999999999998,
+          "noise_ratio": 0.3911878783387552
+        },
+        {
+          "filter_id": 1,
+          "epsilon": 64,
+          "threshold": 64,
+          "violations": 1,
+          "f1": 0.80528909189434,
+          "recall": 1.0,
+          "flat_false": 0.051666666666666666,
+          "noise_ratio": 0.3911878783387552
+        },
+        {
+          "filter_id": 1,
+          "epsilon": 64,
+          "threshold": 80,
+          "violations": 1,
+          "f1": 0.9520029622995816,
+          "recall": 1.0,
+          "flat_false": 0.014444444444444446,
+          "noise_ratio": 0.3911878783387552
+        },
+        {
+          "filter_id": 1,
+          "epsilon": 64,
+          "threshold": 96,
+          "violations": 0,
+          "f1": 0.9942113222733533,
+          "recall": 1.0,
+          "flat_false": 0.0011111111111111111,
+          "noise_ratio": 0.3911878783387552
+        },
+        {
+          "filter_id": 1,
+          "epsilon": 64,
+          "threshold": 112,
+          "violations": 0,
+          "f1": 0.9992081131715067,
+          "recall": 1.0,
+          "flat_false": 0.0,
+          "noise_ratio": 0.3911878783387552
+        },
+        {
+          "filter_id": 1,
+          "epsilon": 64,
+          "threshold": 128,
+          "violations": 0,
+          "f1": 0.9994416527079842,
+          "recall": 1.0,
+          "flat_false": 0.0,
+          "noise_ratio": 0.3911878783387552
+        },
+        {
+          "filter_id": 1,
+          "epsilon": 64,
+          "threshold": 144,
+          "violations": 0,
+          "f1": 0.9971683265926679,
+          "recall": 0.985,
+          "flat_false": 0.0,
+          "noise_ratio": 0.3911878783387552
+        },
+        {
+          "filter_id": 1,
+          "epsilon": 64,
+          "threshold": 160,
+          "violations": 0,
+          "f1": 0.9843345089538738,
+          "recall": 0.9249999999999999,
+          "flat_false": 0.0,
+          "noise_ratio": 0.3911878783387552
+        },
+        {
+          "filter_id": 1,
+          "epsilon": 64,
+          "threshold": 192,
+          "violations": 1,
+          "f1": 0.8932301883432526,
+          "recall": 0.7533333333333333,
+          "flat_false": 0.0,
+          "noise_ratio": 0.3911878783387552
+        },
+        {
+          "filter_id": 1,
+          "epsilon": 64,
+          "threshold": 224,
+          "violations": 1,
+          "f1": 0.6181148754000607,
+          "recall": 0.3042168674698795,
+          "flat_false": 0.0,
+          "noise_ratio": 0.3911878783387552
+        },
+        {
+          "filter_id": 1,
+          "epsilon": 64,
+          "threshold": 256,
+          "violations": 1,
+          "f1": 0.4297450791259565,
+          "recall": 0.029116465863453816,
+          "flat_false": 0.0,
+          "noise_ratio": 0.3911878783387552
+        }
+      ]
+    }
+  ],
+  "scope": "controlled only; no camera acceptance claim"
+}

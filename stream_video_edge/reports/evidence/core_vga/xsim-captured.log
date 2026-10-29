@@ -1,0 +1,19 @@
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Thu Oct 29 15:14:49 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/snapshot/xsim_script.tcl
+# xsim {snapshot} -testplusarg VECTORS=E:/FPGA_Test_Work/edge_v03_work/core_vga_consolidated_20261029 -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+PASS tb_edge_core W=640 H=480 frames=6 pixels=296100
+$finish called at time : 49261920 ns : File "E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/sim/tb_edge_core.sv" Line 71
+run: Time (s): cpu = 00:00:01 ; elapsed = 00:01:36 . Memory (MB): peak = 167.699 ; gain = 0.000
+exit
+INFO: xsimkernel Simulation Memory Usage: 15152 KB (Peak: 15152 KB), Simulation CPU Usage: 94624 ms
+INFO: [Common 17-206] Exiting xsim at Thu Oct 29 15:16:26 2026...

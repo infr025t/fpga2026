@@ -1,0 +1,66 @@
+{
+  "top": "tb_selected",
+  "passed": true,
+  "stages": [
+    {
+      "tool": "xvlog",
+      "command": [
+        "E:\\Vivado\\2025.1\\Vivado\\bin\\xvlog.bat",
+        "-sv",
+        "E:\\Vivado_FPGA_Programs\\fpga2026-v0.3-edge\\stream_video_edge\\rtl\\core\\core_latency_pkg.sv",
+        "E:\\Vivado_FPGA_Programs\\fpga2026-v0.3-edge\\stream_video_edge\\rtl\\core\\coefficient5.sv",
+        "E:\\Vivado_FPGA_Programs\\fpga2026-v0.3-edge\\stream_video_edge\\rtl\\core\\coefficient_box5.sv",
+        "E:\\Vivado_FPGA_Programs\\fpga2026-v0.3-edge\\stream_video_edge\\rtl\\core\\div25_pipe.sv",
+        "E:\\Vivado_FPGA_Programs\\fpga2026-v0.3-edge\\stream_video_edge\\rtl\\core\\edge_core.sv",
+        "E:\\Vivado_FPGA_Programs\\fpga2026-v0.3-edge\\stream_video_edge\\rtl\\core\\gaussian3.sv",
+        "E:\\Vivado_FPGA_Programs\\fpga2026-v0.3-edge\\stream_video_edge\\rtl\\core\\guided_base.sv",
+        "E:\\Vivado_FPGA_Programs\\fpga2026-v0.3-edge\\stream_video_edge\\rtl\\core\\moments5.sv",
+        "E:\\Vivado_FPGA_Programs\\fpga2026-v0.3-edge\\stream_video_edge\\rtl\\core\\ratio_q12_pipe.sv",
+        "E:\\Vivado_FPGA_Programs\\fpga2026-v0.3-edge\\stream_video_edge\\rtl\\core\\reconstruct.sv",
+        "E:\\Vivado_FPGA_Programs\\fpga2026-v0.3-edge\\stream_video_edge\\rtl\\core\\row_window3.sv",
+        "E:\\Vivado_FPGA_Programs\\fpga2026-v0.3-edge\\stream_video_edge\\rtl\\core\\row_window5.sv",
+        "E:\\Vivado_FPGA_Programs\\fpga2026-v0.3-edge\\stream_video_edge\\rtl\\core\\sobel3.sv",
+        "E:\\Vivado_FPGA_Programs\\fpga2026-v0.3-edge\\stream_video_edge\\rtl\\core\\token_pipe.sv",
+        "E:\\Vivado_FPGA_Programs\\fpga2026-v0.3-edge\\stream_video_edge\\sim\\tb_edge_core.sv",
+        "E:\\FPGA_Test_Work\\edge_v03_work\\core_small_step\\selected.sv"
+      ],
+      "exit": 0,
+      "seconds": 0.792,
+      "log": "E:\\FPGA_Test_Work\\edge_v03_work\\core_small_step\\xvlog-captured.log",
+      "private_job_active_processes": 0
+    },
+    {
+      "tool": "xelab",
+      "command": [
+        "E:\\Vivado\\2025.1\\Vivado\\bin\\xelab.bat",
+        "tb_selected",
+        "-s",
+        "snapshot"
+      ],
+      "exit": 0,
+      "seconds": 2.856,
+      "log": "E:\\FPGA_Test_Work\\edge_v03_work\\core_small_step\\xelab-captured.log",
+      "private_job_active_processes": 0
+    },
+    {
+      "tool": "xsim",
+      "command": [
+        "E:\\Vivado\\2025.1\\Vivado\\bin\\xsim.bat",
+        "snapshot",
+        "-runall",
+        "-f",
+        "xsim-options.txt"
+      ],
+      "exit": 0,
+      "seconds": 2.8,
+      "log": "E:\\FPGA_Test_Work\\edge_v03_work\\core_small_step\\xsim-captured.log",
+      "private_job_active_processes": 0
+    }
+  ],
+  "work_dir": "E:\\FPGA_Test_Work\\edge_v03_work\\core_small_step",
+  "reason": "PASS",
+  "simulation_summary": [
+    "PASS tb_edge_core W=32 H=24 frames=6 pixels=308"
+  ],
+  "pattern": "step"
+}

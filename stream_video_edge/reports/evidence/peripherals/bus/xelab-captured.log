@@ -1,0 +1,19 @@
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: E:/Vivado/2025.1/Vivado/bin/unwrapped/win64.o/xelab.exe tb_nt35510_bus8 -s snapshot 
+Multi-threading is on. Using 30 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4328] File: E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/sim/tb_nt35510_bus8.sv Line: 79 : Sensitivity on input argument "byte_phase" of task "cancelled_word" may never get triggered.
+WARNING: [XSIM 43-4328] File: E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/sim/tb_nt35510_bus8.sv Line: 79 : Sensitivity on input argument "byte_phase" of task "cancelled_word" may never get triggered.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.nt35510_bus8_default
+Compiling module work.nt35510_bus8_case
+Compiling module work.nt35510_bus8(LOW_CYCLES=2,HOLD_C...
+Compiling module work.nt35510_bus8_case(LOW_CYCLES=2,H...
+Compiling module work.tb_nt35510_bus8
+Built simulation snapshot snapshot

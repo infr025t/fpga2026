@@ -1,0 +1,16 @@
+{
+  "number": 1,
+  "frame_id": 1,
+  "filter": "GUIDED",
+  "view": "RAW",
+  "width": 630,
+  "height": 470,
+  "epsilon": 1024,
+  "threshold": 96,
+  "payload_crc32": "f10a1e02",
+  "source_crc32": "5d11ffc3",
+  "source": "CAMERA",
+  "bit_exact_reference_verified": false,
+  "real_camera_image_quality_verified": false,
+  "image": "E:\\FPGA_Test_Work\\edge_v03_work\\consolidation_2026-10-29\\hardware_camera\\GUIDED\\RAW\\frame_001_id00000001.png"
+}

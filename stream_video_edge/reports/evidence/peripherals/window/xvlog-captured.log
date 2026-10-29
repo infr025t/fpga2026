@@ -1,0 +1,16 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/display/edge_display_stream_if.sv" into library work
+INFO: [VRFC 10-311] analyzing module edge_display_stream_if
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/display/nt35510_bringup_top.sv" into library work
+INFO: [VRFC 10-311] analyzing module nt35510_bringup_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/display/nt35510_bus8.sv" into library work
+INFO: [VRFC 10-311] analyzing module nt35510_bus8
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/display/nt35510_init.sv" into library work
+INFO: [VRFC 10-311] analyzing module nt35510_init
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/display/nt35510_init_rom.sv" into library work
+INFO: [VRFC 10-311] analyzing module nt35510_init_rom
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/display/nt35510_test_display.sv" into library work
+INFO: [VRFC 10-311] analyzing module nt35510_test_display
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/display/nt35510_window_writer.sv" into library work
+INFO: [VRFC 10-311] analyzing module nt35510_window_writer
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/sim/tb_nt35510_window.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_nt35510_window

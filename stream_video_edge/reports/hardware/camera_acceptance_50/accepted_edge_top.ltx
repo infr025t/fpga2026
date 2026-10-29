@@ -1,0 +1,1540 @@
+{
+    "ltx_root": {
+        "version": 4,
+        "minor": 0,
+        "ltx_data": [
+            {
+                "name": "EDA_PROBESET",
+                "active": true,
+                "debug_cores": [
+                    {
+                        "type": "XSDB_V3",
+                        "name": "dbg_hub",
+                        "spec": "labtools_xsdbm_v3",
+                        "clk_input_freq_hz": "100000000"
+                    },
+                    {
+                        "type": "VIO_V2",
+                        "name": "debug_bridge",
+                        "spec": "labtools_vio_v3",
+                        "ipName": "vio",
+                        "core_location": {
+                            "user_chain": 1,
+                            "slave_index": 0,
+                            "bscan_switch_index": 0
+                        },
+                        "uuid": "F4CB109969925E9BBB377A70FDA6FD20",
+                        "pins": [
+                            {
+                                "name": "probe_in0",
+                                "id": 0,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "ready",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in0",
+                                "id": 1,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 1,
+                                "rightIndex": 1,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "busy",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in0",
+                                "id": 2,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 2,
+                                "rightIndex": 2,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "finished",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in0",
+                                "id": 3,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 3,
+                                "rightIndex": 3,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "config_error",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in0",
+                                "id": 4,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 4,
+                                "rightIndex": 4,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "rejected",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in0",
+                                "id": 5,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 5,
+                                "rightIndex": 5,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "config_done",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in0",
+                                "id": 6,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 6,
+                                "rightIndex": 7,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "ss_1",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "ss_1[7]"
+                                            },
+                                            {
+                                                "name": "ss_1[6]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in0",
+                                "id": 7,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 8,
+                                "rightIndex": 15,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "error",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "error[7]"
+                                            },
+                                            {
+                                                "name": "error[6]"
+                                            },
+                                            {
+                                                "name": "error[5]"
+                                            },
+                                            {
+                                                "name": "error[4]"
+                                            },
+                                            {
+                                                "name": "error[3]"
+                                            },
+                                            {
+                                                "name": "error[2]"
+                                            },
+                                            {
+                                                "name": "error[1]"
+                                            },
+                                            {
+                                                "name": "error[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in0",
+                                "id": 8,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 16,
+                                "rightIndex": 31,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "ss",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "ss[15]"
+                                            },
+                                            {
+                                                "name": "ss[14]"
+                                            },
+                                            {
+                                                "name": "ss[13]"
+                                            },
+                                            {
+                                                "name": "ss[12]"
+                                            },
+                                            {
+                                                "name": "ss[11]"
+                                            },
+                                            {
+                                                "name": "ss[10]"
+                                            },
+                                            {
+                                                "name": "ss[9]"
+                                            },
+                                            {
+                                                "name": "ss[8]"
+                                            },
+                                            {
+                                                "name": "ss[7]"
+                                            },
+                                            {
+                                                "name": "ss[6]"
+                                            },
+                                            {
+                                                "name": "ss[5]"
+                                            },
+                                            {
+                                                "name": "ss[4]"
+                                            },
+                                            {
+                                                "name": "ss[3]"
+                                            },
+                                            {
+                                                "name": "ss[2]"
+                                            },
+                                            {
+                                                "name": "ss[1]"
+                                            },
+                                            {
+                                                "name": "ss[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in1",
+                                "id": 9,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 255,
+                                "portIndex": 1,
+                                "nets": [
+                                    {
+                                        "name": "debug_camera",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "debug_camera[255]"
+                                            },
+                                            {
+                                                "name": "debug_camera[254]"
+                                            },
+                                            {
+                                                "name": "debug_camera[253]"
+                                            },
+                                            {
+                                                "name": "debug_camera[252]"
+                                            },
+                                            {
+                                                "name": "debug_camera[251]"
+                                            },
+                                            {
+                                                "name": "debug_camera[250]"
+                                            },
+                                            {
+                                                "name": "debug_camera[249]"
+                                            },
+                                            {
+                                                "name": "debug_camera[248]"
+                                            },
+                                            {
+                                                "name": "debug_camera[247]"
+                                            },
+                                            {
+                                                "name": "debug_camera[246]"
+                                            },
+                                            {
+                                                "name": "debug_camera[245]"
+                                            },
+                                            {
+                                                "name": "debug_camera[244]"
+                                            },
+                                            {
+                                                "name": "debug_camera[243]"
+                                            },
+                                            {
+                                                "name": "debug_camera[242]"
+                                            },
+                                            {
+                                                "name": "debug_camera[241]"
+                                            },
+                                            {
+                                                "name": "debug_camera[240]"
+                                            },
+                                            {
+                                                "name": "debug_camera[239]"
+                                            },
+                                            {
+                                                "name": "debug_camera[238]"
+                                            },
+                                            {
+                                                "name": "debug_camera[237]"
+                                            },
+                                            {
+                                                "name": "debug_camera[236]"
+                                            },
+                                            {
+                                                "name": "debug_camera[235]"
+                                            },
+                                            {
+                                                "name": "debug_camera[234]"
+                                            },
+                                            {
+                                                "name": "debug_camera[233]"
+                                            },
+                                            {
+                                                "name": "debug_camera[232]"
+                                            },
+                                            {
+                                                "name": "debug_camera[231]"
+                                            },
+                                            {
+                                                "name": "debug_camera[230]"
+                                            },
+                                            {
+                                                "name": "debug_camera[229]"
+                                            },
+                                            {
+                                                "name": "debug_camera[228]"
+                                            },
+                                            {
+                                                "name": "debug_camera[227]"
+                                            },
+                                            {
+                                                "name": "debug_camera[226]"
+                                            },
+                                            {
+                                                "name": "debug_camera[225]"
+                                            },
+                                            {
+                                                "name": "debug_camera[224]"
+                                            },
+                                            {
+                                                "name": "debug_camera[223]"
+                                            },
+                                            {
+                                                "name": "debug_camera[222]"
+                                            },
+                                            {
+                                                "name": "debug_camera[221]"
+                                            },
+                                            {
+                                                "name": "debug_camera[220]"
+                                            },
+                                            {
+                                                "name": "debug_camera[219]"
+                                            },
+                                            {
+                                                "name": "debug_camera[218]"
+                                            },
+                                            {
+                                                "name": "debug_camera[217]"
+                                            },
+                                            {
+                                                "name": "debug_camera[216]"
+                                            },
+                                            {
+                                                "name": "debug_camera[215]"
+                                            },
+                                            {
+                                                "name": "debug_camera[214]"
+                                            },
+                                            {
+                                                "name": "debug_camera[213]"
+                                            },
+                                            {
+                                                "name": "debug_camera[212]"
+                                            },
+                                            {
+                                                "name": "debug_camera[211]"
+                                            },
+                                            {
+                                                "name": "debug_camera[210]"
+                                            },
+                                            {
+                                                "name": "debug_camera[209]"
+                                            },
+                                            {
+                                                "name": "debug_camera[208]"
+                                            },
+                                            {
+                                                "name": "debug_camera[207]"
+                                            },
+                                            {
+                                                "name": "debug_camera[206]"
+                                            },
+                                            {
+                                                "name": "debug_camera[205]"
+                                            },
+                                            {
+                                                "name": "debug_camera[204]"
+                                            },
+                                            {
+                                                "name": "debug_camera[203]"
+                                            },
+                                            {
+                                                "name": "debug_camera[202]"
+                                            },
+                                            {
+                                                "name": "debug_camera[201]"
+                                            },
+                                            {
+                                                "name": "debug_camera[200]"
+                                            },
+                                            {
+                                                "name": "debug_camera[199]"
+                                            },
+                                            {
+                                                "name": "debug_camera[198]"
+                                            },
+                                            {
+                                                "name": "debug_camera[197]"
+                                            },
+                                            {
+                                                "name": "debug_camera[196]"
+                                            },
+                                            {
+                                                "name": "debug_camera[195]"
+                                            },
+                                            {
+                                                "name": "debug_camera[194]"
+                                            },
+                                            {
+                                                "name": "debug_camera[193]"
+                                            },
+                                            {
+                                                "name": "debug_camera[192]"
+                                            },
+                                            {
+                                                "name": "debug_camera[191]"
+                                            },
+                                            {
+                                                "name": "debug_camera[190]"
+                                            },
+                                            {
+                                                "name": "debug_camera[189]"
+                                            },
+                                            {
+                                                "name": "debug_camera[188]"
+                                            },
+                                            {
+                                                "name": "debug_camera[187]"
+                                            },
+                                            {
+                                                "name": "debug_camera[186]"
+                                            },
+                                            {
+                                                "name": "debug_camera[185]"
+                                            },
+                                            {
+                                                "name": "debug_camera[184]"
+                                            },
+                                            {
+                                                "name": "debug_camera[183]"
+                                            },
+                                            {
+                                                "name": "debug_camera[182]"
+                                            },
+                                            {
+                                                "name": "debug_camera[181]"
+                                            },
+                                            {
+                                                "name": "debug_camera[180]"
+                                            },
+                                            {
+                                                "name": "debug_camera[179]"
+                                            },
+                                            {
+                                                "name": "debug_camera[178]"
+                                            },
+                                            {
+                                                "name": "debug_camera[177]"
+                                            },
+                                            {
+                                                "name": "debug_camera[176]"
+                                            },
+                                            {
+                                                "name": "debug_camera[175]"
+                                            },
+                                            {
+                                                "name": "debug_camera[174]"
+                                            },
+                                            {
+                                                "name": "debug_camera[173]"
+                                            },
+                                            {
+                                                "name": "debug_camera[172]"
+                                            },
+                                            {
+                                                "name": "debug_camera[171]"
+                                            },
+                                            {
+                                                "name": "debug_camera[170]"
+                                            },
+                                            {
+                                                "name": "debug_camera[169]"
+                                            },
+                                            {
+                                                "name": "debug_camera[168]"
+                                            },
+                                            {
+                                                "name": "debug_camera[167]"
+                                            },
+                                            {
+                                                "name": "debug_camera[166]"
+                                            },
+                                            {
+                                                "name": "debug_camera[165]"
+                                            },
+                                            {
+                                                "name": "debug_camera[164]"
+                                            },
+                                            {
+                                                "name": "debug_camera[163]"
+                                            },
+                                            {
+                                                "name": "debug_camera[162]"
+                                            },
+                                            {
+                                                "name": "debug_camera[161]"
+                                            },
+                                            {
+                                                "name": "debug_camera[160]"
+                                            },
+                                            {
+                                                "name": "debug_camera[159]"
+                                            },
+                                            {
+                                                "name": "debug_camera[158]"
+                                            },
+                                            {
+                                                "name": "debug_camera[157]"
+                                            },
+                                            {
+                                                "name": "debug_camera[156]"
+                                            },
+                                            {
+                                                "name": "debug_camera[155]"
+                                            },
+                                            {
+                                                "name": "debug_camera[154]"
+                                            },
+                                            {
+                                                "name": "debug_camera[153]"
+                                            },
+                                            {
+                                                "name": "debug_camera[152]"
+                                            },
+                                            {
+                                                "name": "debug_camera[151]"
+                                            },
+                                            {
+                                                "name": "debug_camera[150]"
+                                            },
+                                            {
+                                                "name": "debug_camera[149]"
+                                            },
+                                            {
+                                                "name": "debug_camera[148]"
+                                            },
+                                            {
+                                                "name": "debug_camera[147]"
+                                            },
+                                            {
+                                                "name": "debug_camera[146]"
+                                            },
+                                            {
+                                                "name": "debug_camera[145]"
+                                            },
+                                            {
+                                                "name": "debug_camera[144]"
+                                            },
+                                            {
+                                                "name": "debug_camera[143]"
+                                            },
+                                            {
+                                                "name": "debug_camera[142]"
+                                            },
+                                            {
+                                                "name": "debug_camera[141]"
+                                            },
+                                            {
+                                                "name": "debug_camera[140]"
+                                            },
+                                            {
+                                                "name": "debug_camera[139]"
+                                            },
+                                            {
+                                                "name": "debug_camera[138]"
+                                            },
+                                            {
+                                                "name": "debug_camera[137]"
+                                            },
+                                            {
+                                                "name": "debug_camera[136]"
+                                            },
+                                            {
+                                                "name": "debug_camera[135]"
+                                            },
+                                            {
+                                                "name": "debug_camera[134]"
+                                            },
+                                            {
+                                                "name": "debug_camera[133]"
+                                            },
+                                            {
+                                                "name": "debug_camera[132]"
+                                            },
+                                            {
+                                                "name": "debug_camera[131]"
+                                            },
+                                            {
+                                                "name": "debug_camera[130]"
+                                            },
+                                            {
+                                                "name": "debug_camera[129]"
+                                            },
+                                            {
+                                                "name": "debug_camera[128]"
+                                            },
+                                            {
+                                                "name": "debug_camera[127]"
+                                            },
+                                            {
+                                                "name": "debug_camera[126]"
+                                            },
+                                            {
+                                                "name": "debug_camera[125]"
+                                            },
+                                            {
+                                                "name": "debug_camera[124]"
+                                            },
+                                            {
+                                                "name": "debug_camera[123]"
+                                            },
+                                            {
+                                                "name": "debug_camera[122]"
+                                            },
+                                            {
+                                                "name": "debug_camera[121]"
+                                            },
+                                            {
+                                                "name": "debug_camera[120]"
+                                            },
+                                            {
+                                                "name": "debug_camera[119]"
+                                            },
+                                            {
+                                                "name": "debug_camera[118]"
+                                            },
+                                            {
+                                                "name": "debug_camera[117]"
+                                            },
+                                            {
+                                                "name": "debug_camera[116]"
+                                            },
+                                            {
+                                                "name": "debug_camera[115]"
+                                            },
+                                            {
+                                                "name": "debug_camera[114]"
+                                            },
+                                            {
+                                                "name": "debug_camera[113]"
+                                            },
+                                            {
+                                                "name": "debug_camera[112]"
+                                            },
+                                            {
+                                                "name": "debug_camera[111]"
+                                            },
+                                            {
+                                                "name": "debug_camera[110]"
+                                            },
+                                            {
+                                                "name": "debug_camera[109]"
+                                            },
+                                            {
+                                                "name": "debug_camera[108]"
+                                            },
+                                            {
+                                                "name": "debug_camera[107]"
+                                            },
+                                            {
+                                                "name": "debug_camera[106]"
+                                            },
+                                            {
+                                                "name": "debug_camera[105]"
+                                            },
+                                            {
+                                                "name": "debug_camera[104]"
+                                            },
+                                            {
+                                                "name": "debug_camera[103]"
+                                            },
+                                            {
+                                                "name": "debug_camera[102]"
+                                            },
+                                            {
+                                                "name": "debug_camera[101]"
+                                            },
+                                            {
+                                                "name": "debug_camera[100]"
+                                            },
+                                            {
+                                                "name": "debug_camera[99]"
+                                            },
+                                            {
+                                                "name": "debug_camera[98]"
+                                            },
+                                            {
+                                                "name": "debug_camera[97]"
+                                            },
+                                            {
+                                                "name": "debug_camera[96]"
+                                            },
+                                            {
+                                                "name": "debug_camera[95]"
+                                            },
+                                            {
+                                                "name": "debug_camera[94]"
+                                            },
+                                            {
+                                                "name": "debug_camera[93]"
+                                            },
+                                            {
+                                                "name": "debug_camera[92]"
+                                            },
+                                            {
+                                                "name": "debug_camera[91]"
+                                            },
+                                            {
+                                                "name": "debug_camera[90]"
+                                            },
+                                            {
+                                                "name": "debug_camera[89]"
+                                            },
+                                            {
+                                                "name": "debug_camera[88]"
+                                            },
+                                            {
+                                                "name": "debug_camera[87]"
+                                            },
+                                            {
+                                                "name": "debug_camera[86]"
+                                            },
+                                            {
+                                                "name": "debug_camera[85]"
+                                            },
+                                            {
+                                                "name": "debug_camera[84]"
+                                            },
+                                            {
+                                                "name": "debug_camera[83]"
+                                            },
+                                            {
+                                                "name": "debug_camera[82]"
+                                            },
+                                            {
+                                                "name": "debug_camera[81]"
+                                            },
+                                            {
+                                                "name": "debug_camera[80]"
+                                            },
+                                            {
+                                                "name": "debug_camera[79]"
+                                            },
+                                            {
+                                                "name": "debug_camera[78]"
+                                            },
+                                            {
+                                                "name": "debug_camera[77]"
+                                            },
+                                            {
+                                                "name": "debug_camera[76]"
+                                            },
+                                            {
+                                                "name": "debug_camera[75]"
+                                            },
+                                            {
+                                                "name": "debug_camera[74]"
+                                            },
+                                            {
+                                                "name": "debug_camera[73]"
+                                            },
+                                            {
+                                                "name": "debug_camera[72]"
+                                            },
+                                            {
+                                                "name": "debug_camera[71]"
+                                            },
+                                            {
+                                                "name": "debug_camera[70]"
+                                            },
+                                            {
+                                                "name": "debug_camera[69]"
+                                            },
+                                            {
+                                                "name": "debug_camera[68]"
+                                            },
+                                            {
+                                                "name": "debug_camera[67]"
+                                            },
+                                            {
+                                                "name": "debug_camera[66]"
+                                            },
+                                            {
+                                                "name": "debug_camera[65]"
+                                            },
+                                            {
+                                                "name": "debug_camera[64]"
+                                            },
+                                            {
+                                                "name": "debug_camera[63]"
+                                            },
+                                            {
+                                                "name": "debug_camera[62]"
+                                            },
+                                            {
+                                                "name": "debug_camera[61]"
+                                            },
+                                            {
+                                                "name": "debug_camera[60]"
+                                            },
+                                            {
+                                                "name": "debug_camera[59]"
+                                            },
+                                            {
+                                                "name": "debug_camera[58]"
+                                            },
+                                            {
+                                                "name": "debug_camera[57]"
+                                            },
+                                            {
+                                                "name": "debug_camera[56]"
+                                            },
+                                            {
+                                                "name": "debug_camera[55]"
+                                            },
+                                            {
+                                                "name": "debug_camera[54]"
+                                            },
+                                            {
+                                                "name": "debug_camera[53]"
+                                            },
+                                            {
+                                                "name": "debug_camera[52]"
+                                            },
+                                            {
+                                                "name": "debug_camera[51]"
+                                            },
+                                            {
+                                                "name": "debug_camera[50]"
+                                            },
+                                            {
+                                                "name": "debug_camera[49]"
+                                            },
+                                            {
+                                                "name": "debug_camera[48]"
+                                            },
+                                            {
+                                                "name": "debug_camera[47]"
+                                            },
+                                            {
+                                                "name": "debug_camera[46]"
+                                            },
+                                            {
+                                                "name": "debug_camera[45]"
+                                            },
+                                            {
+                                                "name": "debug_camera[44]"
+                                            },
+                                            {
+                                                "name": "debug_camera[43]"
+                                            },
+                                            {
+                                                "name": "debug_camera[42]"
+                                            },
+                                            {
+                                                "name": "debug_camera[41]"
+                                            },
+                                            {
+                                                "name": "debug_camera[40]"
+                                            },
+                                            {
+                                                "name": "debug_camera[39]"
+                                            },
+                                            {
+                                                "name": "debug_camera[38]"
+                                            },
+                                            {
+                                                "name": "debug_camera[37]"
+                                            },
+                                            {
+                                                "name": "debug_camera[36]"
+                                            },
+                                            {
+                                                "name": "debug_camera[35]"
+                                            },
+                                            {
+                                                "name": "debug_camera[34]"
+                                            },
+                                            {
+                                                "name": "debug_camera[33]"
+                                            },
+                                            {
+                                                "name": "debug_camera[32]"
+                                            },
+                                            {
+                                                "name": "debug_camera[31]"
+                                            },
+                                            {
+                                                "name": "debug_camera[30]"
+                                            },
+                                            {
+                                                "name": "debug_camera[29]"
+                                            },
+                                            {
+                                                "name": "debug_camera[28]"
+                                            },
+                                            {
+                                                "name": "debug_camera[27]"
+                                            },
+                                            {
+                                                "name": "debug_camera[26]"
+                                            },
+                                            {
+                                                "name": "debug_camera[25]"
+                                            },
+                                            {
+                                                "name": "debug_camera[24]"
+                                            },
+                                            {
+                                                "name": "debug_camera[23]"
+                                            },
+                                            {
+                                                "name": "debug_camera[22]"
+                                            },
+                                            {
+                                                "name": "debug_camera[21]"
+                                            },
+                                            {
+                                                "name": "debug_camera[20]"
+                                            },
+                                            {
+                                                "name": "debug_camera[19]"
+                                            },
+                                            {
+                                                "name": "debug_camera[18]"
+                                            },
+                                            {
+                                                "name": "debug_camera[17]"
+                                            },
+                                            {
+                                                "name": "debug_camera[16]"
+                                            },
+                                            {
+                                                "name": "debug_camera[15]"
+                                            },
+                                            {
+                                                "name": "debug_camera[14]"
+                                            },
+                                            {
+                                                "name": "debug_camera[13]"
+                                            },
+                                            {
+                                                "name": "debug_camera[12]"
+                                            },
+                                            {
+                                                "name": "debug_camera[11]"
+                                            },
+                                            {
+                                                "name": "debug_camera[10]"
+                                            },
+                                            {
+                                                "name": "debug_camera[9]"
+                                            },
+                                            {
+                                                "name": "debug_camera[8]"
+                                            },
+                                            {
+                                                "name": "debug_camera[7]"
+                                            },
+                                            {
+                                                "name": "debug_camera[6]"
+                                            },
+                                            {
+                                                "name": "debug_camera[5]"
+                                            },
+                                            {
+                                                "name": "debug_camera[4]"
+                                            },
+                                            {
+                                                "name": "debug_camera[3]"
+                                            },
+                                            {
+                                                "name": "debug_camera[2]"
+                                            },
+                                            {
+                                                "name": "debug_camera[1]"
+                                            },
+                                            {
+                                                "name": "debug_camera[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in2",
+                                "id": 10,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 127,
+                                "portIndex": 2,
+                                "nets": [
+                                    {
+                                        "name": "debug_sync",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "debug_sync[127]"
+                                            },
+                                            {
+                                                "name": "debug_sync[126]"
+                                            },
+                                            {
+                                                "name": "debug_sync[125]"
+                                            },
+                                            {
+                                                "name": "debug_sync[124]"
+                                            },
+                                            {
+                                                "name": "debug_sync[123]"
+                                            },
+                                            {
+                                                "name": "debug_sync[122]"
+                                            },
+                                            {
+                                                "name": "debug_sync[121]"
+                                            },
+                                            {
+                                                "name": "debug_sync[120]"
+                                            },
+                                            {
+                                                "name": "debug_sync[119]"
+                                            },
+                                            {
+                                                "name": "debug_sync[118]"
+                                            },
+                                            {
+                                                "name": "debug_sync[117]"
+                                            },
+                                            {
+                                                "name": "debug_sync[116]"
+                                            },
+                                            {
+                                                "name": "debug_sync[115]"
+                                            },
+                                            {
+                                                "name": "debug_sync[114]"
+                                            },
+                                            {
+                                                "name": "debug_sync[113]"
+                                            },
+                                            {
+                                                "name": "debug_sync[112]"
+                                            },
+                                            {
+                                                "name": "debug_sync[111]"
+                                            },
+                                            {
+                                                "name": "debug_sync[110]"
+                                            },
+                                            {
+                                                "name": "debug_sync[109]"
+                                            },
+                                            {
+                                                "name": "debug_sync[108]"
+                                            },
+                                            {
+                                                "name": "debug_sync[107]"
+                                            },
+                                            {
+                                                "name": "debug_sync[106]"
+                                            },
+                                            {
+                                                "name": "debug_sync[105]"
+                                            },
+                                            {
+                                                "name": "debug_sync[104]"
+                                            },
+                                            {
+                                                "name": "debug_sync[103]"
+                                            },
+                                            {
+                                                "name": "debug_sync[102]"
+                                            },
+                                            {
+                                                "name": "debug_sync[101]"
+                                            },
+                                            {
+                                                "name": "debug_sync[100]"
+                                            },
+                                            {
+                                                "name": "debug_sync[99]"
+                                            },
+                                            {
+                                                "name": "debug_sync[98]"
+                                            },
+                                            {
+                                                "name": "debug_sync[97]"
+                                            },
+                                            {
+                                                "name": "debug_sync[96]"
+                                            },
+                                            {
+                                                "name": "debug_sync[95]"
+                                            },
+                                            {
+                                                "name": "debug_sync[94]"
+                                            },
+                                            {
+                                                "name": "debug_sync[93]"
+                                            },
+                                            {
+                                                "name": "debug_sync[92]"
+                                            },
+                                            {
+                                                "name": "debug_sync[91]"
+                                            },
+                                            {
+                                                "name": "debug_sync[90]"
+                                            },
+                                            {
+                                                "name": "debug_sync[89]"
+                                            },
+                                            {
+                                                "name": "debug_sync[88]"
+                                            },
+                                            {
+                                                "name": "debug_sync[87]"
+                                            },
+                                            {
+                                                "name": "debug_sync[86]"
+                                            },
+                                            {
+                                                "name": "debug_sync[85]"
+                                            },
+                                            {
+                                                "name": "debug_sync[84]"
+                                            },
+                                            {
+                                                "name": "debug_sync[83]"
+                                            },
+                                            {
+                                                "name": "debug_sync[82]"
+                                            },
+                                            {
+                                                "name": "debug_sync[81]"
+                                            },
+                                            {
+                                                "name": "debug_sync[80]"
+                                            },
+                                            {
+                                                "name": "debug_sync[79]"
+                                            },
+                                            {
+                                                "name": "debug_sync[78]"
+                                            },
+                                            {
+                                                "name": "debug_sync[77]"
+                                            },
+                                            {
+                                                "name": "debug_sync[76]"
+                                            },
+                                            {
+                                                "name": "debug_sync[75]"
+                                            },
+                                            {
+                                                "name": "debug_sync[74]"
+                                            },
+                                            {
+                                                "name": "debug_sync[73]"
+                                            },
+                                            {
+                                                "name": "debug_sync[72]"
+                                            },
+                                            {
+                                                "name": "debug_sync[71]"
+                                            },
+                                            {
+                                                "name": "debug_sync[70]"
+                                            },
+                                            {
+                                                "name": "debug_sync[69]"
+                                            },
+                                            {
+                                                "name": "debug_sync[68]"
+                                            },
+                                            {
+                                                "name": "debug_sync[67]"
+                                            },
+                                            {
+                                                "name": "debug_sync[66]"
+                                            },
+                                            {
+                                                "name": "debug_sync[65]"
+                                            },
+                                            {
+                                                "name": "debug_sync[64]"
+                                            },
+                                            {
+                                                "name": "debug_sync[63]"
+                                            },
+                                            {
+                                                "name": "debug_sync[62]"
+                                            },
+                                            {
+                                                "name": "debug_sync[61]"
+                                            },
+                                            {
+                                                "name": "debug_sync[60]"
+                                            },
+                                            {
+                                                "name": "debug_sync[59]"
+                                            },
+                                            {
+                                                "name": "debug_sync[58]"
+                                            },
+                                            {
+                                                "name": "debug_sync[57]"
+                                            },
+                                            {
+                                                "name": "debug_sync[56]"
+                                            },
+                                            {
+                                                "name": "debug_sync[55]"
+                                            },
+                                            {
+                                                "name": "debug_sync[54]"
+                                            },
+                                            {
+                                                "name": "debug_sync[53]"
+                                            },
+                                            {
+                                                "name": "debug_sync[52]"
+                                            },
+                                            {
+                                                "name": "debug_sync[51]"
+                                            },
+                                            {
+                                                "name": "debug_sync[50]"
+                                            },
+                                            {
+                                                "name": "debug_sync[49]"
+                                            },
+                                            {
+                                                "name": "debug_sync[48]"
+                                            },
+                                            {
+                                                "name": "debug_sync[47]"
+                                            },
+                                            {
+                                                "name": "debug_sync[46]"
+                                            },
+                                            {
+                                                "name": "debug_sync[45]"
+                                            },
+                                            {
+                                                "name": "debug_sync[44]"
+                                            },
+                                            {
+                                                "name": "debug_sync[43]"
+                                            },
+                                            {
+                                                "name": "debug_sync[42]"
+                                            },
+                                            {
+                                                "name": "debug_sync[41]"
+                                            },
+                                            {
+                                                "name": "debug_sync[40]"
+                                            },
+                                            {
+                                                "name": "debug_sync[39]"
+                                            },
+                                            {
+                                                "name": "debug_sync[38]"
+                                            },
+                                            {
+                                                "name": "debug_sync[37]"
+                                            },
+                                            {
+                                                "name": "debug_sync[36]"
+                                            },
+                                            {
+                                                "name": "debug_sync[35]"
+                                            },
+                                            {
+                                                "name": "debug_sync[34]"
+                                            },
+                                            {
+                                                "name": "debug_sync[33]"
+                                            },
+                                            {
+                                                "name": "debug_sync[32]"
+                                            },
+                                            {
+                                                "name": "debug_sync[31]"
+                                            },
+                                            {
+                                                "name": "debug_sync[30]"
+                                            },
+                                            {
+                                                "name": "debug_sync[29]"
+                                            },
+                                            {
+                                                "name": "debug_sync[28]"
+                                            },
+                                            {
+                                                "name": "debug_sync[27]"
+                                            },
+                                            {
+                                                "name": "debug_sync[26]"
+                                            },
+                                            {
+                                                "name": "debug_sync[25]"
+                                            },
+                                            {
+                                                "name": "debug_sync[24]"
+                                            },
+                                            {
+                                                "name": "debug_sync[23]"
+                                            },
+                                            {
+                                                "name": "debug_sync[22]"
+                                            },
+                                            {
+                                                "name": "debug_sync[21]"
+                                            },
+                                            {
+                                                "name": "debug_sync[20]"
+                                            },
+                                            {
+                                                "name": "debug_sync[19]"
+                                            },
+                                            {
+                                                "name": "debug_sync[18]"
+                                            },
+                                            {
+                                                "name": "debug_sync[17]"
+                                            },
+                                            {
+                                                "name": "debug_sync[16]"
+                                            },
+                                            {
+                                                "name": "debug_sync[15]"
+                                            },
+                                            {
+                                                "name": "debug_sync[14]"
+                                            },
+                                            {
+                                                "name": "debug_sync[13]"
+                                            },
+                                            {
+                                                "name": "debug_sync[12]"
+                                            },
+                                            {
+                                                "name": "debug_sync[11]"
+                                            },
+                                            {
+                                                "name": "debug_sync[10]"
+                                            },
+                                            {
+                                                "name": "debug_sync[9]"
+                                            },
+                                            {
+                                                "name": "debug_sync[8]"
+                                            },
+                                            {
+                                                "name": "debug_sync[7]"
+                                            },
+                                            {
+                                                "name": "debug_sync[6]"
+                                            },
+                                            {
+                                                "name": "debug_sync[5]"
+                                            },
+                                            {
+                                                "name": "debug_sync[4]"
+                                            },
+                                            {
+                                                "name": "debug_sync[3]"
+                                            },
+                                            {
+                                                "name": "debug_sync[2]"
+                                            },
+                                            {
+                                                "name": "debug_sync[1]"
+                                            },
+                                            {
+                                                "name": "debug_sync[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_out0",
+                                "id": 11,
+                                "type": "DATA",
+                                "direction": "OUT",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 15,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "virtual_sw",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "virtual_sw[15]"
+                                            },
+                                            {
+                                                "name": "virtual_sw[14]"
+                                            },
+                                            {
+                                                "name": "virtual_sw[13]"
+                                            },
+                                            {
+                                                "name": "virtual_sw[12]"
+                                            },
+                                            {
+                                                "name": "virtual_sw[11]"
+                                            },
+                                            {
+                                                "name": "virtual_sw[10]"
+                                            },
+                                            {
+                                                "name": "virtual_sw[9]"
+                                            },
+                                            {
+                                                "name": "virtual_sw[8]"
+                                            },
+                                            {
+                                                "name": "virtual_sw[7]"
+                                            },
+                                            {
+                                                "name": "virtual_sw[6]"
+                                            },
+                                            {
+                                                "name": "virtual_sw[5]"
+                                            },
+                                            {
+                                                "name": "virtual_sw[4]"
+                                            },
+                                            {
+                                                "name": "virtual_sw[3]"
+                                            },
+                                            {
+                                                "name": "virtual_sw[2]"
+                                            },
+                                            {
+                                                "name": "virtual_sw[1]"
+                                            },
+                                            {
+                                                "name": "virtual_sw[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_out1",
+                                "id": 12,
+                                "type": "DATA",
+                                "direction": "OUT",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 1,
+                                "portIndex": 1,
+                                "nets": [
+                                    {
+                                        "name": "debug_control",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "debug_control[1]"
+                                            },
+                                            {
+                                                "name": "debug_control[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

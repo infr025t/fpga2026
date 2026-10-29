@@ -1,0 +1,18 @@
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Thu Oct 29 12:09:58 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/snapshot/xsim_script.tcl
+# xsim {snapshot} -testplusarg VECTORS=E:/FPGA_Test_Work/edge_v03_work/peripherals_display3/vectors -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+PASS tb_nt35510_display full=1 panel=800x480 active=630x470 viewport=85..714/5..474 clear=1 physical_frames=1 total_bytes=1361732 cycles=10894187
+$finish called at time : 108941870 ns : File "E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/sim/tb_nt35510_display.sv" Line 186
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 167.078 ; gain = 0.031
+exit
+INFO: [Common 17-206] Exiting xsim at Thu Oct 29 12:10:05 2026...

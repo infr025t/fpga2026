@@ -1,2 +1,0 @@
-PASS tb_core_crc publications=113 cycles=9046 standard_vector/first/last/RAW/gaps/config/late/early/atomic_claim/abort/reset/invalid/snapshots/saturation/wrap
-D:\desktop\coding\fpga2026 - demo\stream_video_enhance\sim\tb_core_crc.sv:201: $finish called at 90456000 (1ps)

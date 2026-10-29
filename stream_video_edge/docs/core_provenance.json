@@ -1,0 +1,15 @@
+{
+  "baseline_commit": "2b7f9d64a1ba5ff0ad10861c4cafbe25a3e56e95",
+  "unchanged_primitives": {
+    "token_pipe": "f84c2c309f19abadf6d96ed5b597e0dd5b4b2bae910f917115830d32b6ffa71d",
+    "div25_pipe": "49c1878973a76ff4e7c3a06a440fccfc36002bd433790bc33b5a08cfc098fc56",
+    "ratio_q12_pipe": "78a6790422eea59e989c1973c2a952e7060d18bed445be61e826c4ac65e4e4f9",
+    "row_window5": "f3ffb434b2a96bbf1e1dc5ba338ddac3226f80e13f2276d7088bcd61b923252c",
+    "moments5": "2a2956b582c5a855e61a5aea3ff3c904b0e9ab1acac37d648a32bba33dcdf4ff",
+    "coefficient5": "5e04cf0dd5df18abc1e75c75a791ec1ca5f1d111428b1f4a1194ff0d1e2b58bd",
+    "coefficient_box5": "bbef1e2be89214633e2e084e17653bfb709e912b71a1555f3aea8b2ee3a8fa20",
+    "reconstruct": "e8b0c487ae44cd72f2c41902a7eb3918945b4634a2d0baab5a44cd8ee117e3b8"
+  },
+  "removed": "detail reinjection and four-view guided_core wrapper",
+  "added": "guided-base wrapper, gaussian3, sobel3, frame selector, EVG2 UART and board test top"
+}

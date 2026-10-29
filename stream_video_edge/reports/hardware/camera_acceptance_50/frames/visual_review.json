@@ -1,0 +1,25 @@
+{
+  "images_reviewed": 50,
+  "raw_images": 25,
+  "edge_images": 25,
+  "all_native_pages_reviewed": true,
+  "pages": [
+    "page_01.png",
+    "page_02.png",
+    "page_03.png",
+    "page_04.png",
+    "page_05.png",
+    "page_06.png",
+    "page_07.png",
+    "page_08.png",
+    "page_09.png"
+  ],
+  "observed_large_seams_or_repeated_geometry": false,
+  "observed_capture_interruption": false,
+  "observations": [
+    "Pencil highlight, hand/object motion, occlusion and changing illumination were present in the run.",
+    "All25 RAW frames retained continuous scene geometry; detailed16-byte block-reuse detector found0 reused detailed blocks across RAW captures.",
+    "Sobel responses vary with light/reflection/occlusion and fixed thresholds; frame6 EDGE is empty and several others are sparse. These are retained unaltered, not replaced; edge sensitivity is separate from the mixed-frame/readout acceptance.",
+    "Packet data and saved grayscale PNGs are byte-exact; no PC-side pixel repair."
+  ]
+}

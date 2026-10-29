@@ -1,0 +1,40 @@
+{
+  "accepted_report": "reports/hardware/camera_acceptance_50/acceptance.json",
+  "source_directory": "E:\\FPGA_Test_Work\\edge_v03_work\\fifo_motion_diagnosis",
+  "changes": [
+    {
+      "accepted_source": "E:\\FPGA_Test_Work\\edge_v03_work\\fifo_motion_diagnosis\\camera_fifo_capture_direct.sv",
+      "project_file": "rtl/camera/camera_fifo_capture.sv",
+      "accepted_sha256": "803365d127ea2e4b226ac1ac6517a4bfd319ec516828881e9e7de474a5a62a0d",
+      "project_sha256": "d5cb96db457a21dc2aa8cc83ff68d858b5d9f25ec354d4a0bb1d04d016f9ac4f",
+      "transformation": "module reference/name camera_fifo_capture_direct -> camera_fifo_capture only; newline normalization"
+    },
+    {
+      "accepted_source": "E:\\FPGA_Test_Work\\edge_v03_work\\fifo_motion_diagnosis\\vsync_low_filter.sv",
+      "project_file": "rtl/camera/vsync_low_filter.sv",
+      "accepted_sha256": "0f277d5d3b0c505f7ebcc012f8ccf43fd197efd29b7e88cbc0b04307847d86f0",
+      "project_sha256": "54e6f8708184b722ce70ec23d4f1beab7dfa3f615858f495c9d80e410e9cf4cb",
+      "transformation": "module reference/name camera_fifo_capture_direct -> camera_fifo_capture only; newline normalization"
+    },
+    {
+      "accepted_source": "E:\\FPGA_Test_Work\\edge_v03_work\\fifo_motion_diagnosis\\ov7670_config_agc.sv",
+      "project_file": "rtl/camera/ov7670_config.sv",
+      "accepted_sha256": "1c395fbe1cd5d53f26b7407f0fded3cb602c1b2b931d482fa8d2e50e703addd4",
+      "project_sha256": "1c395fbe1cd5d53f26b7407f0fded3cb602c1b2b931d482fa8d2e50e703addd4",
+      "transformation": "module reference/name camera_fifo_capture_direct -> camera_fifo_capture only; newline normalization"
+    },
+    {
+      "accepted_source": "E:\\FPGA_Test_Work\\edge_v03_work\\fifo_motion_diagnosis\\edge_top_auto.sv",
+      "project_file": "rtl/edge_top.sv",
+      "accepted_sha256": "89452ced14fd72ef5793501019896169e661778cd443f9687da034f2ef07d1a9",
+      "project_sha256": "673aac32897e8926eed89ae4739e1c5b6057e5ede95ab6d1bee581beed857857",
+      "transformation": "module reference/name camera_fifo_capture_direct -> camera_fifo_capture only; newline normalization"
+    }
+  ],
+  "unchanged": "all rtl/core and rtl/uart modules match accepted source hashes",
+  "frequency_hz": 2000000,
+  "AEC": "enabled",
+  "AGC": "enabled",
+  "AWB": "enabled",
+  "WRST": "Basys3 JB1 A14"
+}

@@ -1,0 +1,199 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Thu Oct 29 14:55:10 2026
+# Process ID         : 39772
+# Current directory  : E:/FPGA_Test_Work/edge_v03_work/fifo_motion_diagnosis/motion_auto_50
+# Command line       : vivado.exe -mode batch -source E:\FPGA_Test_Work\edge_v03_work\fifo_motion_diagnosis\capture_diagnostic.tcl -log E:\FPGA_Test_Work\edge_v03_work\fifo_motion_diagnosis\motion_auto_50\control.log -journal E:\FPGA_Test_Work\edge_v03_work\fifo_motion_diagnosis\motion_auto_50\control.jou -tclargs E:\FPGA_Test_Work\edge_v03_work\fifo_motion_diagnosis\motion_auto_50 50 0 0 direct_auto_board
+# Log file           : E:/FPGA_Test_Work/edge_v03_work/fifo_motion_diagnosis/motion_auto_50/control.log
+# Journal file       : E:\FPGA_Test_Work\edge_v03_work\fifo_motion_diagnosis\motion_auto_50\control.jou
+# Running On         : StrawberryBear
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : Intel(R) Core(TM) i9-14900HX
+# CPU Frequency      : 2419 MHz
+# CPU Physical cores : 24
+# CPU Logical cores  : 32
+# Host memory        : 33953 MB
+# Swap memory        : 2147 MB
+# Total Virtual      : 36100 MB
+# Available Virtual  : 8767 MB
+#-----------------------------------------------------------
+source {E:\FPGA_Test_Work\edge_v03_work\fifo_motion_diagnosis\capture_diagnostic.tcl}
+# set root {E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge}
+# set folder [file normalize [lindex $argv 0]]
+# set variant [lindex $argv 4]
+# if {$variant eq ""} {set variant board}
+# if {$variant ni {board slow_slew aec_board agc_board direct_board direct_prefetch_board direct_vsync_board direct_auto_board}} {error "Invalid bit variant"}
+# set diagnostic_ltx [file join {E:/FPGA_Test_Work/edge_v03_work/fifo_motion_diagnosis} $variant edge_top.ltx]
+# set count [lindex $argv 1]
+# set pattern [lindex $argv 2]
+# set threshold [lindex $argv 3]
+# if {![string is integer -strict $count] || $count<4 || $count>100} {error "Invalid count"}
+# if {$pattern ni {0 1} || ![string is integer -strict $threshold] || $threshold<0 || $threshold>2040 || $threshold%4} {error "Invalid source/threshold"}
+# proc cancelled {} {global folder;if {[file exists [file join $folder abort.flag]]} {error "PC capture stopped"}}
+# open_hw_manager
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2025.1.0
+  ****** Build date   : May 13 2025-12:15:27
+    **** Build number : 2025.1.1747163727
+      ** Copyright 2017-2022 Xilinx, Inc. All Rights Reserved.
+      ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+
+# set targets [get_hw_targets -filter {NAME =~ *210183BCBF83A}]
+# if {[llength $targets]!=1} {error "Expected task Basys3 only"}
+# current_hw_target [lindex $targets 0]
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183BCBF83A
+# try {
+#  set dev [get_hw_devices xc7a35t_0]
+#  set_property PROBES.FILE $diagnostic_ltx $dev
+#  refresh_hw_device $dev
+#  set vio [get_hw_vios -of_objects $dev]
+#  if {[llength $vio]!=1} {error "Expected one VIO"}
+#  proc probe {name} {global vio;set p [get_hw_probes $name -of_objects $vio];if {[llength $p]!=1} {error "Missing VIO probe $name"};return $p}
+#  proc drive {name value} {set p [probe $name];set_property OUTPUT_VALUE_RADIX HEX $p;set_property OUTPUT_VALUE $value $p;commit_hw_vio $p}
+#  proc value {name} {set p [probe $name];set_property INPUT_VALUE_RADIX HEX $p;scan [get_property INPUT_VALUE $p] %x n;return $n}
+#  set base [expr {$pattern|(($threshold/4)<<4)}]
+#  drive virtual_sw [format %04x $base]
+#  drive debug_control 3
+#  after 50
+#  drive debug_control 1
+#  set limit [expr {[clock milliseconds]+20000}]
+#  while {1} {
+#   cancelled;refresh_hw_vio $vio
+#   if {[value ready]} {break}
+#   if {[clock milliseconds]>$limit} {error "Ready timeout"}
+#   after 40
+#  }
+#  puts "EDGE_READY";flush stdout
+#  for {set saved 0} {$saved<$count} {incr saved} {
+#   cancelled
+#   set m [expr {$saved%4}]
+#   set switches [expr {$base|(($m/2)<<2)|(($m%2)<<1)}]
+#   drive virtual_sw [format %04x $switches]
+#   after 50
+#   drive virtual_sw [format %04x [expr {$switches|0x8000}]]
+#   after 50
+#   drive virtual_sw [format %04x $switches]
+#   set limit [expr {[clock milliseconds]+30000}]
+#   set last_rejected_pulses 0
+#   set signal_probe [get_hw_probes -quiet debug_sync -of_objects $vio]
+#   if {[llength $signal_probe]} {set_property INPUT_VALUE_RADIX HEX $signal_probe}
+#   while {1} {
+#    cancelled;refresh_hw_vio $vio
+#    if {[llength $signal_probe]==1} {
+#     set sv [expr "0x[get_property INPUT_VALUE $signal_probe]"]
+#     set rejected_pulses [expr {($sv>>32)&0xffffffff}]
+#     if {$rejected_pulses!=$last_rejected_pulses} {
+#      set rp [get_hw_probes debug_camera -of_objects $vio]
+#      set_property INPUT_VALUE_RADIX HEX $rp
+#      set rv [expr "0x[get_property INPUT_VALUE $rp]"]
+#      set ef [open [file join $folder sync_events.jsonl] a]
+#      puts $ef "{\"capture\":[expr {$saved+1}],\"rows\":[expr {$rv&0xffffffff}],\"read_bytes\":[expr {($rv>>32)&0xffffffff}],\"rejected\":$rejected_pulses,\"max_low_cycles\":[expr {($sv>>64)&0xffffffff}]}"
+#      close $ef
+#      set last_rejected_pulses $rejected_pulses
+#     }
+#    }
+#    if {[value error] || [value rejected]} {error "FPGA error code=[value error] rejected=[value rejected]"}
+#    if {[value finished] && ![value busy]} {break}
+#    if {[clock milliseconds]>$limit} {error "Capture timeout"}
+#    after 30
+#   }
+#   set mp [get_hw_probes -of_objects $vio -filter {NAME =~ *debug_camera*}]
+#   if {[llength $mp]!=1} {puts "PROBES [get_hw_probes -of_objects $vio]";error "Missing camera diagnostic vector"}
+#   set_property INPUT_VALUE_RADIX HEX $mp
+#   set metrics [expr "0x[get_property INPUT_VALUE $mp]"]
+#   set mf [open [file join $folder [format "metrics_%04d.json" [expr {$saved+1}]]] w]
+#   set words {}
+#   for {set wi 0} {$wi<8} {incr wi} {lappend words [expr {($metrics>>(32*$wi))&0xffffffff}]}
+#   puts $mf "\[[join $words ,]\]"
+#   close $mf
+# 
+#   set sp [get_hw_probes -quiet debug_sync -of_objects $vio]
+#   if {[llength $sp]==1} {
+#    set_property INPUT_VALUE_RADIX HEX $sp
+#    set syncv [expr "0x[get_property INPUT_VALUE $sp]"]
+#    set swds {}
+#    for {set wi 0} {$wi<4} {incr wi} {lappend swds [expr {($syncv>>(32*$wi))&0xffffffff}]}
+#    set sf [open [file join $folder [format "sync_%04d.json" [expr {$saved+1}]]] w]
+#    puts $sf "\[[join $swds ,]\]"
+#    close $sf
+#   }
+# 
+#   set ack [file join $folder [format "capture_%04d.ack" [expr {$saved+1}]]]
+#   set limit [expr {[clock milliseconds]+20000}]
+#   while {![file exists $ack]} {cancelled;if {[clock milliseconds]>$limit} {error "Save/display acknowledgement timeout"};after 20}
+#   puts "EDGE_SAVED [expr {$saved+1}]/$count";flush stdout
+#   after 600
+#  }
+#  puts "PASS EDGE_CAPTURE $count";flush stdout
+# } finally {
+#  catch {close_hw_target};catch {disconnect_hw_server};catch {close_hw_manager}
+# }
+INFO: [Labtools 27-2302] Device xc7a35t (JTAG device index = 0) is programmed with a design that has 1 VIO core(s).
+INFO: [Labtools 27-1889] Uploading output probe values for VIO core [hw_vio_1]
+EDGE_READY
+EDGE_SAVED 1/50
+EDGE_SAVED 2/50
+EDGE_SAVED 3/50
+EDGE_SAVED 4/50
+EDGE_SAVED 5/50
+EDGE_SAVED 6/50
+EDGE_SAVED 7/50
+EDGE_SAVED 8/50
+EDGE_SAVED 9/50
+EDGE_SAVED 10/50
+EDGE_SAVED 11/50
+EDGE_SAVED 12/50
+EDGE_SAVED 13/50
+EDGE_SAVED 14/50
+EDGE_SAVED 15/50
+EDGE_SAVED 16/50
+EDGE_SAVED 17/50
+EDGE_SAVED 18/50
+EDGE_SAVED 19/50
+EDGE_SAVED 20/50
+EDGE_SAVED 21/50
+EDGE_SAVED 22/50
+EDGE_SAVED 23/50
+EDGE_SAVED 24/50
+EDGE_SAVED 25/50
+EDGE_SAVED 26/50
+EDGE_SAVED 27/50
+EDGE_SAVED 28/50
+EDGE_SAVED 29/50
+EDGE_SAVED 30/50
+EDGE_SAVED 31/50
+EDGE_SAVED 32/50
+EDGE_SAVED 33/50
+EDGE_SAVED 34/50
+EDGE_SAVED 35/50
+EDGE_SAVED 36/50
+EDGE_SAVED 37/50
+EDGE_SAVED 38/50
+EDGE_SAVED 39/50
+EDGE_SAVED 40/50
+EDGE_SAVED 41/50
+EDGE_SAVED 42/50
+EDGE_SAVED 43/50
+EDGE_SAVED 44/50
+EDGE_SAVED 45/50
+EDGE_SAVED 46/50
+EDGE_SAVED 47/50
+EDGE_SAVED 48/50
+EDGE_SAVED 49/50
+EDGE_SAVED 50/50
+PASS EDGE_CAPTURE 50
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Digilent/210183BCBF83A
+INFO: [Common 17-206] Exiting Vivado at Thu Oct 29 14:56:25 2026...

@@ -1,0 +1,16 @@
+{
+  "number": 48,
+  "frame_id": 48,
+  "filter": "GAUSSIAN",
+  "view": "EDGE",
+  "width": 630,
+  "height": 470,
+  "epsilon": 64,
+  "threshold": 128,
+  "payload_crc32": "f17e569e",
+  "source_crc32": "dd1012a5",
+  "source": "CAMERA",
+  "bit_exact_reference_verified": false,
+  "real_camera_image_quality_verified": false,
+  "image": "E:\\FPGA_Test_Work\\edge_v03_work\\fifo_motion_diagnosis\\motion_auto_50\\GAUSSIAN\\EDGE\\frame_048_id00000048.png"
+}

@@ -1,0 +1,1952 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Thu Oct 29 15:12:20 2026
+# Process ID         : 49832
+# Current directory  : E:/FPGA_Test_Work/edge_v03_work
+# Command line       : vivado.exe -mode batch -source E:\Vivado_FPGA_Programs\fpga2026-v0.3-edge\stream_video_edge\scripts\build.tcl -log E:\FPGA_Test_Work\edge_v03_work\consolidation_2026-10-29\build.log -journal E:\FPGA_Test_Work\edge_v03_work\consolidation_2026-10-29\build.jou
+# Log file           : E:/FPGA_Test_Work/edge_v03_work/consolidation_2026-10-29/build.log
+# Journal file       : E:\FPGA_Test_Work\edge_v03_work\consolidation_2026-10-29\build.jou
+# Running On         : StrawberryBear
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : Intel(R) Core(TM) i9-14900HX
+# CPU Frequency      : 2419 MHz
+# CPU Physical cores : 24
+# CPU Logical cores  : 32
+# Host memory        : 33953 MB
+# Swap memory        : 2147 MB
+# Total Virtual      : 36100 MB
+# Available Virtual  : 9090 MB
+#-----------------------------------------------------------
+source {E:\Vivado_FPGA_Programs\fpga2026-v0.3-edge\stream_video_edge\scripts\build.tcl}
+# set root [file normalize [file join [file dirname [info script]] ..]]
+# set out {E:/FPGA_Test_Work/edge_v03_work/stable_board}
+# file mkdir $out
+# create_project -force edge_debug [file join $out project] -part xc7a35tcpg236-1
+# set_property verilog_define {DIAG_JTAG} [current_fileset]
+# file mkdir [file join $out ip]
+# if {[file exists [file join $out ip diag_vio diag_vio.xci]]} {
+#  read_ip [file join $out ip diag_vio diag_vio.xci]
+# } else {
+#  create_ip -name vio -vendor xilinx.com -library ip -version 3.0 -module_name diag_vio -dir [file join $out ip]
+# }
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'E:/Vivado/2025.1/Vivado/data/ip'.
+# set_property -dict [list CONFIG.C_NUM_PROBE_IN 3 CONFIG.C_PROBE_IN0_WIDTH 32 CONFIG.C_PROBE_IN1_WIDTH 256 CONFIG.C_PROBE_IN2_WIDTH 128 CONFIG.C_NUM_PROBE_OUT 2 CONFIG.C_PROBE_OUT0_WIDTH 16 CONFIG.C_PROBE_OUT1_WIDTH 2 CONFIG.C_PROBE_OUT0_INIT_VAL 0x0000 CONFIG.C_PROBE_OUT1_INIT_VAL 0x1 CONFIG.C_EN_PROBE_IN_ACTIVITY 0] [get_ips diag_vio]
+# generate_target all [get_ips diag_vio]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'diag_vio'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'diag_vio'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'diag_vio'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'diag_vio'...
+# synth_ip [get_ips diag_vio]
+CRITICAL WARNING: [Vivado 12-5447] synth_ip is not supported in project mode, please use non-project mode.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'E:/Vivado/2025.1/Vivado/data/ip'.
+WARNING: [Vivado 12-13650] The IP file 'e:/FPGA_Test_Work/edge_v03_work/stable_board/ip/diag_vio/diag_vio.xci' has been moved from its original location, as a result the outputs for this IP will now be generated in 'e:/FPGA_Test_Work/edge_v03_work/stable_board/ip/diag_vio'. Alternatively a copy of the IP can be imported into the project using one of the 'import_ip' or 'import_files' commands.
+Command: synth_design -top diag_vio -part xc7a35tcpg236-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 52012
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1221.410 ; gain = 493.184
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'diag_vio' [e:/FPGA_Test_Work/edge_v03_work/stable_board/ip/diag_vio/synth/diag_vio.v:49]
+INFO: [Synth 8-6155] done synthesizing module 'diag_vio' (0#1) [e:/FPGA_Test_Work/edge_v03_work/stable_board/ip/diag_vio/synth/diag_vio.v:49]
+WARNING: [Synth 8-3848] Net sl_iport0 in module/entity diag_vio does not have driver. [e:/FPGA_Test_Work/edge_v03_work/stable_board/ip/diag_vio/synth/diag_vio.v:76]
+WARNING: [Synth 8-7129] Port Bus_rst in module vio_v3_0_27_probe_out_one__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Read in module vio_v3_0_27_probe_out_one__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Bus_Data_in[15] in module vio_v3_0_27_probe_out_one__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Bus_Data_in[14] in module vio_v3_0_27_probe_out_one__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Bus_Data_in[13] in module vio_v3_0_27_probe_out_one__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Bus_Data_in[12] in module vio_v3_0_27_probe_out_one__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Bus_Data_in[11] in module vio_v3_0_27_probe_out_one__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Bus_Data_in[10] in module vio_v3_0_27_probe_out_one__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Bus_Data_in[9] in module vio_v3_0_27_probe_out_one__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Bus_Data_in[8] in module vio_v3_0_27_probe_out_one__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Bus_Data_in[7] in module vio_v3_0_27_probe_out_one__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Bus_Data_in[6] in module vio_v3_0_27_probe_out_one__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Bus_Data_in[5] in module vio_v3_0_27_probe_out_one__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Bus_Data_in[4] in module vio_v3_0_27_probe_out_one__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Bus_Data_in[3] in module vio_v3_0_27_probe_out_one__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Bus_Data_in[2] in module vio_v3_0_27_probe_out_one__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Internal_cnt_rst in module vio_v3_0_27_probe_out_one__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Bus_rst in module vio_v3_0_27_probe_out_one is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Read in module vio_v3_0_27_probe_out_one is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Internal_cnt_rst in module vio_v3_0_27_probe_out_one is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in3[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in4[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in5[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in6[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in7[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in8[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in9[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in10[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in11[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in12[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in13[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in14[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in15[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in16[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in17[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in18[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in19[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in20[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in21[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in22[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in23[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in24[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in25[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in26[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in27[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in28[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in29[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in30[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in31[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in32[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in33[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in34[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in35[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in36[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in37[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in38[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in39[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in40[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in41[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in42[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in43[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in44[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in45[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in46[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in47[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in48[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in49[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in50[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in51[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in52[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in53[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in54[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in55[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in56[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in57[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in58[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in59[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in60[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in61[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in62[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in63[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in64[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in65[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in66[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in67[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in68[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in69[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in70[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in71[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in72[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in73[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in74[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in75[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in76[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in77[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in78[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in79[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in80[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in81[0] in module vio_v3_0_27_vio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port probe_in82[0] in module vio_v3_0_27_vio is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1337.723 ; gain = 609.496
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1337.723 ; gain = 609.496
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1337.723 ; gain = 609.496
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1337.723 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [e:/FPGA_Test_Work/edge_v03_work/stable_board/ip/diag_vio/diag_vio_ooc.xdc]
+Finished Parsing XDC File [e:/FPGA_Test_Work/edge_v03_work/stable_board/ip/diag_vio/diag_vio_ooc.xdc]
+Parsing XDC File [e:/FPGA_Test_Work/edge_v03_work/stable_board/ip/diag_vio/diag_vio.xdc]
+Finished Parsing XDC File [e:/FPGA_Test_Work/edge_v03_work/stable_board/ip/diag_vio/diag_vio.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [e:/FPGA_Test_Work/edge_v03_work/stable_board/ip/diag_vio/diag_vio.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/diag_vio_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/diag_vio_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1400.344 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 1400.344 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1400.344 ; gain = 672.117
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1400.344 ; gain = 672.117
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1400.344 ; gain = 672.117
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1400.344 ; gain = 672.117
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input    6 Bit       Adders := 1     
+	   2 Input    1 Bit       Adders := 1     
++---Registers : 
+	              416 Bit    Registers := 3     
+	              128 Bit    Registers := 1     
+	               16 Bit    Registers := 11    
+	                7 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                3 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 17    
++---Muxes : 
+	   2 Input   16 Bit        Muxes := 3     
+	   2 Input    1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1404.535 ; gain = 676.309
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1541.270 ; gain = 813.043
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1545.211 ; gain = 816.984
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1574.316 ; gain = 846.090
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[36] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[35] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[34] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[33] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[32] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[31] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[30] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[29] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[28] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[27] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[26] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[25] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[24] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[23] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[22] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[21] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[20] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[19] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[18] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[17] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[16] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[15] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[14] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[13] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[12] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[11] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[10] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[9] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[8] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[7] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[6] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[5] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[4] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[3] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[2] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[1] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[0] to constant 0
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1788.324 ; gain = 1060.098
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1788.324 ; gain = 1060.098
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1788.324 ; gain = 1060.098
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1788.324 ; gain = 1060.098
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1788.324 ; gain = 1060.098
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1788.324 ; gain = 1060.098
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+------+------+
+|      |Cell  |Count |
++------+------+------+
+|1     |LUT1  |     3|
+|2     |LUT2  |    17|
+|3     |LUT3  |    56|
+|4     |LUT4  |    13|
+|5     |LUT5  |    16|
+|6     |LUT6  |   185|
+|7     |MUXF7 |    48|
+|8     |FDRE  |  1557|
+|9     |FDSE  |     2|
++------+------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1788.324 ; gain = 1060.098
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 291 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:19 . Memory (MB): peak = 1788.324 ; gain = 997.477
+Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1788.324 ; gain = 1060.098
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1797.516 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 48 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [e:/FPGA_Test_Work/edge_v03_work/stable_board/ip/diag_vio/diag_vio_ooc.xdc]
+Finished Parsing XDC File [e:/FPGA_Test_Work/edge_v03_work/stable_board/ip/diag_vio/diag_vio_ooc.xdc]
+Parsing XDC File [e:/FPGA_Test_Work/edge_v03_work/stable_board/ip/diag_vio/diag_vio.xdc]
+Finished Parsing XDC File [e:/FPGA_Test_Work/edge_v03_work/stable_board/ip/diag_vio/diag_vio.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1801.172 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 9326037f
+INFO: [Common 17-83] Releasing license: Synthesis
+21 Infos, 140 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1801.172 ; gain = 1271.543
+INFO: [Coretcl 2-1174] Renamed 8 cell refs.
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1801.172 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'e:/FPGA_Test_Work/edge_v03_work/stable_board/ip/diag_vio/diag_vio.dcp' has been generated.
+INFO: [Vivado 12-3441] generate_netlist_ip - operation complete
+synth_ip: Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 1801.172 ; gain = 1274.375
+# read_verilog -sv [file join $root rtl core core_latency_pkg.sv]
+# foreach source [glob [file join $root rtl core *.sv]] {
+#  if {[file tail $source] ne "core_latency_pkg.sv"} {read_verilog -sv $source}
+# }
+# foreach folder {camera uart display} {read_verilog -sv [glob [file join $root rtl $folder *.sv]]}
+# read_verilog -sv [file join $root rtl edge_top.sv]
+# read_xdc [file join $root constraints basys3_camera_uart.xdc]
+# synth_design -top edge_top -part xc7a35tcpg236-1
+Command: synth_design -top edge_top -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1801.172 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'edge_top' [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/edge_top.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'diag_vio' [E:/FPGA_Test_Work/edge_v03_work/.Xil/Vivado-49832-StrawberryBear/realtime/diag_vio_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'diag_vio' (0#1) [E:/FPGA_Test_Work/edge_v03_work/.Xil/Vivado-49832-StrawberryBear/realtime/diag_vio_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'ov7670_config' [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/camera/ov7670_config.sv:6]
+	Parameter DIRECT_IO bound to: 0 - type: integer 
+	Parameter FREEZE_AEC bound to: 0 - type: integer 
+	Parameter FREEZE_AGC bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'ov7670_config' (0#1) [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/camera/ov7670_config.sv:6]
+INFO: [Synth 8-6157] synthesizing module 'camera_fifo_capture' [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/camera/camera_fifo_capture.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'vsync_low_filter' [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/camera/vsync_low_filter.sv:4]
+	Parameter MIN_LOW bound to: 64 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'vsync_low_filter' (0#1) [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/camera/vsync_low_filter.sv:4]
+INFO: [Synth 8-226] default block is never used [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/camera/camera_fifo_capture.sv:75]
+INFO: [Synth 8-6155] done synthesizing module 'camera_fifo_capture' (0#1) [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/camera/camera_fifo_capture.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'edge_uart_stream' [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/uart/edge_uart_stream.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'edge_core' [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/edge_core.sv:2]
+	Parameter W bound to: 640 - type: integer 
+	Parameter H bound to: 480 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'guided_base' [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/guided_base.sv:2]
+	Parameter W bound to: 640 - type: integer 
+	Parameter H bound to: 480 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'moments5' [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/moments5.sv:2]
+	Parameter W bound to: 640 - type: integer 
+	Parameter H bound to: 480 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'row_window5' [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/row_window5.sv:2]
+	Parameter W bound to: 640 - type: integer 
+	Parameter H bound to: 480 - type: integer 
+	Parameter DATA_W bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'row_window5' (0#1) [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/row_window5.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'moments5' (0#1) [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/moments5.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'coefficient5' [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/coefficient5.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'ratio_q12_pipe' [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/ratio_q12_pipe.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'ratio_q12_pipe' (0#1) [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/ratio_q12_pipe.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'div25_pipe' [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/div25_pipe.sv:2]
+	Parameter IN_W bound to: 21 - type: integer 
+	Parameter OUT_W bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'div25_pipe' (0#1) [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/div25_pipe.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'token_pipe' [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/token_pipe.sv:3]
+	Parameter WIDTH bound to: 17 - type: integer 
+	Parameter LATENCY bound to: 12 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'token_pipe' (0#1) [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/token_pipe.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'token_pipe__parameterized0' [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/token_pipe.sv:3]
+	Parameter WIDTH bound to: 1 - type: integer 
+	Parameter LATENCY bound to: 13 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'token_pipe__parameterized0' (0#1) [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/token_pipe.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'token_pipe__parameterized1' [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/token_pipe.sv:3]
+	Parameter WIDTH bound to: 59 - type: integer 
+	Parameter LATENCY bound to: 17 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'token_pipe__parameterized1' (0#1) [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/token_pipe.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'token_pipe__parameterized2' [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/token_pipe.sv:3]
+	Parameter WIDTH bound to: 72 - type: integer 
+	Parameter LATENCY bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'token_pipe__parameterized2' (0#1) [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/token_pipe.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'coefficient5' (0#1) [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/coefficient5.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'coefficient_box5' [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/coefficient_box5.sv:2]
+	Parameter W bound to: 640 - type: integer 
+	Parameter H bound to: 480 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'row_window5__parameterized0' [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/row_window5.sv:2]
+	Parameter W bound to: 636 - type: integer 
+	Parameter H bound to: 476 - type: integer 
+	Parameter DATA_W bound to: 36 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'row_window5__parameterized0' (0#1) [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/row_window5.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'div25_pipe__parameterized0' [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/div25_pipe.sv:2]
+	Parameter IN_W bound to: 17 - type: integer 
+	Parameter OUT_W bound to: 12 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'div25_pipe__parameterized0' (0#1) [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/div25_pipe.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'token_pipe__parameterized3' [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/token_pipe.sv:3]
+	Parameter WIDTH bound to: 60 - type: integer 
+	Parameter LATENCY bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'token_pipe__parameterized3' (0#1) [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/token_pipe.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'coefficient_box5' (0#1) [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/coefficient_box5.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'reconstruct' [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/reconstruct.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'token_pipe__parameterized4' [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/token_pipe.sv:3]
+	Parameter WIDTH bound to: 60 - type: integer 
+	Parameter LATENCY bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'token_pipe__parameterized4' (0#1) [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/token_pipe.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'reconstruct' (0#1) [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/reconstruct.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'guided_base' (0#1) [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/guided_base.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'gaussian3' [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/gaussian3.sv:2]
+	Parameter W bound to: 640 - type: integer 
+	Parameter H bound to: 480 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'row_window3' [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/row_window3.sv:2]
+	Parameter W bound to: 640 - type: integer 
+	Parameter H bound to: 480 - type: integer 
+	Parameter DATA_W bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'row_window3' (0#1) [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/row_window3.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'gaussian3' (0#1) [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/gaussian3.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'sobel3' [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/sobel3.sv:2]
+	Parameter W bound to: 632 - type: integer 
+	Parameter H bound to: 472 - type: integer 
+	Parameter OFFSET bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'row_window3__parameterized0' [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/row_window3.sv:2]
+	Parameter W bound to: 632 - type: integer 
+	Parameter H bound to: 472 - type: integer 
+	Parameter DATA_W bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'row_window3__parameterized0' (0#1) [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/row_window3.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'sobel3' (0#1) [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/sobel3.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'edge_core' (0#1) [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/edge_core.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'uart_fast_tx' [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/uart/uart_fast_tx.sv:4]
+INFO: [Synth 8-6155] done synthesizing module 'uart_fast_tx' (0#1) [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/uart/uart_fast_tx.sv:4]
+INFO: [Synth 8-6155] done synthesizing module 'edge_uart_stream' (0#1) [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/uart/edge_uart_stream.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'edge_top' (0#1) [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/edge_top.sv:2]
+WARNING: [Synth 8-6014] Unused sequential element source_bank_reg was removed.  [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/row_window5.sv:49]
+WARNING: [Synth 8-3936] Found unconnected internal register 'g_bit[11].quotient_reg[11]' and it is trimmed from '12' to '11' bits. [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/ratio_q12_pipe.sv:32]
+WARNING: [Synth 8-3936] Found unconnected internal register 'g_bit[10].quotient_reg[10]' and it is trimmed from '12' to '11' bits. [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/ratio_q12_pipe.sv:32]
+WARNING: [Synth 8-3936] Found unconnected internal register 'g_bit[9].quotient_reg[9]' and it is trimmed from '12' to '11' bits. [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/ratio_q12_pipe.sv:32]
+WARNING: [Synth 8-3936] Found unconnected internal register 'g_bit[8].quotient_reg[8]' and it is trimmed from '12' to '11' bits. [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/ratio_q12_pipe.sv:32]
+WARNING: [Synth 8-3936] Found unconnected internal register 'g_bit[7].quotient_reg[7]' and it is trimmed from '12' to '11' bits. [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/ratio_q12_pipe.sv:32]
+WARNING: [Synth 8-3936] Found unconnected internal register 'g_bit[6].quotient_reg[6]' and it is trimmed from '12' to '11' bits. [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/ratio_q12_pipe.sv:32]
+WARNING: [Synth 8-3936] Found unconnected internal register 'g_bit[5].quotient_reg[5]' and it is trimmed from '12' to '11' bits. [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/ratio_q12_pipe.sv:32]
+WARNING: [Synth 8-3936] Found unconnected internal register 'g_bit[4].quotient_reg[4]' and it is trimmed from '12' to '11' bits. [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/ratio_q12_pipe.sv:32]
+WARNING: [Synth 8-3936] Found unconnected internal register 'g_bit[3].quotient_reg[3]' and it is trimmed from '12' to '11' bits. [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/ratio_q12_pipe.sv:32]
+WARNING: [Synth 8-3936] Found unconnected internal register 'g_bit[2].quotient_reg[2]' and it is trimmed from '12' to '11' bits. [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/ratio_q12_pipe.sv:32]
+WARNING: [Synth 8-3936] Found unconnected internal register 'g_bit[1].quotient_reg[1]' and it is trimmed from '12' to '11' bits. [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/ratio_q12_pipe.sv:32]
+WARNING: [Synth 8-6014] Unused sequential element source_bank_reg was removed.  [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/row_window5.sv:49]
+WARNING: [Synth 8-6014] Unused sequential element source_bank_reg was removed.  [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/row_window3.sv:49]
+WARNING: [Synth 8-3936] Found unconnected internal register 'sum0_reg' and it is trimmed from '13' to '12' bits. [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/gaussian3.sv:20]
+WARNING: [Synth 8-6014] Unused sequential element source_bank_reg was removed.  [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/row_window3.sv:49]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'debug_bridge'. This will prevent further optimization [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/edge_top.sv:26]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'configure_camera'. This will prevent further optimization [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/edge_top.sv:34]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'camera'. This will prevent further optimization [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/edge_top.sv:38]
+WARNING: [Synth 8-7129] Port sioc in module ov7670_config is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1888.547 ; gain = 87.375
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1906.477 ; gain = 105.305
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1906.477 ; gain = 105.305
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.076 . Memory (MB): peak = 1906.477 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [e:/FPGA_Test_Work/edge_v03_work/stable_board/ip/diag_vio/diag_vio/diag_vio_in_context.xdc] for cell 'debug_bridge'
+Finished Parsing XDC File [e:/FPGA_Test_Work/edge_v03_work/stable_board/ip/diag_vio/diag_vio/diag_vio_in_context.xdc] for cell 'debug_bridge'
+Parsing XDC File [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/constraints/basys3_camera_uart.xdc]
+INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'fifo_virtual' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/constraints/basys3_camera_uart.xdc:82]
+Finished Parsing XDC File [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/constraints/basys3_camera_uart.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/constraints/basys3_camera_uart.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/edge_top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/edge_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2019.098 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 2019.098 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2019.098 ; gain = 217.926
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2019.098 ; gain = 217.926
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2019.098 ; gain = 217.926
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'ov7670_config'
+WARNING: [Synth 8-6014] Unused sequential element square0_reg[4] was removed.  [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/moments5.sv:60]
+WARNING: [Synth 8-6014] Unused sequential element square1_reg[4] was removed.  [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/moments5.sv:60]
+WARNING: [Synth 8-3936] Found unconnected internal register 'g_bit[10].quotient_reg[10]' and it is trimmed from '11' to '10' bits. [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/ratio_q12_pipe.sv:32]
+WARNING: [Synth 8-3936] Found unconnected internal register 'g_bit[9].quotient_reg[9]' and it is trimmed from '11' to '9' bits. [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/ratio_q12_pipe.sv:32]
+WARNING: [Synth 8-3936] Found unconnected internal register 'g_bit[8].quotient_reg[8]' and it is trimmed from '11' to '8' bits. [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/ratio_q12_pipe.sv:32]
+WARNING: [Synth 8-3936] Found unconnected internal register 'g_bit[7].quotient_reg[7]' and it is trimmed from '11' to '7' bits. [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/ratio_q12_pipe.sv:32]
+WARNING: [Synth 8-3936] Found unconnected internal register 'g_bit[6].quotient_reg[6]' and it is trimmed from '11' to '6' bits. [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/ratio_q12_pipe.sv:32]
+WARNING: [Synth 8-3936] Found unconnected internal register 'g_bit[5].quotient_reg[5]' and it is trimmed from '11' to '5' bits. [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/ratio_q12_pipe.sv:32]
+WARNING: [Synth 8-3936] Found unconnected internal register 'g_bit[4].quotient_reg[4]' and it is trimmed from '11' to '4' bits. [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/ratio_q12_pipe.sv:32]
+WARNING: [Synth 8-3936] Found unconnected internal register 'g_bit[3].quotient_reg[3]' and it is trimmed from '11' to '3' bits. [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/ratio_q12_pipe.sv:32]
+WARNING: [Synth 8-3936] Found unconnected internal register 'g_bit[2].quotient_reg[2]' and it is trimmed from '11' to '2' bits. [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/ratio_q12_pipe.sv:32]
+WARNING: [Synth 8-3936] Found unconnected internal register 'g_bit[1].quotient_reg[1]' and it is trimmed from '11' to '1' bits. [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/ratio_q12_pipe.sv:32]
+WARNING: [Synth 8-6014] Unused sequential element square0_reg was removed.  [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/coefficient5.sv:20]
+WARNING: [Synth 8-3936] Found unconnected internal register 'l2_reg[0]' and it is trimmed from '16' to '8' bits. [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/sobel3.sv:14]
+WARNING: [Synth 8-3936] Found unconnected internal register 'l2_reg[1]' and it is trimmed from '16' to '8' bits. [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/sobel3.sv:14]
+WARNING: [Synth 8-3936] Found unconnected internal register 'l2_reg[2]' and it is trimmed from '16' to '8' bits. [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/sobel3.sv:14]
+WARNING: [Synth 8-3936] Found unconnected internal register 'l1_reg[0]' and it is trimmed from '16' to '8' bits. [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/sobel3.sv:15]
+WARNING: [Synth 8-3936] Found unconnected internal register 'l1_reg[2]' and it is trimmed from '16' to '8' bits. [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/sobel3.sv:15]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE5 |                     000000000001 |                             0000
+                 iSTATE4 |                     000000000010 |                             0001
+                 iSTATE1 |                     000000000100 |                             0010
+                  iSTATE |                     000000001000 |                             0011
+                 iSTATE0 |                     000000010000 |                             0100
+                iSTATE10 |                     000000100000 |                             0101
+                 iSTATE9 |                     000001000000 |                             0110
+                 iSTATE7 |                     000010000000 |                             0111
+                 iSTATE8 |                     000100000000 |                             1000
+                 iSTATE6 |                     001000000000 |                             1001
+                 iSTATE2 |                     010000000000 |                             1011
+                 iSTATE3 |                     100000000000 |                             1010
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'ov7670_config'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 2019.098 ; gain = 217.926
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 20    
+	   3 Input   32 Bit       Adders := 1     
+	   2 Input   24 Bit       Adders := 1     
+	   2 Input   23 Bit       Adders := 4     
+	   3 Input   23 Bit       Adders := 3     
+	   3 Input   22 Bit       Adders := 3     
+	   2 Input   21 Bit       Adders := 2     
+	   3 Input   20 Bit       Adders := 2     
+	   2 Input   19 Bit       Adders := 2     
+	   2 Input   18 Bit       Adders := 2     
+	   2 Input   17 Bit       Adders := 6     
+	   3 Input   17 Bit       Adders := 3     
+	   3 Input   16 Bit       Adders := 1     
+	   2 Input   16 Bit       Adders := 1     
+	   2 Input   15 Bit       Adders := 1     
+	   2 Input   14 Bit       Adders := 1     
+	   2 Input   13 Bit       Adders := 4     
+	   3 Input   12 Bit       Adders := 1     
+	  10 Input   12 Bit       Adders := 1     
+	   2 Input   12 Bit       Adders := 1     
+	   2 Input   11 Bit       Adders := 3     
+	   3 Input   11 Bit       Adders := 2     
+	   2 Input   10 Bit       Adders := 10    
+	   3 Input   10 Bit       Adders := 4     
+	   2 Input    9 Bit       Adders := 12    
+	   2 Input    8 Bit       Adders := 1     
+	   2 Input    7 Bit       Adders := 2     
+	   2 Input    6 Bit       Adders := 3     
+	   2 Input    5 Bit       Adders := 4     
+	   2 Input    4 Bit       Adders := 10    
+	   2 Input    3 Bit       Adders := 13    
+	   2 Input    2 Bit       Adders := 7     
++---XORs : 
+	   2 Input     32 Bit         XORs := 27    
+	   2 Input      8 Bit         XORs := 1     
++---Registers : 
+	              180 Bit    Registers := 2     
+	               72 Bit    Registers := 3     
+	               60 Bit    Registers := 9     
+	               59 Bit    Registers := 18    
+	               48 Bit    Registers := 2     
+	               40 Bit    Registers := 2     
+	               36 Bit    Registers := 6     
+	               32 Bit    Registers := 50    
+	               26 Bit    Registers := 1     
+	               24 Bit    Registers := 32    
+	               23 Bit    Registers := 4     
+	               21 Bit    Registers := 12    
+	               20 Bit    Registers := 5     
+	               19 Bit    Registers := 12    
+	               18 Bit    Registers := 3     
+	               17 Bit    Registers := 28    
+	               16 Bit    Registers := 20    
+	               15 Bit    Registers := 6     
+	               14 Bit    Registers := 4     
+	               13 Bit    Registers := 5     
+	               12 Bit    Registers := 7     
+	               11 Bit    Registers := 16    
+	               10 Bit    Registers := 39    
+	                9 Bit    Registers := 38    
+	                8 Bit    Registers := 65    
+	                7 Bit    Registers := 4     
+	                6 Bit    Registers := 6     
+	                5 Bit    Registers := 10    
+	                4 Bit    Registers := 5     
+	                3 Bit    Registers := 14    
+	                2 Bit    Registers := 9     
+	                1 Bit    Registers := 69    
++---Multipliers : 
+	              11x32  Multipliers := 1     
++---RAMs : 
+	              22K Bit	(636 X 36 bit)          RAMs := 5     
+	               9K Bit	(632 X 16 bit)          RAMs := 3     
+	               5K Bit	(640 X 8 bit)          RAMs := 8     
++---Muxes : 
+	   2 Input   36 Bit        Muxes := 4     
+	   2 Input   32 Bit        Muxes := 68    
+	   3 Input   32 Bit        Muxes := 1     
+	   8 Input   32 Bit        Muxes := 11    
+	   4 Input   32 Bit        Muxes := 1     
+	   2 Input   24 Bit        Muxes := 5     
+	   2 Input   23 Bit        Muxes := 2     
+	   2 Input   21 Bit        Muxes := 3     
+	   2 Input   19 Bit        Muxes := 2     
+	   2 Input   17 Bit        Muxes := 1     
+	   2 Input   16 Bit        Muxes := 6     
+	   3 Input   16 Bit        Muxes := 2     
+	   2 Input   15 Bit        Muxes := 2     
+	   2 Input   13 Bit        Muxes := 1     
+	  12 Input   12 Bit        Muxes := 1     
+	   2 Input   12 Bit        Muxes := 5     
+	   2 Input   11 Bit        Muxes := 6     
+	   8 Input   10 Bit        Muxes := 1     
+	   2 Input   10 Bit        Muxes := 4     
+	   8 Input    9 Bit        Muxes := 1     
+	   2 Input    9 Bit        Muxes := 2     
+	   2 Input    8 Bit        Muxes := 14    
+	   3 Input    8 Bit        Muxes := 3     
+	   4 Input    8 Bit        Muxes := 1     
+	   2 Input    7 Bit        Muxes := 8     
+	   6 Input    6 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 5     
+	   2 Input    5 Bit        Muxes := 2     
+	   3 Input    5 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 1     
+	  12 Input    4 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 16    
+	   4 Input    3 Bit        Muxes := 2     
+	   9 Input    3 Bit        Muxes := 1     
+	  11 Input    3 Bit        Muxes := 1     
+	   5 Input    3 Bit        Muxes := 1     
+	   3 Input    3 Bit        Muxes := 1     
+	   6 Input    3 Bit        Muxes := 1     
+	  12 Input    2 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 9     
+	   2 Input    1 Bit        Muxes := 159   
+	  12 Input    1 Bit        Muxes := 11    
+	   8 Input    1 Bit        Muxes := 29    
+	   4 Input    1 Bit        Muxes := 12    
+	   6 Input    1 Bit        Muxes := 5     
+	  11 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+DSP Report: Generating DSP tail2b_reg, operation Mode is: (A''*B'')'.
+DSP Report: register square0_reg[4] is absorbed into DSP tail2b_reg.
+DSP Report: register square1_reg[4] is absorbed into DSP tail2b_reg.
+DSP Report: register square0_reg[4] is absorbed into DSP tail2b_reg.
+DSP Report: register square1_reg[4] is absorbed into DSP tail2b_reg.
+DSP Report: register tail2b_reg is absorbed into DSP tail2b_reg.
+DSP Report: register tail2_reg is absorbed into DSP tail2b_reg.
+DSP Report: operator p_0_out is absorbed into DSP tail2b_reg.
+DSP Report: Generating DSP square1_reg[3], operation Mode is: (A2*B2)'.
+DSP Report: register square1_reg[3] is absorbed into DSP square1_reg[3].
+DSP Report: register square1_reg[3] is absorbed into DSP square1_reg[3].
+DSP Report: register square1_reg[3] is absorbed into DSP square1_reg[3].
+DSP Report: register square0_reg[3] is absorbed into DSP square1_reg[3].
+DSP Report: operator p_0_out is absorbed into DSP square1_reg[3].
+DSP Report: Generating DSP square1_reg[2], operation Mode is: (A2*B2)'.
+DSP Report: register square1_reg[2] is absorbed into DSP square1_reg[2].
+DSP Report: register square1_reg[2] is absorbed into DSP square1_reg[2].
+DSP Report: register square1_reg[2] is absorbed into DSP square1_reg[2].
+DSP Report: register square0_reg[2] is absorbed into DSP square1_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP square1_reg[2].
+DSP Report: Generating DSP square1_reg[1], operation Mode is: (A2*B2)'.
+DSP Report: register square1_reg[1] is absorbed into DSP square1_reg[1].
+DSP Report: register square1_reg[1] is absorbed into DSP square1_reg[1].
+DSP Report: register square1_reg[1] is absorbed into DSP square1_reg[1].
+DSP Report: register square0_reg[1] is absorbed into DSP square1_reg[1].
+DSP Report: operator p_0_out is absorbed into DSP square1_reg[1].
+DSP Report: Generating DSP square1_reg[0], operation Mode is: (A2*B2)'.
+DSP Report: register rows/rows2_reg is absorbed into DSP square1_reg[0].
+DSP Report: register rows/rows2_reg is absorbed into DSP square1_reg[0].
+DSP Report: register square1_reg[0] is absorbed into DSP square1_reg[0].
+DSP Report: register square0_reg[0] is absorbed into DSP square1_reg[0].
+DSP Report: operator p_0_out is absorbed into DSP square1_reg[0].
+DSP Report: Generating DSP mean_div/hi1_reg, operation Mode is: (A2*(B:0x14))'.
+DSP Report: register mean_div/n0_reg is absorbed into DSP mean_div/hi1_reg.
+DSP Report: register mean_div/hi1_reg is absorbed into DSP mean_div/hi1_reg.
+DSP Report: operator mean_div/hi10 is absorbed into DSP mean_div/hi1_reg.
+DSP Report: Generating DSP mean_div/product2_reg, operation Mode is: (C+(A2*(B:0x3d71))')'.
+DSP Report: register mean_div/n0_reg is absorbed into DSP mean_div/product2_reg.
+DSP Report: register mean_div/product2_reg is absorbed into DSP mean_div/product2_reg.
+DSP Report: register mean_div/lo1_reg is absorbed into DSP mean_div/product2_reg.
+DSP Report: operator mean_div/product20 is absorbed into DSP mean_div/product2_reg.
+DSP Report: operator mean_div/lo10 is absorbed into DSP mean_div/product2_reg.
+DSP Report: Generating DSP rounded_b1, operation Mode is: (C:0x800)+(A''*B2)'.
+DSP Report: register product0_reg is absorbed into DSP rounded_b1.
+DSP Report: register delay_mean/g_pipe.data_pipe_reg[12] is absorbed into DSP rounded_b1.
+DSP Report: register product0_reg is absorbed into DSP rounded_b1.
+DSP Report: register product1_reg is absorbed into DSP rounded_b1.
+DSP Report: operator product00 is absorbed into DSP rounded_b1.
+DSP Report: operator rounded_b1 is absorbed into DSP rounded_b1.
+DSP Report: Generating DSP times25_1_reg, operation Mode is: (A*(B:0x19))'.
+DSP Report: register times25_1_reg is absorbed into DSP times25_1_reg.
+DSP Report: register times25_0_reg is absorbed into DSP times25_1_reg.
+DSP Report: operator times25_00 is absorbed into DSP times25_1_reg.
+DSP Report: Generating DSP square1_reg, operation Mode is: (A2*B2)'.
+DSP Report: register square0_reg is absorbed into DSP square1_reg.
+DSP Report: register square0_reg is absorbed into DSP square1_reg.
+DSP Report: register square1_reg is absorbed into DSP square1_reg.
+DSP Report: operator square00 is absorbed into DSP square1_reg.
+DSP Report: Generating DSP variance_full, operation Mode is: C-A:B.
+DSP Report: operator variance_full is absorbed into DSP variance_full.
+DSP Report: Generating DSP eps00, operation Mode is: A*(B:0x271).
+DSP Report: operator eps00 is absorbed into DSP eps00.
+DSP Report: Generating DSP hi1_reg, operation Mode is: (A2*(B:0x14))'.
+DSP Report: register n0_reg is absorbed into DSP hi1_reg.
+DSP Report: register hi1_reg is absorbed into DSP hi1_reg.
+DSP Report: operator hi10 is absorbed into DSP hi1_reg.
+DSP Report: Generating DSP product2_reg, operation Mode is: (C+(A2*(B:0x3d71))')'.
+DSP Report: register n0_reg is absorbed into DSP product2_reg.
+DSP Report: register product2_reg is absorbed into DSP product2_reg.
+DSP Report: register lo1_reg is absorbed into DSP product2_reg.
+DSP Report: operator product20 is absorbed into DSP product2_reg.
+DSP Report: operator lo10 is absorbed into DSP product2_reg.
+DSP Report: Generating DSP hi1_reg, operation Mode is: (A2*(B:0x14))'.
+DSP Report: register n0_reg is absorbed into DSP hi1_reg.
+DSP Report: register hi1_reg is absorbed into DSP hi1_reg.
+DSP Report: operator hi10 is absorbed into DSP hi1_reg.
+DSP Report: Generating DSP product2_reg, operation Mode is: (C+(A2*(B:0x3d71))')'.
+DSP Report: register n0_reg is absorbed into DSP product2_reg.
+DSP Report: register product2_reg is absorbed into DSP product2_reg.
+DSP Report: register lo1_reg is absorbed into DSP product2_reg.
+DSP Report: operator product20 is absorbed into DSP product2_reg.
+DSP Report: operator lo10 is absorbed into DSP product2_reg.
+DSP Report: Generating DSP rounded_product0, operation Mode is: (C:0x8)+(A2*B2)'.
+DSP Report: register product0_reg is absorbed into DSP rounded_product0.
+DSP Report: register product0_reg is absorbed into DSP rounded_product0.
+DSP Report: register product1_reg is absorbed into DSP rounded_product0.
+DSP Report: operator product00 is absorbed into DSP rounded_product0.
+DSP Report: operator rounded_product0 is absorbed into DSP rounded_product0.
+WARNING: [Synth 8-3936] Found unconnected internal register 'sobel/window/rows2_reg' and it is trimmed from '48' to '40' bits. [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/row_window3.sv:54]
+DSP Report: Generating DSP pattern_pixel2, operation Mode is: (D'+(A:0x1))*(B:0x3).
+DSP Report: register py_reg is absorbed into DSP pattern_pixel2.
+DSP Report: register py_reg is absorbed into DSP pattern_pixel2.
+DSP Report: operator pattern_pixel2 is absorbed into DSP pattern_pixel2.
+DSP Report: operator py0 is absorbed into DSP pattern_pixel2.
+DSP Report: Generating DSP pattern_pixel0, operation Mode is: PCIN+(A:0x0):B2+(C:0x7).
+DSP Report: register px_reg is absorbed into DSP pattern_pixel0.
+DSP Report: operator pattern_pixel0 is absorbed into DSP pattern_pixel0.
+WARNING: [Synth 8-3917] design edge_top has port led[7] driven by constant 0
+WARNING: [Synth 8-3917] design edge_top has port led[6] driven by constant 0
+WARNING: [Synth 8-7129] Port sioc in module ov7670_config is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:34 . Memory (MB): peak = 2040.445 ; gain = 239.273
+---------------------------------------------------------------------------------
+ Sort Area is  rounded_b1_b : 0 0 : 1633 1633 : Used 1 time 100
+ Sort Area is  square1_reg_d : 0 0 : 1290 1290 : Used 1 time 100
+ Sort Area is  rounded_product0_1b : 0 0 : 768 768 : Used 1 time 100
+ Sort Area is  square1_reg[0]_0 : 0 0 : 566 566 : Used 1 time 100
+ Sort Area is  square1_reg[1]_2 : 0 0 : 566 566 : Used 1 time 100
+ Sort Area is  square1_reg[2]_3 : 0 0 : 566 566 : Used 1 time 100
+ Sort Area is  square1_reg[3]_4 : 0 0 : 566 566 : Used 1 time 100
+ Sort Area is  tail2b_reg_5 : 0 0 : 518 518 : Used 1 time 100
+ Sort Area is  times25_1_reg_f : 0 0 : 408 408 : Used 1 time 100
+ Sort Area is  variance_full_11 : 0 0 : 187 187 : Used 1 time 100
+ Sort Area is  mean_div/product2_reg_9 : 0 0 : 1402 1402 : Used 1 time 0
+ Sort Area is  product2_reg_1a : 0 0 : 1402 1402 : Used 1 time 0
+ Sort Area is  product2_reg_17 : 0 0 : 1226 1226 : Used 1 time 0
+ Sort Area is  eps00_13 : 0 0 : 215 215 : Used 1 time 0
+ Sort Area is  hi1_reg_19 : 0 0 : 201 201 : Used 1 time 0
+ Sort Area is  mean_div/hi1_reg_7 : 0 0 : 201 201 : Used 1 time 0
+ Sort Area is  hi1_reg_15 : 0 0 : 169 169 : Used 1 time 0
+ Sort Area is  pattern_pixel2_1d : 0 0 : 71 121 : Used 1 time 0
+ Sort Area is  pattern_pixel2_1d : 0 1 : 50 121 : Used 1 time 0
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping Report (see note below)
++-----------------------+------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name            | RTL Object                         | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++-----------------------+------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|stream/core/guided/mom | rows/bank[0].memory_reg            | 640 x 8(READ_FIRST)    | W |   | 640 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|stream/core/guided/mom | rows/bank[1].memory_reg            | 640 x 8(READ_FIRST)    | W |   | 640 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|stream/core/guided/mom | rows/bank[2].memory_reg            | 640 x 8(READ_FIRST)    | W |   | 640 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|stream/core/guided/mom | rows/bank[3].memory_reg            | 640 x 8(READ_FIRST)    | W |   | 640 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|stream/core/guided/mom | rows/bank[4].memory_reg            | 640 x 8(READ_FIRST)    | W |   | 640 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|stream/core/guided/box | rows/bank[0].memory_reg            | 636 x 36(READ_FIRST)   | W |   | 636 x 36(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
+|stream/core/guided/box | rows/bank[1].memory_reg            | 636 x 36(READ_FIRST)   | W |   | 636 x 36(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
+|stream/core/guided/box | rows/bank[2].memory_reg            | 636 x 36(READ_FIRST)   | W |   | 636 x 36(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
+|stream/core/guided/box | rows/bank[3].memory_reg            | 636 x 36(READ_FIRST)   | W |   | 636 x 36(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
+|stream/core/guided/box | rows/bank[4].memory_reg            | 636 x 36(READ_FIRST)   | W |   | 636 x 36(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
+|stream/core            | gaussian/window/bank[2].memory_reg | 640 x 8(READ_FIRST)    | W |   | 640 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|stream/core            | gaussian/window/bank[1].memory_reg | 640 x 8(READ_FIRST)    | W |   | 640 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|stream/core            | gaussian/window/bank[0].memory_reg | 640 x 8(READ_FIRST)    | W |   | 640 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|stream/core            | sobel/window/bank[2].memory_reg    | 632 x 16(READ_FIRST)   | W |   | 632 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|stream/core            | sobel/window/bank[1].memory_reg    | 632 x 16(READ_FIRST)   | W |   | 632 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|stream/core            | sobel/window/bank[0].memory_reg    | 632 x 16(READ_FIRST)   | W |   | 632 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
++-----------------------+------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++-------------+-------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name  | DSP Mapping             | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++-------------+-------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|moments5     | (A''*B'')'              | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|moments5     | (A2*B2)'                | 8      | 8      | -      | -      | 16     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|moments5     | (A2*B2)'                | 8      | 8      | -      | -      | 16     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|moments5     | (A2*B2)'                | 8      | 8      | -      | -      | 16     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|moments5     | (A2*B2)'                | 8      | 8      | -      | -      | 16     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|div25_pipe   | (A2*(B:0x14))'          | 21     | 5      | -      | -      | 26     | 1    | 0    | -    | -    | -     | 1    | 0    | 
+|div25_pipe   | (C+(A2*(B:0x3d71))')'   | 21     | 14     | 41     | -      | 41     | 1    | 0    | 0    | -    | -     | 1    | 1    | 
+|coefficient5 | (C:0x800)+(A''*B2)'     | 16     | 13     | 12     | -      | 29     | 2    | 1    | 0    | -    | -     | 1    | 0    | 
+|coefficient5 | (A*(B:0x19))'           | 21     | 5      | -      | -      | 26     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|coefficient5 | (A2*B2)'                | 13     | 13     | -      | -      | 26     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|coefficient5 | C-A:B                   | 9      | 18     | 27     | -      | 27     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|coefficient5 | A*(B:0x271)             | 11     | 10     | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|div25_pipe   | (A2*(B:0x14))'          | 17     | 5      | -      | -      | 22     | 1    | 0    | -    | -    | -     | 1    | 0    | 
+|div25_pipe   | (C+(A2*(B:0x3d71))')'   | 17     | 14     | 37     | -      | 38     | 1    | 0    | 0    | -    | -     | 1    | 1    | 
+|div25_pipe   | (A2*(B:0x14))'          | 21     | 5      | -      | -      | 26     | 1    | 0    | -    | -    | -     | 1    | 0    | 
+|div25_pipe   | (C+(A2*(B:0x3d71))')'   | 21     | 14     | 41     | -      | 41     | 1    | 0    | 0    | -    | -     | 1    | 1    | 
+|reconstruct  | (C:0x8)+(A2*B2)'        | 12     | 8      | 4      | -      | 21     | 1    | 1    | 0    | -    | -     | 1    | 0    | 
+|edge_top     | (D'+(A:0x1))*(B:0x3)    | 1      | 2      | -      | 9      | 10     | 0    | 0    | -    | 1    | 1     | 0    | 0    | 
+|edge_top     | PCIN+(A:0x0):B2+(C:0x7) | 30     | 8      | 3      | -      | -1     | 0    | 1    | 0    | -    | -     | 0    | 0    | 
++-------------+-------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:35 ; elapsed = 00:00:40 . Memory (MB): peak = 2040.445 ; gain = 239.273
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:38 ; elapsed = 00:00:42 . Memory (MB): peak = 2063.570 ; gain = 262.398
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping Report
++-----------------------+------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name            | RTL Object                         | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++-----------------------+------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|stream/core/guided/mom | rows/bank[0].memory_reg            | 640 x 8(READ_FIRST)    | W |   | 640 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|stream/core/guided/mom | rows/bank[1].memory_reg            | 640 x 8(READ_FIRST)    | W |   | 640 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|stream/core/guided/mom | rows/bank[2].memory_reg            | 640 x 8(READ_FIRST)    | W |   | 640 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|stream/core/guided/mom | rows/bank[3].memory_reg            | 640 x 8(READ_FIRST)    | W |   | 640 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|stream/core/guided/mom | rows/bank[4].memory_reg            | 640 x 8(READ_FIRST)    | W |   | 640 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|stream/core/guided/box | rows/bank[0].memory_reg            | 636 x 36(READ_FIRST)   | W |   | 636 x 36(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
+|stream/core/guided/box | rows/bank[1].memory_reg            | 636 x 36(READ_FIRST)   | W |   | 636 x 36(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
+|stream/core/guided/box | rows/bank[2].memory_reg            | 636 x 36(READ_FIRST)   | W |   | 636 x 36(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
+|stream/core/guided/box | rows/bank[3].memory_reg            | 636 x 36(READ_FIRST)   | W |   | 636 x 36(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
+|stream/core/guided/box | rows/bank[4].memory_reg            | 636 x 36(READ_FIRST)   | W |   | 636 x 36(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
+|stream/core            | gaussian/window/bank[2].memory_reg | 640 x 8(READ_FIRST)    | W |   | 640 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|stream/core            | gaussian/window/bank[1].memory_reg | 640 x 8(READ_FIRST)    | W |   | 640 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|stream/core            | gaussian/window/bank[0].memory_reg | 640 x 8(READ_FIRST)    | W |   | 640 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|stream/core            | sobel/window/bank[2].memory_reg    | 632 x 16(READ_FIRST)   | W |   | 632 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|stream/core            | sobel/window/bank[1].memory_reg    | 632 x 16(READ_FIRST)   | W |   | 632 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|stream/core            | sobel/window/bank[0].memory_reg    | 632 x 16(READ_FIRST)   | W |   | 632 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
++-----------------------+------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance stream/core/guided/mom/rows/bank[0].memory_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance stream/core/guided/mom/rows/bank[1].memory_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance stream/core/guided/mom/rows/bank[2].memory_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance stream/core/guided/mom/rows/bank[3].memory_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance stream/core/guided/mom/rows/bank[4].memory_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance stream/core/guided/box/rows/bank[0].memory_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance stream/core/guided/box/rows/bank[1].memory_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance stream/core/guided/box/rows/bank[2].memory_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance stream/core/guided/box/rows/bank[3].memory_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance stream/core/guided/box/rows/bank[4].memory_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance stream/core/gaussian/window/bank[2].memory_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance stream/core/gaussian/window/bank[1].memory_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance stream/core/gaussian/window/bank[0].memory_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance stream/core/sobel/window/bank[2].memory_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance stream/core/sobel/window/bank[1].memory_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance stream/core/sobel/window/bank[0].memory_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:41 ; elapsed = 00:00:45 . Memory (MB): peak = 2080.969 ; gain = 279.797
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:42 ; elapsed = 00:00:47 . Memory (MB): peak = 2094.266 ; gain = 293.094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:42 ; elapsed = 00:00:47 . Memory (MB): peak = 2094.266 ; gain = 293.094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:43 ; elapsed = 00:00:48 . Memory (MB): peak = 2094.266 ; gain = 293.094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:43 ; elapsed = 00:00:48 . Memory (MB): peak = 2094.266 ; gain = 293.094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:43 ; elapsed = 00:00:48 . Memory (MB): peak = 2094.266 ; gain = 293.094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:43 ; elapsed = 00:00:48 . Memory (MB): peak = 2094.266 ; gain = 293.094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+---------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                                                            | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+---------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|edge_top    | stream/core/guided/mom/xp_reg[4][9]                                 | 5      | 10    | NO           | NO                 | YES               | 10     | 0       | 
+|edge_top    | stream/core/guided/mom/yp_reg[6][8]                                 | 7      | 8     | NO           | NO                 | YES               | 8      | 0       | 
+|edge_top    | stream/core/guided/mom/tail1b_reg[7]                                | 4      | 8     | NO           | NO                 | YES               | 8      | 0       | 
+|edge_top    | stream/core/guided/mom/pixel1_reg[3][7]                             | 3      | 24    | NO           | NO                 | YES               | 24     | 0       | 
+|edge_top    | stream/core/guided/coef/ratio/g_bit[12].quotient_reg[12][11]        | 12     | 1     | NO           | YES                | YES               | 1      | 0       | 
+|edge_top    | stream/core/guided/coef/ratio/g_bit[12].quotient_reg[12][10]        | 11     | 1     | NO           | YES                | YES               | 1      | 0       | 
+|edge_top    | stream/core/guided/coef/ratio/g_bit[12].quotient_reg[12][9]         | 10     | 1     | NO           | YES                | YES               | 1      | 0       | 
+|edge_top    | stream/core/guided/coef/ratio/g_bit[12].quotient_reg[12][8]         | 9      | 1     | NO           | YES                | YES               | 1      | 0       | 
+|edge_top    | stream/core/guided/coef/ratio/g_bit[12].quotient_reg[12][7]         | 8      | 1     | NO           | YES                | YES               | 1      | 0       | 
+|edge_top    | stream/core/guided/coef/ratio/g_bit[12].quotient_reg[12][6]         | 7      | 1     | NO           | YES                | YES               | 1      | 0       | 
+|edge_top    | stream/core/guided/coef/ratio/g_bit[12].quotient_reg[12][5]         | 6      | 1     | NO           | YES                | YES               | 1      | 0       | 
+|edge_top    | stream/core/guided/coef/ratio/g_bit[12].quotient_reg[12][4]         | 5      | 1     | NO           | YES                | YES               | 1      | 0       | 
+|edge_top    | stream/core/guided/coef/ratio/g_bit[12].quotient_reg[12][3]         | 4      | 1     | NO           | YES                | YES               | 1      | 0       | 
+|edge_top    | stream/core/guided/coef/mean_div/n3_reg[20]                         | 3      | 13    | NO           | NO                 | YES               | 13     | 0       | 
+|edge_top    | stream/core/guided/coef/mean_div/n3_reg[3]                          | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|edge_top    | stream/core/guided/coef/delay_mean/g_pipe.data_pipe_reg[11][15]     | 12     | 16    | NO           | NO                 | YES               | 16     | 0       | 
+|edge_top    | stream/core/guided/coef/delay_mean/g_pipe.data_pipe_reg[12][16]     | 13     | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|edge_top    | stream/core/guided/coef/delay_error/g_pipe.data_pipe_reg[13][0]     | 16     | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|edge_top    | stream/core/guided/coef/finish_metadata/g_pipe.data_pipe_reg[2][71] | 3      | 13    | NO           | NO                 | YES               | 13     | 0       | 
+|edge_top    | stream/core/guided/coef/finish_metadata/g_pipe.data_pipe_reg[2][26] | 21     | 17    | NO           | NO                 | YES               | 0      | 17      | 
+|edge_top    | stream/core/guided/coef/finish_metadata/g_pipe.data_pipe_reg[2][18] | 28     | 1     | NO           | NO                 | YES               | 0      | 1       | 
+|edge_top    | stream/core/guided/coef/finish_metadata/g_pipe.data_pipe_reg[2][8]  | 22     | 1     | NO           | NO                 | YES               | 0      | 1       | 
+|edge_top    | stream/core/guided/coef/finish_metadata/g_pipe.data_pipe_reg[2][7]  | 27     | 8     | NO           | NO                 | YES               | 0      | 8       | 
+|edge_top    | stream/core/guided/box/rows/xp_reg[2][9]                            | 3      | 10    | NO           | NO                 | YES               | 10     | 0       | 
+|edge_top    | stream/core/guided/box/divide_a/n3_reg[16]                          | 3      | 17    | NO           | NO                 | YES               | 17     | 0       | 
+|edge_top    | stream/core/guided/box/divide_b/n3_reg[20]                          | 3      | 20    | NO           | NO                 | YES               | 20     | 0       | 
+|edge_top    | stream/core/guided/box/divide_b/n3_reg[19]                          | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|edge_top    | stream/core/guided/box/xp_reg[2][9]                                 | 3      | 10    | NO           | NO                 | YES               | 10     | 0       | 
+|edge_top    | stream/core/guided/box/yp_reg[4][8]                                 | 7      | 7     | NO           | NO                 | YES               | 7      | 0       | 
+|edge_top    | stream/core/guided/box/align_metadata/g_pipe.data_pipe_reg[4][59]   | 5      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|edge_top    | stream/core/guided/box/align_metadata/g_pipe.data_pipe_reg[4][7]    | 9      | 8     | NO           | NO                 | YES               | 8      | 0       | 
+|edge_top    | stream/core/guided/box/tail_a2_reg[11]                              | 4      | 12    | NO           | NO                 | YES               | 12     | 0       | 
+|edge_top    | stream/core/guided/box/tail_b2_reg[15]                              | 4      | 16    | NO           | NO                 | YES               | 16     | 0       | 
+|edge_top    | stream/core/guided/rec/delay_metadata/g_pipe.data_pipe_reg[3][59]   | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|edge_top    | stream/core/guided/out_raw_reg[7]                                   | 5      | 8     | NO           | NO                 | YES               | 8      | 0       | 
+|edge_top    | stream/core/guided/out_x_reg[9]                                     | 10     | 8     | NO           | NO                 | YES               | 8      | 0       | 
+|edge_top    | stream/core/guided/out_x_reg[1]                                     | 11     | 2     | NO           | NO                 | YES               | 2      | 0       | 
+|edge_top    | stream/core/guided/out_y_reg[8]                                     | 10     | 7     | NO           | NO                 | YES               | 7      | 0       | 
+|edge_top    | stream/core/guided/out_y_reg[1]                                     | 17     | 2     | NO           | NO                 | YES               | 2      | 0       | 
+|edge_top    | stream/core/guided/out_frame_id_reg[31]                             | 44     | 32    | NO           | NO                 | YES               | 0      | 64      | 
+|edge_top    | stream/core/sobel/window/xp_reg[2][9]                               | 3      | 10    | NO           | NO                 | YES               | 10     | 0       | 
+|edge_top    | stream/core/sobel/window/rows2_reg[39]                              | 3      | 8     | NO           | NO                 | YES               | 8      | 0       | 
+|edge_top    | stream/core/sobel/out_raw_reg[7]                                    | 3      | 8     | NO           | NO                 | YES               | 8      | 0       | 
+|edge_top    | stream/core/sobel/out_x_reg[9]                                      | 3      | 10    | NO           | NO                 | YES               | 10     | 0       | 
+|edge_top    | stream/core/sobel/out_y_reg[8]                                      | 3      | 9     | NO           | NO                 | YES               | 9      | 0       | 
+|edge_top    | stream/core/sobel/out_frame_id_reg[31]                              | 6      | 32    | NO           | NO                 | YES               | 32     | 0       | 
+|edge_top    | stream/core/guided/mom/rows/rows2_reg[32]                           | 3      | 8     | NO           | NO                 | YES               | 8      | 0       | 
+|edge_top    | stream/core/gaussian/window/xp_reg[2][0]                            | 3      | 10    | NO           | NO                 | YES               | 10     | 0       | 
+|edge_top    | stream/core/gaussian/out_frame_id_reg[13]                           | 5      | 32    | NO           | NO                 | YES               | 32     | 0       | 
+|edge_top    | stream/core/guided/mom/history1_reg[4][10]                          | 4      | 11    | YES          | NO                 | YES               | 11     | 0       | 
+|edge_top    | stream/core/guided/mom/history2_reg[4][18]                          | 4      | 19    | YES          | NO                 | YES               | 19     | 0       | 
+|edge_top    | stream/core/guided/coef/ratio/ep_reg[12]                            | 13     | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|edge_top    | stream/core/guided/coef/vp_reg[3]                                   | 4      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|edge_top    | stream/core/guided/coef/delay_mean/g_pipe.valid_pipe_reg[11]        | 12     | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|edge_top    | stream/core/guided/box/divide_b/ep_reg[3]                           | 4      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|edge_top    | stream/core/guided/box/divide_a/vp_reg[3]                           | 4      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|edge_top    | stream/core/guided/rec/delay_metadata/g_pipe.valid_pipe_reg[3]      | 4      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|edge_top    | stream/core/guided/box/history_a_reg[4][14]                         | 4      | 15    | YES          | NO                 | YES               | 15     | 0       | 
+|edge_top    | stream/core/guided/box/history_b_reg[4][18]                         | 4      | 19    | YES          | NO                 | YES               | 19     | 0       | 
++------------+---------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++-------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name  | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++-------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|edge_top     | (D'+A)'*B      | 1      | 2      | -      | 9      | 0      | 0    | 0    | -    | 1    | 1     | 0    | 0    | 
+|edge_top     | PCIN+A:B'+C    | 0      | 8      | -      | -      | 8      | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|div25_pipe   | (A'*B)'        | 17     | 5      | -      | -      | 22     | 1    | 0    | -    | -    | -     | 0    | 1    | 
+|div25_pipe   | (C+(A'*B)')'   | 17     | 14     | 37     | -      | 38     | 1    | 0    | 0    | -    | -     | 1    | 1    | 
+|div25_pipe   | (A'*B)'        | 21     | 5      | -      | -      | 26     | 1    | 0    | -    | -    | -     | 0    | 1    | 
+|div25_pipe   | (C+(A'*B)')'   | 21     | 14     | 41     | -      | 41     | 1    | 0    | 0    | -    | -     | 1    | 1    | 
+|coefficient5 | (C+(A''*B')')' | 16     | 13     | 12     | -      | 29     | 2    | 1    | 0    | -    | -     | 1    | 1    | 
+|coefficient5 | ((A*B)')'      | 21     | 5      | -      | -      | 26     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|coefficient5 | (A'*B')'       | 13     | 13     | -      | -      | 26     | 1    | 1    | -    | -    | -     | 0    | 1    | 
+|coefficient5 | C-(A:B)        | 8      | 18     | 26     | -      | 27     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|coefficient5 | A*B            | 11     | 10     | -      | -      | 21     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|div25_pipe   | (A'*B)'        | 21     | 5      | -      | -      | 26     | 1    | 0    | -    | -    | -     | 0    | 1    | 
+|div25_pipe   | (C+(A'*B)')'   | 21     | 14     | 41     | -      | 41     | 1    | 0    | 0    | -    | -     | 1    | 1    | 
+|moments5     | ((A''*B'')')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|moments5     | ((A'*B')')'    | 8      | 8      | -      | -      | 16     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|moments5     | ((A'*B')')'    | 8      | 8      | -      | -      | 16     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|moments5     | ((A'*B')')'    | 8      | 8      | -      | -      | 16     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|moments5     | ((A'*B')')'    | 8      | 8      | -      | -      | 16     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|reconstruct  | (C+A'*B'')'    | 12     | 8      | 4      | -      | 21     | 1    | 2    | 0    | -    | -     | 0    | 1    | 
++-------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |diag_vio      |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |diag_vio |     1|
+|2     |BUFG     |     1|
+|3     |CARRY4   |   565|
+|4     |DSP48E1  |    19|
+|16    |LUT1     |   187|
+|17    |LUT2     |  1191|
+|18    |LUT3     |   766|
+|19    |LUT4     |   813|
+|20    |LUT5     |   359|
+|21    |LUT6     |   890|
+|22    |RAMB18E1 |    11|
+|23    |RAMB36E1 |     5|
+|24    |SRL16E   |   431|
+|25    |SRLC32E  |    91|
+|26    |FDRE     |  3970|
+|27    |FDSE     |   168|
+|28    |IBUF     |    28|
+|29    |OBUF     |    21|
+|30    |OBUFT    |     3|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:43 ; elapsed = 00:00:48 . Memory (MB): peak = 2094.266 ; gain = 293.094
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 23 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:37 ; elapsed = 00:00:46 . Memory (MB): peak = 2094.266 ; gain = 180.473
+Synthesis Optimization Complete : Time (s): cpu = 00:00:43 ; elapsed = 00:00:48 . Memory (MB): peak = 2094.266 ; gain = 293.094
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Project 1-454] Reading design checkpoint 'e:/FPGA_Test_Work/edge_v03_work/stable_board/ip/diag_vio/diag_vio.dcp' for cell 'debug_bridge'
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.066 . Memory (MB): peak = 2110.340 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 648 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Chipscope 16-324] Core: debug_bridge UUID: f4cb1099-6992-5e9b-bb37-7a70fda6fd20 
+Parsing XDC File [e:/FPGA_Test_Work/edge_v03_work/stable_board/ip/diag_vio/diag_vio.xdc] for cell 'debug_bridge'
+Finished Parsing XDC File [e:/FPGA_Test_Work/edge_v03_work/stable_board/ip/diag_vio/diag_vio.xdc] for cell 'debug_bridge'
+Parsing XDC File [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/constraints/basys3_camera_uart.xdc]
+CRITICAL WARNING: [Constraints 18-515] set_max_delay: Path segmentation by forcing 'camera/rclk_reg/Q' to be timing startpoint. [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/constraints/basys3_camera_uart.xdc:77]
+Resolution: Use valid startpoint to avoid path segmentation such as the clock pin of a register.
+INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'fifo_virtual' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/constraints/basys3_camera_uart.xdc:82]
+Finished Parsing XDC File [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/constraints/basys3_camera_uart.xdc]
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'e:/FPGA_Test_Work/edge_v03_work/stable_board/ip/diag_vio/diag_vio.dcp'
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2118.664 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 5ded25f9
+INFO: [Common 17-83] Releasing license: Synthesis
+96 Infos, 40 Warnings, 1 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:46 ; elapsed = 00:00:52 . Memory (MB): peak = 2118.664 ; gain = 317.492
+WARNING: [Vivado 12-180] No cells matched 'get_cells -hier -filter {REF_NAME =~ LD*}'.
+# set latches [get_cells -hier -filter {REF_NAME =~ LD*}]
+# if {[llength $latches]} {error "unexpected latch"}
+# report_utilization -file [file join $out synth_utilization.rpt]
+# opt_design
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors, 3 Warnings
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.902 . Memory (MB): peak = 2118.664 ; gain = 0.000
+
+Starting Cache Timing Information Task
+INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'fifo_virtual' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/constraints/basys3_camera_uart.xdc:82]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Cache Timing Information Task | Checksum: 16bc4a552
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2118.664 ; gain = 0.000
+
+Starting Logic Optimization Task
+
+Phase 1 Initialization
+
+Phase 1.1 Core Generation And Design Setup
+
+Phase 1.1.1 Generate And Synthesize Debug Cores
+INFO: [Chipscope 16-329] Generating Script for core instance : dbg_hub 
+INFO: [IP_Flow 19-3806] Processing IP xilinx.com:ip:xsdbm:3.0 for cell dbg_hub_CV.
+Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2521.668 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 2521.668 ; gain = 0.000
+Phase 1.1.1 Generate And Synthesize Debug Cores | Checksum: 21f9b8450
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:49 . Memory (MB): peak = 2521.668 ; gain = 22.270
+Phase 1.1 Core Generation And Design Setup | Checksum: 21f9b8450
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:49 . Memory (MB): peak = 2521.668 ; gain = 22.270
+
+Phase 1.2 Setup Constraints And Sort Netlist
+Phase 1.2 Setup Constraints And Sort Netlist | Checksum: 21f9b8450
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:49 . Memory (MB): peak = 2521.668 ; gain = 22.270
+Phase 1 Initialization | Checksum: 21f9b8450
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:49 . Memory (MB): peak = 2521.668 ; gain = 22.270
+
+Phase 2 Timer Update And Timing Data Collection
+
+Phase 2.1 Timer Update
+Phase 2.1 Timer Update | Checksum: 21f9b8450
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:49 . Memory (MB): peak = 2521.668 ; gain = 22.270
+
+Phase 2.2 Timing Data Collection
+Phase 2.2 Timing Data Collection | Checksum: 21f9b8450
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:49 . Memory (MB): peak = 2521.668 ; gain = 22.270
+Phase 2 Timer Update And Timing Data Collection | Checksum: 21f9b8450
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:49 . Memory (MB): peak = 2521.668 ; gain = 22.270
+
+Phase 3 Retarget
+INFO: [Opt 31-1851] Number of loadless carry chains removed were: 0
+INFO: [Opt 31-1834] Total Chains To Be Transformed Were: 0 AND Number of Transformed insts Created are: 0
+INFO: [Opt 31-1566] Pulled 1 inverters resulting in an inversion of 12 pins
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 3 Retarget | Checksum: 1b8c7e6a4
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:49 . Memory (MB): peak = 2521.668 ; gain = 22.270
+Retarget | Checksum: 1b8c7e6a4
+INFO: [Opt 31-389] Phase Retarget created 33 cells and removed 43 cells
+INFO: [Opt 31-1021] In phase Retarget, 480 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 4 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 4 Constant propagation | Checksum: 174d3712f
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:49 . Memory (MB): peak = 2521.668 ; gain = 22.270
+Constant propagation | Checksum: 174d3712f
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
+INFO: [Opt 31-1021] In phase Constant propagation, 464 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 5 Sweep
+INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
+Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2521.668 ; gain = 0.000
+INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
+Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2521.668 ; gain = 0.000
+Phase 5 Sweep | Checksum: 2638f0b55
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:49 . Memory (MB): peak = 2521.668 ; gain = 22.270
+Sweep | Checksum: 2638f0b55
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 0 cells
+INFO: [Opt 31-1021] In phase Sweep, 2116 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 6 BUFG optimization
+Phase 6 BUFG optimization | Checksum: 2638f0b55
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:49 . Memory (MB): peak = 2521.668 ; gain = 22.270
+BUFG optimization | Checksum: 2638f0b55
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 7 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 7 Shift Register Optimization | Checksum: 2638f0b55
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:49 . Memory (MB): peak = 2521.668 ; gain = 22.270
+Shift Register Optimization | Checksum: 2638f0b55
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 8 Post Processing Netlist
+Phase 8 Post Processing Netlist | Checksum: 2638f0b55
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:49 . Memory (MB): peak = 2521.668 ; gain = 22.270
+Post Processing Netlist | Checksum: 2638f0b55
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+INFO: [Opt 31-1021] In phase Post Processing Netlist, 471 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 9 Finalization
+
+Phase 9.1 Finalizing Design Cores and Updating Shapes
+Phase 9.1 Finalizing Design Cores and Updating Shapes | Checksum: 24eccefd2
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:50 . Memory (MB): peak = 2521.668 ; gain = 22.270
+
+Phase 9.2 Verifying Netlist Connectivity
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 2521.668 ; gain = 0.000
+Phase 9.2 Verifying Netlist Connectivity | Checksum: 24eccefd2
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:50 . Memory (MB): peak = 2521.668 ; gain = 22.270
+Phase 9 Finalization | Checksum: 24eccefd2
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:50 . Memory (MB): peak = 2521.668 ; gain = 22.270
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |              33  |              43  |                                            480  |
+|  Constant propagation         |               0  |               0  |                                            464  |
+|  Sweep                        |               0  |               0  |                                           2116  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                            471  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+Ending Logic Optimization Task | Checksum: 24eccefd2
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:50 . Memory (MB): peak = 2521.668 ; gain = 22.270
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'fifo_virtual' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/constraints/basys3_camera_uart.xdc:82]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+
+
+Starting PowerOpt Patch Enables Task
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 16 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-201] Structural ODC has moved 0 WE to EN ports
+Number of BRAM Ports augmented: 0 newly gated: 0 Total Ports: 32
+Ending PowerOpt Patch Enables Task | Checksum: 24eccefd2
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.041 . Memory (MB): peak = 2578.113 ; gain = 0.000
+Ending Power Optimization Task | Checksum: 24eccefd2
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 2578.113 ; gain = 56.445
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: 24eccefd2
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2578.113 ; gain = 0.000
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 2578.113 ; gain = 0.000
+Ending Netlist Obfuscation Task | Checksum: 24eccefd2
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 2578.113 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+40 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:12 ; elapsed = 00:00:58 . Memory (MB): peak = 2578.113 ; gain = 459.449
+# place_design
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-83] Releasing license: Implementation
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors, 3 Warnings
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
+
+Starting Placer Task
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 2578.113 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 1c29e8794
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 2578.113 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 2578.113 ; gain = 0.000
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'fifo_virtual' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/constraints/basys3_camera_uart.xdc:82]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 1a24aa3f9
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.598 . Memory (MB): peak = 2578.113 ; gain = 0.000
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 242e0e985
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2578.113 ; gain = 0.000
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 242e0e985
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2578.113 ; gain = 0.000
+Phase 1 Placer Initialization | Checksum: 242e0e985
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2578.113 ; gain = 0.000
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: 21c025b9e
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2578.113 ; gain = 0.000
+
+Phase 2.2 Update Timing before SLR Path Opt
+Phase 2.2 Update Timing before SLR Path Opt | Checksum: 241415cf4
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2578.113 ; gain = 0.000
+
+Phase 2.3 Post-Processing in Floorplanning
+Phase 2.3 Post-Processing in Floorplanning | Checksum: 278bd8b30
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 2578.113 ; gain = 0.000
+
+Phase 2.4 Global Place Phase1
+Phase 2.4 Global Place Phase1 | Checksum: 1067c0f9e
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 2578.113 ; gain = 0.000
+
+Phase 2.5 Global Place Phase2
+
+Phase 2.5.1 UpdateTiming Before Physical Synthesis
+Phase 2.5.1 UpdateTiming Before Physical Synthesis | Checksum: 13898e5cc
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 2578.113 ; gain = 0.000
+
+Phase 2.5.2 Physical Synthesis In Placer
+INFO: [Physopt 32-1035] Found 0 LUTNM shape to break, 445 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1044] Break lutnm for timing: one critical 0, two critical 0, total 0, new lutff created 0
+INFO: [Physopt 32-1138] End 1 Pass. Optimized 205 nets or LUTs. Breaked 0 LUT, combined 205 existing LUTs and moved 0 existing LUT
+INFO: [Physopt 32-65] No nets found for high-fanout optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-1123] No candidate cells found for Shift Register to Pipeline optimization
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-1401] No candidate cells found for Shift Register optimization.
+INFO: [Physopt 32-677] No candidate cells for Shift Register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-526] No candidate cells for BRAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-846] No candidate cells for URAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-846] No candidate cells for URAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-949] No candidate nets found for dynamic/static region interface net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 2578.113 ; gain = 0.000
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  LUT Combining                                    |            0  |            205  |                   205  |           0  |           1  |  00:00:00  |
+|  Retime                                           |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  DSP Register                                     |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register                                   |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  BRAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  URAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                                            |            0  |            205  |                   205  |           0  |           9  |  00:00:00  |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.5.2 Physical Synthesis In Placer | Checksum: 192006541
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 2578.113 ; gain = 0.000
+Phase 2.5 Global Place Phase2 | Checksum: 177bb3d2d
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 2578.113 ; gain = 0.000
+Phase 2 Global Placement | Checksum: 177bb3d2d
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 2578.113 ; gain = 0.000
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 13758f108
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 2578.113 ; gain = 0.000
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 2338ed1d1
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 2578.113 ; gain = 0.000
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 1be6b57fb
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 2578.113 ; gain = 0.000
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 17c7ef35d
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 2578.113 ; gain = 0.000
+
+Phase 3.5 Fast Optimization
+Phase 3.5 Fast Optimization | Checksum: 230ec2974
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:07 . Memory (MB): peak = 2578.113 ; gain = 0.000
+
+Phase 3.6 Small Shape Detail Placement
+Phase 3.6 Small Shape Detail Placement | Checksum: e2c3e7d0
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:08 . Memory (MB): peak = 2578.113 ; gain = 0.000
+
+Phase 3.7 Re-assign LUT pins
+Phase 3.7 Re-assign LUT pins | Checksum: 13df5ea6b
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:08 . Memory (MB): peak = 2578.113 ; gain = 0.000
+
+Phase 3.8 Pipeline Register Optimization
+Phase 3.8 Pipeline Register Optimization | Checksum: 171b062c2
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:08 . Memory (MB): peak = 2578.113 ; gain = 0.000
+Phase 3 Detail Placement | Checksum: 171b062c2
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:08 . Memory (MB): peak = 2578.113 ; gain = 0.000
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'fifo_virtual' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/constraints/basys3_camera_uart.xdc:82]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: 18de46d19
+
+Phase 4.1.1.1 BUFG Insertion
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 2 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.452 | TNS=-1.903 |
+Phase 1 Physical Synthesis Initialization | Checksum: e77128bc
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.149 . Memory (MB): peak = 2578.113 ; gain = 0.000
+INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to netlist editing failed: 0.
+Ending Physical Synthesis Task | Checksum: 1f4b43d5c
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.189 . Memory (MB): peak = 2578.113 ; gain = 0.000
+Phase 4.1.1.1 BUFG Insertion | Checksum: 18de46d19
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:10 . Memory (MB): peak = 2578.113 ; gain = 0.000
+
+Phase 4.1.1.2 Post Placement Timing Optimization
+INFO: [Place 30-746] Post Placement Timing Summary WNS=0.485. For the most accurate timing information please run report_timing.
+Phase 4.1.1.2 Post Placement Timing Optimization | Checksum: 1718bf414
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:12 . Memory (MB): peak = 2578.113 ; gain = 0.000
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:12 . Memory (MB): peak = 2578.113 ; gain = 0.000
+Phase 4.1 Post Commit Optimization | Checksum: 1718bf414
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:12 . Memory (MB): peak = 2578.113 ; gain = 0.000
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 1718bf414
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:12 . Memory (MB): peak = 2578.113 ; gain = 0.000
+
+Phase 4.3 Placer Reporting
+
+Phase 4.3.1 Print Estimated Congestion
+INFO: [Place 30-612] Post-Placement Estimated Congestion 
+ ____________________________________________________
+|           | Global Congestion | Short Congestion  |
+| Direction | Region Size       | Region Size       |
+|___________|___________________|___________________|
+|      North|                1x1|                1x1|
+|___________|___________________|___________________|
+|      South|                1x1|                2x2|
+|___________|___________________|___________________|
+|       East|                1x1|                1x1|
+|___________|___________________|___________________|
+|       West|                1x1|                1x1|
+|___________|___________________|___________________|
+
+Phase 4.3.1 Print Estimated Congestion | Checksum: 1718bf414
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:12 . Memory (MB): peak = 2578.113 ; gain = 0.000
+Phase 4.3 Placer Reporting | Checksum: 1718bf414
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:12 . Memory (MB): peak = 2578.113 ; gain = 0.000
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 2578.113 ; gain = 0.000
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:12 . Memory (MB): peak = 2578.113 ; gain = 0.000
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 189df9eb3
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:12 . Memory (MB): peak = 2578.113 ; gain = 0.000
+Ending Placer Task | Checksum: 143e43d7c
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:12 . Memory (MB): peak = 2578.113 ; gain = 0.000
+39 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:13 . Memory (MB): peak = 2578.113 ; gain = 0.000
+# phys_opt_design
+Command: phys_opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+
+Starting Initial Update Timing Task
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.588 . Memory (MB): peak = 2578.113 ; gain = 0.000
+INFO: [Vivado_Tcl 4-2279] Estimated Timing Summary | WNS= 0.485 | TNS= 0.000 | 
+INFO: [Vivado_Tcl 4-383] Design worst setup slack (WNS) is greater than or equal to 0.000 ns. All physical synthesis setup optimizations will be skipped.
+INFO: [Vivado_Tcl 4-232] No setup violation found. The netlist was not modified.
+INFO: [Common 17-83] Releasing license: Implementation
+5 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+# route_design
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
+
+Phase 1 Build RT Design
+Checksum: PlaceDB: 552b0e03 ConstDB: 0 ShapeSum: 4e37d322 RouteDB: a0815c57
+Post Restoration Checksum: NetGraph: 59501bc | NumContArr: d78c5bb8 | Constraints: c2a8fa9d | Timing: c2a8fa9d
+Phase 1 Build RT Design | Checksum: 2627352ae
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:13 . Memory (MB): peak = 2578.113 ; gain = 0.000
+
+Phase 2 Router Initialization
+
+Phase 2.1 Fix Topology Constraints
+Phase 2.1 Fix Topology Constraints | Checksum: 2627352ae
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:13 . Memory (MB): peak = 2578.113 ; gain = 0.000
+
+Phase 2.2 Pre Route Cleanup
+Phase 2.2 Pre Route Cleanup | Checksum: 2627352ae
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:13 . Memory (MB): peak = 2578.113 ; gain = 0.000
+ Number of Nodes with overlaps = 0
+
+Phase 2.3 Update Timing
+Phase 2.3 Update Timing | Checksum: fd843ca4
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:14 . Memory (MB): peak = 2578.113 ; gain = 0.000
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.649  | TNS=0.000  | WHS=-0.242 | THS=-161.394|
+
+
+Phase 2.4 Update Timing for Bus Skew
+
+Phase 2.4.1 Update Timing
+Phase 2.4.1 Update Timing | Checksum: 1d227a127
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:15 . Memory (MB): peak = 2578.113 ; gain = 0.000
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.649  | TNS=0.000  | WHS=-0.083 | THS=-0.794 |
+
+Phase 2.4 Update Timing for Bus Skew | Checksum: 1241d5a3d
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:15 . Memory (MB): peak = 2578.113 ; gain = 0.000
+
+Phase 2.5 Soft Constraint Pins - Fast Budgeting
+Phase 2.5 Soft Constraint Pins - Fast Budgeting | Checksum: 1241d5a3d
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:15 . Memory (MB): peak = 2578.113 ; gain = 0.000
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0 %
+  Global Horizontal Routing Utilization  = 0 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 10052
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 10052
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 2 Router Initialization | Checksum: 126580a0f
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:15 . Memory (MB): peak = 2578.113 ; gain = 0.000
+
+Phase 3 Global Routing
+Phase 3 Global Routing | Checksum: 126580a0f
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:15 . Memory (MB): peak = 2578.113 ; gain = 0.000
+
+Phase 4 Initial Routing
+
+Phase 4.1 Initial Net Routing Pass
+Phase 4.1 Initial Net Routing Pass | Checksum: 2b1bbf2cd
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:16 . Memory (MB): peak = 2578.113 ; gain = 0.000
+Phase 4 Initial Routing | Checksum: 2b1bbf2cd
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:16 . Memory (MB): peak = 2578.113 ; gain = 0.000
+
+Phase 5 Rip-up And Reroute
+
+Phase 5.1 Global Iteration 0
+ Number of Nodes with overlaps = 693
+ Number of Nodes with overlaps = 149
+ Number of Nodes with overlaps = 80
+ Number of Nodes with overlaps = 35
+ Number of Nodes with overlaps = 17
+ Number of Nodes with overlaps = 7
+ Number of Nodes with overlaps = 6
+ Number of Nodes with overlaps = 5
+ Number of Nodes with overlaps = 5
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.434  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 5.1 Global Iteration 0 | Checksum: 256dad412
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:20 . Memory (MB): peak = 2578.113 ; gain = 0.000
+Phase 5 Rip-up And Reroute | Checksum: 256dad412
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:20 . Memory (MB): peak = 2578.113 ; gain = 0.000
+
+Phase 6 Delay and Skew Optimization
+
+Phase 6.1 Delay CleanUp
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 1f4ee09db
+
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:20 . Memory (MB): peak = 2578.113 ; gain = 0.000
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.513  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 6.1 Delay CleanUp | Checksum: 1b84e806d
+
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:20 . Memory (MB): peak = 2578.113 ; gain = 0.000
+
+Phase 6.2 Clock Skew Optimization
+Phase 6.2 Clock Skew Optimization | Checksum: 1b84e806d
+
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:20 . Memory (MB): peak = 2578.113 ; gain = 0.000
+Phase 6 Delay and Skew Optimization | Checksum: 1b84e806d
+
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:20 . Memory (MB): peak = 2578.113 ; gain = 0.000
+
+Phase 7 Post Hold Fix
+
+Phase 7.1 Hold Fix Iter
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.513  | TNS=0.000  | WHS=0.026  | THS=0.000  |
+
+Phase 7.1 Hold Fix Iter | Checksum: 21abbdd92
+
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:20 . Memory (MB): peak = 2578.113 ; gain = 0.000
+Phase 7 Post Hold Fix | Checksum: 21abbdd92
+
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:20 . Memory (MB): peak = 2578.113 ; gain = 0.000
+
+Phase 8 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 2.65965 %
+  Global Horizontal Routing Utilization  = 2.99154 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 8 Route finalize | Checksum: 21abbdd92
+
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:20 . Memory (MB): peak = 2578.113 ; gain = 0.000
+
+Phase 9 Verifying routed nets
+
+ Verification completed successfully
+Phase 9 Verifying routed nets | Checksum: 21abbdd92
+
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:20 . Memory (MB): peak = 2578.113 ; gain = 0.000
+
+Phase 10 Depositing Routes
+Phase 10 Depositing Routes | Checksum: 2a1d27a02
+
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:20 . Memory (MB): peak = 2578.113 ; gain = 0.000
+
+Phase 11 Post Process Routing
+Phase 11 Post Process Routing | Checksum: 2a1d27a02
+
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:20 . Memory (MB): peak = 2578.113 ; gain = 0.000
+
+Phase 12 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=0.513  | TNS=0.000  | WHS=0.026  | THS=0.000  |
+
+INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
+Phase 12 Post Router Timing | Checksum: 2a1d27a02
+
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:20 . Memory (MB): peak = 2578.113 ; gain = 0.000
+Total Elapsed time in route_design: 20.475 secs
+
+Phase 13 Post-Route Event Processing
+Phase 13 Post-Route Event Processing | Checksum: e61b8e8b
+
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:21 . Memory (MB): peak = 2578.113 ; gain = 0.000
+INFO: [Route 35-16] Router Completed Successfully
+Ending Routing Task | Checksum: e61b8e8b
+
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:21 . Memory (MB): peak = 2578.113 ; gain = 0.000
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+11 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:21 . Memory (MB): peak = 2578.113 ; gain = 0.000
+# report_utilization -file [file join $out utilization.rpt]
+# report_timing_summary -report_unconstrained -file [file join $out timing.rpt]
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+WARNING: [Timing 38-436] There are set_bus_skew constraint(s) in this design. Please run report_bus_skew to ensure that bus skew requirements are met.
+# report_drc -file [file join $out drc.rpt]
+Command: report_drc -file E:/FPGA_Test_Work/edge_v03_work/stable_board/drc.rpt
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file E:/FPGA_Test_Work/edge_v03_work/stable_board/drc.rpt.
+report_drc completed successfully
+# check_timing -verbose -file [file join $out check_timing.rpt]
+# write_checkpoint -force [file join $out edge_top_routed.dcp]
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 2578.113 ; gain = 0.000
+Wrote PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.376 . Memory (MB): peak = 2578.113 ; gain = 0.000
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2578.113 ; gain = 0.000
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.059 . Memory (MB): peak = 2578.113 ; gain = 0.000
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 2578.113 ; gain = 0.000
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 2578.113 ; gain = 0.000
+Write Physdb Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.453 . Memory (MB): peak = 2578.113 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'E:/FPGA_Test_Work/edge_v03_work/stable_board/edge_top_routed.dcp' has been generated.
+# foreach delay {max min} {
+#  set paths [get_timing_paths -delay_type $delay -max_paths 1]
+#  if {![llength $paths] || [get_property SLACK $paths]<0} {error "Timing $delay failed"}
+# }
+# if {[llength [get_drc_violations -quiet -filter {SEVERITY == Error || SEVERITY == {Critical Warning}}]]} {error "severe DRC"}
+# write_bitstream -force [file join $out edge_top.bit]
+Command: write_bitstream -force E:/FPGA_Test_Work/edge_v03_work/stable_board/edge_top.bit
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+Running DRC as a precondition to command write_bitstream
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado 12-3199] DRC finished with 0 Errors
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+INFO: [Designutils 20-2272] Running write_bitstream with 2 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Bitstream compression saved 7518048 bits.
+Writing bitstream E:/FPGA_Test_Work/edge_v03_work/stable_board/edge_top.bit...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Project 1-1876] WebTalk data collection is mandatory when using a ULT device. To see the specific WebTalk data collected for your design, open the usage_statistics_webtalk.html or usage_statistics_webtalk.xml file in the implementation directory.
+INFO: [Common 17-83] Releasing license: Implementation
+9 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+write_bitstream: Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 2909.207 ; gain = 331.094
+# write_debug_probes -force [file join $out edge_top.ltx]
+# foreach name {edge_top.bit edge_top.ltx} {file copy -force [file join $out $name] [file join $root artifacts $name]}
+# puts "PASS EDGE_BUILD [file join $root artifacts edge_top.bit]"
+PASS EDGE_BUILD E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/artifacts/edge_top.bit
+INFO: [Common 17-206] Exiting Vivado at Thu Oct 29 15:15:29 2026...

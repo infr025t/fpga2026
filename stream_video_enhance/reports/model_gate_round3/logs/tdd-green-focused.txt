@@ -1,9 +1,0 @@
-test_finegain_grid_is_exactly_51_legal_candidates (stream_video_enhance.tests.test_evaluation.EvaluationTests.test_finegain_grid_is_exactly_51_legal_candidates) ... ok
-test_finegain_primary_and_random_streams_are_new_against_both_rounds (stream_video_enhance.tests.test_evaluation.EvaluationTests.test_finegain_primary_and_random_streams_are_new_against_both_rounds) ... ok
-test_finegain_selection_maximizes_worst_primary_then_lowest_td_gain (stream_video_enhance.tests.test_evaluation.EvaluationTests.test_finegain_selection_maximizes_worst_primary_then_lowest_td_gain) ... ok
-test_finegain_loader_preserves_17_checks_primary_binding_and_selection (stream_video_enhance.tests.test_evaluation.EvaluationTests.test_finegain_loader_preserves_17_checks_primary_binding_and_selection) ... ok
-
-----------------------------------------------------------------------
-Ran 4 tests in 2.326s
-
-OK

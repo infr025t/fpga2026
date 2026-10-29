@@ -1,0 +1,57 @@
+{
+  "top": "tb_nt35510_init",
+  "passed": true,
+  "stages": [
+    {
+      "tool": "xvlog",
+      "command": [
+        "E:\\Vivado\\2025.1\\Vivado\\bin\\xvlog.bat",
+        "-sv",
+        "E:\\Vivado_FPGA_Programs\\fpga2026-v0.3-edge\\stream_video_edge\\rtl\\display\\edge_display_stream_if.sv",
+        "E:\\Vivado_FPGA_Programs\\fpga2026-v0.3-edge\\stream_video_edge\\rtl\\display\\nt35510_bringup_top.sv",
+        "E:\\Vivado_FPGA_Programs\\fpga2026-v0.3-edge\\stream_video_edge\\rtl\\display\\nt35510_bus8.sv",
+        "E:\\Vivado_FPGA_Programs\\fpga2026-v0.3-edge\\stream_video_edge\\rtl\\display\\nt35510_init.sv",
+        "E:\\Vivado_FPGA_Programs\\fpga2026-v0.3-edge\\stream_video_edge\\rtl\\display\\nt35510_init_rom.sv",
+        "E:\\Vivado_FPGA_Programs\\fpga2026-v0.3-edge\\stream_video_edge\\rtl\\display\\nt35510_test_display.sv",
+        "E:\\Vivado_FPGA_Programs\\fpga2026-v0.3-edge\\stream_video_edge\\rtl\\display\\nt35510_window_writer.sv",
+        "E:\\Vivado_FPGA_Programs\\fpga2026-v0.3-edge\\stream_video_edge\\sim\\tb_nt35510_init.sv"
+      ],
+      "exit": 0,
+      "seconds": 0.734,
+      "log": "E:\\FPGA_Test_Work\\edge_v03_work\\peripherals\\init\\xvlog-captured.log",
+      "private_job_active_processes": 0
+    },
+    {
+      "tool": "xelab",
+      "command": [
+        "E:\\Vivado\\2025.1\\Vivado\\bin\\xelab.bat",
+        "tb_nt35510_init",
+        "-s",
+        "snapshot"
+      ],
+      "exit": 0,
+      "seconds": 1.271,
+      "log": "E:\\FPGA_Test_Work\\edge_v03_work\\peripherals\\init\\xelab-captured.log",
+      "private_job_active_processes": 0
+    },
+    {
+      "tool": "xsim",
+      "command": [
+        "E:\\Vivado\\2025.1\\Vivado\\bin\\xsim.bat",
+        "snapshot",
+        "-runall",
+        "-f",
+        "xsim-options.txt"
+      ],
+      "exit": 0,
+      "seconds": 2.505,
+      "log": "E:\\FPGA_Test_Work\\edge_v03_work\\peripherals\\init\\xsim-captured.log",
+      "private_job_active_processes": 0
+    }
+  ],
+  "work_dir": "E:\\FPGA_Test_Work\\edge_v03_work\\peripherals\\init",
+  "reason": "PASS",
+  "simulation_summary": [
+    "PASS tb_nt35510_init entries=367 words=732 complete_sessions=2 total_words=2200 cycles=15396 stalls=810 forced_stalls=24 reset/release/sleep/default64bit/rounding/restart"
+  ]
+}

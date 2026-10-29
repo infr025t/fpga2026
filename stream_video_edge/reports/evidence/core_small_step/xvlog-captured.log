@@ -1,0 +1,31 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/core_latency_pkg.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/coefficient5.sv" into library work
+INFO: [VRFC 10-311] analyzing module coefficient5
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/coefficient_box5.sv" into library work
+INFO: [VRFC 10-311] analyzing module coefficient_box5
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/div25_pipe.sv" into library work
+INFO: [VRFC 10-311] analyzing module div25_pipe
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/edge_core.sv" into library work
+INFO: [VRFC 10-311] analyzing module edge_core
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/gaussian3.sv" into library work
+INFO: [VRFC 10-311] analyzing module gaussian3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/guided_base.sv" into library work
+INFO: [VRFC 10-311] analyzing module guided_base
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/moments5.sv" into library work
+INFO: [VRFC 10-311] analyzing module moments5
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/ratio_q12_pipe.sv" into library work
+INFO: [VRFC 10-311] analyzing module ratio_q12_pipe
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/reconstruct.sv" into library work
+INFO: [VRFC 10-311] analyzing module reconstruct
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/row_window3.sv" into library work
+INFO: [VRFC 10-311] analyzing module row_window3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/row_window5.sv" into library work
+INFO: [VRFC 10-311] analyzing module row_window5
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/sobel3.sv" into library work
+INFO: [VRFC 10-311] analyzing module sobel3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/core/token_pipe.sv" into library work
+INFO: [VRFC 10-311] analyzing module token_pipe
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/sim/tb_edge_core.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_edge_core
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/edge_v03_work/core_small_step/selected.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_selected

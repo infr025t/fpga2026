@@ -1,0 +1,16 @@
+{
+  "number": 13,
+  "frame_id": 13,
+  "filter": "GUIDED",
+  "view": "RAW",
+  "width": 630,
+  "height": 470,
+  "epsilon": 1024,
+  "threshold": 96,
+  "payload_crc32": "2ab4f910",
+  "source_crc32": "6d03854e",
+  "source": "CAMERA",
+  "bit_exact_reference_verified": false,
+  "real_camera_image_quality_verified": false,
+  "image": "E:\\FPGA_Test_Work\\edge_v03_work\\fifo_motion_diagnosis\\motion_auto_50\\GUIDED\\RAW\\frame_013_id00000013.png"
+}

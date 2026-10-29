@@ -1,2 +1,0 @@
-FATAL: D:\desktop\coding\fpga2026 - demo\stream_video_enhance\rtl\nt35510_bus8.sv:35: unsafe NT35510 timing parameters for 100 MHz
-       Time: 0  Scope: tb_nt35510_bus8_bad_setup.bad

@@ -1,0 +1,15 @@
+{
+  "purpose": "User acceptance run:50 real-camera captures with automatic exposure/gain enabled and independent WRST",
+  "count": 50,
+  "retry_or_replacement": false,
+  "schedule": "Repeat GUIDED_RAW, GUIDED_EDGE, GAUSSIAN_RAW, GAUSSIAN_EDGE; exact50 captures (13/13/12/12)",
+  "unchanged": [
+    "camera_fifo_capture_direct.sv",
+    "vsync_low_filter.sv",
+    "core",
+    "UART",
+    "wiring WRST=JB1"
+  ],
+  "changed": "top FREEZE_AEC=0 FREEZE_AGC=0; COM8 remains E7",
+  "acceptance": "All50 complete, correct packets/counts, no hardware errors, all RAW/EDGE visually reviewed with no split/repeated geometry; if passed mark issue resolved per user criterion"
+}

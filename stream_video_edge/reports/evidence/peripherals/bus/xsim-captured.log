@@ -1,0 +1,19 @@
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Thu Oct 29 12:06:22 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/snapshot/xsim_script.tcl
+# xsim {snapshot} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+PASS nt35510_bus8 setup=2 low=2 hold=1 gap=0 accepted=56 completed=52 cancelled=4 physical_bytes=107
+PASS nt35510_bus8 setup=2 low=3 hold=2 gap=1 accepted=56 completed=52 cancelled=4 physical_bytes=107
+PASS tb_nt35510_bus8 physical timing and reset
+$finish called at time : 9090 ns : File "E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/sim/tb_nt35510_bus8.sv" Line 122
+exit
+INFO: [Common 17-206] Exiting xsim at Thu Oct 29 12:06:24 2026...

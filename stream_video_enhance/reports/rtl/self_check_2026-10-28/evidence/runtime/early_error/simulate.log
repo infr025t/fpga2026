@@ -1,4 +1,0 @@
-PASS tb_runtime_early_error L=55 cases=25 before_accept=18 early_ok=5 complete_frames=25 reasons1..8 offsets0..3 consecutive_failures protocol_metadata idle_stray accepted_failure
-PASS tb_runtime_early_error L=56 cases=25 before_accept=18 early_ok=5 complete_frames=25 reasons1..8 offsets0..3 consecutive_failures protocol_metadata idle_stray accepted_failure
-PASS tb_runtime_early_error complete
-D:\desktop\coding\fpga2026 - demo\stream_video_enhance\sim\tb_runtime_early_error.sv:196: $finish called at 83576000 (1ps)

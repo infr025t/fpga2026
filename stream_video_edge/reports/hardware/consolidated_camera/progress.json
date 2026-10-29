@@ -1,0 +1,12 @@
+{
+  "status": "COMPLETE",
+  "saved": 4,
+  "displayed": 4,
+  "target": 4,
+  "source": "camera",
+  "port": "COM10",
+  "baud": 12000000,
+  "pid": 21824,
+  "output": "E:\\FPGA_Test_Work\\edge_v03_work\\consolidation_2026-10-29\\hardware_camera",
+  "last_image": "E:\\FPGA_Test_Work\\edge_v03_work\\consolidation_2026-10-29\\hardware_camera\\GAUSSIAN\\EDGE\\frame_004_id00000004.png"
+}

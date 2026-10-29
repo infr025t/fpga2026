@@ -1,0 +1,53 @@
+{
+  "top": "tb_vsync_filter",
+  "passed": true,
+  "stages": [
+    {
+      "tool": "xvlog",
+      "command": [
+        "E:\\Vivado\\2025.1\\Vivado\\bin\\xvlog.bat",
+        "-sv",
+        "E:\\Vivado_FPGA_Programs\\fpga2026-v0.3-edge\\stream_video_edge\\rtl\\camera\\camera_fifo_capture.sv",
+        "E:\\Vivado_FPGA_Programs\\fpga2026-v0.3-edge\\stream_video_edge\\rtl\\camera\\ov7670_config.sv",
+        "E:\\Vivado_FPGA_Programs\\fpga2026-v0.3-edge\\stream_video_edge\\rtl\\camera\\vsync_low_filter.sv",
+        "E:\\Vivado_FPGA_Programs\\fpga2026-v0.3-edge\\stream_video_edge\\sim\\tb_vsync_filter.sv"
+      ],
+      "exit": 0,
+      "seconds": 0.694,
+      "log": "E:\\FPGA_Test_Work\\edge_v03_work\\camera_stable_20261029\\vsync\\xvlog-captured.log",
+      "private_job_active_processes": 0
+    },
+    {
+      "tool": "xelab",
+      "command": [
+        "E:\\Vivado\\2025.1\\Vivado\\bin\\xelab.bat",
+        "tb_vsync_filter",
+        "-s",
+        "snapshot"
+      ],
+      "exit": 0,
+      "seconds": 0.923,
+      "log": "E:\\FPGA_Test_Work\\edge_v03_work\\camera_stable_20261029\\vsync\\xelab-captured.log",
+      "private_job_active_processes": 0
+    },
+    {
+      "tool": "xsim",
+      "command": [
+        "E:\\Vivado\\2025.1\\Vivado\\bin\\xsim.bat",
+        "snapshot",
+        "-runall",
+        "-f",
+        "xsim-options.txt"
+      ],
+      "exit": 0,
+      "seconds": 2.387,
+      "log": "E:\\FPGA_Test_Work\\edge_v03_work\\camera_stable_20261029\\vsync\\xsim-captured.log",
+      "private_job_active_processes": 0
+    }
+  ],
+  "work_dir": "E:\\FPGA_Test_Work\\edge_v03_work\\camera_stable_20261029\\vsync",
+  "reason": "PASS",
+  "simulation_summary": [
+    "PASS tb_vsync_filter short_lengths1_to63 valid64_to128 immediate_rise clear_preserves_state"
+  ]
+}

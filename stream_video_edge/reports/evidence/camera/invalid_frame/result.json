@@ -1,0 +1,54 @@
+{
+  "top": "tb_selected",
+  "passed": true,
+  "stages": [
+    {
+      "tool": "xvlog",
+      "command": [
+        "E:\\Vivado\\2025.1\\Vivado\\bin\\xvlog.bat",
+        "-sv",
+        "E:\\Vivado_FPGA_Programs\\fpga2026-v0.3-edge\\stream_video_edge\\rtl\\camera\\camera_fifo_capture.sv",
+        "E:\\Vivado_FPGA_Programs\\fpga2026-v0.3-edge\\stream_video_edge\\rtl\\camera\\ov7670_config.sv",
+        "E:\\Vivado_FPGA_Programs\\fpga2026-v0.3-edge\\stream_video_edge\\rtl\\camera\\vsync_low_filter.sv",
+        "E:\\Vivado_FPGA_Programs\\fpga2026-v0.3-edge\\stream_video_edge\\sim\\tb_camera_capture.sv",
+        "E:\\FPGA_Test_Work\\edge_v03_work\\camera_stable_20261029\\invalid_frame\\selected.sv"
+      ],
+      "exit": 0,
+      "seconds": 0.682,
+      "log": "E:\\FPGA_Test_Work\\edge_v03_work\\camera_stable_20261029\\invalid_frame\\xvlog-captured.log",
+      "private_job_active_processes": 0
+    },
+    {
+      "tool": "xelab",
+      "command": [
+        "E:\\Vivado\\2025.1\\Vivado\\bin\\xelab.bat",
+        "tb_selected",
+        "-s",
+        "snapshot"
+      ],
+      "exit": 0,
+      "seconds": 1.307,
+      "log": "E:\\FPGA_Test_Work\\edge_v03_work\\camera_stable_20261029\\invalid_frame\\xelab-captured.log",
+      "private_job_active_processes": 0
+    },
+    {
+      "tool": "xsim",
+      "command": [
+        "E:\\Vivado\\2025.1\\Vivado\\bin\\xsim.bat",
+        "snapshot",
+        "-runall",
+        "-f",
+        "xsim-options.txt"
+      ],
+      "exit": 0,
+      "seconds": 2.606,
+      "log": "E:\\FPGA_Test_Work\\edge_v03_work\\camera_stable_20261029\\invalid_frame\\xsim-captured.log",
+      "private_job_active_processes": 0
+    }
+  ],
+  "work_dir": "E:\\FPGA_Test_Work\\edge_v03_work\\camera_stable_20261029\\invalid_frame",
+  "reason": "PASS",
+  "simulation_summary": [
+    "PASS tb_camera_capture long_pulse_rejected error=21 pixels=1433"
+  ]
+}

@@ -1,4 +1,0 @@
-usage: run_core_synth.py [-h] [--tops TOPS [TOPS ...]] [--timeout TIMEOUT]
-                         [--route-core]
-                         [--simulation-manifest SIMULATION_MANIFEST]
-run_core_synth.py: error: Vivado synthesis executable is unavailable: E:\Vivado\2025.1\Vivado\bin\vivado.bat. Set VIVADO_BIN to the Vivado bin directory.

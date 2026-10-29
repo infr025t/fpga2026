@@ -1,4 +1,0 @@
-PASS nt35510_bus8 setup=2 low=2 hold=1 gap=0 accepted=56 completed=52 cancelled=4 physical_bytes=107
-PASS nt35510_bus8 setup=2 low=3 hold=2 gap=1 accepted=56 completed=52 cancelled=4 physical_bytes=107
-PASS tb_nt35510_bus8 physical timing and reset
-D:\desktop\coding\fpga2026 - demo\stream_video_enhance\sim\tb_nt35510_bus8.sv:122: $finish called at 9090000 (1ps)

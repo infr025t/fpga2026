@@ -1,0 +1,21 @@
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Thu Oct 29 15:14:48 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/snapshot/xsim_script.tcl
+# xsim {snapshot} -testplusarg VECTORS=E:/FPGA_Test_Work/edge_v03_work/uart_consolidated_20261029 -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+EVG2_PASS filter0 view0 bytes360
+EVG2_PASS filter0 view1 bytes360
+EVG2_PASS filter1 view0 bytes360
+EVG2_PASS filter1 view1 bytes360
+PASS tb_edge_uart four_configurations source_tail_crc physical_pin
+$finish called at time : 3250450 ns : File "E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/sim/tb_edge_uart.sv" Line 37
+exit
+INFO: [Common 17-206] Exiting xsim at Thu Oct 29 15:14:53 2026...

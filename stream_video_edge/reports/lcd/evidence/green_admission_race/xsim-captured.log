@@ -1,0 +1,17 @@
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Fri Oct 30 21:26:40 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/snapshot/xsim_script.tcl
+# xsim {snapshot} -testplusarg VECTORS=E:/FPGA_Test_Work/lcd_v04_validation/green_admission_race -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+PASS tb_lcd_admission registered-start mode race does not lose frame ownership
+$finish called at time : 73920 ns : File "E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge/sim/tb_lcd_admission.sv" Line 20
+exit
+INFO: [Common 17-206] Exiting xsim at Fri Oct 30 21:26:42 2026...

@@ -1,0 +1,69 @@
+{
+  "top": "tb_display_path",
+  "passed": true,
+  "stages": [
+    {
+      "tool": "xvlog",
+      "command": [
+        "E:\\Vivado\\2025.1\\Vivado\\bin\\xvlog.bat",
+        "-sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\rtl\\core\\core_latency_pkg.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\rtl\\core\\coefficient5.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\rtl\\core\\coefficient_box5.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\rtl\\core\\div25_pipe.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\rtl\\core\\edge_core.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\rtl\\core\\gaussian3.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\rtl\\core\\guided_base.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\rtl\\core\\moments5.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\rtl\\core\\ratio_q12_pipe.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\rtl\\core\\reconstruct.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\rtl\\core\\row_window3.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\rtl\\core\\row_window5.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\rtl\\core\\sobel3.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\rtl\\core\\token_pipe.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\rtl\\runtime\\video_core_adapter.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\sim\\tb_display_path.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\rtl\\runtime\\video_lcd_sink.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\rtl\\debug\\video_snapshot.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\rtl\\display\\nt35510_bus8.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\rtl\\display\\nt35510_window_writer.sv"
+      ],
+      "exit": 0,
+      "seconds": 2.55,
+      "log": "E:\\FPGA_Test_Work\\lcd_v04_validation\\release_small_01\\xvlog-captured.log",
+      "private_job_active_processes": 0
+    },
+    {
+      "tool": "xelab",
+      "command": [
+        "E:\\Vivado\\2025.1\\Vivado\\bin\\xelab.bat",
+        "tb_display_path",
+        "-s",
+        "snapshot"
+      ],
+      "exit": 0,
+      "seconds": 7.371,
+      "log": "E:\\FPGA_Test_Work\\lcd_v04_validation\\release_small_01\\xelab-captured.log",
+      "private_job_active_processes": 0
+    },
+    {
+      "tool": "xsim",
+      "command": [
+        "E:\\Vivado\\2025.1\\Vivado\\bin\\xsim.bat",
+        "snapshot",
+        "-runall",
+        "-f",
+        "xsim-options.txt"
+      ],
+      "exit": 0,
+      "seconds": 5.835,
+      "log": "E:\\FPGA_Test_Work\\lcd_v04_validation\\release_small_01\\xsim-captured.log",
+      "private_job_active_processes": 0
+    }
+  ],
+  "work_dir": "E:\\FPGA_Test_Work\\lcd_v04_validation\\release_small_01",
+  "reason": "PASS",
+  "simulation_summary": [
+    "PASS tb_display_path all four RAW/EDGE x guided/gaussian modes; gaps, full counts, EOF drain"
+  ]
+}

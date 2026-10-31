@@ -1,0 +1,22 @@
+{
+  "1": {
+    "mode": "RAW",
+    "width": 640,
+    "height": 480,
+    "crc32": 4186065429
+  },
+  "5": {
+    "mode": "EDGE",
+    "filter_id": 0,
+    "width": 630,
+    "height": 470,
+    "crc32": 264883040
+  },
+  "13": {
+    "mode": "EDGE",
+    "filter_id": 1,
+    "width": 630,
+    "height": 470,
+    "crc32": 207516
+  }
+}

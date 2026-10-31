@@ -1,0 +1,19 @@
+{
+  "status": "500_RECORDED_REFERENCE_WINDOWS_MATCH",
+  "physical_change": "Only JC8(M19) to camera RCK wire replaced; user reports original wire extremely long, now20cm",
+  "old_length_cm": null,
+  "new_length_cm": 20,
+  "branch": false,
+  "breadboard": false,
+  "bit_sha256": "825a20c03ff0d6c8cfe151a1b97e6b97d54430516850652a42ad8a09eb7f6dd7",
+  "rclk_hz": 2000000,
+  "reference_crc32": "6df0b9b5",
+  "requested_recorded_windows": 500,
+  "old_same_bit_first_bad_frame": 8,
+  "environmental_retest": "User confirmed repeated close phone illumination, removal and occlusion during this run",
+  "not_yet_accepted": true,
+  "recorded_matches": 500,
+  "telemetry_unlogged_frames": 1,
+  "duration_ms": 267317,
+  "scope": "500 recorded full-frame Y CRC checks match; one unlogged completion window; not a claim every physical frame was recorded or waveform root cause measured"
+}

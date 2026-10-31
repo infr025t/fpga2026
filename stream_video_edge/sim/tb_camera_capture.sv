@@ -17,6 +17,16 @@ module tb_camera_capture #(parameter W=64,H=64,CAP=6144,HEAD_ROWS=4,CAPTURES=3,G
   camera_fifo_capture #(.W(W),.H(H),.FIFO_BYTES(CAP),.HEAD_ROWS(HEAD_ROWS),.HREF_MIN(8),.TIMEOUT(200000000)) dut(
    .clk(clk),.rst(rst),.start(start),.vsync(camera_vsync),.href(href),.data(data),.rclk(rclk),.rrst(rrst),.wrst(wrst),.wen(wen),
    .busy(busy),.done(done),.error(error),.pixel_valid(pv),.pixel(pixel),.pixel_x(px),.pixel_y(py),.debug_read_bytes(),.debug_rows(),.debug_timing());
+  wire ref_rclk,ref_rrst,ref_wrst,ref_wen,ref_busy,ref_done,ref_pv;
+  wire[7:0]ref_error,ref_pixel;wire[9:0]ref_x;wire[8:0]ref_y;
+  camera_fifo_capture_reference #(.W(W),.H(H),.FIFO_BYTES(CAP),.HEAD_ROWS(HEAD_ROWS),.HREF_MIN(8),.TIMEOUT(200000000)) reference(
+   .clk(clk),.rst(rst),.start(start),.vsync(camera_vsync),.href(href),.data(data),.rclk(ref_rclk),.rrst(ref_rrst),.wrst(ref_wrst),.wen(ref_wen),
+   .busy(ref_busy),.done(ref_done),.error(ref_error),.pixel_valid(ref_pv),.pixel(ref_pixel),.pixel_x(ref_x),.pixel_y(ref_y),
+   .debug_read_bytes(),.debug_rows(),.debug_timing(),.debug_sync(),.period_cycles(8'd50),
+   .debug_byte_valid(),.debug_byte_index(),.debug_byte_data());
+  always @(negedge clk)if(!rst && {rclk,rrst,wrst,wen,busy,done,error,pv,pixel,px,py} !==
+   {ref_rclk,ref_rrst,ref_wrst,ref_wen,ref_busy,ref_done,ref_error,ref_pv,ref_pixel,ref_x,ref_y})
+    $fatal(1,"consolidated capture differs from hardware-tested reference");
   assign reading=dut.rs==2;assign active=dut.state==3;
 
  // AL422-07: reset already prefetches byte0; first released read edge outputs byte1.

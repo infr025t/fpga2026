@@ -15,7 +15,7 @@ def run(name,sources,top,plusargs=(),timeout=240):
 display=list((ROOT/'rtl/display').glob('*.sv'))
 vectors=base/'vectors';profile,rows=load_profile();export_expected(vectors,profile,rows)
 if not args.display_only:
- run('camera',list((ROOT/'rtl/camera').glob('*.sv'))+[ROOT/'sim/tb_camera_capture.sv'],'tb_camera_capture')
+ run('camera',list((ROOT/'rtl/camera').glob('*.sv'))+[ROOT/'sim/camera_fifo_capture_reference.sv',ROOT/'sim/tb_camera_capture.sv'],'tb_camera_capture')
  run('bus',display+[ROOT/'sim/tb_nt35510_bus8.sv'],'tb_nt35510_bus8')
  run('init',display+[ROOT/'sim/tb_nt35510_init.sv'],'tb_nt35510_init',['VECTORS='+vectors.as_posix()])
  run('window',display+[ROOT/'sim/tb_nt35510_window.sv'],'tb_nt35510_window')

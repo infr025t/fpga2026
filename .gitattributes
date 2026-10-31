@@ -6,3 +6,7 @@
 *.pdf binary
 # Preserve raw diagnostic bytes, including spaces emitted by native Tcl errors.
 stream_video_enhance/reports/rtl/runtime/evidence/**/*.log -whitespace
+
+# Preserve generated LCD timing tables and native simulator evidence verbatim.
+stream_video_edge/reports/lcd/implementation/*.rpt -whitespace
+stream_video_edge/reports/lcd/evidence/**/*.log -whitespace

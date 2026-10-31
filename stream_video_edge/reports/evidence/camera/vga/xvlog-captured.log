@@ -1,11 +1,15 @@
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/camera/camera_fifo_capture.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge/rtl/camera/camera_fifo_capture.sv" into library work
 INFO: [VRFC 10-311] analyzing module camera_fifo_capture
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/camera/ov7670_config.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge/rtl/camera/href_stable_filter.sv" into library work
+INFO: [VRFC 10-311] analyzing module href_stable_filter
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge/rtl/camera/ov7670_config.sv" into library work
 INFO: [VRFC 10-311] analyzing module ov7670_config
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/rtl/camera/vsync_low_filter.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge/rtl/camera/vsync_low_filter.sv" into library work
 INFO: [VRFC 10-311] analyzing module vsync_low_filter
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/sim/tb_camera_capture.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge/sim/tb_camera_capture.sv" into library work
 INFO: [VRFC 10-311] analyzing module tb_camera_capture
-WARNING: [VRFC 10-8884] decimal constant 5000000000 should be smaller than 2147483648; using 705032704 instead [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/sim/tb_camera_capture.sv:87]
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/edge_v03_work/camera_stable_20261029/vga/selected.sv" into library work
+WARNING: [VRFC 10-8884] decimal constant 5000000000 should be smaller than 2147483648; using 705032704 instead [E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge/sim/tb_camera_capture.sv:97]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge/sim/camera_fifo_capture_reference.sv" into library work
+INFO: [VRFC 10-311] analyzing module camera_fifo_capture_reference
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/edge_v03_work/camera_lcd_v04_release/vga/selected.sv" into library work
 INFO: [VRFC 10-311] analyzing module tb_selected

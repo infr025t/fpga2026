@@ -24,3 +24,10 @@ xsim.dir/
 .env
 .env.*
 !.env.example
+
+# LCD runtime captures are local; reviewed release evidence is tracked separately.
+/stream_video_edge/reports/lcd/runtime/
+
+# Vivado process metadata is generated outside the source project.
+/dfx_runtime.txt
+/clockInfo.txt

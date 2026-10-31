@@ -1,0 +1,22 @@
+{
+  "reason": "RECORDED_FRAME_LIMIT",
+  "records": 50,
+  "last_logged_frame": 106,
+  "unlogged_frame_count": 0,
+  "duration_ms": 26857,
+  "image_review": "Host complete-frame counters and CRC; no per-frame automated glass review",
+  "mode": 4,
+  "last": {
+    "frame": 106,
+    "elapsed_ms": 26823,
+    "source_pixels": 296100,
+    "display_pixels": 296100,
+    "input_crc32": 4239592149,
+    "output_crc32": 4239592149,
+    "rows": 480,
+    "read_bytes": 614400,
+    "min_href": 42668,
+    "max_href": 42669,
+    "unlogged_frame_count": 0
+  }
+}

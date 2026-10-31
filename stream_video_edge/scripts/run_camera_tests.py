@@ -13,7 +13,7 @@ cases=[('small','tb_camera_capture',None),
  ('recovery','tb_camera_recovery',None),('vsync','tb_vsync_filter',None),('config','tb_camera_config',None)]
 for name,bench,params in cases:
  work=out/name;work.mkdir()
- sources=camera+[ROOT/'sim'/(bench+'.sv')];top=bench
+ sources=camera+[ROOT/'sim'/(bench+'.sv')]+([ROOT/'sim/camera_fifo_capture_reference.sv'] if bench=='tb_camera_capture' else []);top=bench
  if params:
   wrapper=work/'selected.sv';wrapper.write_text(f'module tb_selected;{bench} {params} test();endmodule\n')
   sources.append(wrapper);top='tb_selected'

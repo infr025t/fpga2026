@@ -7,15 +7,17 @@
       "command": [
         "E:\\Vivado\\2025.1\\Vivado\\bin\\xvlog.bat",
         "-sv",
-        "E:\\Vivado_FPGA_Programs\\fpga2026-v0.3-edge\\stream_video_edge\\rtl\\camera\\camera_fifo_capture.sv",
-        "E:\\Vivado_FPGA_Programs\\fpga2026-v0.3-edge\\stream_video_edge\\rtl\\camera\\ov7670_config.sv",
-        "E:\\Vivado_FPGA_Programs\\fpga2026-v0.3-edge\\stream_video_edge\\rtl\\camera\\vsync_low_filter.sv",
-        "E:\\Vivado_FPGA_Programs\\fpga2026-v0.3-edge\\stream_video_edge\\sim\\tb_camera_capture.sv",
-        "E:\\FPGA_Test_Work\\edge_v03_work\\camera_stable_20261029\\vga\\selected.sv"
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\rtl\\camera\\camera_fifo_capture.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\rtl\\camera\\href_stable_filter.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\rtl\\camera\\ov7670_config.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\rtl\\camera\\vsync_low_filter.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\sim\\tb_camera_capture.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\sim\\camera_fifo_capture_reference.sv",
+        "E:\\FPGA_Test_Work\\edge_v03_work\\camera_lcd_v04_release\\vga\\selected.sv"
       ],
       "exit": 0,
-      "seconds": 0.674,
-      "log": "E:\\FPGA_Test_Work\\edge_v03_work\\camera_stable_20261029\\vga\\xvlog-captured.log",
+      "seconds": 0.736,
+      "log": "E:\\FPGA_Test_Work\\edge_v03_work\\camera_lcd_v04_release\\vga\\xvlog-captured.log",
       "private_job_active_processes": 0
     },
     {
@@ -27,8 +29,8 @@
         "snapshot"
       ],
       "exit": 0,
-      "seconds": 1.282,
-      "log": "E:\\FPGA_Test_Work\\edge_v03_work\\camera_stable_20261029\\vga\\xelab-captured.log",
+      "seconds": 1.923,
+      "log": "E:\\FPGA_Test_Work\\edge_v03_work\\camera_lcd_v04_release\\vga\\xelab-captured.log",
       "private_job_active_processes": 0
     },
     {
@@ -41,12 +43,12 @@
         "xsim-options.txt"
       ],
       "exit": 0,
-      "seconds": 26.308,
-      "log": "E:\\FPGA_Test_Work\\edge_v03_work\\camera_stable_20261029\\vga\\xsim-captured.log",
+      "seconds": 59.725,
+      "log": "E:\\FPGA_Test_Work\\edge_v03_work\\camera_lcd_v04_release\\vga\\xsim-captured.log",
       "private_job_active_processes": 0
     }
   ],
-  "work_dir": "E:\\FPGA_Test_Work\\edge_v03_work\\camera_stable_20261029\\vga",
+  "work_dir": "E:\\FPGA_Test_Work\\edge_v03_work\\camera_lcd_v04_release\\vga",
   "reason": "PASS",
   "simulation_summary": [
     "PASS tb_camera_capture captures=1 pixels=307200 no_midread_wrst model_only"

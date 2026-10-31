@@ -1,3 +1,5 @@
+> V0.4更新：当前LCD入口、接线、验收以README.md、wiring_and_use.md及reports/lcd/acceptance.json为准。下文保留V0.3算法/串口历史设计；不能用“屏幕尚未接通”等旧阶段说明判断当前状态。
+
 # V0.3 单次平滑与Sobel规格
 
 状态：核心、串口、受控模型、布局布线及自动曝光／增益开启的50张动态实拍验收已通过，实屏联合集成尚未完成；具体证据与限制见reports/validation.md。基线为最新main/2b7f9d6。项目正常计算由Basys3独立完成，PC只做调试和校验。

@@ -1,0 +1,45 @@
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: E:/Vivado/2025.1/Vivado/bin/unwrapped/win64.o/xelab.exe tb_lcd_admission -s snapshot 
+Multi-threading is on. Using 30 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.ov7670_config(DIRECT_IO=0)
+Compiling module work.capture_fault_latch
+Compiling module work.vsync_low_filter_default
+Compiling module work.href_stable_filter_default
+Compiling module work.camera_fifo_capture_default
+Compiling module work.row_window5
+Compiling module work.moments5
+Compiling module work.ratio_q12_pipe
+Compiling module work.div25_pipe
+Compiling module work.token_pipe(WIDTH=17,LATENCY=12)
+Compiling module work.token_pipe(LATENCY=13)
+Compiling module work.token_pipe(WIDTH=59,LATENCY=17)
+Compiling module work.token_pipe(WIDTH=72,LATENCY=2)
+Compiling module work.coefficient5_default
+Compiling module work.row_window5(W=636,DATA_W=36)
+Compiling module work.div25_pipe(IN_W=17,OUT_W=12)
+Compiling module work.token_pipe(WIDTH=60,LATENCY=4)
+Compiling module work.coefficient_box5
+Compiling module work.token_pipe(WIDTH=60,LATENCY=3)
+Compiling module work.reconstruct_default
+Compiling module work.guided_base
+Compiling module work.row_window3
+Compiling module work.gaussian3
+Compiling module work.row_window3(W=632,DATA_W=16)
+Compiling module work.sobel3
+Compiling module work.edge_core
+Compiling module work.video_core_adapter
+Compiling module work.nt35510_init
+Compiling module work.nt35510_window_writer(PANEL_W=16...
+Compiling module work.nt35510_bus8(SETUP_CYCLES=4,LOW_...
+Compiling module work.video_lcd_sink(W=16,H=16,PW=16,P...
+Compiling module work.lcd_top
+Compiling module work.tb_lcd_admission
+Built simulation snapshot snapshot

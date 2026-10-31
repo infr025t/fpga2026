@@ -1,3 +1,5 @@
+> V0.4更新：当前LCD入口、接线、验收以README.md、wiring_and_use.md及reports/lcd/acceptance.json为准。下文保留V0.3算法/串口历史设计；不能用“屏幕尚未接通”等旧阶段说明判断当前状态。
+
 # 稳定基线收敛与下一步
 
 ## 本次整理

@@ -1,9 +1,9 @@
 `timescale 1ns/1ps
-// Independent-WRST experiment: prime before the selected frame, then keep
+// Independent WRST: prime before the selected frame, then keep
 // WRST released through the complete read. Append without write reset.
 module camera_fifo_capture #(
  parameter W=640,H=480,FIFO_BYTES=393216,HEAD_ROWS=32,HREF_MIN=128,
- parameter PERIOD=50,TIMEOUT=200000000
+ parameter PERIOD=50,TIMEOUT=200000000,READ_GUARD=129,HREF_QUALIFY_CYCLES=64
 )(input wire clk,rst,start,vsync,href,input wire[7:0]data,
  output reg rclk,rrst,wrst,wen,output wire busy,output reg done,output reg[7:0]error,
  output reg pixel_valid,output reg[7:0]pixel,output reg[9:0]pixel_x,
@@ -16,7 +16,8 @@ module camera_fifo_capture #(
  (* ASYNC_REG="TRUE" *)reg[1:0]vs,hs;
  reg vp,hp,cycle_active,first_ended,flush_armed,flush_done;
  reg[31:0]timer,rows,extra_rows,high_cycles,index;
- reg[9:0]next_x;reg[8:0]next_y;reg[7:0]early;
+ reg[9:0]next_x;reg[8:0]next_y;
+ localparam integer period=PERIOD;
  // Passive diagnostic counters. They do not participate in FIFO control.
  reg[31:0]frame_cycles,read_at_frame_end,min_href,max_href,max_lag,paused_periods;
  wire frame_sync;wire[31:0]last_long_low,rejected_low,max_rejected_low,last_raw_low;
@@ -25,9 +26,15 @@ module camera_fifo_capture #(
   .sync_in(vs[1]),.sync_out(frame_sync),.last_long_low(last_long_low),.rejected(rejected_low),
   .max_rejected(max_rejected_low),.last_raw_low(last_raw_low));
  wire rise=frame_sync&&!vp,fall=!frame_sync&&vp,hfall=hp&&!hs[1];
- wire qualified=hfall&&high_cycles>=HREF_MIN;
+ wire qualified=hfall&&high_cycles>=HREF_MIN; // Preserve original write-control event.
+ wire counted_href;
+ reg counted_hp=0;reg[31:0]counted_high_cycles=0;
+ href_stable_filter #(.STABLE_CYCLES(HREF_QUALIFY_CYCLES)) qualify_href_count(
+  .clk(clk),.rst(rst),.sync_in(hs[1]),.sync_out(counted_href));
+ wire counted_fall=counted_hp&&!counted_href;
+ wire counted_row=counted_fall&&counted_high_cycles>=HREF_MIN;
  wire[31:0]completed=rows*LINE;
- wire credit=flush_done||(index+129<=completed);
+ wire credit=flush_done||(index+READ_GUARD<=completed);
  assign busy=state!=IDLE;
  assign debug_read_bytes=index;assign debug_rows=rows;
  assign debug_timing={paused_periods,max_lag,max_href,min_href,read_at_frame_end,frame_cycles,index,rows};
@@ -35,45 +42,48 @@ module camera_fifo_capture #(
  always @(posedge clk)begin
   pixel_valid<=0;done<=0;
   if(rst)begin
-   state<=IDLE;rs<=R_WAIT;phase<=0;rclk<=0;rrst<=1;wrst<=1;wen<=0;done<=0;error<=0;
+   state<=IDLE;rs<=R_WAIT;phase<=0;rclk<=0;rrst<=0;wrst<=1;wen<=0;done<=0;error<=0;
    vs<=3;hs<=0;vp<=1;hp<=0;cycle_active<=0;first_ended<=0;flush_armed<=0;flush_done<=0;
    rows<=0;extra_rows<=0;high_cycles<=0;timer<=0;resets<=0;index<=0;
-   next_x<=0;next_y<=0;pixel_x<=0;pixel_y<=0;pixel<=0;early<=0;
+   next_x<=0;next_y<=0;pixel_x<=0;pixel_y<=0;pixel<=0;
    frame_cycles<=0;read_at_frame_end<=0;min_href<=32'hffffffff;max_href<=0;max_lag<=0;paused_periods<=0;
-   bad_low_pending<=0;bad_low_ticks<=0;
+   bad_low_pending<=0;bad_low_ticks<=0;counted_hp<=0;counted_high_cycles<=0;
   end else begin
    vs<={vs[0],vsync};hs<={hs[0],href};vp<=frame_sync;hp<=hs[1];
    if(rise&&bad_low_pending)begin bad_low_ticks<=last_raw_low;bad_low_pending<=0;end
    if(state!=IDLE)timer<=timer+1'b1;
-   phase<=(phase==PERIOD-1)?0:phase+1'b1;
-   if(phase==PERIOD/2-1&&(rs!=R_READ||cycle_active))rclk<=1;
-   if(phase==PERIOD-1)rclk<=0;
+   phase<=(phase>=period-1)?0:phase+1'b1;
+   if(phase==period/2-1&&(rs!=R_READ||cycle_active))rclk<=1;
+   if(phase==period-1)rclk<=0;
    if(phase==0)cycle_active<=credit;
+   counted_hp<=counted_href;
+   if(counted_href&&!counted_hp)counted_high_cycles<=1;
+   else if(counted_href)counted_high_cycles<=counted_high_cycles+1'b1;
    if(hs[1]&&!hp)high_cycles<=1;else if(hs[1])high_cycles<=high_cycles+1'b1;
    if(state==ACTIVE)begin
-    if(!first_ended&&qualified)begin
-     if(high_cycles<min_href)min_href<=high_cycles;
-     if(high_cycles>max_href)max_href<=high_cycles;
+    if(!first_ended&&counted_row)begin
+     if(counted_high_cycles<min_href)min_href<=counted_high_cycles;
+     if(counted_high_cycles>max_href)max_href<=counted_high_cycles;
     end
     if(!first_ended&&fall)begin frame_cycles<=timer;read_at_frame_end<=index;end
     if(completed>=index&&completed-index>max_lag)max_lag<=completed-index;
     if(rs==R_READ&&phase==0&&!credit)paused_periods<=paused_periods+1'b1;
-    if(qualified)begin
-     if(!first_ended)rows<=rows+1'b1;
-     else if(flush_armed&&!flush_done)begin
-      extra_rows<=extra_rows+1'b1;
-      if(extra_rows==1)begin wen<=0;flush_done<=1;end
-     end
+    if(counted_row&&!first_ended)rows<=rows+1'b1;
+    // Keep raw qualified HREF for the already tested FIFO append write timing.
+    if(qualified&&first_ended&&flush_armed&&!flush_done)begin
+     extra_rows<=extra_rows+1'b1;
+     if(extra_rows==1)begin wen<=0;flush_done<=1;end
     end
     if(fall&&!first_ended)begin first_ended<=1;wen<=0;end
     // Append commits the tail at the current write pointer, without reset.
     if(first_ended&&!flush_armed&&rise&&index>FLUSH_GUARD)begin flush_armed<=1;wen<=1;end
    end
-   if(state==ACTIVE&&fall&&!first_ended&&rows+(qualified?1:0)!=H)begin error<=8'h21;wen<=0;state<=FINISH;rs<=R_DONE;bad_low_pending<=1;end
+   if(state==ACTIVE&&fall&&!first_ended&&rows+(counted_row?1:0)!=H)begin error<=8'h21;wen<=0;state<=FINISH;rs<=R_DONE;bad_low_pending<=1;end
    else if(state==ACTIVE&&completed>=index&&completed-index>FIFO_BYTES-LINE-128)begin error<=8'h22;wen<=0;state<=FINISH;rs<=R_DONE;end
    else if(state!=IDLE&&state!=FINISH&&timer==TIMEOUT-1)begin error<=8'h23;wen<=0;state<=FINISH;rs<=R_DONE;end
    else case(state)
     IDLE:if(start)begin
+     phase<=0;cycle_active<=0;rclk<=0;
      state<=PRIME_BLANK;wrst<=0;wen<=0;error<=0;rows<=0;extra_rows<=0;index<=0;next_x<=0;next_y<=0;
      first_ended<=0;flush_armed<=0;flush_done<=0;rs<=R_WAIT;timer<=0;
      frame_cycles<=0;read_at_frame_end<=0;min_href<=32'hffffffff;max_href<=0;max_lag<=0;paused_periods<=0;
@@ -95,22 +105,20 @@ module camera_fifo_capture #(
      // RCLK edge outputs byte1 (Y0), rather than starting again at byte0.
      R_RESET:if(phase==0)begin if(resets==4)begin rrst<=1;index<=1;rs<=R_READ;end else resets<=resets+1'b1;end
      R_READ:begin
-      if(cycle_active&&phase==PERIOD/2+8)early<=data;
-      if(cycle_active&&phase==PERIOD-5)begin
-       if(data!=early)begin error<=8'h25;wen<=0;state<=FINISH;rs<=R_DONE;end
-       else begin
+      // One sample at the falling edge: at least40ns after the rising edge
+      // for the tested periods>=8. No early/late diagnostic comparison.
+      if(cycle_active&&phase==period-1)begin
         if(index[0])begin
          pixel_valid<=1;pixel<=data;pixel_x<=next_x;pixel_y<=next_y;
          if(next_x==W-1)begin next_x<=0;next_y<=next_y+1'b1;end else next_x<=next_x+1'b1;
         end
         index<=index+1'b1;
-        if(index==N-1)begin rs<=R_DONE;state<=FINISH;wen<=0;end
-       end
+        if(index==N-1)begin rs<=R_DONE;state<=FINISH;wen<=0;rrst<=0;end
       end
      end
      default:begin end
     endcase
-    FINISH:begin state<=IDLE;done<=1;wen<=0;rrst<=1;wrst<=1;end
+    FINISH:begin state<=IDLE;done<=1;wen<=0;rrst<=0;wrst<=1;end
     default:state<=IDLE;
    endcase
   end

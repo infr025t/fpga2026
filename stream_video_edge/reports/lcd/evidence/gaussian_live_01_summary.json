@@ -1,0 +1,8 @@
+{
+  "reason": "HOST_STOP",
+  "records": 668,
+  "last_logged_frame": 672,
+  "unlogged_frame_count": 3,
+  "duration_ms": 358255,
+  "image_review": "screen observation by user; no per-frame image export"
+}

@@ -1,56 +1,43 @@
-# V0.3稳定基线：RAW灰度／EDGE边缘
+# V0.4：摄像头＋平滑/Sobel＋NT35510显示
+主入口为lcd_top：Basys3独立读取GYF-198 OV7670_FIFO的VGA UYVY，取Y灰度，显示完整RAW或一次平滑后的Sobel边缘。TK040F1510/NT35510为8位8080接口，横屏800×480；RAW640×480居中，EDGE630×470保留原坐标。PC只参与开发校验，正常显示不依赖PC。
 
-主工程已合入50张验收的相机修复：独立WRST控制、AL422读复位预取首字节计数、VSYNC短低脉冲资格判定。AEC自动曝光、AGC自动增益及AWB自动白平衡均保持开启。算法核心没有改变，当前读时钟2MHz、串口12Mbaud，仅访问COM10。
+本版收敛已通过短线条件下实拍的低速链路，仍为2MHz读取、约1.9fps。没有实现20fps；高帧率仅设计预想，见[后续计划](docs/high_rate_plan.md)。当前高斯边缘效果仍需调参，不把稳定显示当作画质最优。
 
-## 开始使用
+## 构建和下载
+先按[接线与使用](docs/wiring_and_use.md)连接。所有开关置0。
+在此目录执行：
+~~~powershell
+powershell -ExecutionPolicy Bypass -File build_lcd.ps1
+powershell -ExecutionPolicy Bypass -File program_lcd.ps1
+~~~
+已有下载文件为artifacts/lcd_top.bit及lcd_top.ltx。构建临时文件放在E:/FPGA_Test_Work/lcd_v04_build，可用-OutDir修改；Vivado默认E:/Vivado/2025.1/Vivado/bin/vivado.bat，可用-Vivado修改。下载只写FPGA配置RAM，不写配置Flash；重新断电后需重新下载。
+默认控制权属于实体开关，正常运行无需JTAG或PC。VIO只提供轻量状态与测试控制，不承担图像计算。
 
-1. 按[接线与使用](docs/wiring_and_use.md)连接，特别是 **WRST→JB1(A14)**；WRST与VSYNC断开，VSYNC→JC3保留。
-2. 当前bit和匹配探针是`artifacts/edge_top.bit`、`edge_top.ltx`。所有实体SW先置0，执行`program.ps1`下载。
-3. 单张手动采集：运行`receive_one.ps1`，LED0就绪后SW15从0拨到1。
-4. 自动采集无需拨开关，窗口每张保存后更新：
-
-```powershell
-E:\Python\python.exe -B pc/receive.py --auto --source internal --frames 4
-E:\Python\python.exe -B pc/receive.py --auto --source camera --frames 50
-```
-
-输出默认在`E:/FPGA_Test_Work/edge_v03_work/capture_时间戳`，不覆盖已有目录，不自动重试。依赖见`requirements.txt`；需安装时执行`E:\Python\python.exe -m pip install -r requirements.txt`。
-
-## 画面与参数
-
-VGA640×480输入；每帧选一次5×5自引导滤波或一次3×3高斯加权平滑，之后共用3×3Sobel，二者不串联。引导滤波内部的两轮窗口是必要算法步骤。输出为630×470有效区域，原坐标x5..634/y5..474；PC另存640×480黑边画布，不缩小或补造像素。
-
-RAW是原始Y亮度灰度，不是彩色RGB。EDGE是Sobel阈值后的0/255图。默认引导滤波ε1024/T96，高斯平滑T128；支持手动阈值与离线扫描，尚无自适应阈值。不同模式先后采集，不是同一曝光的配对实验。强反光或遮挡时边缘可能变少，画质指标与FIFO拼接验收分别评估。
-
-## 工程入口与目录
-
-| 目录／文件 | 用途 |
+## 显示控制
+| 开关 | 含义 |
 |---|---|
-| `rtl/core`、`model` | 核心计算及定点参考模型 |
-| `rtl/camera` | SCCB初始化、独立WRST采集、VSYNC低脉冲判定 |
-| `rtl/uart`、`pc/receive.py` | EVG2完整图像回传与接收校验 |
-| `rtl/display` | 保留NT35510的8080驱动和显示像素接口 |
-| `constraints` | Basys3相机／串口／WRST实际引脚 |
-| `sim`、`tests`、`scripts` | 仿真、模型测试与构建工具 |
-| `artifacts` | 当前主工程可下载bit和配套LTX |
-| `reports/hardware/camera_acceptance_50` | 原50张验收、原始包和当时通过验收的bit |
-| `reports/hardware/consolidated_*` | 整理后重新构建的实际回归结果 |
-| `docs`、`reports/validation.md` | 当前规格、接线、接口、修改说明和验证结论 |
+| SW0 | 0摄像头；1内部确定性斜纹 |
+| SW1 | 通常0；复位初始化时1选择摄像头自带色条 |
+| SW2 | 0完整RAW灰度；1平滑＋Sobel二值EDGE |
+| SW3 | 0引导滤波ε1024/T96；1高斯平滑/T128，两者不串联 |
+| SW15 | 0连拍；1不接纳新帧，当前帧排空后保留画面 |
+| SW14 | 1错误页：LED15..8相机首错、LED7..0显示错误 |
+| BTNC | 复位并重新初始化 |
+其余开关保持0。模式按帧锁存；RAW/EDGE切换前自动清背景，避免5像素边框残影。默认阈值暂不开放LCD物理调参，串口旧入口保留手动阈值。没有自适应阈值。
 
-旧极性切换归零模块已移出活动工程；历史失败和旧硬件批次保留在测试归档，不作为当前使用说明。未生成ZIP。`demo`原工程未修改。
+## 源码组织和诊断
+- rtl/core原算法未改；rtl/camera统一了已测读取修正。
+- rtl/lcd_top.sv、rtl/runtime负责帧控制、核心转接、有限显示队列及首错保存；无整帧处理缓存。
+- rtl/display保留原NT35510总线、初始化与窗口写入器；总线时序未提速。
+- 默认构建去掉大图像快照，rtl/debug/video_snapshot.sv仅在build_lcd.ps1 -Snapshot -OutDir另一个目录时加入，生成lcd_top_snapshot.bit/ltx。该诊断配置需另行编译验证，不列为默认已上板版本。
+- scripts/lcd_hardware.tcl提供program/one/pause/physical/inspect/dump；Snapshot版每次调用均需加-snapshot，dump只适用于Snapshot版。脚本的one和live会接管虚拟开关，之后用physical交回实体。
+- scripts/lcd_live.tcl LABEL MODE持续监控，MODE为0 RAW、4引导EDGE、12高斯EDGE；LABEL不得复用。stop.flag或BTNC停止，首错保留。
+- reports/lcd/runtime是本地运行输出，Git忽略；reports/lcd保留审阅后的发布证据。
 
-## 重新构建与验证
+## 验证和限制
+[验收记录](reports/lcd/acceptance.json)、[验证说明](reports/validation.md)、[读取收敛说明](docs/reading_consolidation.md)区分模型、RTL、布局布线和实物证据。无图像字节猜测、像素修补或吞坏帧重试。源与送屏CRC一致不等于已验证屏幕扫描每一瞬间无撕裂。
+本轮线材改善实际是全部摄像头线缩短约一半，不是仅RCK；当前RCK约20cm。后续洞洞板全组线计划≤10cm，仍须重跑基线。
 
-在本目录执行。Vivado2025.1安装于`E:/Vivado/2025.1`；`build.ps1`把工程和中间文件放到`E:/FPGA_Test_Work/edge_v03_work/stable_board`，成功后更新artifacts。
-
-```powershell
-powershell -ExecutionPolicy Bypass -File build.ps1
-E:\Python\python.exe -B -m unittest discover -s tests -v
-E:\Python\python.exe -B scripts/run_camera_tests.py --tag mycheck
-E:\Python\python.exe -B scripts/run_core_tests.py --size vga --tag mycheck
-E:\Python\python.exe -B scripts/run_uart_tests.py --tag mycheck
-E:\Python\python.exe -B scripts/generate_nt35510_rom.py --check
-E:\Python\python.exe -B scripts/check_delivery.py
-```
-
-同名回归目录不覆盖；更换tag再运行。接屏前阅读[屏幕接口](docs/screen_interface.md)，当前bit未接通摄像头到LCD完整显示链路。下一步与工程清理记录见[修改说明](docs/changes_and_next.md)。
+## 保留的串口调试入口
+rtl/edge_top.sv、build.ps1、program.ps1及pc/receive.py保留V0.3串口用途；与LCD的开关定义不同，见[串口旧入口](docs/uart_legacy.md)。共享camera已更新，但artifacts/edge_top.bit/ltx保留历史V0.3基线，不能把它当LCD程序或本轮重新构建产物。默认推荐使用build_lcd.ps1/program_lcd.ps1。PC仅COM10，绝不访问COM15；LCD正常运行不使用串口。
+demo/保持原样，历史文档/记录不作为本版接线依据。

@@ -14,15 +14,19 @@ module tb_vsync_filter;
     @(negedge clk);
     if(dout!==(j<64))$fatal(1,"low qualification wrong n%0d tick%0d out%b",n,j,dout);
    end
-   din=1;@(negedge clk);
-   if(dout!==1||last_raw!=n)$fatal(1,"rise delayed or pulse measurement wrong");
+   din=1;
+   for(j=1;j<=64;j=j+1)begin
+    @(negedge clk);
+    if(dout!==(n<64 || j>=64))$fatal(1,"high qualification wrong n%0d tick%0d",n,j);
+   end
+   if(last_raw!=n)$fatal(1,"pulse measurement wrong");
    if(n<64)begin if(rejected!=n||max_short!=n)$fatal(1,"short diagnostic wrong");end
    else if(last_long!=n||rejected!=63||max_short!=63)$fatal(1,"valid pulse lost or miscounted");
    repeat(2)@(negedge clk);
   end
   din=0;repeat(80)@(negedge clk);clear_stats=1;@(negedge clk);clear_stats=0;
   if(dout!==0)$fatal(1,"clearing statistics changed frame state");
-  din=1;@(negedge clk);if(dout!==1)$fatal(1,"rise after clear failed");
-  $display("PASS tb_vsync_filter short_lengths1_to63 valid64_to128 immediate_rise clear_preserves_state");$finish;
+  din=1;repeat(64)@(negedge clk);if(dout!==1)$fatal(1,"rise after clear failed");
+  $display("PASS tb_vsync_filter short_lengths1_to63 valid64_to128 high_qualified64 clear_preserves_state");$finish;
  end
 endmodule

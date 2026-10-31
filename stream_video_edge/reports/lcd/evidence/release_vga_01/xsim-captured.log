@@ -1,0 +1,19 @@
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Fri Oct 30 21:17:14 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/snapshot/xsim_script.tcl
+# xsim {snapshot} -testplusarg VECTORS=E:/FPGA_Test_Work/lcd_v04_validation/release_vga_01 -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+PASS tb_video_path all four RAW/EDGE x guided/gaussian modes; gaps, full counts, EOF drain
+$finish called at time : 30720980 ns : File "E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge/sim/tb_video_path.sv" Line 40
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:00:50 . Memory (MB): peak = 167.258 ; gain = 0.000
+exit
+INFO: xsimkernel Simulation Memory Usage: 13340 KB (Peak: 13340 KB), Simulation CPU Usage: 48921 ms
+INFO: [Common 17-206] Exiting xsim at Fri Oct 30 21:18:06 2026...

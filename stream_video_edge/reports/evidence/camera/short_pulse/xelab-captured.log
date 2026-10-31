@@ -5,13 +5,15 @@ Running: E:/Vivado/2025.1/Vivado/bin/unwrapped/win64.o/xelab.exe tb_selected -s 
 Multi-threading is on. Using 30 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3645] port 'debug_sync' remains unconnected for this instance [E:/Vivado_FPGA_Programs/fpga2026-v0.3-edge/stream_video_edge/sim/tb_camera_capture.sv:17]
+WARNING: [VRFC 10-3645] port 'debug_sync' remains unconnected for this instance [E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge/sim/tb_camera_capture.sv:17]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling module work.vsync_low_filter_default
+Compiling module work.href_stable_filter_default
 Compiling module work.camera_fifo_capture(W=64,H=64,FI...
+Compiling module work.camera_fifo_capture_reference(W=...
 Compiling module work.tb_camera_capture(GLITCH_TEST=1)
 Compiling module work.tb_selected
 Built simulation snapshot snapshot

@@ -1,0 +1,12 @@
+{
+  "review": "Independent read-only source review",
+  "unresolved_critical_or_important": 0,
+  "fixed_findings": [
+    "Snapshot actions now select matching LTX with explicit -snapshot",
+    "Create IP directory before create_ip",
+    "Clear stale RAW border before EDGE frame admission",
+    "Preserve locked frame mode across registered-start switch race"
+  ],
+  "transfer_register_review": "valid/pixel/raw/coordinates/EOF/error move together; no core backpressure",
+  "review_scope": "source and reported test evidence; reviewer did not operate hardware"
+}

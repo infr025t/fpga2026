@@ -1,81 +1,30 @@
 {
-  "version": "0.3-edge-stable",
-  "date": "2026-10-29",
-  "branch": "feature/edge-v0.3",
-  "base_commit": "2b7f9d64a1ba5ff0ad10861c4cafbe25a3e56e95",
-  "status": "CONSOLIDATED_BUILD_AND_BOARD_REGRESSION_PASS",
+  "version": "0.4-lcd-low-rate",
+  "date": "2026-10-30",
+  "base_commit": "6f20ee5e6b116f362903738a3b9faf9212c2f863",
+  "status": "LOW_RATE_CONSOLIDATED_BUILD_AND_BOARD_REGRESSION_PASS",
   "artifact": {
+    "path": "artifacts/lcd_top.bit",
+    "ltx_path": "artifacts/lcd_top.ltx",
+    "sha256": "5b73f565decd9fdca6a7864ec2b73b5f0d15e2be995d500d3bc6c5401bb3b67f",
+    "ltx_sha256": "2d477327399a2659c7be51a965f780e1b501d6c6125ff01b5eb957c045d8ddfd"
+  },
+  "resources": {
+    "LUT": 4910,
+    "FF": 6968,
+    "BRAM36_equivalent": 10.5,
+    "DSP": 22,
+    "setup_slack_ns": 0.233,
+    "hold_slack_ns": 0.039
+  },
+  "read_hz": 2000000,
+  "nominal_camera_fps": 1.9,
+  "hardware_evidence": "reports/lcd/acceptance.json",
+  "legacy_uart_artifact": {
     "path": "artifacts/edge_top.bit",
     "sha256": "6706610b96adba13fc28d4742f39da265aebdd97f3dd03b073ecc990e0d8b105",
     "ltx_sha256": "77a81162b52513d0f0f4787c728ec0e62a525901b1f86e1af63e794a8be756cf"
   },
-  "hardware_50_frame_acceptance": {
-    "status": "RESOLVED_PER_USER_50_FRAME_ACCEPTANCE",
-    "frames": 50,
-    "AEC": "enabled",
-    "AGC": "enabled",
-    "WRST": "JB1 A14 independent",
-    "accepted_bit_sha256": "f9f9fcd28067d90b78a7c8d2cdc1e25b5a6e9fd83206be30ad78bb2a42adae08",
-    "evidence": "reports/hardware/camera_acceptance_50",
-    "relation_to_current": "Same controller/config/core behavior; camera module name and text newlines normalized. New build checked separately below."
-  },
-  "current_build_hardware": {
-    "internal": {
-      "status": "PASS",
-      "frames": 4,
-      "displayed": 4,
-      "png_bin_wire_exact": true,
-      "output_pixels": 1184400,
-      "bit_exact_reference": true,
-      "evidence": "reports/hardware/consolidated_internal"
-    },
-    "camera": {
-      "status": "PASS",
-      "frames": 4,
-      "displayed": 4,
-      "png_bin_wire_exact": true,
-      "output_pixels": 1184400,
-      "bit_exact_reference": false,
-      "evidence": "reports/hardware/consolidated_camera"
-    }
-  },
-  "resources": {
-    "LUT": 4326,
-    "FF": 6437,
-    "BRAM36_equivalent": 10.5,
-    "DSP": 19,
-    "setup_slack_ns": 0.519,
-    "hold_slack_ns": 0.027
-  },
-  "verification": {
-    "python_tests": 7,
-    "camera_cases": 7,
-    "core_vga_frames": 6,
-    "core_vga_pixels_per_frame": 296100,
-    "uart_configurations": 4,
-    "nt35510_rom": "367 entries /732words /1464busbytes",
-    "camera": "reports/camera.json",
-    "core": "reports/rtl_vga.json",
-    "uart": "reports/uart.json"
-  },
-  "runtime": {
-    "read_clock_hz": 2000000,
-    "uart_baud": 12000000,
-    "uart_port": "COM10",
-    "AEC": "enabled",
-    "AGC": "enabled",
-    "AWB": "enabled",
-    "WRST": "JB1 A14",
-    "VSYNC": "JC3 N17",
-    "early_sample_diagnostic": "retained"
-  },
-  "archive": "E:\\FPGA_Test_Work\\edge_v03_work\\consolidation_2026-10-29",
-  "demo_unchanged": true,
-  "remaining": [
-    "read-clock frequency sweep",
-    "remove temporary early-sampling after scheduling/rate work and revalidate",
-    "same-input edge-threshold/quality comparison",
-    "actual LCD buffering/admission and wiring integration",
-    "flash independent cold start"
-  ]
+  "legacy_scope": "Historical V0.3 bit retained; shared camera source updated and model-regressed; legacy UART bit not rebuilt in this release",
+  "high_rate_implemented": false
 }

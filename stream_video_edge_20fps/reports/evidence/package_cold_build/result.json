@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "vivado": "2025.1",
+  "source_entry": "build_lcd.ps1 -Snapshot",
+  "build_directory": "E:\\FPGA_Test_Work\\edge20fps_git_build_20261031",
+  "generated_bit_sha256": "6ec586edee7e5b8d69a4a90b79c27997108b1ce9e03cf100a3e7cdd6209526ea",
+  "generated_bit_was_programmed": false,
+  "delivered_tested_bit_sha256": "b33cd1017aa1dbe9d4aa03037e1271d05a9e84d0ce3b92a518d018da88a551e9",
+  "generated_bit_does_not_replace_board_tested_artifact": true
+}

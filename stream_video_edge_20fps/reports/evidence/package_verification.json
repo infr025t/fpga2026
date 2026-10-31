@@ -1,0 +1,35 @@
+{
+  "package_core01": {
+    "passed": true,
+    "summary": [
+      "PASS tb_video_path Gaussian RAW/EDGE modes; gaps, full counts, EOF drain"
+    ]
+  },
+  "package_camera01": {
+    "passed": true,
+    "summary": [
+      "PASS tb_camera_video frames=3 pixel_alignment wrap continuous_commit pause_resume maxlag=40960"
+    ]
+  },
+  "package_uart01": {
+    "passed": true,
+    "summary": [
+      "PASS tb_uart_pair_stream actual12Mbaud bytes"
+    ]
+  },
+  "cold_build": {
+    "passed": true,
+    "vivado": "2025.1",
+    "source_entry": "build_lcd.ps1 -Snapshot",
+    "build_directory": "E:\\FPGA_Test_Work\\edge20fps_git_build_20261031",
+    "generated_bit_sha256": "6ec586edee7e5b8d69a4a90b79c27997108b1ce9e03cf100a3e7cdd6209526ea",
+    "generated_bit_was_programmed": false,
+    "delivered_tested_bit_sha256": "b33cd1017aa1dbe9d4aa03037e1271d05a9e84d0ce3b92a518d018da88a551e9",
+    "generated_bit_does_not_replace_board_tested_artifact": true
+  },
+  "pc_parser": {
+    "actual_rtl_uart_packets": 2,
+    "chunked_read_and_corrupt_packet_resync": "PASS"
+  },
+  "read_only_review": "No critical or important packaging issues; historical helper UART dependencies added."
+}

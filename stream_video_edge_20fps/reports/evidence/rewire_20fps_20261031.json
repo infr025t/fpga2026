@@ -1,0 +1,144 @@
+{
+  "date": "2026-10-31",
+  "wiring": "User revised grounds and RESET/SIOC/SIOD pullups; user reported prior 3V3/GND reversal. Exact cable length and component health not independently measured.",
+  "firmware_sha256": "b33cd1017aa1dbe9d4aa03037e1271d05a9e84d0ce3b92a518d018da88a551e9",
+  "code_modified": false,
+  "native_raw": [
+    640,
+    480
+  ],
+  "native_edge": [
+    630,
+    470
+  ],
+  "rclk_hz": 16666666.666666666,
+  "core_hz": 100000000,
+  "uart_baud": 12000000,
+  "runs": {
+    "rewire_bars01": {
+      "reason": "FRAME_TARGET",
+      "mode": 2,
+      "frames": 500,
+      "duration_ms": 22387,
+      "period_ticks": 4442922,
+      "worst_period_ticks": 4442928,
+      "performance": 257110087082170656407187198602473146066315597448832249902648106,
+      "fps": 22.507710016066003,
+      "host_observations": 500,
+      "final_completed_frames": 501,
+      "reference_failures": 0,
+      "last_observed_pixels": 307200,
+      "uart": {
+        "reason": "FRAME_TARGET",
+        "frames": 500,
+        "reference_checked": true,
+        "reference_bad_frames": 0,
+        "fpga_diagnostic_dropped": 0,
+        "header_crc_errors": 0,
+        "payload_crc_errors": 0,
+        "source_frame_id_gaps": 0,
+        "median_source_fps": 22.507710016066003,
+        "duration_sec": 52.19928880012594
+      }
+    },
+    "rewire_edge_bars01": {
+      "reason": "FRAME_TARGET",
+      "mode": 6,
+      "frames": 500,
+      "duration_ms": 22383,
+      "period_ticks": 4442922,
+      "worst_period_ticks": 4442928,
+      "performance": 257110087082170656407187198602473146066315597448832249902648106,
+      "fps": 22.507710016066003,
+      "host_observations": 500,
+      "final_completed_frames": 501,
+      "reference_failures": 0,
+      "last_observed_pixels": 296100
+    },
+    "rewire_scene01": {
+      "reason": "FRAME_TARGET",
+      "mode": 0,
+      "frames": 600,
+      "duration_ms": 26845,
+      "period_ticks": 4442922,
+      "worst_period_ticks": 4442928,
+      "performance": 257110087082316806570954317130993531212184989645300374373124906,
+      "fps": 22.507710016066003,
+      "host_observations": 598,
+      "final_completed_frames": 601,
+      "reference_failures": 0,
+      "last_observed_pixels": 307200,
+      "uart": {
+        "reason": "ERROR",
+        "frames": 316,
+        "reference_checked": false,
+        "reference_bad_frames": 0,
+        "fpga_diagnostic_dropped": 0,
+        "header_crc_errors": 0,
+        "payload_crc_errors": 0,
+        "source_frame_id_gaps": 0,
+        "median_source_fps": 22.507710016066003,
+        "duration_sec": 53.776056200033054
+      }
+    },
+    "rewire_scene02": {
+      "reason": "FRAME_TARGET",
+      "mode": 0,
+      "frames": 600,
+      "duration_ms": 26820,
+      "period_ticks": 4442922,
+      "worst_period_ticks": 4442928,
+      "performance": 257110087082316806570954317130993531212184989645300374373124906,
+      "fps": 22.507710016066003,
+      "host_observations": 600,
+      "final_completed_frames": 601,
+      "reference_failures": 0,
+      "last_observed_pixels": 307200,
+      "uart": {
+        "reason": "FRAME_TARGET",
+        "frames": 600,
+        "reference_checked": false,
+        "reference_bad_frames": 0,
+        "fpga_diagnostic_dropped": 0,
+        "header_crc_errors": 0,
+        "payload_crc_errors": 0,
+        "source_frame_id_gaps": 0,
+        "median_source_fps": 22.507710016066003,
+        "duration_sec": 50.26886929990724
+      }
+    },
+    "rewire_scene_edge01": {
+      "reason": "FRAME_TARGET",
+      "mode": 4,
+      "frames": 500,
+      "duration_ms": 22386,
+      "period_ticks": 4442922,
+      "worst_period_ticks": 4442928,
+      "performance": 257110087082170656407187198602473146066315597448832249902648106,
+      "fps": 22.507710016066003,
+      "host_observations": 494,
+      "final_completed_frames": 501,
+      "reference_failures": 0,
+      "last_observed_pixels": 296100
+    }
+  },
+  "image_screening": {
+    "frames": 600,
+    "candidates_ge8": 0,
+    "any_flagged_row": 0,
+    "max_screened_rows": 0,
+    "lowest_ratio_pair": [
+      0,
+      1.693394827380341,
+      "seq_000007_src_00000007.bin"
+    ],
+    "note": "Heuristic screening of 160x120 sampled views, not certified all-pixel correctness or motion validation."
+  },
+  "limits": [
+    "Scene CRC comparison verifies source-to-LCD transfer, not scene correctness.",
+    "Scene UART saves 160x120 paired-byte diagnostic overviews; LCD uses native geometry.",
+    "600-image screening found zero obvious byte-role swaps. It is not all-pixel or complete dynamic acceptance.",
+    "First scene PC recording stopped after316 images with PermissionError; second600 recording completed.",
+    "No controlled motion/close-light/occlusion acceptance was registered this turn. A finger appears in sampled frame91."
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "top": "tb_vga_video",
+  "passed": true,
+  "stages": [
+    {
+      "tool": "xvlog",
+      "command": [
+        "E:\\Vivado\\2025.1\\Vivado\\bin\\xvlog.bat",
+        "-sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge_20fps\\rtl\\camera\\vsync_low_filter.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge_20fps\\rtl\\camera\\href_stable_filter.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge_20fps\\rtl\\camera\\camera_fifo_video.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge_20fps\\sim\\tb_camera_video.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge_20fps\\reports\\package_camera01\\vga.sv"
+      ],
+      "exit": 0,
+      "seconds": 1.502,
+      "log": "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge_20fps\\reports\\package_camera01\\xvlog-captured.log",
+      "private_job_active_processes": 0
+    },
+    {
+      "tool": "xelab",
+      "command": [
+        "E:\\Vivado\\2025.1\\Vivado\\bin\\xelab.bat",
+        "tb_vga_video",
+        "-s",
+        "snapshot"
+      ],
+      "exit": 0,
+      "seconds": 5.087,
+      "log": "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge_20fps\\reports\\package_camera01\\xelab-captured.log",
+      "private_job_active_processes": 0
+    },
+    {
+      "tool": "xsim",
+      "command": [
+        "E:\\Vivado\\2025.1\\Vivado\\bin\\xsim.bat",
+        "snapshot",
+        "-runall",
+        "-f",
+        "xsim-options.txt"
+      ],
+      "exit": 0,
+      "seconds": 20.87,
+      "log": "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge_20fps\\reports\\package_camera01\\xsim-captured.log",
+      "private_job_active_processes": 0
+    }
+  ],
+  "work_dir": "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge_20fps\\reports\\package_camera01",
+  "reason": "PASS",
+  "simulation_summary": [
+    "PASS tb_camera_video frames=3 pixel_alignment wrap continuous_commit pause_resume maxlag=40960"
+  ]
+}

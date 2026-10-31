@@ -1,0 +1,33 @@
+#-----------------------------------------------------------
+# xsim v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Sat Oct 31 04:30:48 2026
+# Process ID         : 46532
+# Current directory  : E:/FPGA_Test_Work/video20fps_20261030/reports/paired40_vga
+# Command line       : xsim.exe -mode tcl -source {xsim.dir/snapshot/xsim_script.tcl}
+# Log file           : E:/FPGA_Test_Work/video20fps_20261030/reports/paired40_vga/xsim.log
+# Journal file       : E:/FPGA_Test_Work/video20fps_20261030/reports/paired40_vga\xsim.jou
+# Running On         : StrawberryBear
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : Intel(R) Core(TM) i9-14900HX
+# CPU Frequency      : 2419 MHz
+# CPU Physical cores : 24
+# CPU Logical cores  : 32
+# Host memory        : 33953 MB
+# Swap memory        : 2147 MB
+# Total Virtual      : 36100 MB
+# Available Virtual  : 9870 MB
+#-----------------------------------------------------------
+source xsim.dir/snapshot/xsim_script.tcl
+# xsim {snapshot} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+PASS tb_camera_video frames=3 pixel_alignment wrap continuous_commit pause_resume maxlag=40960
+$finish called at time : 267134840 ns : File "E:/FPGA_Test_Work/video20fps_20261030/sim/tb_camera_video.sv" Line 56
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:00:18 . Memory (MB): peak = 167.242 ; gain = 0.023
+exit
+INFO: xsimkernel Simulation Memory Usage: 12508 KB (Peak: 12508 KB), Simulation CPU Usage: 17796 ms
+INFO: [Common 17-206] Exiting xsim at Sat Oct 31 04:31:08 2026...

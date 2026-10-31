@@ -1,0 +1,6 @@
+{
+  "version": "0.4.1-gaussian",
+  "algorithm": "GAUSSIAN3",
+  "threshold": 128,
+  "scope": "Selected for simplicity after user screen comparison; no new quality optimum claim"
+}

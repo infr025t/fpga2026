@@ -35,3 +35,14 @@ xsim.dir/
 # Vivado may emit the same metadata when launched from the source directory.
 /stream_video_edge/dfx_runtime.txt
 /stream_video_edge/clockInfo.txt
+
+# Current20fps project: generated tools/cache/captures stay local; selected evidence is tracked.
+/stream_video_edge_20fps/build/
+/stream_video_edge_20fps/.Xil/
+/stream_video_edge_20fps/clockInfo.txt
+/stream_video_edge_20fps/dfx_runtime.txt
+/stream_video_edge_20fps/reports/*
+!/stream_video_edge_20fps/reports/evidence/
+/stream_video_edge_20fps/ip/**/hdl/
+/stream_video_edge_20fps/ip/**/sim/
+/stream_video_edge_20fps/ip/**/synth/

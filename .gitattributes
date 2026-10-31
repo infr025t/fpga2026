@@ -13,3 +13,7 @@ stream_video_edge/reports/lcd/evidence/**/*.log -whitespace
 
 # Preserve native UART implementation evidence.
 stream_video_edge/reports/implementation/*.rpt -whitespace
+
+# Preserve the current test-project snapshot and native tool reports without reformatting.
+stream_video_edge_20fps/** whitespace=cr-at-eol,-blank-at-eof
+stream_video_edge_20fps/reports/evidence/** -whitespace

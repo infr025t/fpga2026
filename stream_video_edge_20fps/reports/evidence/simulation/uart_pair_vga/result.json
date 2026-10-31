@@ -1,0 +1,53 @@
+{
+  "top": "tb_vga_uart_pair",
+  "passed": true,
+  "stages": [
+    {
+      "tool": "xvlog",
+      "command": [
+        "E:\\Vivado\\2025.1\\Vivado\\bin\\xvlog.bat",
+        "-sv",
+        "E:\\FPGA_Test_Work\\video20fps_20261030\\rtl\\uart\\uart_fast_tx.sv",
+        "E:\\FPGA_Test_Work\\video20fps_20261030\\rtl\\debug\\uart_pair_stream.sv",
+        "E:\\FPGA_Test_Work\\video20fps_20261030\\sim\\tb_uart_pair_stream.sv",
+        "E:\\FPGA_Test_Work\\video20fps_20261030\\reports\\uart_pair_vga\\vga.sv"
+      ],
+      "exit": 0,
+      "seconds": 0.698,
+      "log": "E:\\FPGA_Test_Work\\video20fps_20261030\\reports\\uart_pair_vga\\xvlog-captured.log",
+      "private_job_active_processes": 0
+    },
+    {
+      "tool": "xelab",
+      "command": [
+        "E:\\Vivado\\2025.1\\Vivado\\bin\\xelab.bat",
+        "tb_vga_uart_pair",
+        "-s",
+        "snapshot"
+      ],
+      "exit": 0,
+      "seconds": 1.037,
+      "log": "E:\\FPGA_Test_Work\\video20fps_20261030\\reports\\uart_pair_vga\\xelab-captured.log",
+      "private_job_active_processes": 0
+    },
+    {
+      "tool": "xsim",
+      "command": [
+        "E:\\Vivado\\2025.1\\Vivado\\bin\\xsim.bat",
+        "snapshot",
+        "-runall",
+        "-f",
+        "xsim-options.txt"
+      ],
+      "exit": 0,
+      "seconds": 4.426,
+      "log": "E:\\FPGA_Test_Work\\video20fps_20261030\\reports\\uart_pair_vga\\xsim-captured.log",
+      "private_job_active_processes": 0
+    }
+  ],
+  "work_dir": "E:\\FPGA_Test_Work\\video20fps_20261030\\reports\\uart_pair_vga",
+  "reason": "PASS",
+  "simulation_summary": [
+    "PASS tb_uart_pair_stream actual12Mbaud bytes"
+  ]
+}

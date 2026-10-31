@@ -1,0 +1,3016 @@
+{
+  "summary": {
+    "frames": 600,
+    "candidates_ge8": 0,
+    "any_flagged_row": 0,
+    "max_screened_rows": 0,
+    "lowest_ratio_pair": [
+      0,
+      1.693394827380341,
+      "seq_000007_src_00000007.bin"
+    ],
+    "note": "Heuristic screening of 160x120 sampled views, not certified all-pixel correctness or motion validation."
+  },
+  "frames": [
+    {
+      "file": "seq_000001_src_00000001.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7667832237088485
+    },
+    {
+      "file": "seq_000002_src_00000002.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.732828101008715
+    },
+    {
+      "file": "seq_000003_src_00000003.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7390529285597967
+    },
+    {
+      "file": "seq_000004_src_00000004.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7410313171008236
+    },
+    {
+      "file": "seq_000005_src_00000005.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7713527815862473
+    },
+    {
+      "file": "seq_000006_src_00000006.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.783269234705218
+    },
+    {
+      "file": "seq_000007_src_00000007.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.693394827380341
+    },
+    {
+      "file": "seq_000008_src_00000008.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7318129391287425
+    },
+    {
+      "file": "seq_000009_src_00000009.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7618003784839162
+    },
+    {
+      "file": "seq_000010_src_00000010.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.753388607996633
+    },
+    {
+      "file": "seq_000011_src_00000011.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7769904830419012
+    },
+    {
+      "file": "seq_000012_src_00000012.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7704631388457879
+    },
+    {
+      "file": "seq_000013_src_00000013.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8428050109473346
+    },
+    {
+      "file": "seq_000014_src_00000014.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8319524106453047
+    },
+    {
+      "file": "seq_000015_src_00000015.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8578744668335143
+    },
+    {
+      "file": "seq_000016_src_00000016.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.812581165733684
+    },
+    {
+      "file": "seq_000017_src_00000017.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8529031314131652
+    },
+    {
+      "file": "seq_000018_src_00000018.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8324471832884308
+    },
+    {
+      "file": "seq_000019_src_00000019.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.839566530288661
+    },
+    {
+      "file": "seq_000020_src_00000020.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8388030827422903
+    },
+    {
+      "file": "seq_000021_src_00000021.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.832530597091924
+    },
+    {
+      "file": "seq_000022_src_00000022.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.820913968284531
+    },
+    {
+      "file": "seq_000023_src_00000023.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8735555179670822
+    },
+    {
+      "file": "seq_000024_src_00000024.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8765425635696236
+    },
+    {
+      "file": "seq_000025_src_00000025.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8288685240783806
+    },
+    {
+      "file": "seq_000026_src_00000026.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.829892515648173
+    },
+    {
+      "file": "seq_000027_src_00000027.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8503669982181248
+    },
+    {
+      "file": "seq_000028_src_00000028.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7855098012471347
+    },
+    {
+      "file": "seq_000029_src_00000029.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7780238297829563
+    },
+    {
+      "file": "seq_000030_src_00000030.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8155006222076826
+    },
+    {
+      "file": "seq_000031_src_00000031.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.796129956167525
+    },
+    {
+      "file": "seq_000032_src_00000032.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.84510440546383
+    },
+    {
+      "file": "seq_000033_src_00000033.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8042259146720943
+    },
+    {
+      "file": "seq_000034_src_00000034.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.819113982739158
+    },
+    {
+      "file": "seq_000035_src_00000035.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.807034460346612
+    },
+    {
+      "file": "seq_000036_src_00000036.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8072896349748604
+    },
+    {
+      "file": "seq_000037_src_00000037.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8003360989249761
+    },
+    {
+      "file": "seq_000038_src_00000038.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7954395711448516
+    },
+    {
+      "file": "seq_000039_src_00000039.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7739267121213
+    },
+    {
+      "file": "seq_000040_src_00000040.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7940334748120623
+    },
+    {
+      "file": "seq_000041_src_00000041.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7985251083816234
+    },
+    {
+      "file": "seq_000042_src_00000042.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8163697721366692
+    },
+    {
+      "file": "seq_000043_src_00000043.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.782520031514768
+    },
+    {
+      "file": "seq_000044_src_00000044.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8016682831009945
+    },
+    {
+      "file": "seq_000045_src_00000045.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7580095736713242
+    },
+    {
+      "file": "seq_000046_src_00000046.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7817184715221668
+    },
+    {
+      "file": "seq_000047_src_00000047.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7670251494360394
+    },
+    {
+      "file": "seq_000048_src_00000048.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7685537969622003
+    },
+    {
+      "file": "seq_000049_src_00000049.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8139823585717574
+    },
+    {
+      "file": "seq_000050_src_00000050.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8182318913573399
+    },
+    {
+      "file": "seq_000051_src_00000051.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8009614901895565
+    },
+    {
+      "file": "seq_000052_src_00000052.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.840514310848004
+    },
+    {
+      "file": "seq_000053_src_00000053.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8509470595624384
+    },
+    {
+      "file": "seq_000054_src_00000054.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7971849871024297
+    },
+    {
+      "file": "seq_000055_src_00000055.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.87443080357689
+    },
+    {
+      "file": "seq_000056_src_00000056.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8861467713710987
+    },
+    {
+      "file": "seq_000057_src_00000057.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.844672833410329
+    },
+    {
+      "file": "seq_000058_src_00000058.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8318494231488016
+    },
+    {
+      "file": "seq_000059_src_00000059.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8789167890300782
+    },
+    {
+      "file": "seq_000060_src_00000060.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8686633533764885
+    },
+    {
+      "file": "seq_000061_src_00000061.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.839481431673305
+    },
+    {
+      "file": "seq_000062_src_00000062.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8650517123356603
+    },
+    {
+      "file": "seq_000063_src_00000063.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8399853551531515
+    },
+    {
+      "file": "seq_000064_src_00000064.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8468894498188746
+    },
+    {
+      "file": "seq_000065_src_00000065.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.851139403523065
+    },
+    {
+      "file": "seq_000066_src_00000066.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8402356920183902
+    },
+    {
+      "file": "seq_000067_src_00000067.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8231743032102483
+    },
+    {
+      "file": "seq_000068_src_00000068.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.863462370955271
+    },
+    {
+      "file": "seq_000069_src_00000069.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.821129726378079
+    },
+    {
+      "file": "seq_000070_src_00000070.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.878108089298445
+    },
+    {
+      "file": "seq_000071_src_00000071.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8221323835072816
+    },
+    {
+      "file": "seq_000072_src_00000072.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8436794430960268
+    },
+    {
+      "file": "seq_000073_src_00000073.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8264661033018403
+    },
+    {
+      "file": "seq_000074_src_00000074.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8469946948808142
+    },
+    {
+      "file": "seq_000075_src_00000075.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.848822197393155
+    },
+    {
+      "file": "seq_000076_src_00000076.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8622395749976957
+    },
+    {
+      "file": "seq_000077_src_00000077.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8745012732521085
+    },
+    {
+      "file": "seq_000078_src_00000078.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7983238275339781
+    },
+    {
+      "file": "seq_000079_src_00000079.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8613176969978105
+    },
+    {
+      "file": "seq_000080_src_00000080.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8397427997431148
+    },
+    {
+      "file": "seq_000081_src_00000081.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8722199265169504
+    },
+    {
+      "file": "seq_000082_src_00000082.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8740819482591484
+    },
+    {
+      "file": "seq_000083_src_00000083.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8452714089767217
+    },
+    {
+      "file": "seq_000084_src_00000084.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8311566260511074
+    },
+    {
+      "file": "seq_000085_src_00000085.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8439764080497036
+    },
+    {
+      "file": "seq_000086_src_00000086.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8003602509498013
+    },
+    {
+      "file": "seq_000087_src_00000087.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8325829254036643
+    },
+    {
+      "file": "seq_000088_src_00000088.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8552263742376718
+    },
+    {
+      "file": "seq_000089_src_00000089.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.9309609032401958
+    },
+    {
+      "file": "seq_000090_src_00000090.bin",
+      "screened_rows": 0,
+      "min_ratio": 2.0295788402996497
+    },
+    {
+      "file": "seq_000091_src_00000091.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.9517030355944154
+    },
+    {
+      "file": "seq_000092_src_00000092.bin",
+      "screened_rows": 0,
+      "min_ratio": 2.1085512000490154
+    },
+    {
+      "file": "seq_000093_src_00000093.bin",
+      "screened_rows": 0,
+      "min_ratio": 2.176901187305389
+    },
+    {
+      "file": "seq_000094_src_00000094.bin",
+      "screened_rows": 0,
+      "min_ratio": 2.1831988455888394
+    },
+    {
+      "file": "seq_000095_src_00000095.bin",
+      "screened_rows": 0,
+      "min_ratio": 2.109379090702316
+    },
+    {
+      "file": "seq_000096_src_00000096.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8920051499012822
+    },
+    {
+      "file": "seq_000097_src_00000097.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.9019239668008263
+    },
+    {
+      "file": "seq_000098_src_00000098.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.914657687995688
+    },
+    {
+      "file": "seq_000099_src_00000099.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.9458565729311605
+    },
+    {
+      "file": "seq_000100_src_00000100.bin",
+      "screened_rows": 0,
+      "min_ratio": 2.1342777690261197
+    },
+    {
+      "file": "seq_000101_src_00000101.bin",
+      "screened_rows": 0,
+      "min_ratio": 2.0945179637305094
+    },
+    {
+      "file": "seq_000102_src_00000102.bin",
+      "screened_rows": 0,
+      "min_ratio": 2.079584450054405
+    },
+    {
+      "file": "seq_000103_src_00000103.bin",
+      "screened_rows": 0,
+      "min_ratio": 2.18247622975581
+    },
+    {
+      "file": "seq_000104_src_00000104.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.9758641733854139
+    },
+    {
+      "file": "seq_000105_src_00000105.bin",
+      "screened_rows": 0,
+      "min_ratio": 2.014911189608008
+    },
+    {
+      "file": "seq_000106_src_00000106.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.9562086298475405
+    },
+    {
+      "file": "seq_000107_src_00000107.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8931328770914018
+    },
+    {
+      "file": "seq_000108_src_00000108.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8509045643489723
+    },
+    {
+      "file": "seq_000109_src_00000109.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8828879418658944
+    },
+    {
+      "file": "seq_000110_src_00000110.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8996893656626759
+    },
+    {
+      "file": "seq_000111_src_00000111.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8988294779861075
+    },
+    {
+      "file": "seq_000112_src_00000112.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.822556069254301
+    },
+    {
+      "file": "seq_000113_src_00000113.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8233846511557372
+    },
+    {
+      "file": "seq_000114_src_00000114.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8571787604768957
+    },
+    {
+      "file": "seq_000115_src_00000115.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8474896401871392
+    },
+    {
+      "file": "seq_000116_src_00000116.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8183542244486706
+    },
+    {
+      "file": "seq_000117_src_00000117.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.811293063628641
+    },
+    {
+      "file": "seq_000118_src_00000118.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8098495861488915
+    },
+    {
+      "file": "seq_000119_src_00000119.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8438660864492882
+    },
+    {
+      "file": "seq_000120_src_00000120.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.81385743920898
+    },
+    {
+      "file": "seq_000121_src_00000121.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8310543621529898
+    },
+    {
+      "file": "seq_000122_src_00000122.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7821598739811813
+    },
+    {
+      "file": "seq_000123_src_00000123.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.833414330162807
+    },
+    {
+      "file": "seq_000124_src_00000124.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7919371103498678
+    },
+    {
+      "file": "seq_000125_src_00000125.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7911623507558785
+    },
+    {
+      "file": "seq_000126_src_00000126.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8022311008030683
+    },
+    {
+      "file": "seq_000127_src_00000127.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8213113137199988
+    },
+    {
+      "file": "seq_000128_src_00000128.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8404370576942815
+    },
+    {
+      "file": "seq_000129_src_00000129.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7880972462744835
+    },
+    {
+      "file": "seq_000130_src_00000130.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8278748509820317
+    },
+    {
+      "file": "seq_000131_src_00000131.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8398935937909575
+    },
+    {
+      "file": "seq_000132_src_00000132.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7604260650272745
+    },
+    {
+      "file": "seq_000133_src_00000133.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8278077547026292
+    },
+    {
+      "file": "seq_000134_src_00000134.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7777993950847772
+    },
+    {
+      "file": "seq_000135_src_00000135.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7814570358124673
+    },
+    {
+      "file": "seq_000136_src_00000136.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8447846491995252
+    },
+    {
+      "file": "seq_000137_src_00000137.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8492320754410678
+    },
+    {
+      "file": "seq_000138_src_00000138.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8517831618574776
+    },
+    {
+      "file": "seq_000139_src_00000139.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.789516644545551
+    },
+    {
+      "file": "seq_000140_src_00000140.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7884836044320516
+    },
+    {
+      "file": "seq_000141_src_00000141.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7760684406161271
+    },
+    {
+      "file": "seq_000142_src_00000142.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7931758772896627
+    },
+    {
+      "file": "seq_000143_src_00000143.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7386260366497777
+    },
+    {
+      "file": "seq_000144_src_00000144.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8150508362211906
+    },
+    {
+      "file": "seq_000145_src_00000145.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7892284833583407
+    },
+    {
+      "file": "seq_000146_src_00000146.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7879490267105032
+    },
+    {
+      "file": "seq_000147_src_00000147.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7638308115076269
+    },
+    {
+      "file": "seq_000148_src_00000148.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7576280662732182
+    },
+    {
+      "file": "seq_000149_src_00000149.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7862926771789276
+    },
+    {
+      "file": "seq_000150_src_00000150.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.81109779072108
+    },
+    {
+      "file": "seq_000151_src_00000151.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8146004489459049
+    },
+    {
+      "file": "seq_000152_src_00000152.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.815783090630627
+    },
+    {
+      "file": "seq_000153_src_00000153.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.778449976459258
+    },
+    {
+      "file": "seq_000154_src_00000154.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7225232888258573
+    },
+    {
+      "file": "seq_000155_src_00000155.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7769438154183235
+    },
+    {
+      "file": "seq_000156_src_00000156.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7299503057821353
+    },
+    {
+      "file": "seq_000157_src_00000157.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8031842419737099
+    },
+    {
+      "file": "seq_000158_src_00000158.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7972240510515054
+    },
+    {
+      "file": "seq_000159_src_00000159.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8160283732482714
+    },
+    {
+      "file": "seq_000160_src_00000160.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7814110825945422
+    },
+    {
+      "file": "seq_000161_src_00000161.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7785511862831949
+    },
+    {
+      "file": "seq_000162_src_00000162.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8279242030023883
+    },
+    {
+      "file": "seq_000163_src_00000163.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8347102418836032
+    },
+    {
+      "file": "seq_000164_src_00000164.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7952305554949586
+    },
+    {
+      "file": "seq_000165_src_00000165.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.762744595857677
+    },
+    {
+      "file": "seq_000166_src_00000166.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7632234454003493
+    },
+    {
+      "file": "seq_000167_src_00000167.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.766825894341823
+    },
+    {
+      "file": "seq_000168_src_00000168.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7812742220344813
+    },
+    {
+      "file": "seq_000169_src_00000169.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8208620362789227
+    },
+    {
+      "file": "seq_000170_src_00000170.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7903062473047782
+    },
+    {
+      "file": "seq_000171_src_00000171.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7669648124759243
+    },
+    {
+      "file": "seq_000172_src_00000172.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8016272692958561
+    },
+    {
+      "file": "seq_000173_src_00000173.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7843984685162109
+    },
+    {
+      "file": "seq_000174_src_00000174.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7940823653527562
+    },
+    {
+      "file": "seq_000175_src_00000175.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8100798813651409
+    },
+    {
+      "file": "seq_000176_src_00000176.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7828305007553762
+    },
+    {
+      "file": "seq_000177_src_00000177.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7756827890580082
+    },
+    {
+      "file": "seq_000178_src_00000178.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7764152721526192
+    },
+    {
+      "file": "seq_000179_src_00000179.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8162693365095672
+    },
+    {
+      "file": "seq_000180_src_00000180.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.813120790889493
+    },
+    {
+      "file": "seq_000181_src_00000181.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7470386481918798
+    },
+    {
+      "file": "seq_000182_src_00000182.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.795747845251173
+    },
+    {
+      "file": "seq_000183_src_00000183.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8164923787320424
+    },
+    {
+      "file": "seq_000184_src_00000184.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8199018991301743
+    },
+    {
+      "file": "seq_000185_src_00000185.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.810330983661805
+    },
+    {
+      "file": "seq_000186_src_00000186.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8506517313365947
+    },
+    {
+      "file": "seq_000187_src_00000187.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8075939403141847
+    },
+    {
+      "file": "seq_000188_src_00000188.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8474908712752682
+    },
+    {
+      "file": "seq_000189_src_00000189.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8207653146010294
+    },
+    {
+      "file": "seq_000190_src_00000190.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7794268117671155
+    },
+    {
+      "file": "seq_000191_src_00000191.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8010823157419613
+    },
+    {
+      "file": "seq_000192_src_00000192.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8612115722036784
+    },
+    {
+      "file": "seq_000193_src_00000193.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.855555748380341
+    },
+    {
+      "file": "seq_000194_src_00000194.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7938862934112458
+    },
+    {
+      "file": "seq_000195_src_00000195.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7725367899113567
+    },
+    {
+      "file": "seq_000196_src_00000196.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7819822010187099
+    },
+    {
+      "file": "seq_000197_src_00000197.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7886068864526345
+    },
+    {
+      "file": "seq_000198_src_00000198.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7748071356734592
+    },
+    {
+      "file": "seq_000199_src_00000199.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.814265534806203
+    },
+    {
+      "file": "seq_000200_src_00000200.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8298460213227101
+    },
+    {
+      "file": "seq_000201_src_00000201.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8300682055674877
+    },
+    {
+      "file": "seq_000202_src_00000202.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.821315827272537
+    },
+    {
+      "file": "seq_000203_src_00000203.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.790988851718818
+    },
+    {
+      "file": "seq_000204_src_00000204.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7818091101001317
+    },
+    {
+      "file": "seq_000205_src_00000205.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.806841500496735
+    },
+    {
+      "file": "seq_000206_src_00000206.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.831901748546417
+    },
+    {
+      "file": "seq_000207_src_00000207.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.871229701867202
+    },
+    {
+      "file": "seq_000208_src_00000208.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7576112144861928
+    },
+    {
+      "file": "seq_000209_src_00000209.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7983694993020432
+    },
+    {
+      "file": "seq_000210_src_00000210.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7993359607211665
+    },
+    {
+      "file": "seq_000211_src_00000211.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.789976804088791
+    },
+    {
+      "file": "seq_000212_src_00000212.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7465531414485729
+    },
+    {
+      "file": "seq_000213_src_00000213.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7735037718445086
+    },
+    {
+      "file": "seq_000214_src_00000214.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8191233417609145
+    },
+    {
+      "file": "seq_000215_src_00000215.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7798391541941856
+    },
+    {
+      "file": "seq_000216_src_00000216.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8061043239604113
+    },
+    {
+      "file": "seq_000217_src_00000217.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.776675851426331
+    },
+    {
+      "file": "seq_000218_src_00000218.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7744970016719226
+    },
+    {
+      "file": "seq_000219_src_00000219.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7285463349339636
+    },
+    {
+      "file": "seq_000220_src_00000220.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7625411919094545
+    },
+    {
+      "file": "seq_000221_src_00000221.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7875870589311
+    },
+    {
+      "file": "seq_000222_src_00000222.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8060233623626292
+    },
+    {
+      "file": "seq_000223_src_00000223.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7977155543771977
+    },
+    {
+      "file": "seq_000224_src_00000224.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7953993444116434
+    },
+    {
+      "file": "seq_000225_src_00000225.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7721820309977325
+    },
+    {
+      "file": "seq_000226_src_00000226.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7796477452145734
+    },
+    {
+      "file": "seq_000227_src_00000227.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8414520859458998
+    },
+    {
+      "file": "seq_000228_src_00000228.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7970963720737851
+    },
+    {
+      "file": "seq_000229_src_00000229.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8153640995911573
+    },
+    {
+      "file": "seq_000230_src_00000230.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7831092358944525
+    },
+    {
+      "file": "seq_000231_src_00000231.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8381705537530408
+    },
+    {
+      "file": "seq_000232_src_00000232.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8088441920758915
+    },
+    {
+      "file": "seq_000233_src_00000233.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8221338087416816
+    },
+    {
+      "file": "seq_000234_src_00000234.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.764970715386398
+    },
+    {
+      "file": "seq_000235_src_00000235.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7567929581849377
+    },
+    {
+      "file": "seq_000236_src_00000236.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.757260419609153
+    },
+    {
+      "file": "seq_000237_src_00000237.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7599935983014843
+    },
+    {
+      "file": "seq_000238_src_00000238.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8041123237327357
+    },
+    {
+      "file": "seq_000239_src_00000239.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7954143367312447
+    },
+    {
+      "file": "seq_000240_src_00000240.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7978857925815155
+    },
+    {
+      "file": "seq_000241_src_00000241.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.818789808718673
+    },
+    {
+      "file": "seq_000242_src_00000242.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7928153237944473
+    },
+    {
+      "file": "seq_000243_src_00000243.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.794395234734341
+    },
+    {
+      "file": "seq_000244_src_00000244.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.80450403492727
+    },
+    {
+      "file": "seq_000245_src_00000245.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8008131802493639
+    },
+    {
+      "file": "seq_000246_src_00000246.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7977506766892617
+    },
+    {
+      "file": "seq_000247_src_00000247.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8030409670698644
+    },
+    {
+      "file": "seq_000248_src_00000248.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.792518674053427
+    },
+    {
+      "file": "seq_000249_src_00000249.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7559595796418777
+    },
+    {
+      "file": "seq_000250_src_00000250.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.76762708602697
+    },
+    {
+      "file": "seq_000251_src_00000251.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8006617515600751
+    },
+    {
+      "file": "seq_000252_src_00000252.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8232570720900907
+    },
+    {
+      "file": "seq_000253_src_00000253.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.761961971358803
+    },
+    {
+      "file": "seq_000254_src_00000254.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8165144952163843
+    },
+    {
+      "file": "seq_000255_src_00000255.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7537161071443144
+    },
+    {
+      "file": "seq_000256_src_00000256.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8119428302455394
+    },
+    {
+      "file": "seq_000257_src_00000257.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7677958804150196
+    },
+    {
+      "file": "seq_000258_src_00000258.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7837215241150237
+    },
+    {
+      "file": "seq_000259_src_00000259.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.764280555134309
+    },
+    {
+      "file": "seq_000260_src_00000260.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8431535825491525
+    },
+    {
+      "file": "seq_000261_src_00000261.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7196837788057142
+    },
+    {
+      "file": "seq_000262_src_00000262.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7771628625683138
+    },
+    {
+      "file": "seq_000263_src_00000263.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7428050425123087
+    },
+    {
+      "file": "seq_000264_src_00000264.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7532666303842912
+    },
+    {
+      "file": "seq_000265_src_00000265.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7891029725827001
+    },
+    {
+      "file": "seq_000266_src_00000266.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7798272908291823
+    },
+    {
+      "file": "seq_000267_src_00000267.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7975063871432808
+    },
+    {
+      "file": "seq_000268_src_00000268.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7861000075088393
+    },
+    {
+      "file": "seq_000269_src_00000269.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7879217536686542
+    },
+    {
+      "file": "seq_000270_src_00000270.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7522374855519025
+    },
+    {
+      "file": "seq_000271_src_00000271.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7679194163021577
+    },
+    {
+      "file": "seq_000272_src_00000272.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8173538385034107
+    },
+    {
+      "file": "seq_000273_src_00000273.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7821563280552382
+    },
+    {
+      "file": "seq_000274_src_00000274.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8028878648270383
+    },
+    {
+      "file": "seq_000275_src_00000275.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7729907861133065
+    },
+    {
+      "file": "seq_000276_src_00000276.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7494463949366985
+    },
+    {
+      "file": "seq_000277_src_00000277.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7815809277205574
+    },
+    {
+      "file": "seq_000278_src_00000278.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7716012165447506
+    },
+    {
+      "file": "seq_000279_src_00000279.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.735072252325672
+    },
+    {
+      "file": "seq_000280_src_00000280.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7667053816711757
+    },
+    {
+      "file": "seq_000281_src_00000281.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.761344516367301
+    },
+    {
+      "file": "seq_000282_src_00000282.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7582825801484059
+    },
+    {
+      "file": "seq_000283_src_00000283.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7451214406301019
+    },
+    {
+      "file": "seq_000284_src_00000284.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8314580446343867
+    },
+    {
+      "file": "seq_000285_src_00000285.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7666033815239814
+    },
+    {
+      "file": "seq_000286_src_00000286.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.805502089085204
+    },
+    {
+      "file": "seq_000287_src_00000287.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.788693811875493
+    },
+    {
+      "file": "seq_000288_src_00000288.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8013793121527453
+    },
+    {
+      "file": "seq_000289_src_00000289.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.740656895299688
+    },
+    {
+      "file": "seq_000290_src_00000290.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7856616609773515
+    },
+    {
+      "file": "seq_000291_src_00000291.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.777851035367638
+    },
+    {
+      "file": "seq_000292_src_00000292.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7599528960395647
+    },
+    {
+      "file": "seq_000293_src_00000293.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7762085829909995
+    },
+    {
+      "file": "seq_000294_src_00000294.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7903044926812974
+    },
+    {
+      "file": "seq_000295_src_00000295.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7496514354409811
+    },
+    {
+      "file": "seq_000296_src_00000296.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7503654525773438
+    },
+    {
+      "file": "seq_000297_src_00000297.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7878202010269078
+    },
+    {
+      "file": "seq_000298_src_00000298.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8003518591701073
+    },
+    {
+      "file": "seq_000299_src_00000299.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7812917758854039
+    },
+    {
+      "file": "seq_000300_src_00000300.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7811911294586273
+    },
+    {
+      "file": "seq_000301_src_00000301.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7910216452861814
+    },
+    {
+      "file": "seq_000302_src_00000302.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7996541568513726
+    },
+    {
+      "file": "seq_000303_src_00000303.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7398300739640895
+    },
+    {
+      "file": "seq_000304_src_00000304.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7605666031653033
+    },
+    {
+      "file": "seq_000305_src_00000305.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7639089611357386
+    },
+    {
+      "file": "seq_000306_src_00000306.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8029604103558887
+    },
+    {
+      "file": "seq_000307_src_00000307.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8009149945598073
+    },
+    {
+      "file": "seq_000308_src_00000308.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7695183053167587
+    },
+    {
+      "file": "seq_000309_src_00000309.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7807737801558425
+    },
+    {
+      "file": "seq_000310_src_00000310.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7430111663222063
+    },
+    {
+      "file": "seq_000311_src_00000311.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7633831851958197
+    },
+    {
+      "file": "seq_000312_src_00000312.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.799195965566102
+    },
+    {
+      "file": "seq_000313_src_00000313.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8110532234001757
+    },
+    {
+      "file": "seq_000314_src_00000314.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8156058777966197
+    },
+    {
+      "file": "seq_000315_src_00000315.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7724642451797477
+    },
+    {
+      "file": "seq_000316_src_00000316.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8335825105075683
+    },
+    {
+      "file": "seq_000317_src_00000317.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8425542832622315
+    },
+    {
+      "file": "seq_000318_src_00000318.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7675421845916484
+    },
+    {
+      "file": "seq_000319_src_00000319.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8112477206464082
+    },
+    {
+      "file": "seq_000320_src_00000320.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8048988410304574
+    },
+    {
+      "file": "seq_000321_src_00000321.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7969926022469072
+    },
+    {
+      "file": "seq_000322_src_00000322.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7888008294105437
+    },
+    {
+      "file": "seq_000323_src_00000323.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7952056073405935
+    },
+    {
+      "file": "seq_000324_src_00000324.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8334184027395954
+    },
+    {
+      "file": "seq_000325_src_00000325.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8081883423478615
+    },
+    {
+      "file": "seq_000326_src_00000326.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7921662696349974
+    },
+    {
+      "file": "seq_000327_src_00000327.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7691161103579298
+    },
+    {
+      "file": "seq_000328_src_00000328.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8351394184991585
+    },
+    {
+      "file": "seq_000329_src_00000329.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7994930629914667
+    },
+    {
+      "file": "seq_000330_src_00000330.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7983166948420002
+    },
+    {
+      "file": "seq_000331_src_00000331.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7826659500047684
+    },
+    {
+      "file": "seq_000332_src_00000332.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8597984092050024
+    },
+    {
+      "file": "seq_000333_src_00000333.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7945383469132676
+    },
+    {
+      "file": "seq_000334_src_00000334.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.779748945788706
+    },
+    {
+      "file": "seq_000335_src_00000335.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.800352833210994
+    },
+    {
+      "file": "seq_000336_src_00000336.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8021559089179149
+    },
+    {
+      "file": "seq_000337_src_00000337.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8193525253769398
+    },
+    {
+      "file": "seq_000338_src_00000338.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8362786242802613
+    },
+    {
+      "file": "seq_000339_src_00000339.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7871652883877036
+    },
+    {
+      "file": "seq_000340_src_00000340.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8031146673837917
+    },
+    {
+      "file": "seq_000341_src_00000341.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.760708490891483
+    },
+    {
+      "file": "seq_000342_src_00000342.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7921977016872062
+    },
+    {
+      "file": "seq_000343_src_00000343.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7904109533013088
+    },
+    {
+      "file": "seq_000344_src_00000344.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7302114179330765
+    },
+    {
+      "file": "seq_000345_src_00000345.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7798092081724997
+    },
+    {
+      "file": "seq_000346_src_00000346.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7969298531048805
+    },
+    {
+      "file": "seq_000347_src_00000347.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7782747593999595
+    },
+    {
+      "file": "seq_000348_src_00000348.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8155806723068448
+    },
+    {
+      "file": "seq_000349_src_00000349.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7624672085425654
+    },
+    {
+      "file": "seq_000350_src_00000350.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7957884490362395
+    },
+    {
+      "file": "seq_000351_src_00000351.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.806964835474343
+    },
+    {
+      "file": "seq_000352_src_00000352.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.760385331854038
+    },
+    {
+      "file": "seq_000353_src_00000353.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7677571002102817
+    },
+    {
+      "file": "seq_000354_src_00000354.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8357411196413582
+    },
+    {
+      "file": "seq_000355_src_00000355.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7706642919734785
+    },
+    {
+      "file": "seq_000356_src_00000356.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8056488089128933
+    },
+    {
+      "file": "seq_000357_src_00000357.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.810821913737918
+    },
+    {
+      "file": "seq_000358_src_00000358.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8143733131482105
+    },
+    {
+      "file": "seq_000359_src_00000359.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7560764174192363
+    },
+    {
+      "file": "seq_000360_src_00000360.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7753275942346822
+    },
+    {
+      "file": "seq_000361_src_00000361.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7730731187778848
+    },
+    {
+      "file": "seq_000362_src_00000362.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8518823716414547
+    },
+    {
+      "file": "seq_000363_src_00000363.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8096277654707091
+    },
+    {
+      "file": "seq_000364_src_00000364.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7795707545970616
+    },
+    {
+      "file": "seq_000365_src_00000365.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7712192831353561
+    },
+    {
+      "file": "seq_000366_src_00000366.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7891538260362523
+    },
+    {
+      "file": "seq_000367_src_00000367.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8023497244717748
+    },
+    {
+      "file": "seq_000368_src_00000368.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7949633328736563
+    },
+    {
+      "file": "seq_000369_src_00000369.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8410839363759686
+    },
+    {
+      "file": "seq_000370_src_00000370.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8055449560632428
+    },
+    {
+      "file": "seq_000371_src_00000371.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7565367094858504
+    },
+    {
+      "file": "seq_000372_src_00000372.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.82406447770874
+    },
+    {
+      "file": "seq_000373_src_00000373.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7803950338645371
+    },
+    {
+      "file": "seq_000374_src_00000374.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8366456148827157
+    },
+    {
+      "file": "seq_000375_src_00000375.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.807778553199251
+    },
+    {
+      "file": "seq_000376_src_00000376.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.829886760711604
+    },
+    {
+      "file": "seq_000377_src_00000377.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7910058629406425
+    },
+    {
+      "file": "seq_000378_src_00000378.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8004812654617617
+    },
+    {
+      "file": "seq_000379_src_00000379.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.784601837550016
+    },
+    {
+      "file": "seq_000380_src_00000380.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.790001904970217
+    },
+    {
+      "file": "seq_000381_src_00000381.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7845472873014625
+    },
+    {
+      "file": "seq_000382_src_00000382.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7886510838590972
+    },
+    {
+      "file": "seq_000383_src_00000383.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.79991313809108
+    },
+    {
+      "file": "seq_000384_src_00000384.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7987053036767557
+    },
+    {
+      "file": "seq_000385_src_00000385.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7902464954410908
+    },
+    {
+      "file": "seq_000386_src_00000386.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.814956248378599
+    },
+    {
+      "file": "seq_000387_src_00000387.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7469446547979806
+    },
+    {
+      "file": "seq_000388_src_00000388.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7808745437610516
+    },
+    {
+      "file": "seq_000389_src_00000389.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.804253184125095
+    },
+    {
+      "file": "seq_000390_src_00000390.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8337433717396836
+    },
+    {
+      "file": "seq_000391_src_00000391.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.802299937062017
+    },
+    {
+      "file": "seq_000392_src_00000392.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7770141941710196
+    },
+    {
+      "file": "seq_000393_src_00000393.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.794628334179874
+    },
+    {
+      "file": "seq_000394_src_00000394.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7619058112352122
+    },
+    {
+      "file": "seq_000395_src_00000395.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.828872035902627
+    },
+    {
+      "file": "seq_000396_src_00000396.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7913967551691061
+    },
+    {
+      "file": "seq_000397_src_00000397.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.849375154470137
+    },
+    {
+      "file": "seq_000398_src_00000398.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8060568565095432
+    },
+    {
+      "file": "seq_000399_src_00000399.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7981249762815104
+    },
+    {
+      "file": "seq_000400_src_00000400.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7582213773929931
+    },
+    {
+      "file": "seq_000401_src_00000401.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8483007764880088
+    },
+    {
+      "file": "seq_000402_src_00000402.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7754411614170493
+    },
+    {
+      "file": "seq_000403_src_00000403.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7765471408178037
+    },
+    {
+      "file": "seq_000404_src_00000404.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.785105526529933
+    },
+    {
+      "file": "seq_000405_src_00000405.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7850966205510888
+    },
+    {
+      "file": "seq_000406_src_00000406.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8254738841328289
+    },
+    {
+      "file": "seq_000407_src_00000407.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7441485068843396
+    },
+    {
+      "file": "seq_000408_src_00000408.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8280540947040615
+    },
+    {
+      "file": "seq_000409_src_00000409.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8108614901774103
+    },
+    {
+      "file": "seq_000410_src_00000410.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7968293126041077
+    },
+    {
+      "file": "seq_000411_src_00000411.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8486001115598942
+    },
+    {
+      "file": "seq_000412_src_00000412.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7972128101359544
+    },
+    {
+      "file": "seq_000413_src_00000413.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8214295770846782
+    },
+    {
+      "file": "seq_000414_src_00000414.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.844901991365873
+    },
+    {
+      "file": "seq_000415_src_00000415.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.739508993087015
+    },
+    {
+      "file": "seq_000416_src_00000416.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8665651471563727
+    },
+    {
+      "file": "seq_000417_src_00000417.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8686818713782776
+    },
+    {
+      "file": "seq_000418_src_00000418.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.9090997455341678
+    },
+    {
+      "file": "seq_000419_src_00000419.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8850771847237786
+    },
+    {
+      "file": "seq_000420_src_00000420.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8691720635327096
+    },
+    {
+      "file": "seq_000421_src_00000421.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8726222812653894
+    },
+    {
+      "file": "seq_000422_src_00000422.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.9010762928810578
+    },
+    {
+      "file": "seq_000423_src_00000423.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.859239666084689
+    },
+    {
+      "file": "seq_000424_src_00000424.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8468639803798308
+    },
+    {
+      "file": "seq_000425_src_00000425.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8986356612250634
+    },
+    {
+      "file": "seq_000426_src_00000426.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8966487869802566
+    },
+    {
+      "file": "seq_000427_src_00000427.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8849487766784896
+    },
+    {
+      "file": "seq_000428_src_00000428.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8571226720696445
+    },
+    {
+      "file": "seq_000429_src_00000429.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8403859640101923
+    },
+    {
+      "file": "seq_000430_src_00000430.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8387243591690692
+    },
+    {
+      "file": "seq_000431_src_00000431.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7722406273831217
+    },
+    {
+      "file": "seq_000432_src_00000432.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8264342312339066
+    },
+    {
+      "file": "seq_000433_src_00000433.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.815847412885521
+    },
+    {
+      "file": "seq_000434_src_00000434.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8189956427967304
+    },
+    {
+      "file": "seq_000435_src_00000435.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8153190652695659
+    },
+    {
+      "file": "seq_000436_src_00000436.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7810821363938245
+    },
+    {
+      "file": "seq_000437_src_00000437.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8020890484738106
+    },
+    {
+      "file": "seq_000438_src_00000438.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8338307105027465
+    },
+    {
+      "file": "seq_000439_src_00000439.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.832972790959332
+    },
+    {
+      "file": "seq_000440_src_00000440.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8452792273784042
+    },
+    {
+      "file": "seq_000441_src_00000441.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7774581362778714
+    },
+    {
+      "file": "seq_000442_src_00000442.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8566872641663448
+    },
+    {
+      "file": "seq_000443_src_00000443.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8289714215778194
+    },
+    {
+      "file": "seq_000444_src_00000444.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8174599165606222
+    },
+    {
+      "file": "seq_000445_src_00000445.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.843712831654142
+    },
+    {
+      "file": "seq_000446_src_00000446.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8787164851014437
+    },
+    {
+      "file": "seq_000447_src_00000447.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8823082999552114
+    },
+    {
+      "file": "seq_000448_src_00000448.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8131639458422706
+    },
+    {
+      "file": "seq_000449_src_00000449.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.834888689539966
+    },
+    {
+      "file": "seq_000450_src_00000450.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8573944101478752
+    },
+    {
+      "file": "seq_000451_src_00000451.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8290345801722896
+    },
+    {
+      "file": "seq_000452_src_00000452.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.893025831226827
+    },
+    {
+      "file": "seq_000453_src_00000453.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8518844333887918
+    },
+    {
+      "file": "seq_000454_src_00000454.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8061130298959591
+    },
+    {
+      "file": "seq_000455_src_00000455.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8359966597011101
+    },
+    {
+      "file": "seq_000456_src_00000456.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8490712629320691
+    },
+    {
+      "file": "seq_000457_src_00000457.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8171735404448575
+    },
+    {
+      "file": "seq_000458_src_00000458.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8626967961797174
+    },
+    {
+      "file": "seq_000459_src_00000459.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8295072812623348
+    },
+    {
+      "file": "seq_000460_src_00000460.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.783001689028413
+    },
+    {
+      "file": "seq_000461_src_00000461.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7644063778128638
+    },
+    {
+      "file": "seq_000462_src_00000462.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8196581032780206
+    },
+    {
+      "file": "seq_000463_src_00000463.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8501699234690656
+    },
+    {
+      "file": "seq_000464_src_00000464.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7940253608580699
+    },
+    {
+      "file": "seq_000465_src_00000465.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8575430079039823
+    },
+    {
+      "file": "seq_000466_src_00000466.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.821783164639408
+    },
+    {
+      "file": "seq_000467_src_00000467.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8372731691830042
+    },
+    {
+      "file": "seq_000468_src_00000468.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8112768569704472
+    },
+    {
+      "file": "seq_000469_src_00000469.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8505164542498043
+    },
+    {
+      "file": "seq_000470_src_00000470.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7978338194101477
+    },
+    {
+      "file": "seq_000471_src_00000471.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.801820475444345
+    },
+    {
+      "file": "seq_000472_src_00000472.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8391011432168456
+    },
+    {
+      "file": "seq_000473_src_00000473.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8257536465509603
+    },
+    {
+      "file": "seq_000474_src_00000474.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8546402327809013
+    },
+    {
+      "file": "seq_000475_src_00000475.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8118501193797738
+    },
+    {
+      "file": "seq_000476_src_00000476.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.764837708305217
+    },
+    {
+      "file": "seq_000477_src_00000477.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7759867481556395
+    },
+    {
+      "file": "seq_000478_src_00000478.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8351673311325487
+    },
+    {
+      "file": "seq_000479_src_00000479.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7986185843093796
+    },
+    {
+      "file": "seq_000480_src_00000480.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.800713709621539
+    },
+    {
+      "file": "seq_000481_src_00000481.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8273480872320451
+    },
+    {
+      "file": "seq_000482_src_00000482.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8334316044447563
+    },
+    {
+      "file": "seq_000483_src_00000483.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.817139342524354
+    },
+    {
+      "file": "seq_000484_src_00000484.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.844345847684748
+    },
+    {
+      "file": "seq_000485_src_00000485.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8246630697767519
+    },
+    {
+      "file": "seq_000486_src_00000486.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7749837935163435
+    },
+    {
+      "file": "seq_000487_src_00000487.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8600816312534099
+    },
+    {
+      "file": "seq_000488_src_00000488.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7938025970093623
+    },
+    {
+      "file": "seq_000489_src_00000489.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7731689378934319
+    },
+    {
+      "file": "seq_000490_src_00000490.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.870294239559439
+    },
+    {
+      "file": "seq_000491_src_00000491.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7907034305488874
+    },
+    {
+      "file": "seq_000492_src_00000492.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.802750763148649
+    },
+    {
+      "file": "seq_000493_src_00000493.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8512151859898167
+    },
+    {
+      "file": "seq_000494_src_00000494.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8442458942772062
+    },
+    {
+      "file": "seq_000495_src_00000495.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.819855168575615
+    },
+    {
+      "file": "seq_000496_src_00000496.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8372419345510715
+    },
+    {
+      "file": "seq_000497_src_00000497.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.87698292376435
+    },
+    {
+      "file": "seq_000498_src_00000498.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8267035822666855
+    },
+    {
+      "file": "seq_000499_src_00000499.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8477374056829157
+    },
+    {
+      "file": "seq_000500_src_00000500.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8482198672790018
+    },
+    {
+      "file": "seq_000501_src_00000501.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7760107326202936
+    },
+    {
+      "file": "seq_000502_src_00000502.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8369377953207178
+    },
+    {
+      "file": "seq_000503_src_00000503.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7893399092041495
+    },
+    {
+      "file": "seq_000504_src_00000504.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7697609460442842
+    },
+    {
+      "file": "seq_000505_src_00000505.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8206671805740362
+    },
+    {
+      "file": "seq_000506_src_00000506.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8274105141651562
+    },
+    {
+      "file": "seq_000507_src_00000507.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8388612307718495
+    },
+    {
+      "file": "seq_000508_src_00000508.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8667714009407375
+    },
+    {
+      "file": "seq_000509_src_00000509.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8199497752763867
+    },
+    {
+      "file": "seq_000510_src_00000510.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7713583101542043
+    },
+    {
+      "file": "seq_000511_src_00000511.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7958588133819233
+    },
+    {
+      "file": "seq_000512_src_00000512.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7892549475592636
+    },
+    {
+      "file": "seq_000513_src_00000513.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8583155107147953
+    },
+    {
+      "file": "seq_000514_src_00000514.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7684677174624264
+    },
+    {
+      "file": "seq_000515_src_00000515.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8296447081486866
+    },
+    {
+      "file": "seq_000516_src_00000516.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8466797369138426
+    },
+    {
+      "file": "seq_000517_src_00000517.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8303497857927387
+    },
+    {
+      "file": "seq_000518_src_00000518.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7705867785665304
+    },
+    {
+      "file": "seq_000519_src_00000519.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8422407982625957
+    },
+    {
+      "file": "seq_000520_src_00000520.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.822803908577525
+    },
+    {
+      "file": "seq_000521_src_00000521.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.733147853965983
+    },
+    {
+      "file": "seq_000522_src_00000522.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8330571776391278
+    },
+    {
+      "file": "seq_000523_src_00000523.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7907267275345435
+    },
+    {
+      "file": "seq_000524_src_00000524.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7887039907814757
+    },
+    {
+      "file": "seq_000525_src_00000525.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.810029300444679
+    },
+    {
+      "file": "seq_000526_src_00000526.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8123343588285612
+    },
+    {
+      "file": "seq_000527_src_00000527.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8080263482633174
+    },
+    {
+      "file": "seq_000528_src_00000528.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8283568390519125
+    },
+    {
+      "file": "seq_000529_src_00000529.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8306737858471405
+    },
+    {
+      "file": "seq_000530_src_00000530.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8339648606019399
+    },
+    {
+      "file": "seq_000531_src_00000531.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.804407920644958
+    },
+    {
+      "file": "seq_000532_src_00000532.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8173275589690416
+    },
+    {
+      "file": "seq_000533_src_00000533.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7997523158597148
+    },
+    {
+      "file": "seq_000534_src_00000534.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7997844893170092
+    },
+    {
+      "file": "seq_000535_src_00000535.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.760300989724752
+    },
+    {
+      "file": "seq_000536_src_00000536.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7815690823980799
+    },
+    {
+      "file": "seq_000537_src_00000537.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.778655962269531
+    },
+    {
+      "file": "seq_000538_src_00000538.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7743195756697647
+    },
+    {
+      "file": "seq_000539_src_00000539.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8281625244486657
+    },
+    {
+      "file": "seq_000540_src_00000540.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7942225347754235
+    },
+    {
+      "file": "seq_000541_src_00000541.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7807475338059489
+    },
+    {
+      "file": "seq_000542_src_00000542.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7338724779524894
+    },
+    {
+      "file": "seq_000543_src_00000543.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.815917848712611
+    },
+    {
+      "file": "seq_000544_src_00000544.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.792635068368704
+    },
+    {
+      "file": "seq_000545_src_00000545.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8009030211449677
+    },
+    {
+      "file": "seq_000546_src_00000546.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7794473308165548
+    },
+    {
+      "file": "seq_000547_src_00000547.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7788954407069126
+    },
+    {
+      "file": "seq_000548_src_00000548.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7709555774573031
+    },
+    {
+      "file": "seq_000549_src_00000549.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7540452784438565
+    },
+    {
+      "file": "seq_000550_src_00000550.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8457340367107162
+    },
+    {
+      "file": "seq_000551_src_00000551.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8109653764043812
+    },
+    {
+      "file": "seq_000552_src_00000552.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8076054850893493
+    },
+    {
+      "file": "seq_000553_src_00000553.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.831030588271059
+    },
+    {
+      "file": "seq_000554_src_00000554.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.798639625170511
+    },
+    {
+      "file": "seq_000555_src_00000555.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7494495997971498
+    },
+    {
+      "file": "seq_000556_src_00000556.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7817608428903644
+    },
+    {
+      "file": "seq_000557_src_00000557.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7812806400311407
+    },
+    {
+      "file": "seq_000558_src_00000558.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8285677781605005
+    },
+    {
+      "file": "seq_000559_src_00000559.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.846283718692249
+    },
+    {
+      "file": "seq_000560_src_00000560.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.811458812204913
+    },
+    {
+      "file": "seq_000561_src_00000561.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8438612326310875
+    },
+    {
+      "file": "seq_000562_src_00000562.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.84792381185502
+    },
+    {
+      "file": "seq_000563_src_00000563.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8364627183734825
+    },
+    {
+      "file": "seq_000564_src_00000564.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8383214447251168
+    },
+    {
+      "file": "seq_000565_src_00000565.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.836656312361752
+    },
+    {
+      "file": "seq_000566_src_00000566.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8329099322939608
+    },
+    {
+      "file": "seq_000567_src_00000567.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8606426122443327
+    },
+    {
+      "file": "seq_000568_src_00000568.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8651696407629301
+    },
+    {
+      "file": "seq_000569_src_00000569.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8093163989519958
+    },
+    {
+      "file": "seq_000570_src_00000570.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8117197705348418
+    },
+    {
+      "file": "seq_000571_src_00000571.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7621326983457755
+    },
+    {
+      "file": "seq_000572_src_00000572.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8045319425043502
+    },
+    {
+      "file": "seq_000573_src_00000573.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7960367678427671
+    },
+    {
+      "file": "seq_000574_src_00000574.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7964254836419171
+    },
+    {
+      "file": "seq_000575_src_00000575.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8367087441834515
+    },
+    {
+      "file": "seq_000576_src_00000576.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.82658048478035
+    },
+    {
+      "file": "seq_000577_src_00000577.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8294014201744306
+    },
+    {
+      "file": "seq_000578_src_00000578.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7997814042247786
+    },
+    {
+      "file": "seq_000579_src_00000579.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7945644812245805
+    },
+    {
+      "file": "seq_000580_src_00000580.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7978372729523109
+    },
+    {
+      "file": "seq_000581_src_00000581.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8274065561501036
+    },
+    {
+      "file": "seq_000582_src_00000582.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8125583163790138
+    },
+    {
+      "file": "seq_000583_src_00000583.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8206517034726062
+    },
+    {
+      "file": "seq_000584_src_00000584.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7579096302181565
+    },
+    {
+      "file": "seq_000585_src_00000585.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8453904220318356
+    },
+    {
+      "file": "seq_000586_src_00000586.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8343644723424155
+    },
+    {
+      "file": "seq_000587_src_00000587.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8584731584223189
+    },
+    {
+      "file": "seq_000588_src_00000588.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.816270875836459
+    },
+    {
+      "file": "seq_000589_src_00000589.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.848357541361545
+    },
+    {
+      "file": "seq_000590_src_00000590.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7955358626430906
+    },
+    {
+      "file": "seq_000591_src_00000591.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8513187341723922
+    },
+    {
+      "file": "seq_000592_src_00000592.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8046302603621553
+    },
+    {
+      "file": "seq_000593_src_00000593.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8581939848780404
+    },
+    {
+      "file": "seq_000594_src_00000594.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8459729004880592
+    },
+    {
+      "file": "seq_000595_src_00000595.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8135232612221968
+    },
+    {
+      "file": "seq_000596_src_00000596.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.8072112969615333
+    },
+    {
+      "file": "seq_000597_src_00000597.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7641452727502491
+    },
+    {
+      "file": "seq_000598_src_00000598.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.784785072097556
+    },
+    {
+      "file": "seq_000599_src_00000599.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.7900506042611917
+    },
+    {
+      "file": "seq_000600_src_00000600.bin",
+      "screened_rows": 0,
+      "min_ratio": 1.880210151820626
+    }
+  ]
+}

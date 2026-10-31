@@ -1,0 +1,8 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge_20fps/rtl/uart/uart_fast_tx.sv" into library work
+INFO: [VRFC 10-311] analyzing module uart_fast_tx
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge_20fps/rtl/debug/uart_pair_stream.sv" into library work
+INFO: [VRFC 10-311] analyzing module uart_pair_stream
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge_20fps/sim/tb_uart_pair_stream.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_uart_pair_stream
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge_20fps/reports/package_uart01/vga.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_vga_uart_pair

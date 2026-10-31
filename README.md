@@ -1,4 +1,6 @@
-# FPGA2026：V0.4.1 高斯LCD RAW／EDGE
-当前工程在stream_video_edge/：Basys3＋GYF-198 OV7670_FIFO＋TK040F1510/NT35510，独立完成VGA灰度读取、一次3×3高斯平滑和Sobel，完整尺寸送LCD。主入口lcd_top，使用build_lcd.ps1/program_lcd.ps1；接线、开关与验证见[工程说明](stream_video_edge/README.md)。
-本轮收敛低速2MHz链路，约1.9fps；没有实现20fps。已按用户取舍仅保留高斯EDGE，引导滤波实现已删除，高斯边缘效果仍待调参。全部相机线缩短是本次硬件条件，不能单独归因于RCK。
-原串口调试入口和V0.3历史bit保留，勿与LCD入口混用。demo/原样保留。后续高速方案仅为计划。
+# FPGA2026：VGA 20fps 测试工程
+当前工程为 [stream_video_edge_20fps](stream_video_edge_20fps/README.md)：Basys 3＋GYF-198 OV7670_FIFO＋TK040F1510/NT35510，640×480灰度视频或3×3高斯平滑＋Sobel边缘，实测约22.51fps。用户已确认20fps基本通过。本次保留当前测试实现与诊断功能，没有做代码收敛。
+
+构建、下载、接线与开关见[工程说明](stream_video_edge_20fps/README.md)。已上板bit位于stream_video_edge_20fps/artifacts/lcd_top_snapshot.bit。均匀横纹已由用户确认与照明频闪有关，本轮暂不处理；动态斜向刷新界线尚未独立定位，不宣称无撕裂。
+
+[stream_video_edge](stream_video_edge/README.md)保留上一版低速基线，约1.9fps；demo/保持原样。旧工程的入口、报告和bit不代表本次20fps工程，请勿混用。

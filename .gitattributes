@@ -10,3 +10,6 @@ stream_video_enhance/reports/rtl/runtime/evidence/**/*.log -whitespace
 # Preserve generated LCD timing tables and native simulator evidence verbatim.
 stream_video_edge/reports/lcd/implementation/*.rpt -whitespace
 stream_video_edge/reports/lcd/evidence/**/*.log -whitespace
+
+# Preserve native UART implementation evidence.
+stream_video_edge/reports/implementation/*.rpt -whitespace

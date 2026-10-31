@@ -1,13 +1,13 @@
 `timescale 1ns/1ps
 module tb_edge_core #(parameter W=32,H=24);
  reg clk=0;always #5 clk=~clk;
- reg rst=1,abort=0,valid=0,sof=0,filter_id=0,view=0;
+ reg rst=1,abort=0,valid=0,sof=0,view=0;
  reg[7:0]pixel=0;reg[9:0]x=0;reg[8:0]y=0;reg[31:0]fid=0;
- reg[10:0]eps=1024,threshold=96;
+ reg[10:0]threshold=128;
  wire ov,os,ol,oe,error;wire[7:0]op,raw,edgep;wire[9:0]ox;wire[8:0]oy;wire[31:0]of;
  edge_core #(W,H) dut(.clk(clk),.rst(rst),.abort(abort),.in_valid(valid),.in_pixel(pixel),
- .in_x(x),.in_y(y),.in_sof(sof),.in_frame_id(fid),.filter_id(filter_id),.view_edge(view),
- .epsilon(eps),.edge_threshold(threshold),.out_valid(ov),.out_pixel(op),.out_raw(raw),.out_edge(edgep),
+ .in_x(x),.in_y(y),.in_sof(sof),.in_frame_id(fid),.view_edge(view),
+ .edge_threshold(threshold),.out_valid(ov),.out_pixel(op),.out_raw(raw),.out_edge(edgep),
  .out_x(ox),.out_y(oy),.out_frame_id(of),.out_sof(os),.out_eol(ol),.out_eof(oe),.error(error));
  localparam N=(W-10)*(H-10);
  reg[7:0]image[0:W*H-1],expected_raw[0:N-1],expected_edge[0:N-1];
@@ -26,14 +26,14 @@ module tb_edge_core #(parameter W=32,H=24);
  end
  task feed(input integer f,input bit gaps,input bit selected);
  begin
-  mode=f;filter_id=f;view=selected;eps=1024;threshold=(f==0)?96:128;
+  mode=f;view=selected;threshold=128;
   saved_fid=100+frames;fid=saved_fid;saved_view=selected;count=0;checking=1;
   name=$sformatf("%s/edge_%0d.hex",path,f);$readmemh(name,expected_edge);
   for(i=0;i<W*H;i=i+1)begin
    @(negedge clk);valid=1;pixel=image[i];x=i%W;y=i/W;sof=(i==0);
    @(negedge clk);valid=0;sof=0;
    // Every non-SOF shadow configuration is deliberately illegal/different.
-   filter_id=!f;view=!selected;eps=0;threshold=2047;
+   view=!selected;threshold=2047;
    if(gaps)repeat((i*7)%5)@(negedge clk);
    if(!gaps&&i<W*H-1)begin
     // The next iteration's first negedge still gives one bubble in this
@@ -46,7 +46,7 @@ module tb_edge_core #(parameter W=32,H=24);
  end endtask
  task burst(input integer f);
  begin
-  mode=f;filter_id=f;view=1;eps=1024;threshold=(f==0)?96:128;
+  mode=f;view=1;threshold=128;
   saved_fid=100+frames;fid=saved_fid;saved_view=1;count=0;checking=1;
   name=$sformatf("%s/edge_%0d.hex",path,f);$readmemh(name,expected_edge);
   for(i=0;i<W*H;i=i+1)begin @(negedge clk);valid=1;pixel=image[i];x=i%W;y=i/W;sof=(i==0);end
@@ -58,15 +58,15 @@ module tb_edge_core #(parameter W=32,H=24);
   if(!$value$plusargs("VECTORS=%s",path))$fatal(1,"missing vectors");
   $readmemh({path,"/image.hex"},image);$readmemh({path,"/raw.hex"},expected_raw);
   repeat(5)@(negedge clk);rst=0;
-  feed(0,1,0);feed(1,1,1);burst(0);burst(1);
+  feed(1,1,0);feed(1,1,1);burst(1);
   // Abort after real output has begun, verify prefix then discard the frame.
-  @(negedge clk);filter_id=0;view=1;eps=1024;threshold=96;fid=999;
-  saved_fid=999;saved_view=1;mode=0;count=0;checking=1;
-  name=$sformatf("%s/edge_0.hex",path);$readmemh(name,expected_edge);
+  @(negedge clk);view=1;threshold=128;fid=999;
+  saved_fid=999;saved_view=1;mode=1;count=0;checking=1;
+  name=$sformatf("%s/edge_1.hex",path);$readmemh(name,expected_edge);
   for(i=0;i<16*W;i=i+1)begin @(negedge clk);valid=1;sof=(i==0);pixel=image[i];x=i%W;y=i/W;end
   @(negedge clk);valid=0;sof=0;abort=1;repeat(3)@(negedge clk);abort=0;
   if(count==0||count>=N)$fatal(1,"abort did not exercise partial output");checking=0;
-  repeat(100)@(negedge clk);feed(0,1,1);
+  repeat(100)@(negedge clk);feed(1,1,1);
   @(negedge clk);rst=1;repeat(3)@(negedge clk);rst=0;feed(1,0,0);
   $display("PASS tb_edge_core W=%0d H=%0d frames=%0d pixels=%0d",W,H,frames,N);$finish;
  end

@@ -1,0 +1,10 @@
+{
+  "independent_review": "Read-only removal and API review",
+  "unresolved_critical_or_important": 0,
+  "notes": [
+    "Only Gaussian implementation active",
+    "EVG2 fixed metadata matches RTL/Python",
+    "RAW/EDGE two-view order and mode controls agree",
+    "Internal reference mode5 updated to Gaussian CRC207516"
+  ]
+}

@@ -1,0 +1,32 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge/rtl/core/edge_core.sv" into library work
+INFO: [VRFC 10-311] analyzing module edge_core
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge/rtl/core/gaussian3.sv" into library work
+INFO: [VRFC 10-311] analyzing module gaussian3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge/rtl/core/row_window3.sv" into library work
+INFO: [VRFC 10-311] analyzing module row_window3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge/rtl/core/sobel3.sv" into library work
+INFO: [VRFC 10-311] analyzing module sobel3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge/rtl/runtime/video_core_adapter.sv" into library work
+INFO: [VRFC 10-311] analyzing module video_core_adapter
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge/sim/tb_lcd_admission.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_lcd_admission
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge/rtl/camera/camera_fifo_capture.sv" into library work
+INFO: [VRFC 10-311] analyzing module camera_fifo_capture
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge/rtl/camera/href_stable_filter.sv" into library work
+INFO: [VRFC 10-311] analyzing module href_stable_filter
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge/rtl/camera/ov7670_config.sv" into library work
+INFO: [VRFC 10-311] analyzing module ov7670_config
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge/rtl/camera/vsync_low_filter.sv" into library work
+INFO: [VRFC 10-311] analyzing module vsync_low_filter
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge/rtl/runtime/video_lcd_sink.sv" into library work
+INFO: [VRFC 10-311] analyzing module video_lcd_sink
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge/rtl/runtime/capture_fault_latch.sv" into library work
+INFO: [VRFC 10-311] analyzing module capture_fault_latch
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge/rtl/lcd_top.sv" into library work
+INFO: [VRFC 10-311] analyzing module lcd_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge/sim/nt35510_init_fast.sv" into library work
+INFO: [VRFC 10-311] analyzing module nt35510_init
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge/rtl/display/nt35510_bus8.sv" into library work
+INFO: [VRFC 10-311] analyzing module nt35510_bus8
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge/rtl/display/nt35510_window_writer.sv" into library work
+INFO: [VRFC 10-311] analyzing module nt35510_window_writer

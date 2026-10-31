@@ -31,3 +31,7 @@ xsim.dir/
 # Vivado process metadata is generated outside the source project.
 /dfx_runtime.txt
 /clockInfo.txt
+
+# Vivado may emit the same metadata when launched from the source directory.
+/stream_video_edge/dfx_runtime.txt
+/stream_video_edge/clockInfo.txt

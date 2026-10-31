@@ -18,8 +18,7 @@ if {$snapshot} {
 set_property -dict $config [get_ips lcd_vio]
 generate_target all [get_ips lcd_vio]
 synth_ip [get_ips lcd_vio]
-read_verilog -sv [file join $root rtl core core_latency_pkg.sv]
-foreach p [glob [file join $root rtl core *.sv]] {if {[file tail $p] ne {core_latency_pkg.sv}} {read_verilog -sv $p}}
+read_verilog -sv [glob [file join $root rtl core *.sv]]
 foreach d {camera display runtime} {read_verilog -sv [glob [file join $root rtl $d *.sv]]}
 if {$snapshot} {read_verilog -sv [file join $root rtl debug video_snapshot.sv]}
 read_verilog -sv [file join $root rtl lcd_top.sv]

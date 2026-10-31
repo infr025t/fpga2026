@@ -1,0 +1,21 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge/rtl/core/edge_core.sv" into library work
+INFO: [VRFC 10-311] analyzing module edge_core
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge/rtl/core/gaussian3.sv" into library work
+INFO: [VRFC 10-311] analyzing module gaussian3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge/rtl/core/row_window3.sv" into library work
+INFO: [VRFC 10-311] analyzing module row_window3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge/rtl/core/sobel3.sv" into library work
+INFO: [VRFC 10-311] analyzing module sobel3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge/rtl/runtime/video_core_adapter.sv" into library work
+INFO: [VRFC 10-311] analyzing module video_core_adapter
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge/sim/tb_display_path.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_display_path
+INFO: [VRFC 10-311] analyzing module nt35510_init
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge/rtl/runtime/video_lcd_sink.sv" into library work
+INFO: [VRFC 10-311] analyzing module video_lcd_sink
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge/rtl/debug/video_snapshot.sv" into library work
+INFO: [VRFC 10-311] analyzing module video_snapshot
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge/rtl/display/nt35510_bus8.sv" into library work
+INFO: [VRFC 10-311] analyzing module nt35510_bus8
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge/rtl/display/nt35510_window_writer.sv" into library work
+INFO: [VRFC 10-311] analyzing module nt35510_window_writer

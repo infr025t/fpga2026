@@ -22,10 +22,10 @@ def main():
    a=np.asarray(im).copy()
  if min(a.shape)<16 or a.shape[0]>480 or a.shape[1]>640:ap.error('input dimensions16..640x480')
  args.output.mkdir(parents=True);report=[]
- for f,name in [(0,'GUIDED'),(1,'GAUSSIAN')]:
-  base=preprocess(a,f,1024);Image.fromarray(base).save(args.output/f'{name}_smoothed.png')
+ for f,name in [(1,'GAUSSIAN')]:
+  base=preprocess(a);Image.fromarray(base).save(args.output/f'{name}_smoothed.png')
   for t in args.thresholds:
-   raw,edge=process(a,f,1024,t);Image.fromarray(edge).save(args.output/f'{name}_T{t:04d}.png')
+   raw,edge=process(a,threshold=t);Image.fromarray(edge).save(args.output/f'{name}_T{t:04d}.png')
    report.append(dict(filter=name,threshold=t,white_ratio=float((edge!=0).mean())))
  Image.fromarray(a).save(args.output/'input_raw.png')
  (args.output/'report.json').write_text(json.dumps({'input':str(args.image),'input_shape':list(a.shape),'same_input':True,'results':report,'warning':'edge density alone is not accuracy; assess missing contours and noise separately'},indent=2)+'\n')

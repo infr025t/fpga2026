@@ -1,0 +1,24 @@
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: E:/Vivado/2025.1/Vivado/bin/unwrapped/win64.o/xelab.exe tb_display_path -s snapshot 
+Multi-threading is on. Using 30 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.nt35510_init
+Compiling module work.nt35510_window_writer(PANEL_W=48...
+Compiling module work.nt35510_bus8(SETUP_CYCLES=4,LOW_...
+Compiling module work.video_lcd_sink(W=32,H=24,PW=48,P...
+Compiling module work.video_snapshot(W=32,H=24,BLOCK_W...
+Compiling module work.row_window3(W=32)
+Compiling module work.gaussian3(W=32,H=24)
+Compiling module work.row_window3(W=24,DATA_W=16)
+Compiling module work.sobel3(W=24,H=16)
+Compiling module work.edge_core(W=32,H=24)
+Compiling module work.video_core_adapter(W=32,H=24)
+Compiling module work.tb_display_path
+Built simulation snapshot snapshot

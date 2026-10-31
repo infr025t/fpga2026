@@ -1,0 +1,6 @@
+{
+  "command": "python -m unittest discover -s tests -v",
+  "passed": true,
+  "tests": 11,
+  "scope": "model, protocol, receiver, options and Gaussian-only selection contract"
+}

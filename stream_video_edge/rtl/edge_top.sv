@@ -7,8 +7,8 @@ module edge_top(input wire clk100,btnC,input wire[15:0]sw,
  (* ASYNC_REG="TRUE" *)reg[15:0]sm=0,ss=0;
  reg[15:0]stable=0;reg[19:0]debounce=0;reg trigger=0,start=0,rejected=0,finished=0;
  reg[23:0]power_count=0;reg[27:0]warmup=0;reg[31:0]frame_id=0;
- reg active_filter=0,active_view=0,active_pattern=0;
- reg[10:0]active_threshold=96;
+ reg active_view=0,active_pattern=0;
+ reg[10:0]active_threshold=128;
  wire rst=reset_pipe[1];wire config_done,config_error,sl,dl;
  wire cap_busy,cap_wen,cap_done;
  wire stream_busy,stream_done,source_ready;wire[7:0]cap_error,stream_error;
@@ -17,7 +17,7 @@ module edge_top(input wire clk100,btnC,input wire[15:0]sw,
  wire[7:0]error=cap_error|stream_error|adapter_error;
  wire camera_ready=config_done&&!config_error&&warmup==200000000;
  wire ready=stable[0]||camera_ready;
- wire[10:0]requested_threshold=stable[12:4]==0?(stable[2]?11'd128:11'd96):
+ wire[10:0]requested_threshold=stable[12:4]==0?11'd128:
   (stable[12:4]>=510?11'd2040:{stable[12:4],2'b0});
  wire[15:0]virtual_sw;wire[1:0]debug_control;
  wire[255:0]debug_camera;wire[127:0]debug_sync;
@@ -52,8 +52,8 @@ module edge_top(input wire clk100,btnC,input wire[15:0]sw,
   end
  end
  wire dv,ds,dl1,de;wire[7:0]dp,dr,dg;wire[9:0]dx;wire[8:0]dy;wire[31:0]df;
- edge_uart_stream stream(.clk(clk100),.rst(rst),.start(start),.filter_id(active_filter),.view_edge(active_view),
- .frame_id(frame_id),.epsilon(active_filter?11'd64:11'd1024),.edge_threshold(active_threshold),
+ edge_uart_stream stream(.clk(clk100),.rst(rst),.start(start),.view_edge(active_view),
+ .frame_id(frame_id),.edge_threshold(active_threshold),
  .source_valid(active_pattern?pattern_valid:cv),.source_pixel(active_pattern?pattern_pixel:cp),
  .source_x(active_pattern?px:cx),.source_y(active_pattern?py:cy),.source_done(active_pattern?pattern_done:cap_done),
  .source_error(!active_pattern&&(cap_error!=0||adapter_error!=0)),.source_ready(source_ready),
@@ -66,7 +66,7 @@ module edge_top(input wire clk100,btnC,input wire[15:0]sw,
   reset_pipe<={reset_pipe[0],btnC|debug_control[1]};sm<=selected_sw;ss<=sm;start<=0;
   if(rst)begin
    power_count<=0;warmup<=0;stable<=ss;debounce<=0;trigger<=ss[15];rejected<=0;finished<=0;
-   frame_id<=0;active_filter<=0;active_view<=0;active_pattern<=0;active_threshold<=96;
+   frame_id<=0;active_view<=0;active_pattern<=0;active_threshold<=128;
   end else begin
    if(power_count<2000000)power_count<=power_count+1'b1;
    if(!config_done)warmup<=0;else if(warmup<200000000)warmup<=warmup+1'b1;
@@ -75,7 +75,7 @@ module edge_top(input wire clk100,btnC,input wire[15:0]sw,
    if(stable[15]&&!trigger)begin
     if(ready&&!busy&&error==0)begin
      start<=1;rejected<=0;finished<=0;frame_id<=frame_id+1'b1;
-     active_filter<=stable[2];active_view<=stable[1];active_pattern<=stable[0];
+     active_view<=stable[1];active_pattern<=stable[0];
      active_threshold<=requested_threshold;
     end else rejected<=1;
    end
@@ -83,7 +83,7 @@ module edge_top(input wire clk100,btnC,input wire[15:0]sw,
   end
  end
  assign led=stable[14]?{error,8'd0}:
- {(rejected||(|error)),finished,8'd0,active_filter,active_view,active_pattern,stream_busy,cap_busy,ready};
+ {(rejected||(|error)),finished,8'd0,1'b0,active_view,active_pattern,stream_busy,cap_busy,ready};
 endmodule
 
 

@@ -9,7 +9,7 @@ set mode [lindex $argv 1]
 set max_records [lindex $argv 2]
 if {$max_records eq {}} {set max_records 0}
 if {![string is integer -strict $max_records] || $max_records<0} {error "Invalid optional record limit"}
-if {$mode ni {0 4 8 12}} {error "Specify camera mode0 RAW,4 guided EDGE,12 gaussian EDGE"}
+if {$mode ni {0 4}} {error "Specify camera mode0 RAW,4 Gaussian EDGE"}
 set expected_pixels [expr {($mode&4)?296100:307200}]
 if {![regexp {^[A-Za-z0-9_-]+$} $label]} {error "Specify a unique label"}
 set folder [file join $report_root $label]

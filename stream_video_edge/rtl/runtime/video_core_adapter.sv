@@ -2,7 +2,7 @@
 // RAW bypass retains full input. EDGE uses unchanged formal core, cropped5px each side.
 // No ready/backpressure path enters the numerical core.
 module video_core_adapter #(parameter W=640,H=480)(
- input wire clk,rst,start,edge_view,filter_id,source_valid,input wire[7:0]source_pixel,
+ input wire clk,rst,start,edge_view,source_valid,input wire[7:0]source_pixel,
  input wire[9:0]source_x,input wire[8:0]source_y,input wire source_done,
  output reg out_valid,output reg[7:0]out_pixel,out_raw,
  output reg[9:0]out_x,output reg[8:0]out_y,output reg out_done,error);
@@ -10,7 +10,7 @@ module video_core_adapter #(parameter W=640,H=480)(
  edge_core #(W,H) core(.clk(clk),.rst(rst),.abort(start),
  .in_valid(source_valid&&edge_view),.in_pixel(source_pixel),.in_x(source_x),.in_y(source_y),
  .in_sof(source_x==0&&source_y==0),.in_frame_id(32'd0),
- .filter_id(filter_id),.view_edge(1'b1),.epsilon(11'd1024),.edge_threshold(filter_id?11'd128:11'd96),
+ .view_edge(1'b1),.edge_threshold(11'd128),
  .out_valid(ev),.out_pixel(ep),.out_raw(er),.out_edge(),.out_x(ex),.out_y(ey),.out_frame_id(),
  .out_sof(),.out_eol(),.out_eof(eeof),.error(ce));
  // One transfer register separates core coordinates/subtraction from sink checks.

@@ -1,0 +1,56 @@
+{
+  "top": "tb_selected",
+  "passed": true,
+  "stages": [
+    {
+      "tool": "xvlog",
+      "command": [
+        "E:\\Vivado\\2025.1\\Vivado\\bin\\xvlog.bat",
+        "-sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\rtl\\core\\edge_core.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\rtl\\core\\gaussian3.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\rtl\\core\\row_window3.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\rtl\\core\\sobel3.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\sim\\tb_edge_core.sv",
+        "E:\\FPGA_Test_Work\\edge_v03_work\\core_vga_gaussian_only\\selected.sv"
+      ],
+      "exit": 0,
+      "seconds": 0.726,
+      "log": "E:\\FPGA_Test_Work\\edge_v03_work\\core_vga_gaussian_only\\xvlog-captured.log",
+      "private_job_active_processes": 0
+    },
+    {
+      "tool": "xelab",
+      "command": [
+        "E:\\Vivado\\2025.1\\Vivado\\bin\\xelab.bat",
+        "tb_selected",
+        "-s",
+        "snapshot"
+      ],
+      "exit": 0,
+      "seconds": 1.516,
+      "log": "E:\\FPGA_Test_Work\\edge_v03_work\\core_vga_gaussian_only\\xelab-captured.log",
+      "private_job_active_processes": 0
+    },
+    {
+      "tool": "xsim",
+      "command": [
+        "E:\\Vivado\\2025.1\\Vivado\\bin\\xsim.bat",
+        "snapshot",
+        "-runall",
+        "-f",
+        "xsim-options.txt"
+      ],
+      "exit": 0,
+      "seconds": 19.096,
+      "log": "E:\\FPGA_Test_Work\\edge_v03_work\\core_vga_gaussian_only\\xsim-captured.log",
+      "private_job_active_processes": 0
+    }
+  ],
+  "work_dir": "E:\\FPGA_Test_Work\\edge_v03_work\\core_vga_gaussian_only",
+  "reason": "PASS",
+  "simulation_summary": [
+    "PASS tb_edge_core W=640 H=480 frames=5 pixels=296100"
+  ],
+  "pattern": "random"
+}

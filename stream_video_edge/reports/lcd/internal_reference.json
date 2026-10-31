@@ -7,16 +7,9 @@
   },
   "5": {
     "mode": "EDGE",
-    "filter_id": 0,
     "width": 630,
     "height": 470,
-    "crc32": 264883040
-  },
-  "13": {
-    "mode": "EDGE",
-    "filter_id": 1,
-    "width": 630,
-    "height": 470,
-    "crc32": 207516
+    "crc32": 207516,
+    "algorithm": "GAUSSIAN3"
   }
 }

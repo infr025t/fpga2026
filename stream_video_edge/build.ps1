@@ -1,10 +1,9 @@
+param([string]$Vivado='E:\Vivado\2025.1\Vivado\bin\vivado.bat',[string]$OutDir='E:\FPGA_Test_Work\gaussian_uart_build')
 $ErrorActionPreference='Stop'
-$vivadoPath='E:\Vivado\2025.1\Vivado\bin\vivado.bat'
-$buildRoot='E:\FPGA_Test_Work\edge_v03_work'
-New-Item -ItemType Directory -Path $buildRoot -Force | Out-Null
-Push-Location $buildRoot
+New-Item -ItemType Directory -Path $OutDir -Force | Out-Null
+Push-Location $OutDir
 try {
- & $vivadoPath -mode batch -source (Join-Path $PSScriptRoot 'scripts\build.tcl') -log (Join-Path $buildRoot 'build.log') -journal (Join-Path $buildRoot 'build.jou')
+ & $Vivado -mode batch -source (Join-Path $PSScriptRoot 'scripts\build.tcl') -log (Join-Path $OutDir 'build.log') -journal (Join-Path $OutDir 'build.jou') -tclargs $OutDir
  $buildExitCode=$LASTEXITCODE
 } finally { Pop-Location }
 exit $buildExitCode

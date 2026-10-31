@@ -11,8 +11,8 @@ class ReceiverTests(unittest.TestCase):
   sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
   from model.reference import process
   yy,xx=np.indices((480,640));a=(((xx+3*yy+7)^(xx>>3))&255).astype(np.uint8)
-  raw,edge=process(a,0,1024,96)
-  f=decode(encode(edge.tobytes(),1,0,630,470,1,1024,96,zlib.crc32(a.tobytes()),a.size))
+  raw,edge=process(a,threshold=128)
+  f=decode(encode(edge.tobytes(),1,630,470,1,128,zlib.crc32(a.tobytes()),a.size))
   expected,crc=reference_pixels(f)
   self.assertEqual(expected,edge.tobytes());self.assertEqual(crc,f.source_crc)
  def test_receiver_exists_and_saves_without_altering_pixels(self):
@@ -23,7 +23,7 @@ class ReceiverTests(unittest.TestCase):
    def __init__(self,data):self.data=data
    def read(self,n):v=self.data[:7];self.data=self.data[7:];return v
   pixels=bytes([i%256 for i in range(630*470)])
-  wire=encode(pixels,1,0,630,470,1,1024,96,0x1234,640*480)
+  wire=encode(pixels,1,630,470,1,128,0x1234,640*480)
   self.assertEqual(read_packet(Port(b'noise'+wire),bytearray(),lambda:None),wire)
   with tempfile.TemporaryDirectory() as t:
    path,meta=save_frame(Path(t),1,wire,'INTERNAL',False)

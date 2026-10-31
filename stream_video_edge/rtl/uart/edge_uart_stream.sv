@@ -1,8 +1,8 @@
 `timescale 1ns/1ps
 // Selected pixels feed UART and the public display tap from the same node.
 module edge_uart_stream #(parameter W=640,H=480,IDLE_TIMEOUT=200000000)(
- input wire clk,rst,start,filter_id,view_edge,input wire[31:0]frame_id,
- input wire[10:0]epsilon,edge_threshold,
+ input wire clk,rst,start,view_edge,input wire[31:0]frame_id,
+ input wire[10:0]edge_threshold,
  input wire source_valid,input wire[7:0]source_pixel,input wire[9:0]source_x,
  input wire[8:0]source_y,input wire source_done,source_error,
  output wire source_ready,uart_txd,output reg busy,done,output reg[7:0]error,
@@ -10,7 +10,7 @@ module edge_uart_stream #(parameter W=640,H=480,IDLE_TIMEOUT=200000000)(
  output wire[9:0]display_x,output wire[8:0]display_y,output wire[31:0]display_frame_id,
  output wire display_sof,display_eol,display_eof);
  localparam N=(W-10)*(H-10),IDLE=0,HEADER=1,BODY=2,DRAIN=3,FOOTER=4,FINISH=5;
- reg[2:0]state;reg active_filter,active_view;reg[10:0]active_eps,active_threshold;
+ reg[2:0]state;reg active_view;reg[10:0]active_threshold;
  reg[31:0]active_frame,hcrc,pcrc,scrc,inputs,outputs,idle_count;
  reg[5:0]hi,fi;reg[6:0]cooldown;reg end_seen;
  reg[9:0]ix,ox;reg[8:0]iy,oy;
@@ -22,7 +22,7 @@ module edge_uart_stream #(parameter W=640,H=480,IDLE_TIMEOUT=200000000)(
  wire accept=source_valid&&source_ready;
  edge_core #(W,H) core(.clk(clk),.rst(rst),.abort(core_abort),.in_valid(accept&&coords_ok),
  .in_pixel(source_pixel),.in_x(source_x),.in_y(source_y),.in_sof(inputs==0),.in_frame_id(active_frame),
- .filter_id(active_filter),.view_edge(active_view),.epsilon(active_eps),.edge_threshold(active_threshold),
+ .view_edge(active_view),.edge_threshold(active_threshold),
  .out_valid(cv),.out_pixel(cp),.out_raw(cr),.out_edge(cg),.out_x(cx),.out_y(cy),.out_frame_id(cf),
  .out_sof(cs),.out_eol(cl),.out_eof(ce),.error(core_error));
  assign display_valid=cv&&!core_error&&!source_error&&error==0;
@@ -33,12 +33,13 @@ module edge_uart_stream #(parameter W=640,H=480,IDLE_TIMEOUT=200000000)(
  function automatic[7:0]header_byte(input[5:0]n);
  reg[31:0]v;begin v=0;case(n)
  0:header_byte="E";1:header_byte="V";2:header_byte="G";3:header_byte="2";
- 4:header_byte=2;5:header_byte={7'd0,active_view};6:header_byte={7'd0,active_filter};7:header_byte=32;
+ 4:header_byte=2;5:header_byte={7'd0,active_view};6:header_byte=8'd1;7:header_byte=32;
  8,9:begin v=W-10;header_byte=v>>(8*(n-8));end
  10,11:begin v=H-10;header_byte=v>>(8*(n-10));end
  12,13,14,15:header_byte=active_frame>>(8*(n-12));
  16,17,18,19:header_byte=N>>(8*(n-16));
- 20,21:header_byte=active_eps>>(8*(n-20));22,23:header_byte=active_threshold>>(8*(n-22));
+ // Legacy EVG2 reserved metadata; not a processing epsilon.
+ 20:header_byte=8'd64;21:header_byte=0;22,23:header_byte=active_threshold>>(8*(n-22));
  24:header_byte=5;25,26,27:header_byte=0;
  28,29,30,31:header_byte=(~hcrc)>>(8*(n-28));default:header_byte=0;
  endcase end endfunction
@@ -62,16 +63,16 @@ module edge_uart_stream #(parameter W=640,H=480,IDLE_TIMEOUT=200000000)(
  always @(posedge clk)begin
   done<=0;
   if(rst)begin
-   state<=IDLE;busy<=0;done<=0;error<=0;active_filter<=0;active_view<=0;
-   active_eps<=1024;active_threshold<=96;active_frame<=0;hcrc<=32'hffffffff;
+   state<=IDLE;busy<=0;done<=0;error<=0;active_view<=0;
+   active_threshold<=128;active_frame<=0;hcrc<=32'hffffffff;
    pcrc<=32'hffffffff;scrc<=32'hffffffff;inputs<=0;outputs<=0;idle_count<=0;
    hi<=0;fi<=0;cooldown<=0;end_seen<=0;ix<=0;iy<=0;ox<=5;oy<=5;
   end else begin
    if(cooldown!=0)cooldown<=cooldown-1'b1;
    if(!busy)begin
     if(start)begin
-     state<=HEADER;busy<=1;error<=0;active_filter<=filter_id;active_view<=view_edge;
-     active_eps<=epsilon;active_threshold<=edge_threshold;active_frame<=frame_id;
+     state<=HEADER;busy<=1;error<=0;active_view<=view_edge;
+     active_threshold<=edge_threshold;active_frame<=frame_id;
      hcrc<=32'hffffffff;pcrc<=32'hffffffff;scrc<=32'hffffffff;inputs<=0;outputs<=0;
      hi<=0;fi<=0;cooldown<=0;end_seen<=0;ix<=0;iy<=0;ox<=5;oy<=5;idle_count<=0;
     end

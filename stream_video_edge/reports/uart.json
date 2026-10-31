@@ -7,27 +7,17 @@
       "command": [
         "E:\\Vivado\\2025.1\\Vivado\\bin\\xvlog.bat",
         "-sv",
-        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\rtl\\core\\core_latency_pkg.sv",
-        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\rtl\\core\\coefficient5.sv",
-        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\rtl\\core\\coefficient_box5.sv",
-        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\rtl\\core\\div25_pipe.sv",
         "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\rtl\\core\\edge_core.sv",
         "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\rtl\\core\\gaussian3.sv",
-        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\rtl\\core\\guided_base.sv",
-        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\rtl\\core\\moments5.sv",
-        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\rtl\\core\\ratio_q12_pipe.sv",
-        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\rtl\\core\\reconstruct.sv",
         "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\rtl\\core\\row_window3.sv",
-        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\rtl\\core\\row_window5.sv",
         "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\rtl\\core\\sobel3.sv",
-        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\rtl\\core\\token_pipe.sv",
         "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\rtl\\uart\\edge_uart_stream.sv",
         "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\rtl\\uart\\uart_fast_tx.sv",
         "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge\\sim\\tb_edge_uart.sv"
       ],
       "exit": 0,
-      "seconds": 0.735,
-      "log": "E:\\FPGA_Test_Work\\edge_v03_work\\uart_lcd_v04_release\\xvlog-captured.log",
+      "seconds": 0.731,
+      "log": "E:\\FPGA_Test_Work\\edge_v03_work\\uart_gaussian_only\\xvlog-captured.log",
       "private_job_active_processes": 0
     },
     {
@@ -39,8 +29,8 @@
         "snapshot"
       ],
       "exit": 0,
-      "seconds": 3.22,
-      "log": "E:\\FPGA_Test_Work\\edge_v03_work\\uart_lcd_v04_release\\xelab-captured.log",
+      "seconds": 1.946,
+      "log": "E:\\FPGA_Test_Work\\edge_v03_work\\uart_gaussian_only\\xelab-captured.log",
       "private_job_active_processes": 0
     },
     {
@@ -53,18 +43,16 @@
         "xsim-options.txt"
       ],
       "exit": 0,
-      "seconds": 5.576,
-      "log": "E:\\FPGA_Test_Work\\edge_v03_work\\uart_lcd_v04_release\\xsim-captured.log",
+      "seconds": 2.914,
+      "log": "E:\\FPGA_Test_Work\\edge_v03_work\\uart_gaussian_only\\xsim-captured.log",
       "private_job_active_processes": 0
     }
   ],
-  "work_dir": "E:\\FPGA_Test_Work\\edge_v03_work\\uart_lcd_v04_release",
+  "work_dir": "E:\\FPGA_Test_Work\\edge_v03_work\\uart_gaussian_only",
   "reason": "PASS",
   "simulation_summary": [
-    "EVG2_PASS filter0 view0 bytes360",
-    "EVG2_PASS filter0 view1 bytes360",
     "EVG2_PASS filter1 view0 bytes360",
     "EVG2_PASS filter1 view1 bytes360",
-    "PASS tb_edge_uart four_configurations source_tail_crc physical_pin"
+    "PASS tb_edge_uart two_views_gaussian source_tail_crc physical_pin"
   ]
 }

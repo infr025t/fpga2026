@@ -1,15 +1,6 @@
 {
-  "version": "0.3",
-  "filters": {
-    "0": {
-      "epsilon": 1024,
-      "threshold": 96,
-      "controlled_gate_pass": true
-    },
-    "1": {
-      "epsilon": 64,
-      "threshold": 128,
-      "controlled_gate_pass": true
-    }
-  }
+  "version": "0.4.1-gaussian",
+  "algorithm": "GAUSSIAN3",
+  "threshold": 128,
+  "scope": "Selected for simplicity after user screen comparison; no new quality optimum claim"
 }

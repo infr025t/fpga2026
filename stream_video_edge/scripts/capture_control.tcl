@@ -37,8 +37,8 @@ try {
  puts "EDGE_READY";flush stdout
  for {set saved 0} {$saved<$count} {incr saved} {
   cancelled
-  set m [expr {$saved%4}]
-  set switches [expr {$base|(($m/2)<<2)|(($m%2)<<1)}]
+  set m [expr {$saved%2}]
+  set switches [expr {$base|($m<<1)}]
   drive virtual_sw [format %04x $switches]
   after 50
   drive virtual_sw [format %04x [expr {$switches|0x8000}]]

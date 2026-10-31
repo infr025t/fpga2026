@@ -61,7 +61,7 @@ try {
 
  if {$action eq {one}} {
   set mode [lindex $argv 1];set label [lindex $argv 2]
-  if {![string is integer -strict $mode] || $mode ni {0 1 4 5 8 9 12 13}} {error "Expected mode0/1/4/5/8/9/12/13"}
+  if {![string is integer -strict $mode] || $mode ni {0 1 4 5}} {error "Expected mode0/1/4/5"}
   if {![regexp {^[A-Za-z0-9_-]+$} $label]} {error "Unique evidence label required"}
   set path [file join $report_root [set label]_single.json]
   if {[file exists $path]} {error "Preserve existing capture"}

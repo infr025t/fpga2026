@@ -4,13 +4,17 @@ import argparse,hashlib,json,subprocess
 ROOT=Path(__file__).resolve().parents[1]
 MANIFEST=ROOT/'SHA256.json'
 def files():
- return sorted(f for f in ROOT.rglob('*') if f.is_file() and f!=MANIFEST and not any(x in f.parts for x in ['.git','.Xil','__pycache__']) and f.suffix not in ['.pyc','.jou','.wdb','.dcp'] and not f.relative_to(ROOT).as_posix().startswith('reports/lcd/runtime/'))
+ return sorted(f for f in ROOT.rglob('*') if f.is_file() and f!=MANIFEST and not any(x in f.parts for x in ['.git','.Xil','__pycache__']) and f.suffix not in ['.pyc','.jou','.wdb','.dcp'] and not f.relative_to(ROOT).as_posix().startswith('reports/lcd/runtime/') and f.relative_to(ROOT).as_posix() not in {'dfx_runtime.txt','clockInfo.txt'})
 def main():
  ap=argparse.ArgumentParser();ap.add_argument('--refresh',action='store_true',help='Write reviewed file hashes; use only after verification');args=ap.parse_args()
  current={f.relative_to(ROOT).as_posix():hashlib.sha256(f.read_bytes()).hexdigest() for f in files()}
  summary=json.loads((ROOT/'reports/summary.json').read_text())
  for key,name in [('sha256',summary['artifact']['path']),('ltx_sha256',summary['artifact']['ltx_path'])]:
   if current.get(name)!=summary['artifact'][key]:print('FAIL artifact/report mismatch:',name);return 1
+ if 'uart_artifact' in summary:
+  uart=summary['uart_artifact']
+  for key,name in [('sha256',uart['path']),('ltx_sha256',uart['ltx_path'])]:
+   if current.get(name)!=uart[key]:print('FAIL UART artifact/report mismatch:',name);return 1
  provenance=json.loads((ROOT/'docs/camera_source_provenance.json').read_text())
  for entry in provenance['changes']:
   if current.get(entry['project_file'])!=entry['project_sha256']:print('FAIL accepted camera source mapping:',entry['project_file']);return 1
@@ -20,5 +24,5 @@ def main():
   changed=sorted(k for k in current.keys()|expected.keys() if current.get(k)!=expected.get(k));print('FAIL file snapshot:',changed);return 1
  result=subprocess.run(['git','-C',str(ROOT.parent),'diff','--quiet','origin/main','--','demo'])
  if result.returncode:print('FAIL preserved demo differs from main baseline');return 1
- print(f'PASS V0.4 delivery: {len(current)} exact files; demo unchanged from origin/main');return 0
+ print(f'PASS Gaussian-only delivery: {len(current)} exact files; demo unchanged from origin/main');return 0
 if __name__=='__main__':raise SystemExit(main())

@@ -26,7 +26,7 @@ module lcd_top(
   ov7670_config #(.DIRECT_IO(0),.FREEZE_AEC(0),.FREEZE_AGC(0)) configure_camera(
     .clk(clk100),.rst(rst || power_count<2000000),.slow_clock(1'b0),.scene(config_scene),
     .sioc(cam_sioc),.siod(cam_siod),.done(config_done),.error(config_error),.scl_drive_low(sl),.sda_drive_low(dl));
-  reg start=0,inflight=0,active_internal=0,active_edge=0,active_filter=0,frame_complete=0;
+  reg start=0,inflight=0,active_internal=0,active_edge=0,frame_complete=0;
   reg[23:0]gap=0;
   wire sink_ready,sink_busy,sink_done,lcd_initialized,background_done;
   wire[7:0]sink_error,cap_error;wire cap_busy,cap_done,cv;wire[7:0]cp;wire[9:0]cx;wire[8:0]cy;
@@ -60,7 +60,7 @@ module lcd_top(
     end
   end
   wire ov,od,core_error;wire[7:0]op,original_pixel;wire[9:0]oxp;wire[8:0]oyp;
-  video_core_adapter processing(.clk(clk100),.rst(rst),.start(start),.edge_view(active_edge),.filter_id(active_filter),
+  video_core_adapter processing(.clk(clk100),.rst(rst),.start(start),.edge_view(active_edge),
     .source_valid(active_internal?pv:cv),.source_pixel(active_internal?pp:cp),
     .source_x(active_internal?ox:cx),.source_y(active_internal?oy:cy),.source_done(active_internal?pd:cap_done),
     .out_valid(ov),.out_pixel(op),.out_raw(original_pixel),.out_x(oxp),.out_y(oyp),.out_done(od),.error(core_error));
@@ -79,14 +79,14 @@ module lcd_top(
   wire ready=(ss[0] || camera_ready) && sink_ready;
   always @(posedge clk100)begin
     start<=0;
-    if(rst)begin power_count<=0;warmup<=0;config_scene<=1;inflight<=0;active_internal<=0;active_edge<=0;active_filter<=0;frame_complete<=0;gap<=0;end
+    if(rst)begin power_count<=0;warmup<=0;config_scene<=1;inflight<=0;active_internal<=0;active_edge<=0;frame_complete<=0;gap<=0;end
     else begin
       if(power_count<2000000)power_count<=power_count+1'b1;
       if(power_count<1000000)config_scene<=!ss[1];
       if(!config_done)warmup<=0;else if(warmup<200000000)warmup<=warmup+1'b1;
       if(gap!=0)gap<=gap-1'b1;
       if(!inflight && ready && !ss[15] && sink_error==0 && (ss[0] || error==0) && gap==0)begin
-        start<=1;inflight<=1;active_internal<=ss[0];active_edge<=ss[2];active_filter<=ss[3];frame_complete<=0;
+        start<=1;inflight<=1;active_internal<=ss[0];active_edge<=ss[2];frame_complete<=0;
       end
       if(sink_done)begin inflight<=0;frame_complete<=1;gap<=10000000;end
     end

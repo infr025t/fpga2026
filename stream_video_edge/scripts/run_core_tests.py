@@ -13,11 +13,11 @@ elif args.pattern=='random':image=np.random.default_rng(20261029).integers(0,256
 elif args.pattern=='step':image[:,:w//2]=0;image[:,w//2:]=255
 elif args.pattern=='impulse':image[:]=0;image[h//2,w//2]=255
 np.savetxt(out/'image.hex',image.ravel(),fmt='%02x')
-for f in [0,1]:
- raw,edge=process(image,f,1024,96 if f==0 else 128)
+for f in [1]:
+ raw,edge=process(image,threshold=128)
  np.savetxt(out/'raw.hex',raw.ravel(),fmt='%02x');np.savetxt(out/f'edge_{f}.hex',edge.ravel(),fmt='%02x')
 wrapper=out/'selected.sv';wrapper.write_text(f'module tb_selected;tb_edge_core #({w},{h}) test();endmodule\n')
-core=ROOT/'rtl/core';sources=[core/'core_latency_pkg.sv']+[f for f in sorted(core.glob('*.sv')) if f.name!='core_latency_pkg.sv']+[ROOT/'sim/tb_edge_core.sv',wrapper]
+core=ROOT/'rtl/core';sources=sorted(core.glob('*.sv'))+[ROOT/'sim/tb_edge_core.sv',wrapper]
 r=run_bench(sources,'tb_selected',out,timeout=600,pass_marker='PASS tb_edge_core',plusargs=['VECTORS='+out.as_posix()]);print(json.dumps(r,indent=2))
 r['pattern']=args.pattern
 (ROOT/'reports'/f'rtl_{args.size}_{args.pattern}.json').write_text(json.dumps(r,indent=2)+'\n');assert r['passed'],r.get('reason')

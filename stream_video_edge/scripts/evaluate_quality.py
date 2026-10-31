@@ -25,24 +25,20 @@ def measures(clean,noisy,filtered,threshold):
 def main():
  regpath=ROOT/'model/quality_registration.json';reg=json.loads(regpath.read_text());clean=clean_image()
  samples={s:np.clip(np.rint(clean.astype(float)+np.random.default_rng(s).normal(0,reg['noise_sigma'],clean.shape)),0,255).astype(np.uint8) for s in reg['tuning_seeds']+reg['holdout_seeds']}
- all_results=[];profiles={}
- for f in [0,1]:
-  candidates=[]
-  for eps in reg['epsilon_candidates'] if f==0 else [64]:
-   filtered={s:preprocess(samples[s],f,eps) for s in reg['tuning_seeds']}
-   for t in reg['threshold_candidates']:
-    m=[measures(clean,samples[s],filtered[s],t) for s in reg['tuning_seeds']]
-    stats={k:float(np.mean([a[k] for a in m])) for k in m[0]}
-    violations=sum([stats['noise_ratio']>.8,stats['recall']<.9,stats['flat_false']>.01])
-    candidates.append(dict(filter_id=f,epsilon=eps,threshold=t,violations=violations,**stats))
-  best=min(candidates,key=lambda a:(a['violations'],-a['f1'],a['flat_false'],a['threshold'],a['epsilon']))
-  held=[measures(clean,samples[s],preprocess(samples[s],f,best['epsilon']),best['threshold']) for s in reg['holdout_seeds']]
-  passed=all(a['noise_ratio']<=.8 and a['recall']>=.9 and a['flat_false']<=.01 for a in held)
-  profiles[str(f)]={k:best[k] for k in ['epsilon','threshold']};profiles[str(f)]['controlled_gate_pass']=bool(passed)
-  all_results.append(dict(filter_id=f,chosen=best,holdout=held,passed=bool(passed),candidates=candidates))
- report=dict(registration_sha256=hashlib.sha256(regpath.read_bytes()).hexdigest(),results=all_results,scope='controlled only; no camera acceptance claim')
+ candidates=[]
+ filtered={seed:preprocess(samples[seed]) for seed in reg['tuning_seeds']}
+ for t in reg['threshold_candidates']:
+  m=[measures(clean,samples[seed],filtered[seed],t) for seed in reg['tuning_seeds']]
+  stats={k:float(np.mean([a[k] for a in m])) for k in m[0]}
+  violations=sum([stats['noise_ratio']>.8,stats['recall']<.9,stats['flat_false']>.01])
+  candidates.append(dict(threshold=t,violations=violations,**stats))
+ best=min(candidates,key=lambda a:(a['violations'],-a['f1'],a['flat_false'],a['threshold']))
+ held=[measures(clean,samples[seed],preprocess(samples[seed]),best['threshold']) for seed in reg['holdout_seeds']]
+ passed=all(a['noise_ratio']<=.8 and a['recall']>=.9 and a['flat_false']<=.01 for a in held)
+ report=dict(algorithm='GAUSSIAN3',registration_sha256=hashlib.sha256(regpath.read_bytes()).hexdigest(),
+  chosen=best,holdout=held,passed=passed,candidates=candidates,scope='controlled only; no camera acceptance claim')
  (ROOT/'reports/quality.json').write_text(json.dumps(report,indent=2)+'\n')
- (ROOT/'model/profile.json').write_text(json.dumps(dict(version='0.3',filters=profiles),indent=2)+'\n')
- print(json.dumps(profiles));return 0 if all(v['controlled_gate_pass'] for v in profiles.values()) else 1
+ print(json.dumps(dict(algorithm='GAUSSIAN3',candidate_threshold=best['threshold'],controlled_gate_pass=passed)))
+ return 0 if passed else 1
 
 if __name__=='__main__':raise SystemExit(main())

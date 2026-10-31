@@ -1,9 +1,9 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
-| Date         : Fri Oct 30 21:30:03 2026
+| Date         : Fri Oct 30 22:36:51 2026
 | Host         : StrawberryBear running 64-bit major release  (build 9200)
-| Command      : check_timing -verbose -file E:/FPGA_Test_Work/lcd_v04_build_final2/check_timing.rpt
+| Command      : check_timing -verbose -file E:/FPGA_Test_Work/lcd_v04_validation/gaussian_only_build/check_timing.rpt
 | Design       : lcd_top
 | Device       : 7a35t-cpg236
 | Speed File   : -1  PRODUCTION 1.23 2018-06-13
@@ -19,7 +19,7 @@ Table of Contents
 2. checking constant_clock (0)
 3. checking pulse_width_clock (0)
 4. checking unconstrained_internal_endpoints (0)
-5. checking no_input_delay (10)
+5. checking no_input_delay (9)
 6. checking no_output_delay (0)
 7. checking multiple_clock (0)
 8. checking generated_clocks (0)
@@ -50,11 +50,11 @@ Table of Contents
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 
 
-5. checking no_input_delay (10)
--------------------------------
+5. checking no_input_delay (9)
+------------------------------
  There are 0 input ports with no input delay specified.
 
- There are 10 input ports with no input delay but user has a false path constraint. (MEDIUM)
+ There are 9 input ports with no input delay but user has a false path constraint. (MEDIUM)
 
 btnC
 cam_href
@@ -65,7 +65,6 @@ sw[14]
 sw[15]
 sw[1]
 sw[2]
-sw[3]
 
 
 6. checking no_output_delay (0)

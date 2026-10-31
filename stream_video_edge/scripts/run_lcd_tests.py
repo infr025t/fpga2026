@@ -9,9 +9,9 @@ vga='--vga' in sys.argv
 w,h=(640,480) if vga else (32,24)
 a=np.random.default_rng(20261030).integers(0,256,(h,w),dtype=np.uint8)
 np.savetxt(out/'image.hex',a.ravel(),fmt='%02x')
-for f in (0,1):
- raw,edge=process(a,f,1024,96 if f==0 else 128);np.savetxt(out/f'edge_{f}.hex',edge.ravel(),fmt='%02x')
-sources=[r/'rtl/core/core_latency_pkg.sv']+[p for p in sorted((r/'rtl/core').glob('*.sv')) if p.name!='core_latency_pkg.sv']+[r/'rtl/runtime/video_core_adapter.sv']+[r/'sim'/f'{top}.sv']
+for f in (1,):
+ raw,edge=process(a,threshold=128);np.savetxt(out/f'edge_{f}.hex',edge.ravel(),fmt='%02x')
+sources=sorted((r/'rtl/core').glob('*.sv'))+[r/'rtl/runtime/video_core_adapter.sv']+[r/'sim'/f'{top}.sv']
 if top=='tb_display_path':sources += [r/'rtl/runtime/video_lcd_sink.sv',r/'rtl/debug/video_snapshot.sv',r/'rtl/display/nt35510_bus8.sv',r/'rtl/display/nt35510_window_writer.sv']
 if top=='tb_lcd_admission':
  sources += list((r/'rtl/camera').glob('*.sv'))+[r/'rtl/runtime/video_lcd_sink.sv',r/'rtl/runtime/capture_fault_latch.sv',r/'rtl/lcd_top.sv',r/'sim/nt35510_init_fast.sv']

@@ -17,11 +17,10 @@ powershell -ExecutionPolicy Bypass -File program_lcd.ps1
 Vivado参数顺序必须先-log/-journal，再-tclargs；手动调用时建议把日志放E:/FPGA_Test_Work。
 ~~~powershell
 vivado -mode batch -source scripts/lcd_hardware.tcl -tclargs one 1 INTERNAL_RAW 4186065429
-vivado -mode batch -source scripts/lcd_hardware.tcl -tclargs one 5 INTERNAL_GUIDED 264883040
-vivado -mode batch -source scripts/lcd_hardware.tcl -tclargs one 13 INTERNAL_GAUSSIAN 207516
+vivado -mode batch -source scripts/lcd_hardware.tcl -tclargs one 5 INTERNAL_GAUSSIAN 207516
 vivado -mode batch -source scripts/lcd_live.tcl -tclargs YOUR_CAMERA_LABEL 4 50
 vivado -mode batch -source scripts/lcd_hardware.tcl -tclargs physical
 ~~~
-MODE0为RAW，4为引导EDGE，12为高斯EDGE；内部源加1。连拍最后参数是可选的记录帧数上限，0或省略为持续运行。有限测试必须以RECORDED_FRAME_LIMIT结束才通过；错误或提前复位返回失败。无限连拍以BTNC或在该标签目录建立stop.flag停止。退出监控会暂停新帧；最后一条physical交回实体开关。
+MODE0为RAW，4为高斯EDGE；内部源加1。连拍最后参数是可选的记录帧数上限，0或省略为持续运行。有限测试必须以RECORDED_FRAME_LIMIT结束才通过；错误或提前复位返回失败。无限连拍以BTNC或在该标签目录建立stop.flag停止。退出监控会暂停新帧；最后一条physical交回实体开关。
 
 Snapshot为可选诊断构建，不是默认已上板bit。需另建OutDir，用build_lcd.ps1 -Snapshot；每次program/one/dump/live均需在-tclargs最后加-snapshot以选对应探针。快照只抽样，不控制视频链路。

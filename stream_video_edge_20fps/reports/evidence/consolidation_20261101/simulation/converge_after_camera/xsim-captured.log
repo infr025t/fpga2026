@@ -1,0 +1,19 @@
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Sun Nov  1 08:46:05 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/snapshot/xsim_script.tcl
+# xsim {snapshot} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+PASS tb_camera_video frames=3 pixel_alignment wrap continuous_commit pause_resume maxlag=40960
+$finish called at time : 267134840 ns : File "E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge_20fps/sim/tb_camera_video.sv" Line 56
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:00:18 . Memory (MB): peak = 167.574 ; gain = 0.023
+exit
+INFO: xsimkernel Simulation Memory Usage: 12540 KB (Peak: 12540 KB), Simulation CPU Usage: 18140 ms
+INFO: [Common 17-206] Exiting xsim at Sun Nov  1 08:46:25 2026...

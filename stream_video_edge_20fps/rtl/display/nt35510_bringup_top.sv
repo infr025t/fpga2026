@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
-// Pin-independent Basys3 bring-up wrapper. A board-specific XDC must be written
-// only after the actual adapter, interface straps and physical wires are checked.
+// 独立屏幕连通测试顶层：用于排除摄像头和算法影响，保留为通用调试工具。
+// 使用 build_lcd_pattern.tcl 从当前LCD约束提取引脚，测试时仍保持现有屏幕接线。
 module nt35510_bringup_top(
   input wire clk100,btnC,input wire [15:0] sw,
   output wire [7:0] lcd_data,output wire lcd_cs_n,lcd_rs,lcd_wr_n,lcd_rd_n,lcd_reset_n,lcd_bl,

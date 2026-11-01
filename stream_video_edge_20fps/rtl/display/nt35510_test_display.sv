@@ -1,4 +1,5 @@
 `timescale 1ns/1ps
+// 通用屏幕测试图：动态灰阶、棋盘格、左右明暗半幅和均匀灰度用于检查接线及地址方向。
 // Screen bring-up only: independently paced by the LCD word bus, no frame RAM.
 // Clear the entire panel once, then update every active pixel without redrawing
 // the static black margins. This is not an adapter for a 100 Mpixel/s core.

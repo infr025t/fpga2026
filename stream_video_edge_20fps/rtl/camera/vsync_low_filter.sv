@@ -1,5 +1,6 @@
 `timescale 1ns/1ps
-// Test candidate: require stable HIGH as well as LOW before changing field state.
+// VSYNC 双边稳定资格判定：保留历史接口名，避免短脉冲误切帧造成拼接。
+// 高、低电平均需稳定后才更新帧状态；这是采集主逻辑的一部分。
 // Input is already synchronized; the first-HREF setup margin must be verified.
 module vsync_low_filter #(parameter MIN_LOW=64)(
  input wire clk,rst,clear_stats,sync_in,

@@ -1,4 +1,5 @@
 `timescale 1ns/1ps
+// 8080八位写总线：每个16位字先发高字节再发低字节，时序全部由100MHz时钟计数。
 // Write-only NT35510 MCU-8080 bus for the project's 100 MHz clock.
 // A handshake latches one complete 16-bit command/data/pixel word. High byte
 // precedes low byte; CS stays selected and RS stays fixed across both strobes.

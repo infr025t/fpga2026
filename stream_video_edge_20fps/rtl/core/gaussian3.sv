@@ -1,4 +1,5 @@
 `timescale 1ns/1ps
+// 3×3 高斯平滑：权重 [1,2,1;2,4,2;1,2,1]，加8后右移4位实现四舍五入。
 module gaussian3 #(parameter W=640,H=480)(
  input wire clk,rst,abort,in_valid,input wire[7:0]in_pixel,input wire[9:0]in_x,
  input wire[8:0]in_y,input wire in_sof,input wire[31:0]in_frame_id,

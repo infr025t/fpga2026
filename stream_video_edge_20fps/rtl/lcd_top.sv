@@ -1,4 +1,5 @@
 `timescale 1ns/1ps
+// 系统顶层：初始化摄像头与屏幕，按帧接纳 RAW/EDGE 请求，统一实体开关与调试控制。
 module lcd_top #(parameter SENSOR_PLL=8'h8a,parameter integer STAT_FRAMES=0)(
   input wire clk100,btnC,input wire[15:0]sw,
   input wire[7:0]cam_data,input wire cam_vsync,cam_href,
@@ -29,7 +30,6 @@ module lcd_top #(parameter SENSOR_PLL=8'h8a,parameter integer STAT_FRAMES=0)(
   wire statistics_complete;
   reg ref_fault=0;reg[127:0]completed_metrics=0;
   reg start=0,inflight=0,active_internal=0,active_edge=0,frame_complete=0;
-  reg[23:0]gap=0;
   wire sink_ready,sink_busy,sink_done,lcd_initialized,background_done;
   wire[7:0]sink_error,cap_error;wire cap_busy,cap_done,cv;wire[7:0]cp,cp_other;reg[7:0]cp_other_aligned;wire[9:0]cx;wire[8:0]cy;
   wire[255:0]debug_camera,camera_timing_live;wire[127:0]debug_sync;
@@ -38,6 +38,7 @@ module lcd_top #(parameter SENSOR_PLL=8'h8a,parameter integer STAT_FRAMES=0)(
     .observed_error(observed_cap_error),.observed_timing(debug_camera));
   wire[10:0]debug_read_command;wire[511:0]snapshot_block;wire[31:0]snapshot_status;
   wire[31:0]sensor_frames,read_frames,sensor_period,max_occupancy;
+  // 已接纳的源帧必须排空；切换模式或暂停不能撤销当拍请求，修复源端与显示端不同步。
   wire camera_admitted=start && !active_internal;
   camera_fifo_video camera(
     .clk(clk100),.rst(rst),.start(camera_admitted),
@@ -64,6 +65,7 @@ module lcd_top #(parameter SENSOR_PLL=8'h8a,parameter integer STAT_FRAMES=0)(
       end
     end
   end
+  // 相邻字节与显示接口同延迟，仅供诊断；不得用其内容决定是否交换Y/UV。
   always @(posedge clk100)if(cv)cp_other_aligned<=cp_other;
   wire ov,od,core_error;wire[7:0]op,original_pixel;wire[9:0]oxp;wire[8:0]oyp;
   video_core_adapter processing(.clk(clk100),.rst(rst),.start(start),.edge_view(active_edge),
@@ -85,18 +87,18 @@ module lcd_top #(parameter SENSOR_PLL=8'h8a,parameter integer STAT_FRAMES=0)(
   wire ready=(ss[0] || camera_ready) && sink_ready;
   always @(posedge clk100)begin
     start<=0;
-    if(rst)begin power_count<=0;warmup<=0;config_scene<=1;inflight<=0;active_internal<=0;active_edge<=0;frame_complete<=0;gap<=0;end
+    if(rst)begin power_count<=0;warmup<=0;config_scene<=1;inflight<=0;active_internal<=0;active_edge<=0;frame_complete<=0;end
     else begin
       if(power_count<2000000)power_count<=power_count+1'b1;
       if(power_count<1000000)config_scene<=!ss[1];
       if(!config_done)warmup<=0;else if(warmup<200000000)warmup<=warmup+1'b1;
-      if(gap!=0)gap<=gap-1'b1;
-      if(!statistics_complete && !inflight && !cap_busy && !pattern_busy && ready && !ss[15] && sink_error==0 && (ss[0] || error==0) && gap==0)begin
+      if(!statistics_complete && !inflight && !cap_busy && !pattern_busy && ready && !ss[15] && sink_error==0 && (ss[0] || error==0))begin
         start<=1;inflight<=1;active_internal<=ss[0];active_edge<=ss[2];frame_complete<=0;
       end
-      if(sink_done)begin inflight<=0;frame_complete<=1;gap<=0;end
+      if(sink_done)begin inflight<=0;frame_complete<=1;end
     end
   end
+  // 完成时锁存整帧指标；统计停止条件仅由显式 STAT_FRAMES 参数启用。
   reg[31:0]ticks=0,last_done_tick=0,last_interval=0,max_interval=0,display_frames=0,reference_failures=0;
   assign statistics_complete=STAT_FRAMES>0 && display_frames>=STAT_FRAMES;
   reg have_done=0;
@@ -120,6 +122,7 @@ module lcd_top #(parameter SENSOR_PLL=8'h8a,parameter integer STAT_FRAMES=0)(
   wire[7:0]flags={ss[15],active_internal,frame_complete,sink_busy,cap_busy,background_done,lcd_initialized,ready};
   wire[31:0]debug_status={frames[15:0],error,flags};
   wire[127:0]debug_metrics=completed_metrics;
+// 通用诊断：保留快照、色条比较、串口；它们不会向计算核心施加反压。
 `ifdef LCD_SNAPSHOT
   wire[127:0]bars_diagnostic;wire[31:0]uart_debug_dropped,uart_debug_packets;
   uart_pair_stream uart_diagnostic(.clk(clk100),.rst(rst),.start(camera_admitted&&!active_edge),

@@ -1,4 +1,5 @@
 `timescale 1ns/1ps
+// 三行独立 RAM 轮换生成纵向窗口；像素、坐标和 valid 同步延迟，支持输入空拍。
 module row_window3 #(parameter integer W=640,H=480,DATA_W=8)(
  input wire clk,rst,abort,in_valid,input wire [DATA_W-1:0] in_data,
  input wire [9:0] in_x,input wire [8:0] in_y,input wire in_sof,input wire [31:0] in_frame_id,
@@ -10,8 +11,8 @@ module row_window3 #(parameter integer W=640,H=480,DATA_W=8)(
  reg [1:0] bank_index;
  wire [1:0] active_bank=in_sof ? 2'd0 : bank_index;
  wire access_enable=in_valid && !rst && !abort;
- wire [2:0] bank_write_enable=access_enable ? (3'b001 << active_bank) : 5'b0;
- wire [2:0] bank_read_enable=access_enable ? ~bank_write_enable : 5'b0;
+ wire [2:0] bank_write_enable=access_enable ? (3'b001 << active_bank) : 3'b0;
+ wire [2:0] bank_read_enable=access_enable ? ~bank_write_enable : 3'b0;
  wire [DATA_W-1:0] bank_data[0:2];
  genvar g;
  generate for(g=0;g<3;g=g+1)begin: bank

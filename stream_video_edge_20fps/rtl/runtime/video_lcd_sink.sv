@@ -1,4 +1,5 @@
 `timescale 1ns/1ps
+// 显示接收端：64字节队列解耦短暂忙碌，检查坐标、像素数和队列入/出CRC。
 // RAW/EDGE display consumer. No ready signal is returned to the camera.
 module video_lcd_sink #(
   parameter integer W=640,H=480,PW=800,PH=480,DEPTH=64,CLK_HZ=100000000,BUS_SETUP=4,BUS_LOW=5,BUS_HOLD=3,BUS_GAP=2
@@ -80,8 +81,7 @@ module video_lcd_sink #(
         WAIT_INIT:if(initialized)state<=BEGIN_CLEAR;
         BEGIN_CLEAR:if(paint_ready)state<=CLEAR;
         CLEAR:if(paint_done)begin background_done<=1;state<=IDLE;end
-        // Geometry changes are prepared while no source frame owns the sink.
-        // Withdraw ready before clearing so the camera/core cannot send pixels.
+        // 修复模式切换时旧窗口接收新尺寸像素：先撤销ready、清背景，再接纳下一帧。
         IDLE:if(active_crop!=crop_edge)begin
           active_crop<=crop_edge;state<=BEGIN_CLEAR;
         end else if(start)begin

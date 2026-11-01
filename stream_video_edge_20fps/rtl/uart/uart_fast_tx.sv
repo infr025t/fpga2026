@@ -1,4 +1,5 @@
 `timescale 1ns/1ps
+// UART发送器：8N1串行输出，通过握手接收一个待发送字节。
 // Test-only 12 Mbaud 8N1 from 100 MHz. Fractional 3/25 bit enable;
 // bit boundaries have <10ns quantization error. No generated clock/CDC.
 module uart_fast_tx(input wire clk,rst,valid,input wire[7:0]data,

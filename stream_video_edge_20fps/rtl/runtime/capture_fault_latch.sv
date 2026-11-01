@@ -1,4 +1,5 @@
 `timescale 1ns/1ps
+// 首错锁存：保留第一次采集错误及当时计数，避免后续状态覆盖故障证据。
 module capture_fault_latch(input wire clk,rst,input wire[7:0]live_error,
  input wire[255:0]live_timing,output wire[7:0]observed_error,output wire[255:0]observed_timing);
  reg[7:0]first_error=0;

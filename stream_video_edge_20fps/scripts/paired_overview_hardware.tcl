@@ -1,11 +1,18 @@
-set root [file normalize [file join [file dirname [info script]] ..]]
-set snapshot_mode [expr {[lsearch -exact $argv {-snapshot}]>=0}]
-set argv [lsearch -all -inline -not -exact $argv {-snapshot}]
-set probe_name [expr {$snapshot_mode?{lcd_top_snapshot}:{lcd_top}}]
+source [file join [file dirname [info script]] hardware_common.tcl]
 set report_root [file join $root reports lcd runtime]
 file mkdir $report_root
 set action [lindex $argv 0]
-if {$action ni {program reset one dump pause physical inspect}} {error "Unknown hardware action"}
+if {$action ni {program reset one dump pause physical inspect resume}} {error "Expected program/reset/one/dump/pause/physical/inspect"}
+# 显式下载型号决定 bit/ltx 配对，不先检查默认 Snapshot 的文件。
+if {$action eq {program}} {
+ set variant [lindex $argv 1]
+ if {$variant eq {}} {set variant $probe_name}
+ if {$variant ni {lcd_top lcd_top_snapshot}} {error "Unknown program variant"}
+ set probe_file [require_artifact ${variant}.ltx]
+ set program_file [require_artifact ${variant}.bit]
+} else {
+ set probe_file [require_artifact $probe_name.ltx]
+}
 open_hw_manager
 connect_hw_server -url localhost:3121
 try {
@@ -15,49 +22,15 @@ try {
  set dev [get_hw_devices xc7a35t_0]
  if {[llength $dev]!=1} {error "Expected XC7A35T"}
  current_hw_device $dev
- set_property PROBES.FILE [file join $root artifacts $probe_name.ltx] $dev
+ set_property PROBES.FILE $probe_file $dev
  if {$action eq {program}} {
-  set variant [lindex $argv 1]
-  if {$variant eq {}} {set variant $probe_name}
-  if {$variant ni {lcd_top lcd_top_snapshot}} {error "Unknown program variant"}
-  set_property PROBES.FILE [file join $root artifacts ${variant}.ltx] $dev
-  set_property PROGRAM.FILE [file join $root artifacts ${variant}.bit] $dev
+  set_property PROGRAM.FILE $program_file $dev
   program_hw_devices $dev
  }
  refresh_hw_device $dev
  set vio [get_hw_vios -of_objects $dev]
  if {[llength $vio]!=1} {error "Expected one LCD VIO"}
- proc drive {port value} {
-  global vio
-  set p [get_hw_probes -of_objects $vio -filter "TYPE == vio_output && PROBE_PORT == $port"]
-  if {[llength $p]!=1} {error "Expected one complete output probe on port $port"}
-  set_property OUTPUT_VALUE_RADIX HEX $p
-  set_property OUTPUT_VALUE [format %0*x [expr {([get_property WIDTH $p]+3)/4}] $value] $p
-  commit_hw_vio $p
- }
- proc value {port} {
-  global vio
-  set result 0
-  foreach p [get_hw_probes -of_objects $vio -filter "TYPE == vio_input && PROBE_PORT == $port"] {
-   set bits [regexp -all -inline {[0-9]+} [get_property PROBE_PORT_BITS $p]]
-   set low [lindex [lsort -integer $bits] 0]
-   set_property INPUT_VALUE_RADIX HEX $p
-   set part [expr "0x[get_property INPUT_VALUE $p]"]
-   set result [expr {$result | ($part<<$low)}]
-  }
-  return $result
- }
- proc status {} {global vio;refresh_hw_vio $vio;return [value 0]}
- proc wait_ready {} {
-  set limit [expr {[clock milliseconds]+15000}]
-  while {1} {
-   set s [status]
-   if {(($s>>8)&255)!=0} {error [format "FPGA error status=%08x" $s]}
-   if {$s&1} {return $s}
-   if {[clock milliseconds]>$limit} {error [format "Readiness timeout status=%08x" $s]}
-   after 40
-  }
- }
+
 
  if {$action eq {reset}} {
   set mode [lindex $argv 1]
@@ -65,7 +38,7 @@ try {
   drive 0 [expr {0x8000|$mode}];drive 1 3;after 30;drive 1 1;wait_ready
  } elseif {$action eq {one}} {
   set mode [lindex $argv 1];set label [lindex $argv 2]
-  if {![string is integer -strict $mode] || $mode ni {0 1 2 4 5 6}} {error "Expected mode0/1/4/5"}
+  if {![string is integer -strict $mode] || $mode ni {0 1 2 4 5 6}} {error "Expected mode 0/1/2/4/5/6"}
   if {![regexp {^[A-Za-z0-9_-]+$} $label]} {error "Unique evidence label required"}
   set path [file join $report_root [set label]_single.json]
   if {[file exists $path]} {error "Preserve existing capture"}
@@ -137,6 +110,10 @@ try {
   set f [open [file join $report_root $label.json] w]
   puts $f "{\"label\":\"$label\",\"frame\":$original_frame,\"internal\":[expr {($s>>6)&1}],\"width\":[expr {$w/4}],\"height\":[expr {($h+3)/4}],\"full_width\":$w,\"full_height\":$h,\"samples\":$samples,\"blocks\":$blocks,\"roi\":false,\"overview\":true,\"stride\":4,\"sample_x\":3,\"sample_y\":0,\"block_words\":32,\"roi_x\":0,\"roi_y\":0,\"output_crc32\":[expr {($m>>64)&0xffffffff}],\"plane0\":\"display\",\"plane1\":\"[expr {($s&64)||$w==630?{same_frame_raw}:{preceding_fifo_byte}}]\"}"
   close $f
+ } elseif {$action eq {resume}} {
+  set mode [lindex $argv 1]
+  if {$mode ni {0 1 2 4 5 6}} {error "Invalid video mode"}
+  drive 0 [expr {0x8000|$mode}];drive 1 1;wait_ready;drive 0 $mode
  } elseif {$action eq {physical}} {drive 1 0
  } elseif {$action eq {inspect}} {puts "INSPECT status=[status] metrics=[value 2] camera=[value 1] performance=[value 3] bars=[value 7]"
  } else {drive 0 0x8000;drive 1 1}

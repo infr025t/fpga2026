@@ -1,0 +1,17 @@
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Sun Nov  1 08:46:16 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/snapshot/xsim_script.tcl
+# xsim {snapshot} -testplusarg VECTORS=E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge_20fps/reports/consolidate_tools_statistics -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+PASS tb_statistics all-frame CRC counter, continuation and exact target
+$finish called at time : 260 ns : File "E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge_20fps/sim/tb_statistics.sv" Line 27
+exit
+INFO: [Common 17-206] Exiting xsim at Sun Nov  1 08:46:17 2026...

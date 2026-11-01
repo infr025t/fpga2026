@@ -1,4 +1,5 @@
 `timescale 1ns/1ps
+// 屏幕上电初始化：复位、寄存器表和必要延时完成后再允许写图。
 // Sequenced 16-bit command/data words; the separate 8-bit PHY splits each word.
 // Delays are explicit conservative policy, not the vendor's software-loop units.
 module nt35510_init #(

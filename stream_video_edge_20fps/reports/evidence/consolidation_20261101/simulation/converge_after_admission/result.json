@@ -1,0 +1,65 @@
+{
+  "top": "tb_lcd_admission",
+  "passed": true,
+  "stages": [
+    {
+      "tool": "xvlog",
+      "command": [
+        "E:\\Vivado\\2025.1\\Vivado\\bin\\xvlog.bat",
+        "-sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge_20fps\\rtl\\core\\edge_core.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge_20fps\\rtl\\core\\gaussian3.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge_20fps\\rtl\\core\\row_window3.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge_20fps\\rtl\\core\\sobel3.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge_20fps\\rtl\\runtime\\video_core_adapter.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge_20fps\\sim\\tb_lcd_admission.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge_20fps\\rtl\\camera\\camera_fifo_video.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge_20fps\\rtl\\camera\\href_stable_filter.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge_20fps\\rtl\\camera\\vsync_low_filter.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge_20fps\\rtl\\camera\\ov7670_config.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge_20fps\\rtl\\runtime\\video_lcd_sink.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge_20fps\\rtl\\runtime\\capture_fault_latch.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge_20fps\\rtl\\lcd_top.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge_20fps\\sim\\nt35510_init_fast.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge_20fps\\rtl\\display\\nt35510_bus8.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge_20fps\\rtl\\display\\nt35510_window_writer.sv"
+      ],
+      "exit": 0,
+      "seconds": 0.786,
+      "log": "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge_20fps\\reports\\converge_after_admission\\xvlog-captured.log",
+      "private_job_active_processes": 0
+    },
+    {
+      "tool": "xelab",
+      "command": [
+        "E:\\Vivado\\2025.1\\Vivado\\bin\\xelab.bat",
+        "tb_lcd_admission",
+        "-s",
+        "snapshot"
+      ],
+      "exit": 0,
+      "seconds": 2.686,
+      "log": "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge_20fps\\reports\\converge_after_admission\\xelab-captured.log",
+      "private_job_active_processes": 0
+    },
+    {
+      "tool": "xsim",
+      "command": [
+        "E:\\Vivado\\2025.1\\Vivado\\bin\\xsim.bat",
+        "snapshot",
+        "-runall",
+        "-f",
+        "xsim-options.txt"
+      ],
+      "exit": 0,
+      "seconds": 2.506,
+      "log": "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge_20fps\\reports\\converge_after_admission\\xsim-captured.log",
+      "private_job_active_processes": 0
+    }
+  ],
+  "work_dir": "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge_20fps\\reports\\converge_after_admission",
+  "reason": "PASS",
+  "simulation_summary": [
+    "PASS tb_lcd_admission registered-start mode race does not lose frame ownership"
+  ]
+}

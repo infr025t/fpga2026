@@ -1,4 +1,5 @@
 `timescale 1ns/1ps
+// 算法核心：一次 3×3 高斯平滑后接 Sobel；阈值按帧锁存，避免一帧内变化。
 // Gaussian3 -> Sobel3 only. Keep the established5px crop and metadata contract.
 module edge_core #(parameter W=640,H=480)(
  input wire clk,rst,abort,in_valid,input wire[7:0]in_pixel,input wire[9:0]in_x,

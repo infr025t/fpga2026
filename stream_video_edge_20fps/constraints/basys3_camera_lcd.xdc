@@ -75,7 +75,7 @@ set_property IOB TRUE [get_ports cam_rclk]
 set_property SLEW SLOW [get_ports cam_rclk]
 set_max_delay 5.000 -datapath_only -from [get_pins -hier -filter {NAME =~ camera/rclk_reg/Q}] -to [get_ports cam_rclk]
 set_max_delay 28.000 -datapath_only -from [get_ports {cam_data[*]}]
-# No unconditional same-edge hold check: io_sample CE is30ns after issue, next change>=64ns.
+# 单次IOB采样在发出RCLK上升沿后40ns；外部到达时间仍是预算，未做示波器测量。
 create_clock -name fifo_virtual -period 60.000
 set_input_delay -clock fifo_virtual -max 23.000 [get_ports {cam_data[*]}]
 set_input_delay -clock fifo_virtual -min 4.000 [get_ports {cam_data[*]}]
@@ -85,10 +85,10 @@ set_max_delay 20.000 -datapath_only -from [get_clocks sys_clk] -to [get_ports {c
 # Use the same 20ns LED output budget as the formal camera project; keep all camera/LCD budgets.
 set_max_delay 20.000 -datapath_only -from [get_clocks sys_clk] -to [get_ports {led[*]}]
 
-# Reader samples in IOB30ns after issued RCLK rise: external<=23ns,on-chip<=5ns.
+# 保留已验证约束：外部23ns加片内5ns共28ns，不能把28ns误写成总计5ns。
 
 # UG903: max_delay from an input INCLUDES set_input_delay.28=23 external+5 on-chip, NOT5 total.
-# -datapath_only suppresses irrelevant unconditional same-edge hold checks; CE hold margin>=34ns.
+# datapath_only避免把CE控制的晚采样当作每拍无条件采样；不据此宣称板外信号完整性。
 
 # CE-based late sampling needs no system-synchronous zero-hold compensation.
 # UG912 IOBDELAY NONE disables the default fixed ZHOLD element on these IBUFs.

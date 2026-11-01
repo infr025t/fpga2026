@@ -1,6 +1,7 @@
-# FPGA2026：VGA 20fps 测试工程
-当前工程为 [stream_video_edge_20fps](stream_video_edge_20fps/README.md)：Basys 3＋GYF-198 OV7670_FIFO＋TK040F1510/NT35510，640×480灰度视频或3×3高斯平滑＋Sobel边缘，实测约22.51fps。用户已确认20fps基本通过。本次保留当前测试实现与诊断功能，没有做代码收敛。
+# FPGA 视频处理工程
 
-构建、下载、接线与开关见[工程说明](stream_video_edge_20fps/README.md)。已上板bit位于stream_video_edge_20fps/artifacts/lcd_top_snapshot.bit。均匀横纹已由用户确认与照明频闪有关，本轮暂不处理；动态斜向刷新界线尚未独立定位，不宣称无撕裂。
+当前工程为 [stream_video_edge_20fps](stream_video_edge_20fps/README.md)：Basys 3＋OV7670_FIFO＋NT35510，独立完成 VGA 灰度显示或一次 3×3 Gaussian＋Sobel。RAW 为 640×480，EDGE 为 630×470，固定阈值 128。目录名保留，方便既有工具继续使用。
 
-[stream_video_edge](stream_video_edge/README.md)保留上一版低速基线，约1.9fps；demo/保持原样。旧工程的入口、报告和bit不代表本次20fps工程，请勿混用。
+2026-10-31 已测程序约 22.51 fps；2026-11-01 用户确认写入 Flash 后断电重启可显示 RAW/EDGE。该程序保存在 `artifacts`。2026-11-01 收敛源码已通过仿真和完整实现，新候选放在 `artifacts/consolidated_20261101/`，尚未上板，与已测 Flash 基线分开管理。[验证说明](stream_video_edge_20fps/docs/validation.md)区分历史硬件证据、当前源码检查和视觉观察。
+
+仓库保留一个当前视频工程及原样的 `demo/`。旧低速工程和一次性实验可从 Git 历史追溯。日常入口见[工程说明](stream_video_edge_20fps/README.md)，接线见[接线与使用](stream_video_edge_20fps/docs/wiring_and_use.md)。

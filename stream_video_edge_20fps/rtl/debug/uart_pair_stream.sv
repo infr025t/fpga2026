@@ -1,4 +1,5 @@
 `timescale 1ns/1ps
+// 被动串口回传：12Mbaud发送160×120配对概览；拥塞时终止诊断包并计数，不阻塞显示。
 // Passive test-only 12Mbaud paired overview. No backpressure or correction path.
 module uart_pair_stream #(parameter W=640,H=480,DEPTH=1024)(
  input wire clk,rst,start,source_valid,input wire[7:0]pixel,other,

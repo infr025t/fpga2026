@@ -1,4 +1,5 @@
 `timescale 1ns/1ps
+// 固定色条逐像素检查：仅统计偏差，不改写图像，也不用于修补实拍像素。
 // Diagnostic only; never gates/replaces/repairs functional pixel stream.
 module bars_monitor(input wire clk,rst,start,enable,pixel_valid,input wire[7:0]pixel,
  input wire[9:0]x,input wire[8:0]y,output wire[127:0]status);

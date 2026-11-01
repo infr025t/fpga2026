@@ -1,4 +1,5 @@
 `timescale 1ns/1ps
+// 通过 SCCB 配置 OV7670；保留实拍/色条选择以及曝光、增益配置能力。
 // Original SCCB write sequencer. Open-drain SIOC/SIOD need external pullups.
 // 100 MHz / (4*250) = 100 kHz. No clock-stretch support (OV7670 SCCB).
 // SCCB's ninth bit is formally don't-care; this module checks the ACK that

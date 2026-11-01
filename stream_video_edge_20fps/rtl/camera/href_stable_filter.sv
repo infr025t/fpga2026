@@ -1,4 +1,5 @@
 `timescale 1ns/1ps
+// HREF 双边稳定资格判定：抑制短毛刺，避免重复计行导致 FIFO 信用虚增。
 // Input has already crossed a two-flop synchronizer.
 // Both transitions require a sustained opposite level; a short LOW within a
 // true row cannot create an extra row-complete event.

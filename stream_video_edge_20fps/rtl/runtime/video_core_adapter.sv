@@ -1,4 +1,5 @@
 `timescale 1ns/1ps
+// 处理接口：RAW 保持 VGA；EDGE 将有效裁边坐标归一化，输出流水寄存器不反压核心。
 // RAW bypass retains full input. EDGE uses unchanged formal core, cropped5px each side.
 // No ready/backpressure path enters the numerical core.
 module video_core_adapter #(parameter W=640,H=480)(

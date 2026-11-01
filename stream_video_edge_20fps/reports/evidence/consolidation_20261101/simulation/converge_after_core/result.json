@@ -1,0 +1,56 @@
+{
+  "top": "tb_vga",
+  "passed": true,
+  "stages": [
+    {
+      "tool": "xvlog",
+      "command": [
+        "E:\\Vivado\\2025.1\\Vivado\\bin\\xvlog.bat",
+        "-sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge_20fps\\rtl\\core\\edge_core.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge_20fps\\rtl\\core\\gaussian3.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge_20fps\\rtl\\core\\row_window3.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge_20fps\\rtl\\core\\sobel3.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge_20fps\\rtl\\runtime\\video_core_adapter.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge_20fps\\sim\\tb_video_path.sv",
+        "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge_20fps\\reports\\converge_after_core\\vga_wrapper.sv"
+      ],
+      "exit": 0,
+      "seconds": 0.783,
+      "log": "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge_20fps\\reports\\converge_after_core\\xvlog-captured.log",
+      "private_job_active_processes": 0
+    },
+    {
+      "tool": "xelab",
+      "command": [
+        "E:\\Vivado\\2025.1\\Vivado\\bin\\xelab.bat",
+        "tb_vga",
+        "-s",
+        "snapshot"
+      ],
+      "exit": 0,
+      "seconds": 1.567,
+      "log": "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge_20fps\\reports\\converge_after_core\\xelab-captured.log",
+      "private_job_active_processes": 0
+    },
+    {
+      "tool": "xsim",
+      "command": [
+        "E:\\Vivado\\2025.1\\Vivado\\bin\\xsim.bat",
+        "snapshot",
+        "-runall",
+        "-f",
+        "xsim-options.txt"
+      ],
+      "exit": 0,
+      "seconds": 6.786,
+      "log": "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge_20fps\\reports\\converge_after_core\\xsim-captured.log",
+      "private_job_active_processes": 0
+    }
+  ],
+  "work_dir": "E:\\FPGA_Test_Work\\release_lcd_v04\\stream_video_edge_20fps\\reports\\converge_after_core",
+  "reason": "PASS",
+  "simulation_summary": [
+    "PASS tb_video_path Gaussian RAW/EDGE modes; gaps, full counts, EOF drain"
+  ]
+}

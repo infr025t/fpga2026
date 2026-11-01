@@ -1,4 +1,5 @@
 `timescale 1ns/1ps
+// 连续 VGA 采集：AL422B 容量不足一帧，按完整行信用边写边读；独立 WRST 管理写入周期。
 // A continuous write epoch spans multiple complete sensor fields.
 // RRST is asserted only before the first read or after explicit stop/fault.
 module camera_fifo_video #(
@@ -15,7 +16,7 @@ module camera_fifo_video #(
  localparam RI=0,WAIT_HEAD=1,READ_RESET=2,ARM=3,READ=4,DRAIN=5;
  reg[2:0]ws,rs,resets;reg[7:0]phase;
  (* ASYNC_REG="TRUE" *)reg[1:0]vs,hs;
- reg vp,hp,chp,initialized,cycle_active,field_open;
+ reg vp,hp,chp,cycle_active,field_open;
  reg[31:0]raw_high,counted_high,rows,w_total,r_total,index,timer,period_counter;
  reg[31:0]min_href,max_href,last_rows,last_read_bytes,read_at_frame_end;
  reg[9:0]next_x;reg[8:0]next_y;
@@ -26,10 +27,11 @@ module camera_fifo_video #(
  href_stable_filter #(.STABLE_CYCLES(HREF_QUALIFY_CYCLES)) hf(.clk(clk),.rst(rst),.sync_in(hs[1]),.sync_out(counted_href));
  wire rise=frame_sync&&!vp,fall=!frame_sync&&vp,raw_fall=hp&&!hs[1];
  wire row=chp&&!counted_href&&counted_high>=HREF_MIN;
- // Unsigned modular distance remains valid across32-bit counter wrap.
+ // 模32位相减计算剩余信用：修复累计计数回绕时的余量判断，不能改成有符号比较。
  wire[31:0]available=w_total-r_total;
  wire credit=available>=READ_GUARD;
  wire sample_enable=rs==READ&&cycle_active&&phase==SAMPLE_PHASE&&error==0;
+ // RRST释放前已读出首字节，必须计入 index/r_total；否则整帧Y/UV相位错一字节。
  wire prefetch_enable=ws==RUN && rs==READ_RESET && phase==0 && resets==4;
  (* IOB="TRUE" *)reg[7:0]io_sample;
  reg sample_pending,sample_odd,sample_last;reg[7:0]preceding_byte;
@@ -43,7 +45,7 @@ module camera_fifo_video #(
   pixel_valid<=0;done<=0;sample_pending<=sample_enable || prefetch_enable;
   if(rst)begin
    ws<=STOP;rs<=RI;phase<=0;rclk<=0;rrst<=0;wrst<=1;wen<=0;busy<=0;done<=0;error<=0;
-   vs<=3;hs<=0;vp<=1;hp<=0;chp<=0;initialized<=0;cycle_active<=0;field_open<=0;
+   vs<=3;hs<=0;vp<=1;hp<=0;chp<=0;cycle_active<=0;field_open<=0;
    raw_high<=0;counted_high<=0;rows<=0;w_total<=0;r_total<=0;index<=0;timer<=0;period_counter<=0;resets<=0;
    min_href<=32'hffffffff;max_href<=0;last_rows<=0;last_read_bytes<=0;read_at_frame_end<=0;
    next_x<=0;next_y<=0;pixel_x<=0;pixel_y<=0;pixel<=0;pixel_other<=0;preceding_byte<=0;
@@ -55,7 +57,8 @@ module camera_fifo_video #(
    phase<=(phase==PERIOD-1)?0:phase+1'b1;
    if(phase==PERIOD/2-1)rclk<=!rrst || (rs==READ&&cycle_active);
    if(phase==PERIOD-1)rclk<=0;
-   // Phase0 sampling consumes the prior cycle byte before admitting the next.
+   // phase0先消费上一周期字节再决定下一次读钟，保护门限必须扣除当拍消费量。
+   // 默认phase2发出RCLK上升沿，下一phase0单次IOB采样，相隔40ns；不是双次诊断采样。
    if(phase==0)cycle_active<=credit && (!sample_enable || available>READ_GUARD);
    if(busy)timer<=timer+1'b1;
    if(ws==RUN)begin
@@ -86,10 +89,11 @@ module camera_fifo_video #(
    if(start&&!busy&&!pause&&error==0)begin
     busy<=1;index<=0;next_x<=0;next_y<=0;timer<=0;
     if(ws==STOP)begin
-     ws<=PRIME_BLANK;rs<=WAIT_HEAD;wrst<=0;wen<=0;rrst<=0;initialized<=0;
+     ws<=PRIME_BLANK;rs<=WAIT_HEAD;wrst<=0;wen<=0;rrst<=0;
      w_total<=0;r_total<=0;rows<=0;field_open<=0;min_href<=32'hffffffff;max_href<=0;max_occupancy<=0;
     end else rs<=ARM;
    end
+   // 写复位跨过有效HREF，确保模块内部写时钟能采到WRST；正常跨帧不重复复位指针。
    case(ws)
     PRIME_BLANK:if(!hs[1])ws<=PRIME_WAIT;
     PRIME_WAIT:if(hs[1]&&frame_sync)begin wen<=1;ws<=PRIME_ROW;end
@@ -103,14 +107,15 @@ module camera_fifo_video #(
    if(ws==RUN)case(rs)
     WAIT_HEAD:if(w_total>=HEAD_ROWS*LINE&&phase==0)begin resets<=0;rs<=READ_RESET;end
     READ_RESET:if(phase==0)begin
-     if(resets==4)begin rrst<=1;initialized<=1;r_total<=1;index<=1;rs<=READ;cycle_active<=1;end
+     if(resets==4)begin rrst<=1;r_total<=1;index<=1;rs<=READ;cycle_active<=1;end
      else resets<=resets+1'b1;
     end
     ARM:if(phase==0&&credit)begin rs<=READ;cycle_active<=1;end
     default:begin end
    endcase
-   // Explicit pause discards only future/unclaimed bytes, after owned pixels drain.
-   if(ws==RUN&&pause&&!busy)begin ws<=STOP;wen<=0;rrst<=0;initialized<=0;rs<=RI;sample_pending<=0;end
+   // 暂停须等待当前已接纳帧排空，然后停止写入；恢复时重新建立读写指针和行信用。
+   if(ws==RUN&&pause&&!busy)begin ws<=STOP;wen<=0;rrst<=0;rs<=RI;sample_pending<=0;end
+   // 行数错误、容量超限、采集超时或帧外行：停写停读并锁存，禁止继续输出错位图像。
    if(error==0 && ((ws==RUN&&fall&&rows+(row?1:0)!=H) ||
       (ws==RUN&&available>FIFO_BYTES-LINE-128) || (busy&&timer==TIMEOUT-1) ||
       (ws==RUN&&row&&!field_open)))begin

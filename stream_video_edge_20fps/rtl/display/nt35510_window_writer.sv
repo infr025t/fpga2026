@@ -1,4 +1,5 @@
 `timescale 1ns/1ps
+// 矩形写屏：设置地址窗口后连续发送 RGB565，等待最后一个字真正发送完成。
 // Rectangular RGB565 writer. Its ready/valid source is a display-side consumer,
 // never the unbuffered numerical core. All CASET/RASET parameters are zero-
 // extended byte fields as required by NT35510, including coordinates >255.
@@ -12,6 +13,7 @@ module nt35510_window_writer #(parameter integer PANEL_W=800,PANEL_H=480)(
 );
   localparam IDLE=0,ISSUE_SETUP=1,WAIT_SETUP=2,PIXELS=3,WAIT_LAST=4;
   reg [2:0] state;
+  // 修复零间隔连续写的收尾：新字接纳与旧字完成可同拍，不能把旧完成脉冲当成最后一字完成。
   reg[1:0]outstanding;
   wire issue_word=word_valid&&word_ready;
   wire retire_word=word_done&&(outstanding!=0);reg [4:0] setup_index;

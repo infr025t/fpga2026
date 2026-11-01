@@ -1,0 +1,10 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge_20fps/rtl/camera/vsync_low_filter.sv" into library work
+INFO: [VRFC 10-311] analyzing module vsync_low_filter
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge_20fps/rtl/camera/href_stable_filter.sv" into library work
+INFO: [VRFC 10-311] analyzing module href_stable_filter
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge_20fps/rtl/camera/camera_fifo_video.sv" into library work
+INFO: [VRFC 10-311] analyzing module camera_fifo_video
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge_20fps/sim/tb_camera_video.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_camera_video
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge_20fps/reports/converge_before_camera/vga.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_vga_video

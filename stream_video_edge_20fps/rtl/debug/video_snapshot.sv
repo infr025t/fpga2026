@@ -1,4 +1,5 @@
 `timescale 1ns/1ps
+// 片上有限快照：保存同帧配对样本，经JTAG读取；不参与主处理路径流控。
 // Passive diagnostic sample: x=1,3,... and y=0,2,...; never controls video flow.
 module video_snapshot #(parameter integer W=640,H=480,BLOCK_WORDS=128,OVERVIEW=0,ROI=0,ROI_W=96,ROI_H=96)(
   input wire clk,rst,start,pixel_valid,input wire[7:0]pixel,input wire[9:0]x,input wire[8:0]y,

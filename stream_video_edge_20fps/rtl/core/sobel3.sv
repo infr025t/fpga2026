@@ -1,4 +1,5 @@
 `timescale 1ns/1ps
+// 3×3 Sobel：计算横纵梯度，以 |Gx|+|Gy| 与阈值比较输出二值边缘。
 module sobel3 #(parameter W=632,H=472,OFFSET=4)(
  input wire clk,rst,abort,in_valid,input wire[7:0]in_pixel,in_raw,
  input wire[9:0]in_x,input wire[8:0]in_y,input wire[31:0]in_frame_id,

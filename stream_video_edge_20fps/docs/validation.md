@@ -22,15 +22,24 @@ E:\Python\python.exe scripts\test_uart_pair.py uart_unique --vga
 
 Vivado 完整实现通过，WNS=0.664 ns、WHS=0.028 ns；使用 LUT 3773、FF 8877、BRAM 19（36 Kb 等效）、DSP 6。没有 DRC Error/Critical Warning；保留的工具/IP 和未使用网络警告见结果记录。
 
-候选 BIT/LTX 位于 [`artifacts/consolidated_20261101/`](../artifacts/consolidated_20261101/README.md)，BIT SHA256 为 `548373f9b1e5d90eed96ef44959fef1e0df00bc58ed775d97994ca1c5f354ec8`。本候选已临时下载至 RAM，尚未通过完整板测，未写入 Flash；默认 `program_lcd.ps1` 仍选择 `artifacts/` 父目录的已测 BIT。
+候选 BIT/LTX 位于 [`artifacts/consolidated_20261101/`](../artifacts/consolidated_20261101/README.md)，BIT SHA256 为 `548373f9b1e5d90eed96ef44959fef1e0df00bc58ed775d97994ca1c5f354ec8`。本候选已临时下载至 RAM，并通过下述有限硬件回归及用户动态观察，未写入 Flash；默认 `program_lcd.ps1` 仍选择 `artifacts/` 父目录的已测 BIT。
 
 独立屏幕测试图入口已综合通过，本次没有据此宣称完整实现或上板通过。新增通用 Flash 工具仅做模拟命令检查，历史真实 Flash 操作仍按下面的记录追溯。
 
-## 2026-11-01：收敛候选硬件复测（未完成）
+## 2026-11-01：收敛候选硬件复测（自动回归及用户动态观察通过）
 
 内部 RAW/EDGE 各 50 帧参考通过；相机 RAW 色条的连续 200 个 UART 包参考、包 CRC、帧号和丢包检查通过，约 22.5077 fps。继续监测时第 324 帧触发参考错误：前 96 行共 61440 像素不符，输入/输出 CRC 同为 `589fae6c`，正确参考为 `6df0b9b5`。重连后的锁存记录一致。
 
-用户确认该时段动过 USB 或供电，具体时刻未知，故不能归因于收敛改动，也不能据此删除失败记录。原已测 BIT 随后下载成功，重新连接后的 500 帧 RAW 色条对照通过（约 22.5077 fps）。再次下载候选前 JTAG 目标不可用，候选稳定条件复测尚未开始；相机 EDGE 色条、暂停恢复及实景动态回归尚未完成。Flash 未改写。详见[本轮硬件证据](../reports/evidence/consolidated_board_20261101/result.json)和[异常台账 A14、A23](anomaly_register.md)。
+用户确认该时段动过 USB 或供电，具体时刻未知，故不能归因于收敛改动，也不能据此删除失败记录。原已测 BIT 随后下载成功，重新连接后的 500 帧 RAW 色条对照通过（约 22.5077 fps）。期间 JTAG 多次中断；恢复连接、显式下载候选后，补测结果如下。Flash 未改写。详见[本轮硬件证据](../reports/evidence/consolidated_board_20261101/result.json)和[异常台账 A14、A23](anomaly_register.md)。
+
+补测完成：
+
+- 相机 RAW / EDGE 固定色条各 500 帧目标通过，约 22.5077 fps。RAW 硬件参考锁存与主机轮询配合，EDGE 参考由主机轮询检查，不声称逐帧全覆盖。
+- 10 轮暂停／恢复通过，每轮至少 10 帧后暂停并核对色条参考和计数。
+- 实拍 RAW / EDGE 各 600 帧目标通过，像素数与显示队列两端 CRC 一致，约 22.5077 fps；这不等于未知实景的逐像素真值校验。
+- 实拍 UART 200 连续包，头／负载 CRC 错误、诊断丢包及帧号缺口均为 0。160×120 两字节概览不能替代全帧图像验收。
+- EDGE 第一轮在检查到 598 帧后 JTAG 中断，未记通过；重连后输出已回 RAW，固件身份不确定，第二次尝试主动停止并排除。再次明确下载候选后的第三轮完成 600 帧，失败／排除记录均保留。
+- 已将候选交回实体开关控制，用户已按 RAW / EDGE 移动、遮挡、近光观察问题回复“两种模式都正常”。原第 324 帧事件在本轮补测未重现，原因仍未闭合；没有宣称永久消除故障。
 
 ## 2026-10-31：改线后历史板测
 

@@ -14,7 +14,7 @@ powershell -ExecutionPolicy Bypass -File .\program_lcd.ps1
 
 脚本使用 Vivado 2025.1，连接 Basys 3 `210183BCBF83A`，下载 `artifacts/lcd_top_snapshot.bit` 及对应 LTX，随后交回实体开关。此命令不写 Flash；断电后从已有 Flash 程序启动。
 
-已测 BIT 的 SHA256 为 `b33cd1017aa1dbe9d4aa03037e1271d05a9e84d0ce3b92a518d018da88a551e9`。`artifacts/` 父目录代表历史硬件基线。收敛后候选位于 [`artifacts/consolidated_20261101/`](artifacts/consolidated_20261101/README.md)，已通过仿真及完整实现，已进行部分板测，完整验收尚未完成；默认下载入口仍选择父目录的已测版本。
+已测 BIT 的 SHA256 为 `b33cd1017aa1dbe9d4aa03037e1271d05a9e84d0ce3b92a518d018da88a551e9`。`artifacts/` 父目录代表历史硬件基线。收敛后候选位于 [`artifacts/consolidated_20261101/`](artifacts/consolidated_20261101/README.md)，已通过仿真及完整实现，自动硬件回归通过，用户确认两种模式动态显示正常；默认下载入口仍选择父目录的已测版本。
 
 ## 从源码构建
 

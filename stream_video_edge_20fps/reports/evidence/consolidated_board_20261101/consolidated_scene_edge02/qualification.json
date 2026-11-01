@@ -1,0 +1,4 @@
+{
+  "result": "EXCLUDED_FIRMWARE_IDENTITY_UNCONFIRMED",
+  "reason": "After USB reconnect, inspection showed RAW pixels=307200 rather than previous EDGE pixels=296100; possible QSPI baseline boot. Stop requested and candidate reprogrammed before acceptance."
+}

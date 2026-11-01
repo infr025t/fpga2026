@@ -2,10 +2,10 @@
   "date": "2026-11-01",
   "source_commit": "3ed6502d7086655d36627404e89d22bad66611e5",
   "candidate_bit_sha256": "548373f9b1e5d90eed96ef44959fef1e0df00bc58ed775d97994ca1c5f354ec8",
-  "status": "INCOMPLETE_HARDWARE_CONNECTION_UNAVAILABLE",
+  "status": "BOUNDED_REGRESSION_PASS",
   "programmed": true,
   "flash_modified": false,
-  "reason": "Original baseline 500 RAW bars passed. Candidate stable-condition retest could not start because JTAG target repeatedly became unavailable. User confirmed USB recognition instability and earlier USB/power movement. Frame 324 content fault preserved; cause unresolved.",
+  "reason": "Explicit candidate programming followed by automated reference/integrity/cadence checks passed; user confirmed RAW and EDGE dynamic panel observations normal. Historical frame324 fault remains unattributed; known flicker and diagonal refresh boundary excluded from new-fault acceptance and remain unresolved.",
   "tests_completed": [
     {
       "name": "internal_raw_reference",
@@ -39,6 +39,51 @@
       "frames": 500,
       "result": "PASS",
       "fps": 22.507740411927664
+    },
+    {
+      "name": "candidate_raw_bars_stable",
+      "label": "consolidated_stable_mode2_01",
+      "result": "PASS",
+      "frames": 500,
+      "fps": 22.507710016066003,
+      "scope": "reference_and_integrity"
+    },
+    {
+      "name": "candidate_edge_bars_stable",
+      "label": "consolidated_stable_mode6_01",
+      "result": "PASS",
+      "frames": 500,
+      "fps": 22.507710016066003,
+      "scope": "reference_and_integrity"
+    },
+    {
+      "name": "candidate_scene_raw",
+      "label": "consolidated_scene_raw01",
+      "result": "PASS",
+      "frames": 600,
+      "fps": 22.507710016066003,
+      "scope": "counts_queue_crc_and_cadence_not_scene_ground_truth"
+    },
+    {
+      "name": "candidate_scene_edge",
+      "label": "consolidated_scene_edge03",
+      "result": "PASS",
+      "frames": 600,
+      "fps": 22.507710016066003,
+      "scope": "counts_queue_crc_and_cadence_not_scene_ground_truth"
+    },
+    {
+      "name": "candidate_pause_resume",
+      "result": "PASS",
+      "epochs": 10,
+      "final_frames": 110
+    },
+    {
+      "name": "candidate_scene_uart",
+      "result": "PASS",
+      "frames": 200,
+      "reference_checked": false,
+      "median_source_fps": 22.507710016066003
     }
   ],
   "planned": [
@@ -50,8 +95,34 @@
     "user visual dynamic verification"
   ],
   "connection_interruption": "First internal RAW attempt interrupted at hardware frame39 by Xicom50-38; reconnect without reset succeeded, frame count advanced.",
-  "last_successful_ram_program": "original baseline b33cd1017aa1dbe9d4aa03037e1271d05a9e84d0ce3b92a518d018da88a551e9",
+  "last_successful_ram_program": "candidate 548373f9b1e5d90eed96ef44959fef1e0df00bc58ed775d97994ca1c5f354ec8",
   "baseline_comparison": "PASS_500_RAW_BARS",
   "user_observation": "USB or power was moved during test interval; precise event time unknown",
-  "final_connection": "No hardware target in Vivado batch or GUI; GUI showed localhost (0) and target shutdown."
+  "final_connection": "Candidate physical-switch control restored successfully; Flash unchanged.",
+  "pending": [],
+  "interrupted_or_excluded_runs": [
+    {
+      "label": "consolidated_scene_edge01",
+      "last_checked_frame": 598,
+      "result": "INTERRUPTED_JTAG_LOSS"
+    },
+    {
+      "label": "consolidated_scene_edge02",
+      "result": "EXCLUDED_FIRMWARE_IDENTITY_UNCONFIRMED"
+    }
+  ],
+  "visual_observation": {
+    "source": "user",
+    "result": "RAW_AND_EDGE_NORMAL",
+    "conditions_requested": [
+      "move object",
+      "cover and uncover",
+      "near illumination"
+    ],
+    "new_tearing_gray_blocks_or_hang_reported": false,
+    "known_unresolved": [
+      "rolling dark bands",
+      "diagonal refresh boundary"
+    ]
+  }
 }

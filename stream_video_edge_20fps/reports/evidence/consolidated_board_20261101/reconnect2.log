@@ -1,0 +1,45 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Sun Nov  1 09:11:11 2026
+# Process ID         : 62440
+# Current directory  : E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge_20fps
+# Command line       : vivado.exe -mode batch -notrace -source scripts\paired_overview_hardware.tcl -log E:\FPGA_Test_Work\consolidated_board_test_20261101\reconnect2.log -journal E:\FPGA_Test_Work\consolidated_board_test_20261101\reconnect2.jou -tclargs inspect -snapshot -artifact-dir artifacts/consolidated_20261101
+# Log file           : E:/FPGA_Test_Work/consolidated_board_test_20261101/reconnect2.log
+# Journal file       : E:\FPGA_Test_Work\consolidated_board_test_20261101\reconnect2.jou
+# Running On         : StrawberryBear
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : Intel(R) Core(TM) i9-14900HX
+# CPU Frequency      : 2419 MHz
+# CPU Physical cores : 24
+# CPU Logical cores  : 32
+# Host memory        : 33953 MB
+# Swap memory        : 5387 MB
+# Total Virtual      : 39341 MB
+# Available Virtual  : 7199 MB
+#-----------------------------------------------------------
+source {scripts\paired_overview_hardware.tcl} -notrace
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2025.1.0
+  ****** Build date   : May 13 2025-12:15:27
+    **** Build number : 2025.1.1747163727
+      ** Copyright 2017-2022 Xilinx, Inc. All Rights Reserved.
+      ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183BCBF83A
+INFO: [Labtools 27-2302] Device xc7a35t (JTAG device index = 0) is programmed with a design that has 1 VIO core(s).
+INFO: [Labtools 27-1889] Uploading output probe values for VIO core [hw_vio_1]
+INSPECT status=21250215 metrics=117801176552919945093288387924898131968 camera=8735022977266894385304756622025424626951493066341477523230617799492064 performance=26960203777237721706637632406418437665701502549258493332526301694762 bars=4867778304876400902011219572817920
+PASS LCD_CORE_inspect
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Digilent/210183BCBF83A
+INFO: [Common 17-206] Exiting Vivado at Sun Nov  1 09:11:19 2026...

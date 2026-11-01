@@ -29,4 +29,4 @@
 - 保留既有project模式synth_ip提示、VIO无负载和开漏端口输入缓冲等工具警告，不宣称全日志无警告。
 - 独立屏幕测试顶层综合通过，未重新布局布线或上板。
 
-证据见[结构化结果](../reports/evidence/consolidation_20261101/result.json)。新BIT/LTX见[候选产物说明](../artifacts/consolidated_20261101/README.md)，尚未上板。原Flash的断电重启与RAW/EDGE验收仍只对应原已测bit。本次源码作为下一阶段优化基线上传main，不代表最终成品。
+证据见[结构化结果](../reports/evidence/consolidation_20261101/result.json)。新BIT/LTX见[候选产物说明](../artifacts/consolidated_20261101/README.md)；收敛提交时尚未上板，后续复测进展见[验证记录](validation.md)。原Flash的断电重启与RAW/EDGE验收仍只对应原已测bit。本次源码作为下一阶段优化基线上传main，不代表最终成品。

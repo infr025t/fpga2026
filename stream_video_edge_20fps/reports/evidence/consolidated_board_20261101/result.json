@@ -1,0 +1,57 @@
+{
+  "date": "2026-11-01",
+  "source_commit": "3ed6502d7086655d36627404e89d22bad66611e5",
+  "candidate_bit_sha256": "548373f9b1e5d90eed96ef44959fef1e0df00bc58ed775d97994ca1c5f354ec8",
+  "status": "INCOMPLETE_HARDWARE_CONNECTION_UNAVAILABLE",
+  "programmed": true,
+  "flash_modified": false,
+  "reason": "Original baseline 500 RAW bars passed. Candidate stable-condition retest could not start because JTAG target repeatedly became unavailable. User confirmed USB recognition instability and earlier USB/power movement. Frame 324 content fault preserved; cause unresolved.",
+  "tests_completed": [
+    {
+      "name": "internal_raw_reference",
+      "frames": 50,
+      "result": "PASS"
+    },
+    {
+      "name": "internal_edge_reference",
+      "frames": 50,
+      "result": "PASS"
+    },
+    {
+      "name": "camera_raw_bars_uart",
+      "frames": 200,
+      "result": "PASS",
+      "median_fps": 22.507710016066003
+    },
+    {
+      "name": "camera_raw_bars_monitor",
+      "target_frames": 500,
+      "fault_frame": 324,
+      "result": "FAIL_CONDITIONS_UNCONTROLLED",
+      "wrong_pixels": 61440,
+      "first_bad_index": 0,
+      "last_bad_index": 61439,
+      "crc32": "589fae6c",
+      "expected_crc32": "6df0b9b5"
+    },
+    {
+      "name": "original_baseline_raw_bars",
+      "frames": 500,
+      "result": "PASS",
+      "fps": 22.507740411927664
+    }
+  ],
+  "planned": [
+    "internal RAW/EDGE full output reference CRC",
+    "camera color bars RAW/EDGE reference and cadence",
+    "pause and resume",
+    "scene RAW/EDGE integrity and cadence",
+    "COM10 UART paired overview",
+    "user visual dynamic verification"
+  ],
+  "connection_interruption": "First internal RAW attempt interrupted at hardware frame39 by Xicom50-38; reconnect without reset succeeded, frame count advanced.",
+  "last_successful_ram_program": "original baseline b33cd1017aa1dbe9d4aa03037e1271d05a9e84d0ce3b92a518d018da88a551e9",
+  "baseline_comparison": "PASS_500_RAW_BARS",
+  "user_observation": "USB or power was moved during test interval; precise event time unknown",
+  "final_connection": "No hardware target in Vivado batch or GUI; GUI showed localhost (0) and target shutdown."
+}

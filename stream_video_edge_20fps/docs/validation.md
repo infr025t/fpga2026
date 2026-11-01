@@ -22,9 +22,15 @@ E:\Python\python.exe scripts\test_uart_pair.py uart_unique --vga
 
 Vivado 完整实现通过，WNS=0.664 ns、WHS=0.028 ns；使用 LUT 3773、FF 8877、BRAM 19（36 Kb 等效）、DSP 6。没有 DRC Error/Critical Warning；保留的工具/IP 和未使用网络警告见结果记录。
 
-候选 BIT/LTX 位于 [`artifacts/consolidated_20261101/`](../artifacts/consolidated_20261101/README.md)，BIT SHA256 为 `548373f9b1e5d90eed96ef44959fef1e0df00bc58ed775d97994ca1c5f354ec8`。本候选未下载至 RAM 或写入 Flash，默认 `program_lcd.ps1` 仍选择 `artifacts/` 父目录的已测 BIT。
+候选 BIT/LTX 位于 [`artifacts/consolidated_20261101/`](../artifacts/consolidated_20261101/README.md)，BIT SHA256 为 `548373f9b1e5d90eed96ef44959fef1e0df00bc58ed775d97994ca1c5f354ec8`。本候选已临时下载至 RAM，尚未通过完整板测，未写入 Flash；默认 `program_lcd.ps1` 仍选择 `artifacts/` 父目录的已测 BIT。
 
 独立屏幕测试图入口已综合通过，本次没有据此宣称完整实现或上板通过。新增通用 Flash 工具仅做模拟命令检查，历史真实 Flash 操作仍按下面的记录追溯。
+
+## 2026-11-01：收敛候选硬件复测（未完成）
+
+内部 RAW/EDGE 各 50 帧参考通过；相机 RAW 色条的连续 200 个 UART 包参考、包 CRC、帧号和丢包检查通过，约 22.5077 fps。继续监测时第 324 帧触发参考错误：前 96 行共 61440 像素不符，输入/输出 CRC 同为 `589fae6c`，正确参考为 `6df0b9b5`。重连后的锁存记录一致。
+
+用户确认该时段动过 USB 或供电，具体时刻未知，故不能归因于收敛改动，也不能据此删除失败记录。原已测 BIT 随后下载成功，重新连接后的 500 帧 RAW 色条对照通过（约 22.5077 fps）。再次下载候选前 JTAG 目标不可用，候选稳定条件复测尚未开始；相机 EDGE 色条、暂停恢复及实景动态回归尚未完成。Flash 未改写。详见[本轮硬件证据](../reports/evidence/consolidated_board_20261101/result.json)和[异常台账 A14、A23](anomaly_register.md)。
 
 ## 2026-10-31：改线后历史板测
 

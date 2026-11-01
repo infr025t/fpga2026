@@ -14,7 +14,7 @@ powershell -ExecutionPolicy Bypass -File .\program_lcd.ps1
 
 脚本使用 Vivado 2025.1，连接 Basys 3 `210183BCBF83A`，下载 `artifacts/lcd_top_snapshot.bit` 及对应 LTX，随后交回实体开关。此命令不写 Flash；断电后从已有 Flash 程序启动。
 
-已测 BIT 的 SHA256 为 `b33cd1017aa1dbe9d4aa03037e1271d05a9e84d0ce3b92a518d018da88a551e9`。`artifacts/` 父目录代表历史硬件基线。收敛后候选位于 [`artifacts/consolidated_20261101/`](artifacts/consolidated_20261101/README.md)，已通过仿真及完整实现，尚未上板；默认下载入口仍选择父目录的已测版本。
+已测 BIT 的 SHA256 为 `b33cd1017aa1dbe9d4aa03037e1271d05a9e84d0ce3b92a518d018da88a551e9`。`artifacts/` 父目录代表历史硬件基线。收敛后候选位于 [`artifacts/consolidated_20261101/`](artifacts/consolidated_20261101/README.md)，已通过仿真及完整实现，已进行部分板测，完整验收尚未完成；默认下载入口仍选择父目录的已测版本。
 
 ## 从源码构建
 
@@ -30,7 +30,7 @@ powershell -ExecutionPolicy Bypass -File .\build_lcd.ps1 -Snapshot -OutDir E:\FP
 powershell -ExecutionPolicy Bypass -File .\program_lcd.ps1 -ArtifactDir E:\FPGA_Test_Work\edge20fps_build
 ```
 
-下载新构建不会更新已有 Flash。仓库附带的收敛候选可用 `-ArtifactDir .\artifacts\consolidated_20261101` 选择，仍需另行板测。
+下载新构建不会更新已有 Flash。仓库附带的收敛候选可用 `-ArtifactDir .\artifacts\consolidated_20261101` 选择，板测进展见[验证记录](docs/validation.md)。
 
 ## Flash 工具
 
@@ -57,3 +57,5 @@ Backup/Program 使用临时 Flash 访问配置，完成后恢复 `-RestoreArtifa
 可选串口诊断通过 COM10、12 Mbaud 回传 160×120 双字节概览，禁止使用 COM15。VIO 快照、连续监测、暂停恢复和串口协议见[调试说明](docs/debug.md)。诊断不反压核心，LCD 仍显示完整分辨率。
 
 [验证说明](docs/validation.md)列出本次通过的 VGA、显示、帧接纳、源所有权与统计仿真，以及 2026-10-31 的历史板测和 2026-11-01 的 Flash 记录。本次完整实现 WNS=0.664 ns、WHS=0.028 ns，结果见[结构化证据](reports/evidence/consolidation_20261101/result.json)。仿真、实现时序、板上 CRC、面板画质分别记录；新构建不能直接继承旧 BIT 的硬件结论。当前未接 TE，也未做显示双缓冲，快速运动下的刷新界线尚未独立定位。
+
+历史及当前未解决问题集中记录在[异常台账](docs/anomaly_register.md)，包括移动暗条纹、斜向刷新分界线、采集错位和连接故障。

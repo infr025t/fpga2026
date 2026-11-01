@@ -1,0 +1,54 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Sun Nov  1 09:09:12 2026
+# Process ID         : 35312
+# Current directory  : E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge_20fps
+# Command line       : vivado.exe -mode batch -notrace -source scripts\paired_overview_hardware.tcl -log E:\FPGA_Test_Work\consolidated_board_test_20261101\reconnect.log -journal E:\FPGA_Test_Work\consolidated_board_test_20261101\reconnect.jou -tclargs inspect -snapshot -artifact-dir artifacts/consolidated_20261101
+# Log file           : E:/FPGA_Test_Work/consolidated_board_test_20261101/reconnect.log
+# Journal file       : E:\FPGA_Test_Work\consolidated_board_test_20261101\reconnect.jou
+# Running On         : StrawberryBear
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : Intel(R) Core(TM) i9-14900HX
+# CPU Frequency      : 2419 MHz
+# CPU Physical cores : 24
+# CPU Logical cores  : 32
+# Host memory        : 33953 MB
+# Swap memory        : 5387 MB
+# Total Virtual      : 39341 MB
+# Available Virtual  : 7251 MB
+#-----------------------------------------------------------
+source {scripts\paired_overview_hardware.tcl} -notrace
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2025.1
+  **** Build date : May  6 2025 at 09:15:36
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2025.1.0
+  ****** Build date   : May 13 2025-12:15:27
+    **** Build number : 2025.1.1747163727
+      ** Copyright 2017-2022 Xilinx, Inc. All Rights Reserved.
+      ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 498.195 ; gain = 0.000
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183BCBF83A
+INFO: [Labtools 27-2302] Device xc7a35t (JTAG device index = 0) is programmed with a design that has 1 VIO core(s).
+INFO: [Labtools 27-1889] Uploading output probe values for VIO core [hw_vio_1]
+INSPECT status=81330262 metrics=331654272181374940612486885314404855808 camera=1461501636990620551282746369252908412224164331520 performance=1813723531927650521490772877400907243227031996481781 bars=0
+PASS LCD_CORE_inspect
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Digilent/210183BCBF83A
+INFO: [Common 17-206] Exiting Vivado at Sun Nov  1 09:09:22 2026...

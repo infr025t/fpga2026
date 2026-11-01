@@ -1,0 +1,63 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Sun Nov  1 09:10:32 2026
+# Process ID         : 62188
+# Current directory  : E:/FPGA_Test_Work/consolidated_board_test_20261101
+# Command line       : vivado.exe -mode batch -notrace -source E:\FPGA_Test_Work\release_lcd_v04\stream_video_edge_20fps\scripts\video_monitor.tcl -log E:\FPGA_Test_Work\consolidated_board_test_20261101\consolidated_mode2_02.log -journal E:\FPGA_Test_Work\consolidated_board_test_20261101\consolidated_mode2_02.jou -tclargs consolidated_mode2_02 2 500 -snapshot -artifact-dir E:\FPGA_Test_Work\release_lcd_v04\stream_video_edge_20fps\artifacts\consolidated_20261101
+# Log file           : E:/FPGA_Test_Work/consolidated_board_test_20261101/consolidated_mode2_02.log
+# Journal file       : E:\FPGA_Test_Work\consolidated_board_test_20261101\consolidated_mode2_02.jou
+# Running On         : StrawberryBear
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : Intel(R) Core(TM) i9-14900HX
+# CPU Frequency      : 2419 MHz
+# CPU Physical cores : 24
+# CPU Logical cores  : 32
+# Host memory        : 33953 MB
+# Swap memory        : 5387 MB
+# Total Virtual      : 39341 MB
+# Available Virtual  : 7095 MB
+#-----------------------------------------------------------
+source {E:\FPGA_Test_Work\release_lcd_v04\stream_video_edge_20fps\scripts\video_monitor.tcl} -notrace
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2025.1.0
+  ****** Build date   : May 13 2025-12:15:27
+    **** Build number : 2025.1.1747163727
+      ** Copyright 2017-2022 Xilinx, Inc. All Rights Reserved.
+      ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183BCBF83A
+INFO: [Labtools 27-2302] Device xc7a35t (JTAG device index = 0) is programmed with a design that has 1 VIO core(s).
+INFO: [Labtools 27-1889] Uploading output probe values for VIO core [hw_vio_1]
+VIDEO_PROGRESS frames=25 fps=22.507740411927664
+VIDEO_PROGRESS frames=50 fps=22.507710016066003
+VIDEO_PROGRESS frames=75 fps=22.507740411927664
+VIDEO_PROGRESS frames=100 fps=22.507710016066003
+VIDEO_PROGRESS frames=125 fps=22.507740411927664
+VIDEO_PROGRESS frames=150 fps=22.507710016066003
+VIDEO_PROGRESS frames=175 fps=22.507710016066003
+VIDEO_PROGRESS frames=200 fps=22.507710016066003
+VIDEO_PROGRESS frames=225 fps=22.507710016066003
+VIDEO_PROGRESS frames=250 fps=22.507710016066003
+VIDEO_PROGRESS frames=275 fps=22.507710016066003
+VIDEO_PROGRESS frames=300 fps=22.507740411927664
+ERROR: [Xicom 50-38] xicom: Unable to connect to debug core(s) on the target device. Check cable connectivity and that the target board is powered up then use the disconnect_hw_server and connect_hw_server to re-initialize the hardware target. Use open_hw_target to re-register the hardware device.
+ERROR: [Xicom 50-38] xicom: Unable to connect to debug core(s) on the target device. Check cable connectivity and that the target board is powered up then use the disconnect_hw_server and connect_hw_server to re-initialize the hardware target. Use open_hw_target to re-register the hardware device.
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Digilent/210183BCBF83A
+Video check stopped: FPGA_ERROR
+    while executing
+"error "Video check stopped: $reason""
+    invoked from within
+"if {$reason ni {FRAME_TARGET HOST_STOP}} {error "Video check stopped: $reason"}"
+    (file "E:\FPGA_Test_Work\release_lcd_v04\stream_video_edge_20fps\scripts\video_monitor.tcl" line 99)
+INFO: [Common 17-206] Exiting Vivado at Sun Nov  1 09:10:58 2026...

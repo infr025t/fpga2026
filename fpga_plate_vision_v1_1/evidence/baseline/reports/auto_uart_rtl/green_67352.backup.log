@@ -1,0 +1,37 @@
+#-----------------------------------------------------------
+# xsim v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Sun Nov  1 15:24:44 2026
+# Process ID         : 67352
+# Current directory  : E:/FPGA_Test_Work/plate_autonomous_board_20261101/reports/auto_uart_rtl
+# Command line       : xsim.exe -log green.log -mode tcl -source {xsim.dir/auto_uart_tb/xsim_script.tcl}
+# Log file           : E:/FPGA_Test_Work/plate_autonomous_board_20261101/reports/auto_uart_rtl/green.log
+# Journal file       : E:/FPGA_Test_Work/plate_autonomous_board_20261101/reports/auto_uart_rtl\xsim.jou
+# Running On         : StrawberryBear
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : Intel(R) Core(TM) i9-14900HX
+# CPU Frequency      : 2419 MHz
+# CPU Physical cores : 24
+# CPU Logical cores  : 32
+# Host memory        : 33953 MB
+# Swap memory        : 8640 MB
+# Total Virtual      : 42594 MB
+# Available Virtual  : 7592 MB
+#-----------------------------------------------------------
+source xsim.dir/auto_uart_tb/xsim_script.tcl
+# xsim {auto_uart_tb} -autoloadwcfg -tclbatch {run.tcl}
+Time resolution is 1 ps
+source run.tcl
+## run all
+DROP t=21685585000 kind=1 pos=30 fifo=17
+DROP t=21940815000 kind=1 pos=2149 fifo=2048
+DROP t=25243695000 kind=2 pos=1 fifo=0
+DROP t=27864035000 kind=3 pos=17 fifo=15
+DROP t=27984355000 kind=1 pos=20 fifo=19
+PASS ALL auto UART packets=10 dropped=5
+$finish called at time : 28154366 ns : File "E:/FPGA_Test_Work/plate_autonomous_board_20261101/sim/tb_plate_auto_uart.sv" Line 78
+## quit
+INFO: [Common 17-206] Exiting xsim at Sun Nov  1 15:24:47 2026...

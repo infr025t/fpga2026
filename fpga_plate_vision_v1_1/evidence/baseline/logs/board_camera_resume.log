@@ -1,0 +1,11 @@
+{"frame_id": 6154, "passed": true, "hardware_prediction": "BD", "errors": []}
+{"frame_id": 6157, "passed": true, "hardware_prediction": "BD", "errors": []}
+{"frame_id": 6160, "passed": true, "hardware_prediction": "BD", "errors": []}
+{"frame_id": 6163, "passed": true, "hardware_prediction": "BD", "errors": []}
+{"frame_id": 6166, "passed": true, "hardware_prediction": "BD", "errors": []}
+{"frame_id": 6169, "passed": true, "hardware_prediction": "BD", "errors": []}
+{"frame_id": 6172, "passed": true, "hardware_prediction": "BD", "errors": []}
+{"frame_id": 6175, "passed": true, "hardware_prediction": "BD", "errors": []}
+{"frame_id": 6178, "passed": true, "hardware_prediction": "BD", "errors": []}
+{"frame_id": 6181, "passed": true, "hardware_prediction": "BD", "errors": []}
+{"passed": true, "requested_frames": 10, "captured_complete_frames": 10, "verified_frames": 10, "mismatched_frames": 0, "verified_characters": 20, "groups": {"epochs": 1, "complete_groups": 10, "incomplete_groups": 1, "invalid_groups": 0, "evicted_groups": 0, "peak_pending_groups": 2, "observed_source_frame_gaps": 18, "packets": 54}, "parser": {"valid_packets": 54, "rejected_candidates": 0, "discarded_bytes": 0, "truncated_bytes": 1828}, "bytes_received": 219056, "timed_out": false, "capture_error": null, "capture_seconds": 1.5519093999173492, "total_seconds": 1.6821769000962377, "model_sha256": "179d6d9b9a4e2229c152770152fe6c8d71ff924af5d9da06132debd730cf4645", "model_error": null, "source": "COM10@12000000", "read_only": true, "scope": "Captured complete groups only; exact fixed-ROI integer-reference equivalence; not recognition accuracy on arbitrary plates", "frames": ["frames\\e000_f0000006154\\result.json", "frames\\e000_f0000006157\\result.json", "frames\\e000_f0000006160\\result.json", "frames\\e000_f0000006163\\result.json", "frames\\e000_f0000006166\\result.json", "frames\\e000_f0000006169\\result.json", "frames\\e000_f0000006172\\result.json", "frames\\e000_f0000006175\\result.json", "frames\\e000_f0000006178\\result.json", "frames\\e000_f0000006181\\result.json"]}

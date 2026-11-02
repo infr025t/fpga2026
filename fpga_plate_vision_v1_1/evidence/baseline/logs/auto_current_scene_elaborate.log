@@ -1,0 +1,25 @@
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: E:/Vivado/2025.1/Vivado/bin/unwrapped/win64.o/xelab.exe tb_auto_current_scene -s auto_current_scene_snapshot 
+Multi-threading is on. Using 30 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3645] port 'frame_valid' remains unconnected for this instance [E:/FPGA_Test_Work/plate_autonomous_board_20261101/rtl/plate_recognition_subsystem.sv:51]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.char_segmenter
+Compiling module work.u32_div
+Compiling module work.char_normalizer(ENABLE_SCAN=1)
+Compiling module work.cnn_weight_rom
+Compiling module work.cnn_core
+Compiling module work.uart_fast_rx
+Compiling module work.uart_fast_tx
+Compiling module work.norm_uart_bridge
+Compiling module work.plate_auto_controller(ROI_Y0=8'b...
+Compiling module work.plate_auto_uart
+Compiling module work.plate_recognition_subsystem(ROI_...
+Compiling module work.tb_auto_current_scene
+Built simulation snapshot auto_current_scene_snapshot

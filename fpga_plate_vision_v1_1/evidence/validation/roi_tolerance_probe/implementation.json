@@ -1,0 +1,29 @@
+{
+  "build": "engineering_03",
+  "wns_initial_ns": -0.069,
+  "tns_initial_ns": -0.091,
+  "wns_final_ns": 0.029,
+  "whs_final_ns": 0.05,
+  "tns_final_ns": 0,
+  "ths_final_ns": 0,
+  "utilization_row": "| lcd_top                                               |                                                (top) |      15593 |      14066 |    1492 |   35 | 18895 |     40 |      9 |          9 |",
+  "roi_module": {
+    "lut": 64,
+    "ff": 62,
+    "bram": 0,
+    "dsp": 0
+  },
+  "source_mismatches": [],
+  "hashes": {
+    "autonomous_board.bit": "8d2d8ed5c144a5d1618daad8c18fdd1ae9c5a99fb4e24623f98238f58167efae",
+    "autonomous_board.ltx": "5843c174a9bedfaa714babdc12e381b0b198eb46743295feaf486b77c2eeeeb3",
+    "sources/manifest.json": "afb8c3375308e1356f36ef490bb8188fb6bc91a32a72f525b0da4627c3c461a7",
+    "timing.rpt": "7cfb5e9ba656fd64d3babf1ebc7f842ba57ad2944d5609aa5da3a4ad19f4f451",
+    "timing_refined.rpt": "bda9e43ef3321f3e4b6bd4c1088f5fd6176d22ba69bdc06c7012ba71c5dcf42b",
+    "utilization_refined.rpt": "7010dc3d7c7584ba5f272cc38467fa8dcd88fd2f29c2e946e9c2df0546fa4bd5",
+    "drc_refined.rpt": "897904ecafbd7341e0f80296b21c3be1f7eefb4b5620feae36c45a4d0bd661c2",
+    "check_timing_refined.rpt": "80f56fd7d5e030e3417c0234ab1d654823f9e4551edc7803090b460964822019",
+    "refine.log": "496ecac5c63ecabefe2bfd55adb22028208eed57c5afddeb47d8084a69a03e15"
+  },
+  "scope": "Display-only ROI; detector/CNN and camera timings unchanged"
+}

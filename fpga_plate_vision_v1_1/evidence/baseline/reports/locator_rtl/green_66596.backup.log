@@ -1,0 +1,52 @@
+#-----------------------------------------------------------
+# xsim v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Sun Nov  1 16:51:40 2026
+# Process ID         : 66596
+# Current directory  : E:/FPGA_Test_Work/plate_autonomous_board_20261101/reports/locator_rtl
+# Command line       : xsim.exe -log green.log -mode tcl -source {xsim.dir/locator_tb/xsim_script.tcl}
+# Log file           : E:/FPGA_Test_Work/plate_autonomous_board_20261101/reports/locator_rtl/green.log
+# Journal file       : E:/FPGA_Test_Work/plate_autonomous_board_20261101/reports/locator_rtl\xsim.jou
+# Running On         : StrawberryBear
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : Intel(R) Core(TM) i9-14900HX
+# CPU Frequency      : 2419 MHz
+# CPU Physical cores : 24
+# CPU Logical cores  : 32
+# Host memory        : 33953 MB
+# Swap memory        : 8640 MB
+# Total Virtual      : 42594 MB
+# Available Virtual  : 6251 MB
+#-----------------------------------------------------------
+source xsim.dir/locator_tb/xsim_script.tcl
+# xsim {locator_tb} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+PASS locator shift_0_0 cycles=115441
+PASS locator shift_0_24 cycles=115441
+PASS locator shift_0_52 cycles=115441
+PASS locator shift_8_0 cycles=115441
+PASS locator shift_8_24 cycles=115441
+PASS locator shift_8_52 cycles=115441
+PASS locator shift_14_0 cycles=115441
+PASS locator shift_14_24 cycles=115441
+PASS locator shift_14_52 cycles=115441
+PASS locator blank0 cycles=57601
+PASS locator blank90 cycles=57601
+PASS locator blank255 cycles=57601
+PASS locator top_clip cycles=115441
+PASS locator bottom_clip cycles=115441
+PASS locator too_tall cycles=115441
+PASS locator current_roi_auto_100_0 cycles=115441
+PASS locator current_roi_auto_100_1 cycles=115441
+PASS locator current_roi_precheck_0 cycles=115441
+PASS locator current_roi_precheck_1 cycles=115441
+PASS locator osd_board_20_0 cycles=115441
+PASS locator osd_board_20_1 cycles=115441
+PASS ALL locator RTL 21 cases
+$finish called at time : 22508780 ns : File "E:/FPGA_Test_Work/plate_autonomous_board_20261101/sim/tb_plate_region_locator.sv" Line 26
+exit
+INFO: [Common 17-206] Exiting xsim at Sun Nov  1 16:51:44 2026...

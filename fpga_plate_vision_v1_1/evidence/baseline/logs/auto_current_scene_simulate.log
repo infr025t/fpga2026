@@ -1,0 +1,22 @@
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Sun Nov  1 15:48:11 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/auto_current_scene_snapshot/xsim_script.tcl
+# xsim {auto_current_scene_snapshot} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+RESULT frame_id=1 chars=7 cycles=14147299 skipped=3
+RESULT frame_id=5 chars=0 cycles=6707065 skipped=4
+PASS tb_auto_current_scene autonomous real workers, full raster, seven characters, blank frame, skipped source frames
+$finish called at time : 222244220 ns : File "E:/FPGA_Test_Work/plate_autonomous_board_20261101/sim/tb_auto_current_scene.sv" Line 71
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:00:59 . Memory (MB): peak = 167.211 ; gain = 0.000
+exit
+INFO: xsimkernel Simulation Memory Usage: 12956 KB (Peak: 12956 KB), Simulation CPU Usage: 57858 ms
+INFO: [Common 17-206] Exiting xsim at Sun Nov  1 15:49:12 2026...
+PASS stable_sources auto_current_scene

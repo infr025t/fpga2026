@@ -1,0 +1,995 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Sun Nov  1 20:26:49 2026
+# Process ID         : 69008
+# Current directory  : E:/FPGA_Test_Work/plate_recognition_engineering
+# Command line       : vivado.exe -mode batch -source scripts/check_display_modes.tcl -log logs/display_modes.log -journal logs/display_modes.jou -tclargs build/engineering_02
+# Log file           : E:/FPGA_Test_Work/plate_recognition_engineering/logs/display_modes.log
+# Journal file       : E:/FPGA_Test_Work/plate_recognition_engineering\logs/display_modes.jou
+# Running On         : StrawberryBear
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : Intel(R) Core(TM) i9-14900HX
+# CPU Frequency      : 2419 MHz
+# CPU Physical cores : 24
+# CPU Logical cores  : 32
+# Host memory        : 33953 MB
+# Swap memory        : 9721 MB
+# Total Virtual      : 43675 MB
+# Available Virtual  : 8762 MB
+#-----------------------------------------------------------
+source scripts/check_display_modes.tcl
+# set script_root [file dirname [info script]]
+# set build_dir [file normalize [file join $script_root .. build engineering_02]]
+# if {[llength $argv]} {set build_dir [file normalize [lindex $argv 0]]}
+# foreach mode_name {raw edge internal auto} {
+#  puts "MODE_BEGIN $mode_name"
+#  set argv [list $mode_name $build_dir]
+#  source [file join $script_root hardware.tcl]
+#  after 1000
+#  foreach sample_id {1 2} {
+#   puts "MODE_SAMPLE $mode_name $sample_id"
+#   set argv [list status $build_dir]
+#   source [file join $script_root hardware.tcl]
+#   after 1000
+#  }
+#  puts "MODE_END $mode_name"
+# }
+MODE_BEGIN raw
+## set root [file normalize [file join [file dirname [info script]] ..]]
+## set build [file join $root build engineering_02]
+## if {[llength $argv]>1} {set build [file normalize [lindex $argv 1]]}
+## set action [lindex $argv 0]
+## if {$action ni {probe program camera cnn auto pair internal edge raw physical status}} {error "Expected probe/program/auto/pair/cnn/internal/edge/raw/physical/status"}
+## open_hw_manager
+## connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2025.1.0
+  ****** Build date   : May 13 2025-12:15:27
+    **** Build number : 2025.1.1747163727
+      ** Copyright 2017-2022 Xilinx, Inc. All Rights Reserved.
+      ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+
+## try {
+##  set targets [get_hw_targets -filter {NAME =~ *210183BCBF83A}]
+##  if {[llength $targets]!=1} {error "Expected Basys3 210183BCBF83A"}
+##  current_hw_target [lindex $targets 0]
+##  set_property PARAM.FREQUENCY 3000000 [current_hw_target]
+##  open_hw_target
+##  set dev [get_hw_devices xc7a35t_0]
+##  if {[llength $dev]!=1} {error "Expected XC7A35T"}
+##  current_hw_device $dev
+##  if {$action eq {probe}} {puts "PASS BOARD_PRESENT"} else {
+##   set_property PROBES.FILE [file join $build autonomous_board.ltx] $dev
+##   if {$action eq {program}} {
+##    set_property PROGRAM.FILE [file join $build autonomous_board.bit] $dev
+##    program_hw_devices $dev
+##   }
+##   refresh_hw_device $dev
+##   set vio [get_hw_vios -of_objects $dev]
+##   if {[llength $vio]!=1} {error "Expected one VIO"}
+##   proc drive {port value} {
+##    global vio
+##    set p [get_hw_probes -of_objects $vio -filter "TYPE == vio_output && PROBE_PORT == $port"]
+##    if {[llength $p]!=1} {error "Expected complete output probe"}
+##    set_property OUTPUT_VALUE_RADIX HEX $p
+##    set_property OUTPUT_VALUE [format %0*x [expr {([get_property WIDTH $p]+3)/4}] $value] $p
+##    commit_hw_vio $p
+##   }
+##   if {$action in {cnn camera auto pair internal edge raw}} {
+##    set controls [dict create cnn 0x2000 camera 0x1000 pair 0x1000 auto 0x0010 internal 1 edge 8 raw 0]
+##    drive 0 [dict get $controls $action];drive 1 1;after 100
+##   }
+##   if {$action eq {physical}} {drive 1 0}
+##   set input_probes [get_hw_probes -of_objects $vio -filter {TYPE == vio_input}]
+##   set_property INPUT_VALUE_RADIX HEX $input_probes
+##   refresh_hw_vio $vio
+##   after 50
+##   refresh_hw_vio $vio
+##   foreach p [get_hw_probes -of_objects $vio -filter {TYPE == vio_input}] {
+##    puts "PROBE [get_property PROBE_PORT $p] [get_property PROBE_PORT_BITS $p] [get_property INPUT_VALUE $p]"
+##   }
+##   puts "PASS HW_ACTION $action"
+##  }
+## } finally {catch {close_hw_target};catch {disconnect_hw_server};catch {close_hw_manager}}
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183BCBF83A
+INFO: [Labtools 27-2302] Device xc7a35t (JTAG device index = 0) is programmed with a design that has 1 VIO core(s).
+INFO: [Labtools 27-1889] Uploading output probe values for VIO core [hw_vio_1]
+PROBE 7 16 0000000000000000000000000000
+PROBE 1 0 000005540000a00000001bc800001bc700095f800043cb2100096000000001e0
+PROBE 2 0 db704488db7044880004b0000004b000
+PROBE 3 0 000000000000a0000000055400000554000005540043cb210043cb240043cb1e
+PROBE 0 0 0554001e
+PROBE 8 0 00000000000000000000000000000000
+PROBE 5 0 0000000000000000000000000000000000000000000000000000000000000000
+PROBE 4 0 0000000000000000000000000000000000000000000000000000000000000000
+PROBE 6 0 0aa42580
+PROBE 7 0 0000
+PASS HW_ACTION raw
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Digilent/210183BCBF83A
+MODE_SAMPLE raw 1
+## set root [file normalize [file join [file dirname [info script]] ..]]
+## set build [file join $root build engineering_02]
+## if {[llength $argv]>1} {set build [file normalize [lindex $argv 1]]}
+## set action [lindex $argv 0]
+## if {$action ni {probe program camera cnn auto pair internal edge raw physical status}} {error "Expected probe/program/auto/pair/cnn/internal/edge/raw/physical/status"}
+## open_hw_manager
+## connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2025.1.0
+  ****** Build date   : May 13 2025-12:15:27
+    **** Build number : 2025.1.1747163727
+      ** Copyright 2017-2022 Xilinx, Inc. All Rights Reserved.
+      ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+
+## try {
+##  set targets [get_hw_targets -filter {NAME =~ *210183BCBF83A}]
+##  if {[llength $targets]!=1} {error "Expected Basys3 210183BCBF83A"}
+##  current_hw_target [lindex $targets 0]
+##  set_property PARAM.FREQUENCY 3000000 [current_hw_target]
+##  open_hw_target
+##  set dev [get_hw_devices xc7a35t_0]
+##  if {[llength $dev]!=1} {error "Expected XC7A35T"}
+##  current_hw_device $dev
+##  if {$action eq {probe}} {puts "PASS BOARD_PRESENT"} else {
+##   set_property PROBES.FILE [file join $build autonomous_board.ltx] $dev
+##   if {$action eq {program}} {
+##    set_property PROGRAM.FILE [file join $build autonomous_board.bit] $dev
+##    program_hw_devices $dev
+##   }
+##   refresh_hw_device $dev
+##   set vio [get_hw_vios -of_objects $dev]
+##   if {[llength $vio]!=1} {error "Expected one VIO"}
+##   proc drive {port value} {
+##    global vio
+##    set p [get_hw_probes -of_objects $vio -filter "TYPE == vio_output && PROBE_PORT == $port"]
+##    if {[llength $p]!=1} {error "Expected complete output probe"}
+##    set_property OUTPUT_VALUE_RADIX HEX $p
+##    set_property OUTPUT_VALUE [format %0*x [expr {([get_property WIDTH $p]+3)/4}] $value] $p
+##    commit_hw_vio $p
+##   }
+##   if {$action in {cnn camera auto pair internal edge raw}} {
+##    set controls [dict create cnn 0x2000 camera 0x1000 pair 0x1000 auto 0x0010 internal 1 edge 8 raw 0]
+##    drive 0 [dict get $controls $action];drive 1 1;after 100
+##   }
+##   if {$action eq {physical}} {drive 1 0}
+##   set input_probes [get_hw_probes -of_objects $vio -filter {TYPE == vio_input}]
+##   set_property INPUT_VALUE_RADIX HEX $input_probes
+##   refresh_hw_vio $vio
+##   after 50
+##   refresh_hw_vio $vio
+##   foreach p [get_hw_probes -of_objects $vio -filter {TYPE == vio_input}] {
+##    puts "PROBE [get_property PROBE_PORT $p] [get_property PROBE_PORT_BITS $p] [get_property INPUT_VALUE $p]"
+##   }
+##   puts "PASS HW_ACTION $action"
+##  }
+## } finally {catch {close_hw_target};catch {disconnect_hw_server};catch {close_hw_manager}}
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183BCBF83A
+INFO: [Labtools 27-2302] Device xc7a35t (JTAG device index = 0) is programmed with a design that has 1 VIO core(s).
+INFO: [Labtools 27-1889] Uploading output probe values for VIO core [hw_vio_1]
+PROBE 7 16 0000000000000000000000000000
+PROBE 1 0 000005a80000a00000001bc800001bc700095f800043cb2100096000000001e0
+PROBE 2 0 81dfc64f81dfc64f0004b0000004b000
+PROBE 3 0 000000000000a000000005a8000005a8000005a80043cb210043cb240043cb1e
+PROBE 0 0 05a8001e
+PROBE 8 0 00000000000000000000000000000000
+PROBE 5 0 0000000000000000000000000000000000000000000000000000000000000000
+PROBE 4 0 0000000000000000000000000000000000000000000000000000000000000000
+PROBE 6 0 15240ca3
+PROBE 7 0 0000
+PASS HW_ACTION status
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Digilent/210183BCBF83A
+MODE_SAMPLE raw 2
+## set root [file normalize [file join [file dirname [info script]] ..]]
+## set build [file join $root build engineering_02]
+## if {[llength $argv]>1} {set build [file normalize [lindex $argv 1]]}
+## set action [lindex $argv 0]
+## if {$action ni {probe program camera cnn auto pair internal edge raw physical status}} {error "Expected probe/program/auto/pair/cnn/internal/edge/raw/physical/status"}
+## open_hw_manager
+## connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2025.1.0
+  ****** Build date   : May 13 2025-12:15:27
+    **** Build number : 2025.1.1747163727
+      ** Copyright 2017-2022 Xilinx, Inc. All Rights Reserved.
+      ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+
+## try {
+##  set targets [get_hw_targets -filter {NAME =~ *210183BCBF83A}]
+##  if {[llength $targets]!=1} {error "Expected Basys3 210183BCBF83A"}
+##  current_hw_target [lindex $targets 0]
+##  set_property PARAM.FREQUENCY 3000000 [current_hw_target]
+##  open_hw_target
+##  set dev [get_hw_devices xc7a35t_0]
+##  if {[llength $dev]!=1} {error "Expected XC7A35T"}
+##  current_hw_device $dev
+##  if {$action eq {probe}} {puts "PASS BOARD_PRESENT"} else {
+##   set_property PROBES.FILE [file join $build autonomous_board.ltx] $dev
+##   if {$action eq {program}} {
+##    set_property PROGRAM.FILE [file join $build autonomous_board.bit] $dev
+##    program_hw_devices $dev
+##   }
+##   refresh_hw_device $dev
+##   set vio [get_hw_vios -of_objects $dev]
+##   if {[llength $vio]!=1} {error "Expected one VIO"}
+##   proc drive {port value} {
+##    global vio
+##    set p [get_hw_probes -of_objects $vio -filter "TYPE == vio_output && PROBE_PORT == $port"]
+##    if {[llength $p]!=1} {error "Expected complete output probe"}
+##    set_property OUTPUT_VALUE_RADIX HEX $p
+##    set_property OUTPUT_VALUE [format %0*x [expr {([get_property WIDTH $p]+3)/4}] $value] $p
+##    commit_hw_vio $p
+##   }
+##   if {$action in {cnn camera auto pair internal edge raw}} {
+##    set controls [dict create cnn 0x2000 camera 0x1000 pair 0x1000 auto 0x0010 internal 1 edge 8 raw 0]
+##    drive 0 [dict get $controls $action];drive 1 1;after 100
+##   }
+##   if {$action eq {physical}} {drive 1 0}
+##   set input_probes [get_hw_probes -of_objects $vio -filter {TYPE == vio_input}]
+##   set_property INPUT_VALUE_RADIX HEX $input_probes
+##   refresh_hw_vio $vio
+##   after 50
+##   refresh_hw_vio $vio
+##   foreach p [get_hw_probes -of_objects $vio -filter {TYPE == vio_input}] {
+##    puts "PROBE [get_property PROBE_PORT $p] [get_property PROBE_PORT_BITS $p] [get_property INPUT_VALUE $p]"
+##   }
+##   puts "PASS HW_ACTION $action"
+##  }
+## } finally {catch {close_hw_target};catch {disconnect_hw_server};catch {close_hw_manager}}
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183BCBF83A
+INFO: [Labtools 27-2302] Device xc7a35t (JTAG device index = 0) is programmed with a design that has 1 VIO core(s).
+INFO: [Labtools 27-1889] Uploading output probe values for VIO core [hw_vio_1]
+PROBE 7 16 0000000000000000000000000000
+PROBE 1 0 000005fb0000a00000001bc800001bc700095f800043cb2000096000000001e0
+PROBE 2 0 6cabbab66cabbab60004b0000004b000
+PROBE 3 0 000000000000a000000005fb000005fb000005fb0043cb200043cb240043cb24
+PROBE 0 0 05fb001e
+PROBE 8 0 00000000000000000000000000000000
+PROBE 5 0 0000000000000000000000000000000000000000000000000000000000000000
+PROBE 4 0 0000000000000000000000000000000000000000000000000000000000000000
+PROBE 6 0 1f8438e0
+PROBE 7 0 0000
+PASS HW_ACTION status
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Digilent/210183BCBF83A
+MODE_END raw
+MODE_BEGIN edge
+## set root [file normalize [file join [file dirname [info script]] ..]]
+## set build [file join $root build engineering_02]
+## if {[llength $argv]>1} {set build [file normalize [lindex $argv 1]]}
+## set action [lindex $argv 0]
+## if {$action ni {probe program camera cnn auto pair internal edge raw physical status}} {error "Expected probe/program/auto/pair/cnn/internal/edge/raw/physical/status"}
+## open_hw_manager
+## connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2025.1.0
+  ****** Build date   : May 13 2025-12:15:27
+    **** Build number : 2025.1.1747163727
+      ** Copyright 2017-2022 Xilinx, Inc. All Rights Reserved.
+      ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+
+## try {
+##  set targets [get_hw_targets -filter {NAME =~ *210183BCBF83A}]
+##  if {[llength $targets]!=1} {error "Expected Basys3 210183BCBF83A"}
+##  current_hw_target [lindex $targets 0]
+##  set_property PARAM.FREQUENCY 3000000 [current_hw_target]
+##  open_hw_target
+##  set dev [get_hw_devices xc7a35t_0]
+##  if {[llength $dev]!=1} {error "Expected XC7A35T"}
+##  current_hw_device $dev
+##  if {$action eq {probe}} {puts "PASS BOARD_PRESENT"} else {
+##   set_property PROBES.FILE [file join $build autonomous_board.ltx] $dev
+##   if {$action eq {program}} {
+##    set_property PROGRAM.FILE [file join $build autonomous_board.bit] $dev
+##    program_hw_devices $dev
+##   }
+##   refresh_hw_device $dev
+##   set vio [get_hw_vios -of_objects $dev]
+##   if {[llength $vio]!=1} {error "Expected one VIO"}
+##   proc drive {port value} {
+##    global vio
+##    set p [get_hw_probes -of_objects $vio -filter "TYPE == vio_output && PROBE_PORT == $port"]
+##    if {[llength $p]!=1} {error "Expected complete output probe"}
+##    set_property OUTPUT_VALUE_RADIX HEX $p
+##    set_property OUTPUT_VALUE [format %0*x [expr {([get_property WIDTH $p]+3)/4}] $value] $p
+##    commit_hw_vio $p
+##   }
+##   if {$action in {cnn camera auto pair internal edge raw}} {
+##    set controls [dict create cnn 0x2000 camera 0x1000 pair 0x1000 auto 0x0010 internal 1 edge 8 raw 0]
+##    drive 0 [dict get $controls $action];drive 1 1;after 100
+##   }
+##   if {$action eq {physical}} {drive 1 0}
+##   set input_probes [get_hw_probes -of_objects $vio -filter {TYPE == vio_input}]
+##   set_property INPUT_VALUE_RADIX HEX $input_probes
+##   refresh_hw_vio $vio
+##   after 50
+##   refresh_hw_vio $vio
+##   foreach p [get_hw_probes -of_objects $vio -filter {TYPE == vio_input}] {
+##    puts "PROBE [get_property PROBE_PORT $p] [get_property PROBE_PORT_BITS $p] [get_property INPUT_VALUE $p]"
+##   }
+##   puts "PASS HW_ACTION $action"
+##  }
+## } finally {catch {close_hw_target};catch {disconnect_hw_server};catch {close_hw_manager}}
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183BCBF83A
+INFO: [Labtools 27-2302] Device xc7a35t (JTAG device index = 0) is programmed with a design that has 1 VIO core(s).
+INFO: [Labtools 27-1889] Uploading output probe values for VIO core [hw_vio_1]
+PROBE 7 16 0000000000000000000000000000
+PROBE 1 0 000006480000a00000001bc800001bc700095f800043cb2100096000000001e0
+PROBE 2 0 b0fe8444b0fe8444000484a4000484a4
+PROBE 3 0 000000000000a0000000064900000648000006480043cb2100c6fe510043cb24
+PROBE 0 0 0649002f
+PROBE 8 0 00000000000000000000000000000000
+PROBE 5 0 0000000000000000000000000000000000000000000000000000000000000000
+PROBE 4 0 0000000000000000000000000000000000000000000000000000000000000000
+PROBE 6 0 0922485e
+PROBE 7 0 0000
+PASS HW_ACTION edge
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Digilent/210183BCBF83A
+MODE_SAMPLE edge 1
+## set root [file normalize [file join [file dirname [info script]] ..]]
+## set build [file join $root build engineering_02]
+## if {[llength $argv]>1} {set build [file normalize [lindex $argv 1]]}
+## set action [lindex $argv 0]
+## if {$action ni {probe program camera cnn auto pair internal edge raw physical status}} {error "Expected probe/program/auto/pair/cnn/internal/edge/raw/physical/status"}
+## open_hw_manager
+## connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2025.1.0
+  ****** Build date   : May 13 2025-12:15:27
+    **** Build number : 2025.1.1747163727
+      ** Copyright 2017-2022 Xilinx, Inc. All Rights Reserved.
+      ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+
+## try {
+##  set targets [get_hw_targets -filter {NAME =~ *210183BCBF83A}]
+##  if {[llength $targets]!=1} {error "Expected Basys3 210183BCBF83A"}
+##  current_hw_target [lindex $targets 0]
+##  set_property PARAM.FREQUENCY 3000000 [current_hw_target]
+##  open_hw_target
+##  set dev [get_hw_devices xc7a35t_0]
+##  if {[llength $dev]!=1} {error "Expected XC7A35T"}
+##  current_hw_device $dev
+##  if {$action eq {probe}} {puts "PASS BOARD_PRESENT"} else {
+##   set_property PROBES.FILE [file join $build autonomous_board.ltx] $dev
+##   if {$action eq {program}} {
+##    set_property PROGRAM.FILE [file join $build autonomous_board.bit] $dev
+##    program_hw_devices $dev
+##   }
+##   refresh_hw_device $dev
+##   set vio [get_hw_vios -of_objects $dev]
+##   if {[llength $vio]!=1} {error "Expected one VIO"}
+##   proc drive {port value} {
+##    global vio
+##    set p [get_hw_probes -of_objects $vio -filter "TYPE == vio_output && PROBE_PORT == $port"]
+##    if {[llength $p]!=1} {error "Expected complete output probe"}
+##    set_property OUTPUT_VALUE_RADIX HEX $p
+##    set_property OUTPUT_VALUE [format %0*x [expr {([get_property WIDTH $p]+3)/4}] $value] $p
+##    commit_hw_vio $p
+##   }
+##   if {$action in {cnn camera auto pair internal edge raw}} {
+##    set controls [dict create cnn 0x2000 camera 0x1000 pair 0x1000 auto 0x0010 internal 1 edge 8 raw 0]
+##    drive 0 [dict get $controls $action];drive 1 1;after 100
+##   }
+##   if {$action eq {physical}} {drive 1 0}
+##   set input_probes [get_hw_probes -of_objects $vio -filter {TYPE == vio_input}]
+##   set_property INPUT_VALUE_RADIX HEX $input_probes
+##   refresh_hw_vio $vio
+##   after 50
+##   refresh_hw_vio $vio
+##   foreach p [get_hw_probes -of_objects $vio -filter {TYPE == vio_input}] {
+##    puts "PROBE [get_property PROBE_PORT $p] [get_property PROBE_PORT_BITS $p] [get_property INPUT_VALUE $p]"
+##   }
+##   puts "PASS HW_ACTION $action"
+##  }
+## } finally {catch {close_hw_target};catch {disconnect_hw_server};catch {close_hw_manager}}
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183BCBF83A
+INFO: [Labtools 27-2302] Device xc7a35t (JTAG device index = 0) is programmed with a design that has 1 VIO core(s).
+INFO: [Labtools 27-1889] Uploading output probe values for VIO core [hw_vio_1]
+PROBE 7 16 0000000000000000000000000000
+PROBE 1 0 000006980000a00000001bc800001bc700095f800043cb2100096000000001e0
+PROBE 2 0 4c4efc534c4efc53000484a4000484a4
+PROBE 3 0 000000000000a0000000069800000698000006980043cb2100c6fe510043cb1e
+PROBE 0 0 0698001e
+PROBE 8 0 00000000000000000000000000000000
+PROBE 5 0 0000000000000000000000000000000000000000000000000000000000000000
+PROBE 4 0 0000000000000000000000000000000000000000000000000000000000000000
+PROBE 6 0 13241879
+PROBE 7 0 0000
+PASS HW_ACTION status
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Digilent/210183BCBF83A
+MODE_SAMPLE edge 2
+## set root [file normalize [file join [file dirname [info script]] ..]]
+## set build [file join $root build engineering_02]
+## if {[llength $argv]>1} {set build [file normalize [lindex $argv 1]]}
+## set action [lindex $argv 0]
+## if {$action ni {probe program camera cnn auto pair internal edge raw physical status}} {error "Expected probe/program/auto/pair/cnn/internal/edge/raw/physical/status"}
+## open_hw_manager
+## connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2025.1.0
+  ****** Build date   : May 13 2025-12:15:27
+    **** Build number : 2025.1.1747163727
+      ** Copyright 2017-2022 Xilinx, Inc. All Rights Reserved.
+      ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+
+## try {
+##  set targets [get_hw_targets -filter {NAME =~ *210183BCBF83A}]
+##  if {[llength $targets]!=1} {error "Expected Basys3 210183BCBF83A"}
+##  current_hw_target [lindex $targets 0]
+##  set_property PARAM.FREQUENCY 3000000 [current_hw_target]
+##  open_hw_target
+##  set dev [get_hw_devices xc7a35t_0]
+##  if {[llength $dev]!=1} {error "Expected XC7A35T"}
+##  current_hw_device $dev
+##  if {$action eq {probe}} {puts "PASS BOARD_PRESENT"} else {
+##   set_property PROBES.FILE [file join $build autonomous_board.ltx] $dev
+##   if {$action eq {program}} {
+##    set_property PROGRAM.FILE [file join $build autonomous_board.bit] $dev
+##    program_hw_devices $dev
+##   }
+##   refresh_hw_device $dev
+##   set vio [get_hw_vios -of_objects $dev]
+##   if {[llength $vio]!=1} {error "Expected one VIO"}
+##   proc drive {port value} {
+##    global vio
+##    set p [get_hw_probes -of_objects $vio -filter "TYPE == vio_output && PROBE_PORT == $port"]
+##    if {[llength $p]!=1} {error "Expected complete output probe"}
+##    set_property OUTPUT_VALUE_RADIX HEX $p
+##    set_property OUTPUT_VALUE [format %0*x [expr {([get_property WIDTH $p]+3)/4}] $value] $p
+##    commit_hw_vio $p
+##   }
+##   if {$action in {cnn camera auto pair internal edge raw}} {
+##    set controls [dict create cnn 0x2000 camera 0x1000 pair 0x1000 auto 0x0010 internal 1 edge 8 raw 0]
+##    drive 0 [dict get $controls $action];drive 1 1;after 100
+##   }
+##   if {$action eq {physical}} {drive 1 0}
+##   set input_probes [get_hw_probes -of_objects $vio -filter {TYPE == vio_input}]
+##   set_property INPUT_VALUE_RADIX HEX $input_probes
+##   refresh_hw_vio $vio
+##   after 50
+##   refresh_hw_vio $vio
+##   foreach p [get_hw_probes -of_objects $vio -filter {TYPE == vio_input}] {
+##    puts "PROBE [get_property PROBE_PORT $p] [get_property PROBE_PORT_BITS $p] [get_property INPUT_VALUE $p]"
+##   }
+##   puts "PASS HW_ACTION $action"
+##  }
+## } finally {catch {close_hw_target};catch {disconnect_hw_server};catch {close_hw_manager}}
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183BCBF83A
+INFO: [Labtools 27-2302] Device xc7a35t (JTAG device index = 0) is programmed with a design that has 1 VIO core(s).
+INFO: [Labtools 27-1889] Uploading output probe values for VIO core [hw_vio_1]
+PROBE 7 16 0000000000000000000000000000
+PROBE 1 0 000006e70000a00000001bc800001bc700095f800043cb2100096000000001e0
+PROBE 2 0 be627ad0be627ad0000484a4000484a4
+PROBE 3 0 000000000000a000000006e7000006e7000006e70043cb2100c6fe510043cb1e
+PROBE 0 0 06e7001e
+PROBE 8 0 00000000000000000000000000000000
+PROBE 5 0 0000000000000000000000000000000000000000000000000000000000000000
+PROBE 4 0 0000000000000000000000000000000000000000000000000000000000000000
+PROBE 6 0 1d041fe4
+PROBE 7 0 0000
+PASS HW_ACTION status
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Digilent/210183BCBF83A
+MODE_END edge
+MODE_BEGIN internal
+## set root [file normalize [file join [file dirname [info script]] ..]]
+## set build [file join $root build engineering_02]
+## if {[llength $argv]>1} {set build [file normalize [lindex $argv 1]]}
+## set action [lindex $argv 0]
+## if {$action ni {probe program camera cnn auto pair internal edge raw physical status}} {error "Expected probe/program/auto/pair/cnn/internal/edge/raw/physical/status"}
+## open_hw_manager
+## connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2025.1.0
+  ****** Build date   : May 13 2025-12:15:27
+    **** Build number : 2025.1.1747163727
+      ** Copyright 2017-2022 Xilinx, Inc. All Rights Reserved.
+      ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+
+## try {
+##  set targets [get_hw_targets -filter {NAME =~ *210183BCBF83A}]
+##  if {[llength $targets]!=1} {error "Expected Basys3 210183BCBF83A"}
+##  current_hw_target [lindex $targets 0]
+##  set_property PARAM.FREQUENCY 3000000 [current_hw_target]
+##  open_hw_target
+##  set dev [get_hw_devices xc7a35t_0]
+##  if {[llength $dev]!=1} {error "Expected XC7A35T"}
+##  current_hw_device $dev
+##  if {$action eq {probe}} {puts "PASS BOARD_PRESENT"} else {
+##   set_property PROBES.FILE [file join $build autonomous_board.ltx] $dev
+##   if {$action eq {program}} {
+##    set_property PROGRAM.FILE [file join $build autonomous_board.bit] $dev
+##    program_hw_devices $dev
+##   }
+##   refresh_hw_device $dev
+##   set vio [get_hw_vios -of_objects $dev]
+##   if {[llength $vio]!=1} {error "Expected one VIO"}
+##   proc drive {port value} {
+##    global vio
+##    set p [get_hw_probes -of_objects $vio -filter "TYPE == vio_output && PROBE_PORT == $port"]
+##    if {[llength $p]!=1} {error "Expected complete output probe"}
+##    set_property OUTPUT_VALUE_RADIX HEX $p
+##    set_property OUTPUT_VALUE [format %0*x [expr {([get_property WIDTH $p]+3)/4}] $value] $p
+##    commit_hw_vio $p
+##   }
+##   if {$action in {cnn camera auto pair internal edge raw}} {
+##    set controls [dict create cnn 0x2000 camera 0x1000 pair 0x1000 auto 0x0010 internal 1 edge 8 raw 0]
+##    drive 0 [dict get $controls $action];drive 1 1;after 100
+##   }
+##   if {$action eq {physical}} {drive 1 0}
+##   set input_probes [get_hw_probes -of_objects $vio -filter {TYPE == vio_input}]
+##   set_property INPUT_VALUE_RADIX HEX $input_probes
+##   refresh_hw_vio $vio
+##   after 50
+##   refresh_hw_vio $vio
+##   foreach p [get_hw_probes -of_objects $vio -filter {TYPE == vio_input}] {
+##    puts "PROBE [get_property PROBE_PORT $p] [get_property PROBE_PORT_BITS $p] [get_property INPUT_VALUE $p]"
+##   }
+##   puts "PASS HW_ACTION $action"
+##  }
+## } finally {catch {close_hw_target};catch {disconnect_hw_server};catch {close_hw_manager}}
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183BCBF83A
+INFO: [Labtools 27-2302] Device xc7a35t (JTAG device index = 0) is programmed with a design that has 1 VIO core(s).
+INFO: [Labtools 27-1889] Uploading output probe values for VIO core [hw_vio_1]
+PROBE 7 16 0000000000000000000000000000
+PROBE 1 0 000007370000a00000001bc800001bc700095f800043cb2000096000000001e0
+PROBE 2 0 f9824a15f9824a150004b0000004b000
+PROBE 3 0 000000000000a0000000073a00000737000007370043cb2000c6fe51003840f5
+PROBE 0 0 073a0056
+PROBE 8 0 00000000000000000000000000000000
+PROBE 5 0 0000000000000000000000000000000000000000000000000000000000000000
+PROBE 4 0 0000000000000000000000000000000000000000000000000000000000000000
+PROBE 6 0 07640cdb
+PROBE 7 0 0000
+PASS HW_ACTION internal
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Digilent/210183BCBF83A
+MODE_SAMPLE internal 1
+## set root [file normalize [file join [file dirname [info script]] ..]]
+## set build [file join $root build engineering_02]
+## if {[llength $argv]>1} {set build [file normalize [lindex $argv 1]]}
+## set action [lindex $argv 0]
+## if {$action ni {probe program camera cnn auto pair internal edge raw physical status}} {error "Expected probe/program/auto/pair/cnn/internal/edge/raw/physical/status"}
+## open_hw_manager
+## connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2025.1.0
+  ****** Build date   : May 13 2025-12:15:27
+    **** Build number : 2025.1.1747163727
+      ** Copyright 2017-2022 Xilinx, Inc. All Rights Reserved.
+      ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+
+## try {
+##  set targets [get_hw_targets -filter {NAME =~ *210183BCBF83A}]
+##  if {[llength $targets]!=1} {error "Expected Basys3 210183BCBF83A"}
+##  current_hw_target [lindex $targets 0]
+##  set_property PARAM.FREQUENCY 3000000 [current_hw_target]
+##  open_hw_target
+##  set dev [get_hw_devices xc7a35t_0]
+##  if {[llength $dev]!=1} {error "Expected XC7A35T"}
+##  current_hw_device $dev
+##  if {$action eq {probe}} {puts "PASS BOARD_PRESENT"} else {
+##   set_property PROBES.FILE [file join $build autonomous_board.ltx] $dev
+##   if {$action eq {program}} {
+##    set_property PROGRAM.FILE [file join $build autonomous_board.bit] $dev
+##    program_hw_devices $dev
+##   }
+##   refresh_hw_device $dev
+##   set vio [get_hw_vios -of_objects $dev]
+##   if {[llength $vio]!=1} {error "Expected one VIO"}
+##   proc drive {port value} {
+##    global vio
+##    set p [get_hw_probes -of_objects $vio -filter "TYPE == vio_output && PROBE_PORT == $port"]
+##    if {[llength $p]!=1} {error "Expected complete output probe"}
+##    set_property OUTPUT_VALUE_RADIX HEX $p
+##    set_property OUTPUT_VALUE [format %0*x [expr {([get_property WIDTH $p]+3)/4}] $value] $p
+##    commit_hw_vio $p
+##   }
+##   if {$action in {cnn camera auto pair internal edge raw}} {
+##    set controls [dict create cnn 0x2000 camera 0x1000 pair 0x1000 auto 0x0010 internal 1 edge 8 raw 0]
+##    drive 0 [dict get $controls $action];drive 1 1;after 100
+##   }
+##   if {$action eq {physical}} {drive 1 0}
+##   set input_probes [get_hw_probes -of_objects $vio -filter {TYPE == vio_input}]
+##   set_property INPUT_VALUE_RADIX HEX $input_probes
+##   refresh_hw_vio $vio
+##   after 50
+##   refresh_hw_vio $vio
+##   foreach p [get_hw_probes -of_objects $vio -filter {TYPE == vio_input}] {
+##    puts "PROBE [get_property PROBE_PORT $p] [get_property PROBE_PORT_BITS $p] [get_property INPUT_VALUE $p]"
+##   }
+##   puts "PASS HW_ACTION $action"
+##  }
+## } finally {catch {close_hw_target};catch {disconnect_hw_server};catch {close_hw_manager}}
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183BCBF83A
+INFO: [Labtools 27-2302] Device xc7a35t (JTAG device index = 0) is programmed with a design that has 1 VIO core(s).
+INFO: [Labtools 27-1889] Uploading output probe values for VIO core [hw_vio_1]
+PROBE 7 16 0000000000000000000000000000
+PROBE 1 0 000007370000a00000001bc800001bc700095f800043cb2000096000000001e0
+PROBE 2 0 f9824a15f9824a150004b0000004b000
+PROBE 3 0 000000000000a0000000079600000737000007370043cb2000c6fe51003840f5
+PROBE 0 0 07960056
+PROBE 8 0 00000000000000000000000000000000
+PROBE 5 0 0000000000000000000000000000000000000000000000000000000000000000
+PROBE 4 0 0000000000000000000000000000000000000000000000000000000000000000
+PROBE 6 0 12e441d1
+PROBE 7 0 0000
+PASS HW_ACTION status
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Digilent/210183BCBF83A
+MODE_SAMPLE internal 2
+## set root [file normalize [file join [file dirname [info script]] ..]]
+## set build [file join $root build engineering_02]
+## if {[llength $argv]>1} {set build [file normalize [lindex $argv 1]]}
+## set action [lindex $argv 0]
+## if {$action ni {probe program camera cnn auto pair internal edge raw physical status}} {error "Expected probe/program/auto/pair/cnn/internal/edge/raw/physical/status"}
+## open_hw_manager
+## connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2025.1.0
+  ****** Build date   : May 13 2025-12:15:27
+    **** Build number : 2025.1.1747163727
+      ** Copyright 2017-2022 Xilinx, Inc. All Rights Reserved.
+      ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+
+## try {
+##  set targets [get_hw_targets -filter {NAME =~ *210183BCBF83A}]
+##  if {[llength $targets]!=1} {error "Expected Basys3 210183BCBF83A"}
+##  current_hw_target [lindex $targets 0]
+##  set_property PARAM.FREQUENCY 3000000 [current_hw_target]
+##  open_hw_target
+##  set dev [get_hw_devices xc7a35t_0]
+##  if {[llength $dev]!=1} {error "Expected XC7A35T"}
+##  current_hw_device $dev
+##  if {$action eq {probe}} {puts "PASS BOARD_PRESENT"} else {
+##   set_property PROBES.FILE [file join $build autonomous_board.ltx] $dev
+##   if {$action eq {program}} {
+##    set_property PROGRAM.FILE [file join $build autonomous_board.bit] $dev
+##    program_hw_devices $dev
+##   }
+##   refresh_hw_device $dev
+##   set vio [get_hw_vios -of_objects $dev]
+##   if {[llength $vio]!=1} {error "Expected one VIO"}
+##   proc drive {port value} {
+##    global vio
+##    set p [get_hw_probes -of_objects $vio -filter "TYPE == vio_output && PROBE_PORT == $port"]
+##    if {[llength $p]!=1} {error "Expected complete output probe"}
+##    set_property OUTPUT_VALUE_RADIX HEX $p
+##    set_property OUTPUT_VALUE [format %0*x [expr {([get_property WIDTH $p]+3)/4}] $value] $p
+##    commit_hw_vio $p
+##   }
+##   if {$action in {cnn camera auto pair internal edge raw}} {
+##    set controls [dict create cnn 0x2000 camera 0x1000 pair 0x1000 auto 0x0010 internal 1 edge 8 raw 0]
+##    drive 0 [dict get $controls $action];drive 1 1;after 100
+##   }
+##   if {$action eq {physical}} {drive 1 0}
+##   set input_probes [get_hw_probes -of_objects $vio -filter {TYPE == vio_input}]
+##   set_property INPUT_VALUE_RADIX HEX $input_probes
+##   refresh_hw_vio $vio
+##   after 50
+##   refresh_hw_vio $vio
+##   foreach p [get_hw_probes -of_objects $vio -filter {TYPE == vio_input}] {
+##    puts "PROBE [get_property PROBE_PORT $p] [get_property PROBE_PORT_BITS $p] [get_property INPUT_VALUE $p]"
+##   }
+##   puts "PASS HW_ACTION $action"
+##  }
+## } finally {catch {close_hw_target};catch {disconnect_hw_server};catch {close_hw_manager}}
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183BCBF83A
+INFO: [Labtools 27-2302] Device xc7a35t (JTAG device index = 0) is programmed with a design that has 1 VIO core(s).
+INFO: [Labtools 27-1889] Uploading output probe values for VIO core [hw_vio_1]
+PROBE 7 16 0000000000000000000000000000
+PROBE 1 0 000007370000a00000001bc800001bc700095f800043cb2000096000000001e0
+PROBE 2 0 f9824a15f9824a150004b0000004b000
+PROBE 3 0 000000000000a000000007f900000737000007370043cb2000c6fe51003840f5
+PROBE 0 0 07f90056
+PROBE 8 0 00000000000000000000000000000000
+PROBE 5 0 0000000000000000000000000000000000000000000000000000000000000000
+PROBE 4 0 0000000000000000000000000000000000000000000000000000000000000000
+PROBE 6 0 1f442440
+PROBE 7 0 0000
+PASS HW_ACTION status
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Digilent/210183BCBF83A
+MODE_END internal
+MODE_BEGIN auto
+## set root [file normalize [file join [file dirname [info script]] ..]]
+## set build [file join $root build engineering_02]
+## if {[llength $argv]>1} {set build [file normalize [lindex $argv 1]]}
+## set action [lindex $argv 0]
+## if {$action ni {probe program camera cnn auto pair internal edge raw physical status}} {error "Expected probe/program/auto/pair/cnn/internal/edge/raw/physical/status"}
+## open_hw_manager
+## connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2025.1.0
+  ****** Build date   : May 13 2025-12:15:27
+    **** Build number : 2025.1.1747163727
+      ** Copyright 2017-2022 Xilinx, Inc. All Rights Reserved.
+      ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+
+## try {
+##  set targets [get_hw_targets -filter {NAME =~ *210183BCBF83A}]
+##  if {[llength $targets]!=1} {error "Expected Basys3 210183BCBF83A"}
+##  current_hw_target [lindex $targets 0]
+##  set_property PARAM.FREQUENCY 3000000 [current_hw_target]
+##  open_hw_target
+##  set dev [get_hw_devices xc7a35t_0]
+##  if {[llength $dev]!=1} {error "Expected XC7A35T"}
+##  current_hw_device $dev
+##  if {$action eq {probe}} {puts "PASS BOARD_PRESENT"} else {
+##   set_property PROBES.FILE [file join $build autonomous_board.ltx] $dev
+##   if {$action eq {program}} {
+##    set_property PROGRAM.FILE [file join $build autonomous_board.bit] $dev
+##    program_hw_devices $dev
+##   }
+##   refresh_hw_device $dev
+##   set vio [get_hw_vios -of_objects $dev]
+##   if {[llength $vio]!=1} {error "Expected one VIO"}
+##   proc drive {port value} {
+##    global vio
+##    set p [get_hw_probes -of_objects $vio -filter "TYPE == vio_output && PROBE_PORT == $port"]
+##    if {[llength $p]!=1} {error "Expected complete output probe"}
+##    set_property OUTPUT_VALUE_RADIX HEX $p
+##    set_property OUTPUT_VALUE [format %0*x [expr {([get_property WIDTH $p]+3)/4}] $value] $p
+##    commit_hw_vio $p
+##   }
+##   if {$action in {cnn camera auto pair internal edge raw}} {
+##    set controls [dict create cnn 0x2000 camera 0x1000 pair 0x1000 auto 0x0010 internal 1 edge 8 raw 0]
+##    drive 0 [dict get $controls $action];drive 1 1;after 100
+##   }
+##   if {$action eq {physical}} {drive 1 0}
+##   set input_probes [get_hw_probes -of_objects $vio -filter {TYPE == vio_input}]
+##   set_property INPUT_VALUE_RADIX HEX $input_probes
+##   refresh_hw_vio $vio
+##   after 50
+##   refresh_hw_vio $vio
+##   foreach p [get_hw_probes -of_objects $vio -filter {TYPE == vio_input}] {
+##    puts "PROBE [get_property PROBE_PORT $p] [get_property PROBE_PORT_BITS $p] [get_property INPUT_VALUE $p]"
+##   }
+##   puts "PASS HW_ACTION $action"
+##  }
+## } finally {catch {close_hw_target};catch {disconnect_hw_server};catch {close_hw_manager}}
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183BCBF83A
+INFO: [Labtools 27-2302] Device xc7a35t (JTAG device index = 0) is programmed with a design that has 1 VIO core(s).
+INFO: [Labtools 27-1889] Uploading output probe values for VIO core [hw_vio_1]
+PROBE 7 16 0000000000000000000000000000
+PROBE 1 0 0000073a0000a00000001bc800001bc700095f800043cb2100096000000001e0
+PROBE 2 0 833b588c833b588c0004b0000004b000
+PROBE 3 0 000000000000a000000008580000073a0000073a0043cb2100c6fe510043cb1e
+PROBE 0 0 0858001e
+PROBE 8 0 00000002000000000000000000458e0a
+PROBE 5 0 0000000000000000000000000000000000000000000000000000000000000000
+PROBE 4 0 0000000000000000000000000000000000000000000000000000000000000000
+PROBE 6 0 0b242d7e
+PROBE 7 0 0000
+PASS HW_ACTION auto
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Digilent/210183BCBF83A
+MODE_SAMPLE auto 1
+## set root [file normalize [file join [file dirname [info script]] ..]]
+## set build [file join $root build engineering_02]
+## if {[llength $argv]>1} {set build [file normalize [lindex $argv 1]]}
+## set action [lindex $argv 0]
+## if {$action ni {probe program camera cnn auto pair internal edge raw physical status}} {error "Expected probe/program/auto/pair/cnn/internal/edge/raw/physical/status"}
+## open_hw_manager
+## connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2025.1.0
+  ****** Build date   : May 13 2025-12:15:27
+    **** Build number : 2025.1.1747163727
+      ** Copyright 2017-2022 Xilinx, Inc. All Rights Reserved.
+      ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+
+## try {
+##  set targets [get_hw_targets -filter {NAME =~ *210183BCBF83A}]
+##  if {[llength $targets]!=1} {error "Expected Basys3 210183BCBF83A"}
+##  current_hw_target [lindex $targets 0]
+##  set_property PARAM.FREQUENCY 3000000 [current_hw_target]
+##  open_hw_target
+##  set dev [get_hw_devices xc7a35t_0]
+##  if {[llength $dev]!=1} {error "Expected XC7A35T"}
+##  current_hw_device $dev
+##  if {$action eq {probe}} {puts "PASS BOARD_PRESENT"} else {
+##   set_property PROBES.FILE [file join $build autonomous_board.ltx] $dev
+##   if {$action eq {program}} {
+##    set_property PROGRAM.FILE [file join $build autonomous_board.bit] $dev
+##    program_hw_devices $dev
+##   }
+##   refresh_hw_device $dev
+##   set vio [get_hw_vios -of_objects $dev]
+##   if {[llength $vio]!=1} {error "Expected one VIO"}
+##   proc drive {port value} {
+##    global vio
+##    set p [get_hw_probes -of_objects $vio -filter "TYPE == vio_output && PROBE_PORT == $port"]
+##    if {[llength $p]!=1} {error "Expected complete output probe"}
+##    set_property OUTPUT_VALUE_RADIX HEX $p
+##    set_property OUTPUT_VALUE [format %0*x [expr {([get_property WIDTH $p]+3)/4}] $value] $p
+##    commit_hw_vio $p
+##   }
+##   if {$action in {cnn camera auto pair internal edge raw}} {
+##    set controls [dict create cnn 0x2000 camera 0x1000 pair 0x1000 auto 0x0010 internal 1 edge 8 raw 0]
+##    drive 0 [dict get $controls $action];drive 1 1;after 100
+##   }
+##   if {$action eq {physical}} {drive 1 0}
+##   set input_probes [get_hw_probes -of_objects $vio -filter {TYPE == vio_input}]
+##   set_property INPUT_VALUE_RADIX HEX $input_probes
+##   refresh_hw_vio $vio
+##   after 50
+##   refresh_hw_vio $vio
+##   foreach p [get_hw_probes -of_objects $vio -filter {TYPE == vio_input}] {
+##    puts "PROBE [get_property PROBE_PORT $p] [get_property PROBE_PORT_BITS $p] [get_property INPUT_VALUE $p]"
+##   }
+##   puts "PASS HW_ACTION $action"
+##  }
+## } finally {catch {close_hw_target};catch {disconnect_hw_server};catch {close_hw_manager}}
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183BCBF83A
+INFO: [Labtools 27-2302] Device xc7a35t (JTAG device index = 0) is programmed with a design that has 1 VIO core(s).
+INFO: [Labtools 27-1889] Uploading output probe values for VIO core [hw_vio_1]
+PROBE 7 16 0000000000000000000000000000
+PROBE 1 0 000007880000a00000001bc800001bc700095f800043cb2100096000000001e0
+PROBE 2 0 eeead4e6eeead4e60004b0000004b000
+PROBE 3 0 000000000000a000000008a600000788000007880043cb2100c6fe510043cb24
+PROBE 0 0 08a6001e
+PROBE 8 0 00000028000000000000000000458e10
+PROBE 5 0 0000000000000000000000000000000000000000000000000000000000000000
+PROBE 4 0 0000000000000000000000000000000000000000000000000000000000000000
+PROBE 6 0 14e426c0
+PROBE 7 0 0000
+PASS HW_ACTION status
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Digilent/210183BCBF83A
+MODE_SAMPLE auto 2
+## set root [file normalize [file join [file dirname [info script]] ..]]
+## set build [file join $root build engineering_02]
+## if {[llength $argv]>1} {set build [file normalize [lindex $argv 1]]}
+## set action [lindex $argv 0]
+## if {$action ni {probe program camera cnn auto pair internal edge raw physical status}} {error "Expected probe/program/auto/pair/cnn/internal/edge/raw/physical/status"}
+## open_hw_manager
+## connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2025.1.0
+  ****** Build date   : May 13 2025-12:15:27
+    **** Build number : 2025.1.1747163727
+      ** Copyright 2017-2022 Xilinx, Inc. All Rights Reserved.
+      ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+
+## try {
+##  set targets [get_hw_targets -filter {NAME =~ *210183BCBF83A}]
+##  if {[llength $targets]!=1} {error "Expected Basys3 210183BCBF83A"}
+##  current_hw_target [lindex $targets 0]
+##  set_property PARAM.FREQUENCY 3000000 [current_hw_target]
+##  open_hw_target
+##  set dev [get_hw_devices xc7a35t_0]
+##  if {[llength $dev]!=1} {error "Expected XC7A35T"}
+##  current_hw_device $dev
+##  if {$action eq {probe}} {puts "PASS BOARD_PRESENT"} else {
+##   set_property PROBES.FILE [file join $build autonomous_board.ltx] $dev
+##   if {$action eq {program}} {
+##    set_property PROGRAM.FILE [file join $build autonomous_board.bit] $dev
+##    program_hw_devices $dev
+##   }
+##   refresh_hw_device $dev
+##   set vio [get_hw_vios -of_objects $dev]
+##   if {[llength $vio]!=1} {error "Expected one VIO"}
+##   proc drive {port value} {
+##    global vio
+##    set p [get_hw_probes -of_objects $vio -filter "TYPE == vio_output && PROBE_PORT == $port"]
+##    if {[llength $p]!=1} {error "Expected complete output probe"}
+##    set_property OUTPUT_VALUE_RADIX HEX $p
+##    set_property OUTPUT_VALUE [format %0*x [expr {([get_property WIDTH $p]+3)/4}] $value] $p
+##    commit_hw_vio $p
+##   }
+##   if {$action in {cnn camera auto pair internal edge raw}} {
+##    set controls [dict create cnn 0x2000 camera 0x1000 pair 0x1000 auto 0x0010 internal 1 edge 8 raw 0]
+##    drive 0 [dict get $controls $action];drive 1 1;after 100
+##   }
+##   if {$action eq {physical}} {drive 1 0}
+##   set input_probes [get_hw_probes -of_objects $vio -filter {TYPE == vio_input}]
+##   set_property INPUT_VALUE_RADIX HEX $input_probes
+##   refresh_hw_vio $vio
+##   after 50
+##   refresh_hw_vio $vio
+##   foreach p [get_hw_probes -of_objects $vio -filter {TYPE == vio_input}] {
+##    puts "PROBE [get_property PROBE_PORT $p] [get_property PROBE_PORT_BITS $p] [get_property INPUT_VALUE $p]"
+##   }
+##   puts "PASS HW_ACTION $action"
+##  }
+## } finally {catch {close_hw_target};catch {disconnect_hw_server};catch {close_hw_manager}}
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183BCBF83A
+INFO: [Labtools 27-2302] Device xc7a35t (JTAG device index = 0) is programmed with a design that has 1 VIO core(s).
+INFO: [Labtools 27-1889] Uploading output probe values for VIO core [hw_vio_1]
+PROBE 7 16 0000000000000000000000000000
+PROBE 1 0 000007dd0000a00000001bc800001bc700095f800043cb2100096000000001e0
+PROBE 2 0 983c3dbb983c3dbb0004b0000004b000
+PROBE 3 0 000000000000a000000008fb000007dd000007dd0043cb2100c6fe510043cb24
+PROBE 0 0 08fb001e
+PROBE 8 0 0000003e000000000000000000458e0a
+PROBE 5 0 0000000000000000000000000000000000000000000000000000000000000000
+PROBE 4 0 0000000000000000000000000000000000000000000000000000000000000000
+PROBE 6 0 1f840500
+PROBE 7 0 0000
+PASS HW_ACTION status
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Digilent/210183BCBF83A
+MODE_END auto
+# puts "MODE_SEQUENCE_DONE auto remains enabled for passive OCR observation"
+MODE_SEQUENCE_DONE auto remains enabled for passive OCR observation
+INFO: [Common 17-206] Exiting Vivado at Sun Nov  1 20:27:38 2026...

@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "requested_frames": 3,
+  "captured_complete_frames": 3,
+  "verified_frames": 3,
+  "mismatched_frames": 0,
+  "verified_characters": 21,
+  "groups": {
+    "epochs": 1,
+    "complete_groups": 3,
+    "incomplete_groups": 1,
+    "invalid_groups": 0,
+    "evicted_groups": 0,
+    "peak_pending_groups": 2,
+    "observed_source_frame_gaps": 6,
+    "packets": 34
+  },
+  "parser": {
+    "valid_packets": 34,
+    "rejected_candidates": 0,
+    "discarded_bytes": 590,
+    "truncated_bytes": 2452
+  },
+  "bytes_received": 84634,
+  "timed_out": false,
+  "capture_error": null,
+  "capture_seconds": 0.7638083999045193,
+  "total_seconds": 0.8722347998991609,
+  "model_sha256": "179d6d9b9a4e2229c152770152fe6c8d71ff924af5d9da06132debd730cf4645",
+  "model_error": null,
+  "source": "COM10@12000000",
+  "read_only": true,
+  "scope": "Complete groups only; exact integer reference with versioned dynamic ROI, prefix exclusion and ASG4/5 touching split; not arbitrary-plate recognition accuracy",
+  "frames": [
+    "frames\\e000_f0000021167\\result.json",
+    "frames\\e000_f0000021171\\result.json",
+    "frames\\e000_f0000021175\\result.json"
+  ]
+}

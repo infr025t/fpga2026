@@ -1,0 +1,23 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/video_rtl/uart/uart_fast_tx.sv" into library work
+INFO: [VRFC 10-311] analyzing module uart_fast_tx
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/rtl/uart_fast_rx.sv" into library work
+INFO: [VRFC 10-311] analyzing module uart_fast_rx
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/rtl/norm_uart_bridge.sv" into library work
+INFO: [VRFC 10-311] analyzing module norm_uart_bridge
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/rtl/u32_div.sv" into library work
+INFO: [VRFC 10-311] analyzing module u32_div
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/rtl/char_normalizer.sv" into library work
+INFO: [VRFC 10-311] analyzing module char_normalizer
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/rtl/char_segmenter.sv" into library work
+INFO: [VRFC 10-311] analyzing module char_segmenter
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/rtl/cnn_core.sv" into library work
+INFO: [VRFC 10-311] analyzing module cnn_core
+INFO: [VRFC 10-311] analyzing module cnn_weight_rom
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/rtl/plate_auto_controller.sv" into library work
+INFO: [VRFC 10-311] analyzing module plate_auto_controller
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/rtl/plate_auto_uart.sv" into library work
+INFO: [VRFC 10-311] analyzing module plate_auto_uart
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/rtl/plate_recognition_subsystem.sv" into library work
+INFO: [VRFC 10-311] analyzing module plate_recognition_subsystem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/sim/tb_auto_current_scene.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_auto_current_scene

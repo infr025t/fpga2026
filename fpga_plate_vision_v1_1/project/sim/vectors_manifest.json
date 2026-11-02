@@ -1,0 +1,47 @@
+{
+  "model_sha256": "179d6d9b9a4e2229c152770152fe6c8d71ff924af5d9da06132debd730cf4645",
+  "cases": 12,
+  "labels": [
+    "real_char_0",
+    "real_char_1",
+    "real_char_2",
+    "real_char_3",
+    "real_char_4",
+    "real_char_5",
+    "real_char_6",
+    "zero",
+    "all255",
+    "seeded_random",
+    "checker",
+    "corner_impulses"
+  ],
+  "real_frame": "E:\\FPGA_Test_Work\\plate_cnn32_pc_v2_20261101\\reports\\uart_pairs\\gray_retest_03\\frames\\seq_000001_src_00101133_selected.png",
+  "real_frame_sha256": "8069c8596104fff7dbb25d36f41d960896ea5e3f9cd0038b041395ce48e63c00",
+  "roi": [
+    26,
+    35,
+    158,
+    87
+  ],
+  "rotation": 0,
+  "predictions": [
+    "D",
+    "D",
+    "N",
+    "7",
+    "8",
+    "7",
+    "0",
+    "I",
+    "V",
+    "I",
+    "I",
+    "I"
+  ],
+  "hashes": {
+    "model\\weights.hex": "999d12f5abeab0b85b11867f3381130c321d2a5dcb2038b8ac1803f194160ad2",
+    "model\\biases.hex": "f98a1f425431c22fd6c363420e887a6dea6214ba17322ceaa0ccc6950f29f894",
+    "sim\\vectors_input.hex": "b2565dfbc0acf874ad8171b5703dc2031c6a057766b2e29db3333e5624d949b8",
+    "sim\\vectors_scores.hex": "1e67c3939c5d37e3a6d63a3dbef16e1e20bbb5aa251b131e7346685083b377cc"
+  }
+}

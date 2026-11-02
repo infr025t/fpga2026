@@ -1,0 +1,29 @@
+test_frame_limit_preserves_full_read_block (test_auto_capture.CaptureTests.test_frame_limit_preserves_full_read_block) ... FAIL
+test_truncation_never_becomes_complete_group (test_auto_capture.CaptureTests.test_truncation_never_becomes_complete_group) ... FAIL
+
+======================================================================
+FAIL: test_frame_limit_preserves_full_read_block (test_auto_capture.CaptureTests.test_frame_limit_preserves_full_read_block)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\FPGA_Test_Work\plate_recognition_engineering\pc\test_auto_capture.py", line 15, in setUp
+    self.assertIsNotNone(importlib.util.find_spec('auto_capture'),
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         'independent capture module is missing')
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : independent capture module is missing
+
+======================================================================
+FAIL: test_truncation_never_becomes_complete_group (test_auto_capture.CaptureTests.test_truncation_never_becomes_complete_group)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\FPGA_Test_Work\plate_recognition_engineering\pc\test_auto_capture.py", line 15, in setUp
+    self.assertIsNotNone(importlib.util.find_spec('auto_capture'),
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         'independent capture module is missing')
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : independent capture module is missing
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.001s
+
+FAILED (failures=2)

@@ -1,0 +1,40 @@
+EEEE
+======================================================================
+ERROR: test_blank_and_narrow (test_touching_split.TouchingTests.test_blank_and_narrow)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\FPGA_Test_Work\plate_autonomous_board_20261101\pc\test_touching_split.py", line 34, in test_blank_and_narrow
+    self.assertEqual(segment_mask(m, split_touching=True)['boxes'], [])
+                     ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: segment_mask() got an unexpected keyword argument 'split_touching'
+
+======================================================================
+ERROR: test_current_frame_separates_geometry_only (test_touching_split.TouchingTests.test_current_frame_separates_geometry_only)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\FPGA_Test_Work\plate_autonomous_board_20261101\pc\test_touching_split.py", line 45, in test_current_frame_separates_geometry_only
+    new = segment_frame(raw, r['roi'], skip_prefix=True, split_touching=True)
+TypeError: segment_frame() got an unexpected keyword argument 'split_touching'
+
+======================================================================
+ERROR: test_thin_bridge_and_translation (test_touching_split.TouchingTests.test_thin_bridge_and_translation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\FPGA_Test_Work\plate_autonomous_board_20261101\pc\test_touching_split.py", line 14, in test_thin_bridge_and_translation
+    self.assertEqual(segment_mask(m, split_touching=True)['boxes'],
+                     ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: segment_mask() got an unexpected keyword argument 'split_touching'
+
+======================================================================
+ERROR: test_wide_solid_and_m_w_not_split (test_touching_split.TouchingTests.test_wide_solid_and_m_w_not_split)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\FPGA_Test_Work\plate_autonomous_board_20261101\pc\test_touching_split.py", line 30, in test_wide_solid_and_m_w_not_split
+    self.assertEqual(segment_mask(m, split_touching=True), old)
+                     ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: segment_mask() got an unexpected keyword argument 'split_touching'
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.011s
+
+FAILED (errors=4)

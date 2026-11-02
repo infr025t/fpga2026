@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-01",
+  "release": "fpga_plate_vision_v1_1",
+  "bit_sha256": "bdca082ba4c9cdc444a718e6fcab103cfb06e8b6b728281e0741615015b1ed0e",
+  "target_serial": "210183BCBF83A",
+  "flash_part": "mx25l3273f-spi-x1_x2_x4",
+  "jedec_id": "c2 20 16",
+  "capacity_bytes": 4194304,
+  "backup": {
+    "local_path": "E:\\FPGA_Test_Work\\plate_blue_polarity_v1_1\\flash_install\\flash_before.bin",
+    "bytes": 4194304,
+    "sha256": "beab5853a58596564b816de804ad7779642d3d66448ff7e777e5462194855513"
+  },
+  "erase_blank_program_verify_passed": true,
+  "boot": {
+    "method": "boot_hw_device with JP1 QSPI; no business bit downloaded on successful verification",
+    "done_high": true,
+    "matching_vio_loaded": true,
+    "first_status": "0023001e",
+    "second_status": "0045001e",
+    "frames_advanced": 34,
+    "sample_wait_ms": 1500,
+    "error_code": 0,
+    "passed": true,
+    "physical_power_cycle_tested": false,
+    "debug_override": false
+  },
+  "initial_check": {
+    "result": "Checker rejected empty command return despite DONE HIGH; RAM restored",
+    "correction": "Log raw return and verify loaded VIO plus advancing frames and zero error"
+  },
+  "logs": [
+    "backup.log",
+    "program.log",
+    "boot_initial_check.log",
+    "boot_verified.log"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "frames": 124,
+  "exact": 123,
+  "predictions": {
+    "BD12345": 123,
+    "HD12345": 1
+  },
+  "scope": "Software replay, correlated previously captured BD12345 frames; four probe images used during geometric design, not independent accuracy benchmark",
+  "locator_sha256": "d18295832e875c9f67b5524edd21a0b8d76b574a66298520c09730e91700d075"
+}

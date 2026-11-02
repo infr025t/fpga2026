@@ -1,0 +1,35 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_recognition_engineering/rtl/video/plate_roi_overlay.sv" into library work
+INFO: [VRFC 10-311] analyzing module plate_roi_overlay
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_recognition_engineering/sim/tb_roi_overlay.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_roi_overlay
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: E:/Vivado/2025.1/Vivado/bin/unwrapped/win64.o/xelab.exe tb_roi_overlay -s roi 
+Multi-threading is on. Using 30 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.plate_roi_overlay
+Compiling module work.tb_roi_overlay
+Built simulation snapshot roi
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Sun Nov  1 20:47:28 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/roi/xsim_script.tcl
+# xsim {roi} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+PASS ROI bounds, half-open mapping, disable/reenter, invalid, reset, frame atomicity
+$finish called at time : 151 ns : File "E:/FPGA_Test_Work/plate_recognition_engineering/sim/tb_roi_overlay.sv" Line 22
+exit
+INFO: [Common 17-206] Exiting xsim at Sun Nov  1 20:47:30 2026...

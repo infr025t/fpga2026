@@ -1,0 +1,19 @@
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: E:/Vivado/2025.1/Vivado/bin/unwrapped/win64.o/xelab.exe tb_lcd_text -s lcd_text_tb --timescale 1ns/1ps 
+Multi-threading is on. Using 30 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.plate_text_overlay
+Compiling module work.nt35510_init_rom
+Compiling module work.nt35510_init(CLK_HZ=1000)
+Compiling module work.nt35510_window_writer
+Compiling module work.nt35510_bus8(LOW_CYCLES=2,GAP_CY...
+Compiling module work.video_lcd_sink(CLK_HZ=1000,BUS_S...
+Compiling module work.tb_lcd_text
+Built simulation snapshot lcd_text_tb

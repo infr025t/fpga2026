@@ -1,0 +1,15 @@
+{
+  "release": "fpga_plate_vision_v1_0",
+  "accepted_build": "engineering_03",
+  "artifacts": {
+    "release/autonomous_board.bit": "8d2d8ed5c144a5d1618daad8c18fdd1ae9c5a99fb4e24623f98238f58167efae",
+    "release/autonomous_board.ltx": "5843c174a9bedfaa714babdc12e381b0b198eb46743295feaf486b77c2eeeeb3"
+  },
+  "rtl_policy": "Unchanged from accepted frozen sources; tooling paths reorganized",
+  "hardware_acceptance": "User confirmed green ROI visible, position broadly correct, and accepted this version for final submission",
+  "flash_updated_by_packaging": false,
+  "ports": "COM10 only; COM15 excluded",
+  "target": "xc7a35tcpg236-1",
+  "tool_version": "Vivado 2025.1",
+  "frozen_source_manifest": "evidence/implementation/sources/manifest.json"
+}

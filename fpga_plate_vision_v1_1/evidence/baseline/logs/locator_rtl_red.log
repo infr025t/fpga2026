@@ -1,0 +1,9 @@
+21 locator vectors
+ERROR: [XSIM 43-4316] Can not find file: ../../rtl/plate_region_locator.sv
+compile failed
+At E:\FPGA_Test_Work\plate_autonomous_board_20261101\sim\run_locator.ps1:10 char:20
++  if($LASTEXITCODE){throw 'compile failed'}
++                    ~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (compile failed:String) [], RuntimeException
+    + FullyQualifiedErrorId : compile failed
+ 

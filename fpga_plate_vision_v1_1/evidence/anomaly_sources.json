@@ -1,0 +1,303 @@
+{
+  "schema_version": 1,
+  "purpose": "异常台账与历史证据文档的实际读取来源；不代表全部原始数据已重跑",
+  "baseline": "E:/FPGA_Test_Work/plate_autonomous_board_20261101/build_split",
+  "scope": "只读历史文件；没有访问硬件、串口、Flash或Git",
+  "sources": [
+    {
+      "id": "h01",
+      "path": "E:/FPGA_Test_Work/release_lcd_v04/stream_video_edge_20fps/docs/anomaly_register.md",
+      "stage": "历史视频与工程收敛",
+      "kind": "历史综合台账；引用会话未在本次逐条重开",
+      "sha256": "ed0a947311f8184fdfd04678f067dca79d386e995448bf08df7fa23e48d3332a",
+      "bytes": 36512,
+      "read_scope": "完整文件读取；报告结论按文档中列明字段和阶段使用"
+    },
+    {
+      "id": "h02",
+      "path": "E:/FPGA_Test_Work/video20fps_20261030/docs/dynamic_image_fault_20261031.md",
+      "stage": "高速视频诊断，2026-10-30至10-31",
+      "kind": "历史说明",
+      "sha256": "b1fad4e5d83f20c0d61a8ab61835f433242cf3f82b3cdfc6e41d122ae597750f",
+      "bytes": 1933,
+      "read_scope": "完整文件读取；报告结论按文档中列明字段和阶段使用"
+    },
+    {
+      "id": "h03",
+      "path": "E:/FPGA_Test_Work/video20fps_20261030/docs/byte_phase_evidence_20261031.md",
+      "stage": "高速视频诊断，2026-10-30至10-31",
+      "kind": "历史说明",
+      "sha256": "c5e77aa253a8f7e968a051674220bfae3033c6daadb53d08a234347ed306c6f2",
+      "bytes": 2356,
+      "read_scope": "完整文件读取；报告结论按文档中列明字段和阶段使用"
+    },
+    {
+      "id": "h04",
+      "path": "E:/FPGA_Test_Work/video20fps_20261030/docs/diagnostic_findings.md",
+      "stage": "高速视频诊断，2026-10-30至10-31",
+      "kind": "历史说明",
+      "sha256": "e37f8805a0aba1a73ccf2a54d60399e4810f4aa4babc617d3ae1782f44f40dcb",
+      "bytes": 2358,
+      "read_scope": "完整文件读取；报告结论按文档中列明字段和阶段使用"
+    },
+    {
+      "id": "h05",
+      "path": "E:/FPGA_Test_Work/video20fps_20261030/docs/sample40_experiment.md",
+      "stage": "高速视频诊断，2026-10-30至10-31",
+      "kind": "历史说明",
+      "sha256": "9cd0411726e95369678a4858653a3cb5325d0c97b1f04834af5809685e00ae8f",
+      "bytes": 1296,
+      "read_scope": "完整文件读取；报告结论按文档中列明字段和阶段使用"
+    },
+    {
+      "id": "h06",
+      "path": "E:/FPGA_Test_Work/video20fps_20261030/docs/short_adapter_wiring.md",
+      "stage": "高速视频诊断，2026-10-30至10-31",
+      "kind": "历史说明",
+      "sha256": "b9620bb9b9bc1be9ca6a1fd2c2cc34a9be9ced0a838a09dca6315abad2ddd01a",
+      "bytes": 1812,
+      "read_scope": "完整文件读取；报告结论按文档中列明字段和阶段使用"
+    },
+    {
+      "id": "h07",
+      "path": "E:/FPGA_Test_Work/video20fps_20261030/docs/statistics2500_result.md",
+      "stage": "高速视频诊断，2026-10-30至10-31",
+      "kind": "历史说明",
+      "sha256": "b7ef9fd285f3cc609b9edac1ecf0d0e19a94b2ce1a837179eb7ee7136f353557",
+      "bytes": 877,
+      "read_scope": "完整文件读取；报告结论按文档中列明字段和阶段使用"
+    },
+    {
+      "id": "h08",
+      "path": "E:/FPGA_Test_Work/video20fps_20261030/reports/lcd/runtime/stats2500_run01/summary.json",
+      "stage": "高速视频诊断，2026-10-30至10-31",
+      "kind": "历史机器结果",
+      "sha256": "2a439135364bc7b2f57c25d5d45314a1046c9009ec5bb6d93f4c18c23fa65ec6",
+      "bytes": 620,
+      "read_scope": "完整文件读取；报告结论按文档中列明字段和阶段使用"
+    },
+    {
+      "id": "h09",
+      "path": "E:/FPGA_Test_Work/video20fps_20261030/reports/lcd/runtime/stats2500_run01/bad_frame_analysis.json",
+      "stage": "高速视频诊断，2026-10-30至10-31",
+      "kind": "历史机器结果",
+      "sha256": "142d5dfd8ed6d7dc94c299705c0b498ae96afa6f5193951eb86713e16e9cfc91",
+      "bytes": 174,
+      "read_scope": "完整文件读取；报告结论按文档中列明字段和阶段使用"
+    },
+    {
+      "id": "h10",
+      "path": "E:/FPGA_Test_Work/video20fps_20261030/reports/uart_pairs/pair_uart_scene_01/summary.json",
+      "stage": "高速视频诊断，2026-10-30至10-31",
+      "kind": "历史机器结果",
+      "sha256": "1064f6d879393d1931bc58547bbb000f475d7eb994580b1ff51bc6a9fc4b9c97",
+      "bytes": 311,
+      "read_scope": "完整文件读取；报告结论按文档中列明字段和阶段使用"
+    },
+    {
+      "id": "o01",
+      "path": "E:/FPGA_Test_Work/plate_autonomous_board_20261101/docs/touching_character_split.md",
+      "stage": "build_split",
+      "kind": "历史说明",
+      "sha256": "23f86e05d28f913407248b4515e3887dda096f590bd23cd26d136cb8110f6f24",
+      "bytes": 6374,
+      "read_scope": "完整文件读取；报告结论按文档中列明字段和阶段使用"
+    },
+    {
+      "id": "o02",
+      "path": "E:/FPGA_Test_Work/plate_autonomous_board_20261101/docs/placement_tolerance_report.md",
+      "stage": "build_locator",
+      "kind": "历史说明",
+      "sha256": "b7a431336baa49e52eab814d6a1f04ada73d0015629a663c4349028637b5e3fd",
+      "bytes": 4404,
+      "read_scope": "完整文件读取；报告结论按文档中列明字段和阶段使用"
+    },
+    {
+      "id": "o03",
+      "path": "E:/FPGA_Test_Work/plate_autonomous_board_20261101/docs/chinese_prefix_filter.md",
+      "stage": "build_prefix",
+      "kind": "历史说明",
+      "sha256": "61c340073f2bd2083290b4a9876bce703f2b0a2958ad49f194c9d0ad5252f61a",
+      "bytes": 4232,
+      "read_scope": "完整文件读取；报告结论按文档中列明字段和阶段使用"
+    },
+    {
+      "id": "o04",
+      "path": "E:/FPGA_Test_Work/plate_autonomous_board_20261101/docs/autonomous_board_test_report.md",
+      "stage": "build_current_roi及此前",
+      "kind": "历史说明",
+      "sha256": "820b44a89fc5049a318b6ad7cd71e3c9ebe624e50194b605899929e622579c97",
+      "bytes": 9056,
+      "read_scope": "完整文件读取；报告结论按文档中列明字段和阶段使用"
+    },
+    {
+      "id": "o05",
+      "path": "E:/FPGA_Test_Work/plate_autonomous_board_20261101/docs/board_test_report.md",
+      "stage": "旧人工分割阶段；文档自身指向plate_segment_board_20261101",
+      "kind": "历史说明",
+      "sha256": "21163367c95d8180be41a58e8912d35ecee4d652dd2e47c912fa06f3da95b442",
+      "bytes": 6891,
+      "read_scope": "完整文件读取；报告结论按文档中列明字段和阶段使用"
+    },
+    {
+      "id": "o06",
+      "path": "E:/FPGA_Test_Work/plate_autonomous_board_20261101/docs/lcd_result_overlay.md",
+      "stage": "build_osd",
+      "kind": "历史说明",
+      "sha256": "2e4e040d95feba85b5a7f92fb38155cca167763ba21d7c6cacf4024a62dd5451",
+      "bytes": 3935,
+      "read_scope": "完整文件读取；报告结论按文档中列明字段和阶段使用"
+    },
+    {
+      "id": "o07",
+      "path": "E:/FPGA_Test_Work/plate_autonomous_board_20261101/reports/split_aligned_repeat_100/summary.json",
+      "stage": "build_split，连续100完整组复测",
+      "kind": "历史机器结果",
+      "sha256": "4ed00ca4def77b195bb4a089a670d234376f5b665ab5c5821c0d786b59ad916d",
+      "bytes": 5740,
+      "read_scope": "完整文件读取；报告结论按文档中列明字段和阶段使用"
+    },
+    {
+      "id": "o08",
+      "path": "E:/FPGA_Test_Work/plate_autonomous_board_20261101/reports/split_aligned_repeat_100/metrics.json",
+      "stage": "build_split，连续100完整组复测",
+      "kind": "历史机器结果",
+      "sha256": "7b18f0845bc6261a769563cbcc5b162eddf185c6c242d08eabb6f80853bd12d3",
+      "bytes": 1319,
+      "read_scope": "完整文件读取；报告结论按文档中列明字段和阶段使用"
+    },
+    {
+      "id": "o09",
+      "path": "E:/FPGA_Test_Work/plate_autonomous_board_20261101/reports/split_aligned_100/summary.json",
+      "stage": "build_split，首轮有内部断片",
+      "kind": "历史机器结果",
+      "sha256": "804df3c9a8e9649957067dfb2c2c16f7ad69a7530e2761664d4729df2775fc1b",
+      "bytes": 5741,
+      "read_scope": "完整文件读取；报告结论按文档中列明字段和阶段使用"
+    },
+    {
+      "id": "o10",
+      "path": "E:/FPGA_Test_Work/plate_autonomous_board_20261101/reports/split_reference/summary.json",
+      "stage": "build_split，854张保存图回放",
+      "kind": "历史机器结果",
+      "sha256": "205968de2ca385e6afa6307d98367cdcb9bd546511efc2139e84be816d627ca0",
+      "bytes": 3222,
+      "read_scope": "完整文件读取；报告结论按文档中列明字段和阶段使用"
+    },
+    {
+      "id": "o11",
+      "path": "E:/FPGA_Test_Work/plate_autonomous_board_20261101/reports/split_artifacts.json",
+      "stage": "build_split，产物汇总",
+      "kind": "历史机器结果",
+      "sha256": "2afbe8275adbce6e227fe2924a9b7bda050f9e0c0c6d23e145cf3d5c4a6c465a",
+      "bytes": 10088,
+      "read_scope": "完整文件读取；报告结论按文档中列明字段和阶段使用"
+    },
+    {
+      "id": "o12",
+      "path": "E:/FPGA_Test_Work/plate_autonomous_board_20261101/reports/split_board_100/summary.json",
+      "stage": "build_split，牌面截边空定位",
+      "kind": "历史机器结果",
+      "sha256": "f2fc9f3347baa17ef5d40c21a2ba356cf12b29f44b88e43115cf450ea88692da",
+      "bytes": 5729,
+      "read_scope": "完整文件读取；报告结论按文档中列明字段和阶段使用"
+    },
+    {
+      "id": "o13",
+      "path": "E:/FPGA_Test_Work/plate_autonomous_board_20261101/reports/locator_board_precheck/context.json",
+      "stage": "build_locator，换场景预检",
+      "kind": "历史机器结果",
+      "sha256": "13f2b798a0546576dd3c40ce5daffa2683c88e7ca817745128e6ccd40b11a3a3",
+      "bytes": 292,
+      "read_scope": "完整文件读取；报告结论按文档中列明字段和阶段使用"
+    },
+    {
+      "id": "o14",
+      "path": "E:/FPGA_Test_Work/plate_autonomous_board_20261101/reports/placement_test_03/diagnosis.json",
+      "stage": "build_locator，完整入镜失败",
+      "kind": "历史机器结果",
+      "sha256": "5177f754bbb9546d776bcf2866b63628420c02c1acd1fa671cba44ed0c1fa266",
+      "bytes": 501,
+      "read_scope": "完整文件读取；报告结论按文档中列明字段和阶段使用"
+    },
+    {
+      "id": "o15",
+      "path": "E:/FPGA_Test_Work/plate_autonomous_board_20261101/reports/prefix_board_20/summary.json",
+      "stage": "build_prefix，20组",
+      "kind": "历史机器结果",
+      "sha256": "a487b40a4386ceca43bffed0d3cb19cef88761a816c3b8a1614c88831e52c19c",
+      "bytes": 2030,
+      "read_scope": "完整文件读取；报告结论按文档中列明字段和阶段使用"
+    },
+    {
+      "id": "o16",
+      "path": "E:/FPGA_Test_Work/plate_autonomous_board_20261101/reports/split_aligned_repeat_100/split_box_check.json",
+      "stage": "build_split，拆分对照",
+      "kind": "历史机器结果",
+      "sha256": "0c42f3a2fbda0d2d210bbcddd4922f647d79a8bf2e2afdcc78dc0831bf75a511",
+      "bytes": 139580,
+      "read_scope": "完整文件读取；报告结论按文档中列明字段和阶段使用"
+    },
+    {
+      "id": "t01",
+      "path": "E:/FPGA_Test_Work/plate_autonomous_board_20261101/build_split/timing.rpt",
+      "stage": "build_split，初次布线失败",
+      "kind": "历史工具报告",
+      "sha256": "03786e06800f415844511dd418b7fa9339b8a6330e033d67d7c5c073c3056e60",
+      "bytes": 128961,
+      "read_scope": "完整文件读取；报告结论按文档中列明字段和阶段使用"
+    },
+    {
+      "id": "t02",
+      "path": "E:/FPGA_Test_Work/plate_autonomous_board_20261101/build_split/timing_refined.rpt",
+      "stage": "build_split，物理优化后",
+      "kind": "历史工具报告",
+      "sha256": "bc739e8db3d0b39c8fb0cab28ad009131109a7f31abf7ec1b1a5c85e6467deea",
+      "bytes": 138113,
+      "read_scope": "完整文件读取；报告结论按文档中列明字段和阶段使用"
+    },
+    {
+      "id": "t03",
+      "path": "E:/FPGA_Test_Work/plate_autonomous_board_20261101/build_final/timing.rpt",
+      "stage": "自主遥测初版，失败",
+      "kind": "历史工具报告",
+      "sha256": "05ebc15e88d12fcf4f2bf521d04a85e2bc385935866deeeddfce09fdfc163fb9",
+      "bytes": 128362,
+      "read_scope": "完整文件读取；报告结论按文档中列明字段和阶段使用"
+    },
+    {
+      "id": "m01",
+      "path": "E:/FPGA_Test_Work/plate_autonomous_board_20261101/model/training_result.json",
+      "stage": "冻结模型训练及离线评估",
+      "kind": "历史机器结果",
+      "sha256": "ff1060dee32878371d4a94e4eb9b83e9d9713aa0c665cf5f571da40f5ea3f0d0",
+      "bytes": 9851,
+      "read_scope": "完整文件读取；报告结论按文档中列明字段和阶段使用"
+    },
+    {
+      "id": "p01",
+      "path": "E:/FPGA_Test_Work/plate_recognition_engineering/docs/engineering_spec.md",
+      "stage": "本轮工程整理",
+      "kind": "任务约束；不是板测证据",
+      "sha256": "fd6119982ea9b19f9c1169577ae35535bcc54a3167496577136f762d847a1efe",
+      "bytes": 1853,
+      "read_scope": "完整文件读取；报告结论按文档中列明字段和阶段使用"
+    },
+    {
+      "id": "p02",
+      "path": "E:/FPGA_Test_Work/plate_recognition_engineering/docs/engineering_plan.md",
+      "stage": "本轮工程整理",
+      "kind": "任务约束；不是板测证据",
+      "sha256": "cf467202b7ec9853fdca6f9ac9cec29d480f0ec4ef4800c6c2a11394a6dee8e0",
+      "bytes": 2501,
+      "read_scope": "完整文件读取；报告结论按文档中列明字段和阶段使用"
+    }
+  ],
+  "evidence_gaps": [
+    "未重新读取h01所引私人会话及全部早期原始文件，早期故障按历史台账转述",
+    "未重新分析全部图像、wire.bin和逐帧包；本次主要复核现存汇总、诊断及报告",
+    "外部WCK/PCLK/模块端读沿波形、供电反接健康检查、受控光照和LCD光学刷新测量缺失",
+    "AEC/AGC是否触发特定异常缺乏独立受控实验，不登记为确定根因",
+    "本次新整理工程的仿真、布局布线和板测结论由主任务另行提供，不沿用build_split替代"
+  ]
+}

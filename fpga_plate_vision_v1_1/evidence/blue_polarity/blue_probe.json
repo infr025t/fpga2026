@@ -1,0 +1,174 @@
+[
+  {
+    "frame": "e000_f0000022673",
+    "invert": false,
+    "roi": [
+      21,
+      34,
+      156,
+      81
+    ],
+    "boxes": [
+      [
+        40,
+        49,
+        2,
+        7
+      ],
+      [
+        61,
+        54,
+        3,
+        8
+      ],
+      [
+        142,
+        52,
+        3,
+        5
+      ]
+    ],
+    "prediction": "1AW"
+  },
+  {
+    "frame": "e000_f0000022673",
+    "invert": true,
+    "roi": null,
+    "boxes": [],
+    "prediction": ""
+  },
+  {
+    "frame": "e000_f0000022676",
+    "invert": false,
+    "roi": [
+      21,
+      34,
+      156,
+      81
+    ],
+    "boxes": [
+      [
+        40,
+        49,
+        2,
+        7
+      ],
+      [
+        61,
+        54,
+        3,
+        8
+      ],
+      [
+        142,
+        52,
+        3,
+        5
+      ]
+    ],
+    "prediction": "1AW"
+  },
+  {
+    "frame": "e000_f0000022676",
+    "invert": true,
+    "roi": null,
+    "boxes": [],
+    "prediction": ""
+  },
+  {
+    "frame": "e000_f0000022679",
+    "invert": false,
+    "roi": [
+      21,
+      34,
+      156,
+      81
+    ],
+    "boxes": [
+      [
+        27,
+        43,
+        39,
+        36
+      ],
+      [
+        65,
+        46,
+        18,
+        28
+      ]
+    ],
+    "prediction": "01"
+  },
+  {
+    "frame": "e000_f0000022679",
+    "invert": true,
+    "roi": null,
+    "boxes": [],
+    "prediction": ""
+  },
+  {
+    "frame": "e000_f0000022682",
+    "invert": false,
+    "roi": [
+      21,
+      34,
+      156,
+      81
+    ],
+    "boxes": [
+      [
+        27,
+        43,
+        39,
+        36
+      ],
+      [
+        65,
+        44,
+        12,
+        30
+      ]
+    ],
+    "prediction": "0D"
+  },
+  {
+    "frame": "e000_f0000022682",
+    "invert": true,
+    "roi": null,
+    "boxes": [],
+    "prediction": ""
+  },
+  {
+    "frame": "e000_f0000022685",
+    "invert": false,
+    "roi": [
+      21,
+      34,
+      156,
+      81
+    ],
+    "boxes": [
+      [
+        27,
+        43,
+        39,
+        36
+      ],
+      [
+        65,
+        45,
+        18,
+        29
+      ]
+    ],
+    "prediction": "01"
+  },
+  {
+    "frame": "e000_f0000022685",
+    "invert": true,
+    "roi": null,
+    "boxes": [],
+    "prediction": ""
+  }
+]

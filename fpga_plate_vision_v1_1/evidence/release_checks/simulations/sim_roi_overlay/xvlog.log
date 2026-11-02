@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/rtl/video/plate_roi_overlay.sv" into library work
+INFO: [VRFC 10-311] analyzing module plate_roi_overlay
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/sim/tb_roi_overlay.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_roi_overlay

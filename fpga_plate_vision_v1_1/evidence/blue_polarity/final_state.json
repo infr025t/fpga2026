@@ -1,0 +1,16 @@
+{
+  "version": "fpga_plate_vision_v1_1",
+  "ram_programmed": true,
+  "flash_written": false,
+  "vio_override_cleared": true,
+  "physical_switches": "SW4=1; SW5=1 white characters, SW5=0 dark characters",
+  "user_visual_confirmation_this_round": false,
+  "user_reply": "Not convenient to view or operate now",
+  "passed_board_groups": 20,
+  "predictions": {
+    "AL67L8": 20
+  },
+  "source_scope": "Single current static scene",
+  "current_evidence": "evidence/blue_polarity",
+  "older_evidence": "Other preserved evidence folders belong to the named prior builds"
+}

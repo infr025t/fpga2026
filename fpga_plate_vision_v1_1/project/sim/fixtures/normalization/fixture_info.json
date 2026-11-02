@@ -1,0 +1,28 @@
+{
+  "scope": "Generated offline normalization reference inputs; not historical hardware evidence",
+  "generator": "project/pc/norm_ref.py:export_frame_vectors",
+  "generator_sha256": "69d058635437bd946e9e5829e15280055da4332c2cffd499a4274e34290aacef",
+  "cases": 18,
+  "scene_inputs": [
+    {
+      "path": "project/sim/fixtures/scenes/anp639/seq_000001_src_00017422_selected.png",
+      "sha256": "b32be0c77516f9cdd12add3d8251fbc0dedde0f2510d172358b66bc185adef59"
+    },
+    {
+      "path": "project/sim/fixtures/scenes/d12345/seq_000001_src_00060320_selected.png",
+      "sha256": "fa20a18c9e3a287db0b5f9f0695a314e24838bd21f46164c3f2faf54d0beff2b"
+    },
+    {
+      "path": "project/sim/fixtures/scenes/k38817_old/seq_000001_src_00074083_selected.png",
+      "sha256": "15b920f2d5997dbf1d4788c5313cb8353c87d8c510ee842c271fae3020079f23"
+    },
+    {
+      "path": "project/sim/fixtures/scenes/k38817_v2/seq_000001_src_00092318_selected.png",
+      "sha256": "19e0a1b4e58887b5fc8799e0f029b51aa892aa661feab3e5093c266039d25ef7"
+    },
+    {
+      "path": "project/sim/fixtures/scenes/ddn7870/seq_000001_src_00101133_selected.png",
+      "sha256": "8069c8596104fff7dbb25d36f41d960896ea5e3f9cd0038b041395ce48e63c00"
+    }
+  ]
+}

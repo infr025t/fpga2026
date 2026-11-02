@@ -1,0 +1,847 @@
+[
+  {
+    "scene": "anp639",
+    "source": "E:\\Vivado_FPGA_Programs\\fpga_plate_vision_v1_0\\project\\sim\\fixtures\\scenes\\anp639\\seq_000001_src_00017422_selected.png",
+    "source_sha256": "b32be0c77516f9cdd12add3d8251fbc0dedde0f2510d172358b66bc185adef59",
+    "boxes": [
+      [
+        4,
+        14,
+        16,
+        22
+      ],
+      [
+        23,
+        15,
+        18,
+        20
+      ],
+      [
+        46,
+        15,
+        13,
+        20
+      ],
+      [
+        60,
+        18,
+        12,
+        18
+      ],
+      [
+        75,
+        17,
+        10,
+        20
+      ],
+      [
+        87,
+        16,
+        11,
+        22
+      ]
+    ],
+    "legacy": "ANP639",
+    "rational_area": "ANP639",
+    "pixel_mae": 0.17860243055555555,
+    "max_pixel_error": 124,
+    "changed_pixels": 240,
+    "parameters": [
+      {
+        "low100": 2300,
+        "high100": 13500,
+        "high": 135,
+        "den": 112,
+        "crop_width": 20,
+        "crop_height": 26,
+        "nw": 22,
+        "nh": 29,
+        "dst_x": 1,
+        "dst_y": 1,
+        "area_den": 520,
+        "crop_xyxy": [
+          2,
+          12,
+          22,
+          38
+        ]
+      },
+      {
+        "low100": 2600,
+        "high100": 13800,
+        "high": 138,
+        "den": 112,
+        "crop_width": 22,
+        "crop_height": 24,
+        "nw": 22,
+        "nh": 24,
+        "dst_x": 1,
+        "dst_y": 4,
+        "area_den": 528,
+        "crop_xyxy": [
+          21,
+          13,
+          43,
+          37
+        ]
+      },
+      {
+        "low100": 2921,
+        "high100": 13800,
+        "high": 138,
+        "den": 108,
+        "crop_width": 17,
+        "crop_height": 24,
+        "nw": 21,
+        "nh": 30,
+        "dst_x": 1,
+        "dst_y": 1,
+        "area_den": 408,
+        "crop_xyxy": [
+          44,
+          13,
+          61,
+          37
+        ]
+      },
+      {
+        "low100": 2600,
+        "high100": 13200,
+        "high": 132,
+        "den": 106,
+        "crop_width": 16,
+        "crop_height": 22,
+        "nw": 22,
+        "nh": 30,
+        "dst_x": 1,
+        "dst_y": 1,
+        "area_den": 352,
+        "crop_xyxy": [
+          58,
+          16,
+          74,
+          38
+        ]
+      },
+      {
+        "low100": 2105,
+        "high100": 12300,
+        "high": 123,
+        "den": 101,
+        "crop_width": 14,
+        "crop_height": 24,
+        "nw": 18,
+        "nh": 30,
+        "dst_x": 3,
+        "dst_y": 1,
+        "area_den": 336,
+        "crop_xyxy": [
+          73,
+          15,
+          87,
+          39
+        ]
+      },
+      {
+        "low100": 1800,
+        "high100": 11200,
+        "high": 112,
+        "den": 94,
+        "crop_width": 15,
+        "crop_height": 26,
+        "nw": 17,
+        "nh": 30,
+        "dst_x": 3,
+        "dst_y": 1,
+        "area_den": 390,
+        "crop_xyxy": [
+          85,
+          14,
+          100,
+          40
+        ]
+      }
+    ]
+  },
+  {
+    "scene": "d12345",
+    "source": "E:\\Vivado_FPGA_Programs\\fpga_plate_vision_v1_0\\project\\sim\\fixtures\\scenes\\d12345\\seq_000001_src_00060320_selected.png",
+    "source_sha256": "fa20a18c9e3a287db0b5f9f0695a314e24838bd21f46164c3f2faf54d0beff2b",
+    "boxes": [
+      [
+        2,
+        0,
+        16,
+        31
+      ],
+      [
+        31,
+        0,
+        10,
+        31
+      ],
+      [
+        49,
+        0,
+        15,
+        31
+      ],
+      [
+        69,
+        0,
+        15,
+        31
+      ],
+      [
+        89,
+        0,
+        16,
+        31
+      ],
+      [
+        110,
+        0,
+        15,
+        31
+      ]
+    ],
+    "legacy": "D12345",
+    "rational_area": "D12345",
+    "pixel_mae": 0.0026041666666666665,
+    "max_pixel_error": 1,
+    "changed_pixels": 12,
+    "parameters": [
+      {
+        "low100": 0,
+        "high100": 13400,
+        "high": 134,
+        "den": 134,
+        "crop_width": 20,
+        "crop_height": 33,
+        "nw": 18,
+        "nh": 30,
+        "dst_x": 3,
+        "dst_y": 1,
+        "area_den": 660,
+        "crop_xyxy": [
+          0,
+          0,
+          20,
+          33
+        ]
+      },
+      {
+        "low100": 0,
+        "high100": 11100,
+        "high": 111,
+        "den": 111,
+        "crop_width": 14,
+        "crop_height": 33,
+        "nw": 13,
+        "nh": 30,
+        "dst_x": 5,
+        "dst_y": 1,
+        "area_den": 462,
+        "crop_xyxy": [
+          29,
+          0,
+          43,
+          33
+        ]
+      },
+      {
+        "low100": 0,
+        "high100": 9500,
+        "high": 95,
+        "den": 95,
+        "crop_width": 19,
+        "crop_height": 33,
+        "nw": 17,
+        "nh": 30,
+        "dst_x": 3,
+        "dst_y": 1,
+        "area_den": 627,
+        "crop_xyxy": [
+          47,
+          0,
+          66,
+          33
+        ]
+      },
+      {
+        "low100": 0,
+        "high100": 9400,
+        "high": 94,
+        "den": 94,
+        "crop_width": 19,
+        "crop_height": 33,
+        "nw": 17,
+        "nh": 30,
+        "dst_x": 3,
+        "dst_y": 1,
+        "area_den": 627,
+        "crop_xyxy": [
+          67,
+          0,
+          86,
+          33
+        ]
+      },
+      {
+        "low100": 0,
+        "high100": 10700,
+        "high": 107,
+        "den": 107,
+        "crop_width": 20,
+        "crop_height": 33,
+        "nw": 18,
+        "nh": 30,
+        "dst_x": 3,
+        "dst_y": 1,
+        "area_den": 660,
+        "crop_xyxy": [
+          87,
+          0,
+          107,
+          33
+        ]
+      },
+      {
+        "low100": 0,
+        "high100": 12900,
+        "high": 129,
+        "den": 129,
+        "crop_width": 19,
+        "crop_height": 33,
+        "nw": 17,
+        "nh": 30,
+        "dst_x": 3,
+        "dst_y": 1,
+        "area_den": 627,
+        "crop_xyxy": [
+          108,
+          0,
+          127,
+          33
+        ]
+      }
+    ]
+  },
+  {
+    "scene": "k38817_old",
+    "source": "E:\\Vivado_FPGA_Programs\\fpga_plate_vision_v1_0\\project\\sim\\fixtures\\scenes\\k38817_old\\seq_000001_src_00074083_selected.png",
+    "source_sha256": "15b920f2d5997dbf1d4788c5313cb8353c87d8c510ee842c271fae3020079f23",
+    "boxes": [
+      [
+        4,
+        11,
+        15,
+        25
+      ],
+      [
+        30,
+        11,
+        15,
+        25
+      ],
+      [
+        50,
+        10,
+        14,
+        26
+      ],
+      [
+        68,
+        10,
+        14,
+        26
+      ],
+      [
+        87,
+        10,
+        4,
+        26
+      ],
+      [
+        95,
+        9,
+        15,
+        27
+      ]
+    ],
+    "legacy": "K38817",
+    "rational_area": "K38817",
+    "pixel_mae": 0.021701388888888888,
+    "max_pixel_error": 1,
+    "changed_pixels": 100,
+    "parameters": [
+      {
+        "low100": 300,
+        "high100": 12600,
+        "high": 126,
+        "den": 123,
+        "crop_width": 19,
+        "crop_height": 29,
+        "nw": 20,
+        "nh": 30,
+        "dst_x": 2,
+        "dst_y": 1,
+        "area_den": 551,
+        "crop_xyxy": [
+          2,
+          9,
+          21,
+          38
+        ]
+      },
+      {
+        "low100": 400,
+        "high100": 15000,
+        "high": 150,
+        "den": 146,
+        "crop_width": 19,
+        "crop_height": 29,
+        "nw": 20,
+        "nh": 30,
+        "dst_x": 2,
+        "dst_y": 1,
+        "area_den": 551,
+        "crop_xyxy": [
+          28,
+          9,
+          47,
+          38
+        ]
+      },
+      {
+        "low100": 500,
+        "high100": 15800,
+        "high": 158,
+        "den": 153,
+        "crop_width": 18,
+        "crop_height": 30,
+        "nw": 18,
+        "nh": 30,
+        "dst_x": 3,
+        "dst_y": 1,
+        "area_den": 540,
+        "crop_xyxy": [
+          48,
+          8,
+          66,
+          38
+        ]
+      },
+      {
+        "low100": 500,
+        "high100": 15700,
+        "high": 157,
+        "den": 152,
+        "crop_width": 18,
+        "crop_height": 30,
+        "nw": 18,
+        "nh": 30,
+        "dst_x": 3,
+        "dst_y": 1,
+        "area_den": 540,
+        "crop_xyxy": [
+          66,
+          8,
+          84,
+          38
+        ]
+      },
+      {
+        "low100": 500,
+        "high100": 15100,
+        "high": 151,
+        "den": 146,
+        "crop_width": 8,
+        "crop_height": 30,
+        "nw": 8,
+        "nh": 30,
+        "dst_x": 8,
+        "dst_y": 1,
+        "area_den": 240,
+        "crop_xyxy": [
+          85,
+          8,
+          93,
+          38
+        ]
+      },
+      {
+        "low100": 400,
+        "high100": 14700,
+        "high": 147,
+        "den": 143,
+        "crop_width": 19,
+        "crop_height": 31,
+        "nw": 18,
+        "nh": 30,
+        "dst_x": 3,
+        "dst_y": 1,
+        "area_den": 589,
+        "crop_xyxy": [
+          93,
+          7,
+          112,
+          38
+        ]
+      }
+    ]
+  },
+  {
+    "scene": "k38817_v2",
+    "source": "E:\\Vivado_FPGA_Programs\\fpga_plate_vision_v1_0\\project\\sim\\fixtures\\scenes\\k38817_v2\\seq_000001_src_00092318_selected.png",
+    "source_sha256": "19e0a1b4e58887b5fc8799e0f029b51aa892aa661feab3e5093c266039d25ef7",
+    "boxes": [
+      [
+        0,
+        11,
+        13,
+        21
+      ],
+      [
+        23,
+        11,
+        12,
+        21
+      ],
+      [
+        39,
+        10,
+        12,
+        21
+      ],
+      [
+        54,
+        10,
+        12,
+        21
+      ],
+      [
+        69,
+        10,
+        4,
+        21
+      ],
+      [
+        76,
+        10,
+        13,
+        21
+      ]
+    ],
+    "legacy": "K38817",
+    "rational_area": "K38817",
+    "pixel_mae": 0.053168402777777776,
+    "max_pixel_error": 1,
+    "changed_pixels": 245,
+    "parameters": [
+      {
+        "low100": 822,
+        "high100": 18400,
+        "high": 184,
+        "den": 175,
+        "crop_width": 15,
+        "crop_height": 25,
+        "nw": 18,
+        "nh": 30,
+        "dst_x": 3,
+        "dst_y": 1,
+        "area_den": 375,
+        "crop_xyxy": [
+          0,
+          9,
+          15,
+          34
+        ]
+      },
+      {
+        "low100": 900,
+        "high100": 19500,
+        "high": 195,
+        "den": 186,
+        "crop_width": 16,
+        "crop_height": 25,
+        "nw": 19,
+        "nh": 30,
+        "dst_x": 2,
+        "dst_y": 1,
+        "area_den": 400,
+        "crop_xyxy": [
+          21,
+          9,
+          37,
+          34
+        ]
+      },
+      {
+        "low100": 1000,
+        "high100": 19700,
+        "high": 197,
+        "den": 187,
+        "crop_width": 16,
+        "crop_height": 25,
+        "nw": 19,
+        "nh": 30,
+        "dst_x": 2,
+        "dst_y": 1,
+        "area_den": 400,
+        "crop_xyxy": [
+          37,
+          8,
+          53,
+          33
+        ]
+      },
+      {
+        "low100": 900,
+        "high100": 19500,
+        "high": 195,
+        "den": 186,
+        "crop_width": 16,
+        "crop_height": 25,
+        "nw": 19,
+        "nh": 30,
+        "dst_x": 2,
+        "dst_y": 1,
+        "area_den": 400,
+        "crop_xyxy": [
+          52,
+          8,
+          68,
+          33
+        ]
+      },
+      {
+        "low100": 1100,
+        "high100": 19200,
+        "high": 192,
+        "den": 181,
+        "crop_width": 8,
+        "crop_height": 25,
+        "nw": 10,
+        "nh": 30,
+        "dst_x": 7,
+        "dst_y": 1,
+        "area_den": 200,
+        "crop_xyxy": [
+          67,
+          8,
+          75,
+          33
+        ]
+      },
+      {
+        "low100": 800,
+        "high100": 18800,
+        "high": 188,
+        "den": 180,
+        "crop_width": 17,
+        "crop_height": 25,
+        "nw": 20,
+        "nh": 30,
+        "dst_x": 2,
+        "dst_y": 1,
+        "area_den": 425,
+        "crop_xyxy": [
+          74,
+          8,
+          91,
+          33
+        ]
+      }
+    ]
+  },
+  {
+    "scene": "ddn7870",
+    "source": "E:\\Vivado_FPGA_Programs\\fpga_plate_vision_v1_0\\project\\sim\\fixtures\\scenes\\ddn7870\\seq_000001_src_00101133_selected.png",
+    "source_sha256": "8069c8596104fff7dbb25d36f41d960896ea5e3f9cd0038b041395ce48e63c00",
+    "boxes": [
+      [
+        4,
+        11,
+        19,
+        30
+      ],
+      [
+        36,
+        10,
+        18,
+        31
+      ],
+      [
+        56,
+        10,
+        17,
+        31
+      ],
+      [
+        75,
+        11,
+        12,
+        29
+      ],
+      [
+        89,
+        11,
+        13,
+        29
+      ],
+      [
+        102,
+        11,
+        12,
+        29
+      ],
+      [
+        116,
+        11,
+        11,
+        29
+      ]
+    ],
+    "legacy": "DDN7870",
+    "rational_area": "DDN7870",
+    "pixel_mae": 0.0018601190476190475,
+    "max_pixel_error": 1,
+    "changed_pixels": 10,
+    "parameters": [
+      {
+        "low100": 800,
+        "high100": 23400,
+        "high": 234,
+        "den": 226,
+        "crop_width": 23,
+        "crop_height": 34,
+        "nw": 20,
+        "nh": 30,
+        "dst_x": 2,
+        "dst_y": 1,
+        "area_den": 782,
+        "crop_xyxy": [
+          2,
+          9,
+          25,
+          43
+        ]
+      },
+      {
+        "low100": 1000,
+        "high100": 23600,
+        "high": 236,
+        "den": 226,
+        "crop_width": 22,
+        "crop_height": 35,
+        "nw": 19,
+        "nh": 30,
+        "dst_x": 2,
+        "dst_y": 1,
+        "area_den": 770,
+        "crop_xyxy": [
+          34,
+          8,
+          56,
+          43
+        ]
+      },
+      {
+        "low100": 900,
+        "high100": 23300,
+        "high": 233,
+        "den": 224,
+        "crop_width": 21,
+        "crop_height": 35,
+        "nw": 18,
+        "nh": 30,
+        "dst_x": 3,
+        "dst_y": 1,
+        "area_den": 735,
+        "crop_xyxy": [
+          54,
+          8,
+          75,
+          43
+        ]
+      },
+      {
+        "low100": 800,
+        "high100": 22900,
+        "high": 229,
+        "den": 221,
+        "crop_width": 16,
+        "crop_height": 33,
+        "nw": 15,
+        "nh": 30,
+        "dst_x": 4,
+        "dst_y": 1,
+        "area_den": 528,
+        "crop_xyxy": [
+          73,
+          9,
+          89,
+          42
+        ]
+      },
+      {
+        "low100": 600,
+        "high100": 22300,
+        "high": 223,
+        "den": 217,
+        "crop_width": 17,
+        "crop_height": 33,
+        "nw": 15,
+        "nh": 30,
+        "dst_x": 4,
+        "dst_y": 1,
+        "area_den": 561,
+        "crop_xyxy": [
+          87,
+          9,
+          104,
+          42
+        ]
+      },
+      {
+        "low100": 500,
+        "high100": 20900,
+        "high": 209,
+        "den": 204,
+        "crop_width": 16,
+        "crop_height": 33,
+        "nw": 15,
+        "nh": 30,
+        "dst_x": 4,
+        "dst_y": 1,
+        "area_den": 528,
+        "crop_xyxy": [
+          100,
+          9,
+          116,
+          42
+        ]
+      },
+      {
+        "low100": 400,
+        "high100": 18500,
+        "high": 185,
+        "den": 181,
+        "crop_width": 15,
+        "crop_height": 33,
+        "nw": 14,
+        "nh": 30,
+        "dst_x": 5,
+        "dst_y": 1,
+        "area_den": 495,
+        "crop_xyxy": [
+          114,
+          9,
+          129,
+          42
+        ]
+      }
+    ]
+  }
+]

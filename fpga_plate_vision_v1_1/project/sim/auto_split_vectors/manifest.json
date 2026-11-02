@@ -1,0 +1,58 @@
+{
+  "source": "E:\\FPGA_Test_Work\\plate_blue_polarity_v1_1\\evidence\\baseline\\reports\\placement_test_03\\frames\\e000_f0000112645\\raw.npy",
+  "source_file_sha256": "ebd45305970738240ac8946a4cd3f9f69eb71d46382d1027af76704a452cc5b4",
+  "raw_sha256": "7f6ca5f3e5a2cbbd2b2665060a5630779534af62070211108ea03c75d4b39de0",
+  "roi": [
+    7,
+    67,
+    156,
+    107
+  ],
+  "flags": 0,
+  "boxes": [
+    [
+      25,
+      78,
+      15,
+      29
+    ],
+    [
+      55,
+      78,
+      16,
+      29
+    ],
+    [
+      76,
+      78,
+      9,
+      29
+    ],
+    [
+      90,
+      77,
+      15,
+      30
+    ],
+    [
+      107,
+      77,
+      15,
+      30
+    ],
+    [
+      124,
+      76,
+      16,
+      31
+    ],
+    [
+      140,
+      76,
+      16,
+      31
+    ]
+  ],
+  "prediction": "BD12345",
+  "method": "image-derived geometric ROI; reference segmentation, normalization and signed CNN argmax; no truth input"
+}

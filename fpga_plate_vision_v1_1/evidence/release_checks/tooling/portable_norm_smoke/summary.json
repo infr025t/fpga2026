@@ -1,0 +1,150 @@
+{
+  "model_sha256": "179d6d9b9a4e2229c152770152fe6c8d71ff924af5d9da06132debd730cf4645",
+  "scenes": [
+    {
+      "scene": "anp639",
+      "frames": 1,
+      "characters": 6,
+      "roi": [
+        48,
+        18,
+        154,
+        78
+      ],
+      "rotation": 0,
+      "invert": false,
+      "truth_for_scoring_only": "ANP639",
+      "legacy_exact": 1,
+      "rational_area_exact": 1,
+      "new_regressions": 0,
+      "new_improvements": 0,
+      "changed_predictions": 0,
+      "legacy_predictions": {
+        "ANP639": 1
+      },
+      "rational_predictions": {
+        "ANP639": 1
+      },
+      "pixel_mae": 0.17860243055555555,
+      "max_pixel_error": 124,
+      "changed_pixels": 240
+    },
+    {
+      "scene": "d12345",
+      "frames": 1,
+      "characters": 6,
+      "roi": [
+        25,
+        37,
+        156,
+        87
+      ],
+      "rotation": 180,
+      "invert": true,
+      "truth_for_scoring_only": "D12345",
+      "legacy_exact": 1,
+      "rational_area_exact": 1,
+      "new_regressions": 0,
+      "new_improvements": 0,
+      "changed_predictions": 0,
+      "legacy_predictions": {
+        "D12345": 1
+      },
+      "rational_predictions": {
+        "D12345": 1
+      },
+      "pixel_mae": 0.0026041666666666665,
+      "max_pixel_error": 1,
+      "changed_pixels": 12
+    },
+    {
+      "scene": "k38817_old",
+      "frames": 1,
+      "characters": 6,
+      "roi": [
+        28,
+        32,
+        146,
+        86
+      ],
+      "rotation": 180,
+      "invert": false,
+      "truth_for_scoring_only": "K38817",
+      "legacy_exact": 1,
+      "rational_area_exact": 1,
+      "new_regressions": 0,
+      "new_improvements": 0,
+      "changed_predictions": 0,
+      "legacy_predictions": {
+        "K38817": 1
+      },
+      "rational_predictions": {
+        "K38817": 1
+      },
+      "pixel_mae": 0.021701388888888888,
+      "max_pixel_error": 1,
+      "changed_pixels": 100
+    },
+    {
+      "scene": "k38817_v2",
+      "frames": 1,
+      "characters": 6,
+      "roi": [
+        48,
+        32,
+        146,
+        86
+      ],
+      "rotation": 180,
+      "invert": false,
+      "truth_for_scoring_only": "K38817",
+      "legacy_exact": 1,
+      "rational_area_exact": 1,
+      "new_regressions": 0,
+      "new_improvements": 0,
+      "changed_predictions": 0,
+      "legacy_predictions": {
+        "K38817": 1
+      },
+      "rational_predictions": {
+        "K38817": 1
+      },
+      "pixel_mae": 0.053168402777777776,
+      "max_pixel_error": 1,
+      "changed_pixels": 245
+    },
+    {
+      "scene": "ddn7870",
+      "frames": 1,
+      "characters": 7,
+      "roi": [
+        26,
+        35,
+        158,
+        87
+      ],
+      "rotation": 0,
+      "invert": false,
+      "truth_for_scoring_only": "DDN7870",
+      "legacy_exact": 1,
+      "rational_area_exact": 1,
+      "new_regressions": 0,
+      "new_improvements": 0,
+      "changed_predictions": 0,
+      "legacy_predictions": {
+        "DDN7870": 1
+      },
+      "rational_predictions": {
+        "DDN7870": 1
+      },
+      "pixel_mae": 0.0018601190476190475,
+      "max_pixel_error": 1,
+      "changed_pixels": 10
+    }
+  ],
+  "elapsed_sec": 0.07624580012634397,
+  "scope": "Stored selected frames; unchanged segmentation and frozen integer CNN; no hardware evidence",
+  "quality_gate_passed": true,
+  "frames": 5,
+  "characters": 31
+}

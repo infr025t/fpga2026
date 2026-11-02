@@ -1,0 +1,162 @@
+﻿[
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_recognition_engineering\\rtl\\common\\u32_div.sv",
+        "Hash":  "F9C235E7341C628D13208F0B975FABD72FE718557F68A933EB0575BD56A48B09"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_recognition_engineering\\rtl\\debug\\bars_monitor.sv",
+        "Hash":  "3D19C684C862E49E12A661AABEF1F1081F411721274C154D73274E74C532EEE5"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_recognition_engineering\\rtl\\debug\\cnn_uart_bridge.sv",
+        "Hash":  "976B6C4BC3C38A10528E70428CDF50EC2423F9A2D122B8E076F384EB8C77FA82"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_recognition_engineering\\rtl\\debug\\norm_uart_bridge.sv",
+        "Hash":  "2BAB559820F3921FB47DE6B6B6C85E5B30CE37612FD6BB18C34DC17380DD8480"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_recognition_engineering\\rtl\\debug\\nt35510_bringup_top.sv",
+        "Hash":  "6747EE2C4C497224A4010EA213F786FF7CBEB9DA273F8CAF6B3CD42404CF816B"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_recognition_engineering\\rtl\\debug\\nt35510_test_display.sv",
+        "Hash":  "CBB318E2EA674D84C6DE43CD4E06BEDC6A693532CA304198E089E991E346C159"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_recognition_engineering\\rtl\\debug\\plate_auto_uart.sv",
+        "Hash":  "107FFA6395AFE01FE5AFD86EEBEEBAA82D50B8F99183829D531DA3F49A372F20"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_recognition_engineering\\rtl\\debug\\test_pattern_source.sv",
+        "Hash":  "8A1CD5E0E982131C6F4022A5E9DA064D102EF5BABC812E9CEC77B4543478892D"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_recognition_engineering\\rtl\\debug\\uart_pair_stream.sv",
+        "Hash":  "B3D78FB46905A6AC6792A0DC8591FEB6648A417702A42F0D3D64550ABF3CC477"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_recognition_engineering\\rtl\\debug\\video_snapshot.sv",
+        "Hash":  "EAEC40F62B3BB617D61DF31B6B67442D9E331619C9C0E1A3AD472118CC5EBE36"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_recognition_engineering\\rtl\\drivers\\camera\\camera_fifo_video.sv",
+        "Hash":  "9D3AD95CA9F11BED5C0E32A25E0FA7DF8D1C9F7124124AC0E4109834D4A9AD25"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_recognition_engineering\\rtl\\drivers\\camera\\camera_startup.sv",
+        "Hash":  "D7A62C56FBB602F459EC78A8950F172798D051EDC958DF8DF9D5A29A1C312851"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_recognition_engineering\\rtl\\drivers\\camera\\href_stable_filter.sv",
+        "Hash":  "6B7EA9EC0DD0CAA15FC6CAA680918DF5254DA50F8817ACEECD3ED43C1A7918B5"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_recognition_engineering\\rtl\\drivers\\camera\\ov7670_config.sv",
+        "Hash":  "D8A4EB15D8849F24474A57E2C01CDDB1BB751D641D49B18B3CD54104F7DF2365"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_recognition_engineering\\rtl\\drivers\\camera\\vsync_low_filter.sv",
+        "Hash":  "9CFCB6ABF597C111E64F04910178F1DC6115C82D59BAA4C988AF7EC48FC74F81"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_recognition_engineering\\rtl\\drivers\\display\\nt35510_bus8.sv",
+        "Hash":  "C2436DBAB80EF36B3981EF950C51F9CE7372979D8D9D1B2040B3246C28FAB754"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_recognition_engineering\\rtl\\drivers\\display\\nt35510_init.sv",
+        "Hash":  "7D869E411A6D727CBE569F3B8EE4CB1532E944D05483885C170785EC2C577F19"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_recognition_engineering\\rtl\\drivers\\display\\nt35510_init_rom.sv",
+        "Hash":  "F430D13A8EB68952E245807DEBA7926B8A78027036CCBE14988B8525886337D5"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_recognition_engineering\\rtl\\drivers\\display\\nt35510_window_writer.sv",
+        "Hash":  "23127ED0664FAA7561474198091AA6D3A3E5F4CC68B080BB2B1F1D5706F4D261"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_recognition_engineering\\rtl\\drivers\\uart\\uart_fast_rx.sv",
+        "Hash":  "9268E8CECA05EF2DFD9BE815C211EA21367E4DEC55B9174E20E6A0F91699138A"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_recognition_engineering\\rtl\\drivers\\uart\\uart_fast_tx.sv",
+        "Hash":  "0132EE8CD5DF963938BBD5A366F251D53B34356FC0F8F02E33BBF70C4B1C2870"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_recognition_engineering\\rtl\\recognition\\char_normalizer.sv",
+        "Hash":  "8916354963A35CD7F4BF7A441817855E91015FFCCE0CE9168785D4B5F8C35C00"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_recognition_engineering\\rtl\\recognition\\char_segmenter.sv",
+        "Hash":  "ADC61761904339EE29A268C1AC5F94A434BC25F4C98E148E22C7DCA7266DE6E7"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_recognition_engineering\\rtl\\recognition\\cnn_core.sv",
+        "Hash":  "412039B2FC779DF326774AE65314A3F7EA8547E1E09879E0190AA1F2954F24B1"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_recognition_engineering\\rtl\\recognition\\cnn_weight_rom.sv",
+        "Hash":  "EF9974D70016D1D097FC763DB5B2C547A063962FA2FAAF104F3B389634D9DA24"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_recognition_engineering\\rtl\\recognition\\plate_auto_controller.sv",
+        "Hash":  "379D2A6AB9D0BD03CE1000F450DB6EC2BB653C646837B58D97698E7EC7E99DE2"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_recognition_engineering\\rtl\\recognition\\plate_recognition_subsystem.sv",
+        "Hash":  "5D49389866C19AD2C3783745D6B93B44BF88609A92FA6554E52BDF1C4421AE17"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_recognition_engineering\\rtl\\recognition\\plate_region_locator.sv",
+        "Hash":  "003223D1547F742E3F9ADAF14B45B712DAD91F72342ADB701788BF8DE2AC43DC"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_recognition_engineering\\rtl\\recognition\\plate_segment_frontend.sv",
+        "Hash":  "B8C83375B2A3B4E857784A7ACC78B7D2EF70EEBC480CC98E41EADA845B148352"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_recognition_engineering\\rtl\\top\\display_mode_control.sv",
+        "Hash":  "F68A8817B842D1C816D21B7B0C35CEC5D4886E0395F54209E5460D09F7543C6A"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_recognition_engineering\\rtl\\top\\lcd_top.sv",
+        "Hash":  "69CC7AF5F1311CDD9F2F10F3FC35AD20A62B57D77795E8AD0CEB3F56CB5E60CD"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_recognition_engineering\\rtl\\video\\capture_fault_latch.sv",
+        "Hash":  "C65A2558F911861AFB789D45CD85BEF0C8425A415E9C665D51D70844ACC45E4D"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_recognition_engineering\\rtl\\video\\edge_core.sv",
+        "Hash":  "F4F91A48C46D828425A7E22B4DE377D1B9AAB1015BBFC1ADCAF9BA78E41346A0"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_recognition_engineering\\rtl\\video\\gaussian3.sv",
+        "Hash":  "35C2237729BEC2AA92BEBC0D622E468EB42720A43F8E9871A9A81528E24E89A2"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_recognition_engineering\\rtl\\video\\plate_text_overlay.sv",
+        "Hash":  "47E532646EDCEA8DB4E5B22B8D092B1A9D64579F0FCBAF529712D1263FAD5D0F"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_recognition_engineering\\rtl\\video\\row_window3.sv",
+        "Hash":  "7123AF0660D130891748CD4CF522C67CAC30A173ACF4EBB7D2D1B5442FF281E6"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_recognition_engineering\\rtl\\video\\sobel3.sv",
+        "Hash":  "EB10A78FCAE01F94639D31C3D3C4E02B2610672F4472AE47240C7C8E101B6739"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_recognition_engineering\\rtl\\video\\video_core_adapter.sv",
+        "Hash":  "F44C3B1D3B6E4D4F07DF34F07451D97FEA075EEE110531EF33E249293BF04A3F"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_recognition_engineering\\rtl\\video\\video_lcd_sink.sv",
+        "Hash":  "7FA0738C921DC2C8E11F7B5B38CD616B009DDE061DFF2ED43D0CEDCF037E36F1"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_recognition_engineering\\sim\\tb_plate_auto_chain.sv",
+        "Hash":  "84246D3D913742551C6FC83F9DD2DCB0EE8F045CAD3FD169349CBB8FEE36CEE1"
+    }
+]

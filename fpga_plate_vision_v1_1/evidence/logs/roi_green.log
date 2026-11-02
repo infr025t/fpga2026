@@ -1,0 +1,122 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_recognition_engineering/rtl/common/u32_div.sv" into library work
+INFO: [VRFC 10-311] analyzing module u32_div
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_recognition_engineering/rtl/debug/bars_monitor.sv" into library work
+INFO: [VRFC 10-311] analyzing module bars_monitor
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_recognition_engineering/rtl/debug/cnn_uart_bridge.sv" into library work
+INFO: [VRFC 10-311] analyzing module cnn_uart_bridge
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_recognition_engineering/rtl/debug/norm_uart_bridge.sv" into library work
+INFO: [VRFC 10-311] analyzing module norm_uart_bridge
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_recognition_engineering/rtl/debug/nt35510_bringup_top.sv" into library work
+INFO: [VRFC 10-311] analyzing module nt35510_bringup_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_recognition_engineering/rtl/debug/nt35510_test_display.sv" into library work
+INFO: [VRFC 10-311] analyzing module nt35510_test_display
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_recognition_engineering/rtl/debug/plate_auto_uart.sv" into library work
+INFO: [VRFC 10-311] analyzing module plate_auto_uart
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_recognition_engineering/rtl/debug/test_pattern_source.sv" into library work
+INFO: [VRFC 10-311] analyzing module test_pattern_source
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_recognition_engineering/rtl/debug/uart_pair_stream.sv" into library work
+INFO: [VRFC 10-311] analyzing module uart_pair_stream
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_recognition_engineering/rtl/debug/video_snapshot.sv" into library work
+INFO: [VRFC 10-311] analyzing module video_snapshot
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_recognition_engineering/rtl/drivers/camera/camera_fifo_video.sv" into library work
+INFO: [VRFC 10-311] analyzing module camera_fifo_video
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_recognition_engineering/rtl/drivers/camera/camera_startup.sv" into library work
+INFO: [VRFC 10-311] analyzing module camera_startup
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_recognition_engineering/rtl/drivers/camera/href_stable_filter.sv" into library work
+INFO: [VRFC 10-311] analyzing module href_stable_filter
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_recognition_engineering/rtl/drivers/camera/ov7670_config.sv" into library work
+INFO: [VRFC 10-311] analyzing module ov7670_config
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_recognition_engineering/rtl/drivers/camera/vsync_low_filter.sv" into library work
+INFO: [VRFC 10-311] analyzing module vsync_low_filter
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_recognition_engineering/rtl/drivers/display/nt35510_bus8.sv" into library work
+INFO: [VRFC 10-311] analyzing module nt35510_bus8
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_recognition_engineering/rtl/drivers/display/nt35510_init.sv" into library work
+INFO: [VRFC 10-311] analyzing module nt35510_init
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_recognition_engineering/rtl/drivers/display/nt35510_init_rom.sv" into library work
+INFO: [VRFC 10-311] analyzing module nt35510_init_rom
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_recognition_engineering/rtl/drivers/display/nt35510_window_writer.sv" into library work
+INFO: [VRFC 10-311] analyzing module nt35510_window_writer
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_recognition_engineering/rtl/drivers/uart/uart_fast_rx.sv" into library work
+INFO: [VRFC 10-311] analyzing module uart_fast_rx
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_recognition_engineering/rtl/drivers/uart/uart_fast_tx.sv" into library work
+INFO: [VRFC 10-311] analyzing module uart_fast_tx
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_recognition_engineering/rtl/recognition/char_normalizer.sv" into library work
+INFO: [VRFC 10-311] analyzing module char_normalizer
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_recognition_engineering/rtl/recognition/char_segmenter.sv" into library work
+INFO: [VRFC 10-311] analyzing module char_segmenter
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_recognition_engineering/rtl/recognition/cnn_core.sv" into library work
+INFO: [VRFC 10-311] analyzing module cnn_core
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_recognition_engineering/rtl/recognition/cnn_weight_rom.sv" into library work
+INFO: [VRFC 10-311] analyzing module cnn_weight_rom
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_recognition_engineering/rtl/recognition/plate_auto_controller.sv" into library work
+INFO: [VRFC 10-311] analyzing module plate_auto_controller
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_recognition_engineering/rtl/recognition/plate_recognition_subsystem.sv" into library work
+INFO: [VRFC 10-311] analyzing module plate_recognition_subsystem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_recognition_engineering/rtl/recognition/plate_region_locator.sv" into library work
+INFO: [VRFC 10-311] analyzing module plate_region_locator
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_recognition_engineering/rtl/recognition/plate_segment_frontend.sv" into library work
+INFO: [VRFC 10-311] analyzing module plate_segment_frontend
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_recognition_engineering/rtl/top/display_mode_control.sv" into library work
+INFO: [VRFC 10-311] analyzing module display_mode_control
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_recognition_engineering/rtl/top/lcd_top.sv" into library work
+INFO: [VRFC 10-311] analyzing module lcd_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_recognition_engineering/rtl/video/capture_fault_latch.sv" into library work
+INFO: [VRFC 10-311] analyzing module capture_fault_latch
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_recognition_engineering/rtl/video/edge_core.sv" into library work
+INFO: [VRFC 10-311] analyzing module edge_core
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_recognition_engineering/rtl/video/gaussian3.sv" into library work
+INFO: [VRFC 10-311] analyzing module gaussian3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_recognition_engineering/rtl/video/plate_roi_overlay.sv" into library work
+INFO: [VRFC 10-311] analyzing module plate_roi_overlay
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_recognition_engineering/rtl/video/plate_text_overlay.sv" into library work
+INFO: [VRFC 10-311] analyzing module plate_text_overlay
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_recognition_engineering/rtl/video/row_window3.sv" into library work
+INFO: [VRFC 10-311] analyzing module row_window3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_recognition_engineering/rtl/video/sobel3.sv" into library work
+INFO: [VRFC 10-311] analyzing module sobel3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_recognition_engineering/rtl/video/video_core_adapter.sv" into library work
+INFO: [VRFC 10-311] analyzing module video_core_adapter
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_recognition_engineering/rtl/video/video_lcd_sink.sv" into library work
+INFO: [VRFC 10-311] analyzing module video_lcd_sink
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_recognition_engineering/sim/tb_lcd_roi.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_lcd_roi
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: E:/Vivado/2025.1/Vivado/bin/unwrapped/win64.o/xelab.exe tb_lcd_roi -s lcd_roi_tb --timescale 1ns/1ps 
+Multi-threading is on. Using 30 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.plate_roi_overlay
+Compiling module work.plate_text_overlay
+Compiling module work.nt35510_init_rom
+Compiling module work.nt35510_init(CLK_HZ=1000)
+Compiling module work.nt35510_window_writer
+Compiling module work.nt35510_bus8(LOW_CYCLES=2,GAP_CY...
+Compiling module work.video_lcd_sink(CLK_HZ=1000,BUS_S...
+Compiling module work.tb_lcd_roi
+Built simulation snapshot lcd_roi_tb
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Sun Nov  1 20:45:52 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/lcd_roi_tb/xsim_script.tcl
+# xsim {lcd_roi_tb} -autoloadwcfg -tclbatch {run.tcl}
+Time resolution is 1 ps
+source run.tcl
+## run all
+PASS ALL LCD ROI: 910500 RGB565 pixels checked on LCD pins; RAW/EDGE, bubbles, frame atomicity, source CRC preserved
+$finish called at time : 267739406 ns : File "E:/FPGA_Test_Work/plate_recognition_engineering/sim/tb_lcd_roi.sv" Line 88
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:00:22 . Memory (MB): peak = 167.051 ; gain = 0.047
+## quit
+INFO: xsimkernel Simulation Memory Usage: 10940 KB (Peak: 10940 KB), Simulation CPU Usage: 21780 ms
+INFO: [Common 17-206] Exiting xsim at Sun Nov  1 20:46:15 2026...

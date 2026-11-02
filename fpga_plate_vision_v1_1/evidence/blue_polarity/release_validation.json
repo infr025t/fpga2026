@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "local_links_checked": 421,
+  "missing_or_absolute_links": [],
+  "pc_unit_tests": 61,
+  "saved_wire_replay_groups": 20,
+  "frozen_sources": 53,
+  "protected_sources": 49,
+  "hardware_visual_confirmation": false,
+  "current_identity": "release/release_manifest.json"
+}

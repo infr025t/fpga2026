@@ -1,0 +1,33 @@
+#-----------------------------------------------------------
+# xsim v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Sun Nov  1 15:09:46 2026
+# Process ID         : 63248
+# Current directory  : E:/FPGA_Test_Work/plate_autonomous_board_20261101/reports/auto_controller_rtl
+# Command line       : xsim.exe -log green.log -mode tcl -source {xsim.dir/auto_controller_tb/xsim_script.tcl}
+# Log file           : E:/FPGA_Test_Work/plate_autonomous_board_20261101/reports/auto_controller_rtl/green.log
+# Journal file       : E:/FPGA_Test_Work/plate_autonomous_board_20261101/reports/auto_controller_rtl\xsim.jou
+# Running On         : StrawberryBear
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : Intel(R) Core(TM) i9-14900HX
+# CPU Frequency      : 2419 MHz
+# CPU Physical cores : 24
+# CPU Logical cores  : 32
+# Host memory        : 33953 MB
+# Swap memory        : 8640 MB
+# Total Virtual      : 42594 MB
+# Available Virtual  : 8343 MB
+#-----------------------------------------------------------
+source xsim.dir/auto_controller_tb/xsim_script.tcl
+# xsim {auto_controller_tb} -autoloadwcfg -tclbatch {run.tcl}
+Time resolution is 1 ps
+source run.tcl
+## run all
+Fatal: FAIL sample phase x3 y0 cycle=2584 mode=0
+Time: 25835 ns  Iteration: 0  Process: /tb_plate_auto_controller/check  Scope: tb_plate_auto_controller.check  File: E:/FPGA_Test_Work/plate_autonomous_board_20261101/sim/tb_plate_auto_controller.sv Line: 24
+$finish called at time : 25835 ns
+## quit
+INFO: [Common 17-206] Exiting xsim at Sun Nov  1 15:09:48 2026...

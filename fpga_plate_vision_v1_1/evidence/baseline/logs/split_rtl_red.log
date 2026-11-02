@@ -1,0 +1,22 @@
+Generated 12 cases
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/rtl/char_segmenter.sv" into library work
+INFO: [VRFC 10-311] analyzing module char_segmenter
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/sim/tb_touching_split.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_touching_split
+WARNING: [VRFC 10-9277] overflow of 32-bit signed integer 3000000000; using -1294967296 instead [E:/FPGA_Test_Work/plate_autonomous_board_20261101/sim/tb_touching_split.sv:44]
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: E:/Vivado/2025.1/Vivado/bin/unwrapped/win64.o/xelab.exe tb_touching_split -s split_tb 
+Multi-threading is on. Using 30 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+ERROR: [VRFC 10-2861] module 'char_segmenter' does not have a parameter named ENABLE_SPLIT [E:/FPGA_Test_Work/plate_autonomous_board_20261101/sim/tb_touching_split.sv:10]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+elaborate failed
+At E:\FPGA_Test_Work\plate_autonomous_board_20261101\sim\run_touching_split.ps1:13 char:20
++  if($LASTEXITCODE){throw 'elaborate failed'}
++                    ~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (elaborate failed:String) [], RuntimeException
+    + FullyQualifiedErrorId : elaborate failed
+ 

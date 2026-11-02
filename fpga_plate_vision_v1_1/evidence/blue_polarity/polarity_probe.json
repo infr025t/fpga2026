@@ -1,0 +1,36 @@
+[
+  {
+    "case": "live",
+    "roi": [
+      47,
+      43,
+      152,
+      73
+    ],
+    "count": 7,
+    "prediction": "BD12345",
+    "min": 0,
+    "max": 255
+  },
+  {
+    "case": "synthetic_reverse",
+    "roi": null,
+    "count": 0,
+    "prediction": "",
+    "min": 0,
+    "max": 255
+  },
+  {
+    "case": "reverse_corrected",
+    "roi": [
+      47,
+      43,
+      152,
+      73
+    ],
+    "count": 7,
+    "prediction": "BD12345",
+    "min": 0,
+    "max": 255
+  }
+]

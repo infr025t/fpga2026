@@ -1,0 +1,21 @@
+{"frame_id": 477, "passed": true, "hardware_prediction": "DM1O1AC", "errors": []}
+{"frame_id": 481, "passed": true, "hardware_prediction": "DM1O1AC", "errors": []}
+{"frame_id": 485, "passed": true, "hardware_prediction": "DM1O1AC", "errors": []}
+{"frame_id": 489, "passed": true, "hardware_prediction": "DM1O1AC", "errors": []}
+{"frame_id": 493, "passed": true, "hardware_prediction": "DM1O1AC", "errors": []}
+{"frame_id": 497, "passed": true, "hardware_prediction": "", "errors": []}
+{"frame_id": 499, "passed": true, "hardware_prediction": "", "errors": []}
+{"frame_id": 501, "passed": true, "hardware_prediction": "", "errors": []}
+{"frame_id": 503, "passed": true, "hardware_prediction": "", "errors": []}
+{"frame_id": 505, "passed": true, "hardware_prediction": "", "errors": []}
+{"frame_id": 507, "passed": true, "hardware_prediction": "", "errors": []}
+{"frame_id": 509, "passed": true, "hardware_prediction": "", "errors": []}
+{"frame_id": 511, "passed": true, "hardware_prediction": "", "errors": []}
+{"frame_id": 513, "passed": true, "hardware_prediction": "", "errors": []}
+{"frame_id": 515, "passed": true, "hardware_prediction": "", "errors": []}
+{"frame_id": 517, "passed": true, "hardware_prediction": "", "errors": []}
+{"frame_id": 519, "passed": true, "hardware_prediction": "", "errors": []}
+{"frame_id": 521, "passed": true, "hardware_prediction": "", "errors": []}
+{"frame_id": 523, "passed": true, "hardware_prediction": "", "errors": []}
+{"frame_id": 525, "passed": true, "hardware_prediction": "", "errors": []}
+{"passed": true, "requested_frames": 20, "captured_complete_frames": 20, "verified_frames": 20, "mismatched_frames": 0, "verified_characters": 35, "groups": {"epochs": 1, "complete_groups": 20, "incomplete_groups": 1, "invalid_groups": 0, "evicted_groups": 0, "peak_pending_groups": 2, "observed_source_frame_gaps": 29, "packets": 96}, "parser": {"valid_packets": 96, "rejected_candidates": 0, "discarded_bytes": 590, "truncated_bytes": 1980}, "bytes_received": 427870, "timed_out": false, "capture_error": null, "capture_seconds": 2.400827300036326, "total_seconds": 2.5603879000991583, "model_sha256": "179d6d9b9a4e2229c152770152fe6c8d71ff924af5d9da06132debd730cf4645", "model_error": null, "source": "COM10@12000000", "read_only": true, "scope": "Captured complete groups only; exact fixed-ROI integer-reference equivalence; not recognition accuracy on arbitrary plates", "frames": ["frames\\e000_f0000000477\\result.json", "frames\\e000_f0000000481\\result.json", "frames\\e000_f0000000485\\result.json", "frames\\e000_f0000000489\\result.json", "frames\\e000_f0000000493\\result.json", "frames\\e000_f0000000497\\result.json", "frames\\e000_f0000000499\\result.json", "frames\\e000_f0000000501\\result.json", "frames\\e000_f0000000503\\result.json", "frames\\e000_f0000000505\\result.json", "frames\\e000_f0000000507\\result.json", "frames\\e000_f0000000509\\result.json", "frames\\e000_f0000000511\\result.json", "frames\\e000_f0000000513\\result.json", "frames\\e000_f0000000515\\result.json", "frames\\e000_f0000000517\\result.json", "frames\\e000_f0000000519\\result.json", "frames\\e000_f0000000521\\result.json", "frames\\e000_f0000000523\\result.json", "frames\\e000_f0000000525\\result.json"], "truth_for_scoring_only": "BD12345", "truth_exact_frames": 0}

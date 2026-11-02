@@ -1,0 +1,25 @@
+{
+  "source_manifest": "build_locator/sources/manifest.json",
+  "source_mismatches": [],
+  "changed_previous_sources": [
+    "rtl/plate_auto_uart.sv",
+    "rtl/plate_recognition_subsystem.sv",
+    "video_rtl/lcd_top.sv",
+    "scripts/build.tcl"
+  ],
+  "new_sources": [
+    "rtl/plate_region_locator.sv",
+    "rtl/plate_segment_frontend.sv"
+  ],
+  "sha256": {
+    "build_locator/autonomous_board.bit": "e9e72dccb020db753b4908c2e44263d62532b98dd957b539308ab257acea8067",
+    "build_locator/autonomous_board.ltx": "5843c174a9bedfaa714babdc12e381b0b198eb46743295feaf486b77c2eeeeb3",
+    "model/model.bin": "179d6d9b9a4e2229c152770152fe6c8d71ff924af5d9da06132debd730cf4645",
+    "pc/plate_locator.py": "d18295832e875c9f67b5524edd21a0b8d76b574a66298520c09730e91700d075",
+    "pc/auto_protocol.py": "4fc424215d317130b5a25090c2341e3a3874f07cba22e9deeea765fe0ff4a5f7",
+    "pc/observe_auto.py": "382c3faaaf2e619e891f91adab19d31d22e322860884b1956cda7459367ce5d8",
+    "build.ps1": "a27206ff879aa66eb4d5b51616876a48df96ba52a6897502b2abdbc18fc9d625",
+    "scripts/hardware.tcl": "8ff80566b397098db19472641100b9a0503a78ad60f8b24522366264d075f7a9"
+  },
+  "flash_modified": false
+}

@@ -1,0 +1,8 @@
+# 本地生成目录不作为发布源或验证原件。
+/project/build/
+/project/reports/
+/project/logs/
+**/__pycache__/
+*.pyc
+**/.Xil/
+*.jou

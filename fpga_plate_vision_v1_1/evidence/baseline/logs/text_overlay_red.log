@@ -1,0 +1,8 @@
+ERROR: [XSIM 43-4316] Can not find file: ../../rtl/plate_text_overlay.sv
+xvlog failed
+At E:\FPGA_Test_Work\plate_autonomous_board_20261101\sim\run_text_overlay.ps1:9 char:20
++  if($LASTEXITCODE){throw 'xvlog failed'}
++                    ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (xvlog failed:String) [], RuntimeException
+    + FullyQualifiedErrorId : xvlog failed
+ 

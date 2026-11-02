@@ -1,0 +1,30 @@
+{
+  "epoch": 0,
+  "frame_id": 5,
+  "capture_tick": 14750607,
+  "roi": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "flags": 2,
+  "hardware_boxes": [],
+  "reference_boxes": [],
+  "reference_segment_status": 0,
+  "characters": [],
+  "errors": [],
+  "timing": {
+    "seg_cycles": 57604,
+    "elapsed_cycles": 3744010
+  },
+  "hardware_counters": {
+    "bad_captures": 0,
+    "skipped_frames": 4,
+    "publisher_dropped": 0
+  },
+  "hardware_prediction": "",
+  "reference_prediction": "",
+  "result_prediction": "",
+  "passed": true
+}

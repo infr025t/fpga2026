@@ -1,0 +1,23 @@
+{
+  "reports/pc_refactor/source_manifest.json": {
+    "checked": 851,
+    "mismatched": []
+  },
+  "reports/regression_paths/source_manifest.json": {
+    "checked": 47,
+    "mismatched": []
+  },
+  "evidence/current_sources.json": {
+    "checked": 262,
+    "mismatched": []
+  },
+  "build_source": {
+    "checked": 48,
+    "mismatched": []
+  },
+  "hardware": {
+    "reference_frames": 100,
+    "truth_exact": 0,
+    "physical_control_restored": true
+  }
+}

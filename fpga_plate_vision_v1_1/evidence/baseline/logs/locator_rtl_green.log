@@ -1,0 +1,62 @@
+26 locator vectors
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/rtl/plate_region_locator.sv" into library work
+INFO: [VRFC 10-311] analyzing module plate_region_locator
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/sim/tb_plate_region_locator.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_plate_region_locator
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: E:/Vivado/2025.1/Vivado/bin/unwrapped/win64.o/xelab.exe tb_plate_region_locator -s locator_tb 
+Multi-threading is on. Using 30 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.plate_region_locator
+Compiling module work.tb_plate_region_locator
+Built simulation snapshot locator_tb
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Sun Nov  1 16:58:11 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/locator_tb/xsim_script.tcl
+# xsim {locator_tb} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+PASS locator shift_0_0 cycles=115441
+PASS locator shift_0_24 cycles=115441
+PASS locator shift_0_52 cycles=115441
+PASS locator shift_8_0 cycles=115441
+PASS locator shift_8_24 cycles=115441
+PASS locator shift_8_52 cycles=115441
+PASS locator shift_14_0 cycles=115441
+PASS locator shift_14_24 cycles=115441
+PASS locator shift_14_52 cycles=115441
+PASS locator blank0 cycles=57601
+PASS locator blank90 cycles=57601
+PASS locator blank255 cycles=57601
+PASS locator header_gap2 cycles=115441
+PASS locator header_gap3 cycles=115441
+PASS locator choose_larger_band cycles=115442
+PASS locator horizontal_clip0 cycles=115441
+PASS locator horizontal_clip20 cycles=115441
+PASS locator top_clip cycles=115441
+PASS locator bottom_clip cycles=115441
+PASS locator too_tall cycles=115441
+PASS locator current_roi_auto_100_0 cycles=115441
+PASS locator current_roi_auto_100_1 cycles=115441
+PASS locator current_roi_precheck_0 cycles=115441
+PASS locator current_roi_precheck_1 cycles=115441
+PASS locator osd_board_20_0 cycles=115441
+PASS locator osd_board_20_1 cycles=115441
+PASS ALL locator RTL 26 cases
+$finish called at time : 28281040 ns : File "E:/FPGA_Test_Work/plate_autonomous_board_20261101/sim/tb_plate_region_locator.sv" Line 26
+exit
+INFO: [Common 17-206] Exiting xsim at Sun Nov  1 16:58:15 2026...

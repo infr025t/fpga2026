@@ -1,0 +1,147 @@
+{
+  "epoch": 0,
+  "frame_id": 22682,
+  "capture_tick": 1996674021,
+  "roi": [
+    21,
+    34,
+    156,
+    81
+  ],
+  "flags": 0,
+  "hardware_boxes": [
+    [
+      27,
+      43,
+      39,
+      36
+    ],
+    [
+      65,
+      44,
+      12,
+      30
+    ]
+  ],
+  "reference_boxes": [
+    [
+      27,
+      43,
+      39,
+      36
+    ],
+    [
+      65,
+      44,
+      12,
+      30
+    ]
+  ],
+  "reference_segment_status": 0,
+  "characters": [
+    {
+      "index": 0,
+      "hardware_box": [
+        27,
+        43,
+        39,
+        36
+      ],
+      "hardware_class_id": 0,
+      "hardware_ascii": 48,
+      "signed_argmax": 0,
+      "errors": [],
+      "norm_cycles": 112116,
+      "core_cycles": 942444,
+      "reference_box": [
+        27,
+        43,
+        39,
+        36
+      ],
+      "reference_class_id": 0,
+      "normalization_parameters": {
+        "low100": 17657,
+        "high100": 25500,
+        "high": 255,
+        "den": 78,
+        "crop_width": 43,
+        "crop_height": 40,
+        "nw": 22,
+        "nh": 20,
+        "dst_x": 1,
+        "dst_y": 6,
+        "area_den": 1720,
+        "crop_xyxy": [
+          25,
+          41,
+          68,
+          81
+        ]
+      },
+      "norm_pixel_mismatches": 0,
+      "score_mismatches": 0,
+      "max_pixel_error": 0,
+      "max_score_error": 0
+    },
+    {
+      "index": 1,
+      "hardware_box": [
+        65,
+        44,
+        12,
+        30
+      ],
+      "hardware_class_id": 13,
+      "hardware_ascii": 68,
+      "signed_argmax": 13,
+      "errors": [],
+      "norm_cycles": 97792,
+      "core_cycles": 942444,
+      "reference_box": [
+        65,
+        44,
+        12,
+        30
+      ],
+      "reference_class_id": 13,
+      "normalization_parameters": {
+        "low100": 19200,
+        "high100": 25500,
+        "high": 255,
+        "den": 63,
+        "crop_width": 16,
+        "crop_height": 34,
+        "nw": 14,
+        "nh": 30,
+        "dst_x": 5,
+        "dst_y": 1,
+        "area_den": 544,
+        "crop_xyxy": [
+          63,
+          42,
+          79,
+          76
+        ]
+      },
+      "norm_pixel_mismatches": 0,
+      "score_mismatches": 0,
+      "max_pixel_error": 0,
+      "max_score_error": 0
+    }
+  ],
+  "errors": [],
+  "timing": {
+    "seg_cycles": 4605021,
+    "elapsed_cycles": 11142742
+  },
+  "hardware_counters": {
+    "bad_captures": 0,
+    "skipped_frames": 12040,
+    "publisher_dropped": 0
+  },
+  "hardware_prediction": "0D",
+  "reference_prediction": "0D",
+  "result_prediction": "0D",
+  "passed": true
+}

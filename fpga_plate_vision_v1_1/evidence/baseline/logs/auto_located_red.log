@@ -1,0 +1,11 @@
+Generated current-scene vectors: boxes=7 prediction=BD12345 source=E:\FPGA_Test_Work\plate_autonomous_board_20261101\reports\osd_board_20\frames\e000_f0000000525\raw.npy
+Resolve-Path : Cannot find path 'E:\FPGA_Test_Work\plate_autonomous_board_20261101/rtl/plate_segment_frontend.sv' becau
+se it does not exist.
+At C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\Microsoft.PowerShell.Utility\Microsoft.PowerShell.Utility.psm1:10
+6 char:36
++ ...     $pathsToProcess += Resolve-Path -LiteralPath $LiteralPath | Forea ...
++                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (E:\FPGA_Test_Wo...ent_frontend.sv:String) [Resolve-Path], ItemNotFoundE 
+   xception
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.ResolvePathCommand
+ 

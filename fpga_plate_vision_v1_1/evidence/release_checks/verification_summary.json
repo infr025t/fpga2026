@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "scope": "Fresh offline checks from final release directory. No programming or new camera capture.",
+  "simulations": [
+    {
+      "name": "roi_overlay",
+      "log": "simulations/sim_roi_overlay/roi.log",
+      "result": "PASS bounds, half-open mapping, disable/reenter, invalid, reset, frame atomicity"
+    },
+    {
+      "name": "roi_abort",
+      "log": "simulations/sim_roi_abort/modes.log",
+      "result": "PASS disabled RAW/EDGE, midcapture cancel, manual access, fresh OCR, diagnostic priority"
+    },
+    {
+      "name": "lcd_roi",
+      "log": "simulations/sim_lcd_roi/green.log",
+      "pixels_checked": 910500,
+      "result": "PASS RAW/EDGE, bubbles, frame atomicity, source CRC preserved at LCD pins"
+    },
+    {
+      "name": "autonomous_chain",
+      "log": "simulations/release_auto/release_auto_simulate.log",
+      "uart_log": "simulations/release_auto/release_auto_uart_verify.log",
+      "result": "PASS seven characters and blank frame; 13 packets,45832 bytes,5376 normalized pixels,252 signed scores exact"
+    }
+  ],
+  "pc_unit_tests": 61,
+  "accepted_wire_replay": {
+    "frames": 10,
+    "characters": 70,
+    "pixel_mismatches": 0,
+    "score_mismatches": 0,
+    "whole_string_truth_correct": 0,
+    "truth": "K38817",
+    "summary": "roi_wire_replay/summary.json"
+  },
+  "structure": "engineering_structure.json",
+  "tooling": "tooling/tooling_checks.json"
+}

@@ -1,0 +1,58 @@
+{
+  "source": "E:\\FPGA_Test_Work\\plate_recognition_engineering\\evidence\\baseline\\reports\\board_camera_100\\frames\\e000_f0000004516\\raw.npy",
+  "source_file_sha256": "9ad89a6b8818aaeac7e0fb8d1912e8e6e4c8cb7244c70d3ecadf2779b8f42060",
+  "raw_sha256": "a382059536831b9cbfd69c7f385269081ab2dffcd3d86badd97278027c2f219b",
+  "roi": [
+    26,
+    41,
+    150,
+    76
+  ],
+  "flags": 0,
+  "boxes": [
+    [
+      29,
+      50,
+      13,
+      26
+    ],
+    [
+      56,
+      49,
+      13,
+      27
+    ],
+    [
+      74,
+      49,
+      9,
+      27
+    ],
+    [
+      87,
+      49,
+      14,
+      27
+    ],
+    [
+      103,
+      49,
+      13,
+      27
+    ],
+    [
+      118,
+      49,
+      13,
+      27
+    ],
+    [
+      134,
+      49,
+      12,
+      27
+    ]
+  ],
+  "prediction": "BD12345",
+  "method": "fixed geometric ROI; reference segmentation, normalization and signed CNN argmax; no truth input"
+}

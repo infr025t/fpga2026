@@ -1,0 +1,9 @@
+{
+  "changed_baseline_files": [
+    "video_rtl\\lcd_top.sv"
+  ],
+  "frozen_mismatches": [],
+  "baseline": "E:\\FPGA_Test_Work\\plate_segment_board_20261101",
+  "formal_project": "E:/FPGA_Test_Work/release_lcd_v04",
+  "formal_git_head": "8e184b24239fb11526e4625243c2729d3513fd8c"
+}

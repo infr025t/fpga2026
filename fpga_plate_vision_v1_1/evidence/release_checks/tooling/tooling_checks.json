@@ -1,0 +1,64 @@
+{
+  "scope": "Offline tooling verification only; no Vivado synthesis, board, COM or JTAG access",
+  "checks": [
+    {
+      "name": "tcl_syntax_complete",
+      "passed": true,
+      "detail": 6
+    },
+    {
+      "name": "tcl_python_discovery",
+      "passed": true,
+      "detail": "E:\\Python\\python.exe"
+    },
+    {
+      "name": "hardware.tcl_default_release",
+      "passed": true,
+      "detail": "release"
+    },
+    {
+      "name": "check_display_modes.tcl_default_release",
+      "passed": true,
+      "detail": "release"
+    },
+    {
+      "name": "powershell_rejects_existing_build",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "tcl_rejects_existing_build",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "frozen_snapshot_hashes_and_space_path",
+      "passed": true,
+      "detail": 53
+    },
+    {
+      "name": "frozen_snapshot_rejects_overwrite",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "missing_normalization_input_fails_before_serial",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "pc_unittest",
+      "passed": true,
+      "detail": 61
+    },
+    {
+      "name": "normalization_math_and_protocol_preserved",
+      "passed": true,
+      "detail": {
+        "normalization_ast_excluding_scene_paths": "identical",
+        "protocol_files_byte_identical": 7
+      }
+    }
+  ],
+  "passed": true
+}

@@ -1,0 +1,31 @@
+{
+  "release": "fpga_plate_vision_v1_0",
+  "status": "accepted_for_submission_copy",
+  "hardware_behavior_changed": false,
+  "hardware_programmed_during_preparation": false,
+  "git_pushed": false,
+  "zip_created": false,
+  "review_findings_resolved": [
+    {
+      "finding": "ROI and text capture identity",
+      "resolution": "System report now describes independent frame-stable overlays; no same-capture guarantee."
+    },
+    {
+      "finding": "Current timing and 42 DRC warnings details",
+      "resolution": "Anomaly register E06-E10 includes current reports, external timing assumptions, and historical/current distinction."
+    },
+    {
+      "finding": "Minor wire fragments",
+      "resolution": "Raw evidence retained and anomaly register records them; main report correctly reports complete groups only."
+    }
+  ],
+  "verification": [
+    "verification_summary.json",
+    "engineering_structure.json",
+    "package_layout.json",
+    "tooling/tooling_checks.json",
+    "tooling/powershell_checks.json",
+    "review.md"
+  ],
+  "final_scope": "Packaging, path portability and documentation only. RTL, constraints, model and accepted BIT/LTX preserved."
+}

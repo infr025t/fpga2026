@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "requested_frames": 10,
+  "captured_complete_frames": 10,
+  "verified_frames": 10,
+  "mismatched_frames": 0,
+  "verified_characters": 18,
+  "groups": {
+    "epochs": 1,
+    "complete_groups": 10,
+    "incomplete_groups": 1,
+    "invalid_groups": 0,
+    "evicted_groups": 0,
+    "peak_pending_groups": 2,
+    "observed_source_frame_gaps": 18,
+    "packets": 52
+  },
+  "parser": {
+    "valid_packets": 52,
+    "rejected_candidates": 0,
+    "discarded_bytes": 10858,
+    "truncated_bytes": 1828
+  },
+  "bytes_received": 228026,
+  "timed_out": false,
+  "capture_error": null,
+  "capture_seconds": 1.5761720000300556,
+  "total_seconds": 1.7059224001131952,
+  "model_sha256": "179d6d9b9a4e2229c152770152fe6c8d71ff924af5d9da06132debd730cf4645",
+  "model_error": null,
+  "source": "COM10@12000000",
+  "read_only": true,
+  "scope": "Captured complete groups only; exact fixed-ROI integer-reference equivalence; not recognition accuracy on arbitrary plates",
+  "frames": [
+    "frames\\e000_f0000007015\\result.json",
+    "frames\\e000_f0000007018\\result.json",
+    "frames\\e000_f0000007021\\result.json",
+    "frames\\e000_f0000007024\\result.json",
+    "frames\\e000_f0000007027\\result.json",
+    "frames\\e000_f0000007030\\result.json",
+    "frames\\e000_f0000007033\\result.json",
+    "frames\\e000_f0000007036\\result.json",
+    "frames\\e000_f0000007039\\result.json",
+    "frames\\e000_f0000007042\\result.json"
+  ]
+}

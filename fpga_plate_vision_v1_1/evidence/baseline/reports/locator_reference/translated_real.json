@@ -1,0 +1,201 @@
+{
+  "source": "reports\\current_roi_auto_100\\frames\\e000_f0000012175\\raw.npy",
+  "scope": "Synthetic integer translations of one real frame, not new physical captures",
+  "cases": [
+    {
+      "dx_small": -8,
+      "dy_small": -32,
+      "roi": [
+        5,
+        7,
+        143,
+        44
+      ],
+      "prediction": "BD12345",
+      "truth_for_scoring_only": "BD12345",
+      "exact": true
+    },
+    {
+      "dx_small": 0,
+      "dy_small": -32,
+      "roi": [
+        13,
+        7,
+        151,
+        44
+      ],
+      "prediction": "BD12345",
+      "truth_for_scoring_only": "BD12345",
+      "exact": true
+    },
+    {
+      "dx_small": 4,
+      "dy_small": -32,
+      "roi": [
+        17,
+        7,
+        155,
+        44
+      ],
+      "prediction": "BD12345",
+      "truth_for_scoring_only": "BD12345",
+      "exact": true
+    },
+    {
+      "dx_small": -8,
+      "dy_small": -16,
+      "roi": [
+        5,
+        23,
+        143,
+        60
+      ],
+      "prediction": "BD12345",
+      "truth_for_scoring_only": "BD12345",
+      "exact": true
+    },
+    {
+      "dx_small": 0,
+      "dy_small": -16,
+      "roi": [
+        13,
+        23,
+        151,
+        60
+      ],
+      "prediction": "BD12345",
+      "truth_for_scoring_only": "BD12345",
+      "exact": true
+    },
+    {
+      "dx_small": 4,
+      "dy_small": -16,
+      "roi": [
+        17,
+        23,
+        155,
+        60
+      ],
+      "prediction": "BD12345",
+      "truth_for_scoring_only": "BD12345",
+      "exact": true
+    },
+    {
+      "dx_small": -8,
+      "dy_small": 0,
+      "roi": [
+        5,
+        39,
+        143,
+        76
+      ],
+      "prediction": "BD12345",
+      "truth_for_scoring_only": "BD12345",
+      "exact": true
+    },
+    {
+      "dx_small": 0,
+      "dy_small": 0,
+      "roi": [
+        13,
+        39,
+        151,
+        76
+      ],
+      "prediction": "BD12345",
+      "truth_for_scoring_only": "BD12345",
+      "exact": true
+    },
+    {
+      "dx_small": 4,
+      "dy_small": 0,
+      "roi": [
+        17,
+        39,
+        155,
+        76
+      ],
+      "prediction": "BD12345",
+      "truth_for_scoring_only": "BD12345",
+      "exact": true
+    },
+    {
+      "dx_small": -8,
+      "dy_small": 16,
+      "roi": [
+        5,
+        55,
+        143,
+        92
+      ],
+      "prediction": "BD12345",
+      "truth_for_scoring_only": "BD12345",
+      "exact": true
+    },
+    {
+      "dx_small": 0,
+      "dy_small": 16,
+      "roi": [
+        13,
+        55,
+        151,
+        92
+      ],
+      "prediction": "BD12345",
+      "truth_for_scoring_only": "BD12345",
+      "exact": true
+    },
+    {
+      "dx_small": 4,
+      "dy_small": 16,
+      "roi": [
+        17,
+        55,
+        155,
+        92
+      ],
+      "prediction": "BD12345",
+      "truth_for_scoring_only": "BD12345",
+      "exact": true
+    },
+    {
+      "dx_small": -8,
+      "dy_small": 32,
+      "roi": [
+        5,
+        71,
+        143,
+        108
+      ],
+      "prediction": "BD12345",
+      "truth_for_scoring_only": "BD12345",
+      "exact": true
+    },
+    {
+      "dx_small": 0,
+      "dy_small": 32,
+      "roi": [
+        13,
+        71,
+        151,
+        108
+      ],
+      "prediction": "BD12345",
+      "truth_for_scoring_only": "BD12345",
+      "exact": true
+    },
+    {
+      "dx_small": 4,
+      "dy_small": 32,
+      "roi": [
+        17,
+        71,
+        155,
+        108
+      ],
+      "prediction": "BD12345",
+      "truth_for_scoring_only": "BD12345",
+      "exact": true
+    }
+  ]
+}

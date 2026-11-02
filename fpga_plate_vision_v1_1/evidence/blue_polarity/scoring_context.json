@@ -1,0 +1,8 @@
+{
+  "truth": "AL67L8",
+  "truth_source": "Assistant visually read the captured plate; user confirmed camera aimed at blue/white plate but did not type the number",
+  "used_for_training_or_prediction": false,
+  "frames": 20,
+  "exact_strings": 20,
+  "scope": "Single stationary blue-background white-character scene; not a cross-scene accuracy claim"
+}

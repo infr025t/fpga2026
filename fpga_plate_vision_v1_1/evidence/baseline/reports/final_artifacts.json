@@ -1,0 +1,11 @@
+{
+  "source_manifest": "build_current_roi/sources/manifest.json",
+  "source_mismatches": [],
+  "sha256": {
+    "build_current_roi/autonomous_board.bit": "d005c82731a1b2b4d060a915666d059829a469792130d75aaa73fbbae9e2c399",
+    "build_current_roi/autonomous_board.ltx": "5843c174a9bedfaa714babdc12e381b0b198eb46743295feaf486b77c2eeeeb3",
+    "model/model.bin": "179d6d9b9a4e2229c152770152fe6c8d71ff924af5d9da06132debd730cf4645",
+    "scripts/refine_timing.tcl": "a27caf34088dba20d8c361323456a35a05f7fe8c083b00d4534d4fa450b27658",
+    "build.ps1": "da328a7bc019b16b954094661167a041b59844fa68a4bf2af4bbe1356d10f030"
+  }
+}

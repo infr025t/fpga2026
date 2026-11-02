@@ -1,0 +1,36 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/rtl/plate_text_overlay.sv" into library work
+INFO: [VRFC 10-311] analyzing module plate_text_overlay
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/sim/tb_plate_text_overlay.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_plate_text_overlay
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: E:/Vivado/2025.1/Vivado/bin/unwrapped/win64.o/xelab.exe tb_plate_text_overlay -s text_overlay_tb --timescale 1ns/1ps 
+Multi-threading is on. Using 30 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.plate_text_overlay
+Compiling module work.tb_plate_text_overlay
+Built simulation snapshot text_overlay_tb
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Sun Nov  1 16:18:20 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/text_overlay_tb/xsim_script.tcl
+# xsim {text_overlay_tb} -autoloadwcfg -tclbatch {run.tcl}
+Time resolution is 1 ps
+source run.tcl
+## run all
+PASS ALL text overlay: atomic updates, modes, glyphs, clipping, overflow, reset
+$finish called at time : 416 ns : File "E:/FPGA_Test_Work/plate_autonomous_board_20261101/sim/tb_plate_text_overlay.sv" Line 44
+## quit
+INFO: [Common 17-206] Exiting xsim at Sun Nov  1 16:18:21 2026...

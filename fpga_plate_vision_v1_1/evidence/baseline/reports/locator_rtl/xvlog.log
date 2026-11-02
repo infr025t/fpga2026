@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/rtl/plate_region_locator.sv" into library work
+INFO: [VRFC 10-311] analyzing module plate_region_locator
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/sim/tb_plate_region_locator.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_plate_region_locator

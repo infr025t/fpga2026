@@ -1,0 +1,20 @@
+E
+======================================================================
+ERROR: test_prefix_filter (unittest.loader._FailedTest.test_prefix_filter)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_prefix_filter
+Traceback (most recent call last):
+  File "E:\Python\Lib\unittest\loader.py", line 426, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "E:\Python\Lib\unittest\loader.py", line 367, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "E:\FPGA_Test_Work\plate_autonomous_board_20261101\pc\test_prefix_filter.py", line 3, in <module>
+    from segment_ref import segment_frame,filter_prefix_candidates
+ImportError: cannot import name 'filter_prefix_candidates' from 'segment_ref' (E:\FPGA_Test_Work\plate_autonomous_board_20261101\pc\segment_ref.py)
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)

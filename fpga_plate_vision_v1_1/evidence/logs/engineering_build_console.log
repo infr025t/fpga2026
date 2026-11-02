@@ -1,0 +1,155 @@
+
+****** Vivado v2025.1 (64-bit)
+  **** SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Sun Nov  1 20:13:00 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source {scripts\build.tcl}
+# set project_root [file normalize [file join [file dirname [info script]] ..]]
+# set out [file normalize [file join $project_root build engineering_01]]
+# if {[llength $argv]} {set out [file normalize [lindex $argv 0]]}
+# file mkdir $out
+# set root [file join $out sources]
+# puts [exec E:/Python/python.exe [file join $project_root scripts freeze_sources.py] $root]
+FROZEN 48 files to E:\FPGA_Test_Work\plate_recognition_engineering\build\engineering_01\sources
+# cd $root
+# create_project -force autonomous_board [file join $out project] -part xc7a35tcpg236-1
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 492.500 ; gain = 209.082
+# set_property verilog_define {DIAG_JTAG LCD_SNAPSHOT} [current_fileset]
+# file mkdir [file join $out ip]
+# create_ip -name vio -vendor xilinx.com -library ip -version 3.0 -module_name lcd_vio -dir [file join $out ip]
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'E:/Vivado/2025.1/Vivado/data/ip'.
+# set config [list CONFIG.C_NUM_PROBE_IN 9 CONFIG.C_NUM_PROBE_OUT 3 CONFIG.C_PROBE_IN0_WIDTH 32 CONFIG.C_PROBE_IN1_WIDTH 256 CONFIG.C_PROBE_IN2_WIDTH 128 CONFIG.C_PROBE_OUT0_WIDTH 16 CONFIG.C_PROBE_OUT1_WIDTH 2 CONFIG.C_PROBE_OUT2_WIDTH 11 CONFIG.C_PROBE_OUT0_INIT_VAL 0x0000 CONFIG.C_PROBE_OUT1_INIT_VAL 0x0 CONFIG.C_PROBE_OUT2_INIT_VAL 0x0 CONFIG.C_EN_PROBE_IN_ACTIVITY 0]
+# foreach n {3 4 5} {lappend config CONFIG.C_PROBE_IN${n}_WIDTH 256}
+# lappend config CONFIG.C_PROBE_IN6_WIDTH 32 CONFIG.C_PROBE_IN7_WIDTH 128 CONFIG.C_PROBE_IN8_WIDTH 128
+# set_property -dict $config [get_ips lcd_vio]
+# generate_target all [get_ips lcd_vio]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'lcd_vio'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'lcd_vio'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'lcd_vio'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'lcd_vio'...
+# set source_file [open [file join $root config rtl_sources.txt] r]
+# set sources [split [string trim [read $source_file]] "\n"]
+# close $source_file
+# foreach source $sources {read_verilog -sv [file join $root $source]}
+# read_xdc [file join $root constraints basys3_camera_lcd.xdc]
+# synth_design -top lcd_top -part xc7a35tcpg236-1
+Command: synth_design -top lcd_top -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 60092
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1209.484 ; gain = 493.281
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'lcd_top' [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/top/lcd_top.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'display_mode_control' [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/top/display_mode_control.sv:4]
+INFO: [Synth 8-6155] done synthesizing module 'display_mode_control' (0#1) [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/top/display_mode_control.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'camera_startup' [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/drivers/camera/camera_startup.sv:4]
+INFO: [Synth 8-6155] done synthesizing module 'camera_startup' (0#1) [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/drivers/camera/camera_startup.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'ov7670_config' [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/drivers/camera/ov7670_config.sv:7]
+	Parameter DIRECT_IO bound to: 0 - type: integer 
+	Parameter FREEZE_AEC bound to: 0 - type: integer 
+	Parameter FREEZE_AGC bound to: 0 - type: integer 
+	Parameter PLL_VALUE bound to: 138 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'ov7670_config' (0#1) [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/drivers/camera/ov7670_config.sv:7]
+INFO: [Synth 8-6157] synthesizing module 'capture_fault_latch' [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/video/capture_fault_latch.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'capture_fault_latch' (0#1) [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/video/capture_fault_latch.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'camera_fifo_video' [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/drivers/camera/camera_fifo_video.sv:5]
+INFO: [Synth 8-6157] synthesizing module 'vsync_low_filter' [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/drivers/camera/vsync_low_filter.sv:5]
+	Parameter MIN_LOW bound to: 64 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'vsync_low_filter' (0#1) [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/drivers/camera/vsync_low_filter.sv:5]
+INFO: [Synth 8-6157] synthesizing module 'href_stable_filter' [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/drivers/camera/href_stable_filter.sv:6]
+	Parameter STABLE_CYCLES bound to: 64 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'href_stable_filter' (0#1) [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/drivers/camera/href_stable_filter.sv:6]
+INFO: [Synth 8-6155] done synthesizing module 'camera_fifo_video' (0#1) [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/drivers/camera/camera_fifo_video.sv:5]
+INFO: [Synth 8-6157] synthesizing module 'test_pattern_source' [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/debug/test_pattern_source.sv:4]
+INFO: [Synth 8-6155] done synthesizing module 'test_pattern_source' (0#1) [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/debug/test_pattern_source.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'video_core_adapter' [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/video/video_core_adapter.sv:5]
+INFO: [Synth 8-6157] synthesizing module 'edge_core' [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/video/edge_core.sv:4]
+	Parameter W bound to: 640 - type: integer 
+	Parameter H bound to: 480 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'gaussian3' [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/video/gaussian3.sv:3]
+	Parameter W bound to: 640 - type: integer 
+	Parameter H bound to: 480 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'row_window3' [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/video/row_window3.sv:3]
+	Parameter W bound to: 640 - type: integer 
+	Parameter H bound to: 480 - type: integer 
+	Parameter DATA_W bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'row_window3' (0#1) [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/video/row_window3.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'gaussian3' (0#1) [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/video/gaussian3.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'sobel3' [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/video/sobel3.sv:3]
+	Parameter W bound to: 632 - type: integer 
+	Parameter H bound to: 472 - type: integer 
+	Parameter OFFSET bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'row_window3__parameterized0' [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/video/row_window3.sv:3]
+	Parameter W bound to: 632 - type: integer 
+	Parameter H bound to: 472 - type: integer 
+	Parameter DATA_W bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'row_window3__parameterized0' (0#1) [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/video/row_window3.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'sobel3' (0#1) [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/video/sobel3.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'edge_core' (0#1) [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/video/edge_core.sv:4]
+INFO: [Synth 8-6155] done synthesizing module 'video_core_adapter' (0#1) [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/video/video_core_adapter.sv:5]
+INFO: [Synth 8-6157] synthesizing module 'video_lcd_sink' [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/video/video_lcd_sink.sv:4]
+	Parameter BUS_SETUP bound to: 2 - type: integer 
+	Parameter BUS_LOW bound to: 2 - type: integer 
+	Parameter BUS_HOLD bound to: 2 - type: integer 
+	Parameter BUS_GAP bound to: 0 - type: integer 
+	Parameter ENABLE_OSD bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'plate_text_overlay' [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/video/plate_text_overlay.sv:4]
+INFO: [Synth 8-6155] done synthesizing module 'plate_text_overlay' (0#1) [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/video/plate_text_overlay.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'nt35510_init' [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/drivers/display/nt35510_init.sv:5]
+	Parameter CLK_HZ bound to: 100000000 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'nt35510_init_rom' [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/drivers/display/nt35510_init_rom.sv:6]
+INFO: [Synth 8-6155] done synthesizing module 'nt35510_init_rom' (0#1) [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/drivers/display/nt35510_init_rom.sv:6]
+INFO: [Synth 8-6155] done synthesizing module 'nt35510_init' (0#1) [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/drivers/display/nt35510_init.sv:5]
+INFO: [Synth 8-6157] synthesizing module 'nt35510_window_writer' [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/drivers/display/nt35510_window_writer.sv:6]
+	Parameter PANEL_W bound to: 800 - type: integer 
+	Parameter PANEL_H bound to: 480 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'nt35510_window_writer' (0#1) [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/drivers/display/nt35510_window_writer.sv:6]
+INFO: [Synth 8-6157] synthesizing module 'nt35510_bus8' [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/drivers/display/nt35510_bus8.sv:7]
+	Parameter SETUP_CYCLES bound to: 2 - type: integer 
+	Parameter LOW_CYCLES bound to: 2 - type: integer 
+	Parameter HOLD_CYCLES bound to: 2 - type: integer 
+	Parameter GAP_CYCLES bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'nt35510_bus8' (0#1) [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/drivers/display/nt35510_bus8.sv:7]
+INFO: [Synth 8-6155] done synthesizing module 'video_lcd_sink' (0#1) [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/video/video_lcd_sink.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'uart_pair_stream' [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/debug/uart_pair_stream.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'uart_fast_tx' [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/drivers/uart/uart_fast_tx.sv:5]
+INFO: [Synth 8-6155] done synthesizing module 'uart_fast_tx' (0#1) [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/drivers/uart/uart_fast_tx.sv:5]
+INFO: [Synth 8-6155] done synthesizing module 'uart_pair_stream' (0#1) [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/debug/uart_pair_stream.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'bars_monitor' [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/debug/bars_monitor.sv:4]
+INFO: [Synth 8-6155] done synthesizing module 'bars_monitor' (0#1) [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/debug/bars_monitor.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'video_snapshot' [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/debug/video_snapshot.sv:4]
+	Parameter BLOCK_WORDS bound to: 32 - type: integer 
+	Parameter OVERVIEW bound to: 1 - type: integer 
+	Parameter ROI bound to: 1 - type: integer 
+	Parameter ROI_W bound to: 640 - type: integer 
+	Parameter ROI_H bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'video_snapshot' (0#1) [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/debug/video_snapshot.sv:4]
+ERROR: [Synth 8-439] module 'lcd_vio' not found [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/top/lcd_top.sv:134]
+ERROR: [Synth 8-6156] failed synthesizing module 'lcd_top' [E:/FPGA_Test_Work/plate_recognition_engineering/build/engineering_01/sources/rtl/top/lcd_top.sv:3]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1324.703 ; gain = 608.500
+---------------------------------------------------------------------------------
+RTL Elaboration failed
+INFO: [Common 17-83] Releasing license: Synthesis
+55 Infos, 0 Warnings, 0 Critical Warnings and 3 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
+INFO: [Common 17-206] Exiting Vivado at Sun Nov  1 20:13:44 2026...
+Build failed before timing refinement; inspect build_console.log
+At E:\FPGA_Test_Work\plate_recognition_engineering\build.ps1:9 char:102
++ ... ute.dcp'))){throw 'Build failed before timing refinement; inspect bui ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Build failed be...ild_console.log:String) [], RuntimeException
+    + FullyQualifiedErrorId : Build failed before timing refinement; inspect build_console.log
+ 

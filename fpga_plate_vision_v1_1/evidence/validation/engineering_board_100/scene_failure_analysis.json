@@ -1,0 +1,69 @@
+{
+  "truth": "K38817",
+  "truth_source": "User confirmed in this turn; not inference input",
+  "exact_frames": 0,
+  "suffix_exact_frames": 100,
+  "frames": 100,
+  "box_counts": {
+    "8": 100
+  },
+  "scope": "Suffix score is diagnostic only and not accepted as whole-string accuracy",
+  "first_frame": 2846,
+  "first_roi": [
+    12,
+    29,
+    151,
+    80
+  ],
+  "first_boxes": [
+    [
+      16,
+      36,
+      34,
+      39
+    ],
+    [
+      24,
+      42,
+      13,
+      27
+    ],
+    [
+      40,
+      44,
+      15,
+      25
+    ],
+    [
+      68,
+      45,
+      14,
+      24
+    ],
+    [
+      86,
+      46,
+      14,
+      24
+    ],
+    [
+      104,
+      46,
+      13,
+      24
+    ],
+    [
+      121,
+      47,
+      4,
+      23
+    ],
+    [
+      129,
+      47,
+      13,
+      24
+    ]
+  ],
+  "prefix_cut_global_x": 29
+}

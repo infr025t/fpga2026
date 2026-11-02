@@ -1,0 +1,31 @@
+#-----------------------------------------------------------
+# xsim v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Sun Nov  1 21:43:51 2026
+# Process ID         : 62644
+# Current directory  : E:/FPGA_Test_Work/plate_blue_polarity_v1_1/project/build/sim_character_polarity
+# Command line       : xsim.exe -log modes.log -mode tcl -source {xsim.dir/modes/xsim_script.tcl}
+# Log file           : E:/FPGA_Test_Work/plate_blue_polarity_v1_1/project/build/sim_character_polarity/modes.log
+# Journal file       : E:/FPGA_Test_Work/plate_blue_polarity_v1_1/project/build/sim_character_polarity\xsim.jou
+# Running On         : StrawberryBear
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : Intel(R) Core(TM) i9-14900HX
+# CPU Frequency      : 2419 MHz
+# CPU Physical cores : 24
+# CPU Logical cores  : 32
+# Host memory        : 33953 MB
+# Swap memory        : 7883 MB
+# Total Virtual      : 41837 MB
+# Available Virtual  : 7102 MB
+#-----------------------------------------------------------
+source xsim.dir/modes/xsim_script.tcl
+# xsim {modes} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+PASS character polarity: RAW/EDGE disabled, switch cancels partial capture, new white frame keeps raw bytes, flags=2, abort clears ROI
+$finish called at time : 4590 ns : File "E:/FPGA_Test_Work/plate_blue_polarity_v1_1/project/sim/tb_character_polarity.sv" Line 44
+exit
+INFO: [Common 17-206] Exiting xsim at Sun Nov  1 21:43:53 2026...

@@ -1,0 +1,31 @@
+#-----------------------------------------------------------
+# xsim v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Sun Nov  1 21:21:24 2026
+# Process ID         : 54000
+# Current directory  : E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/build/sim_roi_overlay
+# Command line       : xsim.exe -log roi.log -mode tcl -source {xsim.dir/roi/xsim_script.tcl}
+# Log file           : E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/build/sim_roi_overlay/roi.log
+# Journal file       : E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/build/sim_roi_overlay\xsim.jou
+# Running On         : StrawberryBear
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : Intel(R) Core(TM) i9-14900HX
+# CPU Frequency      : 2419 MHz
+# CPU Physical cores : 24
+# CPU Logical cores  : 32
+# Host memory        : 33953 MB
+# Swap memory        : 7883 MB
+# Total Virtual      : 41837 MB
+# Available Virtual  : 8028 MB
+#-----------------------------------------------------------
+source xsim.dir/roi/xsim_script.tcl
+# xsim {roi} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+PASS ROI bounds, half-open mapping, disable/reenter, invalid, reset, frame atomicity
+$finish called at time : 151 ns : File "E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/sim/tb_roi_overlay.sv" Line 22
+exit
+INFO: [Common 17-206] Exiting xsim at Sun Nov  1 21:21:26 2026...

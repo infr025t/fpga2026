@@ -1,0 +1,35 @@
+#-----------------------------------------------------------
+# xsim v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Sun Nov  1 21:21:35 2026
+# Process ID         : 15604
+# Current directory  : E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/build/sim/release_auto
+# Command line       : xsim.exe -mode tcl -source {xsim.dir/auto_split_scene_snapshot/xsim_script.tcl}
+# Log file           : E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/build/sim/release_auto/xsim.log
+# Journal file       : E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/build/sim/release_auto\xsim.jou
+# Running On         : StrawberryBear
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : Intel(R) Core(TM) i9-14900HX
+# CPU Frequency      : 2419 MHz
+# CPU Physical cores : 24
+# CPU Logical cores  : 32
+# Host memory        : 33953 MB
+# Swap memory        : 7883 MB
+# Total Virtual      : 41837 MB
+# Available Virtual  : 8287 MB
+#-----------------------------------------------------------
+source xsim.dir/auto_split_scene_snapshot/xsim_script.tcl
+# xsim {auto_split_scene_snapshot} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+RESULT frame_id=1 chars=7 cycles=15422294 skipped=4
+RESULT frame_id=6 chars=0 cycles=3744010 skipped=5
+PASS tb_auto_split_scene autonomous real workers, full raster, seven split characters, blank frame, skipped source frames
+$finish called at time : 259118240 ns : File "E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/sim/tb_auto_split_scene.sv" Line 73
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:03:10 . Memory (MB): peak = 167.414 ; gain = 0.000
+exit
+INFO: xsimkernel Simulation Memory Usage: 12800 KB (Peak: 12800 KB), Simulation CPU Usage: 172312 ms
+INFO: [Common 17-206] Exiting xsim at Sun Nov  1 21:24:47 2026...

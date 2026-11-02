@@ -1,0 +1,40 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/rtl/char_segmenter.sv" into library work
+INFO: [VRFC 10-311] analyzing module char_segmenter
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/sim/tb_prefix_filter.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_prefix_filter
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: E:/Vivado/2025.1/Vivado/bin/unwrapped/win64.o/xelab.exe tb_prefix_filter -s prefix_tb 
+Multi-threading is on. Using 30 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.char_segmenter(ENABLE_PREFIX=1)
+Compiling module work.tb_prefix_filter
+Built simulation snapshot prefix_tb
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Sun Nov  1 18:36:19 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/prefix_tb/xsim_script.tcl
+# xsim {prefix_tb} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+PASS prefix left=0 enabled=0 boxes=3
+PASS prefix left=0 enabled=1 boxes=2
+PASS prefix left=30 enabled=1 boxes=2
+PASS prefix left=70 enabled=1 boxes=2
+PASS ALL prefix RTL: relative location, retained letters, disabled mode, latched policy
+$finish called at time : 111654916 ns : File "E:/FPGA_Test_Work/plate_autonomous_board_20261101/sim/tb_prefix_filter.sv" Line 31
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:00:10 . Memory (MB): peak = 167.898 ; gain = 0.035
+exit
+INFO: [Common 17-206] Exiting xsim at Sun Nov  1 18:36:31 2026...

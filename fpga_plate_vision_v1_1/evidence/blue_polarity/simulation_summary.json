@@ -1,0 +1,32 @@
+{
+  "scope": "Pre-implementation simulation and offline reference only",
+  "passed": true,
+  "tests": [
+    {
+      "name": "polarity_switch",
+      "result": "PASS partial capture canceled, original bytes retained, flags2 latched, abort clears ROI"
+    },
+    {
+      "name": "white_character_chain",
+      "characters": 6,
+      "normalized_pixels": 4608,
+      "signed_scores": 216,
+      "reference_mismatches": 0,
+      "prediction": "AL67L8",
+      "empty_frame_clears_roi": true,
+      "wire_replay": "simulations/sim_white_characters/replay/summary.json"
+    },
+    {
+      "name": "dark_character_regression",
+      "characters": 7,
+      "normalized_pixels": 5376,
+      "signed_scores": 252,
+      "reference_mismatches": 0,
+      "prediction": "BD12345"
+    },
+    {
+      "name": "pc_unittests",
+      "passed_count": 61
+    }
+  ]
+}

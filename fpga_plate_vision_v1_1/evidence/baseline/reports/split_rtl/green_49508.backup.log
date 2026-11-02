@@ -1,0 +1,32 @@
+#-----------------------------------------------------------
+# xsim v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Sun Nov  1 19:22:32 2026
+# Process ID         : 49508
+# Current directory  : E:/FPGA_Test_Work/plate_autonomous_board_20261101/reports/split_rtl
+# Command line       : xsim.exe -log green.log -mode tcl -source {xsim.dir/split_tb/xsim_script.tcl}
+# Log file           : E:/FPGA_Test_Work/plate_autonomous_board_20261101/reports/split_rtl/green.log
+# Journal file       : E:/FPGA_Test_Work/plate_autonomous_board_20261101/reports/split_rtl\xsim.jou
+# Running On         : StrawberryBear
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : Intel(R) Core(TM) i9-14900HX
+# CPU Frequency      : 2419 MHz
+# CPU Physical cores : 24
+# CPU Logical cores  : 32
+# Host memory        : 33953 MB
+# Swap memory        : 9721 MB
+# Total Virtual      : 43675 MB
+# Available Virtual  : 7334 MB
+#-----------------------------------------------------------
+source xsim.dir/split_tb/xsim_script.tcl
+# xsim {split_tb} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+Fatal: timeout
+Time: 0 ps  Iteration: 1  Process: /tb_touching_split/Initial44_19  Scope: tb_touching_split  File: E:/FPGA_Test_Work/plate_autonomous_board_20261101/sim/tb_touching_split.sv Line: 44
+$finish called at time : 0 fs
+exit
+INFO: [Common 17-206] Exiting xsim at Sun Nov  1 19:22:34 2026...

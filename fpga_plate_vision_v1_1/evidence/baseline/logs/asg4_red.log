@@ -1,0 +1,16 @@
+E..
+======================================================================
+ERROR: test_dynamic_roi_packet (test_auto_protocol.ProtocolTests.test_dynamic_roi_packet)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\FPGA_Test_Work\plate_autonomous_board_20261101\pc\test_auto_protocol.py", line 25, in test_dynamic_roi_packet
+    self.assertEqual(decode_packet(split)['magic'],magic.decode())
+                     ~~~~~~~~~~~~~^^^^^^^
+  File "E:\FPGA_Test_Work\plate_autonomous_board_20261101\pc\auto_protocol.py", line 10, in decode_packet
+    raise ValueError('packet length/magic')
+ValueError: packet length/magic
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.010s
+
+FAILED (errors=1)

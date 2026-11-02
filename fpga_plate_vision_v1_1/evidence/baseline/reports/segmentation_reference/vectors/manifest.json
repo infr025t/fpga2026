@@ -1,0 +1,730 @@
+[
+  {
+    "name": "blank0",
+    "roi": [
+      0,
+      0,
+      160,
+      120
+    ],
+    "flags": 0,
+    "status": 0,
+    "boxes": [],
+    "candidate_count": 0,
+    "input_sha256": "17744bb6a4ed1d9d51d85d7eb645cde30352530d494233c434027f9e3193bae4",
+    "foreground_pixels": 0
+  },
+  {
+    "name": "blank97",
+    "roi": [
+      0,
+      0,
+      160,
+      120
+    ],
+    "flags": 0,
+    "status": 0,
+    "boxes": [],
+    "candidate_count": 0,
+    "input_sha256": "d8a19a820716f3899b93a913ffae394ab76b0b55cbe8d185ed9e637cc4e48ba3",
+    "foreground_pixels": 0
+  },
+  {
+    "name": "blank255",
+    "roi": [
+      0,
+      0,
+      160,
+      120
+    ],
+    "flags": 0,
+    "status": 0,
+    "boxes": [],
+    "candidate_count": 0,
+    "input_sha256": "bd720a5704fa8160ef0a7dc2e31c155e89d6a314b3b0fec0f52f5cb8075381c6",
+    "foreground_pixels": 0
+  },
+  {
+    "name": "tiny",
+    "roi": [
+      17,
+      19,
+      18,
+      20
+    ],
+    "flags": 0,
+    "status": 0,
+    "boxes": [],
+    "candidate_count": 0,
+    "input_sha256": "81954b4e9b13072dd7888eb77f1f32c045fa82d7c62d02bc2b23fd7ddc872e1f",
+    "foreground_pixels": 0
+  },
+  {
+    "name": "one_row",
+    "roi": [
+      12,
+      19,
+      99,
+      20
+    ],
+    "flags": 0,
+    "status": 0,
+    "boxes": [],
+    "candidate_count": 0,
+    "input_sha256": "81954b4e9b13072dd7888eb77f1f32c045fa82d7c62d02bc2b23fd7ddc872e1f",
+    "foreground_pixels": 38
+  },
+  {
+    "name": "one_column",
+    "roi": [
+      12,
+      19,
+      13,
+      110
+    ],
+    "flags": 0,
+    "status": 0,
+    "boxes": [],
+    "candidate_count": 0,
+    "input_sha256": "81954b4e9b13072dd7888eb77f1f32c045fa82d7c62d02bc2b23fd7ddc872e1f",
+    "foreground_pixels": 42
+  },
+  {
+    "name": "random_full",
+    "roi": [
+      0,
+      0,
+      160,
+      120
+    ],
+    "flags": 0,
+    "status": 0,
+    "boxes": [
+      [
+        58,
+        57,
+        12,
+        19
+      ]
+    ],
+    "candidate_count": 2,
+    "input_sha256": "81954b4e9b13072dd7888eb77f1f32c045fa82d7c62d02bc2b23fd7ddc872e1f",
+    "foreground_pixels": 8749
+  },
+  {
+    "name": "corner_origin",
+    "roi": [
+      0,
+      0,
+      160,
+      120
+    ],
+    "flags": 0,
+    "status": 0,
+    "boxes": [
+      [
+        0,
+        0,
+        3,
+        15
+      ]
+    ],
+    "candidate_count": 1,
+    "input_sha256": "833676af6e3f6410ffb81e2e70b4c6bb79aedeb0311e81cc73f3e7076d2ab4b4",
+    "foreground_pixels": 45
+  },
+  {
+    "name": "corner_far",
+    "roi": [
+      0,
+      0,
+      160,
+      120
+    ],
+    "flags": 0,
+    "status": 0,
+    "boxes": [
+      [
+        157,
+        105,
+        3,
+        15
+      ]
+    ],
+    "candidate_count": 1,
+    "input_sha256": "1bbc8a200f64af8e14183bbd22ed5c3347176b95002f67a714ec15db8da40b78",
+    "foreground_pixels": 45
+  },
+  {
+    "name": "roi_local_border",
+    "roi": [
+      30,
+      20,
+      70,
+      60
+    ],
+    "flags": 0,
+    "status": 0,
+    "boxes": [
+      [
+        30,
+        20,
+        3,
+        15
+      ]
+    ],
+    "candidate_count": 1,
+    "input_sha256": "27a3610e1602777e25d8e06c84f285c45bb9945913f56e18a6afa2909e50d734",
+    "foreground_pixels": 45
+  },
+  {
+    "name": "diagonal8",
+    "roi": [
+      0,
+      0,
+      160,
+      120
+    ],
+    "flags": 0,
+    "status": 0,
+    "boxes": [
+      [
+        20,
+        20,
+        16,
+        16
+      ]
+    ],
+    "candidate_count": 1,
+    "input_sha256": "026c8f03548efcc61e3eec6cdc1579612e447b89aec317d7cda137faa0264ca4",
+    "foreground_pixels": 16
+  },
+  {
+    "name": "flags0",
+    "roi": [
+      20,
+      15,
+      80,
+      65
+    ],
+    "flags": 0,
+    "status": 0,
+    "boxes": [
+      [
+        31,
+        23,
+        4,
+        20
+      ],
+      [
+        47,
+        25,
+        5,
+        19
+      ]
+    ],
+    "candidate_count": 2,
+    "input_sha256": "78ffe1d095bdb3c86294a725502158aafd37850a1b0d6ccd5da6e5d15a7d5a99",
+    "foreground_pixels": 175
+  },
+  {
+    "name": "flags1",
+    "roi": [
+      20,
+      15,
+      80,
+      65
+    ],
+    "flags": 1,
+    "status": 0,
+    "boxes": [
+      [
+        31,
+        23,
+        4,
+        20
+      ],
+      [
+        47,
+        25,
+        5,
+        19
+      ]
+    ],
+    "candidate_count": 2,
+    "input_sha256": "5171add6357ea63092c849b1e34a676de419ddf90ddccfe88756f536ab81df37",
+    "foreground_pixels": 175
+  },
+  {
+    "name": "flags2",
+    "roi": [
+      20,
+      15,
+      80,
+      65
+    ],
+    "flags": 2,
+    "status": 0,
+    "boxes": [
+      [
+        31,
+        23,
+        4,
+        20
+      ],
+      [
+        47,
+        25,
+        5,
+        19
+      ]
+    ],
+    "candidate_count": 2,
+    "input_sha256": "55beb1575171901df52a90243512830e1fcff21c59d2edf0378fcd01c0ff484d",
+    "foreground_pixels": 175
+  },
+  {
+    "name": "flags3",
+    "roi": [
+      20,
+      15,
+      80,
+      65
+    ],
+    "flags": 3,
+    "status": 0,
+    "boxes": [
+      [
+        31,
+        23,
+        4,
+        20
+      ],
+      [
+        47,
+        25,
+        5,
+        19
+      ]
+    ],
+    "candidate_count": 2,
+    "input_sha256": "6bd6b672f088fff65a6ca472bd67f4d28d7af68cdd5ddc3b7d3295ad4a273172",
+    "foreground_pixels": 175
+  },
+  {
+    "name": "candidates64",
+    "roi": [
+      0,
+      0,
+      160,
+      120
+    ],
+    "flags": 0,
+    "status": 0,
+    "boxes": [
+      [
+        0,
+        0,
+        2,
+        12
+      ],
+      [
+        10,
+        0,
+        2,
+        12
+      ],
+      [
+        20,
+        0,
+        2,
+        12
+      ],
+      [
+        30,
+        0,
+        2,
+        12
+      ],
+      [
+        40,
+        0,
+        2,
+        12
+      ],
+      [
+        50,
+        0,
+        2,
+        12
+      ],
+      [
+        60,
+        0,
+        2,
+        12
+      ],
+      [
+        70,
+        0,
+        2,
+        12
+      ],
+      [
+        80,
+        0,
+        2,
+        12
+      ]
+    ],
+    "candidate_count": 64,
+    "input_sha256": "fe3195ff2db8c8dbfae426eade4b0c0113b1c1c2caa00129fdfdc718fd5b1173",
+    "foreground_pixels": 1536
+  },
+  {
+    "name": "overflow65",
+    "roi": [
+      0,
+      0,
+      160,
+      120
+    ],
+    "flags": 0,
+    "status": 3,
+    "boxes": [],
+    "candidate_count": 65,
+    "input_sha256": "1a45f7c2fe56f7e77a9fd74d6df1ee2237b9f735ee9a83e11dde74d976b30df9",
+    "foreground_pixels": 1560
+  },
+  {
+    "name": "height_tie65",
+    "roi": [
+      10,
+      10,
+      90,
+      75
+    ],
+    "flags": 0,
+    "status": 0,
+    "boxes": [
+      [
+        20,
+        20,
+        2,
+        6
+      ],
+      [
+        30,
+        20,
+        2,
+        7
+      ]
+    ],
+    "candidate_count": 2,
+    "input_sha256": "88e97d933dd5fc3b9bcc215d096bed3d70b319748b63d6549b1bce97ef4e299f",
+    "foreground_pixels": 26
+  },
+  {
+    "name": "height_tie70",
+    "roi": [
+      10,
+      10,
+      90,
+      80
+    ],
+    "flags": 0,
+    "status": 0,
+    "boxes": [
+      [
+        30,
+        20,
+        2,
+        7
+      ]
+    ],
+    "candidate_count": 1,
+    "input_sha256": "88e97d933dd5fc3b9bcc215d096bed3d70b319748b63d6549b1bce97ef4e299f",
+    "foreground_pixels": 26
+  },
+  {
+    "name": "anp639",
+    "roi": [
+      48,
+      18,
+      154,
+      78
+    ],
+    "flags": 0,
+    "status": 0,
+    "boxes": [
+      [
+        52,
+        32,
+        16,
+        22
+      ],
+      [
+        71,
+        33,
+        18,
+        20
+      ],
+      [
+        94,
+        33,
+        13,
+        20
+      ],
+      [
+        108,
+        36,
+        12,
+        18
+      ],
+      [
+        123,
+        35,
+        10,
+        20
+      ],
+      [
+        135,
+        34,
+        11,
+        22
+      ]
+    ],
+    "candidate_count": 6,
+    "input_sha256": "59123948b577c883295e8667429058622d41f2dcf6660761c36f5c4c4792720e",
+    "foreground_pixels": 757
+  },
+  {
+    "name": "d12345",
+    "roi": [
+      25,
+      37,
+      156,
+      87
+    ],
+    "flags": 3,
+    "status": 0,
+    "boxes": [
+      [
+        27,
+        37,
+        16,
+        31
+      ],
+      [
+        56,
+        37,
+        10,
+        31
+      ],
+      [
+        74,
+        37,
+        15,
+        31
+      ],
+      [
+        94,
+        37,
+        15,
+        31
+      ],
+      [
+        114,
+        37,
+        16,
+        31
+      ],
+      [
+        135,
+        37,
+        15,
+        31
+      ]
+    ],
+    "candidate_count": 7,
+    "input_sha256": "fb3177fc5de7aca4da27180b0a1cb78934209e89b863ab809c347b5dd0d5bf0d",
+    "foreground_pixels": 2085
+  },
+  {
+    "name": "k38817_old",
+    "roi": [
+      28,
+      32,
+      146,
+      86
+    ],
+    "flags": 1,
+    "status": 0,
+    "boxes": [
+      [
+        32,
+        43,
+        15,
+        25
+      ],
+      [
+        58,
+        43,
+        15,
+        25
+      ],
+      [
+        78,
+        42,
+        14,
+        26
+      ],
+      [
+        96,
+        42,
+        14,
+        26
+      ],
+      [
+        115,
+        42,
+        4,
+        26
+      ],
+      [
+        123,
+        41,
+        15,
+        27
+      ]
+    ],
+    "candidate_count": 7,
+    "input_sha256": "4dc9d45d8f04fb7bc886e12c4846d4ae4c480b7b891b487a0be53738cbf4a9bf",
+    "foreground_pixels": 1722
+  },
+  {
+    "name": "k38817_v2",
+    "roi": [
+      48,
+      32,
+      146,
+      86
+    ],
+    "flags": 1,
+    "status": 0,
+    "boxes": [
+      [
+        48,
+        43,
+        13,
+        21
+      ],
+      [
+        71,
+        43,
+        12,
+        21
+      ],
+      [
+        87,
+        42,
+        12,
+        21
+      ],
+      [
+        102,
+        42,
+        12,
+        21
+      ],
+      [
+        117,
+        42,
+        4,
+        21
+      ],
+      [
+        124,
+        42,
+        13,
+        21
+      ]
+    ],
+    "candidate_count": 6,
+    "input_sha256": "dddee7ce02bb1931a1c84bd572dc2ce4ff04b6b8db548bd68e63a73250916fe9",
+    "foreground_pixels": 1333
+  },
+  {
+    "name": "ddn7870",
+    "roi": [
+      26,
+      35,
+      158,
+      87
+    ],
+    "flags": 0,
+    "status": 0,
+    "boxes": [
+      [
+        30,
+        46,
+        19,
+        30
+      ],
+      [
+        62,
+        45,
+        18,
+        31
+      ],
+      [
+        82,
+        45,
+        17,
+        31
+      ],
+      [
+        101,
+        46,
+        12,
+        29
+      ],
+      [
+        115,
+        46,
+        13,
+        29
+      ],
+      [
+        128,
+        46,
+        12,
+        29
+      ],
+      [
+        142,
+        46,
+        11,
+        29
+      ]
+    ],
+    "candidate_count": 10,
+    "input_sha256": "51d9e4110855723ccbcb61ee0abb7b302f4c92d9d190ee9a4aff0a532b89dcbd",
+    "foreground_pixels": 1826
+  },
+  {
+    "name": "invalid_far_roi",
+    "roi": [
+      159,
+      119,
+      161,
+      120
+    ],
+    "flags": 0,
+    "status": 1,
+    "boxes": [],
+    "candidate_count": 0,
+    "input_sha256": "81954b4e9b13072dd7888eb77f1f32c045fa82d7c62d02bc2b23fd7ddc872e1f",
+    "foreground_pixels": 0
+  }
+]

@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "E:\FPGA_Test_Work\plate_recognition_engineering/scripts/make_auto_vectors.py", line 11, in <module>
+    raw=np.array([int(v,16) for v in src.read_text().split()],np.uint8).reshape(120,160)
+                                     ~~~~~~~~~~~~~^^
+  File "E:\Python\Lib\pathlib\__init__.py", line 787, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Python\Lib\pathlib\__init__.py", line 771, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'E:\\FPGA_Test_Work\\plate_recognition_engineering\\reports\\segmentation_reference\\vectors\\ddn7870.frame.mem'
+Vector generation failed
+At E:\FPGA_Test_Work\plate_recognition_engineering\scripts\run_auto_chain_sim.ps1:6 char:25
++ if($LASTEXITCODE -ne 0){throw 'Vector generation failed'}
++                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Vector generation failed:String) [], RuntimeException
+    + FullyQualifiedErrorId : Vector generation failed
+ 

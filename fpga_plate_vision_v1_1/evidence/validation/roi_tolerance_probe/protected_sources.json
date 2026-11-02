@@ -1,0 +1,14 @@
+{
+  "comparison": "Exact source bytes against engineering_02 frozen baseline",
+  "files": {
+    "rtl/recognition/char_segmenter.sv": true,
+    "rtl/recognition/plate_region_locator.sv": true,
+    "rtl/recognition/plate_segment_frontend.sv": true,
+    "rtl/recognition/char_normalizer.sv": true,
+    "rtl/recognition/cnn_core.sv": true,
+    "rtl/recognition/plate_auto_controller.sv": true,
+    "rtl/drivers/camera/camera_fifo_video.sv": true,
+    "rtl/drivers/display/nt35510_bus8.sv": true
+  },
+  "model_unchanged": true
+}

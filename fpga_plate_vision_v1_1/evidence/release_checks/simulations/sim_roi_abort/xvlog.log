@@ -1,0 +1,82 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/rtl/common/u32_div.sv" into library work
+INFO: [VRFC 10-311] analyzing module u32_div
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/rtl/debug/bars_monitor.sv" into library work
+INFO: [VRFC 10-311] analyzing module bars_monitor
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/rtl/debug/cnn_uart_bridge.sv" into library work
+INFO: [VRFC 10-311] analyzing module cnn_uart_bridge
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/rtl/debug/norm_uart_bridge.sv" into library work
+INFO: [VRFC 10-311] analyzing module norm_uart_bridge
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/rtl/debug/nt35510_bringup_top.sv" into library work
+INFO: [VRFC 10-311] analyzing module nt35510_bringup_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/rtl/debug/nt35510_test_display.sv" into library work
+INFO: [VRFC 10-311] analyzing module nt35510_test_display
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/rtl/debug/plate_auto_uart.sv" into library work
+INFO: [VRFC 10-311] analyzing module plate_auto_uart
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/rtl/debug/test_pattern_source.sv" into library work
+INFO: [VRFC 10-311] analyzing module test_pattern_source
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/rtl/debug/uart_pair_stream.sv" into library work
+INFO: [VRFC 10-311] analyzing module uart_pair_stream
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/rtl/debug/video_snapshot.sv" into library work
+INFO: [VRFC 10-311] analyzing module video_snapshot
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/rtl/drivers/camera/camera_fifo_video.sv" into library work
+INFO: [VRFC 10-311] analyzing module camera_fifo_video
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/rtl/drivers/camera/camera_startup.sv" into library work
+INFO: [VRFC 10-311] analyzing module camera_startup
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/rtl/drivers/camera/href_stable_filter.sv" into library work
+INFO: [VRFC 10-311] analyzing module href_stable_filter
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/rtl/drivers/camera/ov7670_config.sv" into library work
+INFO: [VRFC 10-311] analyzing module ov7670_config
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/rtl/drivers/camera/vsync_low_filter.sv" into library work
+INFO: [VRFC 10-311] analyzing module vsync_low_filter
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/rtl/drivers/display/nt35510_bus8.sv" into library work
+INFO: [VRFC 10-311] analyzing module nt35510_bus8
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/rtl/drivers/display/nt35510_init.sv" into library work
+INFO: [VRFC 10-311] analyzing module nt35510_init
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/rtl/drivers/display/nt35510_init_rom.sv" into library work
+INFO: [VRFC 10-311] analyzing module nt35510_init_rom
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/rtl/drivers/display/nt35510_window_writer.sv" into library work
+INFO: [VRFC 10-311] analyzing module nt35510_window_writer
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/rtl/drivers/uart/uart_fast_rx.sv" into library work
+INFO: [VRFC 10-311] analyzing module uart_fast_rx
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/rtl/drivers/uart/uart_fast_tx.sv" into library work
+INFO: [VRFC 10-311] analyzing module uart_fast_tx
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/rtl/recognition/char_normalizer.sv" into library work
+INFO: [VRFC 10-311] analyzing module char_normalizer
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/rtl/recognition/char_segmenter.sv" into library work
+INFO: [VRFC 10-311] analyzing module char_segmenter
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/rtl/recognition/cnn_core.sv" into library work
+INFO: [VRFC 10-311] analyzing module cnn_core
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/rtl/recognition/cnn_weight_rom.sv" into library work
+INFO: [VRFC 10-311] analyzing module cnn_weight_rom
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/rtl/recognition/plate_auto_controller.sv" into library work
+INFO: [VRFC 10-311] analyzing module plate_auto_controller
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/rtl/recognition/plate_recognition_subsystem.sv" into library work
+INFO: [VRFC 10-311] analyzing module plate_recognition_subsystem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/rtl/recognition/plate_region_locator.sv" into library work
+INFO: [VRFC 10-311] analyzing module plate_region_locator
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/rtl/recognition/plate_segment_frontend.sv" into library work
+INFO: [VRFC 10-311] analyzing module plate_segment_frontend
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/rtl/top/display_mode_control.sv" into library work
+INFO: [VRFC 10-311] analyzing module display_mode_control
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/rtl/top/lcd_top.sv" into library work
+INFO: [VRFC 10-311] analyzing module lcd_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/rtl/video/capture_fault_latch.sv" into library work
+INFO: [VRFC 10-311] analyzing module capture_fault_latch
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/rtl/video/edge_core.sv" into library work
+INFO: [VRFC 10-311] analyzing module edge_core
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/rtl/video/gaussian3.sv" into library work
+INFO: [VRFC 10-311] analyzing module gaussian3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/rtl/video/plate_roi_overlay.sv" into library work
+INFO: [VRFC 10-311] analyzing module plate_roi_overlay
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/rtl/video/plate_text_overlay.sv" into library work
+INFO: [VRFC 10-311] analyzing module plate_text_overlay
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/rtl/video/row_window3.sv" into library work
+INFO: [VRFC 10-311] analyzing module row_window3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/rtl/video/sobel3.sv" into library work
+INFO: [VRFC 10-311] analyzing module sobel3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/rtl/video/video_core_adapter.sv" into library work
+INFO: [VRFC 10-311] analyzing module video_core_adapter
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/rtl/video/video_lcd_sink.sv" into library work
+INFO: [VRFC 10-311] analyzing module video_lcd_sink
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_0/project/sim/tb_roi_abort.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_roi_abort

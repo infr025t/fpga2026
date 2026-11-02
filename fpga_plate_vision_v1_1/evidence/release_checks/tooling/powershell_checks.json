@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "parse_count": 32,
+  "python": "E:\\Python\\python.exe",
+  "vivado_bin": "E:\\Vivado\\2025.1\\Vivado\\bin",
+  "environment_override": "passed",
+  "executable_override": "passed",
+  "invalid_environment_rejected": true
+}

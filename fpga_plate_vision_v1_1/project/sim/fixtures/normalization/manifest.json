@@ -1,0 +1,668 @@
+[
+  {
+    "name": "flat",
+    "box": [
+      41,
+      37,
+      11,
+      19
+    ],
+    "roi": [
+      0,
+      0,
+      160,
+      120
+    ],
+    "flags": 0,
+    "parameters": {
+      "low100": 9700,
+      "high100": 9700,
+      "high": 97,
+      "den": 16,
+      "crop_width": 15,
+      "crop_height": 23,
+      "nw": 20,
+      "nh": 30,
+      "dst_x": 2,
+      "dst_y": 1,
+      "area_den": 345,
+      "crop_xyxy": [
+        39,
+        35,
+        54,
+        58
+      ]
+    },
+    "input_sha256": "d8a19a820716f3899b93a913ffae394ab76b0b55cbe8d185ed9e637cc4e48ba3",
+    "expected_sha256": "ef115a0e0c15cdc41958ca46b5b14b456115f4baec5e3ca68599d2a8f435e3b8"
+  },
+  {
+    "name": "tiny",
+    "box": [
+      17,
+      19,
+      1,
+      1
+    ],
+    "roi": [
+      17,
+      19,
+      18,
+      20
+    ],
+    "flags": 0,
+    "parameters": {
+      "low100": 8600,
+      "high100": 8600,
+      "high": 86,
+      "den": 16,
+      "crop_width": 1,
+      "crop_height": 1,
+      "nw": 22,
+      "nh": 22,
+      "dst_x": 1,
+      "dst_y": 5,
+      "area_den": 1,
+      "crop_xyxy": [
+        17,
+        19,
+        18,
+        20
+      ]
+    },
+    "input_sha256": "fb23c62c5e88d4ceff5883bb0e6ca12ed616342f1474e48c31aeb9c3150a2014",
+    "expected_sha256": "ef115a0e0c15cdc41958ca46b5b14b456115f4baec5e3ca68599d2a8f435e3b8"
+  },
+  {
+    "name": "clip_origin",
+    "box": [
+      0,
+      0,
+      3,
+      7
+    ],
+    "roi": [
+      0,
+      0,
+      160,
+      120
+    ],
+    "flags": 0,
+    "parameters": {
+      "low100": 1428,
+      "high100": 22060,
+      "high": 220,
+      "den": 206,
+      "crop_width": 5,
+      "crop_height": 9,
+      "nw": 17,
+      "nh": 30,
+      "dst_x": 3,
+      "dst_y": 1,
+      "area_den": 45,
+      "crop_xyxy": [
+        0,
+        0,
+        5,
+        9
+      ]
+    },
+    "input_sha256": "fb23c62c5e88d4ceff5883bb0e6ca12ed616342f1474e48c31aeb9c3150a2014",
+    "expected_sha256": "d3094fb577ad0014fd9ed751d59b32a9b839e7df120a57deb8d17199128f471c"
+  },
+  {
+    "name": "clip_far_corner",
+    "box": [
+      157,
+      116,
+      3,
+      4
+    ],
+    "roi": [
+      0,
+      0,
+      160,
+      120
+    ],
+    "flags": 0,
+    "parameters": {
+      "low100": 5563,
+      "high100": 22390,
+      "high": 223,
+      "den": 168,
+      "crop_width": 5,
+      "crop_height": 6,
+      "nw": 22,
+      "nh": 26,
+      "dst_x": 1,
+      "dst_y": 3,
+      "area_den": 30,
+      "crop_xyxy": [
+        155,
+        114,
+        160,
+        120
+      ]
+    },
+    "input_sha256": "fb23c62c5e88d4ceff5883bb0e6ca12ed616342f1474e48c31aeb9c3150a2014",
+    "expected_sha256": "d0bb664453d137ce5a91ab195e63c521b8d0d9dd6baffd1b7aede380b437a649"
+  },
+  {
+    "name": "clip_roi",
+    "box": [
+      31,
+      23,
+      12,
+      21
+    ],
+    "roi": [
+      31,
+      23,
+      43,
+      44
+    ],
+    "flags": 0,
+    "parameters": {
+      "low100": 1200,
+      "high100": 22170,
+      "high": 221,
+      "den": 209,
+      "crop_width": 12,
+      "crop_height": 21,
+      "nw": 17,
+      "nh": 30,
+      "dst_x": 3,
+      "dst_y": 1,
+      "area_den": 252,
+      "crop_xyxy": [
+        31,
+        23,
+        43,
+        44
+      ]
+    },
+    "input_sha256": "fb23c62c5e88d4ceff5883bb0e6ca12ed616342f1474e48c31aeb9c3150a2014",
+    "expected_sha256": "b6129fdf0b766f8a48bd87e8cdb97faac7c6186ab1350666f945fa06c675ce66"
+  },
+  {
+    "name": "fullcrop",
+    "box": [
+      0,
+      0,
+      160,
+      120
+    ],
+    "roi": [
+      0,
+      0,
+      160,
+      120
+    ],
+    "flags": 0,
+    "parameters": {
+      "low100": 800,
+      "high100": 21700,
+      "high": 217,
+      "den": 209,
+      "crop_width": 160,
+      "crop_height": 120,
+      "nw": 22,
+      "nh": 16,
+      "dst_x": 1,
+      "dst_y": 8,
+      "area_den": 19200,
+      "crop_xyxy": [
+        0,
+        0,
+        160,
+        120
+      ]
+    },
+    "input_sha256": "fb23c62c5e88d4ceff5883bb0e6ca12ed616342f1474e48c31aeb9c3150a2014",
+    "expected_sha256": "411d1cd3e8905bae24337eac2d23908fcd28aa57fb69e09ccd03a6ce951ad9cd"
+  },
+  {
+    "name": "tie_height",
+    "box": [
+      32,
+      22,
+      40,
+      5
+    ],
+    "roi": [
+      0,
+      0,
+      160,
+      120
+    ],
+    "flags": 0,
+    "parameters": {
+      "low100": 900,
+      "high100": 21800,
+      "high": 218,
+      "den": 209,
+      "crop_width": 44,
+      "crop_height": 9,
+      "nw": 22,
+      "nh": 4,
+      "dst_x": 1,
+      "dst_y": 14,
+      "area_den": 396,
+      "crop_xyxy": [
+        30,
+        20,
+        74,
+        29
+      ]
+    },
+    "input_sha256": "fb23c62c5e88d4ceff5883bb0e6ca12ed616342f1474e48c31aeb9c3150a2014",
+    "expected_sha256": "78df2935b9d8445872e01b4dbaa127e25fe870a89aed0ea68fb8b30e1ecbb401"
+  },
+  {
+    "name": "one_row",
+    "box": [
+      17,
+      19,
+      41,
+      1
+    ],
+    "roi": [
+      17,
+      19,
+      58,
+      20
+    ],
+    "flags": 0,
+    "parameters": {
+      "low100": 420,
+      "high100": 19000,
+      "high": 190,
+      "den": 185,
+      "crop_width": 41,
+      "crop_height": 1,
+      "nw": 22,
+      "nh": 1,
+      "dst_x": 1,
+      "dst_y": 15,
+      "area_den": 41,
+      "crop_xyxy": [
+        17,
+        19,
+        58,
+        20
+      ]
+    },
+    "input_sha256": "fb23c62c5e88d4ceff5883bb0e6ca12ed616342f1474e48c31aeb9c3150a2014",
+    "expected_sha256": "5a56e66a3478acc4b8375f070e8952f89c5fed99f561b9ecd7d90f8730172212"
+  },
+  {
+    "name": "one_column",
+    "box": [
+      17,
+      19,
+      1,
+      51
+    ],
+    "roi": [
+      17,
+      19,
+      18,
+      70
+    ],
+    "flags": 0,
+    "parameters": {
+      "low100": 600,
+      "high100": 21450,
+      "high": 214,
+      "den": 208,
+      "crop_width": 1,
+      "crop_height": 51,
+      "nw": 1,
+      "nh": 30,
+      "dst_x": 11,
+      "dst_y": 1,
+      "area_den": 51,
+      "crop_xyxy": [
+        17,
+        19,
+        18,
+        70
+      ]
+    },
+    "input_sha256": "fb23c62c5e88d4ceff5883bb0e6ca12ed616342f1474e48c31aeb9c3150a2014",
+    "expected_sha256": "ca1b5d648956c1809dcb11ba2e1af7141a4329c75f98a2e258e013ba9cb7ec4e"
+  },
+  {
+    "name": "flags_0",
+    "box": [
+      71,
+      32,
+      14,
+      24
+    ],
+    "roi": [
+      48,
+      18,
+      154,
+      78
+    ],
+    "flags": 0,
+    "parameters": {
+      "low100": 900,
+      "high100": 21800,
+      "high": 218,
+      "den": 209,
+      "crop_width": 18,
+      "crop_height": 28,
+      "nw": 19,
+      "nh": 30,
+      "dst_x": 2,
+      "dst_y": 1,
+      "area_den": 504,
+      "crop_xyxy": [
+        69,
+        30,
+        87,
+        58
+      ]
+    },
+    "input_sha256": "fb23c62c5e88d4ceff5883bb0e6ca12ed616342f1474e48c31aeb9c3150a2014",
+    "expected_sha256": "8b5ae6acf4baa4d95292f704d1f4b74f66d814cca4052eababe96ee2dde425a2"
+  },
+  {
+    "name": "flags_1",
+    "box": [
+      71,
+      32,
+      14,
+      24
+    ],
+    "roi": [
+      48,
+      18,
+      154,
+      78
+    ],
+    "flags": 1,
+    "parameters": {
+      "low100": 800,
+      "high100": 21600,
+      "high": 216,
+      "den": 208,
+      "crop_width": 18,
+      "crop_height": 28,
+      "nw": 19,
+      "nh": 30,
+      "dst_x": 2,
+      "dst_y": 1,
+      "area_den": 504,
+      "crop_xyxy": [
+        69,
+        30,
+        87,
+        58
+      ]
+    },
+    "input_sha256": "fb23c62c5e88d4ceff5883bb0e6ca12ed616342f1474e48c31aeb9c3150a2014",
+    "expected_sha256": "341d351fecff36859fb72f975387c37e5db51cd8d71a16ba0d48d570404b5be4"
+  },
+  {
+    "name": "flags_2",
+    "box": [
+      71,
+      32,
+      14,
+      24
+    ],
+    "roi": [
+      48,
+      18,
+      154,
+      78
+    ],
+    "flags": 2,
+    "parameters": {
+      "low100": 700,
+      "high100": 21555,
+      "high": 215,
+      "den": 208,
+      "crop_width": 18,
+      "crop_height": 28,
+      "nw": 19,
+      "nh": 30,
+      "dst_x": 2,
+      "dst_y": 1,
+      "area_den": 504,
+      "crop_xyxy": [
+        69,
+        30,
+        87,
+        58
+      ]
+    },
+    "input_sha256": "fb23c62c5e88d4ceff5883bb0e6ca12ed616342f1474e48c31aeb9c3150a2014",
+    "expected_sha256": "961e01bdcde6ffa03027035f6bbdb443c8783470df71aad670bd14895649e528"
+  },
+  {
+    "name": "flags_3",
+    "box": [
+      71,
+      32,
+      14,
+      24
+    ],
+    "roi": [
+      48,
+      18,
+      154,
+      78
+    ],
+    "flags": 3,
+    "parameters": {
+      "low100": 809,
+      "high100": 21600,
+      "high": 216,
+      "den": 207,
+      "crop_width": 18,
+      "crop_height": 28,
+      "nw": 19,
+      "nh": 30,
+      "dst_x": 2,
+      "dst_y": 1,
+      "area_den": 504,
+      "crop_xyxy": [
+        69,
+        30,
+        87,
+        58
+      ]
+    },
+    "input_sha256": "fb23c62c5e88d4ceff5883bb0e6ca12ed616342f1474e48c31aeb9c3150a2014",
+    "expected_sha256": "b4233e780230f24dd88a3ca5adc80044685b30e1429782e9ec00fcac0b3fd8b4"
+  },
+  {
+    "name": "anp639",
+    "box": [
+      123,
+      35,
+      10,
+      20
+    ],
+    "roi": [
+      48,
+      18,
+      154,
+      78
+    ],
+    "flags": 0,
+    "parameters": {
+      "low100": 2105,
+      "high100": 12300,
+      "high": 123,
+      "den": 101,
+      "crop_width": 14,
+      "crop_height": 24,
+      "nw": 18,
+      "nh": 30,
+      "dst_x": 3,
+      "dst_y": 1,
+      "area_den": 336,
+      "crop_xyxy": [
+        121,
+        33,
+        135,
+        57
+      ]
+    },
+    "input_sha256": "59123948b577c883295e8667429058622d41f2dcf6660761c36f5c4c4792720e",
+    "expected_sha256": "924a807a38d0fb9fe162487541cf6a311ff07a0d2f44bd63b7672d1a0fea5315"
+  },
+  {
+    "name": "d12345",
+    "box": [
+      27,
+      37,
+      16,
+      31
+    ],
+    "roi": [
+      25,
+      37,
+      156,
+      87
+    ],
+    "flags": 3,
+    "parameters": {
+      "low100": 0,
+      "high100": 13400,
+      "high": 134,
+      "den": 134,
+      "crop_width": 20,
+      "crop_height": 33,
+      "nw": 18,
+      "nh": 30,
+      "dst_x": 3,
+      "dst_y": 1,
+      "area_den": 660,
+      "crop_xyxy": [
+        25,
+        37,
+        45,
+        70
+      ]
+    },
+    "input_sha256": "fb3177fc5de7aca4da27180b0a1cb78934209e89b863ab809c347b5dd0d5bf0d",
+    "expected_sha256": "fa2a4bc48cc0eb900a9264d18080f634f31664870465950b920242883f8e9312"
+  },
+  {
+    "name": "k38817_old",
+    "box": [
+      32,
+      43,
+      15,
+      25
+    ],
+    "roi": [
+      28,
+      32,
+      146,
+      86
+    ],
+    "flags": 1,
+    "parameters": {
+      "low100": 300,
+      "high100": 12600,
+      "high": 126,
+      "den": 123,
+      "crop_width": 19,
+      "crop_height": 29,
+      "nw": 20,
+      "nh": 30,
+      "dst_x": 2,
+      "dst_y": 1,
+      "area_den": 551,
+      "crop_xyxy": [
+        30,
+        41,
+        49,
+        70
+      ]
+    },
+    "input_sha256": "4dc9d45d8f04fb7bc886e12c4846d4ae4c480b7b891b487a0be53738cbf4a9bf",
+    "expected_sha256": "7822ed167efb63f4624b9309354b38a21ba0d5497b5078ae0c287436c62335a3"
+  },
+  {
+    "name": "k38817_v2",
+    "box": [
+      48,
+      43,
+      13,
+      21
+    ],
+    "roi": [
+      48,
+      32,
+      146,
+      86
+    ],
+    "flags": 1,
+    "parameters": {
+      "low100": 822,
+      "high100": 18400,
+      "high": 184,
+      "den": 175,
+      "crop_width": 15,
+      "crop_height": 25,
+      "nw": 18,
+      "nh": 30,
+      "dst_x": 3,
+      "dst_y": 1,
+      "area_den": 375,
+      "crop_xyxy": [
+        48,
+        41,
+        63,
+        66
+      ]
+    },
+    "input_sha256": "dddee7ce02bb1931a1c84bd572dc2ce4ff04b6b8db548bd68e63a73250916fe9",
+    "expected_sha256": "6aceb86b9ebc02df0b023d06150cfe591db3b01ef595626145a76b80a8fc7e9a"
+  },
+  {
+    "name": "ddn7870",
+    "box": [
+      30,
+      46,
+      19,
+      30
+    ],
+    "roi": [
+      26,
+      35,
+      158,
+      87
+    ],
+    "flags": 0,
+    "parameters": {
+      "low100": 800,
+      "high100": 23400,
+      "high": 234,
+      "den": 226,
+      "crop_width": 23,
+      "crop_height": 34,
+      "nw": 20,
+      "nh": 30,
+      "dst_x": 2,
+      "dst_y": 1,
+      "area_den": 782,
+      "crop_xyxy": [
+        28,
+        44,
+        51,
+        78
+      ]
+    },
+    "input_sha256": "51d9e4110855723ccbcb61ee0abb7b302f4c92d9d190ee9a4aff0a532b89dcbd",
+    "expected_sha256": "fbba7ecc7268464e29a7555973f24fa342d3f2b23b6b9400c103528c08b9ec94"
+  }
+]

@@ -1,0 +1,56 @@
+{
+  "frames": 20,
+  "passed_frames": 20,
+  "characters": 120,
+  "compared_pixels": 92160,
+  "compared_scores": 4320,
+  "pixel_mismatches": 0,
+  "score_mismatches": 0,
+  "predictions": {
+    "BD123M": 13,
+    "BD123K": 7
+  },
+  "frame_id_first": 429,
+  "frame_id_last": 505,
+  "capture_tick_first": 2128903659,
+  "capture_tick_last": 2466564867,
+  "input_start_fps": 22.507767608294525,
+  "observed_recognition_fps": 5.626938569183483,
+  "recognition_capture_fps": 5.626941902073631,
+  "capture_to_result_ms": {
+    "min": 151.17184,
+    "mean": 151.173068,
+    "max": 151.1748
+  },
+  "segment_ms": {
+    "min": 43.29164,
+    "mean": 43.293689,
+    "max": 43.29556
+  },
+  "normalize_ms": {
+    "min": 0.86101,
+    "mean": 1.15053,
+    "max": 1.27686
+  },
+  "cnn_ms": {
+    "min": 9.42444,
+    "mean": 9.42444,
+    "max": 9.42444
+  },
+  "counters_first": {
+    "bad_captures": 0,
+    "skipped_frames": 324,
+    "publisher_dropped": 0
+  },
+  "counters_last": {
+    "bad_captures": 0,
+    "skipped_frames": 381,
+    "publisher_dropped": 0
+  },
+  "counters_max": {
+    "bad_captures": 0,
+    "skipped_frames": 381,
+    "publisher_dropped": 0
+  },
+  "scope": "100 MHz FPGA timestamps; input frame starts are not an independent optical measurement of LCD refresh"
+}

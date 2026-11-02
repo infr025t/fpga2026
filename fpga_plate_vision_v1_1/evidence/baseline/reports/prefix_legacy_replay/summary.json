@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "requested_frames": 10,
+  "captured_complete_frames": 10,
+  "verified_frames": 10,
+  "mismatched_frames": 0,
+  "verified_characters": 80,
+  "groups": {
+    "epochs": 1,
+    "complete_groups": 10,
+    "incomplete_groups": 1,
+    "invalid_groups": 0,
+    "evicted_groups": 0,
+    "peak_pending_groups": 2,
+    "observed_source_frame_gaps": 27,
+    "packets": 120
+  },
+  "parser": {
+    "valid_packets": 120,
+    "rejected_candidates": 0,
+    "discarded_bytes": 1418,
+    "truncated_bytes": 240
+  },
+  "bytes_received": 281234,
+  "timed_out": false,
+  "capture_error": null,
+  "capture_seconds": 0.10830600000917912,
+  "total_seconds": 0.36305929999798536,
+  "model_sha256": "179d6d9b9a4e2229c152770152fe6c8d71ff924af5d9da06132debd730cf4645",
+  "model_error": null,
+  "source": "reports\\placement_test_03\\wire.bin",
+  "read_only": true,
+  "scope": "Complete groups only; exact integer reference including ASG2/3 dynamic ROI and ASG3 prefix exclusion; not arbitrary-plate recognition accuracy",
+  "frames": [
+    "frames\\e000_f0000112645\\result.json",
+    "frames\\e000_f0000112649\\result.json",
+    "frames\\e000_f0000112653\\result.json",
+    "frames\\e000_f0000112657\\result.json",
+    "frames\\e000_f0000112661\\result.json",
+    "frames\\e000_f0000112665\\result.json",
+    "frames\\e000_f0000112669\\result.json",
+    "frames\\e000_f0000112673\\result.json",
+    "frames\\e000_f0000112677\\result.json",
+    "frames\\e000_f0000112681\\result.json"
+  ]
+}

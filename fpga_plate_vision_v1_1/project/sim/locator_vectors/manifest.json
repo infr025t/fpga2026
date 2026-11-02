@@ -1,0 +1,196 @@
+[
+  {
+    "name": "shift_0_0",
+    "roi": [
+      4,
+      8,
+      143,
+      46
+    ]
+  },
+  {
+    "name": "shift_0_24",
+    "roi": [
+      4,
+      32,
+      143,
+      70
+    ]
+  },
+  {
+    "name": "shift_0_52",
+    "roi": [
+      4,
+      60,
+      143,
+      98
+    ]
+  },
+  {
+    "name": "shift_8_0",
+    "roi": [
+      12,
+      8,
+      151,
+      46
+    ]
+  },
+  {
+    "name": "shift_8_24",
+    "roi": [
+      12,
+      32,
+      151,
+      70
+    ]
+  },
+  {
+    "name": "shift_8_52",
+    "roi": [
+      12,
+      60,
+      151,
+      98
+    ]
+  },
+  {
+    "name": "shift_14_0",
+    "roi": [
+      18,
+      8,
+      157,
+      46
+    ]
+  },
+  {
+    "name": "shift_14_24",
+    "roi": [
+      18,
+      32,
+      157,
+      70
+    ]
+  },
+  {
+    "name": "shift_14_52",
+    "roi": [
+      18,
+      60,
+      157,
+      98
+    ]
+  },
+  {
+    "name": "blank0",
+    "roi": null
+  },
+  {
+    "name": "blank90",
+    "roi": null
+  },
+  {
+    "name": "blank255",
+    "roi": null
+  },
+  {
+    "name": "header_gap2",
+    "roi": [
+      10,
+      27,
+      149,
+      65
+    ]
+  },
+  {
+    "name": "header_gap3",
+    "roi": [
+      63,
+      27,
+      149,
+      65
+    ]
+  },
+  {
+    "name": "choose_larger_band",
+    "roi": [
+      10,
+      57,
+      149,
+      95
+    ]
+  },
+  {
+    "name": "horizontal_clip0",
+    "roi": null
+  },
+  {
+    "name": "horizontal_clip20",
+    "roi": null
+  },
+  {
+    "name": "top_clip",
+    "roi": null
+  },
+  {
+    "name": "bottom_clip",
+    "roi": null
+  },
+  {
+    "name": "too_tall",
+    "roi": null
+  },
+  {
+    "name": "current_roi_auto_100_0",
+    "roi": [
+      13,
+      39,
+      151,
+      76
+    ]
+  },
+  {
+    "name": "current_roi_auto_100_1",
+    "roi": [
+      13,
+      39,
+      151,
+      76
+    ]
+  },
+  {
+    "name": "current_roi_precheck_0",
+    "roi": [
+      14,
+      49,
+      150,
+      85
+    ]
+  },
+  {
+    "name": "current_roi_precheck_1",
+    "roi": [
+      14,
+      49,
+      150,
+      85
+    ]
+  },
+  {
+    "name": "osd_board_20_0",
+    "roi": [
+      13,
+      54,
+      148,
+      90
+    ]
+  },
+  {
+    "name": "osd_board_20_1",
+    "roi": [
+      14,
+      69,
+      147,
+      104
+    ]
+  }
+]

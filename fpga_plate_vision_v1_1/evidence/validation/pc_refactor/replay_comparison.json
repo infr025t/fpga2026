@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "frames_compared": 100,
+  "verified_frames": 100,
+  "verified_characters": 700,
+  "truth_exact_frames": 100,
+  "incomplete_groups": 1,
+  "truncated_bytes": 1200,
+  "replay_summary_excluded_fields": [
+    "capture_seconds",
+    "total_seconds"
+  ],
+  "historical_summary_excluded_fields": [
+    "capture_seconds",
+    "total_seconds",
+    "source"
+  ],
+  "identical_ast_definitions": [
+    "json_default",
+    "json_object",
+    "save_json",
+    "FrameCollector",
+    "verify_frame"
+  ],
+  "wire_sha256": "989bf5397c65ba62b35dd63af0c94a62c0cab735ef1d0e7ac46faf8363894cb2",
+  "baseline_source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\pc\\observe_auto.py",
+  "baseline_source_sha256": "c42a11ef3eff9a7312391e33c21cde70c8d6526a22821b359885e53415095746",
+  "comparison": "Summary semantic fields; exact wire/rejections/packets/raw/result files; every arrays.npz array; historical frame result JSON and summary semantic fields"
+}

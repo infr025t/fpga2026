@@ -1,0 +1,89 @@
+
+****** Vivado v2025.1 (64-bit)
+  **** SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Sun Nov  1 21:02:12 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source scripts/hardware.tcl
+# set root [file normalize [file join [file dirname [info script]] ..]]
+# set build [file join $root build engineering_03]
+# if {[llength $argv]>1} {set build [file normalize [lindex $argv 1]]}
+# set action [lindex $argv 0]
+# if {$action ni {probe program camera cnn auto pair internal edge raw physical status}} {error "Expected probe/program/auto/pair/cnn/internal/edge/raw/physical/status"}
+# open_hw_manager
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2025.1.0
+  ****** Build date   : May 13 2025-12:15:27
+    **** Build number : 2025.1.1747163727
+      ** Copyright 2017-2022 Xilinx, Inc. All Rights Reserved.
+      ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+
+# try {
+#  set targets [get_hw_targets -filter {NAME =~ *210183BCBF83A}]
+#  if {[llength $targets]!=1} {error "Expected Basys3 210183BCBF83A"}
+#  current_hw_target [lindex $targets 0]
+#  set_property PARAM.FREQUENCY 3000000 [current_hw_target]
+#  open_hw_target
+#  set dev [get_hw_devices xc7a35t_0]
+#  if {[llength $dev]!=1} {error "Expected XC7A35T"}
+#  current_hw_device $dev
+#  if {$action eq {probe}} {puts "PASS BOARD_PRESENT"} else {
+#   set_property PROBES.FILE [file join $build autonomous_board.ltx] $dev
+#   if {$action eq {program}} {
+#    set_property PROGRAM.FILE [file join $build autonomous_board.bit] $dev
+#    program_hw_devices $dev
+#   }
+#   refresh_hw_device $dev
+#   set vio [get_hw_vios -of_objects $dev]
+#   if {[llength $vio]!=1} {error "Expected one VIO"}
+#   proc drive {port value} {
+#    global vio
+#    set p [get_hw_probes -of_objects $vio -filter "TYPE == vio_output && PROBE_PORT == $port"]
+#    if {[llength $p]!=1} {error "Expected complete output probe"}
+#    set_property OUTPUT_VALUE_RADIX HEX $p
+#    set_property OUTPUT_VALUE [format %0*x [expr {([get_property WIDTH $p]+3)/4}] $value] $p
+#    commit_hw_vio $p
+#   }
+#   if {$action in {cnn camera auto pair internal edge raw}} {
+#    set controls [dict create cnn 0x2000 camera 0x1000 pair 0x1000 auto 0x0010 internal 1 edge 8 raw 0]
+#    drive 0 [dict get $controls $action];drive 1 1;after 100
+#   }
+#   if {$action eq {physical}} {drive 1 0}
+#   set input_probes [get_hw_probes -of_objects $vio -filter {TYPE == vio_input}]
+#   set_property INPUT_VALUE_RADIX HEX $input_probes
+#   refresh_hw_vio $vio
+#   after 50
+#   refresh_hw_vio $vio
+#   foreach p [get_hw_probes -of_objects $vio -filter {TYPE == vio_input}] {
+#    puts "PROBE [get_property PROBE_PORT $p] [get_property PROBE_PORT_BITS $p] [get_property INPUT_VALUE $p]"
+#   }
+#   puts "PASS HW_ACTION $action"
+#  }
+# } finally {catch {close_hw_target};catch {disconnect_hw_server};catch {close_hw_manager}}
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183BCBF83A
+INFO: [Labtools 27-2302] Device xc7a35t (JTAG device index = 0) is programmed with a design that has 1 VIO core(s).
+INFO: [Labtools 27-1889] Uploading output probe values for VIO core [hw_vio_1]
+PROBE 7 16 0000000000000000000000000000
+PROBE 1 0 000005670000a00000001bc800001bc700095f800043cb2200096000000001e0
+PROBE 2 0 54aa9ca754aa9ca70004b0000004b000
+PROBE 3 0 000000000000a0000000056700000567000005670043cb220043cb240043cb1e
+PROBE 0 0 0567001e
+PROBE 8 0 00000135000000000000000000fa463d
+PROBE 5 0 0000000000000000000000000000000000000000000000000000000000000000
+PROBE 4 0 0000000000000000000000000000000000000000000000000000000000000000
+PROBE 6 0 0d042260
+PROBE 7 0 0000
+PASS HW_ACTION status
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Digilent/210183BCBF83A
+INFO: [Common 17-206] Exiting Vivado at Sun Nov  1 21:02:20 2026...

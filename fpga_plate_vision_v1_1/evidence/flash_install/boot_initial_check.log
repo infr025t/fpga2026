@@ -1,0 +1,101 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Sun Nov  1 22:29:51 2026
+# Process ID         : 60828
+# Current directory  : E:/FPGA_Test_Work/plate_blue_polarity_v1_1/flash_install
+# Command line       : vivado.exe -mode batch -source E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_1/project/scripts/verify_flash_boot.tcl -log boot.log -journal boot.jou
+# Log file           : E:/FPGA_Test_Work/plate_blue_polarity_v1_1/flash_install/boot.log
+# Journal file       : E:/FPGA_Test_Work/plate_blue_polarity_v1_1/flash_install\boot.jou
+# Running On         : StrawberryBear
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : Intel(R) Core(TM) i9-14900HX
+# CPU Frequency      : 2419 MHz
+# CPU Physical cores : 24
+# CPU Logical cores  : 32
+# Host memory        : 33953 MB
+# Swap memory        : 7883 MB
+# Total Virtual      : 41837 MB
+# Available Virtual  : 7359 MB
+#-----------------------------------------------------------
+source E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_1/project/scripts/verify_flash_boot.tcl
+# set root [file normalize [file join [file dirname [info script]] ..]]
+# set artifacts [file normalize [file join $root .. release]]
+# if {[llength $argv]} {set artifacts [file normalize [lindex $argv 0]]}
+# set dev {}
+# set boot_started 0
+# set verified 0
+# try {
+#  open_hw_manager
+#  connect_hw_server -url localhost:3121
+#  set targets [get_hw_targets -quiet -filter {NAME =~ *210183BCBF83A}]
+#  if {[llength $targets]!=1} {error "Expected Basys3 210183BCBF83A"}
+#  current_hw_target [lindex $targets 0];open_hw_target
+#  set dev [get_hw_devices xc7a35t_0]
+#  if {[llength $dev]!=1} {error "Expected XC7A35T"}
+#  current_hw_device $dev
+#  set boot_started 1
+#  if {[boot_hw_device -timeout 30 $dev]!=1} {error "Boot did not complete; check JP1 QSPI"}
+#  set_property PROBES.FILE [file join $artifacts autonomous_board.ltx] $dev
+#  after 3000
+#  refresh_hw_device $dev
+#  set vio [get_hw_vios -of_objects $dev]
+#  if {[llength $vio]!=1} {error "No expected VIO after boot"}
+#  set status [get_hw_probes -of_objects $vio -filter {TYPE == vio_input && PROBE_PORT == 0}]
+#  if {[llength $status]!=1} {error "No system status after boot"}
+#  set_property INPUT_VALUE_RADIX HEX $status
+#  refresh_hw_vio $vio
+#  scan [get_property INPUT_VALUE $status] %x first
+#  after 1500
+#  refresh_hw_vio $vio
+#  scan [get_property INPUT_VALUE $status] %x second
+#  set delta [expr {(($second>>16)-($first>>16))&0xffff}]
+#  set fault [expr {($second>>8)&0xff}]
+#  puts [format "FLASH_BOOT_STATUS first=%08x second=%08x frames_advanced=%d error=%02x" $first $second $delta $fault]
+#  if {$delta<=0 || $fault!=0} {error "Video is not advancing normally after boot"}
+#  set verified 1
+#  puts "PASS FLASH_RELOAD_AND_VIDEO_RUNNING"
+# } finally {
+#  try {
+#   if {$boot_started && !$verified} {
+#    set_property PROGRAM.FILE [file join $artifacts autonomous_board.bit] $dev
+#    set_property PROBES.FILE [file join $artifacts autonomous_board.ltx] $dev
+#    program_hw_devices $dev
+#    puts "RESTORED_RAM_AFTER_BOOT_CHECK_FAILURE"
+#   }
+#  } finally {
+#   catch {close_hw_target};catch {disconnect_hw_server};catch {close_hw_manager}
+#  }
+# }
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2025.1.0
+  ****** Build date   : May 13 2025-12:15:27
+    **** Build number : 2025.1.1747163727
+      ** Copyright 2017-2022 Xilinx, Inc. All Rights Reserved.
+      ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183BCBF83A
+INFO: [Labtoolstcl 44-664] Will wait up to 30 seconds for booting to complete.
+INFO: [Labtools 27-32] Done pin status: HIGH
+boot_hw_device: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 502.859 ; gain = 0.000
+INFO: [Labtools 27-3164] End of startup status: HIGH
+RESTORED_RAM_AFTER_BOOT_CHECK_FAILURE
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Digilent/210183BCBF83A
+Boot did not complete; check JP1 QSPI
+    while executing
+"error "Boot did not complete; check JP1 QSPI""
+    invoked from within
+"if {[boot_hw_device -timeout 30 $dev]!=1} {error "Boot did not complete; check JP1 QSPI"}"
+    ("try" body line 11)
+    (file "E:/Vivado_FPGA_Programs/fpga_plate_vision_v1_1/project/scripts/verify_flash_boot.tcl" line 11)
+INFO: [Common 17-206] Exiting Vivado at Sun Nov  1 22:30:08 2026...

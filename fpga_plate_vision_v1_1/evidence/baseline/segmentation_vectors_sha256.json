@@ -1,0 +1,329 @@
+{
+  "stage": "unchanged_historical_fixture_copy",
+  "files": [
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/anp639.frame.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\anp639.frame.mem",
+      "sha256": "50c4defa3bc93d36d99386cc5fc7353b008c19223676b574bdb082512b6fa651",
+      "bytes": 76800
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/anp639.mask.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\anp639.mask.mem",
+      "sha256": "e028df867e8cdf956f155d11c7dc08b6d160d9ebe48960c3d94a675f5e025d34",
+      "bytes": 19080
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/blank0.frame.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\blank0.frame.mem",
+      "sha256": "aeacfa3b58586b5289e8c428faf2361902bd6a37ed5cdffadf24c9556f77a6b0",
+      "bytes": 76800
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/blank0.mask.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\blank0.mask.mem",
+      "sha256": "eb4da1914f045d5183b3777c25cbc8b4155954ed8796e17e715d61a48ca414eb",
+      "bytes": 57600
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/blank255.frame.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\blank255.frame.mem",
+      "sha256": "eb16c975a43e644de535244c082a8fdecd7c9dd49b96a5cd27b842eb0107b66b",
+      "bytes": 76800
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/blank255.mask.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\blank255.mask.mem",
+      "sha256": "eb4da1914f045d5183b3777c25cbc8b4155954ed8796e17e715d61a48ca414eb",
+      "bytes": 57600
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/blank97.frame.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\blank97.frame.mem",
+      "sha256": "7e487d6aed693643e540788ba81fa2a204fe9bb3be41490d0f4537356804f56b",
+      "bytes": 76800
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/blank97.mask.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\blank97.mask.mem",
+      "sha256": "eb4da1914f045d5183b3777c25cbc8b4155954ed8796e17e715d61a48ca414eb",
+      "bytes": 57600
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/candidates64.frame.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\candidates64.frame.mem",
+      "sha256": "515723f34296d6baebf8f9b0df4aeac7d45d93079a00b4e58465c97d6980e955",
+      "bytes": 76800
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/candidates64.mask.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\candidates64.mask.mem",
+      "sha256": "ccaec1cf8ba07458dbaf240e26898c4c947ec552be0d810a978829d103e24a3c",
+      "bytes": 57600
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/corner_far.frame.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\corner_far.frame.mem",
+      "sha256": "3b9473de92ab37f9b42ac8e69c76ae3c44292ff64c3de7774f3630593d88666a",
+      "bytes": 76800
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/corner_far.mask.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\corner_far.mask.mem",
+      "sha256": "a078e3436dcff2fc5f859cb31f4783e2f90d9664f4ed03f7e443870b46f025c6",
+      "bytes": 57600
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/corner_origin.frame.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\corner_origin.frame.mem",
+      "sha256": "981836b84f10d530a8f79b71500f4c0a518a3eb92a5ed0ace569d9e20ff2f06a",
+      "bytes": 76800
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/corner_origin.mask.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\corner_origin.mask.mem",
+      "sha256": "b03acd1ed73d20c1d061d14ae5638ca9ca168b0d84f0726945844f89a23cee64",
+      "bytes": 57600
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/d12345.frame.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\d12345.frame.mem",
+      "sha256": "f775b3f55adba65c5ed55cb60ec8c5a7fe629320ebab88859dd2b27ab35000c0",
+      "bytes": 76800
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/d12345.mask.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\d12345.mask.mem",
+      "sha256": "5f8607b664181b22fc28ef36f9ab4ffb855174932ebeae0de8343bc6ad0b0949",
+      "bytes": 19650
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/ddn7870.frame.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\ddn7870.frame.mem",
+      "sha256": "c7c674f6f697da99cf83472db2e8da720a1f7b121fa4ad79cdf3e0e861d871de",
+      "bytes": 76800
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/ddn7870.mask.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\ddn7870.mask.mem",
+      "sha256": "1a0ccf784836e410b8fc735dad91cab5f7538bd2106cd302e90352fbac2b72a9",
+      "bytes": 20592
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/diagonal8.frame.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\diagonal8.frame.mem",
+      "sha256": "662eddf860ac2307520b5d5ab671b5037a1dfb988aeb5afd4076826f35e9fddd",
+      "bytes": 76800
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/diagonal8.mask.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\diagonal8.mask.mem",
+      "sha256": "c032a727a11986ea9379e6df22459b3f359ca025132ef5ddb0ef8c1094271bed",
+      "bytes": 57600
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/flags0.frame.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\flags0.frame.mem",
+      "sha256": "704d3692edf1da7a6fc0b39a95e2d51fa39b7494ac3f79e493f190429690c016",
+      "bytes": 76800
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/flags0.mask.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\flags0.mask.mem",
+      "sha256": "655cb855b33e075400e4c4f629a7430be0770f77af63de44b007e43a852af8d3",
+      "bytes": 9000
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/flags1.frame.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\flags1.frame.mem",
+      "sha256": "082b06e4b25de6a2f465d60d2d445ceacd39acd1c1ee8625cc0e6855181e4501",
+      "bytes": 76800
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/flags1.mask.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\flags1.mask.mem",
+      "sha256": "655cb855b33e075400e4c4f629a7430be0770f77af63de44b007e43a852af8d3",
+      "bytes": 9000
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/flags2.frame.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\flags2.frame.mem",
+      "sha256": "51e8f16ded8065ce62e4251d0d6502343537f9feb62ab49a44650c9c9cfa72ae",
+      "bytes": 76800
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/flags2.mask.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\flags2.mask.mem",
+      "sha256": "655cb855b33e075400e4c4f629a7430be0770f77af63de44b007e43a852af8d3",
+      "bytes": 9000
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/flags3.frame.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\flags3.frame.mem",
+      "sha256": "2d5be65f29aa9f8a6dbd2ea4a21cec44028924c4560e4ac5797ab81b08ccf145",
+      "bytes": 76800
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/flags3.mask.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\flags3.mask.mem",
+      "sha256": "655cb855b33e075400e4c4f629a7430be0770f77af63de44b007e43a852af8d3",
+      "bytes": 9000
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/full_foreground.injected_mask.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\full_foreground.injected_mask.mem",
+      "sha256": "d84e9210d6b087f256b2207cbaf02d587599e588966a3c60b7a2bd0a7668c59a",
+      "bytes": 57600
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/height_tie65.frame.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\height_tie65.frame.mem",
+      "sha256": "a77d787d25a057312e31e3ddd05e32704461a9013c3e6b3d7eb3e02bbab4f716",
+      "bytes": 76800
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/height_tie65.mask.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\height_tie65.mask.mem",
+      "sha256": "0e676bc86e53723c05d2e3cc2875e0afb42be263b9d0036920cccac7c6ecac8b",
+      "bytes": 15600
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/height_tie70.frame.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\height_tie70.frame.mem",
+      "sha256": "a77d787d25a057312e31e3ddd05e32704461a9013c3e6b3d7eb3e02bbab4f716",
+      "bytes": 76800
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/height_tie70.mask.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\height_tie70.mask.mem",
+      "sha256": "6dd516ea1fcb02cd5daf66fc8be7c36851a4f63e0e1687f0c11ae2021b60dc23",
+      "bytes": 16800
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/invalid_far_roi.frame.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\invalid_far_roi.frame.mem",
+      "sha256": "4d403545aeb39486c474fbf7d9ebfaf21df9f1a78e30fb97e9d0e39efd96ab5f",
+      "bytes": 76800
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/invalid_far_roi.mask.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\invalid_far_roi.mask.mem",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/k38817_old.frame.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\k38817_old.frame.mem",
+      "sha256": "c3af39d8eae1aa0fbde19b0288ba0a46669c820e831a2ac4812d809c8f62fb0f",
+      "bytes": 76800
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/k38817_old.mask.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\k38817_old.mask.mem",
+      "sha256": "c0024aba9a740fe9cd698cc167bf237aaa6316f0edbc053d2a95820017743263",
+      "bytes": 19116
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/k38817_v2.frame.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\k38817_v2.frame.mem",
+      "sha256": "33dde33fbfe5faa8a895bb7f0c857a25154b32ff4dcfc199134e396db76883c2",
+      "bytes": 76800
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/k38817_v2.mask.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\k38817_v2.mask.mem",
+      "sha256": "a2aa6466dd1d41a09ed0fd8c6b916b3e59075a7c88b5257135646d633e002fae",
+      "bytes": 15876
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/manifest.json",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\manifest.json",
+      "sha256": "49fb8122d7a37b5314c0daed672e753d4fab3d4594b130bd427c360ff7098345",
+      "bytes": 11510
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/manifest.txt",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\manifest.txt",
+      "sha256": "7a05404cb4a7154fb6be2b6b814806923a0a259636b21fa54094014fe39785ef",
+      "bytes": 1382
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/one_column.frame.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\one_column.frame.mem",
+      "sha256": "4d403545aeb39486c474fbf7d9ebfaf21df9f1a78e30fb97e9d0e39efd96ab5f",
+      "bytes": 76800
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/one_column.mask.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\one_column.mask.mem",
+      "sha256": "30c66cd349d295457e6301c678d7a1486f87b5a1084acad78f7871b986f2fcaa",
+      "bytes": 273
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/one_row.frame.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\one_row.frame.mem",
+      "sha256": "4d403545aeb39486c474fbf7d9ebfaf21df9f1a78e30fb97e9d0e39efd96ab5f",
+      "bytes": 76800
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/one_row.mask.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\one_row.mask.mem",
+      "sha256": "156b83dfcf788f741020b3c283b579a9cf54e2fccb0ad7340a053b81e52487ab",
+      "bytes": 261
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/overflow65.frame.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\overflow65.frame.mem",
+      "sha256": "76fbe0f51612aacd264ed8cf0e75f0140e6b64f45dbb906383aa669d24409583",
+      "bytes": 76800
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/overflow65.mask.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\overflow65.mask.mem",
+      "sha256": "8b8b66a7e9722caf4c86b72d414f878506c067446b528f2832ee28e9e7c80371",
+      "bytes": 57600
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/random_full.frame.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\random_full.frame.mem",
+      "sha256": "4d403545aeb39486c474fbf7d9ebfaf21df9f1a78e30fb97e9d0e39efd96ab5f",
+      "bytes": 76800
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/random_full.mask.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\random_full.mask.mem",
+      "sha256": "f463451c9502473a3bc4b90d4f54be3157eebb2e47892706a681d8effd406e0b",
+      "bytes": 57600
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/roi_local_border.frame.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\roi_local_border.frame.mem",
+      "sha256": "8b03fc0ea05524f369f03c4a92b3dac527349431b9e269703dfce5c0829f241d",
+      "bytes": 76800
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/roi_local_border.mask.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\roi_local_border.mask.mem",
+      "sha256": "13f3739bf781fb94ee2bdaab8fa6579d7df4c81341b2a11b9b6e380256d12cfd",
+      "bytes": 4800
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/tiny.frame.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\tiny.frame.mem",
+      "sha256": "4d403545aeb39486c474fbf7d9ebfaf21df9f1a78e30fb97e9d0e39efd96ab5f",
+      "bytes": 76800
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/tiny.mask.mem",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\tiny.mask.mem",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "bytes": 3
+    },
+    {
+      "path": "evidence/baseline/reports/segmentation_reference/vectors/vector_count.txt",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\segmentation_reference\\vectors\\vector_count.txt",
+      "sha256": "50e1c70ff6acbb8a6c78e18ccc9428fb7b473a6be9320e52019a66cd32afba95",
+      "bytes": 4
+    }
+  ]
+}

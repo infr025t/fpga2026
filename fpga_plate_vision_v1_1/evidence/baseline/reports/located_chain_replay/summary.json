@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "requested_frames": 2,
+  "captured_complete_frames": 2,
+  "verified_frames": 2,
+  "mismatched_frames": 0,
+  "verified_characters": 7,
+  "groups": {
+    "epochs": 1,
+    "complete_groups": 2,
+    "incomplete_groups": 0,
+    "invalid_groups": 0,
+    "evicted_groups": 0,
+    "peak_pending_groups": 1,
+    "observed_source_frame_gaps": 3,
+    "packets": 13
+  },
+  "parser": {
+    "valid_packets": 13,
+    "rejected_candidates": 0,
+    "discarded_bytes": 0,
+    "truncated_bytes": 0
+  },
+  "bytes_received": 45832,
+  "timed_out": false,
+  "capture_error": null,
+  "capture_seconds": 0.016795899951830506,
+  "total_seconds": 0.10557630006223917,
+  "model_sha256": "179d6d9b9a4e2229c152770152fe6c8d71ff924af5d9da06132debd730cf4645",
+  "model_error": null,
+  "source": "sim_work\\auto_located_scene\\auto_wire.bin",
+  "read_only": true,
+  "scope": "Captured complete groups only; exact fixed-ROI integer-reference equivalence; not recognition accuracy on arbitrary plates",
+  "frames": [
+    "frames\\e000_f0000000001\\result.json",
+    "frames\\e000_f0000000005\\result.json"
+  ]
+}

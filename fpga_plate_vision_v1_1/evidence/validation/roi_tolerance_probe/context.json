@@ -1,0 +1,9 @@
+{
+  "truth": "K38817",
+  "truth_source": "User confirmed earlier in same conversation",
+  "visual_confirmation": "User: green frame visible and position broadly correct",
+  "scope": "Display-only addition; no camera reposition grid or recognition enhancement claim",
+  "flash_written": false,
+  "git_pushed": false,
+  "bit_sha256": "8d2d8ed5c144a5d1618daad8c18fdd1ae9c5a99fb4e24623f98238f58167efae"
+}

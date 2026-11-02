@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "frames": 10,
+  "characters": 70,
+  "box_mismatched_frames": 0,
+  "pixel_mismatches": 0,
+  "score_mismatches": 0,
+  "compared_pixels": 53760,
+  "compared_scores": 2520,
+  "predictions": {
+    "BD12345": 10
+  },
+  "min_seg_cycles": 3058434,
+  "max_seg_cycles": 3058602,
+  "min_norm_cycles": 85815,
+  "max_norm_cycles": 126044,
+  "min_cnn_cycles": 942444,
+  "max_cnn_cycles": 942444,
+  "elapsed_sec": 2.842242200160399,
+  "model_sha256": "179d6d9b9a4e2229c152770152fe6c8d71ff924af5d9da06132debd730cf4645",
+  "roi": [
+    26,
+    41,
+    150,
+    76
+  ],
+  "flags": 0,
+  "scope": "FPGA segmentation+normalization+CNN; PC sends fixed ROI/raw image and schedules requests; argmax display on PC",
+  "truth_for_scoring_only": "BD12345",
+  "exact_correct": 10
+}

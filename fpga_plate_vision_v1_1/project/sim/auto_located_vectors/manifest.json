@@ -1,0 +1,58 @@
+{
+  "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\reports\\osd_board_20\\frames\\e000_f0000000525\\raw.npy",
+  "source_file_sha256": "27648099cb1a44dd4388ea73a2dd27f1076806e71b741cc68bd38655d7ca7d61",
+  "raw_sha256": "054861655be6cc51ac26c3aba754f68cf8004db6621f6e2bba390b610905b9b9",
+  "roi": [
+    14,
+    69,
+    147,
+    104
+  ],
+  "flags": 0,
+  "boxes": [
+    [
+      30,
+      79,
+      13,
+      25
+    ],
+    [
+      57,
+      78,
+      13,
+      26
+    ],
+    [
+      75,
+      78,
+      8,
+      26
+    ],
+    [
+      88,
+      78,
+      13,
+      26
+    ],
+    [
+      103,
+      78,
+      13,
+      26
+    ],
+    [
+      118,
+      77,
+      13,
+      27
+    ],
+    [
+      134,
+      77,
+      13,
+      27
+    ]
+  ],
+  "prediction": "BD12345",
+  "method": "image-derived geometric ROI; reference segmentation, normalization and signed CNN argmax; no truth input"
+}

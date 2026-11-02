@@ -1,0 +1,66 @@
+﻿[
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\rtl\\plate_region_locator.sv",
+        "Hash":  "003223D1547F742E3F9ADAF14B45B712DAD91F72342ADB701788BF8DE2AC43DC"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\rtl\\plate_segment_frontend.sv",
+        "Hash":  "B8C83375B2A3B4E857784A7ACC78B7D2EF70EEBC480CC98E41EADA845B148352"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\video_rtl\\uart\\uart_fast_tx.sv",
+        "Hash":  "0132EE8CD5DF963938BBD5A366F251D53B34356FC0F8F02E33BBF70C4B1C2870"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\rtl\\uart_fast_rx.sv",
+        "Hash":  "9268E8CECA05EF2DFD9BE815C211EA21367E4DEC55B9174E20E6A0F91699138A"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\rtl\\norm_uart_bridge.sv",
+        "Hash":  "2BAB559820F3921FB47DE6B6B6C85E5B30CE37612FD6BB18C34DC17380DD8480"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\rtl\\u32_div.sv",
+        "Hash":  "F9C235E7341C628D13208F0B975FABD72FE718557F68A933EB0575BD56A48B09"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\rtl\\char_normalizer.sv",
+        "Hash":  "8916354963A35CD7F4BF7A441817855E91015FFCCE0CE9168785D4B5F8C35C00"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\rtl\\char_segmenter.sv",
+        "Hash":  "ADC61761904339EE29A268C1AC5F94A434BC25F4C98E148E22C7DCA7266DE6E7"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\rtl\\cnn_core.sv",
+        "Hash":  "EC91C6D2E28E0BC3C5FE673A46E7317FA155EAF5BE90B2DECFD5E40E2CA06AB4"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\rtl\\plate_auto_controller.sv",
+        "Hash":  "379D2A6AB9D0BD03CE1000F450DB6EC2BB653C646837B58D97698E7EC7E99DE2"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\rtl\\plate_auto_uart.sv",
+        "Hash":  "107FFA6395AFE01FE5AFD86EEBEEBAA82D50B8F99183829D531DA3F49A372F20"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\rtl\\plate_recognition_subsystem.sv",
+        "Hash":  "B17FF3D372AA94960F83FD0A6064FAF401C84B3BEBD2D14B6BCBB0A099104D2D"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\sim\\tb_auto_manual_chain.sv",
+        "Hash":  "E581D6015675CB84824593B9C1ABEA64DDE7E85254F8E9F27F2D2283795A355A"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\model\\weights.hex",
+        "Hash":  "999D12F5ABEAB0B85B11867F3381130C321D2A5DCB2038B8AC1803F194160AD2"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\model\\biases.hex",
+        "Hash":  "F98A1F425431C22FD6C363420E887A6DEA6214BA17322CEAA0CCC6950F29F894"
+    },
+    {
+        "Path":  "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\sim\\segment_chain_vectors\\manifest.json",
+        "Hash":  "CED94855207BA20EECBEF6F443E99F37F00C2359DDB11EF9601780CE3D912D3B"
+    }
+]

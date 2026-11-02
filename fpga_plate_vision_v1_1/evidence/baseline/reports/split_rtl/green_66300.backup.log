@@ -1,0 +1,45 @@
+#-----------------------------------------------------------
+# xsim v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Sun Nov  1 19:23:07 2026
+# Process ID         : 66300
+# Current directory  : E:/FPGA_Test_Work/plate_autonomous_board_20261101/reports/split_rtl
+# Command line       : xsim.exe -log green.log -mode tcl -source {xsim.dir/split_tb/xsim_script.tcl}
+# Log file           : E:/FPGA_Test_Work/plate_autonomous_board_20261101/reports/split_rtl/green.log
+# Journal file       : E:/FPGA_Test_Work/plate_autonomous_board_20261101/reports/split_rtl\xsim.jou
+# Running On         : StrawberryBear
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : Intel(R) Core(TM) i9-14900HX
+# CPU Frequency      : 2419 MHz
+# CPU Physical cores : 24
+# CPU Logical cores  : 32
+# Host memory        : 33953 MB
+# Swap memory        : 9721 MB
+# Total Virtual      : 43675 MB
+# Available Virtual  : 7390 MB
+#-----------------------------------------------------------
+source xsim.dir/split_tb/xsim_script.tcl
+# xsim {split_tb} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+PASS split real_0 boxes=6 cycles=4213887
+PASS split real_1 boxes=7 cycles=4217117
+PASS split move_40 boxes=7 cycles=4217117
+PASS split move_15 boxes=7 cycles=4217117
+PASS split rotate boxes=7 cycles=4217117
+PASS split invert boxes=7 cycles=4217117
+PASS split solid boxes=1 cycles=2104702
+PASS split M boxes=1 cycles=2094750
+PASS split W boxes=1 cycles=2094750
+PASS split thin boxes=2 cycles=2093934
+PASS split thick boxes=1 cycles=2096094
+PASS split blank boxes=0 cycles=13363219
+PASS ALL touching split RTL: 12 vectors, latched policy, reset recovery
+$finish called at time : 574571426 ns : File "E:/FPGA_Test_Work/plate_autonomous_board_20261101/sim/tb_touching_split.sv" Line 42
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:00:55 . Memory (MB): peak = 167.660 ; gain = 0.008
+exit
+INFO: xsimkernel Simulation Memory Usage: 12120 KB (Peak: 12120 KB), Simulation CPU Usage: 53625 ms
+INFO: [Common 17-206] Exiting xsim at Sun Nov  1 19:24:03 2026...

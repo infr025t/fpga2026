@@ -1,0 +1,55 @@
+{
+  "frames": 2,
+  "passed_frames": 2,
+  "characters": 7,
+  "compared_pixels": 5376,
+  "compared_scores": 252,
+  "pixel_mismatches": 0,
+  "score_mismatches": 0,
+  "predictions": {
+    "DDN7870": 1,
+    "": 1
+  },
+  "frame_id_first": 1,
+  "frame_id_last": 6,
+  "capture_tick_first": 1000,
+  "capture_tick_last": 18438010,
+  "input_start_fps": 27.119364799389924,
+  "observed_recognition_fps": 5.4238729598779845,
+  "capture_to_result_ms": {
+    "min": 84.63769,
+    "mean": 121.81317000000001,
+    "max": 158.98865
+  },
+  "segment_ms": {
+    "min": 47.77363,
+    "mean": 48.028825,
+    "max": 48.28402
+  },
+  "normalize_ms": {
+    "min": 0.94831,
+    "mean": 1.1241242857142857,
+    "max": 1.34976
+  },
+  "cnn_ms": {
+    "min": 9.42444,
+    "mean": 9.42444,
+    "max": 9.42444
+  },
+  "counters_first": {
+    "bad_captures": 0,
+    "skipped_frames": 4,
+    "publisher_dropped": 0
+  },
+  "counters_last": {
+    "bad_captures": 0,
+    "skipped_frames": 6,
+    "publisher_dropped": 0
+  },
+  "counters_max": {
+    "bad_captures": 0,
+    "skipped_frames": 6,
+    "publisher_dropped": 0
+  },
+  "scope": "100 MHz FPGA timestamps; input frame starts are not an independent optical measurement of LCD refresh"
+}

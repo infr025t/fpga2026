@@ -1,0 +1,28 @@
+{
+  "current_roi_auto_100": {
+    "frames": 100,
+    "predictions": {
+      "BD12345": 100
+    }
+  },
+  "current_roi_precheck": {
+    "frames": 4,
+    "predictions": {
+      "BD12345": 4
+    }
+  },
+  "osd_board_20": {
+    "frames": 20,
+    "predictions": {
+      "BD12345": 19,
+      "HD12345": 1
+    }
+  },
+  "placement_test_03": {
+    "frames": 10,
+    "predictions": {
+      "BD123K": 3,
+      "BD123M": 7
+    }
+  }
+}

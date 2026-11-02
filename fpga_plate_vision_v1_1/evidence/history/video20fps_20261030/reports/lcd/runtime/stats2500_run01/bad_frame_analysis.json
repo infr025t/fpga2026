@@ -1,0 +1,8 @@
+{
+  "frame": 866,
+  "crc32": "6823edd0",
+  "prefix_pixels": 86016,
+  "ring_read_start": 221184,
+  "reconstructed_crc32": "6823edd0",
+  "recovers_at_next_frame": true
+}

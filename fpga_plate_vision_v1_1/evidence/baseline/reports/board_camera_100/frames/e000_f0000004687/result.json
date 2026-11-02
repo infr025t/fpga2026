@@ -1,0 +1,147 @@
+{
+  "epoch": 0,
+  "frame_id": 4687,
+  "capture_tick": 3258286625,
+  "roi": [
+    26,
+    35,
+    158,
+    87
+  ],
+  "flags": 0,
+  "hardware_boxes": [
+    [
+      29,
+      50,
+      13,
+      26
+    ],
+    [
+      56,
+      49,
+      13,
+      27
+    ]
+  ],
+  "reference_boxes": [
+    [
+      29,
+      50,
+      13,
+      26
+    ],
+    [
+      56,
+      49,
+      13,
+      27
+    ]
+  ],
+  "reference_segment_status": 0,
+  "characters": [
+    {
+      "index": 0,
+      "hardware_box": [
+        29,
+        50,
+        13,
+        26
+      ],
+      "hardware_class_id": 11,
+      "hardware_ascii": 66,
+      "signed_argmax": 11,
+      "errors": [],
+      "norm_cycles": 106016,
+      "core_cycles": 942444,
+      "reference_box": [
+        29,
+        50,
+        13,
+        26
+      ],
+      "reference_class_id": 11,
+      "normalization_parameters": {
+        "low100": 2800,
+        "high100": 25500,
+        "high": 255,
+        "den": 227,
+        "crop_width": 17,
+        "crop_height": 30,
+        "nw": 17,
+        "nh": 30,
+        "dst_x": 3,
+        "dst_y": 1,
+        "area_den": 510,
+        "crop_xyxy": [
+          27,
+          48,
+          44,
+          78
+        ]
+      },
+      "norm_pixel_mismatches": 0,
+      "score_mismatches": 0,
+      "max_pixel_error": 0,
+      "max_score_error": 0
+    },
+    {
+      "index": 1,
+      "hardware_box": [
+        56,
+        49,
+        13,
+        27
+      ],
+      "hardware_class_id": 13,
+      "hardware_ascii": 68,
+      "signed_argmax": 13,
+      "errors": [],
+      "norm_cycles": 109311,
+      "core_cycles": 942444,
+      "reference_box": [
+        56,
+        49,
+        13,
+        27
+      ],
+      "reference_class_id": 13,
+      "normalization_parameters": {
+        "low100": 3778,
+        "high100": 25500,
+        "high": 255,
+        "den": 217,
+        "crop_width": 17,
+        "crop_height": 31,
+        "nw": 16,
+        "nh": 30,
+        "dst_x": 4,
+        "dst_y": 1,
+        "area_den": 527,
+        "crop_xyxy": [
+          54,
+          47,
+          71,
+          78
+        ]
+      },
+      "norm_pixel_mismatches": 0,
+      "score_mismatches": 0,
+      "max_pixel_error": 0,
+      "max_score_error": 0
+    }
+  ],
+  "errors": [],
+  "timing": {
+    "seg_cycles": 4854503,
+    "elapsed_cycles": 11397637
+  },
+  "hardware_counters": {
+    "bad_captures": 0,
+    "skipped_frames": 3126,
+    "publisher_dropped": 0
+  },
+  "hardware_prediction": "BD",
+  "reference_prediction": "BD",
+  "result_prediction": "BD",
+  "passed": true
+}

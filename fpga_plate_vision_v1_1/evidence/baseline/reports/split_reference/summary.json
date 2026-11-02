@@ -1,0 +1,151 @@
+{
+  "frames": 854,
+  "scenes": [
+    {
+      "scene": "current_roi_auto_100",
+      "frames": 100,
+      "old_exact": 100,
+      "new_exact": 100,
+      "new_regressions": 0,
+      "boxes_changed": 0,
+      "old_predictions": {
+        "BD12345": 100
+      },
+      "new_predictions": {
+        "BD12345": 100
+      }
+    },
+    {
+      "scene": "current_roi_precheck",
+      "frames": 4,
+      "old_exact": 4,
+      "new_exact": 4,
+      "new_regressions": 0,
+      "boxes_changed": 0,
+      "old_predictions": {
+        "BD12345": 4
+      },
+      "new_predictions": {
+        "BD12345": 4
+      }
+    },
+    {
+      "scene": "osd_board_20",
+      "frames": 20,
+      "old_exact": 19,
+      "new_exact": 19,
+      "new_regressions": 0,
+      "boxes_changed": 0,
+      "old_predictions": {
+        "BD12345": 19,
+        "HD12345": 1
+      },
+      "new_predictions": {
+        "BD12345": 19,
+        "HD12345": 1
+      }
+    },
+    {
+      "scene": "placement_test_03",
+      "frames": 10,
+      "old_exact": 0,
+      "new_exact": 10,
+      "new_regressions": 0,
+      "boxes_changed": 10,
+      "old_predictions": {
+        "BD123K": 3,
+        "BD123M": 7
+      },
+      "new_predictions": {
+        "BD12345": 10
+      }
+    },
+    {
+      "scene": "prefix_board_20",
+      "frames": 20,
+      "old_exact": 0,
+      "new_exact": 20,
+      "new_regressions": 0,
+      "boxes_changed": 20,
+      "old_predictions": {
+        "BD123M": 13,
+        "BD123K": 7
+      },
+      "new_predictions": {
+        "BD12345": 20
+      }
+    },
+    {
+      "scene": "anp639",
+      "frames": 200,
+      "old_exact": 200,
+      "new_exact": 200,
+      "new_regressions": 0,
+      "boxes_changed": 0,
+      "old_predictions": {
+        "ANP639": 200
+      },
+      "new_predictions": {
+        "ANP639": 200
+      }
+    },
+    {
+      "scene": "d12345",
+      "frames": 100,
+      "old_exact": 100,
+      "new_exact": 100,
+      "new_regressions": 0,
+      "boxes_changed": 0,
+      "old_predictions": {
+        "D12345": 100
+      },
+      "new_predictions": {
+        "D12345": 100
+      }
+    },
+    {
+      "scene": "k38817_old",
+      "frames": 200,
+      "old_exact": 200,
+      "new_exact": 200,
+      "new_regressions": 0,
+      "boxes_changed": 0,
+      "old_predictions": {
+        "K38817": 200
+      },
+      "new_predictions": {
+        "K38817": 200
+      }
+    },
+    {
+      "scene": "k38817_v2",
+      "frames": 100,
+      "old_exact": 100,
+      "new_exact": 100,
+      "new_regressions": 0,
+      "boxes_changed": 0,
+      "old_predictions": {
+        "K38817": 100
+      },
+      "new_predictions": {
+        "K38817": 100
+      }
+    },
+    {
+      "scene": "ddn7870",
+      "frames": 100,
+      "old_exact": 100,
+      "new_exact": 100,
+      "new_regressions": 0,
+      "boxes_changed": 0,
+      "old_predictions": {
+        "DDN7870": 100
+      },
+      "new_predictions": {
+        "DDN7870": 100
+      }
+    }
+  ],
+  "regressions": 0,
+  "scope": "Stored scenes; no model changes; no class/answer-directed splitting; not independent generalization evidence"
+}

@@ -1,0 +1,35 @@
+{
+  "build": "white_characters_01",
+  "bit_sha256": "bdca082ba4c9cdc444a718e6fcab103cfb06e8b6b728281e0741615015b1ed0e",
+  "ltx_sha256": "5843c174a9bedfaa714babdc12e381b0b198eb46743295feaf486b77c2eeeeb3",
+  "timing": {
+    "wns_ns": 0.175,
+    "whs_ns": 0.017,
+    "tns_ns": 0,
+    "ths_ns": 0,
+    "frequency_mhz": 100
+  },
+  "resources": {
+    "lut": 15612,
+    "logic_lut": 14085,
+    "lutram": 1492,
+    "srl": 35,
+    "ff": 18901,
+    "ramb36": 40,
+    "ramb18": 9,
+    "bram36_equivalent": 44.5,
+    "dsp": 9
+  },
+  "delta_vs_v1_0": {
+    "lut": 19,
+    "ff": 6,
+    "bram": 0,
+    "dsp": 0
+  },
+  "drc_warnings": 41,
+  "drc_errors_or_critical": 0,
+  "no_input_delay": 14,
+  "partial_input_delay": 8,
+  "refinement_required": false,
+  "source_count": 53
+}

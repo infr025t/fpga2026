@@ -1,0 +1,32 @@
+{
+  "epoch": 0,
+  "frame_id": 503,
+  "capture_tick": 2457683133,
+  "roi": [
+    26,
+    41,
+    150,
+    76
+  ],
+  "flags": 0,
+  "hardware_boxes": [],
+  "reference_boxes": [],
+  "reference_segment_status": 0,
+  "characters": [],
+  "errors": [],
+  "timing": {
+    "seg_cycles": 3043784,
+    "elapsed_cycles": 7486686
+  },
+  "hardware_counters": {
+    "bad_captures": 0,
+    "skipped_frames": 376,
+    "publisher_dropped": 0
+  },
+  "hardware_prediction": "",
+  "reference_prediction": "",
+  "result_prediction": "",
+  "passed": true,
+  "truth_for_scoring_only": "BD12345",
+  "truth_exact": false
+}

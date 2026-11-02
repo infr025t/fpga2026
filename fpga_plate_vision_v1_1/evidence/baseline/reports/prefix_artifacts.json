@@ -1,0 +1,110 @@
+{
+  "source_manifest": "build_prefix/sources/manifest.json",
+  "source_mismatches": [],
+  "changed_previous_sources": [
+    "rtl/char_segmenter.sv",
+    "rtl/plate_auto_uart.sv",
+    "rtl/plate_recognition_subsystem.sv",
+    "rtl/plate_segment_frontend.sv",
+    "video_rtl/lcd_top.sv"
+  ],
+  "new_sources": [],
+  "sha256": {
+    "build_prefix/autonomous_board.bit": "65e12e2a54c020995c239b890c7e310a29147a4c82cbb6b33c2b5bb9cf1dc352",
+    "build_prefix/autonomous_board.ltx": "5843c174a9bedfaa714babdc12e381b0b198eb46743295feaf486b77c2eeeeb3",
+    "model/model.bin": "179d6d9b9a4e2229c152770152fe6c8d71ff924af5d9da06132debd730cf4645",
+    "pc/segment_ref.py": "77b0f735e2394db428e462f8beaf79104dea0cfac892be06845795c73652f928",
+    "pc/auto_protocol.py": "7ab05b7dea50a0179cda1dafe8de429ac78bcb01d294793a36877abaa5c96c11",
+    "pc/observe_auto.py": "bbdba7e77454460fe6282be1d0139899ed67852b5b99ddef9be636c7a87fd66b",
+    "build.ps1": "486ea6cf49a0036827d0e575f33350471e35199273dfeafb14ec1b3a4c1ca68b",
+    "scripts/hardware.tcl": "5eeed9537a2fa947d65e6646b72dd50c3b0a2e034ddc6d1422fa9c7a6a690c00",
+    "scripts/check_prefix_capture.py": "66d46b9c1dca04ee9faeaae268067480e0ca00c64d7258f0bcf243c65dca093f"
+  },
+  "timing": {
+    "wns_ns": 0.092,
+    "whs_ns": 0.019,
+    "setup_failing_endpoints": 0,
+    "hold_failing_endpoints": 0
+  },
+  "resources": {
+    "lut": 15053,
+    "ff": 18648,
+    "ramb36": 40,
+    "ramb18": 9,
+    "dsp": 9
+  },
+  "hardware_summary": {
+    "passed": true,
+    "requested_frames": 20,
+    "captured_complete_frames": 20,
+    "verified_frames": 20,
+    "mismatched_frames": 0,
+    "verified_characters": 120,
+    "groups": {
+      "epochs": 1,
+      "complete_groups": 20,
+      "incomplete_groups": 0,
+      "invalid_groups": 0,
+      "evicted_groups": 0,
+      "peak_pending_groups": 1,
+      "observed_source_frame_gaps": 57,
+      "packets": 180
+    },
+    "parser": {
+      "valid_packets": 180,
+      "rejected_candidates": 0,
+      "discarded_bytes": 0,
+      "truncated_bytes": 2640
+    },
+    "bytes_received": 508160,
+    "timed_out": false,
+    "capture_error": null,
+    "capture_seconds": 3.7276382001582533,
+    "total_seconds": 4.008929900126532,
+    "model_sha256": "179d6d9b9a4e2229c152770152fe6c8d71ff924af5d9da06132debd730cf4645",
+    "model_error": null,
+    "source": "COM10@12000000",
+    "read_only": true,
+    "scope": "Complete groups only; exact integer reference including ASG2/3 dynamic ROI and ASG3 prefix exclusion; not arbitrary-plate recognition accuracy",
+    "frames": [
+      "frames\\e000_f0000000429\\result.json",
+      "frames\\e000_f0000000433\\result.json",
+      "frames\\e000_f0000000437\\result.json",
+      "frames\\e000_f0000000441\\result.json",
+      "frames\\e000_f0000000445\\result.json",
+      "frames\\e000_f0000000449\\result.json",
+      "frames\\e000_f0000000453\\result.json",
+      "frames\\e000_f0000000457\\result.json",
+      "frames\\e000_f0000000461\\result.json",
+      "frames\\e000_f0000000465\\result.json",
+      "frames\\e000_f0000000469\\result.json",
+      "frames\\e000_f0000000473\\result.json",
+      "frames\\e000_f0000000477\\result.json",
+      "frames\\e000_f0000000481\\result.json",
+      "frames\\e000_f0000000485\\result.json",
+      "frames\\e000_f0000000489\\result.json",
+      "frames\\e000_f0000000493\\result.json",
+      "frames\\e000_f0000000497\\result.json",
+      "frames\\e000_f0000000501\\result.json",
+      "frames\\e000_f0000000505\\result.json"
+    ],
+    "truth_for_scoring_only": "BD12345",
+    "truth_exact_frames": 0
+  },
+  "prefix_box_check": {
+    "frames": 20,
+    "removed_counts": {
+      "2": 20
+    },
+    "retained_boxes_unchanged": true,
+    "hardware_matches": true,
+    "predictions": {
+      "BD123M": 13,
+      "BD123K": 7
+    },
+    "scope": "Same raw images and dynamic ROI; old versus new segmentation; not whole-number accuracy"
+  },
+  "flash_modified": false,
+  "formal_repository_modified": false,
+  "program_log": "logs/prefix_program.log"
+}

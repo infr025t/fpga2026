@@ -1,0 +1,17 @@
+test_blank_frame_is_verified_and_raw_is_saved (test_observe_auto.ObserverTests.test_blank_frame_is_verified_and_raw_is_saved) ... ok
+test_dynamic_roi_is_independently_checked (test_observe_auto.ObserverTests.test_dynamic_roi_is_independently_checked) ... ok
+test_each_inference_mismatch_fails (test_observe_auto.ObserverTests.test_each_inference_mismatch_fails) ... ok
+test_epoch_reset_does_not_combine_old_partial_frame (test_observe_auto.ObserverTests.test_epoch_reset_does_not_combine_old_partial_frame) ... ok
+test_final_truncated_packet_is_reported (test_observe_auto.ObserverTests.test_final_truncated_packet_is_reported) ... ok
+test_forbidden_port_is_rejected_before_open (test_observe_auto.ObserverTests.test_forbidden_port_is_rejected_before_open) ... ok
+test_insufficient_verified_count_fails (test_observe_auto.ObserverTests.test_insufficient_verified_count_fails) ... ok
+test_live_receive_closes_before_reference_and_never_writes (test_observe_auto.ObserverTests.test_live_receive_closes_before_reference_and_never_writes) ... ok
+test_missing_and_corrupt_packets_never_pass (test_observe_auto.ObserverTests.test_missing_and_corrupt_packets_never_pass) ... ok
+test_pending_groups_are_bounded_and_reported (test_observe_auto.ObserverTests.test_pending_groups_are_bounded_and_reported) ... ok
+test_real_character_compares_all_reference_outputs (test_observe_auto.ObserverTests.test_real_character_compares_all_reference_outputs) ... ok
+test_truth_is_scored_after_prediction_without_changing_it (test_observe_auto.ObserverTests.test_truth_is_scored_after_prediction_without_changing_it) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.445s
+
+OK

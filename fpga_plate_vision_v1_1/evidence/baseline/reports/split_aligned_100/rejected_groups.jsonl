@@ -1,0 +1,5 @@
+{"epoch": 0, "frame_id": 2969, "reason": "capture_ended", "missing": ["AIF1"], "received_char_indices": [0, 1, 2, 3, 4, 5, 6]}
+{"epoch": 0, "frame_id": 3085, "reason": "capture_ended", "missing": ["AIF1", "ASG1"], "received_char_indices": [6]}
+{"epoch": 0, "frame_id": 3121, "reason": "capture_ended", "missing": ["AIF1"], "received_char_indices": [0, 1, 2, 3, 4, 5, 6]}
+{"epoch": 0, "frame_id": 3145, "reason": "capture_ended", "missing": ["AIF1", "ASG1"], "received_char_indices": [2, 3, 4, 5, 6]}
+{"epoch": 0, "frame_id": 3165, "reason": "capture_ended", "missing": ["AER1", "ACR2[0]", "ACR2[1]", "ACR2[2]", "ACR2[3]", "ACR2[4]", "ACR2[5]", "ACR2[6]"], "received_char_indices": []}

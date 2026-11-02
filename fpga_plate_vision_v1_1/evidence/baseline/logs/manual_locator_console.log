@@ -1,0 +1,80 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/rtl/plate_region_locator.sv" into library work
+INFO: [VRFC 10-311] analyzing module plate_region_locator
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/rtl/plate_segment_frontend.sv" into library work
+INFO: [VRFC 10-311] analyzing module plate_segment_frontend
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/video_rtl/uart/uart_fast_tx.sv" into library work
+INFO: [VRFC 10-311] analyzing module uart_fast_tx
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/rtl/uart_fast_rx.sv" into library work
+INFO: [VRFC 10-311] analyzing module uart_fast_rx
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/rtl/norm_uart_bridge.sv" into library work
+INFO: [VRFC 10-311] analyzing module norm_uart_bridge
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/rtl/u32_div.sv" into library work
+INFO: [VRFC 10-311] analyzing module u32_div
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/rtl/char_normalizer.sv" into library work
+INFO: [VRFC 10-311] analyzing module char_normalizer
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/rtl/char_segmenter.sv" into library work
+INFO: [VRFC 10-311] analyzing module char_segmenter
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/rtl/cnn_core.sv" into library work
+INFO: [VRFC 10-311] analyzing module cnn_core
+INFO: [VRFC 10-311] analyzing module cnn_weight_rom
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/rtl/plate_auto_controller.sv" into library work
+INFO: [VRFC 10-311] analyzing module plate_auto_controller
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/rtl/plate_auto_uart.sv" into library work
+INFO: [VRFC 10-311] analyzing module plate_auto_uart
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/rtl/plate_recognition_subsystem.sv" into library work
+INFO: [VRFC 10-311] analyzing module plate_recognition_subsystem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/sim/tb_auto_manual_chain.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_auto_manual_chain
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: E:/Vivado/2025.1/Vivado/bin/unwrapped/win64.o/xelab.exe tb_auto_manual_chain -s tb_auto_manual_chain_snapshot 
+Multi-threading is on. Using 30 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3645] port 'display_enabled' remains unconnected for this instance [E:/FPGA_Test_Work/plate_autonomous_board_20261101/sim/tb_auto_manual_chain.sv:15]
+WARNING: [VRFC 10-3645] port 'frame_valid' remains unconnected for this instance [E:/FPGA_Test_Work/plate_autonomous_board_20261101/rtl/plate_recognition_subsystem.sv:59]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.plate_region_locator
+Compiling module work.char_segmenter
+Compiling module work.plate_segment_frontend(AUTO_LOCA...
+Compiling module work.u32_div
+Compiling module work.char_normalizer(ENABLE_SCAN=1)
+Compiling module work.cnn_weight_rom
+Compiling module work.cnn_core
+Compiling module work.uart_fast_rx
+Compiling module work.uart_fast_tx
+Compiling module work.norm_uart_bridge
+Compiling module work.plate_auto_controller
+Compiling module work.plate_auto_uart(DYNAMIC_ROI=1)
+Compiling module work.plate_recognition_subsystem(AUTO...
+Compiling module work.tb_auto_manual_chain
+Built simulation snapshot tb_auto_manual_chain_snapshot
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Sun Nov  1 16:56:39 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/tb_auto_manual_chain_snapshot/xsim_script.tcl
+# xsim {tb_auto_manual_chain_snapshot} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+PASS mode AUTO -> MANUAL midcapture aborted samples=63
+PASS mode MANUAL -> DIAG midupload invalidated frame and ignored incoming UART/video
+PASS actual wrapper manual chain case=0 boxes=6 pixels=768 signed_scores=36 seg_cycles=4448145 norm_cycles=134286 cnn_cycles=942444
+PASS actual wrapper manual chain case=1 boxes=6 pixels=768 signed_scores=36 seg_cycles=4617186 norm_cycles=117802 cnn_cycles=942444
+PASS mode DIAG -> MANUAL fresh upload recovery camera_frames_ignored=47 manual_pixels=38400
+PASS tb_auto_manual_chain 2 real frames flags0/3 all boxes 1536 normalized pixels 72 signed scores 2464 response bytes actual wrapper three mode transitions
+$finish called at time : 147088516664 ps : File "E:/FPGA_Test_Work/plate_autonomous_board_20261101/sim/tb_auto_manual_chain.sv" Line 194
+run: Time (s): cpu = 00:00:01 ; elapsed = 00:00:55 . Memory (MB): peak = 167.680 ; gain = 0.008
+exit
+INFO: xsimkernel Simulation Memory Usage: 12792 KB (Peak: 12792 KB), Simulation CPU Usage: 53968 ms
+INFO: [Common 17-206] Exiting xsim at Sun Nov  1 16:57:36 2026...
+PASS stable_sources auto_manual_locator

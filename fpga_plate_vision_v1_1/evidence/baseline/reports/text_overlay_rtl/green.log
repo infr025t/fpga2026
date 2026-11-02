@@ -1,0 +1,32 @@
+#-----------------------------------------------------------
+# xsim v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Sun Nov  1 16:18:20 2026
+# Process ID         : 67340
+# Current directory  : E:/FPGA_Test_Work/plate_autonomous_board_20261101/reports/text_overlay_rtl
+# Command line       : xsim.exe -log green.log -mode tcl -source {xsim.dir/text_overlay_tb/xsim_script.tcl}
+# Log file           : E:/FPGA_Test_Work/plate_autonomous_board_20261101/reports/text_overlay_rtl/green.log
+# Journal file       : E:/FPGA_Test_Work/plate_autonomous_board_20261101/reports/text_overlay_rtl\xsim.jou
+# Running On         : StrawberryBear
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : Intel(R) Core(TM) i9-14900HX
+# CPU Frequency      : 2419 MHz
+# CPU Physical cores : 24
+# CPU Logical cores  : 32
+# Host memory        : 33953 MB
+# Swap memory        : 8640 MB
+# Total Virtual      : 42594 MB
+# Available Virtual  : 7524 MB
+#-----------------------------------------------------------
+source xsim.dir/text_overlay_tb/xsim_script.tcl
+# xsim {text_overlay_tb} -autoloadwcfg -tclbatch {run.tcl}
+Time resolution is 1 ps
+source run.tcl
+## run all
+PASS ALL text overlay: atomic updates, modes, glyphs, clipping, overflow, reset
+$finish called at time : 416 ns : File "E:/FPGA_Test_Work/plate_autonomous_board_20261101/sim/tb_plate_text_overlay.sv" Line 44
+## quit
+INFO: [Common 17-206] Exiting xsim at Sun Nov  1 16:18:21 2026...

@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "project": "plate_recognition_engineering",
+  "baseline": "E:/FPGA_Test_Work/plate_autonomous_board_20261101/build_split",
+  "documentation": "../docs/reference/index.md",
+  "current_validation": "../docs/reference/current_validation.md",
+  "current_reports": [
+    "../reports/implementation.json",
+    "../reports/display_modes.json",
+    "../reports/engineering_board_100/summary.json",
+    "../reports/engineering_board_100/metrics.json",
+    "../reports/baseline_preservation.json",
+    "../reports/review_summary.md",
+    "../reports/roi_tolerance_probe/implementation.json",
+    "../reports/roi_board_10/summary.json"
+  ],
+  "ledgers": [
+    {
+      "path": "migration_manifest.json",
+      "sha256": "f503b436594504ddb90abbd2275cfc4a46e51628844fe974fdbbc410a022780f"
+    },
+    {
+      "path": "anomaly_sources.json",
+      "sha256": "039296751930ac4c71ec819a38f60e59644c4779a62aa37e02a448693308f60b"
+    },
+    {
+      "path": "data_sources.json",
+      "sha256": "f720f4622ca0782392b047bbecc5f5062f4ee272c7aeaa8cbcc26474643ea4cb"
+    },
+    {
+      "path": "current_sources.json",
+      "sha256": "1ac4fcc8471b90cbd272411352cf78ba4af06fbe183f92630881da1e485303d8"
+    },
+    {
+      "path": "baseline/segmentation_vectors_sha256.json",
+      "sha256": "48e26aaf3be806fc42129734fa6952e2b6f7f15b22876d30888ebda7ea0773c2"
+    },
+    {
+      "path": "baseline/norm_chain_vectors_sha256.json",
+      "sha256": "2442995a7eeeb3ab6f2d4602e97739c50a329246f5c4f3b4f58c9920f99e009e"
+    }
+  ],
+  "implementation": {
+    "failed": "../build/engineering_01/build.log",
+    "candidate": "../build/engineering_03/sources/manifest.json"
+  },
+  "note": "Historical ledger hashes are capture-time identities. Mutable engineering spec/plan entries p01/p02 are context snapshots, not immutable hardware evidence."
+}

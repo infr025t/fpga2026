@@ -1,0 +1,34 @@
+#-----------------------------------------------------------
+# xsim v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Sun Nov  1 16:20:32 2026
+# Process ID         : 67480
+# Current directory  : E:/FPGA_Test_Work/plate_autonomous_board_20261101/reports/lcd_text_rtl
+# Command line       : xsim.exe -log green.log -mode tcl -source {xsim.dir/lcd_text_tb/xsim_script.tcl}
+# Log file           : E:/FPGA_Test_Work/plate_autonomous_board_20261101/reports/lcd_text_rtl/green.log
+# Journal file       : E:/FPGA_Test_Work/plate_autonomous_board_20261101/reports/lcd_text_rtl\xsim.jou
+# Running On         : StrawberryBear
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : Intel(R) Core(TM) i9-14900HX
+# CPU Frequency      : 2419 MHz
+# CPU Physical cores : 24
+# CPU Logical cores  : 32
+# Host memory        : 33953 MB
+# Swap memory        : 8640 MB
+# Total Virtual      : 42594 MB
+# Available Virtual  : 2859 MB
+#-----------------------------------------------------------
+source xsim.dir/lcd_text_tb/xsim_script.tcl
+# xsim {lcd_text_tb} -autoloadwcfg -tclbatch {run.tcl}
+Time resolution is 1 ps
+source run.tcl
+## run all
+PASS ALL LCD text: 603300 RGB565 pixels checked on LCD pins; RAW/EDGE, bubbles, frame atomicity, source CRC preserved
+$finish called at time : 178002186 ns : File "E:/FPGA_Test_Work/plate_autonomous_board_20261101/sim/tb_lcd_text.sv" Line 84
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:00:15 . Memory (MB): peak = 167.602 ; gain = 0.016
+## quit
+INFO: xsimkernel Simulation Memory Usage: 10892 KB (Peak: 10892 KB), Simulation CPU Usage: 14921 ms
+INFO: [Common 17-206] Exiting xsim at Sun Nov  1 16:20:49 2026...

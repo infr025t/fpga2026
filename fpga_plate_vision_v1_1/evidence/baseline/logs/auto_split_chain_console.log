@@ -1,0 +1,79 @@
+Generated current-scene vectors: boxes=7 prediction=BD12345 source=E:\FPGA_Test_Work\plate_autonomous_board_20261101\reports\placement_test_03\frames\e000_f0000112645\raw.npy
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/rtl/plate_region_locator.sv" into library work
+INFO: [VRFC 10-311] analyzing module plate_region_locator
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/rtl/plate_segment_frontend.sv" into library work
+INFO: [VRFC 10-311] analyzing module plate_segment_frontend
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/video_rtl/uart/uart_fast_tx.sv" into library work
+INFO: [VRFC 10-311] analyzing module uart_fast_tx
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/rtl/uart_fast_rx.sv" into library work
+INFO: [VRFC 10-311] analyzing module uart_fast_rx
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/rtl/norm_uart_bridge.sv" into library work
+INFO: [VRFC 10-311] analyzing module norm_uart_bridge
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/rtl/u32_div.sv" into library work
+INFO: [VRFC 10-311] analyzing module u32_div
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/rtl/char_normalizer.sv" into library work
+INFO: [VRFC 10-311] analyzing module char_normalizer
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/rtl/char_segmenter.sv" into library work
+INFO: [VRFC 10-311] analyzing module char_segmenter
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/rtl/cnn_core.sv" into library work
+INFO: [VRFC 10-311] analyzing module cnn_core
+INFO: [VRFC 10-311] analyzing module cnn_weight_rom
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/rtl/plate_auto_controller.sv" into library work
+INFO: [VRFC 10-311] analyzing module plate_auto_controller
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/rtl/plate_auto_uart.sv" into library work
+INFO: [VRFC 10-311] analyzing module plate_auto_uart
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/rtl/plate_recognition_subsystem.sv" into library work
+INFO: [VRFC 10-311] analyzing module plate_recognition_subsystem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/sim/tb_auto_split_scene.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_auto_split_scene
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: E:/Vivado/2025.1/Vivado/bin/unwrapped/win64.o/xelab.exe tb_auto_split_scene -s auto_split_scene_snapshot 
+Multi-threading is on. Using 30 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3645] port 'display_enabled' remains unconnected for this instance [E:/FPGA_Test_Work/plate_autonomous_board_20261101/sim/tb_auto_split_scene.sv:8]
+WARNING: [VRFC 10-3645] port 'frame_valid' remains unconnected for this instance [E:/FPGA_Test_Work/plate_autonomous_board_20261101/rtl/plate_recognition_subsystem.sv:59]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.plate_region_locator
+Compiling module work.char_segmenter(ENABLE_PREFIX=1,E...
+Compiling module work.plate_segment_frontend(AUTO_LOCA...
+Compiling module work.u32_div
+Compiling module work.char_normalizer(ENABLE_SCAN=1)
+Compiling module work.cnn_weight_rom
+Compiling module work.cnn_core
+Compiling module work.uart_fast_rx
+Compiling module work.uart_fast_tx
+Compiling module work.norm_uart_bridge
+Compiling module work.plate_auto_controller(ROI_X0=8'b...
+Compiling module work.plate_auto_uart(DYNAMIC_ROI=1,PR...
+Compiling module work.plate_recognition_subsystem(AUTO...
+Compiling module work.tb_auto_split_scene
+Built simulation snapshot auto_split_scene_snapshot
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Sun Nov  1 19:24:04 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/auto_split_scene_snapshot/xsim_script.tcl
+# xsim {auto_split_scene_snapshot} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+RESULT frame_id=1 chars=7 cycles=15422294 skipped=4
+RESULT frame_id=6 chars=0 cycles=3744010 skipped=5
+PASS tb_auto_split_scene autonomous real workers, full raster, seven split characters, blank frame, skipped source frames
+$finish called at time : 259118240 ns : File "E:/FPGA_Test_Work/plate_autonomous_board_20261101/sim/tb_auto_split_scene.sv" Line 71
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:01:27 . Memory (MB): peak = 167.414 ; gain = 0.000
+exit
+INFO: xsimkernel Simulation Memory Usage: 12796 KB (Peak: 12796 KB), Simulation CPU Usage: 86078 ms
+INFO: [Common 17-206] Exiting xsim at Sun Nov  1 19:25:33 2026...
+PASS current_scene_uart packets=13 bytes=45832 chars=7 pixels=5376 scores=252 CRC/raw/boxes/ASCII exact
+PASS stable_sources auto_split_scene

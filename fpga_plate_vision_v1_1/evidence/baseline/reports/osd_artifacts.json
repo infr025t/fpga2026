@@ -1,0 +1,23 @@
+{
+  "source_manifest": "build_osd/sources/manifest.json",
+  "source_mismatches": [],
+  "changed_previous_sources": [
+    "rtl/plate_recognition_subsystem.sv",
+    "video_rtl/lcd_top.sv",
+    "video_rtl/runtime/video_lcd_sink.sv",
+    "scripts/build.tcl"
+  ],
+  "new_sources": [
+    "rtl/plate_text_overlay.sv"
+  ],
+  "sha256": {
+    "build_osd/autonomous_board.bit": "dc6ae1c794064a422e3bc9354418a190263ec9182f4ba0a7dfce6e5b4880ad8b",
+    "build_osd/autonomous_board.ltx": "5843c174a9bedfaa714babdc12e381b0b198eb46743295feaf486b77c2eeeeb3",
+    "model/model.bin": "179d6d9b9a4e2229c152770152fe6c8d71ff924af5d9da06132debd730cf4645",
+    "build.ps1": "c0ae5fab988c866e7c0f784ebf8f1d0cae2ba2d37410c4ddf1af301ebbc76f2a",
+    "scripts/hardware.tcl": "a16bf2e014e17030aada95d36b7df115e1f36da19ed0c05821b77a182ecfa174"
+  },
+  "board_observation": "reports/osd_board_20/summary.json",
+  "screen_user_confirmation": "Visible; position and size acceptable",
+  "flash_modified": false
+}

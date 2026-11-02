@@ -1,0 +1,17 @@
+{
+  "release": "fpga_plate_vision_v1_1",
+  "accepted_build": "white_characters_01",
+  "artifacts": {
+    "release/autonomous_board.bit": "bdca082ba4c9cdc444a718e6fcab103cfb06e8b6b728281e0741615015b1ed0e",
+    "release/autonomous_board.ltx": "5843c174a9bedfaa714babdc12e381b0b198eb46743295feaf486b77c2eeeeb3",
+    "release/autonomous_board.mcs": "e1af5b4ebe2e92f504dcede48282348f34f524e99b7fc460f37250fcd86990e2"
+  },
+  "frozen_source_manifest": "evidence/implementation/white_characters_01/sources/manifest.json",
+  "target": "xc7a35tcpg236-1",
+  "tool_version": "Vivado 2025.1",
+  "hardware_test": "evidence/blue_polarity/board_white_20/summary.json",
+  "ram_programmed": true,
+  "flash_written": true,
+  "change": "SW5 selects dark/white character interpretation for autonomous segmentation and normalization; original raw locator/display unchanged",
+  "flash_installation": "evidence/flash_install/installation.json"
+}

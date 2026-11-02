@@ -1,0 +1,38 @@
+{
+  "build": "build/engineering_02",
+  "status": "PASS AUTONOMOUS_BOARD_BUILD",
+  "clock_mhz": 100,
+  "wns_ns": 0.185,
+  "whs_ns": 0.024,
+  "tns_ns": 0.0,
+  "ths_ns": 0.0,
+  "lut": 15599,
+  "ff": 18832,
+  "ramb36": 40,
+  "ramb18": 9,
+  "bram36_equivalent": 44.5,
+  "dsp": 9,
+  "drc_warning_checks": 41,
+  "drc_errors": 0,
+  "drc_critical_warnings": 0,
+  "build_log_critical_warnings": [
+    "Vivado 12-5447 synth_ip project-mode compatibility warning; IP synthesis subsequently completed",
+    "Constraints 18-515 camera/rclk_reg/Q path segmentation from existing datapath constraint"
+  ],
+  "no_input_delay_false_path_ports": 13,
+  "partial_input_delay_ports": 8,
+  "unconstrained_internal_endpoints": 0,
+  "frozen_source_current_mismatches": [],
+  "artifacts": {
+    "autonomous_board.bit": "91a6e3db556cf55dc619506cd091577f5fbe39bfabc79c5a7532153869584741",
+    "autonomous_board.ltx": "5843c174a9bedfaa714babdc12e381b0b198eb46743295feaf486b77c2eeeeb3",
+    "sources/manifest.json": "089e150983fb587734d87c7ce11c8c9a46f6f5c54ab0e720b3826415c1357415",
+    "timing.rpt": "787c090fc94a17ea407cb8ba80c15dcc4dd52711dece445b2ffc86854a69ee86",
+    "utilization.rpt": "dd93ff4c3a870e4632e2b0c6496499a53062924d89bbe37b910a58a7bc955869",
+    "drc.rpt": "58c5184a30754e5bdb33fbc45a7b1571f3c1d83b2daebbc3c552290f5ac7acd0",
+    "check_timing.rpt": "bac31d2db7da950266b63d874105a0dcf300d57f636f32486b2c83552d65aa1e",
+    "bus_skew.rpt": "514d034d3b1de8d2405ae92532007e34348bd01000e35f671638dd0a89f2e7ab",
+    "build.log": "6f6b829e1343e4a5f8ab25be5d1087d8b94a3f0a25c2c41249c82e0f6de23693"
+  },
+  "scope": "Implemented timing under existing constraints, not measured external electrical margins or LCD optical rate"
+}

@@ -1,0 +1,10 @@
+{"seq": 1, "frame_id": 232, "tick": 1036457644, "dropped": 0, "crc": "c57f306a", "p0_mismatches": null, "p1_mismatches": null, "elapsed_ms": 102, "file": "seq_000001_src_00000232"}
+{"seq": 2, "frame_id": 233, "tick": 1040900560, "dropped": 0, "crc": "18735aa8", "p0_mismatches": null, "p1_mismatches": null, "elapsed_ms": 128, "file": "seq_000002_src_00000233"}
+{"seq": 3, "frame_id": 234, "tick": 1045343470, "dropped": 0, "crc": "3ba36d77", "p0_mismatches": null, "p1_mismatches": null, "elapsed_ms": 179, "file": "seq_000003_src_00000234"}
+{"seq": 4, "frame_id": 235, "tick": 1049786386, "dropped": 0, "crc": "45d9c9b9", "p0_mismatches": null, "p1_mismatches": null, "elapsed_ms": 229, "file": "seq_000004_src_00000235"}
+{"seq": 5, "frame_id": 236, "tick": 1054229296, "dropped": 0, "crc": "0892f374", "p0_mismatches": null, "p1_mismatches": null, "elapsed_ms": 280, "file": "seq_000005_src_00000236"}
+{"seq": 6, "frame_id": 237, "tick": 1058672212, "dropped": 0, "crc": "e93d7651", "p0_mismatches": null, "p1_mismatches": null, "elapsed_ms": 312, "file": "seq_000006_src_00000237"}
+{"seq": 7, "frame_id": 238, "tick": 1063115122, "dropped": 0, "crc": "cacebcd7", "p0_mismatches": null, "p1_mismatches": null, "elapsed_ms": 364, "file": "seq_000007_src_00000238"}
+{"seq": 8, "frame_id": 239, "tick": 1067558038, "dropped": 0, "crc": "5cd3a9f9", "p0_mismatches": null, "p1_mismatches": null, "elapsed_ms": 415, "file": "seq_000008_src_00000239"}
+{"seq": 9, "frame_id": 240, "tick": 1072000954, "dropped": 0, "crc": "3c74dec3", "p0_mismatches": null, "p1_mismatches": null, "elapsed_ms": 451, "file": "seq_000009_src_00000240"}
+{"seq": 10, "frame_id": 241, "tick": 1076443864, "dropped": 0, "crc": "753a1f07", "p0_mismatches": null, "p1_mismatches": null, "elapsed_ms": 500, "file": "seq_000010_src_00000241"}

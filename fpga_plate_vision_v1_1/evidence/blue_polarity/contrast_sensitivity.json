@@ -1,0 +1,49 @@
+{
+  "scope": "Synthetic contrast reduction of one captured frame, not new camera exposures; no parameter tuning",
+  "results": [
+    {
+      "synthetic_contrast": "1/1",
+      "roi": [
+        21,
+        34,
+        156,
+        81
+      ],
+      "candidate_count": 6,
+      "prediction": "AL67L8"
+    },
+    {
+      "synthetic_contrast": "3/4",
+      "roi": [
+        21,
+        34,
+        156,
+        81
+      ],
+      "candidate_count": 6,
+      "prediction": "AL67L8"
+    },
+    {
+      "synthetic_contrast": "1/2",
+      "roi": [
+        21,
+        34,
+        156,
+        81
+      ],
+      "candidate_count": 6,
+      "prediction": "AL67L8"
+    },
+    {
+      "synthetic_contrast": "1/4",
+      "roi": [
+        21,
+        34,
+        156,
+        81
+      ],
+      "candidate_count": 3,
+      "prediction": "IL8"
+    }
+  ]
+}

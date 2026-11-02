@@ -1,0 +1,17 @@
+{
+  "full_plate_visible": true,
+  "roi": [
+    7,
+    67,
+    156,
+    107
+  ],
+  "hardware_reference_matches": 10,
+  "exact_plate_matches": 0,
+  "total_frames": 10,
+  "observations": [
+    "Two overlapping boxes at left correspond to Chinese-character/background fragments",
+    "Last box x124 y76 w32 h31 merges final digits 4 and 5"
+  ],
+  "conclusion": "Location tracking succeeded for this position; downstream segmentation failed. Placement tolerance acceptance is not passed."
+}

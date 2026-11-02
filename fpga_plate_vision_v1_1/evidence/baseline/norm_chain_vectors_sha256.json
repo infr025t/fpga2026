@@ -1,0 +1,35 @@
+{
+  "stage": "historical_frozen_vectors_original_generation_inputs_unavailable",
+  "files": [
+    {
+      "path": "sim/norm_chain_vectors/characters.hex",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\sim\\norm_chain_vectors\\characters.hex",
+      "sha256": "9aa81ffb6f146a1afc2085e39d6f6f1a2ee469dac4561211ee7336bd07787206",
+      "bytes": 200
+    },
+    {
+      "path": "sim/norm_chain_vectors/frames.hex",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\sim\\norm_chain_vectors\\frames.hex",
+      "sha256": "1e3bcf3191acc9a3cf93a4908c69b1f57df8137b30acf0167fd8bad099ae7849",
+      "bytes": 153696
+    },
+    {
+      "path": "sim/norm_chain_vectors/manifest.json",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\sim\\norm_chain_vectors\\manifest.json",
+      "sha256": "e762e954ea7a298ae6e5f11cf9a3943f51519139097c4d128d0088930be204f5",
+      "bytes": 1880
+    },
+    {
+      "path": "sim/norm_chain_vectors/pixels.hex",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\sim\\norm_chain_vectors\\pixels.hex",
+      "sha256": "b73832cf07f4b80e05b6220c82172fc14f487ecd53c261e4b83f1c586e64e924",
+      "bytes": 6144
+    },
+    {
+      "path": "sim/norm_chain_vectors/scores.hex",
+      "source": "E:\\FPGA_Test_Work\\plate_autonomous_board_20261101\\sim\\norm_chain_vectors\\scores.hex",
+      "sha256": "45875d06adc2b9e5e710a358e43b57425fc538accf39dee017dd4413f66f2f3e",
+      "bytes": 720
+    }
+  ]
+}

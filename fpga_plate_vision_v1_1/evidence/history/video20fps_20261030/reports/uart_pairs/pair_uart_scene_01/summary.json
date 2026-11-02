@@ -1,0 +1,12 @@
+{
+  "reason": "FRAME_TARGET",
+  "frames": 600,
+  "reference_checked": false,
+  "reference_bad_frames": 0,
+  "fpga_diagnostic_dropped": 0,
+  "header_crc_errors": 0,
+  "payload_crc_errors": 0,
+  "source_frame_id_gaps": 0,
+  "median_source_fps": 22.507710016066003,
+  "duration_sec": 47.87367480015382
+}

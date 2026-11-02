@@ -1,0 +1,25 @@
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Sun Nov  1 15:15:36 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/tb_auto_manual_chain_snapshot/xsim_script.tcl
+# xsim {tb_auto_manual_chain_snapshot} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+PASS mode AUTO -> MANUAL midcapture aborted samples=63
+PASS mode MANUAL -> DIAG midupload invalidated frame and ignored incoming UART/video
+PASS actual wrapper manual chain case=0 boxes=6 pixels=768 signed_scores=36 seg_cycles=4448141 norm_cycles=134286 cnn_cycles=942444
+PASS actual wrapper manual chain case=1 boxes=6 pixels=768 signed_scores=36 seg_cycles=4617182 norm_cycles=117802 cnn_cycles=942444
+PASS mode DIAG -> MANUAL fresh upload recovery camera_frames_ignored=47 manual_pixels=38400
+PASS tb_auto_manual_chain 2 real frames flags0/3 all boxes 1536 normalized pixels 72 signed scores 2464 response bytes actual wrapper three mode transitions
+$finish called at time : 147088436664 ps : File "E:/FPGA_Test_Work/plate_autonomous_board_20261101/sim/tb_auto_manual_chain.sv" Line 194
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:01:27 . Memory (MB): peak = 167.105 ; gain = 0.004
+exit
+INFO: xsimkernel Simulation Memory Usage: 13012 KB (Peak: 13012 KB), Simulation CPU Usage: 84687 ms
+INFO: [Common 17-206] Exiting xsim at Sun Nov  1 15:17:05 2026...
+PASS stable_sources auto_manual_chain

@@ -1,0 +1,53 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/rtl/plate_text_overlay.sv" into library work
+INFO: [VRFC 10-311] analyzing module plate_text_overlay
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/video_rtl/runtime/video_lcd_sink.sv" into library work
+INFO: [VRFC 10-311] analyzing module video_lcd_sink
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/video_rtl/display/nt35510_init.sv" into library work
+INFO: [VRFC 10-311] analyzing module nt35510_init
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/video_rtl/display/nt35510_init_rom.sv" into library work
+INFO: [VRFC 10-311] analyzing module nt35510_init_rom
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/video_rtl/display/nt35510_bus8.sv" into library work
+INFO: [VRFC 10-311] analyzing module nt35510_bus8
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/video_rtl/display/nt35510_window_writer.sv" into library work
+INFO: [VRFC 10-311] analyzing module nt35510_window_writer
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/FPGA_Test_Work/plate_autonomous_board_20261101/sim/tb_lcd_text.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_lcd_text
+Vivado Simulator v2025.1.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: E:/Vivado/2025.1/Vivado/bin/unwrapped/win64.o/xelab.exe tb_lcd_text -s lcd_text_tb --timescale 1ns/1ps 
+Multi-threading is on. Using 30 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.plate_text_overlay
+Compiling module work.nt35510_init_rom
+Compiling module work.nt35510_init(CLK_HZ=1000)
+Compiling module work.nt35510_window_writer
+Compiling module work.nt35510_bus8(LOW_CYCLES=2,GAP_CY...
+Compiling module work.video_lcd_sink(CLK_HZ=1000,BUS_S...
+Compiling module work.tb_lcd_text
+Built simulation snapshot lcd_text_tb
+
+****** xsim v2025.1 (64-bit)
+  **** SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Sun Nov  1 16:20:32 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/lcd_text_tb/xsim_script.tcl
+# xsim {lcd_text_tb} -autoloadwcfg -tclbatch {run.tcl}
+Time resolution is 1 ps
+source run.tcl
+## run all
+PASS ALL LCD text: 603300 RGB565 pixels checked on LCD pins; RAW/EDGE, bubbles, frame atomicity, source CRC preserved
+$finish called at time : 178002186 ns : File "E:/FPGA_Test_Work/plate_autonomous_board_20261101/sim/tb_lcd_text.sv" Line 84
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:00:15 . Memory (MB): peak = 167.602 ; gain = 0.016
+## quit
+INFO: xsimkernel Simulation Memory Usage: 10892 KB (Peak: 10892 KB), Simulation CPU Usage: 14921 ms
+INFO: [Common 17-206] Exiting xsim at Sun Nov  1 16:20:49 2026...

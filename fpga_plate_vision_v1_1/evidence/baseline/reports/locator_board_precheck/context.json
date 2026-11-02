@@ -1,0 +1,7 @@
+{
+  "truth_scoring_applicable": false,
+  "reason": "Scene changed to dark plate with white text, right-hand characters outside frame; previous BD12345 truth no longer applicable",
+  "hardware_reference_frames": 10,
+  "located_frames": 0,
+  "awaiting_bright_plate_placement_test": true
+}

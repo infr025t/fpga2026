@@ -1,0 +1,36 @@
+#-----------------------------------------------------------
+# xsim v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Sun Nov  1 18:36:19 2026
+# Process ID         : 52884
+# Current directory  : E:/FPGA_Test_Work/plate_autonomous_board_20261101/reports/prefix_rtl
+# Command line       : xsim.exe -log green.log -mode tcl -source {xsim.dir/prefix_tb/xsim_script.tcl}
+# Log file           : E:/FPGA_Test_Work/plate_autonomous_board_20261101/reports/prefix_rtl/green.log
+# Journal file       : E:/FPGA_Test_Work/plate_autonomous_board_20261101/reports/prefix_rtl\xsim.jou
+# Running On         : StrawberryBear
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : Intel(R) Core(TM) i9-14900HX
+# CPU Frequency      : 2419 MHz
+# CPU Physical cores : 24
+# CPU Logical cores  : 32
+# Host memory        : 33953 MB
+# Swap memory        : 9721 MB
+# Total Virtual      : 43675 MB
+# Available Virtual  : 7069 MB
+#-----------------------------------------------------------
+source xsim.dir/prefix_tb/xsim_script.tcl
+# xsim {prefix_tb} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+PASS prefix left=0 enabled=0 boxes=3
+PASS prefix left=0 enabled=1 boxes=2
+PASS prefix left=30 enabled=1 boxes=2
+PASS prefix left=70 enabled=1 boxes=2
+PASS ALL prefix RTL: relative location, retained letters, disabled mode, latched policy
+$finish called at time : 111654916 ns : File "E:/FPGA_Test_Work/plate_autonomous_board_20261101/sim/tb_prefix_filter.sv" Line 31
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:00:10 . Memory (MB): peak = 167.898 ; gain = 0.035
+exit
+INFO: [Common 17-206] Exiting xsim at Sun Nov  1 18:36:31 2026...

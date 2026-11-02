@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "requested_frames": 10,
+  "captured_complete_frames": 10,
+  "verified_frames": 10,
+  "mismatched_frames": 0,
+  "verified_characters": 70,
+  "groups": {
+    "epochs": 1,
+    "complete_groups": 10,
+    "incomplete_groups": 1,
+    "invalid_groups": 0,
+    "evicted_groups": 0,
+    "peak_pending_groups": 2,
+    "observed_source_frame_gaps": 27,
+    "packets": 101
+  },
+  "parser": {
+    "valid_packets": 101,
+    "rejected_candidates": 0,
+    "discarded_bytes": 590,
+    "truncated_bytes": 1184
+  },
+  "bytes_received": 264074,
+  "timed_out": false,
+  "capture_error": null,
+  "capture_seconds": 1.9499222999438643,
+  "total_seconds": 2.123410100117326,
+  "model_sha256": "179d6d9b9a4e2229c152770152fe6c8d71ff924af5d9da06132debd730cf4645",
+  "model_error": null,
+  "source": "COM10@12000000",
+  "read_only": true,
+  "scope": "Complete groups only; exact integer reference with versioned dynamic ROI, prefix exclusion and ASG4/5 touching split; not arbitrary-plate recognition accuracy",
+  "frames": [
+    "frames\\e000_f0000001005\\result.json",
+    "frames\\e000_f0000001009\\result.json",
+    "frames\\e000_f0000001013\\result.json",
+    "frames\\e000_f0000001017\\result.json",
+    "frames\\e000_f0000001021\\result.json",
+    "frames\\e000_f0000001025\\result.json",
+    "frames\\e000_f0000001029\\result.json",
+    "frames\\e000_f0000001033\\result.json",
+    "frames\\e000_f0000001037\\result.json",
+    "frames\\e000_f0000001041\\result.json"
+  ],
+  "truth_for_scoring_only": "K38817",
+  "truth_exact_frames": 0
+}

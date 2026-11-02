@@ -1,0 +1,5 @@
+# 本机离线参考/观察器已安装版本；不包含历史训练框架或Vivado。
+numpy==2.4.6
+opencv-python==4.13.0.92
+Pillow==12.3.0
+pyserial==3.5

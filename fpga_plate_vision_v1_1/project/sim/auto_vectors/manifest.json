@@ -1,0 +1,55 @@
+{
+  "source": "E:\\FPGA_Test_Work\\plate_recognition_engineering\\evidence\\baseline\\reports\\segmentation_reference\\vectors\\ddn7870.frame.mem",
+  "sha256": "51d9e4110855723ccbcb61ee0abb7b302f4c92d9d190ee9a4aff0a532b89dcbd",
+  "roi": [
+    26,
+    35,
+    158,
+    87
+  ],
+  "boxes": [
+    [
+      30,
+      46,
+      19,
+      30
+    ],
+    [
+      62,
+      45,
+      18,
+      31
+    ],
+    [
+      82,
+      45,
+      17,
+      31
+    ],
+    [
+      101,
+      46,
+      12,
+      29
+    ],
+    [
+      115,
+      46,
+      13,
+      29
+    ],
+    [
+      128,
+      46,
+      12,
+      29
+    ],
+    [
+      142,
+      46,
+      11,
+      29
+    ]
+  ],
+  "prediction": "DDN7870"
+}

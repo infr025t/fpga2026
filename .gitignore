@@ -3,6 +3,18 @@
 /.doc_work/
 /*.zip
 /*.docx
+# Personal reports and presentation deliverables stay local at any depth.
+*.doc
+*.docx
+*.docm
+*.odt
+*.pdf
+*.ppt
+*.pptx
+*.pptm
+*.pps
+*.ppsx
+*.potx
 # Generated runtime and build scratch
 __pycache__/
 *.py[cod]
